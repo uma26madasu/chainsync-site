@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChainSync</title>
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --bg-dark: #0d1117;
+      --text-light: #0d1117;
+      --text-dark: #ecf8ec;
+      --accent: #4ade80;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .dark-toggle {
+      cursor: pointer;
+    }
+    section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .illustration {
+      display: block;
+      max-width: 50%;
+      height: auto;
+      margin: 0 auto; /* This change centers the images horizontally */
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+    .content-section {
+      padding: 2rem;
+    }
+    .content-section h2 {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .dropdown-menu details {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 1rem;
+      cursor: pointer;
+    }
+    .dropdown-menu summary {
+      font-weight: bold;
+    }
+    .coming-soon-tag {
+      background-color: #ffeb3b;
+      color: #333;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
+    .dark-mode .coming-soon-tag {
+      background-color: #fdd835;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/try the background l.png" alt="ChainSync Logo" />
+      <h1>ChainSync</h1>
+    </div>
+    <div class="dark-toggle" onclick="toggleDarkMode()">🌓</div>
+  </header>
+
+  <section class="fade-in">
+    <h2>What is ChainSync?</h2>
+    <p>A coordination and orchestration engine for emergencies, maintenance, and ESG compliance across smart industries.</p>
+    <img src="images/hand-drawn-style ima3.png" alt="Environmental AI Orchestration" class="illustration" />
+  </section>
+
+  <section class="fade-in content-section">
+    <h2>Features</h2>
+    <div class="dropdown-menu">
+      <details>
+        <summary>Predictive, Not Reactive</summary>
+        <p>Our platform uses machine learning to identify and respond to potential threats before they escalate.</p>
+      </details>
+      <details>
+        <summary>Automated Coordination</summary>
+        <p>It instantly notifies agencies like the EPA and state DEQs, eliminating the need for manual reporting and reducing the risk of a misstep.</p>
+      </details>
+      <details>
+        <summary>Cross-System Integration</summary>
+        <p>It connects all your systems from water treatment to waste management, breaking down information silos and giving you a complete picture.</p>
+      </details>
+      <details>
+        <summary>Scalable Architecture</summary>
+        <p>Built on MuleSoft's enterprise-grade technology, ChainSync is reliable and powerful enough for mission-critical operations.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>More Information <span class="coming-soon-tag">Coming Soon</span></h2>
+    <p>We are working on bringing more details about our platform and its real-world impact. Please check back soon!</p>
+    <img src="images/hand-drawn-style ima2.png" alt="Logistics Illustration" class="illustration" />
+    <img src="images/hand-drawn-style ima.png" alt="AI Predictive Systems" class="illustration" />
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
