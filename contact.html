@@ -2,30 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChainSync | Request a Demo</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>ChainSync | Contact Us</title>
+  <meta name="description" content="Get in touch with ChainSync to request a demo or learn how our platform can improve your emergency response."/>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="technology.html">Platform</a>
-    <a href="use-cases.html">Use Cases</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">ChainSync</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <section id="demo-coming-soon">
-  <h2>Demo Access</h2>
-  <p>Coming Soon — ChainSync’s live demo experience is currently in development. Stay tuned for updates.</p>
-</section>
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p class="lead">
+      Ready to transform your emergency response? Contact us to schedule a demo or learn more.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info animate-up">
+        <h2>Let’s Talk</h2>
+        <p><strong>Email:</strong> info@chainsync.io</p>
+        <p><strong>Phone:</strong> (555) 123-4567</p>
+        <p><strong>Office:</strong> <span class="pin-container">San Francisco, CA <span class="pin"></span></span></p>
+        <p>We respond within one business day.</p>
+      </div>
+
+      <div class="contact-form animate-up" style="animation-delay: 0.3s">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="company" placeholder="Company" />
+          <select name="reason" required>
+            <option value="">I'm interested in...</option>
+            <option value="demo">Scheduling a Demo</option>
+            <option value="pricing">Pricing Information</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2025 ChainSync. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 ChainSync. Intelligent Orchestration for Environmental Resilience.</p>
+    </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init({ duration: 600, easing: 'ease-out', once: true });</script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
