@@ -2,69 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChainSync | Modular AI Platform</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChainSync | Intelligent Orchestration for Environmental Emergencies</title>
+  <meta name="description" content="ChainSync automates emergency response for water, waste, and remediation services. Reduce response time by 70%, avoid $850K+ in penalties, and protect public health."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3d6d;
+      --accent: #4fd1c5;
+      --light: #f9fbfd;
+      --dark: #2d3748;
+      --gray: #718096;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+    .nav-links a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #e6f4f1, #f0f8fd);
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .cta-button {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #38b2ac;
+    }
+    .features {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .features-grid {
+      display: grid;
+      gap: 40px;
+      margin-top: 40px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .feature-card {
+      background: var(--light);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .feature-card h3 {
+      color: var(--primary);
+      margin: 16px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background: var(--primary);
+      color: white;
+      margin-top: 80px;
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="use-cases.html">Use Cases</a></li>
-      <li><a href="technology.html">Technology</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero">
-    <h1>Welcome to ChainSync</h1>
-    <p>Orchestrating ESG, logistics, and water treatment with modular AI.</p>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">ChainSync</div>
+        <div class="nav-links">
+          <a href="use-cases.html">Use Cases</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <section class="tech-section">
-    <h2>How ChainSync Works</h2>
-    <p>ChainSync combines modular AI orchestration, real-time data pipelines, and sector-specific integrations to streamline operations across ESG, logistics, and water treatment.</p>
+  <section class="hero">
+    <div class="container">
+      <h1>Intelligent Orchestration When Every Second Counts</h1>
+      <p>
+        ChainSync transforms how environmental services respond to emergencies — automating coordination, accelerating compliance, and preventing crises before they escalate.
+      </p>
+      <a href="contact.html" class="cta-button">Request a Demo</a>
+    </div>
+  </section>
 
-    <div class="tech-grid">
-      <div class="tech-item" data-aos="fade-up">
-        <div class="homepage-icon ai-tech-icon"></div>
-        <h3>AI-Driven Orchestration</h3>
-        <p>Autonomous agents coordinate schedules, alerts, and workflows with predictive logic and adaptive routing.</p>
-      </div>
-
-      <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="homepage-icon api-stack-icon"></div>
-        <h3>API-First Architecture</h3>
-        <p>RESTful endpoints enable seamless integration with ESG dashboards, logistics platforms, and treatment systems.</p>
-      </div>
-
-      <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
-        <div class="homepage-icon microservices-icon"></div>
-        <h3>Microservices Backbone</h3>
-        <p>Each function—data sync, reporting, alerts—is modular and independently deployable for resilience and scale.</p>
-      </div>
-
-      <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="homepage-icon frontend-light-icon"></div>
-        <h3>Minimalist Frontend</h3>
-        <p>Fast-loading HTML/CSS with optimized assets and clean UI components tailored to each sector.</p>
+  <section class="features">
+    <div class="container">
+      <h2>Why Organizations Choose ChainSync</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>⏱️ 70% Faster Response</h3>
+          <p>Reduce emergency coordination from hours to minutes with automated workflows.</p>
+        </div>
+        <div class="feature-card">
+          <h3>💰 $850K+ in Penalties Avoided</h3>
+          <p>Automated regulatory reporting prevents costly compliance failures.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🤖 Predictive Intelligence</h3>
+          <p>Machine learning identifies threats before they become violations.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 ChainSync. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 ChainSync. Protecting People, Planet, and Profit.</p>
+    </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 600,
-      once: true
-    });
-  </script>
 
 </body>
 </html>
