@@ -1,48 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChainSync | Industry Use Cases</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-</head>
-<body>
+<!-- Use Cases Page – Enhanced Version -->
+<section class="use-cases">
+  <div class="container">
+    <h1>Intelligent Orchestration When It Matters Most</h1>
+    <p class="lead">
+      In environmental emergencies, seconds save millions. ChainSync transforms how organizations respond — turning chaos into coordination, delays into action, and risk into resilience.
+    </p>
 
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="technology.html">Platform</a>
-    <a href="use-cases.html">Use Cases</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <div class="industries-grid">
+      <!-- Industry 1: Water Utilities -->
+      <div class="industry-card">
+        <h3>💧 Water Utilities</h3>
+        <h4>Rapid Response to Contamination & Infrastructure Failures</h4>
+        <p>
+          When a water quality incident occurs, manual reporting and delayed coordination put public health at risk — and invite regulatory fines averaging over <strong>$850,000</strong>.
+        </p>
+        <p>
+          ChainSync automates emergency detection, regulatory notifications (EPA, state DEQs), and response workflows — reducing coordination time by <strong>70%</strong> and helping utilities avoid millions in penalties.
+        </p>
+        <ul class="benefits">
+          <li>✅ Real-time sensor integration for instant threat detection</li>
+          <li>✅ Automated reporting to environmental agencies</li>
+          <li>✅ 70% faster incident response</li>
+          <li>✅ $850K+ in annual compliance penalties avoided</li>
+        </ul>
+      </div>
 
-  <section class="industries" data-aos="fade-up">
-    <h2>Industries We Serve</h2>
-    <p>ChainSync powers intelligent orchestration across sectors where timing, compliance, and sustainability matter most.</p>
-    <div class="grid-3">
-      <div>
-        <img src="assets/icons/cloud.png" alt="ESG Icon" class="industry-icon" />
-        <h3>🌱 ESG & Sustainability</h3>
-        <p>Track emissions, optimize resource use, and align with global ESG frameworks.</p>
+      <!-- Industry 2: Waste Management -->
+      <div class="industry-card">
+        <h3>🗑️ Waste Management</h3>
+        <h4>Prevent Emissions Violations Before They Escalate</h4>
+        <p>
+          Equipment failures or emission exceedances can lead to severe regulatory violations under high-pressure conditions. Human error and delayed communication only worsen the outcome.
+        </p>
+        <p>
+          ChainSync provides real-time monitoring across landfills and treatment facilities, automatically triggering alerts and compliance actions — reducing violations by <strong>95%</strong> and accelerating response by <strong>75%</strong>.
+        </p>
+        <ul class="benefits">
+          <li>✅ Predictive alerts for emission spikes or system failures</li>
+          <li>✅ Auto-notifications to regulators and nearby communities</li>
+          <li>✅ 95% reduction in compliance violations</li>
+          <li>✅ 75% faster emergency mobilization</li>
+        </ul>
       </div>
-      <div>
-        <img src="assets/icons/transportation.png" alt="Transportation Icon" class="industry-icon" />
-        <h3>🚚 Transportation & Logistics</h3>
-        <p>Synchronize fleets, warehouses, and delivery schedules in real time.</p>
-      </div>
-      <div>
-        <img src="assets/icons/water.png" alt="Water Treatment Icon" class="industry-icon" />
-        <h3>💧 Water Treatment</h3>
-        <p>Orchestrate plant operations, monitor flow rates, and ensure regulatory compliance.</p>
+
+      <!-- Industry 3: Remediation Services -->
+      <div class="industry-card">
+        <h3>🛠️ Environmental Remediation</h3>
+        <h4>Orchestrate Crisis Response Across Stakeholders</h4>
+        <p>
+          During a contamination event — whether chemical, oil, or hazardous waste — coordination between teams, regulators, and communities is fragmented and slow.
+        </p>
+        <p>
+          ChainSync activates predefined response protocols instantly, deploys resources, notifies agencies, and keeps stakeholders informed — improving coordination by <strong>80%</strong> and cutting investigation time by <strong>60%</strong>.
+        </p>
+        <ul class="benefits">
+          <li>✅ Instant deployment of emergency remediation playbooks</li>
+          <li>✅ Unified communication across teams and regulators</li>
+          <li>✅ 80% improvement in cross-team coordination</li>
+          <li>✅ 60% faster regulatory closure</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2025 ChainSync. All rights reserved.</p>
-  </footer>
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h2>Turn Emergency Response Into Strategic Advantage</h2>
+      <p>
+        ChainSync isn’t just about connecting systems — it’s about creating an intelligent layer that anticipates crises, automates compliance, and protects people, planet, and profit.
+      </p>
+      <a href="/contact" class="btn-primary">Request a Demo</a>
+    </div>
+  </div>
+</section>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init({ duration: 600, easing: 'ease-out', once: true });</script>
-</body>
-</html>
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+  }
+  h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1a3d6d;
+  }
+  .lead {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+  }
+  .industries-grid {
+    display: grid;
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+  @media (min-width: 768px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .industry-card {
+    background: #f9fbfd;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  .industry-card:hover {
+    transform: translateY(-6px);
+  }
+  .industry-card h3 {
+    font-size: 1.5rem;
+    color: #1a3d6d;
+    margin-bottom: 8px;
+  }
+  .industry-card h4 {
+    font-size: 1.2rem;
+    color: #2c5282;
+    margin-bottom: 16px;
+  }
+  .industry-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 16px;
+  }
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .benefits li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    position: relative;
+    padding-left: 24px;
+  }
+  .benefits li:before {
+    content: "✔";
+    color: #38a169;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1a3d6d;
+    color: white;
+    border-radius: 12px;
+    margin-top: 40px;
+  }
+  .cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  .cta-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    opacity: 0.9;
+  }
+  .btn-primary {
+    background: #4fd1c5;
+    color: #1a3d6d;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #38b2ac;
+  }
+</style>
