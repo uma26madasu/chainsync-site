@@ -4,75 +4,8 @@
   <meta charset="UTF-8" />
   <title>ChainSync | Use Cases in Water, Waste & Remediation</title>
   <meta name="description" content="See how ChainSync improves emergency response for water utilities, waste management, and environmental remediation services."/>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Same base styles as above — omitted for brevity */
-    :root {
-      --primary: #1a3d6d;
-      --accent: #4fd1c5;
-      --light: #f9fbfd;
-      --dark: #2d3748;
-      --gray: #718096;
-    }
-    body { font-family: 'Inter', sans-serif; color: var(--dark); margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 0; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-    .nav-links a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; }
-    h1, h2, h3, h4 { color: var(--primary); }
-    .lead { text-align: center; max-width: 800px; margin: 20px auto 60px; color: var(--gray); font-size: 1.2rem; }
-    .industries-grid {
-      display: grid;
-      gap: 40px;
-      margin-bottom: 80px;
-    }
-    @media (min-width: 768px) {
-      .industries-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    .industry-card {
-      background: var(--light);
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .industry-card h3 { font-size: 1.5rem; margin-bottom: 8px; }
-    .industry-card h4 { color: #2c5282; font-size: 1.2rem; margin-bottom: 16px; }
-    .benefits { list-style: none; padding: 0; margin-top: 20px; }
-    .benefits li {
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 24px;
-      color: var(--dark);
-    }
-    .benefits li:before {
-      content: "✔";
-      color: #38a169;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-    .cta-section {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--primary);
-      color: white;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 16px;
-    }
-    .btn-primary:hover { background: #38b2ac; }
-    footer { text-align: center; padding: 40px 0; background: var(--primary); color: white; margin-top: 80px; }
-  </style>
 </head>
 <body>
 
@@ -98,7 +31,10 @@
 
     <div class="industries-grid">
       <!-- Water Utilities -->
-      <div class="industry-card">
+      <div class="industry-card animate-up">
+        <div class="icon-container">
+          <img src="assets/images/water-icon.svg" alt="Water Utilities" class="industry-icon" />
+        </div>
         <h3>💧 Water Utilities</h3>
         <h4>Rapid Response to Contamination & Infrastructure Failures</h4>
         <p>
@@ -116,7 +52,10 @@
       </div>
 
       <!-- Waste Management -->
-      <div class="industry-card">
+      <div class="industry-card animate-up" style="animation-delay: 0.2s">
+        <div class="icon-container">
+          <img src="assets/images/waste-icon.svg" alt="Waste Management" class="industry-icon" />
+        </div>
         <h3>🗑️ Waste Management</h3>
         <h4>Prevent Emissions Violations Before They Escalate</h4>
         <p>
@@ -134,7 +73,10 @@
       </div>
 
       <!-- Remediation Services -->
-      <div class="industry-card">
+      <div class="industry-card animate-up" style="animation-delay: 0.4s">
+        <div class="icon-container">
+          <img src="assets/images/remediation-icon.svg" alt="Remediation Services" class="industry-icon" />
+        </div>
         <h3>🛠️ Environmental Remediation</h3>
         <h4>Orchestrate Crisis Response Across Stakeholders</h4>
         <p>
@@ -167,5 +109,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
