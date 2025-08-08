@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChainSync | How It Works</title>
+  <meta name="description" content="Learn how ChainSync uses real-time data fusion and AI to automate emergency response for environmental services."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a3d6d;
+      --accent: #4fd1c5;
+      --light: #f9fbfd;
+      --dark: #2d3748;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); margin: 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 0; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
+    .nav-links a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; }
+    h1, h2, h3 { color: var(--primary); }
+    .process-steps {
+      margin: 60px 0;
+      counter-reset: step-counter;
+    }
+    .step {
+      margin-bottom: 60px;
+      position: relative;
+      padding-left: 120px;
+    }
+    .step:before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .step h3 { margin-top: 0; font-size: 1.4rem; }
+    .tech-stack {
+      background: var(--light);
+      padding: 40px;
+      border-radius: 12px;
+      margin: 60px 0;
+    }
+    .cta-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 16px;
+    }
+    footer { text-align: center; padding: 40px 0; background: var(--primary); color: white; margin-top: 80px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">ChainSync</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>How ChainSync Works</h1>
+    <p>
+      ChainSync replaces slow, manual emergency response with intelligent automation — from detection to resolution.
+    </p>
+
+    <div class="process-steps">
+      <div class="step">
+        <h3>Data Fusion Engine</h3>
+        <p>
+          ChainSync connects all your systems — sensors, SCADA, CMMS, ERP, and regulatory portals — into a single real-time data layer. No more silos, no more manual data pulls.
+        </p>
+      </div>
+      <div class="step">
+        <h3>Threat Detection & Prediction</h3>
+        <p>
+          Using machine learning, ChainSync analyzes patterns to detect anomalies — like a sudden pH change or methane spike — and predicts potential failures before they occur.
+        </p>
+      </div>
+      <div class="step">
+        <h3>Automated Orchestration</h3>
+        <p>
+          When a threat is detected, ChainSync instantly triggers response protocols: notifying regulators (EPA, DEQ), alerting field teams, and logging compliance actions — all automatically.
+        </p>
+      </div>
+      <div class="step">
+        <h3>Stakeholder Coordination</h3>
+        <p>
+          The platform unifies communication between internal teams, government agencies, and affected communities — ensuring transparency and accelerating resolution.
+        </p>
+      </div>
+    </div>
+
+    <div class="tech-stack">
+      <h2>Enterprise-Grade Foundation</h2>
+      <p>
+        Built on <strong>MuleSoft's integration platform</strong>, ChainSync delivers enterprise reliability, scalability, and security for mission-critical environmental operations.
+      </p>
+    </div>
+
+    <div class="cta-section">
+      <h2>See ChainSync in Action</h2>
+      <p>Watch how a water utility responds to a contamination event in under 5 minutes — not 6 hours.</p>
+      <a href="contact.html" class="btn-primary">Schedule a Live Demo</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 ChainSync. Built for Critical Environmental Response.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
