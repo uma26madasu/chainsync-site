@@ -5,104 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChainSync | Intelligent Orchestration for Environmental Emergencies</title>
   <meta name="description" content="ChainSync automates emergency response for water, waste, and remediation services. Reduce response time by 70%, avoid $850K+ in penalties, and protect public health."/>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a3d6d;
-      --accent: #4fd1c5;
-      --light: #f9fbfd;
-      --dark: #2d3748;
-      --gray: #718096;
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    header {
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 20px 0;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-    .nav-links a {
-      margin-left: 30px;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-    }
-    .hero {
-      padding: 100px 0;
-      text-align: center;
-      background: linear-gradient(135deg, #e6f4f1, #f0f8fd);
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      color: var(--gray);
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-    .cta-button {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 16px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: background 0.3s ease;
-    }
-    .cta-button:hover {
-      background: #38b2ac;
-    }
-    .features {
-      padding: 80px 0;
-      text-align: center;
-    }
-    .features-grid {
-      display: grid;
-      gap: 40px;
-      margin-top: 40px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .feature-card {
-      background: var(--light);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .feature-card h3 {
-      color: var(--primary);
-      margin: 16px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      background: var(--primary);
-      color: white;
-      margin-top: 80px;
-    }
-  </style>
 </head>
 <body>
 
@@ -121,9 +25,10 @@
   </header>
 
   <section class="hero">
+    <div class="data-pulse-bg"></div>
     <div class="container">
       <h1>Intelligent Orchestration When Every Second Counts</h1>
-      <p>
+      <p class="lead">
         ChainSync transforms how environmental services respond to emergencies — automating coordination, accelerating compliance, and preventing crises before they escalate.
       </p>
       <a href="contact.html" class="cta-button">Request a Demo</a>
@@ -134,15 +39,15 @@
     <div class="container">
       <h2>Why Organizations Choose ChainSync</h2>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card animate-up">
           <h3>⏱️ 70% Faster Response</h3>
           <p>Reduce emergency coordination from hours to minutes with automated workflows.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-up" style="animation-delay: 0.2s">
           <h3>💰 $850K+ in Penalties Avoided</h3>
           <p>Automated regulatory reporting prevents costly compliance failures.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card animate-up" style="animation-delay: 0.4s">
           <h3>🤖 Predictive Intelligence</h3>
           <p>Machine learning identifies threats before they become violations.</p>
         </div>
@@ -156,5 +61,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
