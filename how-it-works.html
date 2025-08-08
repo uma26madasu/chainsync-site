@@ -4,73 +4,8 @@
   <meta charset="UTF-8" />
   <title>ChainSync | How It Works</title>
   <meta name="description" content="Learn how ChainSync uses real-time data fusion and AI to automate emergency response for environmental services."/>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a3d6d;
-      --accent: #4fd1c5;
-      --light: #f9fbfd;
-      --dark: #2d3748;
-    }
-    body { font-family: 'Inter', sans-serif; color: var(--dark); margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 0; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-    .nav-links a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; }
-    h1, h2, h3 { color: var(--primary); }
-    .process-steps {
-      margin: 60px 0;
-      counter-reset: step-counter;
-    }
-    .step {
-      margin-bottom: 60px;
-      position: relative;
-      padding-left: 120px;
-    }
-    .step:before {
-      counter-increment: step-counter;
-      content: counter(step-counter);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 60px;
-      height: 60px;
-      background: var(--accent);
-      color: var(--primary);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    .step h3 { margin-top: 0; font-size: 1.4rem; }
-    .tech-stack {
-      background: var(--light);
-      padding: 40px;
-      border-radius: 12px;
-      margin: 60px 0;
-    }
-    .cta-section {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--primary);
-      color: white;
-      border-radius: 12px;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 16px;
-    }
-    footer { text-align: center; padding: 40px 0; background: var(--primary); color: white; margin-top: 80px; }
-  </style>
 </head>
 <body>
 
@@ -90,30 +25,40 @@
 
   <div class="container">
     <h1>How ChainSync Works</h1>
-    <p>
+    <p class="lead">
       ChainSync replaces slow, manual emergency response with intelligent automation — from detection to resolution.
     </p>
 
+    <div class="process-visual">
+      <div class="step-node animated">Fuse Data</div>
+      <div class="arrow">→</div>
+      <div class="step-node animated">Detect Threat</div>
+      <div class="arrow">→</div>
+      <div class="step-node animated">Orchestrate</div>
+      <div class="arrow">→</div>
+      <div class="step-node animated">Notify</div>
+    </div>
+
     <div class="process-steps">
-      <div class="step">
+      <div class="step animate-up">
         <h3>Data Fusion Engine</h3>
         <p>
           ChainSync connects all your systems — sensors, SCADA, CMMS, ERP, and regulatory portals — into a single real-time data layer. No more silos, no more manual data pulls.
         </p>
       </div>
-      <div class="step">
+      <div class="step animate-up" style="animation-delay: 0.2s">
         <h3>Threat Detection & Prediction</h3>
         <p>
           Using machine learning, ChainSync analyzes patterns to detect anomalies — like a sudden pH change or methane spike — and predicts potential failures before they occur.
         </p>
       </div>
-      <div class="step">
+      <div class="step animate-up" style="animation-delay: 0.4s">
         <h3>Automated Orchestration</h3>
         <p>
           When a threat is detected, ChainSync instantly triggers response protocols: notifying regulators (EPA, DEQ), alerting field teams, and logging compliance actions — all automatically.
         </p>
       </div>
-      <div class="step">
+      <div class="step animate-up" style="animation-delay: 0.6s">
         <h3>Stakeholder Coordination</h3>
         <p>
           The platform unifies communication between internal teams, government agencies, and affected communities — ensuring transparency and accelerating resolution.
@@ -141,5 +86,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
