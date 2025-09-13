@@ -1,101 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ChainSync | About Us</title>
-  <meta name="description" content="Learn about ChainSync's mission to transform emergency response for environmental services with intelligent orchestration."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #1a3d6d; --light: #f9fbfd; --dark: #2d3748; }
-    body { font-family: 'Inter', sans-serif; color: var(--dark); margin: 0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 20px 0; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); }
-    .nav-links a { margin-left: 30px; text-decoration: none; color: var(--dark); font-weight: 500; }
-    h1, h2 { color: var(--primary); }
-    .mission {
-      padding: 80px 0;
-      background: var(--light);
-      text-align: center;
-      margin: 40px 0;
-    }
-    .values {
-      margin: 80px 0;
-    }
-    .values-grid {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: 768px) {
-      .values-grid { grid-template-columns: 1fr; }
-    }
-    .value-card {
-      padding: 24px;
-      border-left: 4px solid #4fd1c5;
-      background: #f0f8fd;
-    }
-    footer { text-align: center; padding: 40px 0; background: var(--primary); color: white; margin-top: 80px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About ChainSync | Our Mission & Values</title>
+  <meta name="description" content="Learn about ChainSync's mission to transform emergency response for environmental services with intelligent orchestration.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ChainSync</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="technology.html">Technology</a>
+        <a href="contact.html" class="nav-cta">Get Started →</a>
+      </div>
+      <div class="mobile-menu-btn">☰</div>
+    </div>
+  </nav>
 
-  <header>
+  <section class="page-hero">
+    <div class="animated-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+    </div>
     <div class="container">
-      <nav>
-        <div class="logo">ChainSync</div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="use-cases.html">Use Cases</a>
-          <a href="how-it-works.html">How It Works</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </nav>
+      <h1 class="page-title">About ChainSync</h1>
+      <p class="page-subtitle">We believe the future of environmental services isn't just about connecting systems — it's about creating intelligent platforms that act when it matters most.</p>
     </div>
-  </header>
+  </section>
 
-  <div class="container">
-    <h1>About ChainSync</h1>
-    <p>
-      We believe the future of environmental services isn’t just about connecting systems — it’s about creating intelligent platforms that act when it matters most.
-    </p>
-
-    <div class="mission">
-      <h2>Our Mission</h2>
-      <p>
-        To transform emergency response in environmental services by replacing reactive, manual processes with intelligent orchestration — protecting public health, compliance, and operational resilience.
-      </p>
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-card">
+        <div class="mission-icon">🎯</div>
+        <h2>Our Mission</h2>
+        <p>To transform emergency response in environmental services by replacing reactive, manual processes with intelligent orchestration — protecting public health, compliance, and operational resilience.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="values">
-      <h2>Our Core Values</h2>
+  <section class="values-section">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
       <div class="values-grid">
-        <div class="value-card">
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon">⚡</div>
           <h3>Urgency</h3>
-          <p>We build for the moments that can’t wait. Every second saved is a life, fine, or ecosystem protected.</p>
+          <p>We build for the moments that can't wait. Every second saved is a life, fine, or ecosystem protected.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon">🧠</div>
           <h3>Intelligence</h3>
-          <p>We don’t just move data — we anticipate threats using AI and automation.</p>
+          <p>We don't just move data — we anticipate threats using AI and automation.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon">🔗</div>
           <h3>Integration</h3>
           <p>We break down silos across water, waste, and remediation systems to create unified response.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card animate-on-scroll">
+          <div class="value-icon">💫</div>
           <h3>Impact</h3>
           <p>We measure success in faster responses, avoided penalties, and safer communities.</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Built by Industry Experts</h2>
+      <p class="section-description">Our team combines decades of experience in environmental services, emergency response, and enterprise software.</p>
+      <div class="team-stats">
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Years Combined Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Emergency Scenarios Handled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support & Monitoring</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 ChainSync. Turning Crisis Into Coordination.</p>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ChainSync</h3>
+        <p>Turning Crisis Into Coordination.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ChainSync. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
