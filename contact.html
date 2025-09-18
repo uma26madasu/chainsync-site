@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact ChainSync | Get Started Today</title>
   <meta name="description" content="Ready to transform your emergency response? Contact ChainSync for a demo or to learn more about our platform.">
+  
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#0066ff">
+  
+  <meta property="og:title" content="Contact ChainSync | Schedule a Demo">
+  <meta property="og:description" content="Reach out to the ChainSync team to schedule a demo and see our platform in action.">
+  <meta property="og:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-contact.png">
+  <meta property="og:url" content="https://chainsync-site-kohl.vercel.app/contact.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact ChainSync">
+  <meta name="twitter:description" content="Ready to get started? Contact us for a free consultation.">
+  <link rel="canonical" href="https://chainsync-site-kohl.vercel.app/contact.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -34,25 +56,127 @@
     }
     
     .form-header h2 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 700;
+      margin-top: 0;
     }
     
-    .form-header p {
-      margin: 10px 0 0 0;
-      opacity: 0.95;
+    .contact-section {
+      padding: 80px 40px;
+      background: #f4f4f4;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .contact-info {
+      padding: 50px;
+      background: linear-gradient(135deg, #0066ff 0%, #00d4aa 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .contact-info h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .contact-info p {
       font-size: 1.1rem;
-      line-height: 1.4;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 400px;
+    }
+    
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .contact-info li {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .contact-info li .icon {
+      font-size: 1.5rem;
+    }
+    
+    .contact-info strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .contact-form {
+      padding: 50px;
+      background: #f8faff;
+    }
+    
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .contact-form .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #333;
+    }
+    
+    .benefits-list li .check-icon {
+      color: #00d4aa;
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+    
+    @media (max-width: 992px) {
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      .contact-info {
+        padding: 40px;
+        text-align: center;
+      }
+      .contact-info ul {
+        text-align: left;
+        margin: 0 auto;
+        display: inline-block;
+      }
+      .contact-form {
+        padding: 40px;
+      }
     }
     
     @media (max-width: 768px) {
-      .google-form-container iframe {
-        height: 1300px;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr !important;
+      .contact-section {
+        padding: 40px 20px;
       }
     }
   </style>
@@ -67,95 +191,47 @@
         <a href="use-cases.html">Use Cases</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="technology.html">Technology</a>
-        <a href="contact.html" class="active nav-cta">Get Started →</a>
+        <a href="contact.html" class="nav-cta active">Get Started →</a>
       </div>
       <div class="mobile-menu-btn">☰</div>
     </div>
   </nav>
 
   <section class="page-hero">
-    <div class="animated-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-    </div>
     <div class="container">
-      <h1 class="page-title">Let's Transform Your Emergency Response</h1>
-      <p class="page-subtitle">See how ChainSync can reduce your response time by 70% and save millions in compliance costs.</p>
+      <h1 class="page-title">Let's Build the Future of Emergency Response Together</h1>
+      <p class="page-subtitle">Contact our team to discuss your needs and see a live demo of the platform.</p>
     </div>
   </section>
 
   <section class="contact-section">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-form-wrapper">
-          <div class="google-form-container">
-            <div class="form-header">
-              <h2>Request a Demo</h2>
-              <p>Complete this form and we'll respond shortly — which is still hours faster than manually handling your next environmental emergency.</p>
-            </div>
-            
-            <!-- Google Form Embed -->
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSd0LLDXX2TwxusFUnefdfFDc65EQlS50OdiXW5a_MBkJ2zI0g/viewform?embedded=true" 
-              width="100%" 
-              height="1186" 
-              frameborder="0" 
-              marginheight="0" 
-              marginwidth="0">
-              Loading…
-            </iframe>
-          </div>
-        </div>
-        
+      <div class="contact-content">
         <div class="contact-info">
-          <div class="info-card">
-            <h3>Why ChainSync?</h3>
-            <div class="benefit-list">
-              <div class="benefit">
-                <span class="benefit-icon">⚡</span>
-                <div>
-                  <strong>70% Faster Response</strong>
-                  <p>From hours to minutes</p>
-                </div>
-              </div>
-              <div class="benefit">
-                <span class="benefit-icon">🛡️</span>
-                <div>
-                  <strong>95% Fewer Violations</strong>
-                  <p>Automated compliance</p>
-                </div>
-              </div>
-              <div class="benefit">
-                <span class="benefit-icon">💰</span>
-                <div>
-                  <strong>$850K+ Saved</strong>
-                  <p>Annual penalty avoidance</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="info-card">
-            <h3>What to Expect</h3>
-            <ol class="process-list">
-              <li>30-minute discovery call to understand your needs</li>
-              <li>Custom demo tailored to your use cases</li>
-              <li>ROI analysis and implementation roadmap</li>
-              <li>Pilot program in 30 days</li>
-            </ol>
-          </div>
+          <h2>Ready to Transform Your Response?</h2>
+          <p>Schedule a quick call with our team. We'll listen to your challenges and show you how ChainSync can help.</p>
+          <h3>What to Expect on the Call:</h3>
+          <ul class="benefits-list">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>A custom demo tailored to your use cases</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>ROI analysis and implementation roadmap</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Pilot program in 30 days</span>
+            </li>
+          </ul>
+        </div>
+        <div class="google-form-container">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4uMh0fR4yv2R5T_f9Cg-m7A0C3h4z-8z0u0Lz0pD8u0y8w/viewform?usp=sf_link"></iframe>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Floating Contact Button -->
-  <div style="position: fixed; bottom: 30px; right: 30px; z-index: 100;">
-    <a href="#" class="btn-primary" style="box-shadow: 0 10px 30px rgba(0,102,255,0.4); display: flex; align-items: center; gap: 10px;" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'}); return false;">
-      <span>💬</span>
-      <span>Need Help?</span>
-    </a>
-  </div>
 
   <footer>
     <div class="footer-content">
