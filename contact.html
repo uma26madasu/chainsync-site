@@ -12,12 +12,12 @@
   
   <meta property="og:title" content="Contact ChainSync | Schedule a Demo">
   <meta property="og:description" content="Reach out to the ChainSync team to schedule a demo and see our platform in action.">
-  <meta property="og:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-contact.png">
-  <meta property="og:url" content="https://chainsync-site-kohl.vercel.app/contact.html">
+  <meta property="og:image" content="https://chainsync-platform.vercel.app/assets/images/og-contact.png">
+  <meta property="og:url" content="https://chainsync-platform.vercel.app/contact.html">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Contact ChainSync">
   <meta name="twitter:description" content="Ready to get started? Contact us for a free consultation.">
-  <link rel="canonical" href="https://chainsync-site-kohl.vercel.app/contact.html">
+  <link rel="canonical" href="https://chainsync-platform.vercel.app/contact.html">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
   <script>
@@ -30,37 +30,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Additional styles for Google Form integration */
-    .google-form-container {
-      width: 100%;
-      min-height: 1200px;
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    }
-    
-    .google-form-container iframe {
-      width: 100%;
-      height: 1186px;
-      border: none;
-    }
-    
-    .form-header {
-      background: linear-gradient(135deg, #0066ff 0%, #00d4aa 100%);
-      color: white;
-      padding: 30px;
-      text-align: center;
-      border-radius: 20px 20px 0 0;
-      margin-bottom: -5px;
-    }
-    
-    .form-header h2 {
-      margin-top: 0;
-    }
-    
+    /* Contact page specific styles */
     .contact-section {
-      padding: 80px 40px;
+      padding: 80px 0;
       background: #f4f4f4;
     }
     
@@ -74,6 +46,7 @@
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.1);
       overflow: hidden;
+      min-height: 600px;
     }
     
     .contact-info {
@@ -121,19 +94,87 @@
       margin-bottom: 5px;
     }
     
-    .contact-form {
+    /* Custom form container */
+    .form-container {
       padding: 50px;
-      background: #f8faff;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
-    .contact-form h2 {
+    .form-container h3 {
       font-size: 2rem;
       margin-bottom: 30px;
+      color: #1a202c;
     }
     
-    .contact-form .btn-primary {
+    /* Embedded form styles */
+    .embedded-form {
+      width: 100% !important;
+      min-height: 600px !important;
+      height: 600px !important;
+      border: none !important;
+      border-radius: 10px !important;
+      background: #f8faff !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Fallback form if iframe fails */
+    .fallback-form {
+      display: none;
+    }
+    
+    .fallback-form.show {
+      display: block;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
       width: 100%;
-      text-align: center;
+      padding: 12px 15px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0066ff;
+      box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+    }
+    
+    .form-submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #0066ff 0%, #00d4aa 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
     }
     
     .benefits-list {
@@ -150,10 +191,11 @@
       color: #333;
     }
     
-    .benefits-list li .check-icon {
+    .check-icon {
       color: #00d4aa;
       font-size: 1.5rem;
       margin-right: 10px;
+      font-weight: bold;
     }
     
     @media (max-width: 992px) {
@@ -169,7 +211,7 @@
         margin: 0 auto;
         display: inline-block;
       }
-      .contact-form {
+      .form-container {
         padding: 40px;
       }
     }
@@ -226,8 +268,71 @@
             </li>
           </ul>
         </div>
-        <div class="google-form-container">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4uMh0fR4yv2R5T_f9Cg-m7A0C3h4z-8z0u0Lz0pD8u0y8w/viewform?usp=sf_link"></iframe>
+        
+        <div class="form-container">
+          <h3>Get Started with ChainSync</h3>
+          
+          <!-- Your actual Google Form -->
+          <iframe 
+            class="embedded-form" 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSd0LLDXX2TwxusFUnefdfFDc65EQlS50OdiXW5a_MBkJ2zI0g/viewform?embedded=true"
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            onload="this.style.display='block'; document.getElementById('fallbackForm').style.display='none';"
+            onerror="showFallbackForm()"
+            style="display: block; border-radius: 10px; background: #f8faff;">
+            Loading form...
+          </iframe>
+          
+          <!-- Fallback form if Google Form fails -->
+          <div class="fallback-form" id="fallbackForm">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input type="text" id="company" name="company" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              
+              <div class="form-group">
+                <label for="industry">Industry *</label>
+                <select id="industry" name="industry" required>
+                  <option value="">Select your industry</option>
+                  <option value="water-utility">Water Utility</option>
+                  <option value="waste-management">Waste Management</option>
+                  <option value="environmental-remediation">Environmental Remediation</option>
+                  <option value="government">Government/Municipal</option>
+                  <option value="consulting">Environmental Consulting</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Tell us about your current challenges *</label>
+                <textarea id="message" name="message" rows="4" placeholder="Describe your current emergency response process, pain points, or specific requirements..." required></textarea>
+              </div>
+              
+              <button type="submit" class="form-submit-btn">
+                Schedule Demo →
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -261,5 +366,34 @@
   </footer>
 
   <script src="assets/js/script.js"></script>
+  <script>
+    // Handle form loading - remove the automatic fallback since we have a working form
+    function showFallbackForm() {
+      document.querySelector('.embedded-form').style.display = 'none';
+      document.getElementById('fallbackForm').classList.add('show');
+    }
+    
+    // Don't automatically show fallback since we have a working Google Form now
+    // setTimeout(showFallbackForm, 2000); // Removed this line
+    
+    // Handle fallback form submission
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('.form-submit-btn');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission (replace with actual form handling)
+      setTimeout(() => {
+        alert('Thank you! We\'ll be in touch within 24 hours.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        this.reset();
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
