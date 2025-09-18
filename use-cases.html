@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Use Cases | ChainSync for Water, Waste & Remediation</title>
   <meta name="description" content="See how ChainSync improves emergency response for water utilities, waste management, and environmental remediation services.">
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#0066ff">
+  
+  <meta property="og:title" content="ChainSync Use Cases | Water, Waste, & Remediation">
+  <meta property="og:description" content="Discover how our intelligent platform is transforming emergency response for critical environmental sectors.">
+  <meta property="og:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-use-cases.png">
+  <meta property="og:url" content="https://chainsync-site-kohl.vercel.app/use-cases.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ChainSync Use Cases">
+  <meta name="twitter:description" content="See how ChainSync helps water utilities and waste management reduce response times by up to 70%.">
+  <meta name="twitter:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-use-cases.png">
+  <link rel="canonical" href="https://chainsync-site-kohl.vercel.app/use-cases.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -140,45 +163,25 @@
     }
     
     @keyframes slideRight {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(10px); }
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(10px);
+      }
     }
     
-    .alert-simulation {
-      background: #fff;
-      border: 2px solid #ff6b6b;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .alert-simulation::before {
-      content: '⚠️ ALERT';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #ff6b6b;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      animation: pulse 2s infinite;
-    }
-    
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .scenario-content {
         grid-template-columns: 1fr;
       }
-      
-      .impact-metrics {
-        grid-template-columns: 1fr;
+      .workflow-visual {
+        flex-direction: column;
+        gap: 20px;
       }
-      
-      .response-comparison {
-        grid-template-columns: 1fr;
+      .workflow-arrow {
+        transform: rotate(90deg);
+        animation: none;
       }
     }
   </style>
@@ -200,331 +203,189 @@
   </nav>
 
   <section class="page-hero">
-    <div class="animated-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-    </div>
     <div class="container">
-      <h1 class="page-title">Real-World Emergency Scenarios</h1>
-      <p class="page-subtitle">See how ChainSync transforms crisis response across environmental services with visual, real-time orchestration.</p>
+      <h1 class="page-title">Real-World Use Cases for a Smarter Response</h1>
+      <p class="page-subtitle">ChainSync is deployed across water, waste, and remediation industries, helping our customers respond faster and smarter to critical events.</p>
     </div>
   </section>
 
-  <section class="industries">
+  <section class="use-cases-section">
     <div class="container">
-      
-      <!-- Scenario 1: Water Contamination -->
       <div class="scenario-card">
         <div class="scenario-header">
           <div class="scenario-icon">💧</div>
-          <h2>Drinking Water Contamination Event</h2>
-          <p>Municipal water system serving 250,000 residents</p>
+          <h2>Water Utilities</h2>
+          <p>Automate response to water quality incidents, infrastructure failures, and regulatory non-compliance.</p>
         </div>
         <div class="scenario-content">
-          <div>
-            <h3>The Crisis</h3>
-            <p>E. coli detected in distribution system during routine testing. Immediate response required to protect public health.</p>
-            
+          <div class="scenario-description">
+            <h3>The Challenge: Slow Public Health Response</h3>
+            <p>A water utility detects a contaminant but is burdened by manual processes. It can take hours to notify teams, report to regulatory bodies like the EPA, and issue public notifications.</p>
+            <h3>The ChainSync Solution</h3>
+            <p>Our platform instantly flags the event, notifies the right personnel, automatically generates and submits compliance reports, and triggers a public notification system.</p>
             <div class="response-comparison">
               <div class="before-box">
-                <strong>❌ Before ChainSync</strong>
-                <div class="time-display">6+ hrs</div>
-                <small>Manual phone trees, paper trails</small>
+                <span>Before ChainSync</span>
+                <span class="time-display">4-6hrs</span>
+                <span>Coordination Time</span>
               </div>
               <div class="after-box">
-                <strong>✅ With ChainSync</strong>
-                <div class="time-display">8 min</div>
-                <small>Automated response orchestration</small>
+                <span>With ChainSync</span>
+                <span class="time-display">70%</span>
+                <span>Reduction</span>
               </div>
             </div>
           </div>
-          
           <div class="scenario-visual">
-            <div class="workflow-visual">
-              <div class="workflow-step">
-                <div class="workflow-icon">🔍</div>
-                <small>Detect</small>
-              </div>
-              <span class="workflow-arrow">→</span>
-              <div class="workflow-step">
-                <div class="workflow-icon">🚨</div>
-                <small>Alert</small>
-              </div>
-              <span class="workflow-arrow">→</span>
-              <div class="workflow-step">
-                <div class="workflow-icon">📢</div>
-                <small>Notify</small>
-              </div>
-              <span class="workflow-arrow">→</span>
-              <div class="workflow-step">
-                <div class="workflow-icon">✅</div>
-                <small>Resolve</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div style="padding: 0 40px 40px;">
-          <div class="impact-metrics">
-            <div class="metric-box">
-              <span class="metric-value">250K</span>
-              <span class="metric-label">People Protected</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">$1.2M</span>
-              <span class="metric-label">Penalties Avoided</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">45x</span>
-              <span class="metric-label">Faster Response</span>
-            </div>
+            <h4 class="text-center">Key Benefits</h4>
+            <ul class="benefits-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Reduce coordination time by 70%</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Avoid an average of $850,000+ in annual penalties</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Protect public health and build community trust</span>
+              </li>
+            </ul>
+            <img src="assets/images/water-utility-dashboard.png" alt="Water Utility Dashboard" class="img-fluid" style="margin-top: 20px;">
           </div>
         </div>
       </div>
 
-      <!-- Scenario 2: Landfill Methane Spike -->
       <div class="scenario-card">
         <div class="scenario-header">
           <div class="scenario-icon">♻️</div>
-          <h2>Landfill Methane Emission Exceedance</h2>
-          <p>Regional waste facility processing 2,000 tons/day</p>
+          <h2>Waste Management</h2>
+          <p>Proactively manage emissions exceedances, equipment failures, and compliance reporting for waste facilities.</p>
         </div>
         <div class="scenario-content">
-          <div>
-            <h3>The Emergency</h3>
-            <p>Methane sensors detect 300% spike above regulatory limits. Risk of explosion and massive EPA fines.</p>
-            
-            <div class="alert-simulation">
-              <strong>🔴 Critical Alert Generated:</strong>
-              <ul style="margin: 10px 0; padding-left: 20px;">
-                <li>Gas collection system failure detected</li>
-                <li>EPA notification auto-triggered</li>
-                <li>Emergency crew dispatched</li>
-                <li>Nearby residents alerted</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="scenario-visual">
-            <h4>Automated Actions Taken:</h4>
-            <div style="display: grid; gap: 10px; margin-top: 15px;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #00d4aa;">✓</span> Flare system activated remotely
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #00d4aa;">✓</span> EPA Form 8900-1 auto-submitted
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #00d4aa;">✓</span> Emergency team GPS routed
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #00d4aa;">✓</span> Community alert system triggered
-              </div>
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="color: #00d4aa;">✓</span> Compliance log generated
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div style="padding: 0 40px 40px;">
-          <div class="impact-metrics">
-            <div class="metric-box">
-              <span class="metric-value">Zero</span>
-              <span class="metric-label">Safety Incidents</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">100%</span>
-              <span class="metric-label">Compliance Maintained</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">12min</span>
-              <span class="metric-label">To Full Response</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scenario 3: Chemical Spill -->
-      <div class="scenario-card">
-        <div class="scenario-header">
-          <div class="scenario-icon">⚠️</div>
-          <h2>Industrial Chemical Spill Response</h2>
-          <p>Hazardous material release near protected wetlands</p>
-        </div>
-        <div class="scenario-content">
-          <div>
-            <h3>The Incident</h3>
-            <p>500 gallons of industrial solvent spilled during transfer operation. Immediate containment critical to prevent groundwater contamination.</p>
-            
-            <div class="workflow-visual">
-              <div class="workflow-step">
-                <div class="workflow-icon">📡</div>
-                <small>IoT Detection</small>
-                <strong>0:30 sec</strong>
-              </div>
-              <span class="workflow-arrow">→</span>
-              <div class="workflow-step">
-                <div class="workflow-icon">🤖</div>
-                <small>AI Analysis</small>
-                <strong>0:45 sec</strong>
-              </div>
-              <span class="workflow-arrow">→</span>
-              <div class="workflow-step">
-                <div class="workflow-icon">🚁</div>
-                <small>Deploy Team</small>
-                <strong>2:00 min</strong>
-              </div>
-            </div>
-          </div>
-          
-          <div class="scenario-visual">
-            <h4>Response Coordination:</h4>
-            <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 15px;">
-              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                <span>📱 EPA Notified</span>
-                <strong style="color: #00d4aa;">✓ 0:45</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                <span>🚒 HAZMAT Deployed</span>
-                <strong style="color: #00d4aa;">✓ 2:00</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                <span>🏗️ Containment Started</span>
-                <strong style="color: #00d4aa;">✓ 8:00</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between;">
-                <span>📋 Report Filed</span>
-                <strong style="color: #00d4aa;">✓ 10:00</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div style="padding: 0 40px 40px;">
-          <div class="impact-metrics">
-            <div class="metric-box">
-              <span class="metric-value">Zero</span>
-              <span class="metric-label">Wetland Impact</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">$500K</span>
-              <span class="metric-label">Cleanup Saved</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">85%</span>
-              <span class="metric-label">Faster Containment</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scenario 4: Wastewater Overflow -->
-      <div class="scenario-card">
-        <div class="scenario-header">
-          <div class="scenario-icon">🌊</div>
-          <h2>Wastewater Treatment Plant Overflow</h2>
-          <p>Storm surge threatens untreated discharge</p>
-        </div>
-        <div class="scenario-content">
-          <div>
-            <h3>The Challenge</h3>
-            <p>Heavy rainfall causing treatment plant capacity exceedance. Risk of untreated wastewater discharge into river system.</p>
-            
+          <div class="scenario-description">
+            <h3>The Challenge: Compliance Violations</h3>
+            <p>A gas monitoring system at a waste facility detects an emission spike. A delay in response can lead to a costly violation, fines, and reputational damage. Manual reporting is slow and error-prone.</p>
+            <h3>The ChainSync Solution</h3>
+            <p>The system instantly detects the spike and triggers an automated workflow. It notifies the operations manager, sends an initial report to the state environmental agency, and logs the event for a permanent, auditable record.</p>
             <div class="response-comparison">
               <div class="before-box">
-                <strong>Manual Response</strong>
-                <ul style="text-align: left; padding-left: 20px; margin-top: 10px;">
-                  <li>Call operators: 45 min</li>
-                  <li>Check systems: 60 min</li>
-                  <li>File reports: 180 min</li>
-                </ul>
+                <span>Before ChainSync</span>
+                <span class="time-display">Hours</span>
+                <span>Response Time</span>
               </div>
               <div class="after-box">
-                <strong>ChainSync Response</strong>
-                <ul style="text-align: left; padding-left: 20px; margin-top: 10px;">
-                  <li>Auto-divert flow: 2 min</li>
-                  <li>Activate backup: 3 min</li>
-                  <li>Complete docs: 5 min</li>
-                </ul>
+                <span>With ChainSync</span>
+                <span class="time-display">75%</span>
+                <span>Faster Response</span>
               </div>
             </div>
           </div>
-          
           <div class="scenario-visual">
-            <h4>Predictive AI in Action:</h4>
-            <div style="background: linear-gradient(135deg, #e6f9f5 0%, #f8faff 100%); padding: 20px; border-radius: 10px; margin-top: 15px;">
-              <div style="text-align: center; margin-bottom: 15px;">
-                <strong style="font-size: 2rem; color: #0066ff;">3 hrs</strong>
-                <div style="color: #6b7280;">Advance Warning</div>
-              </div>
-              <p style="font-size: 0.9rem; color: #4b5563;">
-                AI predicted overflow risk based on weather data, allowing preemptive measures before crisis point.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="padding: 0 40px 40px;">
-          <div class="impact-metrics">
-            <div class="metric-box">
-              <span class="metric-value">Zero</span>
-              <span class="metric-label">Discharge Events</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">100%</span>
-              <span class="metric-label">Compliance</span>
-            </div>
-            <div class="metric-box">
-              <span class="metric-value">$2.5M</span>
-              <span class="metric-label">Fines Avoided</span>
-            </div>
+            <h4 class="text-center">Key Benefits</h4>
+            <ul class="benefits-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>75% faster response time</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>95% reduction in compliance violations</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Streamlined reporting and audit trail</span>
+              </li>
+            </ul>
+            <img src="assets/images/waste-management-dashboard.png" alt="Waste Management Dashboard" class="img-fluid" style="margin-top: 20px;">
           </div>
         </div>
       </div>
 
-      <!-- Original Industries Section with Enhanced Visuals -->
-      <div class="container" style="margin-top: 80px;">
-        <h2 class="section-title">Industry-Wide Applications</h2>
-        
-        <div class="industry-showcase">
-          <div class="industry-content">
-            <div class="industry-icon">💧</div>
-            <h2>Water Utilities</h2>
-            <p class="industry-description">Real-time monitoring and response for 15+ critical scenarios including contamination, main breaks, and quality deviations.</p>
-            
-            <div class="benefits-list">
-              <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>SCADA integration with 1,000+ sensor types</span>
+      <div class="scenario-card">
+        <div class="scenario-header">
+          <div class="scenario-icon">🌱</div>
+          <h2>Environmental Remediation</h2>
+          <p>Automate emergency response and stakeholder communication during contamination events.</p>
+        </div>
+        <div class="scenario-content">
+          <div class="scenario-description">
+            <h3>The Challenge: Disconnected Stakeholders</h3>
+            <p>A contamination event requires immediate action. A manual, disconnected response means delays in notifying regulators, mobilizing teams, and informing affected communities. This can prolong the cleanup and increase costs.</p>
+            <h3>The ChainSync Solution</h3>
+            <p>The platform detects the event and immediately mobilizes response protocols, coordinating with regulators and notifying affected communities automatically. This improves coordination by 80% and reduces regulatory investigation time by 60%.</p>
+            <div class="response-comparison">
+              <div class="before-box">
+                <span>Before ChainSync</span>
+                <span class="time-display">Complex</span>
+                <span>Coordination</span>
               </div>
-              <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Automated EPA and state compliance reporting</span>
-              </div>
-              <div class="benefit-item">
-                <span class="check-icon">✓</span>
-                <span>Public notification in under 10 minutes</span>
+              <div class="after-box">
+                <span>With ChainSync</span>
+                <span class="time-display">80%</span>
+                <span>Improved</span>
               </div>
             </div>
           </div>
-          <div class="industry-visual">
-            <div class="live-demo-card">
-              <div class="demo-header">
-                <span class="live-dot"></span>
-                <span>Live System Status</span>
-              </div>
-              <div class="demo-metrics">
-                <div class="metric">
-                  <span class="metric-value">15K</span>
-                  <span class="metric-label">Sensors Connected</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">24/7</span>
-                  <span class="metric-label">AI Monitoring</span>
-                </div>
-                <div class="metric">
-                  <span class="metric-value">0.1s</span>
-                  <span class="metric-label">Detection Time</span>
-                </div>
-              </div>
+          <div class="scenario-visual">
+            <h4 class="text-center">Key Benefits</h4>
+            <ul class="benefits-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Improve coordination by 80%</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Reduce regulatory investigation time by 60%</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Ensure transparent and timely communication</span>
+              </li>
+            </ul>
+            <img src="assets/images/remediation-dashboard.png" alt="Remediation Dashboard" class="img-fluid" style="margin-top: 20px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-cta">
+    <div class="container">
+      <h2>See ChainSync in Action</h2>
+      <p>Ready to see how ChainSync can transform your operations? Schedule a live demo today.</p>
+      <a href="contact.html" class="btn-primary">Schedule Demo →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ChainSync</h3>
+        <p>Turning Crisis Into Coordination.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ChainSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
