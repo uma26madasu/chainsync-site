@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How It Works | ChainSync Platform</title>
   <meta name="description" content="Learn how ChainSync uses real-time data fusion and AI to automate emergency response for environmental services.">
+  
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#0066ff">
+
+  <meta property="og:title" content="How It Works | ChainSync">
+  <meta property="og:description" content="A step-by-step guide to how our intelligent platform replaces manual processes with automation.">
+  <meta property="og:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-how-it-works.png">
+  <meta property="og:url" content="https://chainsync-site-kohl.vercel.app/how-it-works.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How It Works | ChainSync">
+  <meta name="twitter:description" content="Learn the core loop of ChainSync's intelligent emergency response platform.">
+  <link rel="canonical" href="https://chainsync-site-kohl.vercel.app/how-it-works.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -39,166 +61,66 @@
     <div class="container">
       <div class="process-visual-main">
         <div class="process-flow">
-          <div class="process-node active">
+          <div class="process-node active" data-aos="fade-up">
             <div class="node-icon">📡</div>
             <span>Detect</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node">
+          <div class="process-node" data-aos="fade-up" data-aos-delay="200">
             <div class="node-icon">🧠</div>
             <span>Analyze</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node">
-            <div class="node-icon">⚙️</div>
+          <div class="process-node" data-aos="fade-up" data-aos-delay="400">
+            <div class="node-icon">🚀</div>
             <span>Orchestrate</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node">
-            <div class="node-icon">📢</div>
-            <span>Notify</span>
+          <div class="process-node" data-aos="fade-up" data-aos-delay="600">
+            <div class="node-icon">✅</div>
+            <span>Resolve</span>
           </div>
         </div>
       </div>
 
-      <div class="process-details">
-        <div class="process-step" data-step="1">
-          <div class="step-header">
-            <div class="step-number">01</div>
-            <h3>Data Fusion Engine</h3>
-          </div>
-          <p>ChainSync connects all your systems — sensors, SCADA, CMMS, ERP, and regulatory portals — into a single real-time data layer.</p>
-          <div class="step-features">
-            <div class="feature-tag">Real-time Integration</div>
-            <div class="feature-tag">Multi-source Fusion</div>
-            <div class="feature-tag">API Connectivity</div>
-          </div>
+      <div class="how-it-works-content">
+        <div class="content-left">
+          <h2 class="section-title">The Four-Step Automated Loop</h2>
+          <p class="section-text">The ChainSync platform operates on a continuous, intelligent loop, ensuring every incident is handled with speed, precision, and efficiency.</p>
         </div>
-
-        <div class="process-step" data-step="2">
-          <div class="step-header">
-            <div class="step-number">02</div>
-            <h3>Threat Detection & Prediction</h3>
+        <div class="content-right">
+          <div class="step-card" data-aos="fade-left">
+            <h3>1. Detect: Real-Time Monitoring</h3>
+            <p>Our platform continuously monitors your systems, from SCADA sensors and IoT devices to public data feeds like weather and social media. The moment an anomaly is detected, the loop begins.</p>
           </div>
-          <p>Using machine learning, ChainSync analyzes patterns to detect anomalies and predict potential failures before they occur.</p>
-          <div class="step-features">
-            <div class="feature-tag">AI Pattern Recognition</div>
-            <div class="feature-tag">Predictive Analytics</div>
-            <div class="feature-tag">Risk Scoring</div>
+          <div class="step-card" data-aos="fade-left" data-aos-delay="100">
+            <h3>2. Analyze: Intelligent Assessment</h3>
+            <p>AI agents instantly analyze the incident, cross-referencing data points to determine its severity and potential impact. The platform identifies the type of emergency and the necessary response protocol.</p>
           </div>
-        </div>
-
-        <div class="process-step" data-step="3">
-          <div class="step-header">
-            <div class="step-number">03</div>
-            <h3>Automated Orchestration</h3>
+          <div class="step-card" data-aos="fade-left" data-aos-delay="200">
+            <h3>3. Orchestrate: Automated Action</h3>
+            <p>The system automatically deploys the correct pre-built workflow. This includes notifying the right personnel, generating regulatory reports, and sending public alerts—all within seconds.</p>
           </div>
-          <p>When a threat is detected, ChainSync instantly triggers response protocols and coordinates all necessary actions automatically.</p>
-          <div class="step-features">
-            <div class="feature-tag">Workflow Automation</div>
-            <div class="feature-tag">Protocol Activation</div>
-            <div class="feature-tag">Resource Deployment</div>
-          </div>
-        </div>
-
-        <div class="process-step" data-step="4">
-          <div class="step-header">
-            <div class="step-number">04</div>
-            <h3>Stakeholder Coordination</h3>
-          </div>
-          <p>The platform unifies communication between teams, agencies, and communities — ensuring transparency and rapid resolution.</p>
-          <div class="step-features">
-            <div class="feature-tag">Multi-channel Alerts</div>
-            <div class="feature-tag">Compliance Logging</div>
-            <div class="feature-tag">Status Updates</div>
+          <div class="step-card" data-aos="fade-left" data-aos-delay="300">
+            <h3>4. Resolve: Track & Report</h3>
+            <p>As the incident is resolved, the platform documents every action taken, creating a comprehensive, auditable report. This eliminates manual paperwork and provides a clear record for compliance.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="comparison-section">
+  <section class="core-tech-section">
     <div class="container">
-      <h2 class="section-title">The ChainSync Advantage</h2>
-      <p class="section-description" style="max-width: 800px; margin: 0 auto 40px; text-align: center;">
-        Based on industry benchmarks and early pilot implementations, here's how ChainSync transforms emergency response:
-      </p>
-      
-      <div class="comparison-grid">
-        <div class="comparison-card old-way">
-          <h3>❌ Traditional Manual Process</h3>
-          <div class="timeline-item">
-            <span class="activity">Detection via routine checks</span>
-            <span class="impact">Often delayed</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">Phone tree activation</span>
-            <span class="impact">Multiple calls needed</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">Manual data gathering</span>
-            <span class="impact">Spreadsheets & emails</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">Regulatory paperwork</span>
-            <span class="impact">Manual form filing</span>
-          </div>
-          <div class="total-time">
-            <strong>Typical Industry Response:</strong>
-            <div style="font-size: 2rem; margin-top: 10px;">Several Hours</div>
-            <small style="color: #666;">*Based on EPA incident reports</small>
-          </div>
-        </div>
-
-        <div class="comparison-card new-way">
-          <h3>✅ ChainSync Automated Response</h3>
-          <div class="timeline-item">
-            <span class="activity">Real-time sensor detection</span>
-            <span class="impact">Instant alerts</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">Automated data aggregation</span>
-            <span class="impact">All systems connected</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">AI-driven orchestration</span>
-            <span class="impact">Parallel processing</span>
-          </div>
-          <div class="timeline-item">
-            <span class="activity">Auto-generated compliance</span>
-            <span class="impact">Pre-filled forms</span>
-          </div>
-          <div class="total-time">
-            <strong>Target Response Time:</strong>
-            <div style="font-size: 2rem; margin-top: 10px;">Minutes</div>
-            <small style="color: #666;">*Goal based on pilot programs</small>
-          </div>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8faff; border-radius: 15px;">
-        <h4 style="color: #0066ff; margin-bottom: 15px;">Why Every Second Matters</h4>
-        <p style="color: #6b7280; max-width: 700px; margin: 0 auto;">
-          According to EPA data, the average environmental incident takes 4-6 hours to fully coordinate response. 
-          Our goal is to reduce this by up to 70% through intelligent automation and real-time orchestration.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="tech-foundation">
-    <div class="container">
-      <h2 class="section-title">How We Achieve This Speed</h2>
-      <p class="section-description">ChainSync leverages enterprise-grade technology to deliver rapid, reliable response.</p>
-      
-      <div class="tech-features">
+      <h2 class="section-title text-center">Built on a Foundation of Speed and Intelligence</h2>
+      <div class="tech-grid grid-3">
         <div class="tech-card">
-          <div class="tech-icon">🔒</div>
-          <h4>Always-On Monitoring</h4>
-          <p>24/7 automated surveillance means no human delays in detection</p>
+          <div class="tech-icon">⚡</div>
+          <h4>Real-Time Sync</h4>
+          <p>Every data point is processed instantly, ensuring zero lag between detection and action.</p>
         </div>
         <div class="tech-card">
-          <div class="tech-icon">📈</div>
+          <div class="tech-icon">⚙️</div>
           <h4>Parallel Processing</h4>
           <p>Multiple actions triggered simultaneously, not sequentially</p>
         </div>
