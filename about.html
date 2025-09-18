@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About ChainSync | Our Mission & Values</title>
   <meta name="description" content="Learn about ChainSync's mission to transform emergency response for environmental services with intelligent orchestration.">
+  
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#0066ff">
+
+  <meta property="og:title" content="About ChainSync | Our Mission">
+  <meta property="og:description" content="We are building the next generation of intelligent emergency response systems.">
+  <meta property="og:image" content="https://chainsync-site-kohl.vercel.app/assets/images/og-about.png">
+  <meta property="og:url" content="https://chainsync-site-kohl.vercel.app/about.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About ChainSync">
+  <meta name="twitter:description" content="Our mission is to transform emergency response with intelligent orchestration.">
+  <link rel="canonical" href="https://chainsync-site-kohl.vercel.app/about.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -45,51 +67,122 @@
     .timeline-item:nth-child(2) { animation-delay: 0.4s; }
     .timeline-item:nth-child(3) { animation-delay: 0.6s; }
     .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+    .timeline-item:nth-child(5) { animation-delay: 1.0s; }
     
-    .timeline-item::after {
-      content: '';
+    .timeline-content {
+      padding: 20px 30px;
+      background: #f8faff;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+    
+    .timeline-item.right {
+      left: 50%;
+    }
+    
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+      content: ' ';
       position: absolute;
-      width: 20px;
-      height: 20px;
-      right: -10px;
-      background: white;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
       border: 4px solid #00d4aa;
-      top: 30px;
+      top: 15px;
       border-radius: 50%;
       z-index: 1;
     }
     
-    .left {
-      left: 0;
+    .timeline-item.right::after {
+      left: -16px;
     }
     
-    .right {
-      left: 50%;
+    .timeline-item.right .timeline-content::before {
+      content: " ";
+      position: absolute;
+      top: 22px;
+      z-index: 1;
+      left: -12px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
     }
     
-    .right::after {
-      left: -10px;
+    .timeline-item.left .timeline-content::before {
+      content: " ";
+      position: absolute;
+      top: 22px;
+      z-index: 1;
+      right: -12px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
     }
     
-    .timeline-content {
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .values-section {
+      background: #f4f4f4;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 40px auto 0;
+    }
+    
+    .value-card {
+      background: white;
       padding: 30px;
-      background: linear-gradient(135deg, #f8faff 0%, white 100%);
-      position: relative;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease-out;
     }
     
-    .timeline-content:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    .animate-on-scroll.visible {
+      transform: translateY(0);
+      opacity: 1;
     }
     
-    .timeline-year {
-      font-size: 1.5rem;
-      font-weight: 800;
+    .value-card:nth-child(1).visible { transition-delay: 0.1s; }
+    .value-card:nth-child(2).visible { transition-delay: 0.2s; }
+    .value-card:nth-child(3).visible { transition-delay: 0.3s; }
+    
+    .value-icon {
+      font-size: 3rem;
       color: #0066ff;
+      margin-bottom: 15px;
+    }
+    
+    .value-card h3 {
+      font-size: 1.5rem;
       margin-bottom: 10px;
+    }
+    
+    .value-card p {
+      color: #666;
     }
     
     @media (max-width: 768px) {
@@ -103,12 +196,19 @@
         padding-right: 25px;
       }
       
-      .timeline-item::after {
-        left: 21px;
+      .timeline-item.right {
+        left: 0%;
       }
       
-      .right {
-        left: 0%;
+      .timeline-item.left::after,
+      .timeline-item.right::after {
+        left: 15px;
+      }
+      
+      .timeline-item.left .timeline-content::before {
+        right: auto;
+        left: 45px;
+        border-color: transparent white transparent transparent;
       }
     }
   </style>
@@ -130,22 +230,40 @@
   </nav>
 
   <section class="page-hero">
-    <div class="animated-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-    </div>
     <div class="container">
-      <h1 class="page-title">About ChainSync</h1>
-      <p class="page-subtitle">We believe the future of environmental services isn't just about connecting systems — it's about creating intelligent platforms that act when it matters most.</p>
+      <h1 class="page-title">We're on a Mission</h1>
+      <p class="page-subtitle">To transform emergency response from a reactive, manual process into a proactive, intelligent system.</p>
     </div>
   </section>
 
-  <section class="mission-section">
+  <section class="timeline-section">
     <div class="container">
-      <div class="mission-card">
-        <div class="mission-icon">🎯</div>
-        <h2>Our Mission</h2>
-        <p>To transform emergency response in environmental services by replacing reactive, manual processes with intelligent orchestration — protecting public health, compliance, and operational resilience.</p>
+      <h2 class="section-title text-center">Our Journey So Far</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2022: The Idea</h3>
+            <p>Our co-founders, former environmental regulators and software engineers, conceived of a platform that could automate response to environmental emergencies.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2023: MVP & Pilot Program</h3>
+            <p>We built the first version of the ChainSync platform and partnered with a major metropolitan water utility for our first pilot program.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2024: Public Launch</h3>
+            <p>After a successful pilot, we launched ChainSync to the public, focusing on water, waste, and remediation services.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2025: Expanding the Platform</h3>
+            <p>We're adding new modules for supply chain logistics and energy, bringing intelligent orchestration to more critical sectors.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,11 +272,6 @@
     <div class="container">
       <h2 class="section-title">Our Core Values</h2>
       <div class="values-grid">
-        <div class="value-card animate-on-scroll">
-          <div class="value-icon">⚡</div>
-          <h3>Urgency</h3>
-          <p>We build for the moments that can't wait. Every second saved is a life, fine, or ecosystem protected.</p>
-        </div>
         <div class="value-card animate-on-scroll">
           <div class="value-icon">🧠</div>
           <h3>Intelligence</h3>
