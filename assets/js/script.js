@@ -11,10 +11,12 @@
   const config = {
     scrollThreshold: 50,
     navHideThreshold: 200,
-    revealThreshold: 0.15,
-    parallaxSpeed: 0.4,
-    counterDuration: 2000,
-    loaderMinDuration: 500
+    revealThreshold: 0.1,
+    parallaxSpeed: 0.35,
+    counterDuration: 2500,
+    loaderMinDuration: 600,
+    smoothScrollDuration: 1000,
+    debounceDelay: 16 // ~60fps
   };
 
   // Initialize when DOM is ready
@@ -57,7 +59,10 @@
 
     const loader = document.createElement('div');
     loader.className = 'page-loader';
-    loader.innerHTML = '<div class="loader-spinner"></div>';
+    loader.innerHTML = `
+      <div class="loader-spinner"></div>
+      <div class="loader-text">Loading</div>
+    `;
     document.body.appendChild(loader);
     document.body.classList.add('loading');
   }
@@ -68,16 +73,22 @@
 
     // Ensure minimum display time for smooth UX
     setTimeout(() => {
-      loader.classList.add('hidden');
+      // Add a smooth fade out effect
+      loader.style.opacity = '0';
+      loader.style.transform = 'scale(0.98)';
+
       document.body.classList.remove('loading');
       document.body.classList.add('loaded');
 
-      // Remove loader from DOM after transition
+      // Wait for CSS transition before removing from DOM
       setTimeout(() => {
-        if (loader.parentNode) {
-          loader.parentNode.removeChild(loader);
-        }
-      }, 500);
+        loader.classList.add('hidden');
+        setTimeout(() => {
+          if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+        }, 700);
+      }, 100);
     }, config.loaderMinDuration);
   }
 
@@ -266,7 +277,7 @@
   }
 
   /* ==========================================
-     Button Effects (Ripple & Magnetic)
+     Button Effects (Ripple & Magnetic) - Enterprise Grade
      ========================================== */
   function initButtonEffects() {
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta');
@@ -276,11 +287,11 @@
         btn.style.position = 'relative';
       }
 
-      // Ripple effect on click
+      // Enhanced ripple effect with better performance
       btn.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
+        const size = Math.max(rect.width, rect.height) * 2;
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
 
@@ -290,11 +301,11 @@
           height: ${size}px;
           left: ${x}px;
           top: ${y}px;
-          background: rgba(255, 255, 255, 0.4);
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
           border-radius: 50%;
           pointer-events: none;
           transform: scale(0);
-          animation: ripple 0.6s ease-out forwards;
+          animation: rippleExpand 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
           z-index: 1;
         `;
 
@@ -305,20 +316,38 @@
           if (ripple.parentNode) {
             ripple.parentNode.removeChild(ripple);
           }
-        }, 600);
+        }, 700);
       });
 
-      // Subtle magnetic effect on hover
+      // Smoother magnetic effect with throttling
+      let magneticRAF = null;
       btn.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
+        if (magneticRAF) return;
 
-        this.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        magneticRAF = requestAnimationFrame(() => {
+          const rect = this.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+          const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+
+          // Subtle movement for professional feel
+          const moveX = x * 6;
+          const moveY = y * 6;
+
+          this.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-3px)`;
+          magneticRAF = null;
+        });
       });
 
       btn.addEventListener('mouseleave', function() {
+        if (magneticRAF) {
+          cancelAnimationFrame(magneticRAF);
+          magneticRAF = null;
+        }
         this.style.transform = '';
+        this.style.transition = 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
+        setTimeout(() => {
+          this.style.transition = '';
+        }, 400);
       });
 
       // Keyboard accessibility
@@ -330,14 +359,20 @@
       });
     });
 
-    // Add ripple animation to stylesheet if not present
+    // Add enhanced ripple animation
     if (!document.querySelector('#ripple-animation')) {
       const style = document.createElement('style');
       style.id = 'ripple-animation';
       style.textContent = `
-        @keyframes ripple {
-          0% { transform: scale(0); opacity: 1; }
-          100% { transform: scale(2.5); opacity: 0; }
+        @keyframes rippleExpand {
+          0% {
+            transform: scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 0;
+          }
         }
       `;
       document.head.appendChild(style);
@@ -426,25 +461,39 @@
     });
   }
 
-  // Custom smooth scroll with easing
-  function smoothScrollTo(targetPosition, duration) {
+  // Custom smooth scroll with easing - Enterprise grade
+  function smoothScrollTo(targetPosition, duration = config.smoothScrollDuration) {
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     let startTime = null;
 
+    // Handle edge cases
+    if (Math.abs(distance) < 1) return;
+
     function animation(currentTime) {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
-      const run = easeOutCubic(timeElapsed, startPosition, distance, duration);
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      // Use a more sophisticated easing function
+      const easeProgress = easeInOutQuart(progress);
+      const run = startPosition + (distance * easeProgress);
+
       window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      } else {
+        // Ensure we end exactly at target
+        window.scrollTo(0, targetPosition);
+      }
     }
 
-    // Easing function
-    function easeOutCubic(t, b, c, d) {
-      t /= d;
-      t--;
-      return c * (t * t * t + 1) + b;
+    // Smooth easing function for professional feel
+    function easeInOutQuart(t) {
+      return t < 0.5
+        ? 8 * t * t * t * t
+        : 1 - 8 * (--t) * t * t * t;
     }
 
     requestAnimationFrame(animation);
