@@ -241,6 +241,85 @@ section:nth-of-type(even) {
 }
 
 /* ================================================
+   Testing Phase Banner
+   ================================================ */
+.testing-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+.testing-banner strong {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.testing-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.testing-banner a:hover {
+  opacity: 0.9;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Adjust navbar position when banner is present */
+body.has-testing-banner #navbar {
+  top: 44px;
+}
+
+body.has-testing-banner .hero {
+  padding-top: 224px;
+}
+
+body.has-testing-banner .page-hero {
+  padding-top: 184px;
+}
+
+@media (max-width: 768px) {
+  .testing-banner {
+    font-size: 0.8125rem;
+    padding: 10px 16px;
+  }
+
+  body.has-testing-banner #navbar {
+    top: 40px;
+  }
+
+  body.has-testing-banner .hero {
+    padding-top: 200px;
+  }
+
+  body.has-testing-banner .page-hero {
+    padding-top: 160px;
+  }
+}
+
+/* ================================================
    Navigation
    ================================================ */
 #navbar {
