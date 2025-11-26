@@ -110,6 +110,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: 'kern' 1;
+  max-width: 100vw;
 }
 
 /* Page load animation */
@@ -213,6 +214,7 @@ img {
 section {
   padding: 120px 0;
   position: relative;
+  overflow-x: hidden;
 }
 
 section + section {
@@ -777,6 +779,7 @@ section:nth-of-type(even) {
   color: var(--dark-text);
   transition: all var(--transition-base);
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .feature-card:hover h3,
@@ -792,12 +795,14 @@ section:nth-of-type(even) {
   color: var(--medium-text);
   line-height: 1.7;
   font-size: 0.9375rem;
+  text-align: center;
 }
 
 .feature-icon {
   width: 64px;
   height: 64px;
-  margin-bottom: var(--spacing-md);
+  margin: 0 auto var(--spacing-md);
+  display: block;
   transition: all var(--transition-elastic);
   filter: drop-shadow(var(--shadow-xs));
 }
@@ -1387,6 +1392,25 @@ footer {
   .problem-stats,
   .solution-stats {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-item {
+    padding: var(--spacing-xl);
+    min-height: auto;
+  }
+
+  .problem-content,
+  .solution-content {
+    padding: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .section-text {
+    font-size: 1rem;
   }
 }
 
@@ -1403,6 +1427,7 @@ footer {
     padding: 24px;
     box-shadow: var(--shadow-md);
     gap: 16px;
+    z-index: 999;
   }
 
   .nav-links.mobile-open {
@@ -1421,12 +1446,14 @@ footer {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   section {
@@ -1439,6 +1466,40 @@ footer {
     padding: 32px 24px;
   }
 
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .feature-grid {
+    margin-top: 40px;
+    gap: 24px;
+  }
+
+  .stat-item {
+    padding: var(--spacing-lg);
+  }
+
+  .stat-number {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+
+  .problem-solution {
+    padding: 60px 0;
+  }
+
+  .problem-stats,
+  .solution-stats {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
   .cta-section,
   .demo-cta {
     padding: 60px 24px;
@@ -1446,11 +1507,49 @@ footer {
 
   .cta-buttons {
     flex-direction: column;
+    gap: 16px;
   }
 
   .cta-buttons .btn-primary,
   .cta-buttons .btn-secondary {
     width: 100%;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.25rem);
+    margin-bottom: 16px;
+  }
+
+  .section-text {
+    font-size: 0.9375rem;
+  }
+
+  .page-hero {
+    padding: 120px 24px 60px;
+  }
+
+  footer {
+    padding: 48px 0 20px;
+  }
+
+  .footer-content {
+    padding: 0 24px 32px;
+    gap: 32px;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-links h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding: 0 24px;
   }
 }
 
@@ -1466,6 +1565,102 @@ footer {
 
   .nav-container {
     padding: 16px;
+  }
+
+  .hero {
+    padding: 120px 16px 60px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
+
+  .feature-card,
+  .tech-card,
+  .step-card {
+    padding: 24px 16px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .stat-item {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .stat-number {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    padding: 4px 0;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.35rem, 7vw, 1.85rem);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 28px;
+    font-size: 0.875rem;
+  }
+
+  .cta-section,
+  .demo-cta {
+    padding: 48px 16px;
+  }
+
+  .problem-solution {
+    padding: 48px 0;
+  }
+
+  .features-section,
+  .how-it-works-section {
+    padding: 48px 0;
+  }
+
+  .process-step {
+    padding: 0 16px;
+  }
+
+  .step-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.5rem;
+  }
+
+  footer {
+    padding: 40px 0 16px;
+  }
+
+  .footer-content {
+    padding: 0 16px 24px;
+    gap: 24px;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.35rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding: 0 16px;
   }
 }
 
