@@ -30,7 +30,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="has-testing-banner">
+  <div class="testing-banner">
+    <strong>🚧 Development Phase:</strong> ChainSync is currently in development. Testing will begin soon. All metrics shown are projected estimates based on industry research.
+  </div>
+
   <nav id="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">ChainSync</a>
@@ -45,10 +49,12 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <section class="page-hero">
-    <div class="animated-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
+    <div class="hero-bg">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
     </div>
     <div class="container">
       <h1 class="page-title">From Detection to Resolution in Minutes</h1>
@@ -60,22 +66,22 @@
     <div class="container">
       <div class="process-visual-main">
         <div class="process-flow">
-          <div class="process-node active" data-aos="fade-up">
+          <div class="process-node active">
             <div class="node-icon">📡</div>
             <span>Detect</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-node">
             <div class="node-icon">🧠</div>
             <span>Analyze</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node" data-aos="fade-up" data-aos-delay="400">
+          <div class="process-node">
             <div class="node-icon">🚀</div>
             <span>Orchestrate</span>
           </div>
           <div class="flow-arrow">→</div>
-          <div class="process-node" data-aos="fade-up" data-aos-delay="600">
+          <div class="process-node">
             <div class="node-icon">✅</div>
             <span>Resolve</span>
           </div>
@@ -88,19 +94,19 @@
           <p class="section-text">The ChainSync platform operates on a continuous, intelligent loop, ensuring every incident is handled with speed, precision, and efficiency.</p>
         </div>
         <div class="content-right">
-          <div class="step-card" data-aos="fade-left">
+          <div class="step-card">
             <h3>1. Detect: Real-Time Monitoring</h3>
             <p>Our platform continuously monitors your systems, from SCADA sensors and IoT devices to public data feeds like weather and social media. The moment an anomaly is detected, the loop begins.</p>
           </div>
-          <div class="step-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="step-card">
             <h3>2. Analyze: Intelligent Assessment</h3>
             <p>AI agents instantly analyze the incident, cross-referencing data points to determine its severity and potential impact. The platform identifies the type of emergency and the necessary response protocol.</p>
           </div>
-          <div class="step-card" data-aos="fade-left" data-aos-delay="200">
+          <div class="step-card">
             <h3>3. Orchestrate: Automated Action</h3>
             <p>The system automatically deploys the correct pre-built workflow. This includes notifying the right personnel, generating regulatory reports, and sending public alerts—all within seconds.</p>
           </div>
-          <div class="step-card" data-aos="fade-left" data-aos-delay="300">
+          <div class="step-card">
             <h3>4. Resolve: Track & Report</h3>
             <p>As the incident is resolved, the platform documents every action taken, creating a comprehensive, auditable report. This eliminates manual paperwork and provides a clear record for compliance.</p>
           </div>
@@ -139,6 +145,7 @@
       <a href="contact.html" class="btn-primary">Schedule Live Demo →</a>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="footer-content">

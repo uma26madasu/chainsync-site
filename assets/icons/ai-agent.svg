@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect x="16" y="20" width="32" height="28" rx="4" fill="#e6f3ff" stroke="#0066ff" stroke-width="2"/>
+  <circle cx="26" cy="32" r="3" fill="#0066ff"/>
+  <circle cx="38" cy="32" r="3" fill="#00d4aa"/>
+  <path d="M24 40 Q32 44 40 40" stroke="#0066ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <rect x="28" y="10" width="8" height="10" rx="2" fill="#8b5cf6"/>
+  <path d="M30 10 L32 6 L34 10" fill="#8b5cf6"/>
+  <rect x="10" y="26" width="6" height="12" rx="2" fill="#00d4aa"/>
+  <rect x="48" y="26" width="6" height="12" rx="2" fill="#00d4aa"/>
+  <rect x="24" y="48" width="6" height="8" rx="2" fill="#0066ff"/>
+  <rect x="34" y="48" width="6" height="8" rx="2" fill="#0066ff"/>
+  <circle cx="20" cy="14" r="2" fill="#00d4aa" opacity="0.5"/>
+  <circle cx="44" cy="14" r="2" fill="#00d4aa" opacity="0.5"/>
+  <circle cx="12" cy="52" r="2" fill="#8b5cf6" opacity="0.5"/>
+  <circle cx="52" cy="52" r="2" fill="#8b5cf6" opacity="0.5"/>
+</svg>
