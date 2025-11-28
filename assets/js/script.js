@@ -362,12 +362,36 @@
   }
 
   /* ==========================================
-     Card Hover 3D Effect
+     Card Hover 3D Effect - Ultra Smooth
      ========================================== */
   function initCardAnimations() {
     const cards = document.querySelectorAll('.feature-card, .tech-card, .scenario-card');
 
     cards.forEach(card => {
+      let cardX = 0, cardY = 0;
+      let currentX = 0, currentY = 0;
+      let rafId = null;
+
+      // Smooth interpolation
+      function lerp(start, end, factor) {
+        return start + (end - start) * factor;
+      }
+
+      function updateCardTransform() {
+        currentX = lerp(currentX, cardX, 0.1);
+        currentY = lerp(currentY, cardY, 0.1);
+
+        const rotateX = currentY * -8;
+        const rotateY = currentX * 8;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) translateZ(0)`;
+
+        // Continue animation if there's still movement
+        if (Math.abs(currentX - cardX) > 0.01 || Math.abs(currentY - cardY) > 0.01) {
+          rafId = requestAnimationFrame(updateCardTransform);
+        }
+      }
+
       card.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -376,15 +400,46 @@
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
+        cardX = (x - centerX) / centerX;
+        cardY = (y - centerY) / centerY;
 
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+        if (!rafId) {
+          rafId = requestAnimationFrame(updateCardTransform);
+        }
       });
 
       card.addEventListener('mouseleave', function() {
-        this.style.transform = '';
+        cardX = 0;
+        cardY = 0;
+
+        // Smooth return to original position
+        function resetTransform() {
+          currentX = lerp(currentX, 0, 0.15);
+          currentY = lerp(currentY, 0, 0.15);
+
+          const rotateX = currentY * -8;
+          const rotateY = currentX * 8;
+          const lift = Math.max(0, 8 - Math.abs(currentX * 8) - Math.abs(currentY * 8));
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-${lift}px) translateZ(0)`;
+
+          if (Math.abs(currentX) > 0.01 || Math.abs(currentY) > 0.01) {
+            requestAnimationFrame(resetTransform);
+          } else {
+            card.style.transform = '';
+            rafId = null;
+          }
+        }
+
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        requestAnimationFrame(resetTransform);
       });
+
+      // Add smooth transition
+      card.style.transition = 'box-shadow 0.4s ease, transform 0.08s ease-out';
     });
   }
 
@@ -518,7 +573,7 @@
   }
 
   /* ==========================================
-     Smooth Scroll for Anchors
+     Smooth Scroll for Anchors - Ultra Fluid
      ========================================== */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -534,10 +589,8 @@
           const navbarHeight = document.getElementById('navbar')?.offsetHeight || 0;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 30;
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+          // Ultra-smooth custom easing scroll
+          smoothScrollTo(targetPosition, 800);
 
           // Update URL
           if (history.pushState) {
@@ -546,10 +599,38 @@
         }
       });
     });
+
+    // Custom smooth scroll with easing
+    function smoothScrollTo(targetPosition, duration) {
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
   }
 
   /* ==========================================
-     Parallax Effect for Hero
+     Parallax Effect for Hero - Ultra Smooth
      ========================================== */
   function initParallax() {
     const hero = document.querySelector('.hero');
@@ -559,37 +640,56 @@
     if (!hero) return;
 
     let ticking = false;
+    let lastScrollY = 0;
+    let currentScrollY = 0;
+
+    // Smooth interpolation for fluid motion
+    function lerp(start, end, factor) {
+      return start + (end - start) * factor;
+    }
 
     function updateParallax() {
       const scrolled = window.pageYOffset;
       const heroHeight = hero.offsetHeight;
 
-      if (scrolled < heroHeight) {
-        // Parallax for background
+      // Smooth scroll interpolation for fluid motion
+      currentScrollY = lerp(currentScrollY, scrolled, 0.1);
+
+      if (currentScrollY < heroHeight) {
+        // Parallax for background with smooth easing
         if (heroBg) {
-          const bgOffset = scrolled * 0.5;
-          heroBg.style.transform = `translateY(${bgOffset}px)`;
+          const bgOffset = currentScrollY * 0.4;
+          heroBg.style.transform = `translateY(${bgOffset}px) translateZ(0)`;
+          heroBg.style.transition = 'transform 0.1s ease-out';
         }
 
-        // Individual parallax for shapes
+        // Individual parallax for shapes with varying speeds
         floatingShapes.forEach((shape, index) => {
-          const speed = 0.3 + (index * 0.1);
-          const offset = scrolled * speed;
-          shape.style.transform = `translateY(${offset}px)`;
+          const speed = 0.2 + (index * 0.15);
+          const offset = currentScrollY * speed;
+          const rotation = currentScrollY * 0.05 * (index % 2 === 0 ? 1 : -1);
+          shape.style.transform = `translateY(${offset}px) rotate(${rotation}deg) translateZ(0)`;
+          shape.style.transition = 'transform 0.1s ease-out';
         });
       }
 
-      ticking = false;
+      // Continue animation loop if there's still motion
+      if (Math.abs(currentScrollY - scrolled) > 0.5) {
+        requestAnimationFrame(updateParallax);
+      } else {
+        ticking = false;
+      }
     }
 
     window.addEventListener('scroll', () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateParallax();
-        });
         ticking = true;
+        requestAnimationFrame(updateParallax);
       }
     }, { passive: true });
+
+    // Start initial animation loop
+    requestAnimationFrame(updateParallax);
   }
 
   /* ==========================================
