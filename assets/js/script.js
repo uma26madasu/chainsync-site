@@ -17,6 +17,8 @@
     console.log('ChainSync: Initializing revamped experience...');
 
     // Core functionality
+    initPageLoader();
+    initScrollProgress();
     initNavigation();
     initMobileMenu();
     initScrollAnimations();
@@ -26,8 +28,109 @@
     initParallax();
     initCounterAnimations();
     initCardAnimations();
+    initFadeInSections();
+    initRevealOnLoad();
 
     console.log('ChainSync: Revamped experience loaded successfully');
+  }
+
+  /* ==========================================
+     Page Loader
+     ========================================== */
+  function initPageLoader() {
+    // Create loader if it doesn't exist
+    if (!document.querySelector('.page-loader')) {
+      const loader = document.createElement('div');
+      loader.className = 'page-loader';
+      loader.innerHTML = `
+        <div class="loader-content">
+          <div class="loader-logo">ChainSync</div>
+          <div class="loader-spinner"></div>
+        </div>
+      `;
+      document.body.insertBefore(loader, document.body.firstChild);
+    }
+
+    const loader = document.querySelector('.page-loader');
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (loader) {
+          loader.classList.add('loaded');
+          // Remove from DOM after transition
+          setTimeout(() => {
+            loader.remove();
+          }, 500);
+        }
+      }, 800);
+    });
+  }
+
+  /* ==========================================
+     Scroll Progress Indicator
+     ========================================== */
+  function initScrollProgress() {
+    // Create progress bar if it doesn't exist
+    if (!document.querySelector('.scroll-progress')) {
+      const progressBar = document.createElement('div');
+      progressBar.className = 'scroll-progress';
+      document.body.appendChild(progressBar);
+    }
+
+    const progressBar = document.querySelector('.scroll-progress');
+
+    window.addEventListener('scroll', () => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.pageYOffset / windowHeight) * 100;
+
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    }, { passive: true });
+  }
+
+  /* ==========================================
+     Reveal Elements on Load
+     ========================================== */
+  function initRevealOnLoad() {
+    const revealElements = document.querySelectorAll('.reveal-on-load');
+
+    revealElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('revealed');
+      }, 100 * index);
+    });
+  }
+
+  /* ==========================================
+     Fade In Sections on Scroll
+     ========================================== */
+  function initFadeInSections() {
+    if (!('IntersectionObserver' in window)) return;
+
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(section => {
+      section.classList.add('fade-in-section');
+    });
+
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
   }
 
   /* ==========================================

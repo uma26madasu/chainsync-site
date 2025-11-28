@@ -1313,9 +1313,367 @@ footer {
 }
 
 /* ================================================
+   Loading Screen
+   ================================================ */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(139, 92, 246, 0.1);
+  border-top-color: var(--vibrant-purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================
+   Smooth Reveal on Load
+   ================================================ */
+.reveal-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-load.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================
+   Enhanced Glow Effects
+   ================================================ */
+.glow-on-hover {
+  transition: all var(--transition-smooth);
+}
+
+.glow-on-hover:hover {
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+}
+
+/* Animated gradient background for hero */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-bg {
+  background: linear-gradient(
+    -45deg,
+    #0a0e27,
+    #1a1f3a,
+    #2d1b4e,
+    #0a0e27
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* ================================================
+   Scroll Progress Indicator
+   ================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: 9999;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+/* ================================================
+   Enhanced Link Underlines
+   ================================================ */
+.section-text a {
+  color: var(--electric-cyan);
+  position: relative;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition-smooth);
+}
+
+.section-text a:hover {
+  border-bottom-color: var(--electric-cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* ================================================
+   Improved Stat Animations
+   ================================================ */
+.stat-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 240, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.stat-item:hover::before {
+  left: 100%;
+}
+
+/* ================================================
+   Enhanced Feature Cards with Tilt
+   ================================================ */
+.feature-card,
+.tech-card {
+  transform-style: preserve-3d;
+  transition: all var(--transition-smooth);
+}
+
+.feature-card:hover,
+.tech-card:hover {
+  transform: translateY(-12px) rotateX(2deg);
+}
+
+.feature-card h3,
+.tech-card h3 {
+  transition: color var(--transition-smooth);
+}
+
+.feature-card:hover h3,
+.tech-card:hover h3 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ================================================
+   Floating Animation for Icons
+   ================================================ */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.feature-icon,
+.tech-icon,
+.scenario-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) .feature-icon,
+.tech-card:nth-child(2) .tech-icon {
+  animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3) .feature-icon,
+.tech-card:nth-child(3) .tech-icon {
+  animation-delay: 1s;
+}
+
+/* ================================================
+   Smooth Section Transitions
+   ================================================ */
+section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ================================================
+   Enhanced CTA Buttons with Shimmer
+   ================================================ */
+.btn-primary,
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* ================================================
+   Interactive Process Nodes
+   ================================================ */
+.process-node,
+.process-step {
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.process-node:hover,
+.process-step:hover {
+  transform: scale(1.05);
+}
+
+.node-icon,
+.step-icon {
+  transition: all var(--transition-bounce);
+  position: relative;
+}
+
+.node-icon::after,
+.step-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.process-node:hover .node-icon::after,
+.process-step:hover .step-icon::after {
+  transform: translate(-50%, -50%) scale(1.3);
+  opacity: 0.3;
+}
+
+/* ================================================
+   Scroll-triggered fade-in for sections
+   ================================================ */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================================
+   Enhanced Footer Links
+   ================================================ */
+.footer-links a {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--electric-cyan);
+  transition: width var(--transition-smooth);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* ================================================
+   Blob Animations (Optional Enhancement)
+   ================================================ */
+@keyframes blobAnimation {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+.floating-shape {
+  animation: floatOrb 25s infinite ease-in-out, blobAnimation 8s infinite ease-in-out;
+}
+
+/* ================================================
    Print Styles
    ================================================ */
 @media print {
+  .page-loader,
+  .scroll-progress,
   .hero-bg,
   .animated-bg,
   #navbar,
