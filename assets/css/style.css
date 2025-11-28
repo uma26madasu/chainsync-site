@@ -415,15 +415,16 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta {
-  padding: 10px 24px;
-  background: var(--gradient-primary);
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #00d4aa 0%, #0066ff 100%);
   background-size: 200% 200%;
-  color: white;
+  color: white !important;
   border-radius: var(--border-radius-full);
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
 }
 
 .nav-cta::before {
@@ -433,7 +434,7 @@ body.has-testing-banner .page-hero {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
   transition: left var(--transition-slow);
 }
 
@@ -442,9 +443,10 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(0, 102, 255, 0.35);
-  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4), 0 4px 12px rgba(0, 102, 255, 0.3);
+  color: white !important;
+  background-position: right center;
 }
 
 .nav-cta:hover::before {
