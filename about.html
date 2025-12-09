@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About ChainSync | Our Mission & Vision</title>
+  <meta name="description" content="Learn about ChainSync's mission to transform emergency response through intelligent automation and real-time orchestration.">
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#0066ff">
+
+  <meta property="og:title" content="About ChainSync | Transforming Emergency Response">
+  <meta property="og:description" content="Our mission is to eliminate manual bottlenecks in emergency response and save lives through intelligent automation.">
+  <meta property="og:image" content="https://chainsync-platform.vercel.app/assets/images/og-about.png">
+  <meta property="og:url" content="https://chainsync-platform.vercel.app/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://chainsync-platform.vercel.app/about.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Override page-title color for better readability */
+    .page-title {
+      color: #1a202c !important;
+      background: none !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: unset !important;
+    }
+
+    .page-subtitle {
+      color: #4a5568 !important;
+    }
+
+    /* About page specific styles */
+    .about-section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      color: var(--dark-navy);
+    }
+
+    .about-content p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--dark-gray);
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #00f0ff 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 30px 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all var(--transition-smooth);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--dark-gray);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .value-card {
+      padding: 40px 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all var(--transition-smooth);
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(139, 92, 246, 0.2);
+    }
+
+    .value-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--dark-navy);
+    }
+
+    .value-card p {
+      font-size: 1rem;
+      color: var(--dark-gray);
+      line-height: 1.7;
+    }
+
+    .team-section {
+      background: #f7f9fc;
+      padding: 80px 0;
+    }
+
+    .team-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .team-intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--dark-navy);
+    }
+
+    .team-intro p {
+      font-size: 1.125rem;
+      color: var(--dark-gray);
+      line-height: 1.8;
+    }
+
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--deep-blue) 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-mesh);
+      opacity: 0.3;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      margin-bottom: 24px;
+      color: white;
+    }
+
+    .cta-content p {
+      font-size: 1.25rem;
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, #00d4aa 0%, #0066ff 100%);
+      color: white;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      text-decoration: none;
+      transition: all var(--transition-smooth);
+      box-shadow: 0 8px 30px rgba(0, 212, 170, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 212, 170, 0.5);
+    }
+
+    @media (max-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+
+      .about-content h2 {
+        font-size: 2rem;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="has-testing-banner">
+  <div class="testing-banner">
+    <strong>🚧 Development Phase:</strong> ChainSync is currently in development. Testing will begin soon. Request early access to join our testing program.
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ChainSync</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="technology.html">Technology</a>
+        <a href="contact.html" class="nav-cta">Get Started →</a>
+      </div>
+      <div class="mobile-menu-btn">☰</div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="hero-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
+      <div class="container">
+        <h1 class="page-title">Building the Future of Emergency Response</h1>
+        <p class="page-subtitle">We're on a mission to eliminate manual bottlenecks in critical response systems and save lives through intelligent automation.</p>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2>Our Mission</h2>
+            <p>ChainSync was born from a simple observation: when emergencies strike, every second counts. Yet traditional response systems are plagued by manual handoffs, phone tag, and fragmented communication.</p>
+            <p>We're building an intelligent orchestration platform that connects data sources, automates workflows, and coordinates responses in real-time—turning hours-long processes into minutes.</p>
+            <p>Our goal is to give environmental, utility, and industrial operators superhuman speed and coordination when it matters most.</p>
+          </div>
+          <div class="about-image">
+            🚀
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image">
+            🎯
+          </div>
+          <div class="about-content">
+            <h2>Our Vision</h2>
+            <p>We envision a world where emergency response is instantaneous, coordinated, and data-driven. Where AI agents handle the routine so humans can focus on what they do best: making critical decisions.</p>
+            <p>ChainSync is designed to be the central nervous system for any organization that needs to respond to incidents—detecting anomalies, orchestrating workflows, and ensuring nothing falls through the cracks.</p>
+            <p>We're not just building software. We're building peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="about-section" style="background: #f7f9fc;">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">70%</div>
+            <div class="stat-label">Faster Response</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoring</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Auditable</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">2025</div>
+            <div class="stat-label">Launch Year</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="about-section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Our Core Values</h2>
+          <p style="font-size: 1.125rem; color: var(--dark-gray); max-width: 700px; margin: 0 auto;">The principles that guide everything we build</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">⚡</span>
+            <h3>Speed Matters</h3>
+            <p>In emergencies, every second counts. We optimize for velocity without sacrificing reliability.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🔒</span>
+            <h3>Trust & Security</h3>
+            <p>We handle critical infrastructure data. Security, privacy, and compliance are non-negotiable.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Human-Centered AI</h3>
+            <p>AI should augment human expertise, not replace it. We build tools that empower operators.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">📊</span>
+            <h3>Data-Driven</h3>
+            <p>Every decision should be backed by real-time data and transparent audit trails.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🌱</span>
+            <h3>Sustainability First</h3>
+            <p>We're committed to supporting organizations that protect our environment and communities.</p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🔄</span>
+            <h3>Continuous Improvement</h3>
+            <p>We iterate rapidly, learn from feedback, and constantly evolve our platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="team-intro">
+          <h2>Built by Problem Solvers</h2>
+          <p>Our team brings together expertise in AI/ML, industrial automation, emergency management, and enterprise software. We've worked at companies building critical infrastructure and know firsthand the pain points we're solving.</p>
+          <p style="margin-top: 20px; font-weight: 600; color: var(--electric-cyan);">We're currently in stealth mode as we prepare for our 2025 launch. Stay tuned for team announcements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Ready to Transform Your Response?</h2>
+          <p>Join our early access program and be among the first to experience ChainSync.</p>
+          <a href="contact.html" class="cta-button">Request Early Access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>ChainSync</h3>
+        <p>Ready to respond when seconds count.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ChainSync. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
