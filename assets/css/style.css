@@ -1,49 +1,94 @@
 /* ================================================
-   ChainSync - Complete UI Revamp
-   Bold, Modern Design with Dark Theme & Vibrant Accents
+   ChainSync - Premium Design System
+   Modern, Sophisticated UI with Vibrant Gradients
    ================================================ */
 
 /* ================================================
-   Design System - Brand New Color Palette
+   Design System - Premium Color Palette
    ================================================ */
 :root {
-  /* Primary Colors - Dark Theme */
-  --dark-navy: #0a0e27;
-  --deep-blue: #1a1f3a;
-  --electric-cyan: #00f0ff;
-  --vibrant-purple: #8b5cf6;
-  --warm-orange: #ff6b35;
-  --neon-pink: #ff006e;
+  /* Primary Brand Colors */
+  --midnight-blue: #0f172a;
+  --slate-900: #1e293b;
+  --slate-800: #334155;
+  --indigo-600: #4f46e5;
+  --indigo-500: #6366f1;
+  --cyan-500: #06b6d4;
+  --cyan-400: #22d3ee;
+  --emerald-500: #10b981;
+  --violet-600: #7c3aed;
+  --fuchsia-500: #d946ef;
+  --amber-500: #f59e0b;
+  --rose-500: #f43f5e;
 
-  /* Neutral Colors */
-  --light-bg: #f7f9fc;
+  /* Neutral Palette */
   --white: #ffffff;
-  --light-gray: #e5e7eb;
-  --medium-gray: #9ca3af;
-  --dark-gray: #4b5563;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #00f0ff 100%);
-  --gradient-warm: linear-gradient(135deg, #ff6b35 0%, #ff006e 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, hsla(240,90%,70%,0.3) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, hsla(189,100%,50%,0.3) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, hsla(355,85%,60%,0.3) 0px, transparent 50%),
-                   radial-gradient(at 80% 50%, hsla(270,70%,60%,0.3) 0px, transparent 50%),
-                   radial-gradient(at 0% 100%, hsla(22,100%,60%,0.3) 0px, transparent 50%);
+  /* Semantic Colors */
+  --primary: var(--indigo-600);
+  --secondary: var(--cyan-500);
+  --accent: var(--fuchsia-500);
+  --success: var(--emerald-500);
+  --warning: var(--amber-500);
+  --danger: var(--rose-500);
 
-  /* Shadows */
-  --shadow-neumorphic: 8px 8px 16px rgba(0, 0, 0, 0.2),
-                       -8px -8px 16px rgba(255, 255, 255, 0.05);
-  --shadow-glow-cyan: 0 0 30px rgba(0, 240, 255, 0.4);
-  --shadow-glow-purple: 0 0 30px rgba(139, 92, 246, 0.4);
-  --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.4);
+  /* Surface Colors */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-50);
+  --bg-tertiary: var(--gray-100);
+  --bg-dark: var(--midnight-blue);
+  --bg-card: var(--white);
 
-  /* Spacing & Sizing */
-  --border-radius-sm: 12px;
-  --border-radius-md: 24px;
-  --border-radius-lg: 32px;
+  /* Text Colors */
+  --text-primary: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-tertiary: var(--gray-500);
+  --text-on-dark: var(--white);
 
-  /* Animations - Ultra Fluid Easing Curves */
+  /* Premium Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-vibrant: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-ocean: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-purple: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-mesh: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.1) 0px, transparent 50%),
+                   radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.12) 0px, transparent 50%),
+                   radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.15) 0px, transparent 50%),
+                   radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.1) 0px, transparent 50%);
+
+  /* Refined Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-glow-primary: 0 0 40px rgba(102, 126, 234, 0.3);
+  --shadow-glow-secondary: 0 0 40px rgba(6, 182, 212, 0.3);
+  --shadow-glow-accent: 0 0 40px rgba(217, 70, 239, 0.3);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Animations - Buttery Smooth */
   --transition-instant: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-snappy: 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   --transition-smooth: 0.45s cubic-bezier(0.23, 1, 0.32, 1);
@@ -79,52 +124,61 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  color: var(--dark-navy);
-  background: var(--white);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
   transition: background-color var(--transition-smooth);
 }
 
-/* Typography - Bold & Modern */
+/* Typography - Premium & Refined */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--dark-navy);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 h3 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  color: var(--dark-navy);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 h4 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  color: var(--deep-blue);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 p {
   margin-bottom: 1.5rem;
   line-height: 1.8;
-  color: var(--dark-gray);
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 400;
 }
 
 a {
@@ -320,7 +374,7 @@ body.has-testing-banner .page-hero {
 }
 
 /* ================================================
-   Navigation - Modern Top Bar
+   Navigation - Glassmorphic Premium Nav
    ================================================ */
 #navbar {
   position: fixed;
@@ -328,16 +382,17 @@ body.has-testing-banner .page-hero {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 14, 39, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(203, 213, 225, 0.3);
   transition: var(--transition-smooth);
 }
 
 #navbar.scrolled {
-  background: rgba(10, 14, 39, 0.98);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--gray-200);
 }
 
 .nav-container {
@@ -386,13 +441,11 @@ body.has-testing-banner .page-hero {
 .nav-links a {
   font-weight: 600;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   position: relative;
   padding: 8px 0;
   transition: var(--transition-smooth);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+  letter-spacing: 0.01em;
 }
 
 .nav-links a::before {
@@ -403,15 +456,14 @@ body.has-testing-banner .page-hero {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: var(--electric-cyan);
+  background: var(--gradient-primary);
   transition: width var(--transition-smooth);
-  box-shadow: var(--shadow-glow-cyan);
+  border-radius: var(--radius-full);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--electric-cyan);
-  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+  color: var(--primary);
 }
 
 .nav-links a:hover::before,
@@ -420,16 +472,17 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta {
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #00d4aa 0%, #0066ff 100%);
+  padding: 10px 24px;
+  background: var(--gradient-primary);
   background-size: 200% 200%;
   color: white !important;
-  border-radius: var(--border-radius-full);
-  font-weight: 700;
+  border-radius: var(--radius-full);
+  font-weight: 600;
   position: relative;
   overflow: hidden;
-  transition: all var(--transition-base);
-  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-cta::before {
@@ -439,8 +492,8 @@ body.has-testing-banner .page-hero {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left var(--transition-slow);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left var(--transition-smooth);
 }
 
 .nav-cta::after {
@@ -448,8 +501,8 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4), 0 4px 12px rgba(0, 102, 255, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-xl), var(--shadow-glow-primary);
   color: white !important;
   background-position: right center;
 }
@@ -470,14 +523,14 @@ body.has-testing-banner .page-hero {
 }
 
 /* ================================================
-   Hero Section - Diagonal Split Design
+   Hero Section - Premium Gradient Hero
    ================================================ */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--dark-navy);
-  color: white;
+  background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--slate-900) 100%);
+  color: var(--text-on-dark);
   padding: 140px 32px 100px;
   position: relative;
   overflow: hidden;
@@ -506,7 +559,7 @@ body.has-testing-banner .page-hero {
 .shape-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, var(--vibrant-purple) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, transparent 70%);
   top: -150px;
   right: -100px;
   animation-delay: 0s;
@@ -515,7 +568,7 @@ body.has-testing-banner .page-hero {
 .shape-2 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, var(--electric-cyan) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.35) 0%, transparent 70%);
   bottom: -200px;
   left: -150px;
   animation-delay: 5s;
@@ -524,7 +577,7 @@ body.has-testing-banner .page-hero {
 .shape-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, var(--warm-orange) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.3) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   animation-delay: 10s;
@@ -704,28 +757,29 @@ body.has-testing-banner .page-hero {
 }
 
 /* ================================================
-   Buttons - Bold & Modern
+   Buttons - Premium & Refined
    ================================================ */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 18px 40px;
-  border-radius: var(--border-radius-lg);
-  font-weight: 700;
-  font-size: 1.05rem;
-  border: 3px solid transparent;
+  padding: 16px 36px;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
   cursor: pointer;
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
   text-transform: none;
   letter-spacing: 0.01em;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background: var(--gradient-warm);
+  background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-primary::before {
@@ -738,7 +792,7 @@ body.has-testing-banner .page-hero {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
+  transition: width 0.5s ease, height 0.5s ease;
 }
 
 .btn-primary:hover::before {
@@ -747,36 +801,36 @@ body.has-testing-banner .page-hero {
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-2xl), var(--shadow-glow-primary);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--dark-navy);
-  border-color: var(--dark-navy);
-  border-width: 3px;
+  background: var(--bg-primary);
+  color: var(--primary);
+  border-color: var(--primary);
+  border-width: 2px;
 }
 
 .btn-secondary:hover {
-  background: var(--dark-navy);
+  background: var(--primary);
   color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(10, 14, 39, 0.3);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
 }
 
 /* ================================================
-   Cards - Neumorphic Design
+   Cards - Clean & Modern Design
    ================================================ */
 .feature-card,
 .tech-card,
 .step-card {
-  background: white;
-  padding: 48px;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-neumorphic);
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   transition: all var(--transition-smooth);
-  border: 1px solid rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--gray-200);
   position: relative;
   overflow: hidden;
 }
@@ -789,7 +843,7 @@ body.has-testing-banner .page-hero {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background: var(--gradient-primary);
   transform: scaleX(0);
   transform-origin: left;
