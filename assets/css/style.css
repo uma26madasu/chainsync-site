@@ -645,9 +645,10 @@ body.has-testing-banner .page-hero {
    ================================================ */
 .page-hero {
   padding: 180px 32px 120px;
-  background: var(--light-bg);
+  background: linear-gradient(135deg, #f1f5f9 0%, #e0f2fe 100%);
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .animated-bg {
@@ -695,10 +696,7 @@ body.has-testing-banner .page-hero {
 .page-title {
   font-size: clamp(2.75rem, 6vw, 4.5rem);
   font-weight: 900;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   margin-bottom: 24px;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -706,10 +704,11 @@ body.has-testing-banner .page-hero {
 
 .page-subtitle {
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   max-width: 850px;
   margin: 0 auto;
   line-height: 1.7;
+  font-weight: 400;
 }
 
 /* ================================================
