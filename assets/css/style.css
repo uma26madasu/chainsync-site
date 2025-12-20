@@ -34,6 +34,18 @@
   --gray-800: #1e293b;
   --gray-900: #0f172a;
 
+  /* Legacy color mappings for backwards compatibility */
+  --dark-navy: var(--midnight-blue);
+  --deep-blue: var(--slate-900);
+  --electric-cyan: var(--cyan-400);
+  --vibrant-purple: var(--indigo-500);
+  --warm-orange: var(--amber-500);
+  --neon-pink: var(--fuchsia-500);
+  --light-bg: var(--gray-50);
+  --dark-gray: var(--gray-700);
+  --medium-gray: var(--gray-500);
+  --light-gray: var(--gray-300);
+
   /* Semantic Colors */
   --primary: var(--indigo-600);
   --secondary: var(--cyan-500);
