@@ -30,6 +30,11 @@
     initCardAnimations();
     initFadeInSections();
     initRevealOnLoad();
+    initInteractiveTooltips();
+    initClickableCards();
+    initProgressBars();
+    initHoverEffects();
+    initScrollTriggers();
 
     console.log('ChainSync: Revamped experience loaded successfully');
   }
@@ -249,13 +254,33 @@
      Scroll Animations with Stagger Effect
      ========================================== */
   function initScrollAnimations() {
+    const animateElements = document.querySelectorAll(
+      '.feature-card, .tech-card, .step-card, .stat-item, .scenario-card, .process-node'
+    );
+
+    // Fallback: Show all elements after timeout to prevent blank screens
+    const fallbackTimeout = setTimeout(() => {
+      animateElements.forEach(el => {
+        if (el.style.opacity === '0') {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0) scale(1)';
+        }
+      });
+    }, 2000);
+
     if (!('IntersectionObserver' in window)) {
+      // No IntersectionObserver support - show everything immediately
+      animateElements.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0) scale(1)';
+      });
+      clearTimeout(fallbackTimeout);
       return;
     }
 
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.05, // Lower threshold for better trigger
+      rootMargin: '0px 0px -50px 0px' // Less aggressive margin
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -266,7 +291,7 @@
 
           // Add stagger effect for grid items
           const parent = entry.target.parentElement;
-          if (parent && (parent.classList.contains('feature-grid') || parent.classList.contains('grid-3'))) {
+          if (parent && (parent.classList.contains('feature-grid') || parent.classList.contains('grid-3') || parent.classList.contains('use-cases-section'))) {
             const siblings = Array.from(parent.children);
             const index = siblings.indexOf(entry.target);
             entry.target.style.transitionDelay = `${index * 0.15}s`;
@@ -279,10 +304,6 @@
     }, observerOptions);
 
     // Observe cards and sections
-    const animateElements = document.querySelectorAll(
-      '.feature-card, .tech-card, .step-card, .stat-item, .scenario-card, .process-node'
-    );
-
     animateElements.forEach((el) => {
       // Set initial state
       el.style.opacity = '0';
@@ -290,6 +311,14 @@
       el.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
 
       observer.observe(el);
+
+      // Individual fallback for each element
+      setTimeout(() => {
+        if (el.style.opacity === '0') {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0) scale(1)';
+        }
+      }, 3000);
     });
   }
 
@@ -927,6 +956,322 @@
   initAccessibility();
 
   /* ==========================================
+     Interactive Tooltips
+     ========================================== */
+  function initInteractiveTooltips() {
+    // Add tooltips to stat items
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach(item => {
+      const label = item.querySelector('.stat-label')?.textContent || '';
+      const number = item.querySelector('.stat-number')?.textContent || '';
+
+      if (label && number) {
+        item.setAttribute('data-tooltip', `Goal: ${number} ${label}`);
+        item.style.position = 'relative';
+        item.style.cursor = 'help';
+      }
+    });
+
+    // Add tooltips to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+      card.setAttribute('data-card-index', index + 1);
+      card.style.cursor = 'pointer';
+    });
+
+    // Create tooltip element
+    const tooltip = document.createElement('div');
+    tooltip.className = 'interactive-tooltip';
+    tooltip.style.cssText = `
+      position: fixed;
+      background: linear-gradient(135deg, #1B4332 0%, #0077B6 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 10000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      white-space: nowrap;
+    `;
+    document.body.appendChild(tooltip);
+
+    document.addEventListener('mouseover', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) {
+        const text = target.getAttribute('data-tooltip');
+        tooltip.textContent = text;
+        tooltip.style.opacity = '1';
+        tooltip.style.transform = 'translateY(0)';
+      }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) {
+        tooltip.style.left = e.clientX + 20 + 'px';
+        tooltip.style.top = e.clientY + 20 + 'px';
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) {
+        tooltip.style.opacity = '0';
+        tooltip.style.transform = 'translateY(-10px)';
+      }
+    });
+  }
+
+  /* ==========================================
+     Clickable Cards with Pulse Effect
+     ========================================== */
+  function initClickableCards() {
+    const cards = document.querySelectorAll('.scenario-card, .feature-card');
+
+    cards.forEach(card => {
+      // Add click effect
+      card.addEventListener('click', function(e) {
+        // Don't trigger if clicking a link
+        if (e.target.tagName === 'A') return;
+
+        // Create pulse effect
+        const pulse = document.createElement('div');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 2;
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+
+        pulse.style.cssText = `
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          background: radial-gradient(circle, rgba(0, 180, 216, 0.3) 0%, transparent 70%);
+          border-radius: 50%;
+          pointer-events: none;
+          transform: scale(0);
+          animation: cardPulse 0.8s ease-out;
+          z-index: 0;
+        `;
+
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(pulse);
+
+        setTimeout(() => pulse.remove(), 800);
+      });
+
+      // Add subtle scale on click
+      card.addEventListener('mousedown', function() {
+        this.style.transform = 'scale(0.98)';
+      });
+
+      card.addEventListener('mouseup', function() {
+        this.style.transform = '';
+      });
+    });
+
+    // Add animation
+    if (!document.querySelector('#card-pulse-animation')) {
+      const style = document.createElement('style');
+      style.id = 'card-pulse-animation';
+      style.textContent = `
+        @keyframes cardPulse {
+          to {
+            transform: scale(1);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  /* ==========================================
+     Animated Progress Bars
+     ========================================== */
+  function initProgressBars() {
+    // Look for elements that could have progress indicators
+    const responseComparisons = document.querySelectorAll('.response-comparison');
+
+    responseComparisons.forEach(comparison => {
+      const beforeBox = comparison.querySelector('.before-box');
+      const afterBox = comparison.querySelector('.after-box');
+
+      if (beforeBox && afterBox) {
+        // Add progress bars
+        addProgressBar(beforeBox, 30, '#E76F51'); // 30% for slow response
+        addProgressBar(afterBox, 95, '#52B788'); // 95% for fast response
+      }
+    });
+
+    function addProgressBar(element, percentage, color) {
+      const progressContainer = document.createElement('div');
+      progressContainer.style.cssText = `
+        width: 100%;
+        height: 8px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        margin-top: 16px;
+        overflow: hidden;
+      `;
+
+      const progressBar = document.createElement('div');
+      progressBar.style.cssText = `
+        height: 100%;
+        width: 0%;
+        background: ${color};
+        border-radius: 4px;
+        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 0 10px ${color};
+      `;
+
+      progressContainer.appendChild(progressBar);
+      element.appendChild(progressContainer);
+
+      // Animate when in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              progressBar.style.width = percentage + '%';
+            }, 200);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(element);
+    }
+  }
+
+  /* ==========================================
+     Enhanced Hover Effects
+     ========================================== */
+  function initHoverEffects() {
+    // Add magnetic effect to buttons
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        const moveX = x * 0.1;
+        const moveY = y * 0.1;
+
+        this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
+      });
+
+      btn.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+
+    // Add glow effect to icons
+    const icons = document.querySelectorAll('.feature-icon, .scenario-icon, .check-icon');
+    icons.forEach(icon => {
+      icon.style.transition = 'all 0.3s ease';
+
+      icon.parentElement?.addEventListener('mouseenter', function() {
+        icon.style.transform = 'scale(1.1) rotate(5deg)';
+        icon.style.filter = 'drop-shadow(0 8px 24px rgba(0, 180, 216, 0.4))';
+      });
+
+      icon.parentElement?.addEventListener('mouseleave', function() {
+        icon.style.transform = '';
+        icon.style.filter = '';
+      });
+    });
+
+    // Add tilt effect to process steps
+    const processSteps = document.querySelectorAll('.process-step');
+    processSteps.forEach(step => {
+      step.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px) scale(1.03)';
+        this.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      });
+
+      step.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+  }
+
+  /* ==========================================
+     Scroll-Triggered Animations
+     ========================================== */
+  function initScrollTriggers() {
+    // Animate section tags as they appear
+    const sectionTags = document.querySelectorAll('.section-tag');
+
+    sectionTags.forEach(tag => {
+      tag.style.opacity = '0';
+      tag.style.transform = 'translateX(-50px) scale(0.8)';
+      tag.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    });
+
+    const tagObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0) scale(1)';
+          }, 100);
+          tagObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sectionTags.forEach(tag => tagObserver.observe(tag));
+
+    // Animate benefits list items
+    const benefitItems = document.querySelectorAll('.benefits-list li');
+
+    benefitItems.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-30px)';
+      item.style.transition = 'all 0.5s ease';
+    });
+
+    const benefitsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll('li');
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateX(0)';
+            }, index * 100);
+          });
+          benefitsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const benefitsLists = document.querySelectorAll('.benefits-list');
+    benefitsLists.forEach(list => benefitsObserver.observe(list));
+
+    // Add scroll-based parallax to floating shapes
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const shapes = document.querySelectorAll('.floating-shape');
+
+      shapes.forEach((shape, index) => {
+        const speed = 0.5 + (index * 0.2);
+        shape.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    }, { passive: true });
+  }
+
+  /* ==========================================
      Error Handling
      ========================================== */
   window.addEventListener('error', function(e) {
@@ -935,8 +1280,8 @@
 
   // Expose public API
   window.ChainSync = {
-    version: '3.0.0',
-    theme: 'dark-vibrant',
+    version: '3.1.0',
+    theme: 'environmental-interactive',
     refresh: init,
     enableCursorTrail: initCursorTrail
   };
