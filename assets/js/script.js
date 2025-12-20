@@ -65,9 +65,9 @@
           // Remove from DOM after transition
           setTimeout(() => {
             loader.remove();
-          }, 500);
+          }, 300);
         }
-      }, 800);
+      }, 200);
     });
   }
 
@@ -255,7 +255,7 @@
      ========================================== */
   function initScrollAnimations() {
     const animateElements = document.querySelectorAll(
-      '.feature-card, .tech-card, .step-card, .stat-item, .scenario-card, .process-node'
+      '.feature-card, .tech-card, .step-card, .stat-item, .process-node'
     );
 
     // Fallback: Show all elements after timeout to prevent blank screens
@@ -266,7 +266,7 @@
           el.style.transform = 'translateY(0) scale(1)';
         }
       });
-    }, 2000);
+    }, 800);
 
     if (!('IntersectionObserver' in window)) {
       // No IntersectionObserver support - show everything immediately
@@ -318,7 +318,7 @@
           el.style.opacity = '1';
           el.style.transform = 'translateY(0) scale(1)';
         }
-      }, 3000);
+      }, 1000);
     });
   }
 
@@ -394,7 +394,7 @@
      Card Hover 3D Effect - Ultra Smooth
      ========================================== */
   function initCardAnimations() {
-    const cards = document.querySelectorAll('.feature-card, .tech-card, .scenario-card');
+    const cards = document.querySelectorAll('.feature-card, .tech-card');
 
     cards.forEach(card => {
       let cardX = 0, cardY = 0;
@@ -1031,7 +1031,7 @@
      Clickable Cards with Pulse Effect
      ========================================== */
   function initClickableCards() {
-    const cards = document.querySelectorAll('.scenario-card, .feature-card');
+    const cards = document.querySelectorAll('.feature-card');
 
     cards.forEach(card => {
       // Add click effect

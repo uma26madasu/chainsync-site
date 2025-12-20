@@ -1026,6 +1026,8 @@ body.has-testing-banner .page-hero {
   background: var(--gradient-ocean);
   z-index: 0;
   border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .process-step {
@@ -1290,6 +1292,11 @@ footer {
 /* ================================================
    Use Cases - Scenario Cards
    ================================================ */
+.use-cases-section {
+  background: white;
+  padding: 120px 0;
+}
+
 .scenario-card {
   background: white;
   border-radius: var(--radius-xl);
@@ -1298,6 +1305,8 @@ footer {
   margin-bottom: 60px;
   transition: all var(--transition-smooth);
   border: 2px solid var(--stone-light);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .scenario-card:hover {
