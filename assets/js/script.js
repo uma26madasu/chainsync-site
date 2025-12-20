@@ -111,6 +111,11 @@
      Fade In Sections on Scroll
      ========================================== */
   function initFadeInSections() {
+    // Skip fade-in on use-cases page
+    if (document.body.classList.contains('use-cases-page')) {
+      return;
+    }
+
     if (!('IntersectionObserver' in window)) return;
 
     const sections = document.querySelectorAll('section');
@@ -254,6 +259,11 @@
      Scroll Animations with Stagger Effect
      ========================================== */
   function initScrollAnimations() {
+    // Skip animations on use-cases page
+    if (document.body.classList.contains('use-cases-page')) {
+      return;
+    }
+
     const animateElements = document.querySelectorAll(
       '.feature-card, .tech-card, .step-card, .stat-item, .process-node'
     );
@@ -394,6 +404,11 @@
      Card Hover 3D Effect - Ultra Smooth
      ========================================== */
   function initCardAnimations() {
+    // Skip 3D card animations on use-cases page for performance
+    if (document.body.classList.contains('use-cases-page')) {
+      return;
+    }
+
     const cards = document.querySelectorAll('.feature-card, .tech-card');
 
     cards.forEach(card => {
@@ -1209,6 +1224,11 @@
      Scroll-Triggered Animations
      ========================================== */
   function initScrollTriggers() {
+    // Skip scroll triggers on use-cases page
+    if (document.body.classList.contains('use-cases-page')) {
+      return;
+    }
+
     // Animate section tags as they appear
     const sectionTags = document.querySelectorAll('.section-tag');
 
