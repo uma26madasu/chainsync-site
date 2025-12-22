@@ -1847,10 +1847,14 @@
      NEXT-GENERATION FEATURES
      ========================================== */
 
-  /* WebGL Water Ripple Effect */
+  /* WebGL Water Ripple Effect - SIMPLIFIED */
   function initWebGLWaterRipple() {
     const hero = document.querySelector('.hero');
-    if (!hero || window.innerWidth < 768) return;
+    // Disabled WebGL water ripple for performance
+    // Keeping the function but returning early
+    return;
+
+    /*if (!hero || window.innerWidth < 768) return;
 
     const canvas = document.createElement('canvas');
     canvas.style.cssText = `
@@ -1861,7 +1865,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 2;
-      opacity: 0.6;
+      opacity: 0.3;
     `;
     hero.insertBefore(canvas, hero.firstChild);
 
@@ -1869,7 +1873,7 @@
     if (!gl) return;
 
     canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
+    canvas.height = hero.offsetHeight;*/
 
     // Simple water ripple shader
     const vsSource = `
@@ -2022,7 +2026,7 @@
       }
     }
 
-    const particles = Array.from({ length: 50 }, () => new Particle3D());
+    const particles = Array.from({ length: 15 }, () => new Particle3D()); // Reduced from 50 to 15
 
     function animate() {
       particles.forEach(p => p.update());
@@ -2031,87 +2035,40 @@
     animate();
   }
 
-  /* Cinematic Scroll Animations */
+  /* Cinematic Scroll Animations - SIMPLIFIED */
   function initCinematicScroll() {
-    const sections = document.querySelectorAll('section');
-    let currentSection = 0;
+    // Simplified - removed blur filters that caused performance issues
+    // Only keep simple parallax for hero
+    let ticking = false;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.transform = 'scale(1)';
-          entry.target.style.opacity = '1';
-          entry.target.style.filter = 'blur(0px)';
-        } else {
-          entry.target.style.transform = 'scale(0.95)';
-          entry.target.style.opacity = '0.7';
-          entry.target.style.filter = 'blur(2px)';
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => {
-      section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      observer.observe(section);
-    });
-
-    // Parallax scroll effect for hero elements
     window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const heroTitle = document.querySelector('.hero-title');
-      const heroSubtitle = document.querySelector('.hero-subtitle');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset;
+          const heroTitle = document.querySelector('.hero-title');
+          const heroSubtitle = document.querySelector('.hero-subtitle');
 
-      if (heroTitle) {
-        heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
-        heroTitle.style.opacity = Math.max(0, 1 - scrolled / 500);
-      }
-      if (heroSubtitle) {
-        heroSubtitle.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroSubtitle.style.opacity = Math.max(0, 1 - scrolled / 600);
+          if (scrolled < 500) { // Only animate when hero is visible
+            if (heroTitle) {
+              heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
+              heroTitle.style.opacity = Math.max(0, 1 - scrolled / 500);
+            }
+            if (heroSubtitle) {
+              heroSubtitle.style.transform = `translateY(${scrolled * 0.5}px)`;
+              heroSubtitle.style.opacity = Math.max(0, 1 - scrolled / 600);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }, { passive: true });
   }
 
-  /* SVG Morphing Animations */
+  /* SVG Morphing Animations - DISABLED FOR PERFORMANCE */
   function initSVGMorphing() {
-    // Create animated SVG shapes that morph
-    const shapes = document.querySelectorAll('.floating-shape, .gradient-orb');
-
-    shapes.forEach((shape, index) => {
-      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      svg.style.cssText = `
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-      `;
-
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-
-      const morphStates = [
-        'M0,100 C30,80 50,120 100,100 L100,200 L0,200 Z',
-        'M0,100 C50,60 70,140 100,100 L100,200 L0,200 Z',
-        'M0,100 C20,90 80,110 100,100 L100,200 L0,200 Z'
-      ];
-
-      let currentState = 0;
-
-      path.setAttribute('d', morphStates[0]);
-      path.setAttribute('fill', window.getComputedStyle(shape).background || '#00B4D8');
-      path.setAttribute('opacity', '0.3');
-
-      svg.appendChild(path);
-      if (shape.parentNode) {
-        shape.parentNode.insertBefore(svg, shape);
-      }
-
-      setInterval(() => {
-        currentState = (currentState + 1) % morphStates.length;
-        path.setAttribute('d', morphStates[currentState]);
-      }, 3000 + index * 1000);
-    });
+    // Disabled - caused performance issues
+    return;
   }
 
   /* Environmental Audio Feedback */
@@ -2153,74 +2110,16 @@
     }
   }
 
-  /* WebGL Shader Background */
+  /* WebGL Shader Background - DISABLED FOR PERFORMANCE */
   function initWebGLShaderBackground() {
-    const sections = document.querySelectorAll('.features-section, .how-it-works-section');
-
-    sections.forEach(section => {
-      const canvas = document.createElement('canvas');
-      canvas.style.cssText = `
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.4;
-      `;
-      section.insertBefore(canvas, section.firstChild);
-
-      const ctx = canvas.getContext('2d');
-      canvas.width = section.offsetWidth;
-      canvas.height = section.offsetHeight;
-
-      let time = 0;
-      function animate() {
-        time += 0.01;
-
-        const gradient = ctx.createLinearGradient(
-          canvas.width / 2 + Math.sin(time) * 200,
-          0,
-          canvas.width / 2 - Math.sin(time) * 200,
-          canvas.height
-        );
-
-        gradient.addColorStop(0, `rgba(0, 180, 216, ${0.1 + Math.sin(time) * 0.05})`);
-        gradient.addColorStop(0.5, `rgba(82, 183, 136, ${0.08 + Math.cos(time) * 0.04})`);
-        gradient.addColorStop(1, `rgba(116, 198, 157, ${0.06 + Math.sin(time * 0.5) * 0.03})`);
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        requestAnimationFrame(animate);
-      }
-      animate();
-    });
+    // Disabled - caused performance issues with multiple canvas animations
+    return;
   }
 
-  /* Liquid Text Effect */
+  /* Liquid Text Effect - DISABLED FOR PERFORMANCE */
   function initLiquidText() {
-    const titles = document.querySelectorAll('.section-title');
-
-    titles.forEach(title => {
-      title.style.backgroundClip = 'text';
-      title.style.webkitBackgroundClip = 'text';
-      title.style.backgroundSize = '200% 200%';
-
-      let hue = 0;
-      setInterval(() => {
-        hue = (hue + 1) % 360;
-        const gradient = `linear-gradient(
-          ${hue}deg,
-          hsl(${hue}, 70%, 50%),
-          hsl(${(hue + 60) % 360}, 70%, 50%),
-          hsl(${(hue + 120) % 360}, 70%, 50%)
-        )`;
-        title.style.background = gradient;
-      }, 50);
-    });
+    // Disabled - caused performance issues
+    return;
   }
 
   /* Parallax Depth Layers */
@@ -2282,33 +2181,16 @@
     }
   }
 
-  /* Infinite Scroll 3D */
+  /* Infinite Scroll 3D - DISABLED FOR PERFORMANCE */
   function initInfiniteScroll3D() {
-    const cards = document.querySelectorAll('.feature-card, .tech-card');
-
-    window.addEventListener('scroll', () => {
-      cards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const scrollProgress = 1 - (rect.top / window.innerHeight);
-
-        if (scrollProgress > 0 && scrollProgress < 1) {
-          const rotateX = (scrollProgress - 0.5) * 20;
-          const scale = 0.9 + scrollProgress * 0.1;
-          card.style.transform = `
-            perspective(1000px)
-            rotateX(${rotateX}deg)
-            scale(${scale})
-            translateZ(${scrollProgress * 20}px)
-          `;
-        }
-      });
-    }, { passive: true });
+    // Disabled - caused performance issues with transforms on every scroll
+    return;
   }
 
   // Expose public API
   window.ChainSync = {
-    version: '5.0.0',
-    theme: 'next-generation-immersive',
+    version: '5.1.0',
+    theme: 'performance-optimized',
     refresh: init,
     enableCursorTrail: initCursorTrail
   };
