@@ -629,23 +629,25 @@ body.has-testing-banner .page-hero {
   margin-bottom: 32px;
   line-height: 1.1;
   letter-spacing: -0.025em;
-  color: #FFFFFF;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 1s ease-out;
-  -webkit-text-fill-color: #FFFFFF;
-  background: none;
+  -webkit-text-fill-color: #FFFFFF !important;
+  background: none !important;
+  opacity: 1 !important;
 }
 
 .hero-subtitle {
   font-size: clamp(1.25rem, 2.5vw, 1.65rem);
   max-width: 800px;
   margin-bottom: 48px;
-  color: rgba(255, 255, 255, 0.95);
+  color: #FFFFFF !important;
   line-height: 1.65;
   font-weight: 400;
   letter-spacing: 0.005em;
   animation: fadeInUp 1s ease-out 0.2s backwards;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 1 !important;
 }
 
 .hero-actions {
