@@ -4,91 +4,87 @@
    ================================================ */
 
 /* ================================================
-   Design System - Environmental Color Palette
+   Design System - Scandinavian Environmental Palette
+   Inspired by Nordic Nature & Danish Design
    ================================================ */
 :root {
-  /* Environmental Primary Colors - Ocean & Water */
-  --deep-ocean: #006994;
-  --ocean-blue: #0077B6;
-  --water-light: #00B4D8;
-  --sky-blue: #90E0EF;
-  --aqua-fresh: #CAF0F8;
+  /* Primary - Deep Forest Greens */
+  --forest-primary: #1B5E3F;
+  --forest-medium: #2D7C54;
+  --forest-light: #4A9B6E;
+  --sage: #7BB896;
+  --mint: #A8D5BA;
 
-  /* Living Greens - Forest & Growth */
-  --forest-deep: #1B4332;
-  --forest-green: #2D6A4F;
-  --leaf-green: #40916C;
-  --grass-green: #52B788;
-  --spring-green: #74C69D;
-  --mint-light: #95D5B2;
-  --sage-pale: #B7E4C7;
-  --moss-soft: #D8F3DC;
+  /* Secondary - Ocean Blues */
+  --ocean-deep: #0A4D68;
+  --ocean-medium: #088395;
+  --ocean-light: #05BFDB;
+  --sky: #7DD3FC;
+  --ice: #E0F2FE;
 
-  /* Earth Tones - Soil & Warmth */
-  --terracotta: #E76F51;
-  --sunset-orange: #F4A261;
-  --warm-sand: #E9C46A;
-  --earth-brown: #A67C52;
-  --clay-red: #B85450;
+  /* Accent - Warm Earth Tones */
+  --terracotta: #D4724B;
+  --clay: #E8956F;
+  --sand: #F4D5A6;
+  --wheat: #F9EED9;
 
-  /* Natural Neutrals */
-  --white: #ffffff;
-  --cloud-white: #F8F9FA;
-  --mist-gray: #E9ECEF;
-  --stone-light: #DEE2E6;
-  --stone-gray: #ADB5BD;
-  --slate-gray: #6C757D;
-  --charcoal: #495057;
-  --carbon-dark: #212529;
-  --night-sky: #1A1D23;
+  /* Natural Neutrals - Scandinavian */
+  --white: #FFFFFF;
+  --snow: #FAFAFA;
+  --paper: #F5F5F5;
+  --stone: #E5E5E5;
+  --concrete: #D4D4D4;
+  --slate: #737373;
+  --graphite: #404040;
+  --carbon: #1A1A1A;
+  --night: #0A0A0A;
 
-  /* Semantic Environmental Colors */
-  --primary: var(--ocean-blue);
-  --secondary: var(--leaf-green);
-  --accent: var(--sunset-orange);
-  --success: var(--grass-green);
-  --warning: var(--warm-sand);
-  --danger: var(--clay-red);
+  /* Semantic Colors */
+  --primary: var(--forest-primary);
+  --secondary: var(--ocean-medium);
+  --accent: var(--terracotta);
+  --success: var(--sage);
+  --warning: var(--sand);
+  --danger: var(--clay);
 
-  /* Surface Colors */
+  /* Surface Colors - Light & Airy */
   --bg-primary: var(--white);
-  --bg-secondary: var(--cloud-white);
-  --bg-tertiary: var(--mist-gray);
-  --bg-dark: var(--forest-deep);
+  --bg-secondary: var(--snow);
+  --bg-tertiary: var(--paper);
+  --bg-dark: var(--forest-primary);
   --bg-card: var(--white);
 
-  /* Text Colors - Natural & Readable */
-  --text-primary: var(--carbon-dark);
-  --text-secondary: var(--charcoal);
-  --text-tertiary: var(--slate-gray);
-  --text-on-dark: var(--cloud-white);
+  /* Text Colors - Clear Hierarchy */
+  --text-primary: var(--carbon);
+  --text-secondary: var(--graphite);
+  --text-tertiary: var(--slate);
+  --text-on-dark: var(--snow);
 
-  /* Environmental Gradients - Natural Phenomena */
-  --gradient-ocean: linear-gradient(135deg, #0077B6 0%, #00B4D8 50%, #90E0EF 100%);
-  --gradient-forest: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #52B788 100%);
-  --gradient-sunset: linear-gradient(135deg, #E76F51 0%, #F4A261 50%, #E9C46A 100%);
-  --gradient-earth: linear-gradient(135deg, #E76F51 0%, #E9C46A 100%);
-  --gradient-spring: linear-gradient(135deg, #40916C 0%, #74C69D 50%, #95D5B2 100%);
-  --gradient-sky: linear-gradient(180deg, #90E0EF 0%, #CAF0F8 100%);
-  --gradient-dawn: linear-gradient(135deg, #F4A261 0%, #90E0EF 100%);
+  /* Scandinavian Gradients - Subtle & Natural */
+  --gradient-forest: linear-gradient(135deg, #1B5E3F 0%, #4A9B6E 100%);
+  --gradient-ocean: linear-gradient(135deg, #0A4D68 0%, #05BFDB 100%);
+  --gradient-earth: linear-gradient(135deg, #D4724B 0%, #F4D5A6 100%);
+  --gradient-sage: linear-gradient(135deg, #7BB896 0%, #A8D5BA 100%);
+  --gradient-sky: linear-gradient(180deg, #7DD3FC 0%, #E0F2FE 100%);
+  --gradient-dawn: linear-gradient(135deg, #E8956F 0%, #7DD3FC 100%);
 
-  /* Atmospheric mesh gradient */
+  /* Atmospheric mesh gradient - Nordic Style */
   --gradient-atmosphere:
-    radial-gradient(at 20% 30%, rgba(116, 198, 157, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(0, 180, 216, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(233, 196, 106, 0.1) 0px, transparent 50%),
-    radial-gradient(at 90% 70%, rgba(82, 183, 136, 0.12) 0px, transparent 50%);
+    radial-gradient(at 20% 30%, rgba(123, 184, 150, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(8, 131, 149, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(244, 213, 166, 0.05) 0px, transparent 50%),
+    radial-gradient(at 90% 70%, rgba(168, 213, 186, 0.07) 0px, transparent 50%);
 
-  /* Natural Shadows - Softer, Grounded */
-  --shadow-xs: 0 1px 2px 0 rgba(33, 37, 41, 0.06);
-  --shadow-sm: 0 2px 4px 0 rgba(33, 37, 41, 0.08);
-  --shadow-md: 0 4px 12px 0 rgba(33, 37, 41, 0.1);
-  --shadow-lg: 0 8px 24px 0 rgba(33, 37, 41, 0.12);
-  --shadow-xl: 0 16px 48px 0 rgba(33, 37, 41, 0.14);
-  --shadow-2xl: 0 24px 64px 0 rgba(33, 37, 41, 0.16);
-  --shadow-glow-ocean: 0 0 40px rgba(0, 180, 216, 0.3);
-  --shadow-glow-forest: 0 0 40px rgba(82, 183, 136, 0.3);
-  --shadow-glow-sunset: 0 0 40px rgba(244, 162, 97, 0.3);
+  /* Subtle Scandinavian Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(26, 26, 26, 0.04);
+  --shadow-sm: 0 2px 6px 0 rgba(26, 26, 26, 0.06);
+  --shadow-md: 0 4px 12px 0 rgba(26, 26, 26, 0.08);
+  --shadow-lg: 0 8px 24px 0 rgba(26, 26, 26, 0.10);
+  --shadow-xl: 0 16px 40px 0 rgba(26, 26, 26, 0.12);
+  --shadow-2xl: 0 24px 56px 0 rgba(26, 26, 26, 0.14);
+  --shadow-glow-forest: 0 0 32px rgba(27, 94, 63, 0.2);
+  --shadow-glow-ocean: 0 0 32px rgba(8, 131, 149, 0.2);
+  --shadow-glow-earth: 0 0 32px rgba(212, 114, 75, 0.2);
 
   /* Organic Border Radius */
   --radius-sm: 12px;
@@ -141,23 +137,26 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.7;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.65;
   color: var(--text-primary);
   background: var(--bg-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  letter-spacing: -0.011em;
   font-feature-settings: 'kern' 1, 'liga' 1;
   text-rendering: optimizeLegibility;
   transition: background-color var(--transition-smooth);
 }
 
-/* Typography - Warm & Human */
+/* Typography - Clean & Modern Scandinavian */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
 }
