@@ -37,6 +37,14 @@
     initScrollTriggers();
     initDynamicParticles();
     initTextAnimations();
+    initCustomCursor();
+    initMagneticElements();
+    initScrollColorShift();
+    initParticleExplosions();
+    initMorphingBlobs();
+    initAdvanced3DTilt();
+    initTextRevealEffects();
+    initSmoothScrollSnap();
 
     console.log('ChainSync: Revamped experience loaded successfully');
   }
@@ -1403,6 +1411,420 @@
   }
 
   /* ==========================================
+     Custom Animated Cursor with Trail
+     ========================================== */
+  function initCustomCursor() {
+    if (window.innerWidth < 768 || 'ontouchstart' in window) return;
+
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+
+    cursor.style.cssText = `
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(0, 180, 216, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10001;
+      transition: all 0.15s ease;
+      mix-blend-mode: difference;
+    `;
+
+    cursorDot.style.cssText = `
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 180, 216, 1);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10002;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.8);
+    `;
+
+    document.body.appendChild(cursor);
+    document.body.appendChild(cursorDot);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let dotX = 0, dotY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dotX = e.clientX;
+      dotY = e.clientY;
+    });
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.1;
+      cursorY += (mouseY - cursorY) * 0.1;
+
+      cursor.style.left = cursorX - 20 + 'px';
+      cursor.style.top = cursorY - 20 + 'px';
+      cursorDot.style.left = dotX - 4 + 'px';
+      cursorDot.style.top = dotY - 4 + 'px';
+
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Expand cursor on hover
+    document.querySelectorAll('a, button, .feature-card, .btn-primary, .btn-secondary').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.width = '60px';
+        cursor.style.height = '60px';
+        cursor.style.borderColor = 'rgba(82, 183, 136, 0.8)';
+        cursorDot.style.background = 'rgba(82, 183, 136, 1)';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        cursor.style.width = '40px';
+        cursor.style.height = '40px';
+        cursor.style.borderColor = 'rgba(0, 180, 216, 0.5)';
+        cursorDot.style.background = 'rgba(0, 180, 216, 1)';
+      });
+    });
+  }
+
+  /* ==========================================
+     Magnetic Elements (Pull toward cursor)
+     ========================================== */
+  function initMagneticElements() {
+    const magneticElements = document.querySelectorAll('.btn-primary, .btn-secondary, .feature-card, .step-icon');
+
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Stronger magnetic pull
+        const moveX = x * 0.3;
+        const moveY = y * 0.3;
+
+        this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+        this.style.transition = 'none';
+      });
+
+      el.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      });
+    });
+  }
+
+  /* ==========================================
+     Scroll-Based Color Shifting
+     ========================================== */
+  function initScrollColorShift() {
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scroll = window.pageYOffset;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scroll / maxScroll;
+
+      // Shift colors based on scroll
+      const hue = 180 + (scrollPercent * 60); // Blue to green shift
+      document.documentElement.style.setProperty('--scroll-hue', hue);
+
+      // Add class for scroll effects
+      if (scroll > lastScroll && scroll > 100) {
+        document.body.classList.add('scrolling-down');
+      } else {
+        document.body.classList.remove('scrolling-down');
+      }
+
+      lastScroll = scroll;
+    }, { passive: true });
+  }
+
+  /* ==========================================
+     Particle Explosion on Click
+     ========================================== */
+  function initParticleExplosions() {
+    document.addEventListener('click', (e) => {
+      createExplosion(e.clientX, e.clientY);
+    });
+
+    function createExplosion(x, y) {
+      const particleCount = 15;
+      const colors = ['#0077B6', '#00B4D8', '#52B788', '#74C69D'];
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        const angle = (Math.PI * 2 * i) / particleCount;
+        const velocity = 100 + Math.random() * 100;
+
+        particle.style.cssText = `
+          position: fixed;
+          left: ${x}px;
+          top: ${y}px;
+          width: 8px;
+          height: 8px;
+          background: ${colors[Math.floor(Math.random() * colors.length)]};
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 10000;
+          box-shadow: 0 0 10px currentColor;
+        `;
+
+        document.body.appendChild(particle);
+
+        const dx = Math.cos(angle) * velocity;
+        const dy = Math.sin(angle) * velocity;
+
+        let posX = 0;
+        let posY = 0;
+        let opacity = 1;
+
+        function animateParticle() {
+          posX += dx * 0.016;
+          posY += dy * 0.016 + 2; // gravity
+          opacity -= 0.02;
+
+          particle.style.transform = `translate(${posX}px, ${posY}px) scale(${opacity})`;
+          particle.style.opacity = opacity;
+
+          if (opacity > 0) {
+            requestAnimationFrame(animateParticle);
+          } else {
+            particle.remove();
+          }
+        }
+
+        animateParticle();
+      }
+    }
+  }
+
+  /* ==========================================
+     Morphing Blob Backgrounds
+     ========================================== */
+  function initMorphingBlobs() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.3;
+    `;
+    hero.insertBefore(canvas, hero.firstChild);
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+
+    class Blob {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = 100 + Math.random() * 200;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.color = `rgba(${Math.random() * 50}, ${150 + Math.random() * 50}, ${200 + Math.random() * 55}, 0.3)`;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+
+      draw() {
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+        gradient.addColorStop(0, this.color);
+        gradient.addColorStop(1, 'transparent');
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const blobs = Array.from({ length: 5 }, () => new Blob());
+
+    function animateBlobs() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      blobs.forEach(blob => {
+        blob.update();
+        blob.draw();
+      });
+      requestAnimationFrame(animateBlobs);
+    }
+
+    animateBlobs();
+
+    window.addEventListener('resize', () => {
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    });
+  }
+
+  /* ==========================================
+     Advanced 3D Tilt Effects
+     ========================================== */
+  function initAdvanced3DTilt() {
+    const cards = document.querySelectorAll('.feature-card, .scenario-card, .tech-card');
+
+    cards.forEach(card => {
+      card.style.transformStyle = 'preserve-3d';
+      card.style.transition = 'transform 0.1s ease-out';
+
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        this.style.transform = `
+          perspective(1000px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          scale3d(1.05, 1.05, 1.05)
+          translateZ(20px)
+        `;
+
+        // Add shine effect
+        const shine = this.querySelector('.card-shine') || document.createElement('div');
+        if (!shine.classList.contains('card-shine')) {
+          shine.className = 'card-shine';
+          shine.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+              ${Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 90}deg,
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,0.3) 50%,
+              rgba(255,255,255,0) 100%
+            );
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+          `;
+          this.appendChild(shine);
+        }
+        shine.style.opacity = '1';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        const shine = this.querySelector('.card-shine');
+        if (shine) {
+          shine.style.opacity = '0';
+        }
+      });
+    });
+  }
+
+  /* ==========================================
+     Text Reveal with Split Animation
+     ========================================== */
+  function initTextRevealEffects() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const text = entry.target;
+          const content = text.textContent;
+          text.textContent = '';
+          text.style.opacity = '1';
+
+          content.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.cssText = `
+              display: inline-block;
+              opacity: 0;
+              transform: translateY(20px) rotateX(-90deg);
+              animation: revealChar 0.5s ease forwards ${i * 0.02}s;
+            `;
+            text.appendChild(span);
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.section-title').forEach(title => {
+      observer.observe(title);
+    });
+
+    // Add keyframes
+    if (!document.querySelector('#reveal-char-animation')) {
+      const style = document.createElement('style');
+      style.id = 'reveal-char-animation';
+      style.textContent = `
+        @keyframes revealChar {
+          to {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  /* ==========================================
+     Smooth Scroll with Momentum
+     ========================================== */
+  function initSmoothScrollSnap() {
+    let currentScroll = window.pageYOffset;
+    let targetScroll = currentScroll;
+    let isScrolling = false;
+
+    window.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > 50) {
+        e.preventDefault();
+        targetScroll += e.deltaY * 2;
+        targetScroll = Math.max(0, Math.min(targetScroll, document.documentElement.scrollHeight - window.innerHeight));
+
+        if (!isScrolling) {
+          isScrolling = true;
+          smoothScroll();
+        }
+      }
+    }, { passive: false });
+
+    function smoothScroll() {
+      currentScroll += (targetScroll - currentScroll) * 0.1;
+
+      if (Math.abs(targetScroll - currentScroll) > 0.5) {
+        window.scrollTo(0, currentScroll);
+        requestAnimationFrame(smoothScroll);
+      } else {
+        window.scrollTo(0, targetScroll);
+        isScrolling = false;
+      }
+    }
+  }
+
+  /* ==========================================
      Error Handling
      ========================================== */
   window.addEventListener('error', function(e) {
@@ -1411,8 +1833,8 @@
 
   // Expose public API
   window.ChainSync = {
-    version: '3.1.0',
-    theme: 'environmental-interactive',
+    version: '4.0.0',
+    theme: 'cutting-edge-interactive',
     refresh: init,
     enableCursorTrail: initCursorTrail
   };
