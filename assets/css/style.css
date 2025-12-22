@@ -39,6 +39,22 @@
   --carbon: #212529;
   --night: #0D1117;
 
+  /* Legacy Variable Aliases - for backward compatibility */
+  --forest-deep: var(--forest-primary);
+  --forest-green: var(--forest-medium);
+  --deep-ocean: var(--ocean-deep);
+  --ocean-blue: var(--ocean-medium);
+  --leaf-green: var(--forest-light);
+  --spring-green: var(--sage);
+  --grass-green: var(--sage);
+  --sky-blue: var(--sky);
+  --cloud-white: var(--snow);
+  --aqua-fresh: var(--ice);
+  --charcoal: var(--graphite);
+  --night-sky: var(--night);
+  --clay-red: var(--terracotta);
+  --stone-light: var(--stone);
+
   /* Semantic Colors */
   --primary: var(--forest-primary);
   --secondary: var(--ocean-medium);
@@ -65,6 +81,7 @@
   --gradient-ocean: linear-gradient(135deg, #1B4F72 0%, #4A90B5 100%);
   --gradient-earth: linear-gradient(135deg, #B8765C 0%, #E5C8A8 100%);
   --gradient-sage: linear-gradient(135deg, #8FB5A5 0%, #B8D4C9 100%);
+  --gradient-spring: linear-gradient(135deg, #8FB5A5 0%, #B8D4C9 100%);
   --gradient-sky: linear-gradient(180deg, #7EAEC9 0%, #D9E8F0 100%);
   --gradient-dawn: linear-gradient(135deg, #D4A08A 0%, #7EAEC9 100%);
   --gradient-sunset: linear-gradient(135deg, #B8765C 0%, #D4A08A 100%);
@@ -83,9 +100,10 @@
   --shadow-lg: 0 8px 24px 0 rgba(26, 26, 26, 0.10);
   --shadow-xl: 0 16px 40px 0 rgba(26, 26, 26, 0.12);
   --shadow-2xl: 0 24px 56px 0 rgba(26, 26, 26, 0.14);
-  --shadow-glow-forest: 0 0 32px rgba(27, 94, 63, 0.2);
-  --shadow-glow-ocean: 0 0 32px rgba(8, 131, 149, 0.2);
-  --shadow-glow-earth: 0 0 32px rgba(212, 114, 75, 0.2);
+  --shadow-glow-forest: 0 0 32px rgba(44, 95, 79, 0.2);
+  --shadow-glow-ocean: 0 0 32px rgba(27, 79, 114, 0.2);
+  --shadow-glow-earth: 0 0 32px rgba(184, 118, 92, 0.2);
+  --shadow-glow-sunset: 0 0 32px rgba(184, 118, 92, 0.2);
 
   /* Organic Border Radius */
   --radius-sm: 12px;
