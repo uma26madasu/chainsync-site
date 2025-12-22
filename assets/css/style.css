@@ -518,6 +518,16 @@ body.has-testing-banner .page-hero {
   padding: 140px 32px 100px;
   position: relative;
   overflow: hidden;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background: linear-gradient(135deg, var(--forest-deep) 0%, var(--deep-ocean) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, var(--deep-ocean) 0%, var(--leaf-green) 100%);
+  }
 }
 
 .hero-bg {
@@ -535,8 +545,8 @@ body.has-testing-banner .page-hero {
 .floating-shape {
   position: absolute;
   filter: blur(100px);
-  opacity: 0.4;
-  animation: floatOrganic 30s infinite ease-in-out;
+  opacity: 0.6;
+  animation: floatOrganic 30s infinite ease-in-out, pulse 4s infinite ease-in-out;
   border-radius: var(--radius-blob);
 }
 
@@ -640,6 +650,16 @@ body.has-testing-banner .page-hero {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--stone-light);
+  animation: heroGradient 10s ease infinite;
+}
+
+@keyframes heroGradient {
+  0%, 100% {
+    background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #90E0EF 0%, #B7E4C7 50%, #CAF0F8 100%);
+  }
 }
 
 .animated-bg {
@@ -657,7 +677,16 @@ body.has-testing-banner .page-hero {
   position: absolute;
   border-radius: var(--radius-blob);
   filter: blur(80px);
-  animation: floatOrganic 25s infinite ease-in-out;
+  animation: floatOrganic 25s infinite ease-in-out, rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .orb-1 {
@@ -717,7 +746,20 @@ body.has-testing-banner .page-hero {
   letter-spacing: 1.2px;
   margin-bottom: 24px;
   box-shadow: var(--shadow-md);
-  animation: slideInLeft 0.6s ease-out;
+  animation: slideInLeft 0.6s ease-out, tagPulse 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes tagPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-md);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
 }
 
 @keyframes slideInLeft {
@@ -768,6 +810,29 @@ body.has-testing-banner .page-hero {
   background: var(--gradient-ocean);
   color: white;
   box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: rotate(25deg);
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 160%;
+  }
 }
 
 .btn-primary::before {
@@ -822,6 +887,31 @@ body.has-testing-banner .page-hero {
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.feature-card:nth-child(1),
+.tech-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.feature-card:nth-child(2),
+.tech-card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3),
+.tech-card:nth-child(3) {
+  animation-delay: 1s;
 }
 
 /* Decorative gradient corner */
@@ -913,6 +1003,17 @@ body.has-testing-banner .page-hero {
   font-size: 3.5rem;
   line-height: 1;
   filter: drop-shadow(0 4px 12px rgba(0, 119, 182, 0.15));
+  animation: iconBounce 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
 }
 
 /* ================================================
@@ -977,6 +1078,17 @@ body.has-testing-banner .page-hero {
   background-clip: text;
   margin-bottom: 12px;
   line-height: 1;
+  animation: numberGlow 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(82, 183, 136, 0.5));
+}
+
+@keyframes numberGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(82, 183, 136, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(82, 183, 136, 0.8));
+  }
 }
 
 .stat-label {
@@ -1050,9 +1162,19 @@ body.has-testing-banner .page-hero {
   font-size: 2.5rem;
   font-weight: 900;
   margin: 0 auto 24px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), 0 0 0 0 rgba(0, 119, 182, 0.7);
   border: 5px solid white;
   transition: all var(--transition-organic);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 0 0 rgba(0, 119, 182, 0.7);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 15px rgba(0, 119, 182, 0);
+  }
 }
 
 .process-step:hover .step-icon {

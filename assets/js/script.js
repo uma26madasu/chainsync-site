@@ -35,6 +35,8 @@
     initProgressBars();
     initHoverEffects();
     initScrollTriggers();
+    initDynamicParticles();
+    initTextAnimations();
 
     console.log('ChainSync: Revamped experience loaded successfully');
   }
@@ -1289,6 +1291,115 @@
         shape.style.transform = `translateY(${scrolled * speed}px)`;
       });
     }, { passive: true });
+  }
+
+  /* ==========================================
+     Dynamic Particle Background
+     ========================================== */
+  function initDynamicParticles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    // Create floating particles container
+    const particleContainer = document.createElement('div');
+    particleContainer.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    `;
+    hero.insertBefore(particleContainer, hero.firstChild);
+
+    // Create particles
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      const size = Math.random() * 6 + 2;
+      const duration = Math.random() * 20 + 10;
+      const delay = Math.random() * 5;
+      const left = Math.random() * 100;
+
+      particle.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3});
+        border-radius: 50%;
+        left: ${left}%;
+        bottom: -10%;
+        animation: floatUp ${duration}s ${delay}s infinite ease-in-out;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      `;
+
+      particleContainer.appendChild(particle);
+    }
+
+    // Add animation
+    if (!document.querySelector('#float-up-animation')) {
+      const style = document.createElement('style');
+      style.id = 'float-up-animation';
+      style.textContent = `
+        @keyframes floatUp {
+          0% {
+            transform: translateY(0) translateX(0) scale(1);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-110vh) translateX(${Math.random() * 100 - 50}px) scale(0);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  /* ==========================================
+     Text Wave Animations
+     ========================================== */
+  function initTextAnimations() {
+    const titles = document.querySelectorAll('.hero-title, .page-title');
+
+    titles.forEach(title => {
+      const text = title.textContent;
+      title.innerHTML = '';
+
+      text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.cssText = `
+          display: inline-block;
+          animation: letterWave 3s ease-in-out ${index * 0.05}s infinite;
+        `;
+        title.appendChild(span);
+      });
+    });
+
+    // Add letter wave animation
+    if (!document.querySelector('#letter-wave-animation')) {
+      const style = document.createElement('style');
+      style.id = 'letter-wave-animation';
+      style.textContent = `
+        @keyframes letterWave {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
   }
 
   /* ==========================================
