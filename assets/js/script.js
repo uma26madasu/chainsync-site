@@ -1330,112 +1330,19 @@
   }
 
   /* ==========================================
-     Custom Animated Cursor with Trail
+     Custom Animated Cursor with Trail - DISABLED PER USER REQUEST
      ========================================== */
   function initCustomCursor() {
-    if (window.innerWidth < 768 || 'ontouchstart' in window) return;
-
-    // Hide default cursor
-    document.body.style.cursor = 'none';
-
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    const cursorDot = document.createElement('div');
-    cursorDot.className = 'cursor-dot';
-
-    cursor.style.cssText = `
-      position: fixed;
-      width: 40px;
-      height: 40px;
-      border: 2px solid rgba(0, 180, 216, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10001;
-      transition: all 0.15s ease;
-      mix-blend-mode: difference;
-    `;
-
-    cursorDot.style.cssText = `
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: rgba(0, 180, 216, 1);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10002;
-      box-shadow: 0 0 20px rgba(0, 180, 216, 0.8);
-    `;
-
-    document.body.appendChild(cursor);
-    document.body.appendChild(cursorDot);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    let dotX = 0, dotY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dotX = e.clientX;
-      dotY = e.clientY;
-    });
-
-    function animateCursor() {
-      cursorX += (mouseX - cursorX) * 0.1;
-      cursorY += (mouseY - cursorY) * 0.1;
-
-      cursor.style.left = cursorX - 20 + 'px';
-      cursor.style.top = cursorY - 20 + 'px';
-      cursorDot.style.left = dotX - 4 + 'px';
-      cursorDot.style.top = dotY - 4 + 'px';
-
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Expand cursor on hover
-    document.querySelectorAll('a, button, .feature-card, .btn-primary, .btn-secondary').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.width = '60px';
-        cursor.style.height = '60px';
-        cursor.style.borderColor = 'rgba(82, 183, 136, 0.8)';
-        cursorDot.style.background = 'rgba(82, 183, 136, 1)';
-      });
-
-      el.addEventListener('mouseleave', () => {
-        cursor.style.width = '40px';
-        cursor.style.height = '40px';
-        cursor.style.borderColor = 'rgba(0, 180, 216, 0.5)';
-        cursorDot.style.background = 'rgba(0, 180, 216, 1)';
-      });
-    });
+    // User requested removal of custom cursor (blue dot and red circle)
+    return;
   }
 
   /* ==========================================
-     Magnetic Elements (Pull toward cursor)
+     Magnetic Elements (Pull toward cursor) - DISABLED
      ========================================== */
   function initMagneticElements() {
-    const magneticElements = document.querySelectorAll('.btn-primary, .btn-secondary, .feature-card, .step-icon');
-
-    magneticElements.forEach(el => {
-      el.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-
-        // Stronger magnetic pull
-        const moveX = x * 0.3;
-        const moveY = y * 0.3;
-
-        this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
-        this.style.transition = 'none';
-      });
-
-      el.addEventListener('mouseleave', function() {
-        this.style.transform = '';
-        this.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-      });
-    });
+    // Disabled magnetic effects
+    return;
   }
 
   /* ==========================================
