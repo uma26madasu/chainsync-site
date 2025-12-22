@@ -1553,37 +1553,11 @@
   }
 
   /* ==========================================
-     Smooth Scroll with Momentum
+     Smooth Scroll with Momentum - DISABLED (CAUSES LAG)
      ========================================== */
   function initSmoothScrollSnap() {
-    let currentScroll = window.pageYOffset;
-    let targetScroll = currentScroll;
-    let isScrolling = false;
-
-    window.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) > 50) {
-        e.preventDefault();
-        targetScroll += e.deltaY * 2;
-        targetScroll = Math.max(0, Math.min(targetScroll, document.documentElement.scrollHeight - window.innerHeight));
-
-        if (!isScrolling) {
-          isScrolling = true;
-          smoothScroll();
-        }
-      }
-    }, { passive: false });
-
-    function smoothScroll() {
-      currentScroll += (targetScroll - currentScroll) * 0.1;
-
-      if (Math.abs(targetScroll - currentScroll) > 0.5) {
-        window.scrollTo(0, currentScroll);
-        requestAnimationFrame(smoothScroll);
-      } else {
-        window.scrollTo(0, targetScroll);
-        isScrolling = false;
-      }
-    }
+    // Disabled - custom scroll handling causes lag and janky scrolling
+    return;
   }
 
   /* ==========================================
@@ -1756,43 +1730,10 @@
     return;
   }
 
-  /* Environmental Audio Feedback */
+  /* Environmental Audio Feedback - DISABLED (CAUSES LAG) */
   function initEnvironmentalAudio() {
-    if ('AudioContext' in window || 'webkitAudioContext' in window) {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      const audioContext = new AudioContext();
-
-      function playTone(frequency, duration, volume = 0.1) {
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-
-        oscillator.frequency.value = frequency;
-        oscillator.type = 'sine';
-        gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-
-        oscillator.start(audioContext.currentTime);
-        oscillator.stop(audioContext.currentTime + duration);
-      }
-
-      // Subtle water drop sound on click
-      document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('btn-primary') || e.target.closest('.feature-card')) {
-          playTone(523.25, 0.1, 0.05); // C5 note
-        }
-      });
-
-      // Ambient background tone
-      const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-      buttons.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-          playTone(659.25, 0.08, 0.03); // E5 note
-        });
-      });
-    }
+    // Disabled - Web Audio API causes performance issues
+    return;
   }
 
   /* WebGL Shader Background - DISABLED FOR PERFORMANCE */
@@ -1807,63 +1748,16 @@
     return;
   }
 
-  /* Parallax Depth Layers */
+  /* Parallax Depth Layers - DISABLED (CAUSES LAG) */
   function initParallaxDepthLayers() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const layers = [
-      { selector: '.hero-title', speed: 0.5, depth: 100 },
-      { selector: '.hero-subtitle', speed: 0.7, depth: 80 },
-      { selector: '.hero-actions', speed: 0.9, depth: 60 },
-      { selector: '.floating-shape', speed: 0.3, depth: 120 }
-    ];
-
-    window.addEventListener('mousemove', (e) => {
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const mouseX = (e.clientX - centerX) / centerX;
-      const mouseY = (e.clientY - centerY) / centerY;
-
-      layers.forEach(layer => {
-        const elements = document.querySelectorAll(layer.selector);
-        elements.forEach(el => {
-          const x = mouseX * layer.depth * layer.speed;
-          const y = mouseY * layer.depth * layer.speed;
-          el.style.transform = `translate(${x}px, ${y}px) translateZ(0)`;
-        });
-      });
-    });
+    // Disabled - mousemove events on every frame cause severe lag
+    return;
   }
 
-  /* Glitch Effects */
+  /* Glitch Effects - DISABLED */
   function initGlitchEffects() {
-    const sectionTags = document.querySelectorAll('.section-tag');
-
-    sectionTags.forEach(tag => {
-      tag.addEventListener('mouseenter', function() {
-        this.style.animation = 'none';
-        setTimeout(() => {
-          this.style.animation = 'glitch 0.3s';
-        }, 10);
-      });
-    });
-
-    if (!document.querySelector('#glitch-animation')) {
-      const style = document.createElement('style');
-      style.id = 'glitch-animation';
-      style.textContent = `
-        @keyframes glitch {
-          0% { transform: translate(0); }
-          20% { transform: translate(-2px, 2px); }
-          40% { transform: translate(-2px, -2px); }
-          60% { transform: translate(2px, 2px); }
-          80% { transform: translate(2px, -2px); }
-          100% { transform: translate(0); }
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    // Disabled for performance
+    return;
   }
 
   /* Infinite Scroll 3D - DISABLED FOR PERFORMANCE */
@@ -1874,8 +1768,8 @@
 
   // Expose public API
   window.ChainSync = {
-    version: '5.1.0',
-    theme: 'performance-optimized',
+    version: '6.0.0',
+    theme: 'clean-smooth',
     refresh: init,
     enableCursorTrail: initCursorTrail
   };
