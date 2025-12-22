@@ -1314,112 +1314,19 @@
   }
 
   /* ==========================================
-     Dynamic Particle Background
+     Dynamic Particle Background - DISABLED PER USER REQUEST
      ========================================== */
   function initDynamicParticles() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    // Create floating particles container
-    const particleContainer = document.createElement('div');
-    particleContainer.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    `;
-    hero.insertBefore(particleContainer, hero.firstChild);
-
-    // Create particles
-    for (let i = 0; i < 30; i++) {
-      const particle = document.createElement('div');
-      const size = Math.random() * 6 + 2;
-      const duration = Math.random() * 20 + 10;
-      const delay = Math.random() * 5;
-      const left = Math.random() * 100;
-
-      particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3});
-        border-radius: 50%;
-        left: ${left}%;
-        bottom: -10%;
-        animation: floatUp ${duration}s ${delay}s infinite ease-in-out;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-      `;
-
-      particleContainer.appendChild(particle);
-    }
-
-    // Add animation
-    if (!document.querySelector('#float-up-animation')) {
-      const style = document.createElement('style');
-      style.id = 'float-up-animation';
-      style.textContent = `
-        @keyframes floatUp {
-          0% {
-            transform: translateY(0) translateX(0) scale(1);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-110vh) translateX(${Math.random() * 100 - 50}px) scale(0);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    // User requested no particle effects - completely disabled
+    return;
   }
 
   /* ==========================================
-     Text Wave Animations
+     Text Wave Animations - DISABLED (CAUSED TEXT SPACING ISSUES)
      ========================================== */
   function initTextAnimations() {
-    const titles = document.querySelectorAll('.hero-title, .page-title');
-
-    titles.forEach(title => {
-      const text = title.textContent;
-      title.innerHTML = '';
-
-      text.split('').forEach((char, index) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.cssText = `
-          display: inline-block;
-          animation: letterWave 3s ease-in-out ${index * 0.05}s infinite;
-        `;
-        title.appendChild(span);
-      });
-    });
-
-    // Add letter wave animation
-    if (!document.querySelector('#letter-wave-animation')) {
-      const style = document.createElement('style');
-      style.id = 'letter-wave-animation';
-      style.textContent = `
-        @keyframes letterWave {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-5px);
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    // DISABLED - This was splitting text into characters and breaking word spacing
+    return;
   }
 
   /* ==========================================
@@ -1558,135 +1465,19 @@
   }
 
   /* ==========================================
-     Particle Explosion on Click
+     Particle Explosion on Click - DISABLED PER USER REQUEST
      ========================================== */
   function initParticleExplosions() {
-    document.addEventListener('click', (e) => {
-      createExplosion(e.clientX, e.clientY);
-    });
-
-    function createExplosion(x, y) {
-      const particleCount = 15;
-      const colors = ['#0077B6', '#00B4D8', '#52B788', '#74C69D'];
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        const angle = (Math.PI * 2 * i) / particleCount;
-        const velocity = 100 + Math.random() * 100;
-
-        particle.style.cssText = `
-          position: fixed;
-          left: ${x}px;
-          top: ${y}px;
-          width: 8px;
-          height: 8px;
-          background: ${colors[Math.floor(Math.random() * colors.length)]};
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 10000;
-          box-shadow: 0 0 10px currentColor;
-        `;
-
-        document.body.appendChild(particle);
-
-        const dx = Math.cos(angle) * velocity;
-        const dy = Math.sin(angle) * velocity;
-
-        let posX = 0;
-        let posY = 0;
-        let opacity = 1;
-
-        function animateParticle() {
-          posX += dx * 0.016;
-          posY += dy * 0.016 + 2; // gravity
-          opacity -= 0.02;
-
-          particle.style.transform = `translate(${posX}px, ${posY}px) scale(${opacity})`;
-          particle.style.opacity = opacity;
-
-          if (opacity > 0) {
-            requestAnimationFrame(animateParticle);
-          } else {
-            particle.remove();
-          }
-        }
-
-        animateParticle();
-      }
-    }
+    // User requested no particle effects - completely disabled
+    return;
   }
 
   /* ==========================================
-     Morphing Blob Backgrounds
+     Morphing Blob Backgrounds - DISABLED PER USER REQUEST
      ========================================== */
   function initMorphingBlobs() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const canvas = document.createElement('canvas');
-    canvas.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.3;
-    `;
-    hero.insertBefore(canvas, hero.firstChild);
-
-    const ctx = canvas.getContext('2d');
-    canvas.width = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-
-    class Blob {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = 100 + Math.random() * 200;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.color = `rgba(${Math.random() * 50}, ${150 + Math.random() * 50}, ${200 + Math.random() * 55}, 0.3)`;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-      }
-
-      draw() {
-        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
-        gradient.addColorStop(0, this.color);
-        gradient.addColorStop(1, 'transparent');
-
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const blobs = Array.from({ length: 5 }, () => new Blob());
-
-    function animateBlobs() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      blobs.forEach(blob => {
-        blob.update();
-        blob.draw();
-      });
-      requestAnimationFrame(animateBlobs);
-    }
-
-    animateBlobs();
-
-    window.addEventListener('resize', () => {
-      canvas.width = hero.offsetWidth;
-      canvas.height = hero.offsetHeight;
-    });
+    // User requested no water/ripple/blob effects - completely disabled
+    return;
   }
 
   /* ==========================================
@@ -1754,52 +1545,11 @@
   }
 
   /* ==========================================
-     Text Reveal with Split Animation
+     Text Reveal with Split Animation - DISABLED (CAUSED TEXT SPACING ISSUES)
      ========================================== */
   function initTextRevealEffects() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const text = entry.target;
-          const content = text.textContent;
-          text.textContent = '';
-          text.style.opacity = '1';
-
-          content.split('').forEach((char, i) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.style.cssText = `
-              display: inline-block;
-              opacity: 0;
-              transform: translateY(20px) rotateX(-90deg);
-              animation: revealChar 0.5s ease forwards ${i * 0.02}s;
-            `;
-            text.appendChild(span);
-          });
-
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.section-title').forEach(title => {
-      observer.observe(title);
-    });
-
-    // Add keyframes
-    if (!document.querySelector('#reveal-char-animation')) {
-      const style = document.createElement('style');
-      style.id = 'reveal-char-animation';
-      style.textContent = `
-        @keyframes revealChar {
-          to {
-            opacity: 1;
-            transform: translateY(0) rotateX(0);
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
+    // DISABLED - This was splitting text into characters and breaking word spacing
+    return;
   }
 
   /* ==========================================
@@ -1964,75 +1714,10 @@
     });
   }
 
-  /* Three.js 3D Environmental Scene */
+  /* Three.js 3D Environmental Scene - DISABLED PER USER REQUEST */
   function initThreeJSScene() {
-    if (window.innerWidth < 768 || typeof THREE === 'undefined') return;
-
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    // We'll use vanilla JS to create a 3D-like effect without Three.js dependency
-    const particleContainer = document.createElement('div');
-    particleContainer.style.cssText = `
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 3;
-      perspective: 1000px;
-    `;
-    hero.insertBefore(particleContainer, hero.firstChild);
-
-    class Particle3D {
-      constructor() {
-        this.element = document.createElement('div');
-        this.x = Math.random() * 100;
-        this.y = Math.random() * 100;
-        this.z = Math.random() * 1000 - 500;
-        this.size = Math.random() * 4 + 1;
-        this.speedZ = Math.random() * 2 + 0.5;
-        this.color = ['#00B4D8', '#52B788', '#74C69D'][Math.floor(Math.random() * 3)];
-
-        this.element.style.cssText = `
-          position: absolute;
-          width: ${this.size}px;
-          height: ${this.size}px;
-          background: ${this.color};
-          border-radius: 50%;
-          box-shadow: 0 0 ${this.size * 4}px ${this.color};
-        `;
-        particleContainer.appendChild(this.element);
-      }
-
-      update() {
-        this.z += this.speedZ;
-        if (this.z > 500) {
-          this.z = -500;
-          this.x = Math.random() * 100;
-          this.y = Math.random() * 100;
-        }
-
-        const scale = 500 / (500 + this.z);
-        const x = (this.x - 50) * scale + 50;
-        const y = (this.y - 50) * scale + 50;
-        const opacity = Math.max(0, 1 - Math.abs(this.z) / 500);
-
-        this.element.style.left = x + '%';
-        this.element.style.top = y + '%';
-        this.element.style.transform = `scale(${scale})`;
-        this.element.style.opacity = opacity;
-      }
-    }
-
-    const particles = Array.from({ length: 15 }, () => new Particle3D()); // Reduced from 50 to 15
-
-    function animate() {
-      particles.forEach(p => p.update());
-      requestAnimationFrame(animate);
-    }
-    animate();
+    // User requested no particle/water effects - completely disabled
+    return;
   }
 
   /* Cinematic Scroll Animations - SIMPLIFIED */
