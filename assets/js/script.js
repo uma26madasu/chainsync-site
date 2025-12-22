@@ -14,7 +14,7 @@
   }
 
   function init() {
-    console.log('ChainSync: Initializing revamped experience...');
+    console.log('ChainSync: Initializing NEXT-GENERATION experience...');
 
     // Core functionality
     initPageLoader();
@@ -46,7 +46,19 @@
     initTextRevealEffects();
     initSmoothScrollSnap();
 
-    console.log('ChainSync: Revamped experience loaded successfully');
+    // NEXT-GENERATION FEATURES
+    initWebGLWaterRipple();
+    initThreeJSScene();
+    initCinematicScroll();
+    initSVGMorphing();
+    initEnvironmentalAudio();
+    initWebGLShaderBackground();
+    initLiquidText();
+    initParallaxDepthLayers();
+    initGlitchEffects();
+    initInfiniteScroll3D();
+
+    console.log('ChainSync: NEXT-GENERATION experience loaded successfully');
   }
 
   /* ==========================================
@@ -1831,10 +1843,472 @@
     console.warn('ChainSync: Error detected -', e.message);
   }, true);
 
+  /* ==========================================
+     NEXT-GENERATION FEATURES
+     ========================================== */
+
+  /* WebGL Water Ripple Effect */
+  function initWebGLWaterRipple() {
+    const hero = document.querySelector('.hero');
+    if (!hero || window.innerWidth < 768) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.6;
+    `;
+    hero.insertBefore(canvas, hero.firstChild);
+
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
+
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+
+    // Simple water ripple shader
+    const vsSource = `
+      attribute vec2 position;
+      void main() {
+        gl_Position = vec4(position, 0.0, 1.0);
+      }
+    `;
+
+    const fsSource = `
+      precision mediump float;
+      uniform float time;
+      uniform vec2 resolution;
+      uniform vec2 mouse;
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / resolution;
+        vec2 p = uv * 2.0 - 1.0;
+
+        float dist = length(p - mouse);
+        float ripple = sin(dist * 20.0 - time * 3.0) * 0.5 + 0.5;
+        ripple *= smoothstep(1.5, 0.0, dist);
+
+        vec3 color = vec3(0.0, 0.47, 0.71) * (1.0 + ripple * 0.5);
+        gl_FragColor = vec4(color, ripple * 0.3);
+      }
+    `;
+
+    function createShader(gl, type, source) {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      return shader;
+    }
+
+    const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+    const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+    const program = gl.createProgram();
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    gl.useProgram(program);
+
+    const positions = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+    const buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+    const positionLocation = gl.getAttribLocation(program, 'position');
+    gl.enableVertexAttribArray(positionLocation);
+    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+    const timeLocation = gl.getUniformLocation(program, 'time');
+    const resolutionLocation = gl.getUniformLocation(program, 'resolution');
+    const mouseLocation = gl.getUniformLocation(program, 'mouse');
+
+    let mouseX = 0, mouseY = 0;
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouseX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      mouseY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+    });
+
+    let startTime = Date.now();
+    function render() {
+      const time = (Date.now() - startTime) * 0.001;
+
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+
+      gl.uniform1f(timeLocation, time);
+      gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+      gl.uniform2f(mouseLocation, mouseX, mouseY);
+
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+      requestAnimationFrame(render);
+    }
+    render();
+
+    window.addEventListener('resize', () => {
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    });
+  }
+
+  /* Three.js 3D Environmental Scene */
+  function initThreeJSScene() {
+    if (window.innerWidth < 768 || typeof THREE === 'undefined') return;
+
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    // We'll use vanilla JS to create a 3D-like effect without Three.js dependency
+    const particleContainer = document.createElement('div');
+    particleContainer.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+      perspective: 1000px;
+    `;
+    hero.insertBefore(particleContainer, hero.firstChild);
+
+    class Particle3D {
+      constructor() {
+        this.element = document.createElement('div');
+        this.x = Math.random() * 100;
+        this.y = Math.random() * 100;
+        this.z = Math.random() * 1000 - 500;
+        this.size = Math.random() * 4 + 1;
+        this.speedZ = Math.random() * 2 + 0.5;
+        this.color = ['#00B4D8', '#52B788', '#74C69D'][Math.floor(Math.random() * 3)];
+
+        this.element.style.cssText = `
+          position: absolute;
+          width: ${this.size}px;
+          height: ${this.size}px;
+          background: ${this.color};
+          border-radius: 50%;
+          box-shadow: 0 0 ${this.size * 4}px ${this.color};
+        `;
+        particleContainer.appendChild(this.element);
+      }
+
+      update() {
+        this.z += this.speedZ;
+        if (this.z > 500) {
+          this.z = -500;
+          this.x = Math.random() * 100;
+          this.y = Math.random() * 100;
+        }
+
+        const scale = 500 / (500 + this.z);
+        const x = (this.x - 50) * scale + 50;
+        const y = (this.y - 50) * scale + 50;
+        const opacity = Math.max(0, 1 - Math.abs(this.z) / 500);
+
+        this.element.style.left = x + '%';
+        this.element.style.top = y + '%';
+        this.element.style.transform = `scale(${scale})`;
+        this.element.style.opacity = opacity;
+      }
+    }
+
+    const particles = Array.from({ length: 50 }, () => new Particle3D());
+
+    function animate() {
+      particles.forEach(p => p.update());
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  /* Cinematic Scroll Animations */
+  function initCinematicScroll() {
+    const sections = document.querySelectorAll('section');
+    let currentSection = 0;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'scale(1)';
+          entry.target.style.opacity = '1';
+          entry.target.style.filter = 'blur(0px)';
+        } else {
+          entry.target.style.transform = 'scale(0.95)';
+          entry.target.style.opacity = '0.7';
+          entry.target.style.filter = 'blur(2px)';
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      observer.observe(section);
+    });
+
+    // Parallax scroll effect for hero elements
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroTitle = document.querySelector('.hero-title');
+      const heroSubtitle = document.querySelector('.hero-subtitle');
+
+      if (heroTitle) {
+        heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
+        heroTitle.style.opacity = Math.max(0, 1 - scrolled / 500);
+      }
+      if (heroSubtitle) {
+        heroSubtitle.style.transform = `translateY(${scrolled * 0.5}px)`;
+        heroSubtitle.style.opacity = Math.max(0, 1 - scrolled / 600);
+      }
+    }, { passive: true });
+  }
+
+  /* SVG Morphing Animations */
+  function initSVGMorphing() {
+    // Create animated SVG shapes that morph
+    const shapes = document.querySelectorAll('.floating-shape, .gradient-orb');
+
+    shapes.forEach((shape, index) => {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.style.cssText = `
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      `;
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+      const morphStates = [
+        'M0,100 C30,80 50,120 100,100 L100,200 L0,200 Z',
+        'M0,100 C50,60 70,140 100,100 L100,200 L0,200 Z',
+        'M0,100 C20,90 80,110 100,100 L100,200 L0,200 Z'
+      ];
+
+      let currentState = 0;
+
+      path.setAttribute('d', morphStates[0]);
+      path.setAttribute('fill', window.getComputedStyle(shape).background || '#00B4D8');
+      path.setAttribute('opacity', '0.3');
+
+      svg.appendChild(path);
+      if (shape.parentNode) {
+        shape.parentNode.insertBefore(svg, shape);
+      }
+
+      setInterval(() => {
+        currentState = (currentState + 1) % morphStates.length;
+        path.setAttribute('d', morphStates[currentState]);
+      }, 3000 + index * 1000);
+    });
+  }
+
+  /* Environmental Audio Feedback */
+  function initEnvironmentalAudio() {
+    if ('AudioContext' in window || 'webkitAudioContext' in window) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const audioContext = new AudioContext();
+
+      function playTone(frequency, duration, volume = 0.1) {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.value = frequency;
+        oscillator.type = 'sine';
+        gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + duration);
+      }
+
+      // Subtle water drop sound on click
+      document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-primary') || e.target.closest('.feature-card')) {
+          playTone(523.25, 0.1, 0.05); // C5 note
+        }
+      });
+
+      // Ambient background tone
+      const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+      buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          playTone(659.25, 0.08, 0.03); // E5 note
+        });
+      });
+    }
+  }
+
+  /* WebGL Shader Background */
+  function initWebGLShaderBackground() {
+    const sections = document.querySelectorAll('.features-section, .how-it-works-section');
+
+    sections.forEach(section => {
+      const canvas = document.createElement('canvas');
+      canvas.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+      `;
+      section.insertBefore(canvas, section.firstChild);
+
+      const ctx = canvas.getContext('2d');
+      canvas.width = section.offsetWidth;
+      canvas.height = section.offsetHeight;
+
+      let time = 0;
+      function animate() {
+        time += 0.01;
+
+        const gradient = ctx.createLinearGradient(
+          canvas.width / 2 + Math.sin(time) * 200,
+          0,
+          canvas.width / 2 - Math.sin(time) * 200,
+          canvas.height
+        );
+
+        gradient.addColorStop(0, `rgba(0, 180, 216, ${0.1 + Math.sin(time) * 0.05})`);
+        gradient.addColorStop(0.5, `rgba(82, 183, 136, ${0.08 + Math.cos(time) * 0.04})`);
+        gradient.addColorStop(1, `rgba(116, 198, 157, ${0.06 + Math.sin(time * 0.5) * 0.03})`);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    });
+  }
+
+  /* Liquid Text Effect */
+  function initLiquidText() {
+    const titles = document.querySelectorAll('.section-title');
+
+    titles.forEach(title => {
+      title.style.backgroundClip = 'text';
+      title.style.webkitBackgroundClip = 'text';
+      title.style.backgroundSize = '200% 200%';
+
+      let hue = 0;
+      setInterval(() => {
+        hue = (hue + 1) % 360;
+        const gradient = `linear-gradient(
+          ${hue}deg,
+          hsl(${hue}, 70%, 50%),
+          hsl(${(hue + 60) % 360}, 70%, 50%),
+          hsl(${(hue + 120) % 360}, 70%, 50%)
+        )`;
+        title.style.background = gradient;
+      }, 50);
+    });
+  }
+
+  /* Parallax Depth Layers */
+  function initParallaxDepthLayers() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const layers = [
+      { selector: '.hero-title', speed: 0.5, depth: 100 },
+      { selector: '.hero-subtitle', speed: 0.7, depth: 80 },
+      { selector: '.hero-actions', speed: 0.9, depth: 60 },
+      { selector: '.floating-shape', speed: 0.3, depth: 120 }
+    ];
+
+    window.addEventListener('mousemove', (e) => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const mouseX = (e.clientX - centerX) / centerX;
+      const mouseY = (e.clientY - centerY) / centerY;
+
+      layers.forEach(layer => {
+        const elements = document.querySelectorAll(layer.selector);
+        elements.forEach(el => {
+          const x = mouseX * layer.depth * layer.speed;
+          const y = mouseY * layer.depth * layer.speed;
+          el.style.transform = `translate(${x}px, ${y}px) translateZ(0)`;
+        });
+      });
+    });
+  }
+
+  /* Glitch Effects */
+  function initGlitchEffects() {
+    const sectionTags = document.querySelectorAll('.section-tag');
+
+    sectionTags.forEach(tag => {
+      tag.addEventListener('mouseenter', function() {
+        this.style.animation = 'none';
+        setTimeout(() => {
+          this.style.animation = 'glitch 0.3s';
+        }, 10);
+      });
+    });
+
+    if (!document.querySelector('#glitch-animation')) {
+      const style = document.createElement('style');
+      style.id = 'glitch-animation';
+      style.textContent = `
+        @keyframes glitch {
+          0% { transform: translate(0); }
+          20% { transform: translate(-2px, 2px); }
+          40% { transform: translate(-2px, -2px); }
+          60% { transform: translate(2px, 2px); }
+          80% { transform: translate(2px, -2px); }
+          100% { transform: translate(0); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+
+  /* Infinite Scroll 3D */
+  function initInfiniteScroll3D() {
+    const cards = document.querySelectorAll('.feature-card, .tech-card');
+
+    window.addEventListener('scroll', () => {
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const scrollProgress = 1 - (rect.top / window.innerHeight);
+
+        if (scrollProgress > 0 && scrollProgress < 1) {
+          const rotateX = (scrollProgress - 0.5) * 20;
+          const scale = 0.9 + scrollProgress * 0.1;
+          card.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            scale(${scale})
+            translateZ(${scrollProgress * 20}px)
+          `;
+        }
+      });
+    }, { passive: true });
+  }
+
   // Expose public API
   window.ChainSync = {
-    version: '4.0.0',
-    theme: 'cutting-edge-interactive',
+    version: '5.0.0',
+    theme: 'next-generation-immersive',
     refresh: init,
     enableCursorTrail: initCursorTrail
   };
