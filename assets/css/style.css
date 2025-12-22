@@ -2353,64 +2353,28 @@ body::before {
    NEXT-GENERATION ENHANCEMENTS
    ================================================ */
 
-/* 3D Transform Enhancements */
-.hero-title,
-.hero-subtitle,
-.hero-actions,
-section {
-  transform-style: preserve-3d;
-  will-change: transform, opacity, filter;
-}
+/* Simplified - removed will-change and expensive 3D transforms */
 
-/* Cinematic Blur Transitions */
-section {
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Enhanced Card 3D */
+/* Simplified cards - no expensive 3D transforms */
 .feature-card,
 .tech-card {
-  perspective: 1500px;
-  transform-style: preserve-3d;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Liquid Text Animation Base - DISABLED FOR PERFORMANCE */
-.section-title {
-  /* Disabled liquidFlow animation for performance */
+.feature-card:hover,
+.tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 119, 182, 0.15);
 }
 
-/* Enhanced Glow Effects */
+/* Simple button effects - no expensive filters */
 .btn-primary {
-  position: relative;
-  overflow: visible;
-  filter: drop-shadow(0 0 20px rgba(0, 180, 216, 0.4));
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
-  filter: drop-shadow(0 0 40px rgba(0, 180, 216, 0.8))
-          drop-shadow(0 0 60px rgba(82, 183, 136, 0.4));
-  animation: pulseGlow 2s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(0, 180, 216, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 40px rgba(0, 180, 216, 1))
-            drop-shadow(0 0 60px rgba(82, 183, 136, 0.6));
-  }
-}
-
-/* Depth Layer Shadows */
-.hero {
-  box-shadow:
-    0 0 100px rgba(0, 119, 182, 0.3) inset,
-    0 0 200px rgba(82, 183, 136, 0.2) inset;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 119, 182, 0.2);
 }
 
 /* Enhanced Section Transitions */
@@ -2454,163 +2418,43 @@ section {
   transition: transform 0.1s ease;
 }
 
-/* Enhanced Process Steps */
+/* Simplified process steps */
 .process-step {
-  transform-style: preserve-3d;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.3s ease;
 }
 
 .process-step:hover {
-  transform: translateY(-16px) translateZ(30px) scale(1.05);
-  filter: drop-shadow(0 20px 40px rgba(0, 119, 182, 0.3));
+  transform: translateY(-8px);
 }
 
-/* Animated Gradient Borders */
-.feature-card,
-.tech-card {
-  position: relative;
-  background-clip: padding-box;
-}
-
-.feature-card::before,
-.tech-card::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  background: linear-gradient(
-    60deg,
-    #0077B6,
-    #00B4D8,
-    #52B788,
-    #74C69D,
-    #0077B6
-  );
-  background-size: 300% 300%;
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  animation: borderFlow 6s ease infinite;
-}
-
-@keyframes borderFlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.feature-card:hover::before,
-.tech-card:hover::before {
-  opacity: 0.6;
-}
-
-/* Text Shadow Depth */
-.hero-title {
-  text-shadow:
-    0 2px 10px rgba(0, 180, 216, 0.4),
-    0 4px 20px rgba(0, 180, 216, 0.3),
-    0 8px 40px rgba(0, 180, 216, 0.2),
-    0 16px 80px rgba(0, 180, 216, 0.1);
-}
-
-/* Scroll Progress Enhancement */
+/* Simple scroll progress - no animations */
 .scroll-progress {
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    #0077B6 0%,
-    #00B4D8 50%,
-    #52B788 100%
-  );
-  box-shadow:
-    0 0 20px rgba(0, 180, 216, 0.8),
-    0 0 40px rgba(0, 180, 216, 0.4);
-  animation: progressPulse 2s ease-in-out infinite;
+  height: 3px;
+  background: linear-gradient(90deg, #0077B6 0%, #00B4D8 50%, #52B788 100%);
 }
 
-@keyframes progressPulse {
-  0%, 100% {
-    box-shadow:
-      0 0 20px rgba(0, 180, 216, 0.6),
-      0 0 40px rgba(0, 180, 216, 0.3);
-  }
-  50% {
-    box-shadow:
-      0 0 30px rgba(0, 180, 216, 1),
-      0 0 60px rgba(0, 180, 216, 0.5);
-  }
-}
-
-/* Enhanced Stat Items */
+/* Simplified stat items */
 .stat-item {
-  transform-style: preserve-3d;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.stat-item::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(82, 183, 136, 0.4) 0%,
-    transparent 70%
-  );
-  transform: scale(0);
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(82, 183, 136, 0.15);
 }
 
-.stat-item:hover::after {
-  transform: scale(1);
-}
-
-/* Immersive Navigation */
+/* Simpler navigation blur */
 #navbar {
-  backdrop-filter: blur(30px) saturate(200%);
-  -webkit-backdrop-filter: blur(30px) saturate(200%);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 #navbar.scrolled {
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.15),
-    0 0 20px rgba(0, 180, 216, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Enhanced CTA Sections */
-.cta-section,
-.demo-cta,
-.tech-cta {
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::after,
-.demo-cta::after,
-.tech-cta::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(0, 180, 216, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(82, 183, 136, 0.08) 0%, transparent 40%);
-  /* Removed ctaShimmer animation for performance */
-  pointer-events: none;
-}
+/* Simplified CTA - removed pseudo-elements */
 
 /* Ultra-smooth Transitions */
 * {
