@@ -657,16 +657,307 @@ body.has-testing-banner .page-hero {
   animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
+/* ================================================
+   Minimalistic Transformations & Micro-interactions
+   ================================================ */
+
+/* Smooth fade-in on page load */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* Gentle scale on hover */
+@keyframes gentleScale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+/* Smooth fade-in for sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cards with gentle lift */
+.feature-card,
+.tech-card,
+.step-card,
+.scenario-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover,
+.tech-card:hover,
+.step-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Smooth button transformations */
+.btn-primary,
+.btn-secondary,
+.nav-cta {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Gentle icon animations */
+.feature-icon,
+.tech-icon,
+.scenario-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon,
+.tech-card:hover .tech-icon,
+.scenario-card:hover .scenario-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Smooth link underline effect */
+.nav-links a {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::before {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Subtle stat number pulse */
+.stat-item {
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.05);
+}
+
+/* Process step hover */
+.process-step {
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-6px);
+}
+
+/* Section tag subtle animation */
+.section-tag {
+  transition: all 0.3s ease;
+}
+
+.section-tag:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(184, 118, 92, 0.3);
+}
+
+/* Smooth image hover */
+img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Footer links smooth transition */
+.footer-links a {
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  transform: translateX(4px);
+}
+
+/* Smooth scroll indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Benefits list items fade in */
+.benefits-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.benefits-list li:nth-child(1) { animation-delay: 0.1s; }
+.benefits-list li:nth-child(2) { animation-delay: 0.2s; }
+.benefits-list li:nth-child(3) { animation-delay: 0.3s; }
+.benefits-list li:nth-child(4) { animation-delay: 0.4s; }
+.benefits-list li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scenario card smooth reveal */
+.scenario-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scenario-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(33, 37, 41, 0.15);
+}
+
+/* Smooth gradient orb movement */
+.gradient-orb {
+  transition: transform 0.6s ease;
+}
+
+.page-hero:hover .orb-1 {
+  transform: translate(10px, -10px);
+}
+
+.page-hero:hover .orb-2 {
+  transform: translate(-10px, 10px);
+}
+
+/* Navbar smooth appearance */
+#navbar {
+  transform: translateY(-100%);
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Logo subtle pulse on hover */
+.logo {
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Response comparison boxes */
+.before-box,
+.after-box {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.before-box:hover,
+.after-box:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Time display gentle pulse */
+.time-display {
+  transition: transform 0.3s ease;
+}
+
+.before-box:hover .time-display,
+.after-box:hover .time-display {
+  transform: scale(1.08);
+}
+
+/* Check icon smooth appearance */
+.check-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.benefits-list li:hover .check-icon {
+  transform: scale(1.2) rotate(360deg);
+}
+
+/* Grid items stagger animation */
+.grid-3 > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.grid-3 > *:nth-child(1) { animation-delay: 0.1s; }
+.grid-3 > *:nth-child(2) { animation-delay: 0.2s; }
+.grid-3 > *:nth-child(3) { animation-delay: 0.3s; }
+
+/* Container subtle entrance */
+.container {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth color transitions for all interactive elements */
+a, button, .btn-primary, .btn-secondary, .nav-cta {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page transition smoothness */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility with smooth transitions */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--ocean-medium);
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ================================================
+   End Minimalistic Transformations
+   ================================================ */
 
 /* ================================================
    Page Hero (Internal Pages) - Sky & Light
