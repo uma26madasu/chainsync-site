@@ -1852,47 +1852,47 @@
         },
         government: {
           keywords: ['government', 'governments', 'public sector', 'municipal', 'city', 'county', 'federal', 'state', 'regulatory', 'agencies', 'EPA', 'environmental agency'],
-          text: "<strong>ChainSync for Government Agencies</strong> 🏛️<br><br>We help you:<br><br>✅ Ensure regulatory compliance automatically<br>✅ Coordinate multi-agency responses instantly<br>✅ Provide real-time reporting to officials & public<br>✅ Reduce legal liability with complete audit trails<br>✅ Demonstrate environmental stewardship<br>✅ Save taxpayer money through faster response<br><br>We integrate directly with EPA systems and state environmental databases.",
+          text: "<strong>ChainSync is a powerful tool for government agencies!</strong><br><br>We help:<br><br>• Ensure regulatory compliance automatically<br>• Coordinate multi-agency responses instantly<br>• Provide real-time reporting to elected officials and the public<br>• Reduce legal liability with complete audit trails<br>• Demonstrate environmental stewardship to constituents<br>• Save taxpayer money through faster response times<br><br>We integrate directly with EPA systems and state environmental databases.",
           quickReplies: ['Compliance features', 'Water treatment help', 'Cost savings']
         },
         waterTreatment: {
           keywords: ['water treatment', 'water plant', 'wastewater', 'treatment plant', 'drinking water', 'water system', 'water quality', 'water contamination', 'water safety'],
-          text: "<strong>ChainSync for Water Treatment Facilities</strong> 💧<br><br>Critical capabilities:<br><br>📈 <strong>Real-time Monitoring</strong><br>Water quality parameters (pH, turbidity, contaminants)<br><br>🚨 <strong>Instant Alerts</strong><br>When readings exceed safe thresholds<br><br>📢 <strong>Automated Notifications</strong><br>To operators, management, and health officials<br><br>📋 <strong>EPA Compliance</strong><br>Complete documentation automatically<br><br>🔧 <strong>SCADA Integration</strong><br>Works with your existing systems<br><br>We protect your community's drinking water 24/7.",
+          text: "<strong>ChainSync for Water Treatment Facilities</strong> 💧<br><br>Critical capabilities:<br><br>• <strong>Real-time Monitoring:</strong> Water quality parameters (pH, turbidity, contaminants)<br>• <strong>Instant Alerts:</strong> When readings exceed safe thresholds<br>• <strong>Automated Notifications:</strong> To operators, management, and health officials<br>• <strong>EPA Compliance:</strong> Complete documentation automatically<br>• <strong>SCADA Integration:</strong> Works with your existing systems<br><br>We protect your community's drinking water 24/7.",
           quickReplies: ['Monitoring details', 'Government benefits', 'Response protocols']
         },
         waterUseCases: {
           keywords: ['water', 'chemical spill', 'contamination', 'pollution', 'runoff', 'discharge'],
-          text: "<strong>Water Emergency Response</strong> 💧<br><br>ChainSync handles:<br><br>• Chemical spills<br>• Industrial discharge<br>• Agricultural runoff<br>• Infrastructure failures<br>• Treatment plant issues<br><br><strong>Our Process:</strong><br>✓ Detect contamination instantly<br>✓ Analyze threat levels with AI<br>✓ Coordinate across utilities & health departments<br>✓ Automate public notifications<br>✓ Track remediation in real-time<br>✓ Generate EPA-compliant reports",
+          text: "<strong>Water Emergency Response</strong> 💧<br><br>ChainSync handles:<br><br>• Chemical spills<br>• Industrial discharge<br>• Agricultural runoff<br>• Infrastructure failures<br>• Treatment plant issues<br><br><strong>Our Process:</strong><br>• Detect contamination instantly<br>• Analyze threat levels with AI<br>• Coordinate across utilities & health departments<br>• Automate public notifications<br>• Track remediation in real-time<br>• Generate EPA-compliant reports",
           quickReplies: ['Water treatment help', 'Response time', 'Government benefits']
         },
         monitoring: {
           keywords: ['monitoring', 'sensors', 'detection', 'surveillance', 'tracking', 'real-time'],
-          text: "<strong>Our Monitoring System</strong> 📡<br><br>Integrates with:<br><br>💧 Water quality sensors<br>🌫️ Air quality monitors<br>🗑️ Waste facility instruments<br>🌤️ Weather stations<br>🏭 Industrial equipment<br><br><strong>Intelligent Analysis:</strong><br>• AI analyzes patterns continuously<br>• Detects anomalies instantly<br>• Predicts issues before emergencies<br>• 24/7 monitoring with redundancy",
+          text: "<strong>Our Monitoring System</strong> 📡<br><br>Integrates with:<br><br>• Water quality sensors<br>• Air quality monitors<br>• Waste facility instruments<br>• Weather stations<br>• Industrial equipment<br><br><strong>Intelligent Analysis:</strong><br>• AI analyzes patterns continuously<br>• Detects anomalies instantly<br>• Predicts issues before emergencies<br>• 24/7 monitoring with redundancy",
           quickReplies: ['Sensor types', 'AI analysis', 'Integration process']
         },
         benefits: {
           keywords: ['benefits', 'advantages', 'why use', 'why chainsync', 'value', 'roi', 'return'],
-          text: "<strong>Measurable Results</strong> 📊<br><br>⚡ <strong>70% faster</strong> response times<br>(Minutes instead of hours)<br><br>✅ <strong>95% fewer</strong> compliance violations<br><br>📝 <strong>80% reduction</strong> in manual reporting<br><br>💰 <strong>Significant cost savings</strong><br>Reduced environmental damage & cleanup<br><br>🛡️ <strong>Complete legal protection</strong><br>Full audit trails<br><br>🏆 <strong>Improved public trust</strong><br><br>For municipalities: <strong>Millions saved annually</strong>",
+          text: "<strong>Measurable Results</strong> 📊<br><br>ChainSync delivers:<br><br>• <strong>70% faster response times</strong> (minutes instead of hours)<br>• <strong>95% fewer compliance violations</strong><br>• <strong>80% reduction in manual reporting time</strong><br>• Significant reduction in environmental damage & cleanup costs<br>• Improved public trust and transparency<br>• Complete legal protection with audit trails<br><br>For a typical municipality, this translates to <strong>millions in savings annually</strong>.",
           quickReplies: ['Cost savings', 'Government benefits', 'Get started']
         },
         responseTime: {
           keywords: ['fast', 'speed', 'quick', 'response time', 'how long', 'instantly', 'immediate'],
-          text: "<strong>Response Speed</strong> ⚡<br><br>ChainSync responds in <strong>seconds</strong>:<br><br>⏱️ <strong>< 2 seconds</strong><br>Sensor data processing<br><br>🧠 <strong>Instant</strong><br>AI threat analysis<br><br>📢 <strong>< 5 seconds</strong><br>Team notifications sent<br><br>🤝 <strong>< 1 minute</strong><br>Complete coordination<br><br>vs. Traditional: <strong>4-6 hours</strong><br><br>This speed saves lives, ecosystems, and millions in cleanup costs!",
+          text: "<strong>Response Speed</strong> ⚡<br><br>ChainSync responds in <strong>seconds</strong>:<br><br>• <strong>< 2 seconds:</strong> Sensor data processing<br>• <strong>Instant:</strong> AI threat analysis<br>• <strong>< 5 seconds:</strong> Team notifications sent<br>• <strong>< 1 minute:</strong> Complete coordination<br><br>Compare to traditional methods: <strong>4-6 hours</strong><br><br>In environmental emergencies, this speed saves lives, ecosystems, and millions in cleanup costs!",
           quickReplies: ['How does it work?', 'Water treatment help', 'Government benefits']
         },
         useCases: {
           keywords: ['use case', 'examples', 'scenarios', 'applications', 'situations'],
-          text: "<strong>Environmental Emergencies We Handle</strong> 🚨<br><br>💧 <strong>Water</strong><br>Chemical spills, treatment failures, contamination<br><br>🗑️ <strong>Waste</strong><br>Landfill overflow, illegal dumping, hazmat<br><br>🌫️ <strong>Air Quality</strong><br>Industrial emissions, fire smoke, gas leaks<br><br>🌳 <strong>Ecosystems</strong><br>Wildlife impacts, habitat contamination<br><br>Each scenario gets instant detection, coordinated response, and automated compliance reporting.",
+          text: "<strong>Environmental Emergencies We Handle</strong> 🚨<br><br>We respond to:<br><br>• <strong>Water Emergencies:</strong> Chemical spills, treatment failures, contamination<br>• <strong>Waste Issues:</strong> Landfill overflow, illegal dumping, hazmat<br>• <strong>Air Quality Events:</strong> Industrial emissions, fire smoke, gas leaks<br>• <strong>Ecosystem Threats:</strong> Wildlife impacts, habitat contamination<br><br>Each scenario gets instant detection, coordinated response, and automated compliance reporting.",
           quickReplies: ['Water treatment help', 'Government benefits', 'Response protocols']
         },
         technology: {
           keywords: ['technology', 'tech stack', 'how is it built', 'architecture', 'platform', 'system'],
-          text: "<strong>Enterprise-Grade Technology</strong> 🔧<br><br>🤖 <strong>AI/ML</strong><br>Threat analysis & pattern recognition<br><br>☁️ <strong>Cloud Infrastructure</strong><br>99.99% uptime guarantee<br><br>⚡ <strong>Real-time Processing</strong><br>Instant data analysis<br><br>🔒 <strong>Security</strong><br>Complete data encryption<br><br>📱 <strong>Multi-Platform</strong><br>Mobile apps & web dashboards<br><br><strong>Integrations:</strong><br>EPA systems, SCADA, lab equipment, emergency management platforms",
+          text: "<strong>Enterprise-Grade Technology</strong> 🔧<br><br>Our platform includes:<br><br>• <strong>AI/ML:</strong> Threat analysis & pattern recognition<br>• <strong>Cloud Infrastructure:</strong> 99.99% uptime guarantee<br>• <strong>Real-time Processing:</strong> Instant data analysis<br>• <strong>Security:</strong> Complete data encryption<br>• <strong>Multi-Platform:</strong> Mobile apps & web dashboards<br><br><strong>Integrations:</strong><br>• EPA systems<br>• SCADA<br>• Lab equipment<br>• Emergency management platforms",
           quickReplies: ['Security features', 'Integration process', 'Government benefits']
         },
         pricing: {
           keywords: ['price', 'pricing', 'cost', 'how much', 'budget', 'expense', 'investment'],
-          text: "<strong>Pricing & Early Access</strong> 💰<br><br>Currently in development with early access launching soon.<br><br><strong>For Governments:</strong><br>✓ Special public sector pricing<br>✓ Grant assistance available<br>✓ ROI within first year<br><br><strong>Cost Savings:</strong><br>• Reduced violations<br>• Faster response times<br>• Automated reporting<br><br>Pricing tailored to your organization's size and needs.<br><br>Would you like to discuss your specific requirements?",
+          text: "<strong>Pricing & Early Access</strong> 💰<br><br>Currently in development with early access launching soon.<br><br><strong>For Governments:</strong><br>• Special public sector pricing<br>• Grant assistance available<br>• ROI within first year<br><br><strong>Cost Savings:</strong><br>• Reduced violations<br>• Faster response times<br>• Automated reporting<br><br>Pricing tailored to your organization's size and needs.<br><br>Would you like to discuss your specific requirements?",
           quickReplies: ['Join early access', 'Government benefits', 'Cost savings']
         },
         contact: {
@@ -1902,7 +1902,7 @@
         },
         integration: {
           keywords: ['integrate', 'integration', 'connect', 'compatibility', 'works with', 'scada'],
-          text: "<strong>Seamless Integration</strong> 🔗<br><br>Works with:<br><br>• SCADA systems<br>• Lab equipment (LIMS)<br>• EPA reporting tools<br>• Emergency management platforms<br>• GIS mapping systems<br>• Public notification tools<br><br><strong>Setup Process:</strong><br>✓ Standard APIs<br>✓ Technical support included<br>✓ 2-4 weeks implementation<br>✓ Minimal disruption",
+          text: "<strong>Seamless Integration</strong> 🔗<br><br>Works with:<br><br>• SCADA systems<br>• Lab equipment (LIMS)<br>• EPA reporting tools<br>• Emergency management platforms<br>• GIS mapping systems<br>• Public notification tools<br><br><strong>Setup Process:</strong><br>• Standard APIs<br>• Technical support included<br>• 2-4 weeks implementation<br>• Minimal disruption",
           quickReplies: ['Technology details', 'Government benefits', 'Get started']
         }
       };
