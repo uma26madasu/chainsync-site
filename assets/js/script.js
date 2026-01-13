@@ -58,6 +58,9 @@
     initGlitchEffects();
     initInfiniteScroll3D();
 
+    // Chatbot
+    initChatbot();
+
     console.log('ChainSync: NEXT-GENERATION experience loaded successfully');
   }
 
@@ -1673,12 +1676,259 @@
     return;
   }
 
+  /* ==========================================
+     Chatbot Functionality
+     ========================================== */
+  function initChatbot() {
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotSend = document.getElementById('chatbot-send');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    if (!chatbotToggle || !chatbotWindow) {
+      return; // Chatbot not present on this page
+    }
+
+    let isOpen = false;
+    let conversationStarted = false;
+
+    // Toggle chatbot
+    function toggleChatbot() {
+      isOpen = !isOpen;
+      chatbotToggle.classList.toggle('open', isOpen);
+      chatbotWindow.classList.toggle('open', isOpen);
+
+      if (isOpen && chatbotInput) {
+        setTimeout(() => chatbotInput.focus(), 300);
+      }
+    }
+
+    // Event listeners
+    chatbotToggle.addEventListener('click', toggleChatbot);
+    if (chatbotClose) {
+      chatbotClose.addEventListener('click', toggleChatbot);
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        toggleChatbot();
+      }
+    });
+
+    // Auto-resize textarea
+    if (chatbotInput) {
+      chatbotInput.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+      });
+    }
+
+    // Handle send message
+    function sendMessage() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+
+      // Clear welcome message on first interaction
+      if (!conversationStarted) {
+        const welcomeMsg = chatbotMessages.querySelector('.welcome-message');
+        if (welcomeMsg) {
+          welcomeMsg.remove();
+        }
+        conversationStarted = true;
+      }
+
+      // Add user message
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      chatbotInput.style.height = 'auto';
+
+      // Show typing indicator
+      showTypingIndicator();
+
+      // Simulate bot response
+      setTimeout(() => {
+        hideTypingIndicator();
+        const response = generateResponse(message);
+        addMessage(response.text, 'bot', response.quickReplies);
+      }, 1000 + Math.random() * 1000);
+    }
+
+    // Add message to chat
+    function addMessage(text, sender, quickReplies = null) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}`;
+
+      const time = new Date().toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit'
+      });
+
+      messageDiv.innerHTML = `
+        <div class="message-avatar">${sender === 'bot' ? '🌱' : '👤'}</div>
+        <div class="message-content">
+          <p class="message-text">${text}</p>
+          <span class="message-time">${time}</span>
+          ${quickReplies ? `
+            <div class="quick-replies">
+              ${quickReplies.map(reply => `
+                <button class="quick-reply-btn" data-message="${reply}">${reply}</button>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      chatbotMessages.appendChild(messageDiv);
+
+      // Add event listeners to quick reply buttons
+      if (quickReplies) {
+        const quickReplyBtns = messageDiv.querySelectorAll('.quick-reply-btn');
+        quickReplyBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const msg = btn.getAttribute('data-message');
+            chatbotInput.value = msg;
+            sendMessage();
+          });
+        });
+      }
+
+      // Scroll to bottom
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Show typing indicator
+    function showTypingIndicator() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'typing-indicator';
+      typingDiv.id = 'typing-indicator';
+      typingDiv.innerHTML = `
+        <div class="message-avatar">🌱</div>
+        <div class="typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      `;
+      chatbotMessages.appendChild(typingDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Hide typing indicator
+    function hideTypingIndicator() {
+      const typingIndicator = document.getElementById('typing-indicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+
+    // Generate bot response based on user input
+    function generateResponse(message) {
+      const msg = message.toLowerCase();
+
+      // Knowledge base for ChainSync
+      const responses = {
+        greeting: {
+          keywords: ['hello', 'hi', 'hey', 'greetings'],
+          text: "Hello! I'm the ChainSync Assistant. I'm here to help you understand how we're protecting the environment through intelligent emergency response. What would you like to know?",
+          quickReplies: ['What is ChainSync?', 'How does it work?', 'Tell me about features']
+        },
+        whatIs: {
+          keywords: ['what is chainsync', 'what is this', 'what do you do', 'what does chainsync do'],
+          text: "ChainSync is an intelligent environmental emergency response platform. We help communities protect their water, land, and air by connecting sensors, teams, and stakeholders into one coordinated system. When environmental threats occur—like chemical spills or contamination—ChainSync detects them instantly and orchestrates the response automatically.",
+          quickReplies: ['How does it work?', 'What are the benefits?', 'Tell me about use cases']
+        },
+        howItWorks: {
+          keywords: ['how does it work', 'how it works', 'process', 'explain'],
+          text: "ChainSync works in 4 coordinated stages: 1) Detect - Real-time sensors monitor environmental conditions, 2) Analyze - AI analyzes the threat severity and selects response protocols, 3) Coordinate - Automated notifications to teams, stakeholders, and regulators, 4) Protect - Complete documentation and compliance tracking. All of this happens automatically in seconds!",
+          quickReplies: ['What are the features?', 'Show me use cases', 'How fast is it?']
+        },
+        features: {
+          keywords: ['features', 'capabilities', 'what can it do'],
+          text: "ChainSync offers three core capabilities: Real-time Environmental Monitoring (sensor integration, weather data fusion, instant threat detection), Intelligent Coordination (automated team alerts, stakeholder updates, regulatory reporting), and Automated Documentation (auto-generated reports, complete audit trails, compliance tracking).",
+          quickReplies: ['How does monitoring work?', 'Tell me about use cases', 'What are the benefits?']
+        },
+        benefits: {
+          keywords: ['benefits', 'advantages', 'why use', 'why chainsync'],
+          text: "ChainSync delivers significant benefits: 70% faster response times, 95% fewer compliance violations, automated documentation saving countless hours, and most importantly—protecting communities and ecosystems from environmental harm. We turn hours of manual coordination into seconds of automated response.",
+          quickReplies: ['How does it work?', 'Show me use cases', 'Get started']
+        },
+        useCases: {
+          keywords: ['use cases', 'examples', 'scenarios', 'applications'],
+          text: "ChainSync handles various environmental emergencies: Water contamination events (chemical spills, industrial runoff), Waste management emergencies (overflow events, illegal dumping), Air quality threats, and more. Each scenario benefits from instant detection, coordinated response, and automated compliance reporting.",
+          quickReplies: ['Tell me more about water', 'How does detection work?', 'What are the benefits?']
+        },
+        technology: {
+          keywords: ['technology', 'tech stack', 'how is it built'],
+          text: "ChainSync is built on cutting-edge technology: AI/ML for threat analysis, real-time sensor integration, cloud infrastructure for reliability, and automated workflow orchestration. We integrate with existing monitoring systems and regulatory frameworks to provide seamless protection.",
+          quickReplies: ['What are the features?', 'How does it work?', 'Show me use cases']
+        },
+        pricing: {
+          keywords: ['price', 'pricing', 'cost', 'how much'],
+          text: "We're currently in development and will be launching our early access program soon. Pricing will be tailored based on your organization's needs and scale. Would you like to join our early access program to learn more?",
+          quickReplies: ['Join early access', 'Tell me more', 'What are the benefits?']
+        },
+        contact: {
+          keywords: ['contact', 'get started', 'join', 'sign up', 'demo', 'early access'],
+          text: "Fantastic! You can join our early access program through our contact page. We'd love to hear about your environmental protection needs and show you how ChainSync can help. Ready to get started?",
+          quickReplies: ['Visit contact page', 'Tell me more', 'What are use cases?']
+        },
+        default: {
+          text: "That's a great question! While I'm still learning, I'd be happy to help you explore ChainSync's capabilities. You can learn more about our environmental protection platform, how we work, or see real-world use cases.",
+          quickReplies: ['What is ChainSync?', 'How does it work?', 'Show me features']
+        }
+      };
+
+      // Match user input to responses
+      for (const [key, response] of Object.entries(responses)) {
+        if (key !== 'default' && response.keywords.some(keyword => msg.includes(keyword))) {
+          return response;
+        }
+      }
+
+      // Default response
+      return responses.default;
+    }
+
+    // Send button click
+    if (chatbotSend) {
+      chatbotSend.addEventListener('click', sendMessage);
+    }
+
+    // Enter key to send (Shift+Enter for new line)
+    if (chatbotInput) {
+      chatbotInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+    }
+
+    // Quick reply buttons in welcome message
+    const quickReplyBtns = chatbotMessages.querySelectorAll('.quick-reply-btn');
+    quickReplyBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const message = btn.getAttribute('data-message');
+        chatbotInput.value = message;
+        sendMessage();
+      });
+    });
+
+    console.log('ChainSync: Chatbot initialized');
+  }
+
   // Expose public API
   window.ChainSync = {
     version: '6.0.0',
     theme: 'clean-smooth',
     refresh: init,
-    enableCursorTrail: initCursorTrail
+    enableCursorTrail: initCursorTrail,
+    chatbot: {
+      init: initChatbot
+    }
   };
 
 })();
