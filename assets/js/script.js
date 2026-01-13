@@ -1832,77 +1832,77 @@
       const responses = {
         greeting: {
           keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon'],
-          text: "Hello! I'm the ChainSync Assistant. I'm here to help you understand how we're protecting the environment through intelligent emergency response. What would you like to know?",
+          text: "Hello! I'm the ChainSync Assistant. 👋<br><br>I'm here to help you understand how we're protecting the environment through intelligent emergency response.<br><br>What would you like to know?",
           quickReplies: ['What is ChainSync?', 'How does it work?', 'Government benefits']
         },
         whatIs: {
           keywords: ['what is chainsync', 'what is this', 'what do you do', 'what does chainsync do', 'tell me about chainsync', 'about chainsync'],
-          text: "ChainSync is an intelligent environmental emergency response platform. We help communities protect their water, land, and air by connecting sensors, teams, and stakeholders into one coordinated system. When environmental threats occur—like chemical spills or contamination—ChainSync detects them instantly and orchestrates the response automatically.",
+          text: "ChainSync is an <strong>intelligent environmental emergency response platform</strong>.<br><br>We help communities protect their water, land, and air by connecting sensors, teams, and stakeholders into one coordinated system.<br><br>When environmental threats occur—like chemical spills or contamination—ChainSync detects them instantly and orchestrates the response automatically.",
           quickReplies: ['How does it work?', 'Government benefits', 'Water treatment help']
         },
         howItWorks: {
           keywords: ['how does it work', 'how it works', 'process', 'explain', 'workflow', 'mechanism'],
-          text: "ChainSync works in 4 coordinated stages: 1) Detect - Real-time sensors monitor environmental conditions, 2) Analyze - AI analyzes the threat severity and selects response protocols, 3) Coordinate - Automated notifications to teams, stakeholders, and regulators, 4) Protect - Complete documentation and compliance tracking. All of this happens automatically in seconds!",
+          text: "ChainSync works in <strong>4 coordinated stages</strong>:<br><br>🔍 <strong>Detect</strong><br>Real-time sensors monitor environmental conditions<br><br>🧠 <strong>Analyze</strong><br>AI analyzes threat severity and selects response protocols<br><br>📢 <strong>Coordinate</strong><br>Automated notifications to teams, stakeholders, and regulators<br><br>🛡️ <strong>Protect</strong><br>Complete documentation and compliance tracking<br><br>All of this happens automatically in seconds!",
           quickReplies: ['Government benefits', 'Water treatment help', 'Response time']
         },
         features: {
           keywords: ['features', 'capabilities', 'what can it do', 'show me features', 'feature list', 'functions'],
-          text: "ChainSync offers three core capabilities: 1) Real-time Environmental Monitoring (sensor integration, weather data fusion, instant threat detection), 2) Intelligent Coordination (automated team alerts, stakeholder updates, regulatory reporting), 3) Automated Documentation (auto-generated reports, complete audit trails, compliance tracking). All designed to protect communities and ecosystems.",
+          text: "ChainSync offers <strong>three core capabilities</strong>:<br><br>📊 <strong>Real-time Environmental Monitoring</strong><br>• Sensor integration<br>• Weather data fusion<br>• Instant threat detection<br><br>🤝 <strong>Intelligent Coordination</strong><br>• Automated team alerts<br>• Stakeholder updates<br>• Regulatory reporting<br><br>📝 <strong>Automated Documentation</strong><br>• Auto-generated reports<br>• Complete audit trails<br>• Compliance tracking",
           quickReplies: ['Monitoring details', 'Government benefits', 'Water treatment help']
         },
         government: {
           keywords: ['government', 'governments', 'public sector', 'municipal', 'city', 'county', 'federal', 'state', 'regulatory', 'agencies', 'EPA', 'environmental agency'],
-          text: "ChainSync is a powerful tool for government agencies! We help: 1) Ensure regulatory compliance automatically, 2) Coordinate multi-agency responses instantly, 3) Provide real-time reporting to elected officials and the public, 4) Reduce legal liability with complete audit trails, 5) Demonstrate environmental stewardship to constituents, 6) Save taxpayer money through faster response times. We integrate directly with EPA systems and state environmental databases.",
+          text: "<strong>ChainSync for Government Agencies</strong> 🏛️<br><br>We help you:<br><br>✅ Ensure regulatory compliance automatically<br>✅ Coordinate multi-agency responses instantly<br>✅ Provide real-time reporting to officials & public<br>✅ Reduce legal liability with complete audit trails<br>✅ Demonstrate environmental stewardship<br>✅ Save taxpayer money through faster response<br><br>We integrate directly with EPA systems and state environmental databases.",
           quickReplies: ['Compliance features', 'Water treatment help', 'Cost savings']
         },
         waterTreatment: {
           keywords: ['water treatment', 'water plant', 'wastewater', 'treatment plant', 'drinking water', 'water system', 'water quality', 'water contamination', 'water safety'],
-          text: "ChainSync helps water treatment facilities in critical ways: 1) Real-time monitoring of water quality parameters (pH, turbidity, contaminants), 2) Instant alerts when readings exceed safe thresholds, 3) Automated notifications to operators, management, and health officials, 4) Complete documentation for EPA compliance, 5) Coordinated response protocols for contamination events, 6) Integration with SCADA systems and lab equipment. We protect your community's drinking water 24/7.",
+          text: "<strong>ChainSync for Water Treatment Facilities</strong> 💧<br><br>Critical capabilities:<br><br>📈 <strong>Real-time Monitoring</strong><br>Water quality parameters (pH, turbidity, contaminants)<br><br>🚨 <strong>Instant Alerts</strong><br>When readings exceed safe thresholds<br><br>📢 <strong>Automated Notifications</strong><br>To operators, management, and health officials<br><br>📋 <strong>EPA Compliance</strong><br>Complete documentation automatically<br><br>🔧 <strong>SCADA Integration</strong><br>Works with your existing systems<br><br>We protect your community's drinking water 24/7.",
           quickReplies: ['Monitoring details', 'Government benefits', 'Response protocols']
         },
         waterUseCases: {
           keywords: ['water', 'chemical spill', 'contamination', 'pollution', 'runoff', 'discharge'],
-          text: "For water emergencies, ChainSync detects contamination instantly through sensor networks, analyzes threat levels using AI, coordinates responses across water utilities, health departments, and emergency services, automates public notifications and boil-water advisories, tracks remediation efforts in real-time, and generates EPA-compliant reports. We've designed specific protocols for chemical spills, industrial discharge, agricultural runoff, and infrastructure failures.",
+          text: "<strong>Water Emergency Response</strong> 💧<br><br>ChainSync handles:<br><br>• Chemical spills<br>• Industrial discharge<br>• Agricultural runoff<br>• Infrastructure failures<br>• Treatment plant issues<br><br><strong>Our Process:</strong><br>✓ Detect contamination instantly<br>✓ Analyze threat levels with AI<br>✓ Coordinate across utilities & health departments<br>✓ Automate public notifications<br>✓ Track remediation in real-time<br>✓ Generate EPA-compliant reports",
           quickReplies: ['Water treatment help', 'Response time', 'Government benefits']
         },
         monitoring: {
           keywords: ['monitoring', 'sensors', 'detection', 'surveillance', 'tracking', 'real-time'],
-          text: "Our monitoring system integrates with your existing sensors and adds intelligent analysis: We connect to water quality sensors, air quality monitors, waste facility instruments, weather stations, and industrial equipment. Our AI continuously analyzes patterns, detects anomalies instantly, and predicts potential issues before they become emergencies. Everything is monitored 24/7 with redundant systems for reliability.",
+          text: "<strong>Our Monitoring System</strong> 📡<br><br>Integrates with:<br><br>💧 Water quality sensors<br>🌫️ Air quality monitors<br>🗑️ Waste facility instruments<br>🌤️ Weather stations<br>🏭 Industrial equipment<br><br><strong>Intelligent Analysis:</strong><br>• AI analyzes patterns continuously<br>• Detects anomalies instantly<br>• Predicts issues before emergencies<br>• 24/7 monitoring with redundancy",
           quickReplies: ['Sensor types', 'AI analysis', 'Integration process']
         },
         benefits: {
           keywords: ['benefits', 'advantages', 'why use', 'why chainsync', 'value', 'roi', 'return'],
-          text: "ChainSync delivers measurable results: 70% faster response times (minutes instead of hours), 95% fewer compliance violations, 80% reduction in manual reporting time, significant reduction in environmental damage and cleanup costs, improved public trust and transparency, complete legal protection with audit trails. For a typical municipality, this translates to millions in savings annually.",
+          text: "<strong>Measurable Results</strong> 📊<br><br>⚡ <strong>70% faster</strong> response times<br>(Minutes instead of hours)<br><br>✅ <strong>95% fewer</strong> compliance violations<br><br>📝 <strong>80% reduction</strong> in manual reporting<br><br>💰 <strong>Significant cost savings</strong><br>Reduced environmental damage & cleanup<br><br>🛡️ <strong>Complete legal protection</strong><br>Full audit trails<br><br>🏆 <strong>Improved public trust</strong><br><br>For municipalities: <strong>Millions saved annually</strong>",
           quickReplies: ['Cost savings', 'Government benefits', 'Get started']
         },
         responseTime: {
           keywords: ['fast', 'speed', 'quick', 'response time', 'how long', 'instantly', 'immediate'],
-          text: "ChainSync responds in seconds: Sensor data is processed in real-time (< 2 seconds), threat analysis happens instantly using AI, notifications are sent within 5 seconds, and complete coordination across teams happens in under 1 minute. Compare this to traditional methods that take 4-6 hours for manual coordination. In environmental emergencies, this speed saves lives, ecosystems, and millions in cleanup costs.",
+          text: "<strong>Response Speed</strong> ⚡<br><br>ChainSync responds in <strong>seconds</strong>:<br><br>⏱️ <strong>< 2 seconds</strong><br>Sensor data processing<br><br>🧠 <strong>Instant</strong><br>AI threat analysis<br><br>📢 <strong>< 5 seconds</strong><br>Team notifications sent<br><br>🤝 <strong>< 1 minute</strong><br>Complete coordination<br><br>vs. Traditional: <strong>4-6 hours</strong><br><br>This speed saves lives, ecosystems, and millions in cleanup costs!",
           quickReplies: ['How does it work?', 'Water treatment help', 'Government benefits']
         },
         useCases: {
           keywords: ['use case', 'examples', 'scenarios', 'applications', 'situations'],
-          text: "ChainSync handles diverse environmental emergencies: Water: Chemical spills, treatment plant failures, source contamination | Waste: Landfill overflow, illegal dumping, hazardous material incidents | Air: Industrial emissions, fire smoke, gas leaks | Ecosystems: Wildlife impacts, habitat contamination. Each scenario gets instant detection, coordinated response, and automated compliance reporting.",
+          text: "<strong>Environmental Emergencies We Handle</strong> 🚨<br><br>💧 <strong>Water</strong><br>Chemical spills, treatment failures, contamination<br><br>🗑️ <strong>Waste</strong><br>Landfill overflow, illegal dumping, hazmat<br><br>🌫️ <strong>Air Quality</strong><br>Industrial emissions, fire smoke, gas leaks<br><br>🌳 <strong>Ecosystems</strong><br>Wildlife impacts, habitat contamination<br><br>Each scenario gets instant detection, coordinated response, and automated compliance reporting.",
           quickReplies: ['Water treatment help', 'Government benefits', 'Response protocols']
         },
         technology: {
           keywords: ['technology', 'tech stack', 'how is it built', 'architecture', 'platform', 'system'],
-          text: "ChainSync uses enterprise-grade technology: AI/ML for threat analysis and pattern recognition, cloud infrastructure (99.99% uptime), real-time data processing, secure API integrations with existing systems, mobile apps for field teams, web dashboards for management, automated workflow orchestration, and complete data encryption. We're built to integrate with EPA systems, SCADA, lab equipment, and emergency management platforms.",
+          text: "<strong>Enterprise-Grade Technology</strong> 🔧<br><br>🤖 <strong>AI/ML</strong><br>Threat analysis & pattern recognition<br><br>☁️ <strong>Cloud Infrastructure</strong><br>99.99% uptime guarantee<br><br>⚡ <strong>Real-time Processing</strong><br>Instant data analysis<br><br>🔒 <strong>Security</strong><br>Complete data encryption<br><br>📱 <strong>Multi-Platform</strong><br>Mobile apps & web dashboards<br><br><strong>Integrations:</strong><br>EPA systems, SCADA, lab equipment, emergency management platforms",
           quickReplies: ['Security features', 'Integration process', 'Government benefits']
         },
         pricing: {
           keywords: ['price', 'pricing', 'cost', 'how much', 'budget', 'expense', 'investment'],
-          text: "We're currently in development with early access launching soon. Pricing is tailored to your organization's size and needs. For governments, we offer special public sector pricing and grant assistance. Most municipalities see ROI within the first year through reduced violations, faster response, and automated reporting. Would you like to discuss your specific needs?",
+          text: "<strong>Pricing & Early Access</strong> 💰<br><br>Currently in development with early access launching soon.<br><br><strong>For Governments:</strong><br>✓ Special public sector pricing<br>✓ Grant assistance available<br>✓ ROI within first year<br><br><strong>Cost Savings:</strong><br>• Reduced violations<br>• Faster response times<br>• Automated reporting<br><br>Pricing tailored to your organization's size and needs.<br><br>Would you like to discuss your specific requirements?",
           quickReplies: ['Join early access', 'Government benefits', 'Cost savings']
         },
         contact: {
           keywords: ['contact', 'get started', 'join', 'sign up', 'demo', 'early access', 'talk to', 'reach out'],
-          text: "Fantastic! You can join our early access program through our contact page. We'd love to hear about your environmental protection needs and show you how ChainSync can help. Our team will provide a personalized demo and discuss implementation for your organization.",
+          text: "<strong>Let's Get Started!</strong> 🚀<br><br>Join our early access program through our contact page.<br><br><strong>What you'll get:</strong><br>• Personalized demo<br>• Implementation discussion<br>• Custom solution design<br><br>We'd love to hear about your environmental protection needs and show you how ChainSync can help your organization.",
           quickReplies: ['Visit contact page', 'Pricing info', 'Government benefits']
         },
         integration: {
           keywords: ['integrate', 'integration', 'connect', 'compatibility', 'works with', 'scada'],
-          text: "ChainSync integrates seamlessly with your existing systems: SCADA systems, lab equipment (LIMS), EPA reporting tools, emergency management platforms, GIS mapping systems, public notification tools. We use standard APIs and provide technical support for setup. Most integrations are completed within 2-4 weeks with minimal disruption.",
+          text: "<strong>Seamless Integration</strong> 🔗<br><br>Works with:<br><br>• SCADA systems<br>• Lab equipment (LIMS)<br>• EPA reporting tools<br>• Emergency management platforms<br>• GIS mapping systems<br>• Public notification tools<br><br><strong>Setup Process:</strong><br>✓ Standard APIs<br>✓ Technical support included<br>✓ 2-4 weeks implementation<br>✓ Minimal disruption",
           quickReplies: ['Technology details', 'Government benefits', 'Get started']
         }
       };

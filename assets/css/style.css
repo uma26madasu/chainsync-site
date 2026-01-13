@@ -2943,9 +2943,26 @@ body::before {
 
 .message-text {
   font-size: 0.9375rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   word-wrap: break-word;
+  white-space: normal;
+}
+
+.message-text strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.message.user .message-text strong {
+  color: white;
+  font-weight: 600;
+}
+
+.message-text br {
+  display: block;
+  content: "";
+  margin: 4px 0;
 }
 
 .message.user .message-text {
