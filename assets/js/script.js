@@ -1701,7 +1701,7 @@
     const EMAILJS_CONFIG = {
       publicKey: 'mvRcXt-RUQv_C4hzo',
       serviceID: 'service_6mitzhj',
-      templateID: 'template_5lz96en'
+      templateID: 'template_4579caf'
     };
 
     // Initialize EmailJS
