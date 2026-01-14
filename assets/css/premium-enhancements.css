@@ -7,7 +7,7 @@
    PREMIUM FOUNDATIONS
    ================================================ */
 
-/* Subtle background texture for depth */
+/* Vibrant background texture for depth */
 body::before {
   content: '';
   position: fixed;
@@ -16,8 +16,9 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(143, 181, 165, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(46, 107, 142, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 50%),
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDIiLz48L3N2Zz4=');
   pointer-events: none;
   z-index: 0;
@@ -37,10 +38,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  background: linear-gradient(135deg, #212529 0%, #495057 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #334155 50%, #6366F1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: none;
 }
 
 p {
@@ -78,9 +80,9 @@ p {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg,
-    rgba(44, 95, 79, 0.4) 0%,
-    rgba(27, 79, 114, 0.4) 50%,
-    rgba(184, 118, 92, 0.4) 100%
+    rgba(99, 102, 241, 0.6) 0%,
+    rgba(6, 182, 212, 0.6) 50%,
+    rgba(168, 85, 247, 0.6) 100%
   );
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -98,10 +100,11 @@ p {
 .step-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.08),
-    0 16px 48px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-  border-color: rgba(44, 95, 79, 0.2);
+    0 8px 24px rgba(99, 102, 241, 0.12),
+    0 16px 48px rgba(139, 92, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 0 40px rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 /* ================================================
@@ -115,7 +118,8 @@ p {
   overflow: hidden;
   box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.1),
-    0 4px 16px rgba(44, 95, 79, 0.15);
+    0 4px 16px rgba(99, 102, 241, 0.25),
+    0 0 20px rgba(139, 92, 246, 0.15);
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -146,7 +150,8 @@ p {
   transform: translateY(-2px);
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.15),
-    0 8px 32px rgba(44, 95, 79, 0.25);
+    0 8px 32px rgba(99, 102, 241, 0.35),
+    0 0 48px rgba(139, 92, 246, 0.25);
 }
 
 .btn-secondary:hover {

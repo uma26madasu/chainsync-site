@@ -1,103 +1,110 @@
 /* ================================================
-   ChainSync - Environmental Design System
-   Inspired by Nature, Designed for Impact
+   ChainSync - Modern Vibrant Design System
+   Bold, Dynamic, Eye-Catching
    ================================================ */
 
 /* ================================================
-   Design System - Refined Scandinavian Palette
-   Sophisticated, Muted, and Elegant
+   Revolutionary Color Palette - Bold & Modern
    ================================================ */
 :root {
-  /* Primary - Sophisticated Greens (More Muted) */
-  --forest-primary: #2C5F4F;
-  --forest-medium: #3D7A66;
-  --forest-light: #5A9480;
-  --sage: #8FB5A5;
-  --mint: #B8D4C9;
+  /* Primary - Electric Purple/Indigo (Tech-Forward) */
+  --electric-primary: #6366F1;
+  --electric-deep: #4F46E5;
+  --electric-dark: #4338CA;
+  --electric-light: #818CF8;
+  --electric-pale: #A5B4FC;
 
-  /* Secondary - Refined Blues (Less Saturated) */
-  --ocean-deep: #1B4F72;
-  --ocean-medium: #2E6B8E;
-  --ocean-light: #4A90B5;
-  --sky: #7EAEC9;
-  --ice: #D9E8F0;
+  /* Secondary - Vibrant Cyan/Blue (Energy & Innovation) */
+  --cyber-primary: #06B6D4;
+  --cyber-deep: #0891B2;
+  --cyber-light: #22D3EE;
+  --cyber-bright: #67E8F9;
+  --cyber-pale: #CFFAFE;
 
-  /* Accent - Muted Earth Tones (Warmer, Softer) */
-  --terracotta: #B8765C;
-  --clay: #D4A08A;
-  --sand: #E5C8A8;
-  --wheat: #F4E8D6;
+  /* Accent - Warm Coral/Orange (Action & Warmth) */
+  --flame-primary: #F97316;
+  --flame-deep: #EA580C;
+  --flame-bright: #FB923C;
+  --flame-light: #FDBA74;
+  --flame-pale: #FED7AA;
 
-  /* Natural Neutrals - Sophisticated Scandinavian */
+  /* Success - Vibrant Emerald */
+  --emerald-primary: #10B981;
+  --emerald-deep: #059669;
+  --emerald-light: #34D399;
+
+  /* Warning - Bright Amber */
+  --amber-primary: #F59E0B;
+  --amber-light: #FCD34D;
+
+  /* Danger - Vibrant Rose */
+  --rose-primary: #F43F5E;
+  --rose-deep: #E11D48;
+
+  /* Modern Neutrals - Clean & Sharp */
   --white: #FFFFFF;
-  --snow: #FAFBFC;
-  --paper: #F7F8F9;
-  --stone: #E9ECEF;
-  --concrete: #D8DCE0;
-  --slate: #6C757D;
-  --graphite: #495057;
-  --carbon: #212529;
-  --night: #0D1117;
+  --snow: #F8FAFC;
+  --cloud: #F1F5F9;
+  --silver: #E2E8F0;
+  --steel: #CBD5E1;
+  --slate-light: #94A3B8;
+  --slate: #64748B;
+  --slate-dark: #475569;
+  --charcoal: #334155;
+  --carbon: #1E293B;
+  --midnight: #0F172A;
 
-  /* Legacy Variable Aliases - for backward compatibility */
-  --forest-deep: var(--forest-primary);
-  --forest-green: var(--forest-medium);
-  --deep-ocean: var(--ocean-deep);
-  --ocean-blue: var(--ocean-medium);
-  --leaf-green: var(--forest-light);
-  --spring-green: var(--sage);
-  --grass-green: var(--sage);
-  --sky-blue: var(--sky);
-  --cloud-white: var(--snow);
-  --aqua-fresh: var(--ice);
-  --charcoal: var(--graphite);
-  --night-sky: var(--night);
-  --clay-red: var(--terracotta);
-  --stone-light: var(--stone);
+  /* Legacy Aliases (backward compatibility) */
+  --forest-primary: var(--electric-primary);
+  --ocean-blue: var(--cyber-primary);
+  --sage: var(--emerald-primary);
+  --terracotta: var(--flame-primary);
 
   /* Semantic Colors */
-  --primary: var(--forest-primary);
-  --secondary: var(--ocean-medium);
-  --accent: var(--terracotta);
-  --success: var(--sage);
-  --warning: var(--sand);
-  --danger: var(--clay);
+  --primary: var(--electric-primary);
+  --secondary: var(--cyber-primary);
+  --accent: var(--flame-primary);
+  --success: var(--emerald-primary);
+  --warning: var(--amber-primary);
+  --danger: var(--rose-primary);
 
-  /* Surface Colors - Light & Airy */
+  /* Surface Colors - Modern & Clean */
   --bg-primary: var(--white);
   --bg-secondary: var(--snow);
-  --bg-tertiary: var(--paper);
-  --bg-dark: var(--forest-primary);
+  --bg-tertiary: var(--cloud);
+  --bg-dark: var(--midnight);
   --bg-card: var(--white);
 
-  /* Text Colors - Clear Hierarchy */
-  --text-primary: #212529;
-  --text-secondary: #495057;
-  --text-tertiary: #6C757D;
-  --text-on-dark: #FAFBFC;
+  /* Text Colors - Strong Hierarchy */
+  --text-primary: var(--midnight);
+  --text-secondary: var(--slate-dark);
+  --text-tertiary: var(--slate);
+  --text-on-dark: var(--snow);
 
-  /* Refined Gradients - Sophisticated & Subtle */
-  --gradient-forest: linear-gradient(135deg, #2C5F4F 0%, #5A9480 100%);
-  --gradient-ocean: linear-gradient(135deg, #1B4F72 0%, #4A90B5 100%);
-  --gradient-earth: linear-gradient(135deg, #B8765C 0%, #E5C8A8 100%);
-  --gradient-sage: linear-gradient(135deg, #8FB5A5 0%, #B8D4C9 100%);
-  --gradient-spring: linear-gradient(135deg, #8FB5A5 0%, #B8D4C9 100%);
-  --gradient-sky: linear-gradient(180deg, #7EAEC9 0%, #D9E8F0 100%);
-  --gradient-dawn: linear-gradient(135deg, #D4A08A 0%, #7EAEC9 100%);
-  --gradient-sunset: linear-gradient(135deg, #B8765C 0%, #D4A08A 100%);
+  /* Dynamic Gradients - Bold & Vibrant */
+  --gradient-electric: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%);
+  --gradient-cyber: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #6366F1 100%);
+  --gradient-flame: linear-gradient(135deg, #F97316 0%, #FB923C 50%, #FBBF24 100%);
+  --gradient-sunset: linear-gradient(135deg, #F43F5E 0%, #F97316 50%, #FBBF24 100%);
+  --gradient-ocean: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+  --gradient-aurora: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #F97316 100%);
+  --gradient-emerald: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  --gradient-hero: linear-gradient(135deg, #4F46E5 0%, #06B6D4 50%, #10B981 100%);
+  --gradient-forest: var(--gradient-electric);
+  --gradient-spring: var(--gradient-emerald);
 
-  /* Atmospheric mesh gradient - Refined Nordic Style */
+  /* Atmospheric Mesh - Modern Tech Vibes */
   --gradient-atmosphere:
-    radial-gradient(at 20% 30%, rgba(143, 181, 165, 0.06) 0px, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(46, 107, 142, 0.05) 0px, transparent 50%),
-    radial-gradient(at 50% 80%, rgba(229, 200, 168, 0.04) 0px, transparent 50%),
-    radial-gradient(at 90% 70%, rgba(184, 212, 201, 0.06) 0px, transparent 50%);
+    radial-gradient(at 20% 30%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(249, 115, 22, 0.10) 0px, transparent 50%),
+    radial-gradient(at 90% 70%, rgba(168, 85, 247, 0.13) 0px, transparent 50%);
 
-  /* Subtle Scandinavian Shadows */
-  --shadow-xs: 0 1px 2px 0 rgba(26, 26, 26, 0.04);
-  --shadow-sm: 0 2px 6px 0 rgba(26, 26, 26, 0.06);
-  --shadow-md: 0 4px 12px 0 rgba(26, 26, 26, 0.08);
-  --shadow-lg: 0 8px 24px 0 rgba(26, 26, 26, 0.10);
+  /* Modern Shadows - Crisp & Defined */
+  --shadow-xs: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 16px 0 rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 8px 32px 0 rgba(0, 0, 0, 0.16);
   --shadow-xl: 0 16px 40px 0 rgba(26, 26, 26, 0.12);
   --shadow-2xl: 0 24px 56px 0 rgba(26, 26, 26, 0.14);
   --shadow-glow-forest: 0 0 32px rgba(44, 95, 79, 0.2);
@@ -479,7 +486,7 @@ body.has-testing-banner .page-hero {
 
 .nav-cta {
   padding: 10px 24px;
-  background: var(--gradient-ocean);
+  background: var(--gradient-electric);
   color: white !important;
   border-radius: var(--radius-md);
   font-weight: 500;
@@ -487,7 +494,7 @@ body.has-testing-banner .page-hero {
   position: relative;
   overflow: hidden;
   transition: all var(--transition-smooth);
-  box-shadow: 0 2px 8px rgba(27, 79, 114, 0.15);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
 .nav-cta::before {
@@ -497,7 +504,7 @@ body.has-testing-banner .page-hero {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
   opacity: 0;
   transition: opacity var(--transition-smooth);
 }
@@ -508,7 +515,7 @@ body.has-testing-banner .page-hero {
 
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(27, 79, 114, 0.25);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4), 0 0 32px rgba(139, 92, 246, 0.3);
   color: white !important;
 }
 
@@ -1106,9 +1113,9 @@ button:focus:not(:focus-visible) {
 }
 
 .btn-primary {
-  background: var(--gradient-ocean);
+  background: var(--gradient-electric);
   color: white;
-  box-shadow: 0 4px 12px rgba(27, 79, 114, 0.2);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3), 0 0 24px rgba(139, 92, 246, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -1120,7 +1127,7 @@ button:focus:not(:focus-visible) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
   opacity: 0;
   transition: opacity var(--transition-smooth);
 }
@@ -1131,21 +1138,21 @@ button:focus:not(:focus-visible) {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(27, 79, 114, 0.25);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4), 0 0 40px rgba(139, 92, 246, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--ocean-medium);
-  border-color: var(--ocean-medium);
+  color: var(--cyber-primary);
+  border-color: var(--cyber-primary);
   border-width: 2px;
 }
 
 .btn-secondary:hover {
-  background: var(--ocean-medium);
+  background: var(--gradient-cyber);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(27, 79, 114, 0.2);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3), 0 0 32px rgba(34, 211, 238, 0.2);
 }
 
 /* Hero section - secondary button needs white styling for visibility on dark background */
@@ -1160,7 +1167,7 @@ button:focus:not(:focus-visible) {
 
 .hero .btn-secondary:hover {
   background: white;
-  color: var(--ocean-deep);
+  color: var(--electric-primary);
   border-color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(255, 255, 255, 0.4);
@@ -1541,8 +1548,9 @@ button:focus:not(:focus-visible) {
 .cta-section .btn-primary,
 .demo-cta .btn-primary,
 .tech-cta .btn-primary {
-  background: var(--gradient-sunset);
+  background: var(--gradient-aurora);
   color: white;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3), 0 0 32px rgba(236, 72, 153, 0.2);
 }
 
 .cta-section .btn-secondary,
@@ -1557,7 +1565,8 @@ button:focus:not(:focus-visible) {
 .demo-cta .btn-secondary:hover,
 .tech-cta .btn-secondary:hover {
   background: white;
-  color: var(--forest-deep);
+  color: var(--electric-primary);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.3);
 }
 
 /* ================================================
@@ -2720,10 +2729,10 @@ body::before {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4), 0 0 24px rgba(139, 92, 246, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2734,7 +2743,7 @@ body::before {
 
 .chatbot-button:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5), 0 0 32px rgba(139, 92, 246, 0.4);
 }
 
 .chatbot-button:active {
@@ -2775,7 +2784,7 @@ body::before {
 
 /* Chat Header */
 .chatbot-header {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
   color: white;
   padding: 18px 20px;
   display: flex;
@@ -2784,6 +2793,7 @@ body::before {
   border-radius: 16px 16px 0 0;
   position: relative;
   z-index: 10;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .chatbot-header-content {
@@ -2984,7 +2994,7 @@ body::before {
 }
 
 .typing-indicator .message-avatar {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
   color: white;
 }
 
@@ -3033,8 +3043,8 @@ body::before {
 
 .quick-reply-btn {
   background: white;
-  border: 1px solid #10b981;
-  color: #10b981;
+  border: 2px solid #6366F1;
+  color: #6366F1;
   padding: 7px 14px;
   border-radius: 16px;
   font-size: 0.8125rem;
@@ -3044,9 +3054,10 @@ body::before {
 }
 
 .quick-reply-btn:hover {
-  background: #10b981;
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
   color: white;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 /* Chat Input */
@@ -3075,8 +3086,9 @@ body::before {
 }
 
 .chatbot-input:focus {
-  border-color: #10b981;
+  border-color: #6366F1;
   background: white;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .chatbot-input::placeholder {
@@ -3087,18 +3099,20 @@ body::before {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
 .chatbot-send-btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
 .chatbot-send-btn:active {
