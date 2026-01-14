@@ -1697,6 +1697,64 @@
     let messageCount = 0;
     let feedbackGiven = false;
 
+    // EmailJS Configuration
+    // IMPORTANT: Replace these with your EmailJS credentials from https://www.emailjs.com/
+    const EMAILJS_CONFIG = {
+      publicKey: 'YOUR_PUBLIC_KEY', // Replace with your EmailJS public key
+      serviceID: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+      templateID: 'YOUR_TEMPLATE_ID' // Replace with your EmailJS template ID
+    };
+
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+      try {
+        emailjs.init(EMAILJS_CONFIG.publicKey);
+        console.log('EmailJS initialized successfully');
+      } catch (e) {
+        console.error('EmailJS initialization failed:', e);
+      }
+    }
+
+    // Email sending function
+    function sendEmailViaEmailJS(toEmail, subject, content, type = 'transcript') {
+      if (typeof emailjs === 'undefined') {
+        console.warn('EmailJS not loaded');
+        return Promise.reject('EmailJS not available');
+      }
+
+      if (EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY') {
+        console.warn('EmailJS not configured. Please add your credentials.');
+        // Still track the lead locally
+        return Promise.resolve({ status: 'saved_locally' });
+      }
+
+      // Email template parameters
+      const templateParams = {
+        to_email: toEmail,
+        to_name: toEmail.split('@')[0],
+        subject: subject,
+        message: content,
+        transcript: content,
+        type: type,
+        timestamp: new Date().toLocaleString()
+      };
+
+      return emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        templateParams
+      ).then(
+        (response) => {
+          console.log('Email sent successfully!', response.status, response.text);
+          return response;
+        },
+        (error) => {
+          console.error('Email sending failed:', error);
+          throw error;
+        }
+      );
+    }
+
     // Toggle chatbot
     function toggleChatbot() {
       isOpen = !isOpen;
@@ -1986,9 +2044,32 @@
         document.getElementById('send-email-btn')?.addEventListener('click', () => {
           const email = document.getElementById('email-input')?.value;
           if (email && email.includes('@')) {
-            // Track lead
-            trackLead(email, transcript);
-            addMessage(`✅ Transcript sent to ${email}! We'll also follow up with more information about ChainSync.`, 'bot');
+            const sendBtn = document.getElementById('send-email-btn');
+            sendBtn.textContent = 'Sending...';
+            sendBtn.disabled = true;
+
+            // Create formatted email content
+            const emailContent = formatTranscriptForEmail(transcript);
+
+            // Send email via EmailJS
+            sendEmailViaEmailJS(
+              email,
+              'Your ChainSync Conversation + Early Access Info',
+              emailContent,
+              'transcript'
+            ).then(() => {
+              trackLead(email, transcript);
+              addMessage(`✅ Transcript sent to ${email}! We'll also follow up with more information about ChainSync.`, 'bot');
+            }).catch((error) => {
+              console.error('Email error:', error);
+              // Even if email fails, save the lead
+              trackLead(email, transcript);
+              if (EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY') {
+                addMessage(`✅ Thanks! We've saved your email (${email}). We'll reach out soon with your transcript and demo information!`, 'bot');
+              } else {
+                addMessage(`⚠️ Email saved! There was an issue sending, but we've recorded your request for ${email}. We'll follow up soon!`, 'bot');
+              }
+            });
           } else {
             addMessage('❌ Please enter a valid email address.', 'bot');
           }
@@ -1998,6 +2079,44 @@
           addMessage('Email cancelled.', 'bot');
         });
       }, 100);
+    }
+
+    function formatTranscriptForEmail(transcript) {
+      return `
+Hi there!
+
+Thanks for chatting with our ChainSync assistant! Here's your conversation transcript:
+
+${transcript}
+
+---
+
+WANT TO LEARN MORE ABOUT CHAINSYNC?
+
+ChainSync is an intelligent environmental emergency response platform built with Python agents that:
+
+• Detects threats in under 2 seconds
+• Coordinates multi-agency responses automatically
+• Ensures regulatory compliance with automated reporting
+• Protects water, air, and land through real-time monitoring
+
+We're currently in early access for government agencies, municipalities, and water treatment facilities.
+
+NEXT STEPS:
+
+Reply to this email to:
+- Schedule a personalized demo
+- Discuss your organization's needs
+- Learn about pricing for government agencies
+- Get access to our technical documentation
+
+Or visit our website: https://chainsync-site-kohl.vercel.app/
+
+Best regards,
+The ChainSync Team
+
+P.S. We're building ChainSync to help communities respond faster to environmental emergencies. Every second counts when protecting our water, air, and land.
+      `.trim();
     }
 
     function trackLead(email, context) {
@@ -2298,9 +2417,34 @@
         document.getElementById('submit-lead-btn')?.addEventListener('click', () => {
           const email = document.getElementById('lead-email-input')?.value;
           if (email && email.includes('@')) {
-            trackLead(email, conversationHistory.map(m => m.text).join('\n'));
-            localStorage.setItem('chatbot_email_collected', 'true');
-            addMessage(`🎉 Perfect! We'll send demo information to ${email}. In the meantime, feel free to continue asking questions!`, 'bot');
+            const submitBtn = document.getElementById('submit-lead-btn');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const context = conversationHistory.map(m => m.text).join('\n');
+
+            // Send demo info email
+            const demoEmailContent = formatDemoEmail(email, context);
+
+            sendEmailViaEmailJS(
+              email,
+              'ChainSync Demo Information & Early Access',
+              demoEmailContent,
+              'demo'
+            ).then(() => {
+              trackLead(email, context);
+              localStorage.setItem('chatbot_email_collected', 'true');
+              addMessage(`🎉 Perfect! We've sent demo information to ${email}. In the meantime, feel free to continue asking questions!`, 'bot');
+            }).catch((error) => {
+              console.error('Email error:', error);
+              trackLead(email, context);
+              localStorage.setItem('chatbot_email_collected', 'true');
+              if (EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY') {
+                addMessage(`✅ Thanks! We've saved your email (${email}). We'll reach out soon with demo information!`, 'bot');
+              } else {
+                addMessage(`🎉 Email saved! We'll send demo information to ${email} shortly. Feel free to continue asking questions!`, 'bot');
+              }
+            });
           } else {
             addMessage('❌ Please enter a valid email address.', 'bot');
           }
@@ -2311,6 +2455,64 @@
           addMessage('No problem! Feel free to continue exploring ChainSync.', 'bot');
         });
       }, 100);
+    }
+
+    function formatDemoEmail(email, conversationContext) {
+      const name = email.split('@')[0];
+      return `
+Hi ${name}!
+
+Thanks for your interest in ChainSync! We're excited to share more about how our intelligent environmental emergency response platform can help your organization.
+
+WHAT IS CHAINSYNC?
+
+ChainSync is built with Python-based intelligent agents that protect communities by:
+
+• Detecting environmental threats in under 2 seconds
+• Automatically coordinating multi-agency emergency responses
+• Ensuring regulatory compliance with automated reporting
+• Protecting water, air, and land through 24/7 real-time monitoring
+
+PERFECT FOR:
+
+✓ Government agencies (municipal, county, state, federal)
+✓ Water treatment facilities
+✓ Environmental protection departments
+✓ Emergency management teams
+✓ Public utilities
+
+EARLY ACCESS PROGRAM:
+
+We're currently onboarding early access partners. This includes:
+- Personalized demo and implementation planning
+- Special early adopter pricing for government agencies
+- Direct access to our engineering team
+- Grant application assistance
+
+NEXT STEPS:
+
+Reply to this email with:
+1. Your organization type (government/utility/etc.)
+2. Your primary environmental monitoring needs
+3. Preferred time for a 30-minute demo call
+
+We'll schedule a personalized demonstration and discuss how ChainSync can serve your specific needs.
+
+Or visit our website: https://chainsync-site-kohl.vercel.app/
+Contact us: https://chainsync-site-kohl.vercel.app/contact.html
+
+Best regards,
+The ChainSync Team
+
+P.S. Based on your questions, you might be particularly interested in:
+${conversationContext.includes('government') || conversationContext.includes('Government') ? '• Government compliance features\n• Multi-agency coordination' : ''}
+${conversationContext.includes('water') || conversationContext.includes('Water') ? '• Water treatment monitoring\n• SCADA integration' : ''}
+${conversationContext.includes('pricing') || conversationContext.includes('cost') ? '• Public sector pricing\n• ROI analysis' : ''}
+
+---
+
+ChainSync - Every second counts when protecting our environment
+      `.trim();
     }
 
     // Show typing indicator
