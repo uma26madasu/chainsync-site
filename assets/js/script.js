@@ -2109,7 +2109,7 @@ Reply to this email to:
 - Learn about pricing for government agencies
 - Get access to our technical documentation
 
-Or visit our website: https://chainsync-site-kohl.vercel.app/
+Or visit our website: https://getchainsync.com/
 
 Best regards,
 The ChainSync Team
@@ -2497,8 +2497,8 @@ Reply to this email with:
 
 We'll schedule a personalized demonstration and discuss how ChainSync can serve your specific needs.
 
-Or visit our website: https://chainsync-site-kohl.vercel.app/
-Contact us: https://chainsync-site-kohl.vercel.app/contact.html
+Or visit our website: https://getchainsync.com/
+Contact us: https://getchainsync.com/contact.html
 
 Best regards,
 The ChainSync Team
