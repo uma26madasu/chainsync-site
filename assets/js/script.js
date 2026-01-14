@@ -1677,7 +1677,7 @@
   }
 
   /* ==========================================
-     Chatbot Functionality
+     Chatbot Functionality - Enhanced
      ========================================== */
   function initChatbot() {
     const chatbotToggle = document.getElementById('chatbot-toggle');
@@ -1693,6 +1693,9 @@
 
     let isOpen = false;
     let conversationStarted = false;
+    let conversationHistory = []; // Track conversation for context
+    let messageCount = 0;
+    let feedbackGiven = false;
 
     // Toggle chatbot
     function toggleChatbot() {
@@ -1711,12 +1714,373 @@
       chatbotClose.addEventListener('click', toggleChatbot);
     }
 
-    // Close on escape key
+    // Enhanced keyboard shortcuts
     document.addEventListener('keydown', (e) => {
+      // Escape to close
       if (e.key === 'Escape' && isOpen) {
         toggleChatbot();
       }
+      // Cmd/Ctrl + K to toggle chatbot
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k' && !e.target.matches('input, textarea')) {
+        e.preventDefault();
+        toggleChatbot();
+      }
     });
+
+    // Add enhanced toolbar to chatbot header
+    addEnhancedToolbar();
+
+    // Initialize analytics
+    initAnalytics();
+
+    // Helper Functions
+    function addEnhancedToolbar() {
+      const chatbotHeader = chatbotWindow.querySelector('.chatbot-header');
+      if (!chatbotHeader || document.getElementById('chatbot-toolbar')) return;
+
+      const toolbar = document.createElement('div');
+      toolbar.id = 'chatbot-toolbar';
+      toolbar.style.cssText = `
+        display: flex;
+        gap: 8px;
+        margin-left: auto;
+        margin-right: 8px;
+      `;
+
+      toolbar.innerHTML = `
+        <button id="browse-topics-btn" title="Browse Topics" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px; padding: 4px 8px;">📚</button>
+        <button id="export-chat-btn" title="Export Conversation" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px; padding: 4px 8px;">📥</button>
+        <button id="restart-chat-btn" title="Start Over" style="background: none; border: none; color: white; cursor: pointer; font-size: 16px; padding: 4px 8px;">🔄</button>
+      `;
+
+      chatbotHeader.insertBefore(toolbar, chatbotClose);
+
+      // Event listeners for toolbar buttons
+      document.getElementById('browse-topics-btn').addEventListener('click', showTopicBrowser);
+      document.getElementById('export-chat-btn').addEventListener('click', exportConversation);
+      document.getElementById('restart-chat-btn').addEventListener('click', restartConversation);
+    }
+
+    function initAnalytics() {
+      // Initialize analytics in localStorage if not exists
+      if (!localStorage.getItem('chatbot_analytics')) {
+        localStorage.setItem('chatbot_analytics', JSON.stringify({
+          totalConversations: 0,
+          topicCounts: {},
+          feedbackCounts: { positive: 0, negative: 0 }
+        }));
+      }
+    }
+
+    function trackQuestion(topic) {
+      try {
+        const analytics = JSON.parse(localStorage.getItem('chatbot_analytics') || '{}');
+        analytics.topicCounts = analytics.topicCounts || {};
+        analytics.topicCounts[topic] = (analytics.topicCounts[topic] || 0) + 1;
+        localStorage.setItem('chatbot_analytics', JSON.stringify(analytics));
+      } catch (e) {
+        console.error('Analytics error:', e);
+      }
+    }
+
+    function trackFeedback(isPositive) {
+      try {
+        const analytics = JSON.parse(localStorage.getItem('chatbot_analytics') || '{}');
+        analytics.feedbackCounts = analytics.feedbackCounts || { positive: 0, negative: 0 };
+        if (isPositive) {
+          analytics.feedbackCounts.positive++;
+        } else {
+          analytics.feedbackCounts.negative++;
+        }
+        localStorage.setItem('chatbot_analytics', JSON.stringify(analytics));
+      } catch (e) {
+        console.error('Analytics error:', e);
+      }
+    }
+
+    function showTopicBrowser() {
+      const topics = [
+        { emoji: '❓', title: 'What is ChainSync?', message: 'What is ChainSync?' },
+        { emoji: '⚙️', title: 'How does it work?', message: 'How does it work?' },
+        { emoji: '🏛️', title: 'Government benefits', message: 'Government benefits' },
+        { emoji: '💧', title: 'Water treatment help', message: 'Water treatment help' },
+        { emoji: '📡', title: 'Monitoring system', message: 'Tell me about monitoring' },
+        { emoji: '⚡', title: 'Response time', message: 'How fast is the response?' },
+        { emoji: '📊', title: 'Benefits & ROI', message: 'What are the benefits?' },
+        { emoji: '🔧', title: 'Technology stack', message: 'Tell me about the technology' },
+        { emoji: '💰', title: 'Pricing', message: 'How much does it cost?' },
+        { emoji: '🔗', title: 'Integration', message: 'How does integration work?' },
+        { emoji: '🚨', title: 'Use cases', message: 'Show me use cases' },
+        { emoji: '🚀', title: 'Get started', message: 'How do I get started?' }
+      ];
+
+      const browserHTML = `
+        <div style="padding: 16px;">
+          <h3 style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600;">Browse Topics</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-height: 400px; overflow-y: auto;">
+            ${topics.map(topic => `
+              <button class="topic-browse-btn" data-message="${topic.message}" style="
+                padding: 12px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                background: white;
+                cursor: pointer;
+                text-align: left;
+                transition: all 0.2s;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+              ">
+                <span style="font-size: 20px;">${topic.emoji}</span>
+                <span style="font-size: 13px; font-weight: 500;">${topic.title}</span>
+              </button>
+            `).join('')}
+          </div>
+          <button id="close-topic-browser" style="
+            width: 100%;
+            margin-top: 16px;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #f9fafb;
+            cursor: pointer;
+            font-weight: 500;
+          ">Close</button>
+        </div>
+      `;
+
+      chatbotInput.value = message;
+      addMessage(browserHTML, 'bot');
+
+      // Add event listeners to topic buttons
+      setTimeout(() => {
+        document.querySelectorAll('.topic-browse-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const msg = btn.getAttribute('data-message');
+            chatbotInput.value = msg;
+            sendMessage();
+          });
+          btn.addEventListener('mouseenter', (e) => {
+            e.target.style.background = '#f0fdf4';
+            e.target.style.borderColor = '#10b981';
+          });
+          btn.addEventListener('mouseleave', (e) => {
+            e.target.style.background = 'white';
+            e.target.style.borderColor = '#e5e7eb';
+          });
+        });
+
+        document.getElementById('close-topic-browser')?.addEventListener('click', () => {
+          document.querySelectorAll('.message.bot').forEach(msg => {
+            if (msg.textContent.includes('Browse Topics')) {
+              msg.remove();
+            }
+          });
+        });
+      }, 100);
+    }
+
+    function exportConversation() {
+      const messages = Array.from(chatbotMessages.querySelectorAll('.message')).map(msg => {
+        const sender = msg.classList.contains('user') ? 'You' : 'ChainSync';
+        const text = msg.querySelector('.message-text')?.textContent || '';
+        const time = msg.querySelector('.message-time')?.textContent || '';
+        return `[${time}] ${sender}: ${text}`;
+      }).join('\n\n');
+
+      const exportOptions = `
+        <div style="padding: 16px;">
+          <h3 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600;">Export Conversation</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button id="copy-to-clipboard" style="padding: 10px; border: 1px solid #10b981; border-radius: 8px; background: white; cursor: pointer; font-weight: 500; color: #10b981;">
+              📋 Copy to Clipboard
+            </button>
+            <button id="download-txt" style="padding: 10px; border: 1px solid #10b981; border-radius: 8px; background: white; cursor: pointer; font-weight: 500; color: #10b981;">
+              💾 Download as TXT
+            </button>
+            <button id="email-transcript" style="padding: 10px; border: 1px solid #10b981; border-radius: 8px; background: white; cursor: pointer; font-weight: 500; color: #10b981;">
+              📧 Email Transcript
+            </button>
+            <button id="print-chat" style="padding: 10px; border: 1px solid #10b981; border-radius: 8px; background: white; cursor: pointer; font-weight: 500; color: #10b981;">
+              🖨️ Print
+            </button>
+          </div>
+        </div>
+      `;
+
+      addMessage(exportOptions, 'bot');
+
+      setTimeout(() => {
+        document.getElementById('copy-to-clipboard')?.addEventListener('click', () => {
+          navigator.clipboard.writeText(messages).then(() => {
+            addMessage('✅ Copied to clipboard!', 'bot');
+          });
+        });
+
+        document.getElementById('download-txt')?.addEventListener('click', () => {
+          const blob = new Blob([messages], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `chainsync-conversation-${Date.now()}.txt`;
+          a.click();
+          URL.revokeObjectURL(url);
+          addMessage('✅ Download started!', 'bot');
+        });
+
+        document.getElementById('email-transcript')?.addEventListener('click', () => {
+          showEmailForm(messages);
+        });
+
+        document.getElementById('print-chat')?.addEventListener('click', () => {
+          const printWindow = window.open('', '', 'height=600,width=800');
+          printWindow.document.write('<html><head><title>ChainSync Conversation</title></head><body>');
+          printWindow.document.write('<pre>' + messages + '</pre>');
+          printWindow.document.write('</body></html>');
+          printWindow.document.close();
+          printWindow.print();
+        });
+      }, 100);
+    }
+
+    function showEmailForm(transcript) {
+      const emailFormHTML = `
+        <div style="padding: 16px;">
+          <h3 style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600;">Email Transcript</h3>
+          <input type="email" id="email-input" placeholder="Enter your email" style="
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+          ">
+          <div style="display: flex; gap: 8px;">
+            <button id="send-email-btn" style="
+              flex: 1;
+              padding: 10px;
+              border: none;
+              border-radius: 8px;
+              background: #10b981;
+              color: white;
+              cursor: pointer;
+              font-weight: 500;
+            ">Send</button>
+            <button id="cancel-email-btn" style="
+              flex: 1;
+              padding: 10px;
+              border: 1px solid #e5e7eb;
+              border-radius: 8px;
+              background: white;
+              cursor: pointer;
+              font-weight: 500;
+            ">Cancel</button>
+          </div>
+          <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">We'll also send you information about ChainSync!</p>
+        </div>
+      `;
+
+      addMessage(emailFormHTML, 'bot');
+
+      setTimeout(() => {
+        document.getElementById('send-email-btn')?.addEventListener('click', () => {
+          const email = document.getElementById('email-input')?.value;
+          if (email && email.includes('@')) {
+            // Track lead
+            trackLead(email, transcript);
+            addMessage(`✅ Transcript sent to ${email}! We'll also follow up with more information about ChainSync.`, 'bot');
+          } else {
+            addMessage('❌ Please enter a valid email address.', 'bot');
+          }
+        });
+
+        document.getElementById('cancel-email-btn')?.addEventListener('click', () => {
+          addMessage('Email cancelled.', 'bot');
+        });
+      }, 100);
+    }
+
+    function trackLead(email, context) {
+      try {
+        const leads = JSON.parse(localStorage.getItem('chatbot_leads') || '[]');
+        leads.push({
+          email,
+          timestamp: new Date().toISOString(),
+          context: context.substring(0, 500)
+        });
+        localStorage.setItem('chatbot_leads', JSON.stringify(leads));
+        console.log('Lead captured:', email);
+      } catch (e) {
+        console.error('Lead tracking error:', e);
+      }
+    }
+
+    function restartConversation() {
+      if (confirm('Start a new conversation? This will clear the current chat.')) {
+        chatbotMessages.innerHTML = `
+          <div class="welcome-message" style="text-align: center; padding: 24px; color: #6b7280;">
+            <div style="font-size: 48px; margin-bottom: 16px;">🌱</div>
+            <h3 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 600; color: #1f2937;">Welcome to ChainSync!</h3>
+            <p style="margin: 0 0 16px 0; font-size: 14px;">I'm here to help you learn about environmental emergency response.</p>
+            <div class="quick-replies">
+              <button class="quick-reply-btn" data-message="What is ChainSync?">What is ChainSync?</button>
+              <button class="quick-reply-btn" data-message="How does it work?">How does it work?</button>
+              <button class="quick-reply-btn" data-message="Government benefits">Government benefits</button>
+            </div>
+          </div>
+        `;
+        conversationHistory = [];
+        conversationStarted = false;
+        messageCount = 0;
+        feedbackGiven = false;
+
+        // Re-attach quick reply listeners
+        const quickReplyBtns = chatbotMessages.querySelectorAll('.quick-reply-btn');
+        quickReplyBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const message = btn.getAttribute('data-message');
+            chatbotInput.value = message;
+            sendMessage();
+          });
+        });
+      }
+    }
+
+    // Fuzzy matching function (Levenshtein distance)
+    function levenshteinDistance(str1, str2) {
+      const matrix = [];
+      for (let i = 0; i <= str2.length; i++) {
+        matrix[i] = [i];
+      }
+      for (let j = 0; j <= str1.length; j++) {
+        matrix[0][j] = j;
+      }
+      for (let i = 1; i <= str2.length; i++) {
+        for (let j = 1; j <= str1.length; j++) {
+          if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+            matrix[i][j] = matrix[i - 1][j - 1];
+          } else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j - 1] + 1,
+              matrix[i][j - 1] + 1,
+              matrix[i - 1][j] + 1
+            );
+          }
+        }
+      }
+      return matrix[str2.length][str1.length];
+    }
+
+    function fuzzyMatch(input, keywords) {
+      const threshold = 3; // Max edit distance
+      for (const keyword of keywords) {
+        const distance = levenshteinDistance(input.toLowerCase(), keyword.toLowerCase());
+        if (distance <= threshold && keyword.length > 4) {
+          return true;
+        }
+      }
+      return false;
+    }
 
     // Auto-resize textarea
     if (chatbotInput) {
@@ -1757,20 +2121,56 @@
     }
 
     // Add message to chat
-    function addMessage(text, sender, quickReplies = null) {
+    function addMessage(text, sender, quickReplies = null, responseKey = null) {
       const messageDiv = document.createElement('div');
       messageDiv.className = `message ${sender}`;
+      messageCount++;
 
       const time = new Date().toLocaleTimeString('en-US', {
         hour: 'numeric',
         minute: '2-digit'
       });
 
+      // Add feedback buttons for bot messages
+      const feedbackHTML = sender === 'bot' && !text.includes('<button') ? `
+        <div class="message-feedback" style="margin-top: 8px; display: flex; gap: 8px; align-items: center;">
+          <button class="feedback-btn feedback-positive" data-feedback="positive" style="
+            background: none;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+          " title="Helpful">👍</button>
+          <button class="feedback-btn feedback-negative" data-feedback="negative" style="
+            background: none;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+          " title="Not helpful">👎</button>
+          <button class="copy-message-btn" style="
+            background: none;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+            margin-left: auto;
+          " title="Copy response">📋</button>
+        </div>
+      ` : '';
+
       messageDiv.innerHTML = `
         <div class="message-avatar">${sender === 'bot' ? '🌱' : '👤'}</div>
         <div class="message-content">
           <p class="message-text">${text}</p>
           <span class="message-time">${time}</span>
+          ${feedbackHTML}
           ${quickReplies ? `
             <div class="quick-replies">
               ${quickReplies.map(reply => `
@@ -1782,6 +2182,16 @@
       `;
 
       chatbotMessages.appendChild(messageDiv);
+
+      // Track conversation history
+      if (sender === 'user' || sender === 'bot') {
+        conversationHistory.push({
+          sender,
+          text,
+          time,
+          responseKey
+        });
+      }
 
       // Add event listeners to quick reply buttons
       if (quickReplies) {
@@ -1795,8 +2205,112 @@
         });
       }
 
+      // Add feedback button listeners
+      if (sender === 'bot') {
+        const feedbackBtns = messageDiv.querySelectorAll('.feedback-btn');
+        feedbackBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const isPositive = this.getAttribute('data-feedback') === 'positive';
+            trackFeedback(isPositive);
+
+            // Visual feedback
+            feedbackBtns.forEach(b => b.style.opacity = '0.3');
+            this.style.opacity = '1';
+            this.style.background = isPositive ? '#f0fdf4' : '#fef2f2';
+            this.style.borderColor = isPositive ? '#10b981' : '#ef4444';
+            this.disabled = true;
+
+            // Show thank you message after feedback
+            if (!feedbackGiven && messageCount > 3) {
+              feedbackGiven = true;
+              setTimeout(() => {
+                addMessage("Thank you for your feedback! 🙏 Is there anything else you'd like to know about ChainSync?", 'bot', null, 'feedback_thanks');
+              }, 500);
+            }
+          });
+        });
+
+        const copyBtn = messageDiv.querySelector('.copy-message-btn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', function() {
+            const textContent = messageDiv.querySelector('.message-text').textContent;
+            navigator.clipboard.writeText(textContent).then(() => {
+              this.textContent = '✅';
+              setTimeout(() => {
+                this.textContent = '📋';
+              }, 2000);
+            });
+          });
+        }
+      }
+
+      // Ask for email after 5 messages
+      if (messageCount === 5 && sender === 'bot' && !localStorage.getItem('chatbot_email_collected')) {
+        setTimeout(() => {
+          showLeadCapturePrompt();
+        }, 2000);
+      }
+
       // Scroll to bottom
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function showLeadCapturePrompt() {
+      const promptHTML = `
+        <div style="padding: 16px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-radius: 12px; border: 1px solid #10b981;">
+          <h4 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; color: #065f46;">Want to learn more?</h4>
+          <p style="margin: 0 0 12px 0; font-size: 13px; color: #047857;">Enter your email to get a personalized demo and early access information!</p>
+          <input type="email" id="lead-email-input" placeholder="your@email.com" style="
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+          ">
+          <div style="display: flex; gap: 8px;">
+            <button id="submit-lead-btn" style="
+              flex: 1;
+              padding: 10px;
+              border: none;
+              border-radius: 8px;
+              background: #10b981;
+              color: white;
+              cursor: pointer;
+              font-weight: 500;
+            ">Get Demo Info</button>
+            <button id="skip-lead-btn" style="
+              padding: 10px 16px;
+              border: 1px solid #10b981;
+              border-radius: 8px;
+              background: white;
+              cursor: pointer;
+              font-weight: 500;
+              color: #10b981;
+            ">Maybe Later</button>
+          </div>
+        </div>
+      `;
+
+      addMessage(promptHTML, 'bot');
+
+      setTimeout(() => {
+        document.getElementById('submit-lead-btn')?.addEventListener('click', () => {
+          const email = document.getElementById('lead-email-input')?.value;
+          if (email && email.includes('@')) {
+            trackLead(email, conversationHistory.map(m => m.text).join('\n'));
+            localStorage.setItem('chatbot_email_collected', 'true');
+            addMessage(`🎉 Perfect! We'll send demo information to ${email}. In the meantime, feel free to continue asking questions!`, 'bot');
+          } else {
+            addMessage('❌ Please enter a valid email address.', 'bot');
+          }
+        });
+
+        document.getElementById('skip-lead-btn')?.addEventListener('click', () => {
+          localStorage.setItem('chatbot_email_collected', 'skip');
+          addMessage('No problem! Feel free to continue exploring ChainSync.', 'bot');
+        });
+      }, 100);
     }
 
     // Show typing indicator
@@ -1922,28 +2436,36 @@
         }
       }
 
-      // Single keyword matching with relevance scoring
+      // Single keyword matching with relevance scoring + fuzzy matching
       let bestMatch = null;
       let highestScore = 0;
+      let bestMatchKey = null;
 
       for (const [key, response] of Object.entries(responses)) {
         if (key === 'default') continue;
 
         let score = 0;
         for (const keyword of response.keywords) {
+          // Exact match
           if (msg.includes(keyword)) {
-            // Longer matches score higher
             score += keyword.length;
+          }
+          // Fuzzy match (for typos)
+          else if (fuzzyMatch(msg, [keyword])) {
+            score += keyword.length * 0.8; // Slightly lower score for fuzzy matches
           }
         }
 
         if (score > highestScore) {
           highestScore = score;
           bestMatch = response;
+          bestMatchKey = key;
         }
       }
 
       if (bestMatch && highestScore > 0) {
+        // Track the topic
+        trackQuestion(bestMatchKey || 'unknown');
         return bestMatch;
       }
 
