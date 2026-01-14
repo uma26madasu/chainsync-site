@@ -1698,11 +1698,10 @@
     let feedbackGiven = false;
 
     // EmailJS Configuration
-    // IMPORTANT: Replace these with your EmailJS credentials from https://www.emailjs.com/
     const EMAILJS_CONFIG = {
-      publicKey: 'YOUR_PUBLIC_KEY', // Replace with your EmailJS public key
-      serviceID: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      templateID: 'YOUR_TEMPLATE_ID' // Replace with your EmailJS template ID
+      publicKey: 'mvRcXt-RUQv_C4hzo',
+      serviceID: 'service_6mitzhj',
+      templateID: 'template_5lz96en'
     };
 
     // Initialize EmailJS
