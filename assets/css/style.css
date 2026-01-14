@@ -1664,7 +1664,7 @@ footer {
 }
 
 /* Force all content on use-cases page to be immediately visible */
-body.use-cases-page * {
+body.use-cases-page *:not(.chatbot-widget):not(.chatbot-widget *):not(.chatbot-button):not(.chatbot-window):not(.chatbot-window *) {
   opacity: 1 !important;
   transform: none !important;
 }
