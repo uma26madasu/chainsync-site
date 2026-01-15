@@ -335,16 +335,7 @@ section {
   );
 }
 
-.stat-number {
-  background: linear-gradient(135deg,
-    var(--forest-primary) 0%,
-    var(--ocean-medium) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
+/* Stat numbers use solid color from style.css for visibility */
 
 /* ================================================
    PREMIUM ICONS & GRAPHICS
