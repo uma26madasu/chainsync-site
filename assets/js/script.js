@@ -2543,96 +2543,143 @@ ChainSync - Every second counts when protecting our environment
     function generateResponse(message) {
       const msg = message.toLowerCase();
 
-      // Enhanced knowledge base for ChainSync with better matching
+      // Enhanced knowledge base with context awareness and Python agent details
       const responses = {
         greeting: {
-          keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon'],
-          text: "Hello! I'm the ChainSync Assistant. 👋<br><br>I'm here to help you understand how we're protecting the environment through intelligent emergency response.<br><br>What would you like to know?",
-          quickReplies: ['What is ChainSync?', 'How does it work?', 'Government benefits']
+          keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'sup', 'yo'],
+          text: "Hello! I'm the ChainSync Assistant. 👋<br><br>I'm here to help you understand how we're building intelligent environmental emergency response with Python agents.<br><br>What would you like to know?",
+          quickReplies: ['What is ChainSync?', 'Python agents?', 'Development status'],
+          topic: 'greeting'
         },
         whatIs: {
-          keywords: ['what is chainsync', 'what is this', 'what do you do', 'what does chainsync do', 'tell me about chainsync', 'about chainsync'],
-          text: "ChainSync is an <strong>intelligent environmental emergency response platform</strong>.<br><br>We help communities protect their water, land, and air by connecting sensors, teams, and stakeholders into one coordinated system.<br><br>When environmental threats occur—like chemical spills or contamination—ChainSync detects them instantly and orchestrates the response automatically.",
-          quickReplies: ['How does it work?', 'Government benefits', 'Water treatment help']
+          keywords: ['what is chainsync', 'what is this', 'what do you do', 'what does chainsync do', 'tell me about chainsync', 'about chainsync', 'explain chainsync'],
+          text: "ChainSync is an <strong>intelligent environmental emergency response platform</strong> built on specialized Python agents.<br><br>🎯 <strong>Our Mission:</strong><br>Protect communities and ecosystems by automating coordination during environmental emergencies<br><br>🔧 <strong>How we're different:</strong><br>Instead of one monolithic system, we use <strong>specialized Python agents</strong> that work together—each handling detection, analysis, coordination, or documentation.<br><br>📍 <strong>Current Status:</strong><br>Active development. Core agent framework is built; multi-agent coordination in progress.",
+          quickReplies: ['Python agents?', 'How does it work?', 'Development status'],
+          topic: 'whatIs'
+        },
+        pythonAgents: {
+          keywords: ['python', 'agent', 'agents', 'architecture', 'technical', 'how built', 'python agents', 'modular'],
+          text: "<strong>Our Python Agent Architecture</strong> 🐍<br><br>We're building specialized agents, each with a focused role:<br><br>🔍 <strong>Detection Agent</strong><br>• Monitors sensor streams (water, air, soil)<br>• Analyzes weather patterns<br>• Identifies anomalies in real-time<br>• Built for reliability and speed<br><br>🧠 <strong>Analysis Agent</strong><br>• Evaluates threat severity<br>• Determines response protocols<br>• Makes escalation decisions<br>• Context-aware intelligence<br><br>📡 <strong>Coordination Agent</strong><br>• Orchestrates notifications<br>• Manages stakeholder communication<br>• Handles regulatory reporting<br>• Ensures right info to right people<br><br>📝 <strong>Documentation Agent</strong><br>• Auto-generates compliance reports<br>• Creates audit trails<br>• Tracks all actions<br><br><strong>Why Python?</strong> Reliability, extensive libraries for data science, easy integration, and rapid development.",
+          quickReplies: ['Development status', 'How does it work?', 'Integration details'],
+          topic: 'pythonAgents'
+        },
+        development: {
+          keywords: ['development', 'status', 'progress', 'timeline', 'when', 'ready', 'launch', 'available', 'release', 'testing'],
+          text: "<strong>Development Status - Honest Update</strong> 🛠️<br><br><strong>✅ What's Built:</strong><br>• Core Python agent framework<br>• Sensor integration module<br>• Data processing pipeline<br>• Basic detection algorithms<br><br><strong>🔨 Currently Building:</strong><br>• Multi-agent coordination system<br>• Notification infrastructure<br>• Compliance reporting engine<br>• Testing in controlled environments<br><br><strong>📋 Planned Next:</strong><br>• Public testing program<br>• Pilot partnerships<br>• Regulatory approval pathways<br><br><strong>Timeline?</strong> We don't have a public launch date. We're prioritizing building it right over building it fast. Join early access for updates!",
+          quickReplies: ['Join early access', 'Python agents?', 'How can I help?'],
+          topic: 'development'
         },
         howItWorks: {
-          keywords: ['how does it work', 'how it works', 'process', 'explain', 'workflow', 'mechanism'],
-          text: "ChainSync works in <strong>4 coordinated stages</strong>:<br><br>🔍 <strong>Detect</strong><br>Real-time sensors monitor environmental conditions<br><br>🧠 <strong>Analyze</strong><br>AI analyzes threat severity and selects response protocols<br><br>📢 <strong>Coordinate</strong><br>Automated notifications to teams, stakeholders, and regulators<br><br>🛡️ <strong>Protect</strong><br>Complete documentation and compliance tracking<br><br>All of this happens automatically in seconds!",
-          quickReplies: ['Government benefits', 'Water treatment help', 'Response time']
+          keywords: ['how does it work', 'how it works', 'process', 'explain', 'workflow', 'mechanism', 'steps'],
+          text: "ChainSync coordinates environmental response in <strong>4 automated stages</strong>:<br><br>🔍 <strong>1. DETECT</strong> (< 2 seconds)<br>• Detection Agent monitors sensors<br>• Identifies anomalies in real-time<br>• Enriches with weather/historical data<br><br>🧠 <strong>2. ANALYZE</strong> (< 3 seconds)<br>• Analysis Agent evaluates severity<br>• Determines threat level<br>• Selects appropriate protocol<br><br>📢 <strong>3. COORDINATE</strong> (< 5 seconds)<br>• Coordination Agent notifies teams<br>• Alerts stakeholders automatically<br>• Informs regulators (EPA, state agencies)<br><br>🛡️ <strong>4. PROTECT</strong> (continuous)<br>• Documentation Agent records everything<br>• Generates compliance reports<br>• Tracks resolution progress<br><br><strong>Total time:</strong> Complete coordination in under 10 seconds vs. 4-6 hours manually!",
+          quickReplies: ['Python agents?', 'Response time details', 'Government benefits'],
+          topic: 'howItWorks'
         },
         features: {
-          keywords: ['features', 'capabilities', 'what can it do', 'show me features', 'feature list', 'functions'],
-          text: "ChainSync offers <strong>three core capabilities</strong>:<br><br>📊 <strong>Real-time Environmental Monitoring</strong><br>• Sensor integration<br>• Weather data fusion<br>• Instant threat detection<br><br>🤝 <strong>Intelligent Coordination</strong><br>• Automated team alerts<br>• Stakeholder updates<br>• Regulatory reporting<br><br>📝 <strong>Automated Documentation</strong><br>• Auto-generated reports<br>• Complete audit trails<br>• Compliance tracking",
-          quickReplies: ['Monitoring details', 'Government benefits', 'Water treatment help']
+          keywords: ['features', 'capabilities', 'what can it do', 'show me features', 'feature list', 'functions', 'abilities'],
+          text: "ChainSync's <strong>three core capabilities</strong>:<br><br>📊 <strong>Real-time Environmental Monitoring</strong><br>• Multi-sensor integration (water, air, soil)<br>• Weather data fusion<br>• Instant anomaly detection<br>• Pattern analysis with AI<br><br>🤝 <strong>Intelligent Coordination</strong><br>• Automated team alerts (SMS, email, app)<br>• Stakeholder notifications<br>• Regulatory reporting (EPA compliance)<br>• Multi-agency coordination<br><br>📝 <strong>Automated Documentation</strong><br>• Auto-generated incident reports<br>• Complete audit trails<br>• Compliance tracking<br>• Timeline reconstruction<br><br>All powered by specialized Python agents working together!",
+          quickReplies: ['Python agents?', 'Monitoring details', 'Government use'],
+          topic: 'features'
         },
         government: {
-          keywords: ['government', 'governments', 'public sector', 'municipal', 'city', 'county', 'federal', 'state', 'regulatory', 'agencies', 'EPA', 'environmental agency'],
-          text: "<strong>ChainSync is a powerful tool for government agencies!</strong><br><br>We help:<br><br>• Ensure regulatory compliance automatically<br>• Coordinate multi-agency responses instantly<br>• Provide real-time reporting to elected officials and the public<br>• Reduce legal liability with complete audit trails<br>• Demonstrate environmental stewardship to constituents<br>• Save taxpayer money through faster response times<br><br>We integrate directly with EPA systems and state environmental databases.",
-          quickReplies: ['Compliance features', 'Water treatment help', 'Cost savings']
+          keywords: ['government', 'governments', 'public sector', 'municipal', 'city', 'county', 'federal', 'state', 'regulatory', 'agencies', 'EPA', 'environmental agency', 'public'],
+          text: "<strong>ChainSync for Government & Public Agencies</strong> 🏛️<br><br><strong>Key Benefits:</strong><br>• <strong>Regulatory Compliance:</strong> Automatic EPA reporting<br>• <strong>Multi-Agency Coordination:</strong> Utilities, health dept, emergency services<br>• <strong>Public Transparency:</strong> Real-time incident dashboards<br>• <strong>Legal Protection:</strong> Complete audit trails<br>• <strong>Cost Savings:</strong> 70% faster response = millions saved<br>• <strong>Political Benefits:</strong> Demonstrate environmental stewardship<br><br><strong>Who uses it:</strong><br>• Environmental protection agencies<br>• Water/wastewater utilities<br>• Emergency management departments<br>• Public health departments<br><br><strong>Integration:</strong> Works with existing EPA systems, SCADA, and emergency management platforms.",
+          quickReplies: ['Compliance features', 'Cost savings', 'Implementation time'],
+          topic: 'government'
         },
         waterTreatment: {
-          keywords: ['water treatment', 'water plant', 'wastewater', 'treatment plant', 'drinking water', 'water system', 'water quality', 'water contamination', 'water safety'],
-          text: "<strong>ChainSync for Water Treatment Facilities</strong> 💧<br><br>Critical capabilities:<br><br>• <strong>Real-time Monitoring:</strong> Water quality parameters (pH, turbidity, contaminants)<br>• <strong>Instant Alerts:</strong> When readings exceed safe thresholds<br>• <strong>Automated Notifications:</strong> To operators, management, and health officials<br>• <strong>EPA Compliance:</strong> Complete documentation automatically<br>• <strong>SCADA Integration:</strong> Works with your existing systems<br><br>We protect your community's drinking water 24/7.",
-          quickReplies: ['Monitoring details', 'Government benefits', 'Response protocols']
+          keywords: ['water treatment', 'water plant', 'wastewater', 'treatment plant', 'drinking water', 'water system', 'water quality', 'water contamination', 'water safety', 'utility'],
+          text: "<strong>ChainSync for Water Treatment Facilities</strong> 💧<br><br><strong>What we monitor:</strong><br>• pH, turbidity, chlorine levels<br>• Bacterial contamination<br>• Chemical concentrations<br>• Flow rates and pressure<br>• Equipment performance<br><br><strong>Automatic responses:</strong><br>• Operator alerts when parameters exceed limits<br>• Management notifications for major incidents<br>• Public health department coordination<br>• EPA incident reporting<br>• Public notification system activation<br><br><strong>Integration:</strong><br>• SCADA systems<br>• Lab information management (LIMS)<br>• Existing sensor networks<br>• Emergency notification systems<br><br><strong>Result:</strong> 24/7 protection of community drinking water with instant incident response.",
+          quickReplies: ['SCADA integration', 'Response protocols', 'Compliance tracking'],
+          topic: 'waterTreatment'
         },
         waterUseCases: {
-          keywords: ['water', 'chemical spill', 'contamination', 'pollution', 'runoff', 'discharge'],
-          text: "<strong>Water Emergency Response</strong> 💧<br><br>ChainSync handles:<br><br>• Chemical spills<br>• Industrial discharge<br>• Agricultural runoff<br>• Infrastructure failures<br>• Treatment plant issues<br><br><strong>Our Process:</strong><br>• Detect contamination instantly<br>• Analyze threat levels with AI<br>• Coordinate across utilities & health departments<br>• Automate public notifications<br>• Track remediation in real-time<br>• Generate EPA-compliant reports",
-          quickReplies: ['Water treatment help', 'Response time', 'Government benefits']
+          keywords: ['water', 'chemical spill', 'contamination', 'pollution', 'runoff', 'discharge', 'leak'],
+          text: "<strong>Water Emergency Scenarios</strong> 💧<br><br>ChainSync handles:<br><br>🚨 <strong>Chemical Spills:</strong><br>• Industrial discharge into waterways<br>• Transportation accidents<br>• Storage tank failures<br><br>🌾 <strong>Agricultural Runoff:</strong><br>• Pesticide contamination<br>• Nutrient pollution<br>• Sediment transport<br><br>🏭 <strong>Treatment Plant Issues:</strong><br>• Equipment failures<br>• Process upsets<br>• Distribution system breaks<br><br><strong>Our Response:</strong><br>• Instant detection from sensors<br>• Severity analysis (drinking water impact?)<br>• Coordinate utilities, health dept, EPA<br>• Public notifications if needed<br>• Track remediation<br>• Generate compliance reports",
+          quickReplies: ['Water treatment', 'Response time', 'Government coordination'],
+          topic: 'waterUseCases'
         },
         monitoring: {
-          keywords: ['monitoring', 'sensors', 'detection', 'surveillance', 'tracking', 'real-time'],
-          text: "<strong>Our Monitoring System</strong> 📡<br><br>Integrates with:<br><br>• Water quality sensors<br>• Air quality monitors<br>• Waste facility instruments<br>• Weather stations<br>• Industrial equipment<br><br><strong>Intelligent Analysis:</strong><br>• AI analyzes patterns continuously<br>• Detects anomalies instantly<br>• Predicts issues before emergencies<br>• 24/7 monitoring with redundancy",
-          quickReplies: ['Sensor types', 'AI analysis', 'Integration process']
+          keywords: ['monitoring', 'sensors', 'detection', 'surveillance', 'tracking', 'real-time', 'iot', 'data'],
+          text: "<strong>Our Monitoring System</strong> 📡<br><br><strong>Sensor Integration:</strong><br>• Water quality meters<br>• Air quality monitors<br>• Soil sensors<br>• Weather stations<br>• Industrial equipment<br>• Flow meters<br><br><strong>Detection Agent Capabilities:</strong><br>• Processes data streams in < 2 seconds<br>• Identifies anomalies with AI<br>• Cross-references historical patterns<br>• Incorporates weather impacts<br>• Predicts escalation risk<br><br><strong>Data Processing:</strong><br>• 24/7 continuous monitoring<br>• Redundant systems<br>• Cloud-based reliability<br>• Handles thousands of sensors<br><br><strong>Intelligence:</strong> Our Python Detection Agent learns normal patterns and spots deviations instantly.",
+          quickReplies: ['Python agents?', 'AI analysis', 'Sensor types'],
+          topic: 'monitoring'
         },
         benefits: {
-          keywords: ['benefits', 'advantages', 'why use', 'why chainsync', 'value', 'roi', 'return'],
-          text: "<strong>Measurable Results</strong> 📊<br><br>ChainSync delivers:<br><br>• <strong>70% faster response times</strong> (minutes instead of hours)<br>• <strong>95% fewer compliance violations</strong><br>• <strong>80% reduction in manual reporting time</strong><br>• Significant reduction in environmental damage & cleanup costs<br>• Improved public trust and transparency<br>• Complete legal protection with audit trails<br><br>For a typical municipality, this translates to <strong>millions in savings annually</strong>.",
-          quickReplies: ['Cost savings', 'Government benefits', 'Get started']
+          keywords: ['benefits', 'advantages', 'why use', 'why chainsync', 'value', 'roi', 'return', 'results', 'outcomes'],
+          text: "<strong>Measurable Impact</strong> 📊<br><br><strong>Target Performance:</strong><br>• <strong>70% faster response</strong> (minutes vs. 4-6 hours)<br>• <strong>95% reduction in compliance violations</strong><br>• <strong>80% less manual reporting time</strong><br>• Complete legal protection via audit trails<br><br><strong>Cost Savings:</strong><br>• Reduced environmental damage<br>• Lower cleanup costs<br>• Fewer fines and penalties<br>• Automated compliance = staff efficiency<br><br><strong>Intangible Benefits:</strong><br>• Community trust<br>• Political goodwill<br>• Environmental stewardship<br>• Public safety assurance<br><br><strong>ROI:</strong> Most municipalities see return within first year through avoided violations and faster response.",
+          quickReplies: ['Cost breakdown', 'Government benefits', 'Success stories'],
+          topic: 'benefits'
         },
         responseTime: {
-          keywords: ['fast', 'speed', 'quick', 'response time', 'how long', 'instantly', 'immediate'],
-          text: "<strong>Response Speed</strong> ⚡<br><br>ChainSync responds in <strong>seconds</strong>:<br><br>• <strong>< 2 seconds:</strong> Sensor data processing<br>• <strong>Instant:</strong> AI threat analysis<br>• <strong>< 5 seconds:</strong> Team notifications sent<br>• <strong>< 1 minute:</strong> Complete coordination<br><br>Compare to traditional methods: <strong>4-6 hours</strong><br><br>In environmental emergencies, this speed saves lives, ecosystems, and millions in cleanup costs!",
-          quickReplies: ['How does it work?', 'Water treatment help', 'Government benefits']
+          keywords: ['fast', 'speed', 'quick', 'response time', 'how long', 'instantly', 'immediate', 'seconds', 'minutes'],
+          text: "<strong>Response Speed Breakdown</strong> ⚡<br><br><strong>ChainSync Agent Coordination:</strong><br>• <strong>< 2 sec:</strong> Detection Agent processes sensor data<br>• <strong>< 3 sec:</strong> Analysis Agent evaluates threat<br>• <strong>< 5 sec:</strong> Coordination Agent sends alerts<br>• <strong>< 10 sec:</strong> Full multi-agency notification<br>• <strong>< 1 min:</strong> Complete incident documentation started<br><br>🐌 <strong>Traditional Manual Process:</strong><br>• Operator notices issue: ~15-30 minutes<br>• Calls supervisor: +15 minutes<br>• Supervisor calls agencies: +30-60 minutes<br>• Agencies coordinate: +2-4 hours<br>• Total: <strong>4-6 hours</strong><br><br>⚡ <strong>The Difference:</strong><br>ChainSync's automated agents eliminate phone tag, email chains, and manual coordination—cutting 4-6 hours down to seconds!",
+          quickReplies: ['Python agents?', 'How does it work?', 'Real-world impact'],
+          topic: 'responseTime'
         },
         useCases: {
-          keywords: ['use case', 'examples', 'scenarios', 'applications', 'situations'],
-          text: "<strong>Environmental Emergencies We Handle</strong> 🚨<br><br>We respond to:<br><br>• <strong>Water Emergencies:</strong> Chemical spills, treatment failures, contamination<br>• <strong>Waste Issues:</strong> Landfill overflow, illegal dumping, hazmat<br>• <strong>Air Quality Events:</strong> Industrial emissions, fire smoke, gas leaks<br>• <strong>Ecosystem Threats:</strong> Wildlife impacts, habitat contamination<br><br>Each scenario gets instant detection, coordinated response, and automated compliance reporting.",
-          quickReplies: ['Water treatment help', 'Government benefits', 'Response protocols']
+          keywords: ['use case', 'examples', 'scenarios', 'applications', 'situations', 'emergency', 'incident'],
+          text: "<strong>Environmental Emergencies We Handle</strong> 🚨<br><br>💧 <strong>Water Emergencies:</strong><br>• Chemical spills<br>• Treatment failures<br>• Contamination events<br>• Infrastructure breaks<br><br>🗑️ <strong>Waste Issues:</strong><br>• Landfill overflow<br>• Illegal dumping<br>• Hazmat incidents<br><br>🌫️ <strong>Air Quality Events:</strong><br>• Industrial emissions<br>• Fire smoke<br>• Gas leaks<br><br>🌳 <strong>Ecosystem Threats:</strong><br>• Wildlife impacts<br>• Habitat contamination<br>• Soil pollution<br><br><strong>Common Thread:</strong><br>Each needs instant detection, coordinated response, and regulatory compliance—exactly what our Python agents automate!",
+          quickReplies: ['Water emergencies', 'Waste response', 'Air quality'],
+          topic: 'useCases'
         },
         technology: {
-          keywords: ['technology', 'tech stack', 'how is it built', 'architecture', 'platform', 'system'],
-          text: "<strong>Enterprise-Grade Technology</strong> 🔧<br><br>Our platform includes:<br><br>• <strong>AI/ML:</strong> Threat analysis & pattern recognition<br>• <strong>Cloud Infrastructure:</strong> 99.99% uptime guarantee<br>• <strong>Real-time Processing:</strong> Instant data analysis<br>• <strong>Security:</strong> Complete data encryption<br>• <strong>Multi-Platform:</strong> Mobile apps & web dashboards<br><br><strong>Integrations:</strong><br>• EPA systems<br>• SCADA<br>• Lab equipment<br>• Emergency management platforms",
-          quickReplies: ['Security features', 'Integration process', 'Government benefits']
+          keywords: ['technology', 'tech stack', 'how is it built', 'architecture', 'platform', 'system', 'infrastructure'],
+          text: "<strong>Technology Stack</strong> 🔧<br><br><strong>Core Platform:</strong><br>• Python agent framework (modular architecture)<br>• Cloud infrastructure (99.99% uptime target)<br>• Real-time data processing<br>• Machine learning for pattern recognition<br><br><strong>Security:</strong><br>• End-to-end encryption<br>• SOC 2 compliance (planned)<br>• Secure sensor communication<br>• Complete audit logging<br><br><strong>Integrations:</strong><br>• EPA reporting systems<br>• SCADA platforms<br>• LIMS (lab systems)<br>• Emergency management<br>• GIS mapping<br><br><strong>Deployment:</strong><br>• Cloud-based (AWS/Azure)<br>• Mobile apps (iOS/Android)<br>• Web dashboards<br>• API access for custom integration",
+          quickReplies: ['Python agents?', 'Security details', 'Integration process'],
+          topic: 'technology'
         },
         pricing: {
-          keywords: ['price', 'pricing', 'cost', 'how much', 'budget', 'expense', 'investment'],
-          text: "<strong>Pricing & Early Access</strong> 💰<br><br>Currently in development with early access launching soon.<br><br><strong>For Governments:</strong><br>• Special public sector pricing<br>• Grant assistance available<br>• ROI within first year<br><br><strong>Cost Savings:</strong><br>• Reduced violations<br>• Faster response times<br>• Automated reporting<br><br>Pricing tailored to your organization's size and needs.<br><br>Would you like to discuss your specific requirements?",
-          quickReplies: ['Join early access', 'Government benefits', 'Cost savings']
+          keywords: ['price', 'pricing', 'cost', 'how much', 'budget', 'expense', 'investment', 'afford'],
+          text: "<strong>Pricing & Early Access</strong> 💰<br><br><strong>Current Status:</strong><br>We're in active development. Pricing will be announced when we approach testing phase.<br><br><strong>Expected Model:</strong><br>• Subscription-based (SaaS)<br>• Tiered by organization size<br>• Government/public sector pricing<br>• Grant assistance available<br><br><strong>Cost Factors:</strong><br>• Number of sensors monitored<br>• Number of facilities/sites<br>• Number of users<br>• Integration complexity<br><br><strong>ROI Expectation:</strong><br>Most municipalities save more in avoided violations and faster response than the platform costs.<br><br>Join early access to be notified when pricing is available!",
+          quickReplies: ['Join early access', 'ROI details', 'Government grants'],
+          topic: 'pricing'
         },
         contact: {
-          keywords: ['contact', 'get started', 'join', 'sign up', 'demo', 'early access', 'talk to', 'reach out'],
-          text: "<strong>Let's Get Started!</strong> 🚀<br><br>Join our early access program through our contact page.<br><br><strong>What you'll get:</strong><br>• Personalized demo<br>• Implementation discussion<br>• Custom solution design<br><br>We'd love to hear about your environmental protection needs and show you how ChainSync can help your organization.",
-          quickReplies: ['Visit contact page', 'Pricing info', 'Government benefits']
+          keywords: ['contact', 'get started', 'join', 'sign up', 'demo', 'early access', 'talk to', 'reach out', 'email'],
+          text: "<strong>Let's Connect!</strong> 🚀<br><br><strong>Early Access Program:</strong><br>Join through our contact page to:<br>• Get development updates<br>• Influence feature priorities<br>• Be first for testing opportunities<br>• Discuss your specific needs<br><br><strong>We're especially interested in:</strong><br>• Environmental agencies<br>• Water treatment facilities<br>• Municipalities with environmental monitoring<br>• Anyone dealing with emergency response coordination<br><br><strong>What you'll get:</strong><br>Regular updates on our Python agent development and opportunities to provide input!",
+          quickReplies: ['Visit contact page', 'Development status', 'Learn more'],
+          topic: 'contact'
         },
         integration: {
-          keywords: ['integrate', 'integration', 'connect', 'compatibility', 'works with', 'scada'],
-          text: "<strong>Seamless Integration</strong> 🔗<br><br>Works with:<br><br>• SCADA systems<br>• Lab equipment (LIMS)<br>• EPA reporting tools<br>• Emergency management platforms<br>• GIS mapping systems<br>• Public notification tools<br><br><strong>Setup Process:</strong><br>• Standard APIs<br>• Technical support included<br>• 2-4 weeks implementation<br>• Minimal disruption",
-          quickReplies: ['Technology details', 'Government benefits', 'Get started']
+          keywords: ['integrate', 'integration', 'connect', 'compatibility', 'works with', 'scada', 'api', 'setup'],
+          text: "<strong>Integration Capabilities</strong> 🔗<br><br><strong>Systems we connect to:</strong><br>• SCADA/HMI systems<br>• Laboratory equipment (LIMS)<br>• EPA reporting tools<br>• Emergency management platforms<br>• GIS mapping systems<br>• Public notification tools<br>• Existing sensor networks<br><br><strong>Integration Methods:</strong><br>• RESTful APIs<br>• Direct sensor protocols<br>• Database connections<br>• File-based transfers<br><br><strong>Setup Process:</strong><br>• Technical assessment (1 week)<br>• Custom integration development<br>• Testing & validation<br>• Training & documentation<br><br><strong>Timeline:</strong> Estimated 2-4 weeks for typical implementation.",
+          quickReplies: ['SCADA details', 'API documentation', 'Technical requirements'],
+          topic: 'integration'
+        },
+        thanks: {
+          keywords: ['thank', 'thanks', 'appreciate', 'helpful', 'awesome', 'great'],
+          text: "You're very welcome! 😊<br><br>I'm here whenever you have more questions about ChainSync, our Python agent architecture, or how we're building intelligent environmental protection.<br><br>Is there anything else you'd like to know?",
+          quickReplies: ['Development status', 'Join early access', 'Python agents?'],
+          topic: 'thanks'
         }
       };
 
+      // Conversation context tracking
+      if (!window.chatbotContext) {
+        window.chatbotContext = {
+          lastTopic: null,
+          questionCount: 0,
+          topics: []
+        };
+      }
+
       // Multi-word phrase matching (check longer phrases first)
       const phraseMatches = [
+        { phrases: ['python agent', 'python agents'], response: responses.pythonAgents },
         { phrases: ['water treatment', 'treatment plant', 'wastewater'], response: responses.waterTreatment },
+        { phrases: ['development status', 'development progress', 'when ready', 'when available'], response: responses.development },
         { phrases: ['how it works', 'how does it work'], response: responses.howItWorks },
         { phrases: ['use case', 'use cases'], response: responses.useCases },
-        { phrases: ['government', 'governments'], response: responses.government },
-        { phrases: ['response time', 'how fast', 'how quick'], response: responses.responseTime }
+        { phrases: ['response time', 'how fast', 'how quick'], response: responses.responseTime },
+        { phrases: ['early access', 'join', 'sign up'], response: responses.contact }
       ];
 
       for (const match of phraseMatches) {
         if (match.phrases.some(phrase => msg.includes(phrase))) {
+          window.chatbotContext.lastTopic = match.response.topic;
+          window.chatbotContext.questionCount++;
+          window.chatbotContext.topics.push(match.response.topic);
           return match.response;
         }
       }
@@ -2665,24 +2712,39 @@ ChainSync - Every second counts when protecting our environment
       }
 
       if (bestMatch && highestScore > 0) {
-        // Track the topic
+        // Track the topic and context
         trackQuestion(bestMatchKey || 'unknown');
+        window.chatbotContext.lastTopic = bestMatch.topic;
+        window.chatbotContext.questionCount++;
+        window.chatbotContext.topics.push(bestMatch.topic);
         return bestMatch;
       }
 
-      // Contextual default responses based on question type
-      if (msg.includes('?')) {
-        // They asked a question we don't have an answer for
-        return {
-          text: `Great question! I don't have specific information about "${message.substring(0, 50)}${message.length > 50 ? '...' : ''}" yet, but I can help you with: how ChainSync works, benefits for government agencies, water treatment applications, monitoring capabilities, response times, and integration options. What interests you most?`,
-          quickReplies: ['Government benefits', 'Water treatment help', 'How does it work?']
+      // Context-aware fallback - suggest related topics based on conversation history
+      if (window.chatbotContext.questionCount > 0 && window.chatbotContext.lastTopic) {
+        const contextSuggestions = {
+          'pythonAgents': ['Development status', 'How does it work?', 'Integration details'],
+          'development': ['Python agents?', 'Join early access', 'Timeline details'],
+          'government': ['Compliance features', 'Cost savings', 'Implementation'],
+          'waterTreatment': ['SCADA integration', 'Response protocols', 'Monitoring details']
         };
+
+        const suggestions = contextSuggestions[window.chatbotContext.lastTopic] || ['Python agents?', 'Development status', 'How does it work?'];
+
+        if (msg.includes('?')) {
+          return {
+            text: `Great question! I don't have specific information about "${message.substring(0, 50)}${message.length > 50 ? '...' : ''}" yet.<br><br>Based on our conversation, you might be interested in:`,
+            quickReplies: suggestions,
+            topic: 'contextual_fallback'
+          };
+        }
       }
 
       // Generic fallback
       return {
-        text: "I'd be happy to help you learn about ChainSync! I can explain how we help governments and municipalities protect their communities, how we monitor water treatment facilities, our real-time emergency response capabilities, and much more. What would you like to explore?",
-        quickReplies: ['Government benefits', 'Water treatment help', 'Show me features']
+        text: "I'd be happy to help you learn about ChainSync! I can explain:<br><br>🐍 Our Python agent architecture<br>🛠️ Development status (honest updates)<br>🚨 How emergency response works<br>🏛️ Benefits for government agencies<br>💧 Water treatment applications<br><br>What interests you most?",
+        quickReplies: ['Python agents?', 'Development status', 'How does it work?'],
+        topic: 'generic_fallback'
       };
     }
 
