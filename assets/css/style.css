@@ -1058,29 +1058,29 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .section-tag {
   display: inline-block;
-  padding: 10px 24px;
-  background: var(--gradient-sunset);
-  color: white;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  font-weight: 600;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.08) 100%);
+  color: var(--electric-primary);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(184, 118, 92, 0.2);
-  animation: slideInLeft 0.6s ease-out;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  animation: fadeIn 0.6s ease-out;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
-@keyframes slideInLeft {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -1328,8 +1328,8 @@ button:focus:not(:focus-visible) {
 }
 
 .problem-solution .section-tag {
-  background: var(--gradient-electric);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.1) 100%);
+  border-color: rgba(99, 102, 241, 0.25);
 }
 
 .problem-solution .section-title {
@@ -1370,12 +1370,13 @@ button:focus:not(:focus-visible) {
   display: block;
   font-size: 3.5rem;
   font-weight: 800;
+  color: var(--electric-primary);
   background: var(--gradient-electric);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
