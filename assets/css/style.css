@@ -3261,3 +3261,49 @@ body::before {
     display: none;
   }
 }
+
+/* ================================================
+   FAQ Accordion Styling
+   ================================================ */
+details {
+  transition: all 0.3s ease;
+}
+
+details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+}
+
+details[open] {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+details summary {
+  transition: all 0.3s ease;
+  padding-right: 40px;
+  position: relative;
+}
+
+details summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--electric-primary);
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  content: '−';
+  transform: rotate(90deg);
+}
+
+details summary:hover {
+  color: var(--electric-primary);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
