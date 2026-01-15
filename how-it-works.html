@@ -90,48 +90,148 @@
       <div class="how-it-works-content">
         <div class="content-left">
           <h2 class="section-title">The Four-Step Automated Loop</h2>
-          <p class="section-text">The ChainSync platform operates on a continuous, intelligent loop, ensuring every incident is handled with speed, precision, and efficiency.</p>
+          <p class="section-text">The ChainSync platform operates on a continuous, intelligent loop powered by specialized Python agents. Each step is handled by a focused agent, ensuring every incident is managed with speed, precision, and intelligence.</p>
         </div>
         <div class="content-right">
-          <div class="step-card">
+          <div class="step-card" style="border-left: 4px solid var(--electric-primary);">
             <h3>1. Detect: Real-Time Monitoring</h3>
-            <p>Our platform continuously monitors your systems, from SCADA sensors and IoT devices to public data feeds like weather and social media. The moment an anomaly is detected, the loop begins.</p>
+            <p style="margin-bottom: 16px;">The <strong style="color: var(--electric-primary);">Detection Agent</strong> continuously monitors sensor streams, SCADA systems, weather data, and IoT devices. Using pattern recognition and anomaly detection algorithms, it identifies threats in real-time.</p>
+            <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-sm); margin-top: 12px;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);"><strong>What it monitors:</strong><br>• Water quality sensors (pH, turbidity, lead, bacteria)<br>• Air quality monitors (methane, particulates, VOCs)<br>• Weather patterns and forecasts<br>• SCADA system alerts<br>• Social media for community reports</p>
+            </div>
           </div>
-          <div class="step-card">
+          <div class="step-card" style="border-left: 4px solid var(--cyber-primary);">
             <h3>2. Analyze: Intelligent Assessment</h3>
-            <p>AI agents instantly analyze the incident, cross-referencing data points to determine its severity and potential impact. The platform identifies the type of emergency and the necessary response protocol.</p>
+            <p style="margin-bottom: 16px;">The <strong style="color: var(--cyber-primary);">Analysis Agent</strong> evaluates the detected threat, cross-referencing historical data, regulatory thresholds, and environmental context. It determines severity, impact radius, and required response protocols.</p>
+            <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-sm); margin-top: 12px;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);"><strong>What it determines:</strong><br>• Threat severity (low/medium/high/critical)<br>• Affected population or ecosystem area<br>• Required response protocol<br>• Regulatory reporting requirements<br>• Escalation pathways</p>
+            </div>
           </div>
-          <div class="step-card">
+          <div class="step-card" style="border-left: 4px solid var(--flame-primary);">
             <h3>3. Orchestrate: Automated Action</h3>
-            <p>The system automatically deploys the correct pre-built workflow. This includes notifying the right personnel, generating regulatory reports, and sending public alerts—all within seconds.</p>
+            <p style="margin-bottom: 16px;">The <strong style="color: var(--flame-primary);">Coordination Agent</strong> executes the response workflow instantly. It sends multi-channel notifications to the right people, generates regulatory reports, activates public warning systems, and coordinates all stakeholders simultaneously.</p>
+            <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-sm); margin-top: 12px;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);"><strong>What it orchestrates:</strong><br>• On-call team alerts (SMS, email, phone)<br>• Regulatory agency notifications (EPA, state DEP)<br>• Public notification systems<br>• Downstream facility warnings<br>• Media and community communication</p>
+            </div>
           </div>
-          <div class="step-card">
+          <div class="step-card" style="border-left: 4px solid var(--emerald-primary);">
             <h3>4. Resolve: Track & Report</h3>
-            <p>As the incident is resolved, the platform documents every action taken, creating a comprehensive, auditable report. This eliminates manual paperwork and provides a clear record for compliance.</p>
+            <p style="margin-bottom: 16px;">The <strong style="color: var(--emerald-primary);">Documentation Agent</strong> creates a complete audit trail of every action, timestamp, and decision. It auto-generates compliance reports, tracks resolution progress, and ensures complete transparency for regulators and stakeholders.</p>
+            <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-sm); margin-top: 12px;">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--text-tertiary);"><strong>What it documents:</strong><br>• Complete incident timeline<br>• All notifications sent and received<br>• Regulatory compliance reports<br>• Response actions and outcomes<br>• Lessons learned for future incidents</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Agent Coordination -->
+  <section style="padding: 100px 0; background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <span class="section-tag">Agent Coordination</span>
+      <h2 class="section-title text-center">How the agents work together</h2>
+      <p class="section-text text-center" style="max-width: 800px; margin: 0 auto 60px;">Each Python agent is specialized for one task, but they coordinate seamlessly. Here's what happens in the critical first 60 seconds of a water contamination incident:</p>
+
+      <div style="background: white; border-radius: var(--radius-lg); padding: 50px; box-shadow: var(--shadow-lg); max-width: 900px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Second 0 -->
+          <div style="display: flex; gap: 20px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
+            <div style="min-width: 100px;">
+              <span style="font-weight: 700; font-size: 1.5rem; color: var(--electric-primary);">00:00</span>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 8px 0; color: var(--electric-primary);">🔍 Detection Agent identifies anomaly</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Lead levels spike to 22 ppb (regulatory limit: 15 ppb). Detection Agent flags incident and triggers Analysis Agent.</p>
+            </div>
+          </div>
+
+          <!-- Second 3 -->
+          <div style="display: flex; gap: 20px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
+            <div style="min-width: 100px;">
+              <span style="font-weight: 700; font-size: 1.5rem; color: var(--cyber-primary);">00:03</span>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 8px 0; color: var(--cyber-primary);">🧠 Analysis Agent evaluates severity</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Determines this is HIGH severity: 50,000 residents affected, schools opening in 5 hours. Selects "Critical Water Quality" response protocol.</p>
+            </div>
+          </div>
+
+          <!-- Second 5 -->
+          <div style="display: flex; gap: 20px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
+            <div style="min-width: 100px;">
+              <span style="font-weight: 700; font-size: 1.5rem; color: var(--flame-primary);">00:05</span>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 8px 0; color: var(--flame-primary);">📡 Coordination Agent activates response</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Simultaneously sends: SMS/email/phone to on-call team, automated report to state EPA, alerts to all schools in affected area, public notification system activation request.</p>
+            </div>
+          </div>
+
+          <!-- Second 8 -->
+          <div style="display: flex; gap: 20px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
+            <div style="min-width: 100px;">
+              <span style="font-weight: 700; font-size: 1.5rem; color: var(--emerald-primary);">00:08</span>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 8px 0; color: var(--emerald-primary);">📝 Documentation Agent begins logging</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Starts incident timeline, records all notifications sent, prepares regulatory compliance report templates.</p>
+            </div>
+          </div>
+
+          <!-- Second 60 -->
+          <div style="display: flex; gap: 20px;">
+            <div style="min-width: 100px;">
+              <span style="font-weight: 700; font-size: 1.5rem; color: var(--text-primary);">01:00</span>
+            </div>
+            <div>
+              <h4 style="margin: 0 0 8px 0; color: var(--text-primary);">✅ Full coordination achieved</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Response team mobilized, regulators notified, schools warned, public alerts active, complete audit trail recorded. What traditionally takes 4-6 hours completed in 60 seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; text-align: center;">
+        <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">This level of coordination isn't possible with manual processes. When every second counts, intelligent agents ensure nothing falls through the cracks.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="core-tech-section">
     <div class="container">
-      <h2 class="section-title text-center">Built on a Foundation of Speed and Intelligence</h2>
-      <div class="tech-grid grid-3">
+      <span class="section-tag">Technical Foundation</span>
+      <h2 class="section-title text-center">Built for speed and reliability</h2>
+      <div class="tech-grid grid-3" style="margin-top: 60px;">
         <div class="tech-card">
           <div class="tech-icon">⚡</div>
-          <h4>Real-Time Sync</h4>
-          <p>Every data point is processed instantly, ensuring zero lag between detection and action.</p>
+          <h4>Real-Time Data Pipeline</h4>
+          <p>Stream processing ensures zero lag between sensor readings and agent action. Event-driven architecture handles thousands of data points per second.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon">⚙️</div>
-          <h4>Parallel Processing</h4>
-          <p>Multiple actions triggered simultaneously, not sequentially</p>
+          <h4>Parallel Agent Execution</h4>
+          <p>All agents run independently and coordinate asynchronously. Multiple workflows execute simultaneously, not sequentially, for maximum speed.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon">🔄</div>
-          <h4>Pre-Built Workflows</h4>
-          <p>Response protocols ready to deploy instantly when triggered</p>
+          <h4>Pre-Built Response Protocols</h4>
+          <p>Tested workflows for every scenario—water contamination, air quality, chemical spills—ready to deploy the instant a threat is detected.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🌐</div>
+          <h4>Multi-Channel Notifications</h4>
+          <p>SMS, email, phone calls, push notifications, public alert systems—all triggered simultaneously to ensure everyone gets the message.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">📊</div>
+          <h4>Context-Aware Intelligence</h4>
+          <p>Agents learn from historical incidents, understand local context, and adapt responses based on time of day, weather, and population density.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🔒</div>
+          <h4>Complete Audit Trails</h4>
+          <p>Every detection, decision, and notification is logged with millisecond precision. Full transparency for regulators and stakeholders.</p>
         </div>
       </div>
     </div>
