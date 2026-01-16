@@ -252,7 +252,7 @@ img {
 }
 
 section {
-  padding: 140px 0;
+  padding: 30px 0;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fluid);
