@@ -29,7 +29,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/premium-enhancements.css">
+    <link rel="stylesheet" href="assets/css/premium-enhancements.css">
+    <link rel="stylesheet" href="assets/css/advanced-animations.css">
+    <link rel="stylesheet" href="assets/css/glassmorphism.css">
 </head>
 <body class="has-testing-banner">
   <div class="testing-banner">
@@ -123,6 +125,184 @@
             <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: var(--radius-lg); padding: 12px; text-align: center; border: 2px solid rgba(99, 102, 241, 0.1);">
                 <h3 style="color: var(--electric-primary); margin-bottom: 16px;">Why Python?</h3>
                 <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.8;">We chose Python for reliability, extensive data science libraries, easy integration with existing environmental monitoring systems, and rapid development. When lives and ecosystems depend on your code, you build with tools you can trust.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- API-Led Architecture -->
+    <section style="padding: 60px 0; background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+        <div class="container">
+            <span class="section-tag">Integration Architecture</span>
+            <h2 class="section-title text-center">API-Led Connectivity (Target Design)</h2>
+            <p class="section-text text-center" style="max-width: 900px; margin: 0 auto 40px;">Built on proven API-led architecture principles with three distinct layers: Experience APIs for user interfaces, Process APIs for business logic and orchestration, and System APIs for backend integrations. This design ensures scalable, maintainable, and secure data exchange.</p>
+
+            <!-- Architecture Diagram -->
+            <div class="glass-panel scroll-fade-in" style="padding: 40px; margin-bottom: 40px;">
+                <img src="assets/images/api-architecture.svg" alt="ChainSync API Architecture" style="width: 100%; height: auto; border-radius: 12px;">
+            </div>
+
+            <!-- Powered By Section -->
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: var(--text-secondary); font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">Built With</h3>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+                    <div class="glass-badge glass-badge-primary" style="padding: 12px 24px; font-size: 1.1rem;">
+                        🐍 Python + FastAPI
+                    </div>
+                    <div class="glass-badge glass-badge-primary" style="padding: 12px 24px; font-size: 1.1rem;">
+                        🤖 AI/ML Agents
+                    </div>
+                    <div class="glass-badge glass-badge-primary" style="padding: 12px 24px; font-size: 1.1rem;">
+                        ⚡ Real-Time Processing
+                    </div>
+                </div>
+                <p style="color: var(--text-tertiary); font-size: 0.9rem; margin-top: 16px; font-style: italic;">
+                    API framework and agent orchestration layer currently in development
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Ecosystem -->
+    <section style="padding: 60px 0; background: var(--bg-primary);">
+        <div class="container">
+            <span class="section-tag">System Integrations</span>
+            <h2 class="section-title text-center">Planned Integration Ecosystem</h2>
+            <p class="section-text text-center" style="max-width: 900px; margin: 0 auto 40px;">ChainSync is being designed to connect with the environmental monitoring, industrial control, regulatory, and enterprise systems that organizations already use. These planned integrations will be developed based on client requirements and partnership opportunities.</p>
+
+            <!-- Integration Ecosystem Diagram -->
+            <div class="glass-panel scroll-fade-in" style="padding: 40px; margin-bottom: 40px;">
+                <img src="assets/images/integration-ecosystem.svg" alt="ChainSync Integration Ecosystem" style="width: 100%; height: auto; border-radius: 12px;">
+            </div>
+
+            <!-- Integration Methods -->
+            <div class="grid-3" style="gap: 24px; margin-top: 40px;">
+                <div class="glass-card card-lift">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🔌</div>
+                    <h4 style="color: var(--electric-primary); margin-bottom: 12px;">REST & SOAP APIs</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Standard HTTP/HTTPS connectivity for enterprise systems, regulatory portals, and SaaS platforms.</p>
+                </div>
+                <div class="glass-card card-lift">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">📡</div>
+                    <h4 style="color: var(--cyber-primary); margin-bottom: 12px;">Industrial Protocols</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">OPC UA, Modbus TCP, and MQTT for SCADA systems and IoT sensor networks.</p>
+                </div>
+                <div class="glass-card card-lift">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🔄</div>
+                    <h4 style="color: var(--emerald-primary); margin-bottom: 12px;">Real-Time Streams</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">WebSockets and event streaming for live sensor data and instant notifications.</p>
+                </div>
+            </div>
+
+            <!-- Target Connectors -->
+            <div style="margin-top: 50px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: 16px; padding: 32px; border: 2px solid rgba(99, 102, 241, 0.1);">
+                <h3 style="color: var(--electric-primary); margin-bottom: 24px; text-align: center;">Planned System Connectors</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <div style="text-align: center; padding: 16px;">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 4px;">Environmental</div>
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem;">IoT Sensors • SCADA • Weather APIs</div>
+                    </div>
+                    <div style="text-align: center; padding: 16px;">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 4px;">Regulatory</div>
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem;">EPA • State Agencies • Compliance DBs</div>
+                    </div>
+                    <div style="text-align: center; padding: 16px;">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 4px;">Enterprise</div>
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem;">SAP • Salesforce • Oracle ERP</div>
+                    </div>
+                    <div style="text-align: center; padding: 16px;">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 4px;">Laboratory</div>
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem;">LIMS • Lab Equipment • Test Results</div>
+                    </div>
+                    <div style="text-align: center; padding: 16px;">
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 4px;">Analytics</div>
+                        <div style="color: var(--text-tertiary); font-size: 0.9rem;">Snowflake • Power BI • Tableau</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-tertiary); font-size: 0.85rem; text-align: center; margin-top: 20px; font-style: italic;">
+                    Connectors developed based on pilot partner requirements and integration priorities
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Compliance -->
+    <section style="padding: 60px 0; background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+        <div class="container">
+            <span class="section-tag">Security & Compliance</span>
+            <h2 class="section-title text-center">Built Secure from Day One</h2>
+            <p class="section-text text-center" style="max-width: 900px; margin: 0 auto 40px;">Environmental data requires enterprise-grade security. ChainSync is being designed with comprehensive security controls, encryption standards, and compliance frameworks from the foundation up.</p>
+
+            <!-- Security Pillars -->
+            <div class="grid-3" style="gap: 24px; margin-bottom: 40px;">
+                <div class="stat-glass scroll-scale-in stagger-1">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">🔐</div>
+                    <h4 style="color: var(--electric-primary); margin-bottom: 12px; font-size: 1.1rem;">End-to-End Encryption</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong>Data in Transit:</strong> TLS 1.3<br>
+                        <strong>Data at Rest:</strong> AES-256<br>
+                        <strong>API Security:</strong> OAuth 2.0 + JWT
+                    </p>
+                </div>
+                <div class="stat-glass scroll-scale-in stagger-2">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">👥</div>
+                    <h4 style="color: var(--cyber-primary); margin-bottom: 12px; font-size: 1.1rem;">Access Control</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong>MFA:</strong> Multi-factor authentication<br>
+                        <strong>RBAC:</strong> Role-based access<br>
+                        <strong>Audit Logs:</strong> Complete activity tracking
+                    </p>
+                </div>
+                <div class="stat-glass scroll-scale-in stagger-3">
+                    <div style="font-size: 2.5rem; margin-bottom: 16px;">✅</div>
+                    <h4 style="color: var(--emerald-primary); margin-bottom: 12px; font-size: 1.1rem;">Compliance Targets</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong>SOC 2 Type II:</strong> In preparation<br>
+                        <strong>FISMA Moderate:</strong> For gov agencies<br>
+                        <strong>EPA Standards:</strong> Environmental data
+                    </p>
+                </div>
+            </div>
+
+            <!-- Infrastructure Security -->
+            <div class="feature-glass" style="margin-top: 40px;">
+                <h3 style="color: var(--electric-primary); margin-bottom: 24px;">Infrastructure Security Measures</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">🛡️ Network Security</div>
+                        <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; margin: 0; padding-left: 20px;">
+                            <li>Firewall protection</li>
+                            <li>DDoS mitigation</li>
+                            <li>VPN for SCADA integrations</li>
+                            <li>Network segmentation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">🔍 Monitoring & Response</div>
+                        <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; margin: 0; padding-left: 20px;">
+                            <li>24/7 security monitoring</li>
+                            <li>Intrusion detection</li>
+                            <li>Vulnerability scanning</li>
+                            <li>Incident response procedures</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">📋 Data Governance</div>
+                        <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; margin: 0; padding-left: 20px;">
+                            <li>Data classification</li>
+                            <li>Retention policies</li>
+                            <li>Privacy controls (GDPR/CCPA)</li>
+                            <li>You own your data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Security -->
+            <div style="margin-top: 30px; padding: 24px; background: rgba(16, 185, 129, 0.05); border-left: 4px solid var(--emerald-primary); border-radius: 8px;">
+                <h4 style="color: var(--emerald-primary); margin-bottom: 12px;">Secure Development Lifecycle</h4>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+                    Security isn't an afterthought—it's integrated into our development process. We follow secure coding practices, conduct regular security reviews, perform penetration testing before releases, and maintain an Agile development methodology that prioritizes security alongside functionality.
+                </p>
             </div>
         </div>
     </section>
@@ -316,6 +496,7 @@
 
   <!-- EmailJS for sending emails -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/animations.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
