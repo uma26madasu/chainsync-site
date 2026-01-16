@@ -418,15 +418,21 @@ body.has-testing-banner .page-hero {
 }
 
 .logo {
-  font-size: 1.65rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  background: var(--gradient-ocean);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
   position: relative;
   transition: var(--transition-smooth);
+}
+
+.logo-image {
+  height: 36px;
+  width: auto;
+  transition: var(--transition-smooth);
+}
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .logo::after {

@@ -37,6 +37,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/premium-enhancements.css">
+  <link rel="stylesheet" href="assets/css/advanced-animations.css">
+  <link rel="stylesheet" href="assets/css/glassmorphism.css">
 </head>
 <body class="has-testing-banner">
   <div class="testing-banner">
@@ -45,7 +47,9 @@
 
   <nav id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="logo">ChainSync</a>
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="ChainSync" class="logo-image">
+      </a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="use-cases.html">Use Cases</a>
@@ -59,26 +63,30 @@
 
   <main id="main-content">
   <!-- Hero Section - Mission First -->
-  <section class="hero" id="home">
+  <section class="hero parallax-section" id="home">
     <div class="hero-bg">
       <div class="floating-shape shape-1"></div>
       <div class="floating-shape shape-2"></div>
       <div class="floating-shape shape-3"></div>
     </div>
-    <div class="container">
+    <!-- Gradient Orbs for Depth -->
+    <div class="gradient-orb gradient-orb-1"></div>
+    <div class="gradient-orb gradient-orb-2"></div>
+    <div class="container parallax-content">
       <h1 class="hero-title">Every second counts when protecting our environment</h1>
       <p class="hero-subtitle">ChainSync helps communities respond to water contamination, waste emergencies, and environmental threats before they become disasters. We're building intelligent coordination that turns crisis into action—protecting the water we drink, the air we breathe, and the land we call home.</p>
       <div class="hero-actions">
-        <a href="contact.html" class="btn-primary">Join Our Mission →</a>
-        <a href="use-cases.html" class="btn-secondary">See Real-World Impact</a>
+        <a href="contact.html" class="btn-primary btn-magnetic shine-effect">Join Our Mission →</a>
+        <a href="use-cases.html" class="btn-secondary btn-magnetic">See Real-World Impact</a>
       </div>
     </div>
   </section>
 
   <!-- Problem/Solution - The Why -->
   <section class="problem-solution">
+    <div class="gradient-orb gradient-orb-3"></div>
     <div class="container grid-2">
-      <div class="problem-content">
+      <div class="problem-content scroll-fade-left">
         <span class="section-tag">Why We Exist</span>
         <h2 class="section-title">Environmental emergencies don't wait for perfect coordination</h2>
         <p class="section-text">When a chemical spill threatens a river, when waste overflow endangers a neighborhood, when contamination spreads through a water system—every minute matters. But too often, response teams are fighting with spreadsheets, phone calls, and manual processes while the clock ticks and the impact grows.</p>
@@ -93,18 +101,18 @@
           </div>
         </div>
       </div>
-      <div class="solution-content">
+      <div class="solution-content scroll-fade-right">
         <span class="section-tag">Our Approach</span>
         <h2 class="section-title">Intelligence meets urgency</h2>
         <p class="section-text">ChainSync is designed to be the bridge between threat detection and coordinated action. By connecting sensors, teams, and stakeholders into one intelligent system, we're building a future where environmental threats are met with immediate, precise, and effective response—protecting communities and ecosystems alike.</p>
         <div class="solution-stats">
-          <div class="stat-item">
-            <div class="stat-number">70%</div>
-            <div class="stat-label">Target: Faster Response</div>
+          <div class="stat-item scroll-scale-in stagger-1">
+            <div class="stat-number counter-number" data-counter="70" data-counter-suffix="%">0%</div>
+            <div class="stat-label counter-label">Target: Faster Response</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">95%</div>
-            <div class="stat-label">Target: Fewer Violations</div>
+          <div class="stat-item scroll-scale-in stagger-2">
+            <div class="stat-number counter-number" data-counter="95" data-counter-suffix="%">0%</div>
+            <div class="stat-label counter-label">Target: Fewer Violations</div>
           </div>
         </div>
       </div>
@@ -122,7 +130,7 @@
         </p>
       </div>
       <div class="feature-grid grid-3">
-        <div class="feature-card">
+        <div class="feature-card card-lift scroll-scale-in stagger-1">
           <div style="display: inline-block; padding: 24px; background: linear-gradient(135deg, rgba(0, 119, 182, 0.1) 0%, rgba(0, 180, 216, 0.05) 100%); border-radius: var(--radius-lg); margin-bottom: 24px;">
             <img src="assets/icons/data-fusion.svg" alt="Environmental Monitoring" class="feature-icon" style="margin: 0; width: 64px; height: 64px;">
           </div>
@@ -132,7 +140,7 @@
             <p style="font-size: 0.9rem; color: var(--ocean-blue); font-weight: 600; margin: 0;">✓ Real-time sensor integration  •  Weather data fusion  •  Instant threat detection</p>
           </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card card-lift scroll-scale-in stagger-2">
           <div style="display: inline-block; padding: 24px; background: linear-gradient(135deg, rgba(64, 145, 108, 0.1) 0%, rgba(82, 183, 136, 0.05) 100%); border-radius: var(--radius-lg); margin-bottom: 24px;">
             <img src="assets/icons/ai-agent.svg" alt="Intelligent Coordination" class="feature-icon" style="margin: 0; width: 64px; height: 64px;">
           </div>
@@ -142,7 +150,7 @@
             <p style="font-size: 0.9rem; color: var(--leaf-green); font-weight: 600; margin: 0;">✓ Automated team alerts  •  Stakeholder updates  •  Regulatory reporting</p>
           </div>
         </div>
-        <div class="feature-card">
+        <div class="feature-card card-lift scroll-scale-in stagger-3">
           <div style="display: inline-block; padding: 24px; background: linear-gradient(135deg, rgba(231, 111, 81, 0.1) 0%, rgba(244, 162, 97, 0.05) 100%); border-radius: var(--radius-lg); margin-bottom: 24px;">
             <img src="assets/icons/automated-report.svg" alt="Automated Documentation" class="feature-icon" style="margin: 0; width: 64px; height: 64px;">
           </div>
@@ -445,6 +453,7 @@
 
   <!-- EmailJS for sending emails -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/animations.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
