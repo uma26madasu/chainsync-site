@@ -252,7 +252,7 @@ img {
 }
 
 section {
-  padding: 140px 0;
+  padding: 30px 0;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fluid);
@@ -689,8 +689,8 @@ body.has-testing-banner .page-hero {
 
 /* Smooth fade-in for sections */
 .fade-in-section {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -2160,8 +2160,8 @@ body.use-cases-page .process-node {
    Fade-in Sections
    ================================================ */
 .fade-in-section {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
