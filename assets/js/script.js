@@ -2558,7 +2558,7 @@ ChainSync - Every second counts when protecting our environment
           topic: 'whatIs'
         },
         pythonAgents: {
-          keywords: ['python', 'agent', 'agents', 'architecture', 'technical', 'how built', 'python agents', 'modular'],
+          keywords: ['python', 'agent', 'agents', 'architecture', 'how built', 'modular', 'detection agent', 'analysis agent', 'coordination agent', 'documentation agent'],
           text: "<strong>Our Python Agent Architecture</strong> 🐍<br><br>We're building specialized agents, each with a focused role:<br><br>🔍 <strong>Detection Agent</strong><br>• Monitors sensor streams (water, air, soil)<br>• Analyzes weather patterns<br>• Identifies anomalies in real-time<br>• Built for reliability and speed<br><br>🧠 <strong>Analysis Agent</strong><br>• Evaluates threat severity<br>• Determines response protocols<br>• Makes escalation decisions<br>• Context-aware intelligence<br><br>📡 <strong>Coordination Agent</strong><br>• Orchestrates notifications<br>• Manages stakeholder communication<br>• Handles regulatory reporting<br>• Ensures right info to right people<br><br>📝 <strong>Documentation Agent</strong><br>• Auto-generates compliance reports<br>• Creates audit trails<br>• Tracks all actions<br><br><strong>Why Python?</strong> Reliability, extensive libraries for data science, easy integration, and rapid development.",
           quickReplies: ['Development status', 'How does it work?', 'Integration details'],
           topic: 'pythonAgents'
@@ -2658,6 +2658,30 @@ ChainSync - Every second counts when protecting our environment
           text: "<strong>About the Team Behind ChainSync</strong> 👥<br><br>I'm the ChainSync Assistant, and I was built by a team passionate about using technology to protect communities and ecosystems.<br><br><strong>Our Team:</strong><br>We're a group bringing together expertise in:<br>• Environmental systems & emergency response<br>• AI/ML and Python development<br>• Enterprise software architecture<br>• Public health and regulatory compliance<br><br><strong>What drives us:</strong><br>We believe clean water, safe air, and healthy ecosystems shouldn't depend on luck or perfect timing. Every member of our team wakes up thinking about how to make environmental protection faster, smarter, and more effective.<br><br><strong>Currently:</strong><br>We're in development mode, building our Python agent platform. Team details will be shared as we approach launch, but know that we're people who genuinely care about protecting what matters most.<br><br>Made with love towards the environment 💚",
           quickReplies: ['Our mission', 'Python agents?', 'Join our mission'],
           topic: 'team'
+        },
+        apiDocumentation: {
+          keywords: ['api documentation', 'api docs', 'api reference', 'developer documentation', 'api guide', 'rest api', 'api endpoints', 'api access', 'developer api'],
+          text: "<strong>API Documentation & Developer Access</strong> 📚<br><br><strong>Current Status:</strong><br>We're still building our API layer as part of active development. Comprehensive API documentation will be released during our beta testing phase.<br><br><strong>Planned API Capabilities:</strong><br>• <strong>RESTful endpoints</strong> for sensor data integration<br>• <strong>Webhook notifications</strong> for real-time alerts<br>• <strong>Data export APIs</strong> for reporting and analytics<br>• <strong>Configuration APIs</strong> for system management<br>• <strong>Status & health endpoints</strong> for monitoring<br><br><strong>Authentication:</strong><br>• OAuth 2.0 / API key authentication<br>• Role-based access control<br>• Rate limiting for stability<br><br><strong>Documentation Format:</strong><br>• OpenAPI/Swagger specification<br>• Interactive API explorer<br>• Code examples (Python, JavaScript, curl)<br>• Sandbox environment for testing<br><br>Join early access to be notified when API docs are available!",
+          quickReplies: ['Join early access', 'Integration details', 'Technical requirements'],
+          topic: 'apiDocumentation'
+        },
+        technicalRequirements: {
+          keywords: ['technical requirements', 'system requirements', 'requirements', 'specifications', 'specs', 'hardware requirements', 'software requirements', 'minimum requirements', 'what do i need'],
+          text: "<strong>Technical Requirements</strong> 💻<br><br><strong>For Organizations Using ChainSync:</strong><br><br><strong>Sensor/Data Sources:</strong><br>• Internet-connected sensors (IP-based or cellular)<br>• SCADA/HMI systems with data export capability<br>• Laboratory systems (LIMS) with API or file export<br>• Existing database systems (SQL, NoSQL)<br><br><strong>Network Requirements:</strong><br>• Stable internet connection (10+ Mbps recommended)<br>• Static IP or VPN for SCADA integration<br>• Firewall configuration for outbound HTTPS (port 443)<br>• Optional: VPN for secure sensor communication<br><br><strong>User Access:</strong><br>• Modern web browser (Chrome, Firefox, Safari, Edge)<br>• Mobile devices (iOS 12+, Android 8+)<br>• No special hardware required for end users<br><br><strong>Integration Prep:</strong><br>• Sensor documentation & specs<br>• Network topology diagram<br>• List of systems to integrate<br>• User access requirements<br><br><strong>Our team handles:</strong> Cloud infrastructure, platform maintenance, security updates, and scaling!",
+          quickReplies: ['Integration process', 'Security details', 'Setup timeline'],
+          topic: 'technicalRequirements'
+        },
+        security: {
+          keywords: ['security', 'secure', 'encryption', 'data protection', 'privacy', 'compliance', 'hipaa', 'soc2', 'safe', 'protected', 'data security', 'cybersecurity'],
+          text: "<strong>Security & Compliance</strong> 🔒<br><br><strong>Data Security:</strong><br>• <strong>End-to-end encryption</strong> (TLS 1.3 for data in transit)<br>• <strong>AES-256 encryption</strong> for data at rest<br>• <strong>Encrypted sensor communication</strong> with certificate validation<br>• <strong>Secure cloud infrastructure</strong> (AWS/Azure with security best practices)<br><br><strong>Access Control:</strong><br>• Multi-factor authentication (MFA)<br>• Role-based access control (RBAC)<br>• Audit logs for all user actions<br>• Session management & timeout<br><br><strong>Compliance Targets:</strong><br>• <strong>SOC 2 Type II</strong> (planned certification)<br>• <strong>FISMA moderate</strong> (for government agencies)<br>• <strong>EPA data standards</strong> compliance<br>• <strong>GDPR & CCPA</strong> privacy compliance<br><br><strong>Infrastructure Security:</strong><br>• Regular penetration testing<br>• 24/7 security monitoring<br>• Automated vulnerability scanning<br>• Incident response procedures<br>• Regular security audits<br><br><strong>Your Data:</strong><br>You own your data. We never sell or share environmental data with third parties.",
+          quickReplies: ['Data ownership', 'Compliance details', 'Technical requirements'],
+          topic: 'security'
+        },
+        support: {
+          keywords: ['support', 'training', 'help', 'assistance', 'onboarding', 'implementation support', 'customer support', 'technical support', 'learn', 'documentation'],
+          text: "<strong>Support & Training</strong> 🎓<br><br><strong>Implementation Support:</strong><br>• <strong>Dedicated onboarding specialist</strong> for each organization<br>• <strong>Custom integration assistance</strong> with your systems<br>• <strong>On-site or remote training</strong> for your team<br>• <strong>Technical documentation & guides</strong><br><br><strong>Training Program:</strong><br>• <strong>Administrator training:</strong> System configuration, user management, integrations<br>• <strong>Operator training:</strong> Daily monitoring, alert response, incident documentation<br>• <strong>Executive overview:</strong> Dashboards, reporting, compliance tracking<br>• <strong>Custom workshops</strong> for your specific needs<br><br><strong>Ongoing Support:</strong><br>• <strong>24/7 critical incident support</strong> (for emergency environmental events)<br>• <strong>Email & phone support</strong> during business hours<br>• <strong>Online knowledge base</strong> with FAQs and guides<br>• <strong>Regular product updates</strong> and feature releases<br>• <strong>Quarterly business reviews</strong> for optimization<br><br><strong>Community:</strong><br>• User forums for peer learning<br>• Webinars on environmental response best practices<br>• Early access to new features",
+          quickReplies: ['Implementation time', 'Training details', 'Join early access'],
+          topic: 'support'
         }
       };
 
@@ -2672,6 +2696,10 @@ ChainSync - Every second counts when protecting our environment
 
       // Multi-word phrase matching (check longer phrases first)
       const phraseMatches = [
+        { phrases: ['api documentation', 'api docs', 'api reference', 'developer documentation', 'rest api'], response: responses.apiDocumentation },
+        { phrases: ['technical requirements', 'system requirements', 'minimum requirements', 'hardware requirements', 'software requirements'], response: responses.technicalRequirements },
+        { phrases: ['data security', 'security compliance', 'encryption'], response: responses.security },
+        { phrases: ['customer support', 'technical support', 'implementation support'], response: responses.support },
         { phrases: ['python agent', 'python agents'], response: responses.pythonAgents },
         { phrases: ['water treatment', 'treatment plant', 'wastewater'], response: responses.waterTreatment },
         { phrases: ['development status', 'development progress', 'when ready', 'when available'], response: responses.development },
