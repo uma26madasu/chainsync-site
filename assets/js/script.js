@@ -2652,6 +2652,12 @@ ChainSync - Every second counts when protecting our environment
           text: "You're very welcome! 😊<br><br>I'm here whenever you have more questions about ChainSync, our Python agent architecture, or how we're building intelligent environmental protection.<br><br>Is there anything else you'd like to know?",
           quickReplies: ['Development status', 'Join early access', 'Python agents?'],
           topic: 'thanks'
+        },
+        team: {
+          keywords: ['who made', 'who created', 'who built', 'who develop', 'who is behind', 'who are you', 'your team', 'your creator', 'made you', 'built you', 'behind you', 'developing you', 'founder', 'creators'],
+          text: "<strong>About the Team Behind ChainSync</strong> 👥<br><br>I'm the ChainSync Assistant, and I was built by a team passionate about using technology to protect communities and ecosystems.<br><br><strong>Our Team:</strong><br>We're a group bringing together expertise in:<br>• Environmental systems & emergency response<br>• AI/ML and Python development<br>• Enterprise software architecture<br>• Public health and regulatory compliance<br><br><strong>What drives us:</strong><br>We believe clean water, safe air, and healthy ecosystems shouldn't depend on luck or perfect timing. Every member of our team wakes up thinking about how to make environmental protection faster, smarter, and more effective.<br><br><strong>Currently:</strong><br>We're in development mode, building our Python agent platform. Team details will be shared as we approach launch, but know that we're people who genuinely care about protecting what matters most.<br><br>Made with love towards the environment 💚",
+          quickReplies: ['Our mission', 'Python agents?', 'Join our mission'],
+          topic: 'team'
         }
       };
 
