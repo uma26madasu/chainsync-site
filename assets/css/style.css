@@ -252,7 +252,7 @@ img {
 }
 
 section {
-  padding: 30px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fluid);
@@ -1389,7 +1389,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .features-section {
   background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
-  padding: 30px 0;
+  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1416,7 +1416,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .how-it-works-section {
   background: white;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .process-flow {
@@ -1708,7 +1708,7 @@ footer {
    ================================================ */
 .use-cases-section {
   background: white;
-  padding: 30px 0;
+  padding: 20px 0;
   min-height: auto;
 }
 
