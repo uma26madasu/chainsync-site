@@ -538,13 +538,13 @@ body.has-testing-banner .page-hero {
    Hero Section - Environmental Immersion
    ================================================ */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
   position: relative;
   overflow: hidden;
-  padding: 140px 32px 100px;
+  padding: 80px 32px 60px;
 }
 
 .hero-bg {
@@ -967,7 +967,7 @@ button:focus:not(:focus-visible) {
    Page Hero (Internal Pages) - Sky & Light
    ================================================ */
 .page-hero {
-  padding: 100px 32px 70px;
+  padding: 60px 32px 40px;
   background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
   position: relative;
   overflow: hidden;
@@ -1389,7 +1389,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .features-section {
   background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
-  padding: 70px 0;
+  padding: 40px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1408,7 +1408,7 @@ button:focus:not(:focus-visible) {
 }
 
 .feature-grid {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* ================================================
@@ -1416,7 +1416,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .how-it-works-section {
   background: white;
-  padding: 70px 0;
+  padding: 40px 0;
 }
 
 .process-flow {
@@ -1528,7 +1528,7 @@ button:focus:not(:focus-visible) {
   background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
   color: white;
   text-align: center;
-  padding: 80px 32px;
+  padding: 50px 32px;
   position: relative;
   overflow: hidden;
 }
@@ -1708,7 +1708,7 @@ footer {
    ================================================ */
 .use-cases-section {
   background: white;
-  padding: 70px 0;
+  padding: 40px 0;
   min-height: auto;
 }
 
