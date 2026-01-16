@@ -1615,17 +1615,17 @@ button:focus:not(:focus-visible) {
 footer {
   background: var(--night-sky);
   color: rgba(255, 255, 255, 0.75);
-  padding: 80px 0 32px;
+  padding: 30px 0 15px;
   border-top: 2px solid rgba(82, 183, 136, 0.2);
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 60px;
+  gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 32px 60px;
+  padding: 0 32px 20px;
 }
 
 .footer-brand h3 {
@@ -1670,8 +1670,8 @@ footer {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 32px;
-  margin-top: 32px;
+  padding-top: 15px;
+  margin-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
