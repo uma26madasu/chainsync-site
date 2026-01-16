@@ -1,0 +1,145 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hubGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="40" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="700" fill="#0F172A" text-anchor="middle">
+    ChainSync Integration Ecosystem (Planned Connectors)
+  </text>
+
+  <!-- Central Hub -->
+  <circle cx="500" cy="350" r="100" fill="url(#hubGradient)" filter="url(#glow)"/>
+  <text x="500" y="340" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    ChainSync
+  </text>
+  <text x="500" y="365" font-family="'DM Sans', sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Integration
+  </text>
+  <text x="500" y="383" font-family="'DM Sans', sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Platform
+  </text>
+
+  <!-- Environmental Monitoring Systems (Top Left) -->
+  <g transform="translate(150, 120)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Environmental
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Monitoring
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• IoT Sensors</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• SCADA Systems</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Weather APIs</text>
+  </g>
+
+  <!-- SCADA/Industrial (Top Right) -->
+  <g transform="translate(670, 120)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#F97316" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Industrial
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Control Systems
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• SCADA/HMI</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• OPC UA</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Modbus TCP</text>
+  </g>
+
+  <!-- Government/Regulatory (Left) -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#6366F1" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Government &
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Regulatory
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• EPA Systems</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• State Agencies</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Compliance DBs</text>
+  </g>
+
+  <!-- Enterprise Systems (Right) -->
+  <g transform="translate(770, 300)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#06B6D4" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Enterprise
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Systems
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• SAP</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Salesforce</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Oracle ERP</text>
+  </g>
+
+  <!-- Lab Systems (Bottom Left) -->
+  <g transform="translate(150, 500)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Laboratory
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Information
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• LIMS</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Lab Equipment</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Test Results</text>
+  </g>
+
+  <!-- Data & Analytics (Bottom Right) -->
+  <g transform="translate(670, 500)">
+    <rect x="0" y="0" width="180" height="110" rx="12" fill="#FFFFFF" stroke="#EC4899" stroke-width="2"/>
+    <text x="90" y="25" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Data &
+    </text>
+    <text x="90" y="43" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">
+      Analytics
+    </text>
+    <text x="20" y="65" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Snowflake</text>
+    <text x="20" y="80" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Power BI</text>
+    <text x="20" y="95" font-family="'DM Sans', sans-serif" font-size="10" fill="#64748B">• Tableau</text>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,5" opacity="0.5">
+    <!-- Environmental to Hub -->
+    <line x1="240" y1="230" x2="420" y2="310"/>
+    <!-- SCADA to Hub -->
+    <line x1="760" y1="230" x2="580" y2="310"/>
+    <!-- Gov to Hub -->
+    <line x1="230" y1="355" x2="400" y2="350"/>
+    <!-- Enterprise to Hub -->
+    <line x1="770" y1="355" x2="600" y2="350"/>
+    <!-- Lab to Hub -->
+    <line x1="240" y1="500" x2="420" y2="410"/>
+    <!-- Data to Hub -->
+    <line x1="760" y1="500" x2="580" y2="410"/>
+  </g>
+
+  <!-- Integration Methods Legend -->
+  <rect x="350" y="650" width="300" height="40" rx="8" fill="rgba(6, 182, 212, 0.1)" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="500" y="675" font-family="'DM Sans', sans-serif" font-size="11" fill="#0891B2" text-anchor="middle" font-weight="600">
+    REST • SOAP • GraphQL • MQTT • WebSockets • JDBC
+  </text>
+
+  <!-- Note -->
+  <text x="500" y="30" font-family="'DM Sans', sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle" font-style="italic">
+    Target integration architecture - Connectors being developed based on client requirements
+  </text>
+</svg>
