@@ -31,9 +31,9 @@
     <!-- Web Dashboard -->
     <rect x="150" y="80" width="180" height="100" rx="12" fill="#FFFFFF" stroke="url(#apiGradient)" stroke-width="2"/>
     <text x="240" y="115" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="middle">Web Dashboard</text>
-    <text x="240" y="135" font-family="'DM Sans', sans-serif" font-size="11" fill="#64748B" text-anchor="middle">React + TypeScript</text>
-    <circle cx="165" cy="95" r="3" fill="#10B981"/>
-    <text x="172" y="98" font-family="'DM Sans', sans-serif" font-size="9" fill="#64748B">In Dev</text>
+    <text x="240" y="135" font-family="'DM Sans', sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Planned UI</text>
+    <circle cx="165" cy="95" r="3" fill="#F59E0B"/>
+    <text x="172" y="98" font-family="'DM Sans', sans-serif" font-size="9" fill="#64748B">Planned</text>
 
     <!-- Mobile App -->
     <rect x="370" y="80" width="180" height="100" rx="12" fill="#FFFFFF" stroke="url(#apiGradient)" stroke-width="2"/>
@@ -46,8 +46,8 @@
     <rect x="590" y="80" width="180" height="100" rx="12" fill="#FFFFFF" stroke="url(#apiGradient)" stroke-width="2"/>
     <text x="680" y="115" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" fill="#0F172A" text-anchor="middle">Public API</text>
     <text x="680" y="135" font-family="'DM Sans', sans-serif" font-size="11" fill="#64748B" text-anchor="middle">REST/GraphQL</text>
-    <circle cx="605" cy="95" r="3" fill="#10B981"/>
-    <text x="612" y="98" font-family="'DM Sans', sans-serif" font-size="9" fill="#64748B">In Dev</text>
+    <circle cx="605" cy="95" r="3" fill="#F59E0B"/>
+    <text x="612" y="98" font-family="'DM Sans', sans-serif" font-size="9" fill="#64748B">Planned</text>
 
     <!-- Partner Integrations -->
     <rect x="810" y="80" width="180" height="100" rx="12" fill="#FFFFFF" stroke="url(#apiGradient)" stroke-width="2"/>
@@ -60,7 +60,7 @@
   <!-- API GATEWAY -->
   <rect x="150" y="220" width="840" height="60" rx="12" fill="url(#apiGradient)" opacity="0.1" stroke="url(#apiGradient)" stroke-width="2"/>
   <text x="570" y="255" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#4F46E5" text-anchor="middle">
-    API Gateway + Auth (OAuth2, JWT)
+    API Gateway + Auth (Planned: OAuth2, JWT)
   </text>
 
   <!-- PROCESS LAYER -->
