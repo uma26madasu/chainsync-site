@@ -1919,23 +1919,31 @@ body.use-cases-page .process-node {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(27, 67, 50, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 32px;
+    padding: 20px 32px;
     box-shadow: var(--shadow-xl);
-    gap: 24px;
+    gap: 16px;
     border-top: 2px solid rgba(82, 183, 136, 0.3);
     align-items: center;
   }
 
   .nav-links a {
     text-align: center;
+    color: var(--ocean-blue) !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  .nav-links a.active {
+    color: var(--emerald-primary) !important;
   }
 
   .nav-links .nav-cta {
     display: inline-block;
     text-align: center;
+    color: white !important;
   }
 
   .nav-links.mobile-open {
