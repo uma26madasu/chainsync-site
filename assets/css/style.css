@@ -491,16 +491,16 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta {
-  padding: 14px 36px;
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  padding: 12px 32px;
+  background: #6366F1;
   color: white !important;
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  border: none;
+  letter-spacing: 0.01em;
+  border: 2px solid #6366F1;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  box-shadow: none;
 }
 
 .nav-cta::before {
@@ -512,10 +512,11 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  color: white !important;
+  background: transparent;
+  color: #6366F1 !important;
+  border: 2px solid #6366F1;
+  transform: none;
+  box-shadow: none;
 }
 
 .nav-cta:hover::before {
