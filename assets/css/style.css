@@ -494,7 +494,7 @@ body.has-testing-banner .page-hero {
   padding: 12px 32px;
   background: #6366F1;
   color: white !important;
-  border-radius: 50px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
