@@ -1926,6 +1926,16 @@ body.use-cases-page .process-node {
     box-shadow: var(--shadow-xl);
     gap: 24px;
     border-top: 2px solid rgba(82, 183, 136, 0.3);
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-align: center;
+  }
+
+  .nav-links .nav-cta {
+    display: inline-block;
+    text-align: center;
   }
 
   .nav-links.mobile-open {
