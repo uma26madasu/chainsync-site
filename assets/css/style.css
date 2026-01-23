@@ -494,11 +494,12 @@ body.has-testing-banner .page-hero {
   display: inline-flex;
   align-items: center;
   padding: 20px 44px;
-  background: rgba(99, 102, 241, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  color: var(--electric-deep) !important;
+  background: linear-gradient(135deg, rgba(67, 56, 202, 0.9) 0%, rgba(99, 102, 241, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #A5B4FC !important;
   border-radius: 100px;
   font-weight: 600;
   font-size: 1.05rem;
@@ -517,9 +518,10 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta:hover {
-  background: rgba(99, 102, 241, 0.25);
-  border-color: rgba(99, 102, 241, 0.4);
-  color: var(--electric-deep) !important;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.95) 0%, rgba(109, 117, 255, 0.9) 100%);
+  border-color: rgba(147, 108, 255, 0.5);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: #C7D2FE !important;
   transform: translateY(-2px);
 }
 
@@ -1943,7 +1945,7 @@ body.use-cases-page .process-node {
     display: inline-flex;
     align-items: center;
     text-align: center;
-    color: var(--electric-deep) !important;
+    color: #A5B4FC !important;
     padding: 20px 44px;
     font-size: 1.125rem;
     border-radius: 100px;
