@@ -493,7 +493,7 @@ body.has-testing-banner .page-hero {
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 18px 36px;
+  padding: 20px 44px;
   background: rgba(99, 102, 241, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -1944,7 +1944,7 @@ body.use-cases-page .process-node {
     align-items: center;
     text-align: center;
     color: var(--electric-deep) !important;
-    padding: 18px 40px;
+    padding: 20px 44px;
     font-size: 1.125rem;
     border-radius: 100px;
   }
