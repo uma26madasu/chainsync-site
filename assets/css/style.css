@@ -493,7 +493,7 @@ body.has-testing-banner .page-hero {
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 20px 32px;
+  padding: 16px 28px;
   background: rgba(99, 102, 241, 0.15);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
