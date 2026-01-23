@@ -112,8 +112,7 @@ p {
    ================================================ */
 
 .btn-primary,
-.btn-secondary,
-.nav-cta {
+.btn-secondary {
   position: relative;
   overflow: hidden;
   box-shadow:
@@ -124,8 +123,7 @@ p {
 }
 
 .btn-primary::before,
-.btn-secondary::before,
-.nav-cta::before {
+.btn-secondary::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -139,14 +137,12 @@ p {
 }
 
 .btn-primary:hover::before,
-.btn-secondary:hover::before,
-.nav-cta:hover::before {
+.btn-secondary:hover::before {
   width: 300px;
   height: 300px;
 }
 
-.btn-primary:hover,
-.nav-cta:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.15),
@@ -162,8 +158,7 @@ p {
 }
 
 .btn-primary:active,
-.btn-secondary:active,
-.nav-cta:active {
+.btn-secondary:active {
   transform: translateY(0);
   box-shadow:
     0 1px 4px rgba(0, 0, 0, 0.1),
@@ -513,8 +508,7 @@ select:focus {
    PREMIUM HOVER GLOW EFFECTS
    ================================================ */
 
-.btn-primary:hover,
-.nav-cta:hover {
+.btn-primary:hover {
   filter: brightness(1.05);
 }
 
