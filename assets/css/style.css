@@ -491,13 +491,13 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta {
-  padding: 16px 40px;
+  padding: 16px 32px;
   background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: white !important;
   border-radius: 24px;
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-size: 1rem;
+  letter-spacing: 0.015em;
   border: none;
   transition: all 0.3s ease;
   box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
@@ -1106,11 +1106,11 @@ button:focus:not(:focus-visible) {
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 20px 48px;
+  padding: 18px 40px;
   border-radius: 28px;
   font-weight: 700;
   font-size: 1rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
   border: none;
   cursor: pointer;
   transition: all var(--transition-smooth);
