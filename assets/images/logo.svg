@@ -1,46 +1,6 @@
-<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- ChainSync Logo - Circular swirl design with chain links (enhanced visibility) -->
-  <defs>
-    <!-- Blue gradient - more vibrant -->
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00AAEE;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0088CC;stop-opacity:1" />
-    </linearGradient>
-    <!-- Green gradient - more vibrant -->
-    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00DD99;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#22CC77;stop-opacity:1" />
-    </linearGradient>
-    <!-- Combined circular gradient -->
-    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00AAEE;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00CCBB;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#22CC77;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-
-  <!-- Icon: Circular swirl with chain links -->
-  <g transform="translate(2, 2)">
-    <!-- Blue outer swirl (top-right) - full opacity -->
-    <path d="M22 1 C33.6 1 43 10.4 43 22 C43 27 41 31.5 38 35 C35 31 30 28 22 28 C18 28 14.5 29.5 12 32 C8.5 28.5 6 23.5 6 18 C6 12 9 7 14 4"
-          fill="url(#blueGradient)"/>
-
-    <!-- Green outer swirl (bottom-left) - full opacity -->
-    <path d="M22 43 C10.4 43 1 33.6 1 22 C1 17 3 12.5 6 9 C9 13 14 16 22 16 C26 16 29.5 14.5 32 12 C35.5 15.5 38 20.5 38 26 C38 32 35 37 30 40"
-          fill="url(#greenGradient)"/>
-
-    <!-- Inner chain link - thicker stroke for visibility -->
-    <path d="M16 22 C16 18.7 18.7 16 22 16 C25.3 16 28 18.7 28 22 C28 25.3 25.3 28 22 28 C18.7 28 16 25.3 16 22"
-          fill="none" stroke="#FFFFFF" stroke-width="4"/>
-
-    <!-- Center connecting element - larger and bolder -->
-    <circle cx="22" cy="22" r="5" fill="url(#circleGradient)"/>
-  </g>
-
-  <!-- Wordmark: ChainSync - darker text for better contrast -->
-  <g transform="translate(52, 0)">
-    <text x="0" y="32" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#0F172A" letter-spacing="-0.5">
-      Chain<tspan fill="#22CC77">Sync</tspan>
-    </text>
-  </g>
+<svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ChainSync Logo - Text only -->
+  <text x="0" y="32" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#0F172A" letter-spacing="-0.5">
+    Chain<tspan fill="#22CC77">Sync</tspan>
+  </text>
 </svg>
