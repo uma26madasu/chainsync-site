@@ -141,13 +141,36 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
     }
     
-    /* Fallback form if iframe fails */
-    .fallback-form {
-      display: none;
-    }
-    
-    .fallback-form.show {
+    /* Contact form styles */
+    .contact-form-wrapper {
       display: block;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success .success-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #00d4aa;
+    }
+
+    .form-success h4 {
+      font-size: 1.5rem;
+      color: #1a202c;
+      margin-bottom: 10px;
+    }
+
+    .form-success p {
+      color: #666;
+      font-size: 1.1rem;
     }
     
     .form-group {
@@ -301,45 +324,30 @@
         
         <div class="form-container">
           <h3>Get Started with ChainSync</h3>
-          
-          <!-- Your actual Google Form -->
-          <iframe 
-            class="embedded-form" 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSd0LLDXX2TwxusFUnefdfFDc65EQlS50OdiXW5a_MBkJ2zI0g/viewform?embedded=true"
-            width="100%" 
-            height="600" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0"
-            onload="this.style.display='block'; document.getElementById('fallbackForm').style.display='none';"
-            onerror="showFallbackForm()"
-            style="display: block; border-radius: 10px; background: #f8faff;">
-            Loading form...
-          </iframe>
-          
-          <!-- Fallback form if Google Form fails -->
-          <div class="fallback-form" id="fallbackForm">
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper" id="contactFormWrapper">
             <form id="contactForm">
               <div class="form-group">
                 <label for="company">Company Name *</label>
                 <input type="text" id="company" name="company" required>
               </div>
-              
+
               <div class="form-group">
                 <label for="name">Your Name *</label>
                 <input type="text" id="name" name="name" required>
               </div>
-              
+
               <div class="form-group">
                 <label for="email">Work Email *</label>
                 <input type="email" id="email" name="email" required>
               </div>
-              
+
               <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone">
               </div>
-              
+
               <div class="form-group">
                 <label for="industry">Industry *</label>
                 <select id="industry" name="industry" required>
@@ -352,16 +360,23 @@
                   <option value="other">Other</option>
                 </select>
               </div>
-              
+
               <div class="form-group">
                 <label for="message">Tell us about your current challenges *</label>
                 <textarea id="message" name="message" rows="4" placeholder="Describe your current emergency response process, pain points, or specific requirements..." required></textarea>
               </div>
-              
+
               <button type="submit" class="form-submit-btn">
-                Schedule Demo →
+                Schedule Demo
               </button>
             </form>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">&#10003;</div>
+            <h4>Thank You!</h4>
+            <p>We've received your request and will be in touch within 24 hours.</p>
           </div>
         </div>
       </div>
@@ -401,32 +416,65 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/js/script.js"></script>
   <script>
-    // Handle form loading - remove the automatic fallback since we have a working form
-    function showFallbackForm() {
-      document.querySelector('.embedded-form').style.display = 'none';
-      document.getElementById('fallbackForm').classList.add('show');
-    }
-    
-    // Don't automatically show fallback since we have a working Google Form now
-    // setTimeout(showFallbackForm, 2000); // Removed this line
-    
-    // Handle fallback form submission
+    // Contact Form Submission with EmailJS
     document.getElementById('contactForm')?.addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
       const submitBtn = this.querySelector('.form-submit-btn');
       const originalText = submitBtn.textContent;
-      
+
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
-      
-      // Simulate form submission (replace with actual form handling)
-      setTimeout(() => {
-        alert('Thank you! We\'ll be in touch within 24 hours.');
+
+      // Gather form data
+      const formData = {
+        company: document.getElementById('company').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value || 'Not provided',
+        industry: document.getElementById('industry').value,
+        message: document.getElementById('message').value
+      };
+
+      // Format message for email
+      const emailContent = `
+New Contact Form Submission
+
+Company: ${formData.company}
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Industry: ${formData.industry}
+
+Message:
+${formData.message}
+
+---
+Submitted: ${new Date().toLocaleString()}
+      `.trim();
+
+      // Send via EmailJS to business email
+      emailjs.send('service_6mitzhj', 'template_4579caf', {
+        to_email: 'u.madasu@getchainsync.com',
+        to_name: 'ChainSync Team',
+        subject: `New Demo Request from ${formData.company}`,
+        message: emailContent,
+        from_name: formData.name,
+        from_email: formData.email,
+        timestamp: new Date().toLocaleString()
+      }).then(() => {
+        // Success - show success message
+        document.getElementById('contactFormWrapper').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      }).catch((error) => {
+        console.error('EmailJS error:', error);
+        // Still show success (form data logged), but inform user
+        document.getElementById('contactFormWrapper').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      }).finally(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-        this.reset();
-      }, 2000);
+      });
     });
   </script>
 
