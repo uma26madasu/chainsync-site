@@ -1,48 +1,49 @@
 <svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Logo Icon: Interconnected hexagons representing coordination and environmental elements -->
+  <!-- ChainSync Logo - Circular swirl design with chain links -->
   <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#06B6D4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    <!-- Blue gradient for top swirl -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0099DD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0077BB;stop-opacity:1" />
+    </linearGradient>
+    <!-- Green gradient for bottom swirl -->
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00CC88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ECC71;stop-opacity:1" />
+    </linearGradient>
+    <!-- Combined circular gradient -->
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0099DD;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00BBAA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ECC71;stop-opacity:1" />
     </linearGradient>
   </defs>
 
-  <!-- Icon: Hexagon chain with water drop -->
-  <g transform="translate(0, 6)">
-    <!-- Left hexagon (Detection) -->
-    <path d="M12 4 L20 8 L20 16 L12 20 L4 16 L4 8 Z"
-          stroke="url(#logoGradient)"
-          stroke-width="2"
-          fill="none"
-          opacity="0.8"/>
+  <!-- Icon: Circular swirl with chain links -->
+  <g transform="translate(2, 2)">
+    <!-- Outer circle background -->
+    <circle cx="22" cy="22" r="21" fill="none" stroke="url(#circleGradient)" stroke-width="0.5" opacity="0.3"/>
 
-    <!-- Center hexagon (Coordination) -->
-    <path d="M24 10 L32 14 L32 22 L24 26 L16 22 L16 14 Z"
-          stroke="url(#logoGradient)"
-          stroke-width="2.5"
-          fill="rgba(99, 102, 241, 0.1)"/>
+    <!-- Blue outer swirl (top-right) -->
+    <path d="M22 1 C33.6 1 43 10.4 43 22 C43 27 41 31.5 38 35 C35 31 30 28 22 28 C18 28 14.5 29.5 12 32 C8.5 28.5 6 23.5 6 18 C6 12 9 7 14 4"
+          fill="url(#blueGradient)" opacity="0.95"/>
 
-    <!-- Right hexagon (Response) -->
-    <path d="M36 4 L44 8 L44 16 L36 20 L28 16 L28 8 Z"
-          stroke="url(#logoGradient)"
-          stroke-width="2"
-          fill="none"
-          opacity="0.8"/>
+    <!-- Green outer swirl (bottom-left) -->
+    <path d="M22 43 C10.4 43 1 33.6 1 22 C1 17 3 12.5 6 9 C9 13 14 16 22 16 C26 16 29.5 14.5 32 12 C35.5 15.5 38 20.5 38 26 C38 32 35 37 30 40"
+          fill="url(#greenGradient)" opacity="0.95"/>
 
-    <!-- Water drop in center (Environmental focus) -->
-    <path d="M24 16 C24 16 22 14 22 12 C22 10.3 23.1 9 24 9 C24.9 9 26 10.3 26 12 C26 14 24 16 24 16 Z"
-          fill="url(#logoGradient)"/>
+    <!-- Inner chain link - creates the interlock effect -->
+    <path d="M16 22 C16 18.7 18.7 16 22 16 C25.3 16 28 18.7 28 22 C28 25.3 25.3 28 22 28 C18.7 28 16 25.3 16 22"
+          fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.9"/>
 
-    <!-- Connection lines -->
-    <line x1="20" y1="12" x2="16" y2="14" stroke="url(#logoGradient)" stroke-width="1.5"/>
-    <line x1="32" y1="14" x2="28" y2="12" stroke="url(#logoGradient)" stroke-width="1.5"/>
+    <!-- Center connecting element -->
+    <ellipse cx="22" cy="22" rx="4" ry="4" fill="url(#circleGradient)" opacity="0.8"/>
   </g>
 
   <!-- Wordmark: ChainSync -->
-  <g transform="translate(56, 0)">
-    <text x="0" y="26" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" fill="#0F172A" letter-spacing="-0.5">
-      Chain<tspan fill="#6366F1">Sync</tspan>
+  <g transform="translate(52, 0)">
+    <text x="0" y="32" font-family="'Inter', 'Segoe UI', sans-serif" font-size="26" font-weight="600" fill="#1B365D" letter-spacing="-0.5">
+      Chain<tspan fill="#2ECC71">Sync</tspan>
     </text>
   </g>
 </svg>
