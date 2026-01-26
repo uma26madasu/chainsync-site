@@ -1,34 +1,44 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- ChainSync Favicon - Circular swirl design with chain links -->
+  <!-- ChainSync Favicon - Water Drop with Waves -->
   <defs>
-    <linearGradient id="favBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0099DD;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0077BB;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="favGreenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00CC88;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2ECC71;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="favCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0099DD;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00BBAA;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2ECC71;stop-opacity:1" />
+    <linearGradient id="favGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECFEF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2DBDA8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22CC88;stop-opacity:1" />
     </linearGradient>
   </defs>
 
-  <g transform="translate(1, 1)">
-    <!-- Blue outer swirl (top-right) -->
-    <path d="M15 0 C23.3 0 30 6.7 30 15 C30 18.5 28.6 21.7 26.4 24 C24.3 21.3 20.8 19.2 15 19.2 C12.2 19.2 9.8 20.2 8 21.9 C5.6 19.5 4 16 4 12.3 C4 8.2 6.1 4.6 9.5 2.5"
-          fill="url(#favBlueGradient)" opacity="0.95"/>
+  <!-- Water Drop -->
+  <g transform="translate(4, 1)">
+    <!-- Drop outline -->
+    <path d="M12 1
+             C12 1 1 14 1 21
+             C1 27 6 30 12 30
+             C18 30 23 27 23 21
+             C23 14 12 1 12 1 Z"
+          fill="none"
+          stroke="url(#favGradient)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
 
-    <!-- Green outer swirl (bottom-left) -->
-    <path d="M15 30 C6.7 30 0 23.3 0 15 C0 11.5 1.4 8.3 3.6 6 C5.7 8.7 9.2 10.8 15 10.8 C17.8 10.8 20.2 9.8 22 8.1 C24.4 10.5 26 14 26 17.7 C26 21.8 23.9 25.4 20.5 27.5"
-          fill="url(#favGreenGradient)" opacity="0.95"/>
+    <!-- Inner arrow -->
+    <path d="M12 7 L16 13 L12 12 L8 13 Z"
+          fill="url(#favGradient)"
+          opacity="0.9"/>
 
-    <!-- Inner chain link -->
-    <circle cx="15" cy="15" r="4.5" fill="none" stroke="#FFFFFF" stroke-width="2.5" opacity="0.9"/>
+    <!-- Upper wave -->
+    <path d="M4 19 C7 16 9 18 12 17 C15 16 17 18 20 19"
+          fill="none"
+          stroke="url(#favGradient)"
+          stroke-width="2"
+          stroke-linecap="round"/>
 
-    <!-- Center element -->
-    <circle cx="15" cy="15" r="2.5" fill="url(#favCircleGradient)" opacity="0.8"/>
+    <!-- Lower wave -->
+    <path d="M5 25 C8 22 10 24 12 23 C14 22 16 24 19 25"
+          fill="none"
+          stroke="url(#favGradient)"
+          stroke-width="2"
+          stroke-linecap="round"/>
   </g>
 </svg>
