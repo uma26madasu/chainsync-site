@@ -425,14 +425,20 @@ body.has-testing-banner .page-hero {
 }
 
 .logo-image {
-  height: 36px;
+  height: 44px;
   width: auto;
   transition: var(--transition-smooth);
+  /* Crisp rendering without blur */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .logo:hover .logo-image {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+  transform: translateZ(0) scale(1.05);
+  filter: brightness(1.05);
 }
 
 .logo::after {
