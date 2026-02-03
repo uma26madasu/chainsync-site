@@ -521,14 +521,36 @@
       </div>
 
       <div style="padding: 32px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0%, rgba(6, 182, 212, 0.04) 100%); border-radius: 20px; border-left: 4px solid #10B981;">
-        <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px;">How The Components Work Together</h4>
-        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem; margin-bottom: 20px;">
-          When an environmental threat is detected, the <strong>MuleSoft platform</strong> receives sensor data and external alerts, validates the information, and routes it to the <strong>AI Agents</strong> for analysis. The agents perform root cause analysis, assess impact, and generate recommendations. For critical alerts, <strong>Slotify</strong> automatically schedules emergency coordination meetings with the appropriate authorities, providing them with AI-generated briefings and context. All actions are logged back to the MuleSoft platform for compliance and audit trails.
-        </p>
-        <div style="padding: 16px; background: white; border-radius: 12px;">
-          <p style="color: #64748b; font-size: 0.9rem; line-height: 1.7; margin: 0;">
-            <strong style="color: #0f172a;">Tech Stack:</strong> MuleSoft Anypoint 4.9.0, Python 3.11+ FastAPI, React 18, OpenAI GPT-4, ChromaDB, MongoDB, OAuth 2.0, HTTPS/TLS
-          </p>
+        <h4 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 24px;">End-to-End Response Pipeline</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; align-items: start;">
+          <div style="text-align: center; padding: 20px 12px; background: white; border-radius: 14px; border-top: 3px solid #6366F1; position: relative;">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">📡</div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Ingest</div>
+            <div style="font-size: 0.75rem; color: #64748b; line-height: 1.5;">Sensor data &amp; external alerts received via API gateway</div>
+            <div style="font-size: 0.7rem; font-weight: 600; color: #6366F1; margin-top: 8px;">~2s</div>
+          </div>
+          <div style="text-align: center; padding: 20px 12px; background: white; border-radius: 14px; border-top: 3px solid #06B6D4; position: relative;">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">🔍</div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Validate &amp; Route</div>
+            <div style="font-size: 0.75rem; color: #64748b; line-height: 1.5;">Data validated, enriched, and routed to AI layer</div>
+            <div style="font-size: 0.7rem; font-weight: 600; color: #06B6D4; margin-top: 8px;">~5s</div>
+          </div>
+          <div style="text-align: center; padding: 20px 12px; background: white; border-radius: 14px; border-top: 3px solid #10B981; position: relative;">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">🧠</div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px;">AI Analysis</div>
+            <div style="font-size: 0.75rem; color: #64748b; line-height: 1.5;">Root cause analysis, impact scoring, recommendations</div>
+            <div style="font-size: 0.7rem; font-weight: 600; color: #10B981; margin-top: 8px;">~30s</div>
+          </div>
+          <div style="text-align: center; padding: 20px 12px; background: white; border-radius: 14px; border-top: 3px solid #8B5CF6; position: relative;">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">🚨</div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px;">Coordinate</div>
+            <div style="font-size: 0.75rem; color: #64748b; line-height: 1.5;">Emergency meetings scheduled with relevant authorities</div>
+            <div style="font-size: 0.7rem; font-weight: 600; color: #8B5CF6; margin-top: 8px;">~50s</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px; padding: 12px; background: white; border-radius: 10px;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #10B981;">Total: Under 90 seconds</span>
+          <span style="font-size: 0.8rem; color: #64748b; margin-left: 8px;">from threat detection to coordinated response</span>
         </div>
       </div>
     </div>
