@@ -149,34 +149,48 @@
        Text Reveal Animations
        ========================================== */
     function initTextReveal() {
-        // Wrap headings in reveal containers
         const headings = document.querySelectorAll('h1, h2, h3');
 
         headings.forEach(heading => {
-            // Skip if already processed
-            if (heading.classList.contains('text-reveal')) return;
+            if (heading.classList.contains('text-reveal-processed')) return;
 
-            const text = heading.textContent;
-            heading.classList.add('split-text');
+            const originalText = heading.textContent;
+            heading.classList.add('split-text', 'text-reveal-processed');
             heading.innerHTML = '';
 
-            // Split into characters
-            text.split('').forEach((char, index) => {
-                const span = document.createElement('span');
-                span.className = 'char';
-                span.textContent = char === ' ' ? '\u00A0' : char;
+            // Split into words first to allow natural wrapping
+            originalText.split(' ').forEach((word, wordIndex, wordsArray) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word';
+                wordSpan.style.display = 'inline-block';
+                wordSpan.style.whiteSpace = 'nowrap';
 
-                // Add extra delay for later characters
-                if (index > 10) {
-                    span.style.transitionDelay = `${0.5 + (index - 10) * 0.03}s`;
+                // Split word into characters
+                word.split('').forEach((char, charIndex) => {
+                    const charSpan = document.createElement('span');
+                    charSpan.className = 'char';
+                    charSpan.textContent = char;
+
+                    // Simple global index for delay
+                    const globalIndex = heading.querySelectorAll('.char').length;
+                    charSpan.style.transitionDelay = `${(globalIndex * 0.03)}s`;
+
+                    wordSpan.appendChild(charSpan);
+                });
+
+                heading.appendChild(wordSpan);
+
+                // Add space between words (not at the end)
+                if (wordIndex < wordsArray.length - 1) {
+                    heading.appendChild(document.createTextNode(' '));
                 }
-
-                heading.appendChild(span);
             });
         });
 
-        // Observe and reveal
-        if (!('IntersectionObserver' in window)) return;
+        if (!('IntersectionObserver' in window)) {
+            headings.forEach(heading => heading.classList.add('revealed'));
+            return;
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -185,9 +199,7 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.5
-        });
+        }, { threshold: 0.2 });
 
         headings.forEach(heading => observer.observe(heading));
     }

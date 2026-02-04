@@ -503,3 +503,31 @@
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ================================================
+   ACCESSIBILITY & CONTRAST FIXES
+   ================================================ */
+
+/* Footer High Contrast */
+footer,
+.footer-brand p,
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.footer-links h4 {
+    color: #FFFFFF !important;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.footer-links a:hover {
+    color: #52B788 !important;
+    /* Forest green accent on hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
