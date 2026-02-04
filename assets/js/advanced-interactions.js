@@ -199,9 +199,19 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.1 });
 
         headings.forEach(heading => observer.observe(heading));
+
+        // Fallback: Force reveal if the element is already well into the viewport
+        setTimeout(() => {
+            headings.forEach(heading => {
+                const rect = heading.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    heading.classList.add('revealed');
+                }
+            });
+        }, 2000);
     }
 
     /* ==========================================
