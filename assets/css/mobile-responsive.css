@@ -1,0 +1,204 @@
+/* ================================================
+   Mobile & Responsive Optimizations
+   ================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .component-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .nav-container {
+        padding: 16px 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* Hero Section - Mobile Optimized */
+    .hero {
+        padding: 60px 20px 40px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        padding: 0 16px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .hero-components {
+        margin-bottom: 32px;
+    }
+
+    .component-grid {
+        gap: 16px;
+    }
+
+    .component-card {
+        padding: 20px;
+    }
+
+    .hero-status {
+        padding: 16px 20px;
+    }
+
+    .status-text {
+        font-size: 0.875rem;
+    }
+
+    /* Reduce blur for better mobile performance */
+    .floating-shape {
+        filter: blur(40px);
+        opacity: 0.2;
+    }
+
+    .gradient-orb {
+        filter: blur(40px);
+    }
+
+    /* Navigation - Mobile Optimized */
+    .nav-container {
+        padding: 12px 16px;
+    }
+
+    .logo-image {
+        height: 36px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 12px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        padding: 80px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    .nav-links.mobile-open {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1.25rem;
+        padding: 12px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-cta {
+        padding: 14px 28px;
+        min-height: 48px;
+        font-size: 1rem;
+    }
+
+    /* Touch Target Optimization - Minimum 44x44px */
+    button,
+    a,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Simplified animations for performance */
+    .scroll-fade-in,
+    .scroll-fade-left,
+    .scroll-fade-right,
+    .scroll-scale-in {
+        transform: translateY(20px) !important;
+    }
+
+    /* Disable 3D transforms on mobile */
+    .feature-card:hover,
+    .tech-card:hover,
+    .component-card:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Container padding */
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.625rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .component-card {
+        padding: 16px;
+    }
+
+    .component-icon {
+        font-size: 1.75rem;
+    }
+
+    .component-title {
+        font-size: 0.875rem;
+    }
+
+    .component-desc {
+        font-size: 0.8125rem;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .floating-shape,
+    .gradient-orb {
+        animation: none !important;
+    }
+}

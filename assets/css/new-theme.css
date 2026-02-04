@@ -1,0 +1,134 @@
+/* ================================================
+   ChainSync - Modern Vibrant Design System
+   Bold, Dynamic, and Eye-Catching
+   ================================================ */
+
+/* ================================================
+   Revolutionary Color Palette - Bold & Modern
+   ================================================ */
+:root {
+  /* Primary - Electric Purple/Indigo (Tech-Forward) */
+  --electric-primary: #6366F1;      /* Vibrant indigo */
+  --electric-deep: #4F46E5;         /* Deep indigo */
+  --electric-dark: #4338CA;         /* Dark indigo */
+  --electric-light: #818CF8;        /* Light indigo */
+  --electric-pale: #A5B4FC;         /* Pale indigo */
+
+  /* Secondary - Vibrant Cyan/Blue (Energy & Innovation) */
+  --cyber-primary: #06B6D4;         /* Cyan */
+  --cyber-deep: #0891B2;            /* Deep cyan */
+  --cyber-light: #22D3EE;           /* Light cyan */
+  --cyber-bright: #67E8F9;          /* Bright cyan */
+  --cyber-pale: #CFFAFE;            /* Pale cyan */
+
+  /* Accent - Warm Coral/Orange (Action & Warmth) */
+  --flame-primary: #F97316;         /* Orange */
+  --flame-deep: #EA580C;            /* Deep orange */
+  --flame-bright: #FB923C;          /* Bright orange */
+  --flame-light: #FDBA74;           /* Light orange */
+  --flame-pale: #FED7AA;            /* Pale orange */
+
+  /* Success - Vibrant Emerald */
+  --emerald-primary: #10B981;       /* Emerald */
+  --emerald-deep: #059669;          /* Deep emerald */
+  --emerald-light: #34D399;         /* Light emerald */
+
+  /* Warning - Bright Amber */
+  --amber-primary: #F59E0B;         /* Amber */
+  --amber-light: #FCD34D;           /* Light amber */
+
+  /* Danger - Vibrant Rose */
+  --rose-primary: #F43F5E;          /* Rose */
+  --rose-deep: #E11D48;             /* Deep rose */
+
+  /* Modern Neutrals - Clean & Sharp */
+  --white: #FFFFFF;
+  --snow: #F8FAFC;
+  --cloud: #F1F5F9;
+  --silver: #E2E8F0;
+  --steel: #CBD5E1;
+  --slate-light: #94A3B8;
+  --slate: #64748B;
+  --slate-dark: #475569;
+  --charcoal: #334155;
+  --carbon: #1E293B;
+  --midnight: #0F172A;
+
+  /* Semantic Colors */
+  --primary: var(--electric-primary);
+  --secondary: var(--cyber-primary);
+  --accent: var(--flame-primary);
+  --success: var(--emerald-primary);
+  --warning: var(--amber-primary);
+  --danger: var(--rose-primary);
+
+  /* Surface Colors - Modern & Clean */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--snow);
+  --bg-tertiary: var(--cloud);
+  --bg-dark: var(--midnight);
+  --bg-card: var(--white);
+
+  /* Text Colors - Strong Hierarchy */
+  --text-primary: var(--midnight);
+  --text-secondary: var(--slate-dark);
+  --text-tertiary: var(--slate);
+  --text-on-dark: var(--snow);
+
+  /* Dynamic Gradients - Bold & Vibrant */
+  --gradient-electric: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%);
+  --gradient-cyber: linear-gradient(135deg, #06B6D4 0%, #3B82F6 50%, #6366F1 100%);
+  --gradient-flame: linear-gradient(135deg, #F97316 0%, #FB923C 50%, #FBBF24 100%);
+  --gradient-sunset: linear-gradient(135deg, #F43F5E 0%, #F97316 50%, #FBBF24 100%);
+  --gradient-ocean: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+  --gradient-aurora: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #F97316 100%);
+  --gradient-emerald: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+  --gradient-hero: linear-gradient(135deg, #4F46E5 0%, #06B6D4 50%, #10B981 100%);
+
+  /* Atmospheric Mesh - Modern Tech Vibes */
+  --gradient-atmosphere:
+    radial-gradient(at 20% 30%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(249, 115, 22, 0.10) 0px, transparent 50%),
+    radial-gradient(at 90% 70%, rgba(168, 85, 247, 0.13) 0px, transparent 50%);
+
+  /* Modern Shadows - Crisp & Defined */
+  --shadow-xs: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 16px 0 rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 8px 32px 0 rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 12px 48px 0 rgba(0, 0, 0, 0.20);
+
+  /* Glow Effects - Modern Tech */
+  --glow-electric: 0 0 20px rgba(99, 102, 241, 0.4);
+  --glow-cyber: 0 0 20px rgba(6, 182, 212, 0.4);
+  --glow-flame: 0 0 20px rgba(249, 115, 22, 0.4);
+  --glow-emerald: 0 0 20px rgba(16, 185, 129, 0.4);
+
+  /* Border Radius - Modern & Smooth */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions - Snappy & Smooth */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Variables (for future use) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: var(--midnight);
+    --bg-secondary: var(--carbon);
+    --bg-tertiary: var(--charcoal);
+    --bg-card: var(--carbon);
+    --text-primary: var(--snow);
+    --text-secondary: var(--silver);
+    --text-tertiary: var(--slate-light);
+  }
+}
