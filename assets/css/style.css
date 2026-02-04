@@ -193,7 +193,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
@@ -227,7 +227,7 @@ h4 {
 }
 
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.75;
   color: var(--text-secondary);
   font-size: clamp(1rem, 1.2vw, 1.0625rem);
@@ -262,7 +262,7 @@ img {
 }
 
 section {
-  padding: 10px 0;
+  padding: 60px 0;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fluid);
@@ -289,14 +289,14 @@ a,
 .grid-2 {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
+  gap: 48px;
   align-items: center;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  gap: 32px;
 }
 
 /* Organic Wave Dividers */
@@ -581,7 +581,7 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: 40px 32px 20px;
+  padding: 80px 32px 40px;
 }
 
 .hero-bg {
