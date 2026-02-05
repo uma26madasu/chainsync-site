@@ -3,7 +3,7 @@
  * Enhanced interactions with counter animations, dynamic effects, and modern UX
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Initialize when DOM is ready
@@ -245,7 +245,7 @@
     }
 
     if (mobileBtn && navLinks) {
-      mobileBtn.addEventListener('click', function() {
+      mobileBtn.addEventListener('click', function () {
         const isOpen = navLinks.classList.toggle('mobile-open');
         this.innerHTML = isOpen ? '✕' : '☰';
         this.setAttribute('aria-expanded', isOpen);
@@ -461,7 +461,7 @@
         }
       }
 
-      card.addEventListener('mousemove', function(e) {
+      card.addEventListener('mousemove', function (e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -477,7 +477,7 @@
         }
       });
 
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         cardX = 0;
         cardY = 0;
 
@@ -525,7 +525,7 @@
       }
 
       // Add ripple effect on click
-      btn.addEventListener('click', function(e) {
+      btn.addEventListener('click', function (e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height) * 2;
@@ -557,7 +557,7 @@
       });
 
       // Keyboard accessibility
-      btn.addEventListener('keydown', function(e) {
+      btn.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           this.click();
@@ -646,7 +646,7 @@
      ========================================== */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#' || !href) return;
 
@@ -768,7 +768,7 @@
     const processNodes = document.querySelectorAll('.process-node, .process-step');
 
     processNodes.forEach((node, index) => {
-      node.addEventListener('mouseenter', function() {
+      node.addEventListener('mouseenter', function () {
         // Pulse effect on hover
         const icon = this.querySelector('.node-icon, .step-icon');
         if (icon) {
@@ -811,13 +811,13 @@
 
       inputs.forEach(input => {
         // Focus effects
-        input.addEventListener('focus', function() {
+        input.addEventListener('focus', function () {
           this.parentElement?.classList.add('focused');
           this.style.borderColor = '#8b5cf6';
           this.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)';
         });
 
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
           if (!this.value) {
             this.parentElement?.classList.remove('focused');
           }
@@ -826,7 +826,7 @@
         });
 
         // Real-time validation
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
           if (this.validity.valid) {
             this.style.borderColor = '#00f0ff';
           } else if (this.value) {
@@ -938,7 +938,7 @@
      Performance Monitoring
      ========================================== */
   if (window.performance && window.performance.timing) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       setTimeout(() => {
         const perfData = window.performance.timing;
         const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
@@ -974,11 +974,11 @@
         border-radius: 8px;
         font-weight: 600;
       `;
-      skipLink.addEventListener('focus', function() {
+      skipLink.addEventListener('focus', function () {
         this.style.left = '20px';
         this.style.top = '20px';
       });
-      skipLink.addEventListener('blur', function() {
+      skipLink.addEventListener('blur', function () {
         this.style.left = '-9999px';
       });
       document.body.insertBefore(skipLink, document.body.firstChild);
@@ -1075,7 +1075,7 @@
 
     cards.forEach(card => {
       // Add click effect
-      card.addEventListener('click', function(e) {
+      card.addEventListener('click', function (e) {
         // Don't trigger if clicking a link
         if (e.target.tagName === 'A') return;
 
@@ -1108,11 +1108,11 @@
       });
 
       // Add subtle scale on click
-      card.addEventListener('mousedown', function() {
+      card.addEventListener('mousedown', function () {
         this.style.transform = 'scale(0.98)';
       });
 
-      card.addEventListener('mouseup', function() {
+      card.addEventListener('mouseup', function () {
         this.style.transform = '';
       });
     });
@@ -1199,7 +1199,7 @@
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
 
     buttons.forEach(btn => {
-      btn.addEventListener('mousemove', function(e) {
+      btn.addEventListener('mousemove', function (e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
@@ -1210,7 +1210,7 @@
         this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
       });
 
-      btn.addEventListener('mouseleave', function() {
+      btn.addEventListener('mouseleave', function () {
         this.style.transform = '';
       });
     });
@@ -1220,12 +1220,12 @@
     icons.forEach(icon => {
       icon.style.transition = 'all 0.3s ease';
 
-      icon.parentElement?.addEventListener('mouseenter', function() {
+      icon.parentElement?.addEventListener('mouseenter', function () {
         icon.style.transform = 'scale(1.1) rotate(5deg)';
         icon.style.filter = 'drop-shadow(0 8px 24px rgba(0, 180, 216, 0.4))';
       });
 
-      icon.parentElement?.addEventListener('mouseleave', function() {
+      icon.parentElement?.addEventListener('mouseleave', function () {
         icon.style.transform = '';
         icon.style.filter = '';
       });
@@ -1234,12 +1234,12 @@
     // Add tilt effect to process steps
     const processSteps = document.querySelectorAll('.process-step');
     processSteps.forEach(step => {
-      step.addEventListener('mouseenter', function() {
+      step.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-12px) scale(1.03)';
         this.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
       });
 
-      step.addEventListener('mouseleave', function() {
+      step.addEventListener('mouseleave', function () {
         this.style.transform = '';
       });
     });
@@ -1400,7 +1400,7 @@
       card.style.transformStyle = 'preserve-3d';
       card.style.transition = 'transform 0.1s ease-out';
 
-      card.addEventListener('mousemove', function(e) {
+      card.addEventListener('mousemove', function (e) {
         const rect = this.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -1444,7 +1444,7 @@
         shine.style.opacity = '1';
       });
 
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         this.style.transform = '';
         const shine = this.querySelector('.card-shine');
         if (shine) {
@@ -1473,7 +1473,7 @@
   /* ==========================================
      Error Handling
      ========================================== */
-  window.addEventListener('error', function(e) {
+  window.addEventListener('error', function (e) {
     console.warn('ChainSync: Error detected -', e.message);
   }, true);
 
@@ -1889,7 +1889,7 @@
                 gap: 8px;
               ">
                 <span style="font-size: 20px;">${topic.emoji}</span>
-                <span style="font-size: 13px; font-weight: 500;">${topic.title}</span>
+                <span style="font-size: 14px; font-weight: 500;">${topic.title}</span>
               </button>
             `).join('')}
           </div>
@@ -2033,7 +2033,7 @@
               font-weight: 500;
             ">Cancel</button>
           </div>
-          <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">We'll also send you information about ChainSync!</p>
+          <p style="font-size: 14px; color: #6b7280; margin-top: 8px;">We'll also send you information about ChainSync!</p>
         </div>
       `;
 
@@ -2202,7 +2202,7 @@ P.S. We're building ChainSync to help communities respond faster to environmenta
 
     // Auto-resize textarea
     if (chatbotInput) {
-      chatbotInput.addEventListener('input', function() {
+      chatbotInput.addEventListener('input', function () {
         this.style.height = 'auto';
         this.style.height = Math.min(this.scrollHeight, 120) + 'px';
       });
@@ -2276,7 +2276,7 @@ P.S. We're building ChainSync to help communities respond faster to environmenta
             border-radius: 6px;
             padding: 4px 8px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 14px;
             transition: all 0.2s;
             margin-left: auto;
           " title="Copy response">📋</button>
@@ -2327,7 +2327,7 @@ P.S. We're building ChainSync to help communities respond faster to environmenta
       if (sender === 'bot') {
         const feedbackBtns = messageDiv.querySelectorAll('.feedback-btn');
         feedbackBtns.forEach(btn => {
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function () {
             const isPositive = this.getAttribute('data-feedback') === 'positive';
             trackFeedback(isPositive);
 
@@ -2350,7 +2350,7 @@ P.S. We're building ChainSync to help communities respond faster to environmenta
 
         const copyBtn = messageDiv.querySelector('.copy-message-btn');
         if (copyBtn) {
-          copyBtn.addEventListener('click', function() {
+          copyBtn.addEventListener('click', function () {
             const textContent = messageDiv.querySelector('.message-text').textContent;
             navigator.clipboard.writeText(textContent).then(() => {
               this.textContent = '✅';
@@ -2377,7 +2377,7 @@ P.S. We're building ChainSync to help communities respond faster to environmenta
       const promptHTML = `
         <div style="padding: 16px; background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); border-radius: 12px; border: 1px solid #10b981;">
           <h4 style="margin: 0 0 8px 0; font-size: 15px; font-weight: 600; color: #065f46;">Want to learn more?</h4>
-          <p style="margin: 0 0 12px 0; font-size: 13px; color: #047857;">Enter your email to get a personalized demo and early access information!</p>
+          <p style="margin: 0 0 12px 0; font-size: 14px; color: #047857;">Enter your email to get a personalized demo and early access information!</p>
           <input type="email" id="lead-email-input" placeholder="your@email.com" style="
             width: 100%;
             padding: 10px;

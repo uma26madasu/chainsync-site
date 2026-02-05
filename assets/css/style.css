@@ -144,6 +144,26 @@
       transparent 10px,
       var(--stone-light) 10px,
       var(--stone-light) 11px);
+
+  /* Typography Scale */
+  --font-size-xs: 0.8125rem;
+  /* 13px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+  --font-size-5xl: 3rem;
+  /* 48px */
 }
 
 /* ================================================
@@ -169,13 +189,14 @@ html {
 
 body {
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-primary);
   background: var(--bg-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  font-size: var(--font-size-base);
   letter-spacing: -0.005em;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   text-rendering: optimizeLegibility;
@@ -227,10 +248,10 @@ h4 {
 }
 
 p {
-  margin-bottom: 1rem;
-  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
   color: var(--text-secondary);
-  font-size: clamp(1rem, 1.2vw, 1.0625rem);
+  font-size: var(--font-size-base);
   font-weight: 400;
   letter-spacing: 0.002em;
 }
@@ -1238,7 +1259,7 @@ button:focus:not(:focus-visible) {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(6, 182, 212, 0.08) 100%);
   color: var(--electric-primary);
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -3275,7 +3296,7 @@ body::before {
 }
 
 .message-time {
-  font-size: 0.6875rem;
+  font-size: var(--font-size-xs);
   opacity: 0.6;
   margin-top: 4px;
   display: block;
