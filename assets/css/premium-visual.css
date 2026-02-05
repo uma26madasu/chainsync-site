@@ -510,22 +510,25 @@
 
 /* Footer High Contrast */
 footer,
-.footer-brand p,
-.footer-bottom p {
-    color: rgba(255, 255, 255, 0.95) !important;
+footer p,
+.premium-footer,
+.premium-footer p,
+.premium-footer .footer-brand p,
+.premium-footer .footer-bottom p {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
 }
 
-.footer-links h4 {
+.premium-footer .footer-links h4 {
     color: #FFFFFF !important;
 }
 
-.footer-links a {
-    color: rgba(255, 255, 255, 0.75) !important;
+.premium-footer .footer-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
-.footer-links a:hover {
+.premium-footer .footer-links a:hover {
     color: #52B788 !important;
-    /* Forest green accent on hover */
 }
 
 .footer-bottom {
