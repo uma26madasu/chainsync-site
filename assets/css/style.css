@@ -713,6 +713,7 @@ body.has-testing-banner .page-hero {
   letter-spacing: -0.02em;
   color: var(--text-primary);
   animation: fadeInUp 0.8s ease-out;
+  text-wrap: balance;
 }
 
 .hero-highlight {
@@ -1289,6 +1290,7 @@ button:focus:not(:focus-visible) {
   line-height: 1.25;
   letter-spacing: -0.025em;
   color: var(--text-primary);
+  text-wrap: balance;
 }
 
 .section-text {
@@ -1828,6 +1830,14 @@ footer {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px 20px;
+  }
 }
 
 .footer-brand h3 {
