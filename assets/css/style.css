@@ -219,7 +219,7 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.025em;
@@ -227,21 +227,21 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: -0.015em;
 }
 
 h4 {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   font-weight: 500;
   color: var(--text-secondary);
   letter-spacing: -0.01em;
@@ -706,7 +706,7 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 800;
   margin-bottom: 24px;
   line-height: 1.15;
@@ -725,7 +725,7 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
   max-width: 700px;
   margin: 0 auto 48px;
   color: var(--text-secondary);
@@ -1234,7 +1234,7 @@ button:focus:not(:focus-visible) {
 }
 
 .page-title {
-  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 700;
   color: var(--forest-primary);
   margin-bottom: 24px;
@@ -1243,7 +1243,7 @@ button:focus:not(:focus-visible) {
 }
 
 .page-subtitle {
-  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   color: var(--graphite);
   max-width: 850px;
   margin: 0 auto;
@@ -1284,7 +1284,7 @@ button:focus:not(:focus-visible) {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   margin-bottom: 32px;
   line-height: 1.25;
@@ -1294,7 +1294,7 @@ button:focus:not(:focus-visible) {
 }
 
 .section-text {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 24px;
@@ -1572,7 +1572,7 @@ button:focus:not(:focus-visible) {
 
 .stat-number {
   display: block;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #6366F1 !important;
   margin-bottom: 12px;
@@ -1763,7 +1763,7 @@ button:focus:not(:focus-visible) {
 .tech-cta h2 {
   color: white;
   margin-bottom: 24px;
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   text-shadow: 0 2px 20px rgba(27, 79, 114, 0.2);
@@ -1772,7 +1772,7 @@ button:focus:not(:focus-visible) {
 .cta-section p,
 .demo-cta p,
 .tech-cta p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 48px;
   max-width: 680px;
@@ -1841,7 +1841,7 @@ footer {
 }
 
 .footer-brand h3 {
-  font-size: 1.85rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--ocean-light);
