@@ -706,15 +706,14 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.2rem);
   font-weight: 800;
   margin-bottom: 24px;
   line-height: 1.2;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
   animation: fadeInUp 0.8s ease-out;
   text-wrap: balance;
-  word-spacing: 0.1em;
 }
 
 .hero-highlight {
