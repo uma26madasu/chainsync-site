@@ -706,14 +706,15 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 24px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: var(--text-primary);
   animation: fadeInUp 0.8s ease-out;
   text-wrap: balance;
+  word-spacing: 0.1em;
 }
 
 .hero-highlight {
@@ -721,7 +722,7 @@ body.has-testing-banner .page-hero {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  display: block;
+  display: inline;
 }
 
 .hero-subtitle {
