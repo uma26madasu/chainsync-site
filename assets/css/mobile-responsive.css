@@ -120,9 +120,12 @@
     }
 
     .nav-cta {
-        padding: 14px var(--space-3);
+        padding: 12px 32px;
         min-height: 48px;
         font-size: var(--fs-body);
+        background: #2d2d2d;
+        color: #ffffff !important;
+        border-radius: 100px;
     }
 
     /* Touch Target Optimization - Minimum 44x44px */

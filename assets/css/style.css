@@ -2399,12 +2399,13 @@ body.use-cases-page .process-node {
   .nav-links .nav-cta {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: #000000 !important;
-    padding: 0;
-    gap: 0;
+    color: #ffffff !important;
+    background: #2d2d2d;
+    padding: 12px 32px;
+    border-radius: 100px;
     font-size: 1rem;
-    border-radius: 0;
   }
 
   .nav-links.mobile-open {
