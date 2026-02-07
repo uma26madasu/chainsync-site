@@ -233,8 +233,8 @@ section.snap-section {
     transform: translateY(10px);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform, opacity;
-    padding-bottom: 5px;
-    /* Prevent descender clipping */
+    vertical-align: baseline;
+    line-height: inherit;
 }
 
 h1.split-text,
