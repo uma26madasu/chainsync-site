@@ -335,6 +335,11 @@ h6 {
   .faq-summary{font-size:var(--fs-body);font-weight:700;color:var(--text-primary);cursor:pointer;list-style:none}
   .faq-paragraph{color:var(--text-secondary-soft);line-height:1.7;font-size:0.95rem;margin-top:var(--space-2);padding-left:0}
   .feature-list{font-size:0.9375rem;color:var(--text-primary);line-height:1.8;font-weight:500}
+  /* Stat variants */
+  .stat-number--blue{color:#0284c7;margin-bottom:var(--space-2)}
+  .stat-number--green{color:#16a34a;margin-bottom:var(--space-2)}
+  .stat-number--amber{color:#F59E0B;margin-bottom:var(--space-2)}
+  .stat-number--white{color:var(--white);margin-bottom:var(--space-2)}
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
