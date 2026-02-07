@@ -791,7 +791,7 @@ body.has-testing-banner .page-hero {
 
 .hero-content {
   text-align: center;
-  max-width: 1020px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -805,6 +805,9 @@ body.has-testing-banner .page-hero {
   color: var(--clr-primary);
   animation: fadeInUp 0.8s ease-out;
   text-wrap: balance;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-explainer {
