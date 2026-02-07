@@ -701,7 +701,7 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: 0 var(--space-4) var(--space-6);
+  padding: var(--space-2) var(--space-4) var(--space-6);
 }
 
 .hero-bg {
@@ -807,6 +807,7 @@ body.has-testing-banner .page-hero {
 .hero-title {
   font-size: 36px;
   font-weight: var(--fw-hero);
+  margin-top: 0;
   margin-bottom: var(--space-2);
   line-height: 1.2;
   letter-spacing: -0.02em;
