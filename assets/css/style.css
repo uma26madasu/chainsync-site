@@ -862,7 +862,8 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: 80px 32px 20px;
+  padding: 120px 32px 40px;
+  /* Increased top padding to avoid nav overlap */
 }
 
 .hero-bg {
@@ -877,6 +878,7 @@ body.has-testing-banner .page-hero {
     radial-gradient(circle at 40% 60%, rgba(82, 183, 136, 0.05) 0px, transparent 50%);
   opacity: 1;
   z-index: 0;
+  /* Ensure background stays behind text */
   animation: gradientShift 15s ease infinite;
 }
 
@@ -968,11 +970,19 @@ body.has-testing-banner .page-hero {
 .hero-title {
   font-size: clamp(2.5rem, 4.5vw, 3.5rem);
   font-weight: 800;
-  margin-bottom: 24px;
-  line-height: 1.15;
+  margin-bottom: 32px;
+  line-height: 1.3;
+  /* Fix vertical truncation */
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Text shadow for legibility */
   animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+  /* Ensure text sits above background elements */
+  padding-top: 10px;
+  /* Slight buffer for ascenders */
 }
 
 .hero-highlight {
