@@ -701,7 +701,7 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: var(--space-4) var(--space-4) var(--space-6);
+  padding: 0 var(--space-4) var(--space-6);
 }
 
 .hero-bg {
