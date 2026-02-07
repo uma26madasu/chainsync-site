@@ -145,6 +145,51 @@
       var(--stone-light) 10px,
       var(--stone-light) 11px);
 
+  /* ---- Unified Typography & Spacing System ---- */
+
+  /* Font: Inter only */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Font weights: 400 body, 500 UI/nav, 600 headings, 700 hero only */
+  --fw-regular: 400;
+  --fw-ui: 500;
+  --fw-heading: 600;
+  --fw-hero: 700;
+
+  /* Font sizes */
+  --fs-hero-desktop: 44px;
+  --fs-hero-mobile: 32px;
+  --fs-h2-desktop: 32px;
+  --fs-h2-mobile: 26px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-body-large: 18px;
+  --fs-body: 16px;
+  --fs-ui-small: 14px;
+  --fs-caption: 13px;
+  --fs-nav: 15px;
+  --fs-button: 16px;
+  --fs-stats-number: 40px;
+  --fs-stats-label: 14px;
+
+  /* Compact spacing scale */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 20px;
+  --space-4: 28px;
+  --space-5: 36px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* Layout widths */
+  --max-content-width: 1200px;
+  --max-text-width: 720px;
+
+  /* Text colors */
+  --clr-primary: #111111;
+  --clr-secondary: #555555;
+  --clr-muted: #777777;
+
   /* Typography Scale */
   --font-size-xs: 0.875rem;
   /* 14px */
@@ -266,6 +311,174 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* ================================================
+   Utility Typography Classes
+   ================================================ */
+.kicker {
+  font-size: var(--fs-ui-small);
+  font-weight: var(--fw-heading);
+  color: var(--success);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.stat-number--blue {
+  color: #0284c7;
+  margin-bottom: var(--space-1);
+}
+
+.stat-number--green {
+  color: #16a34a;
+  margin-bottom: var(--space-1);
+}
+
+.stat-number--amber {
+  color: #F59E0B;
+  margin-bottom: var(--space-1);
+}
+
+.stat-number--white {
+  color: var(--white);
+  margin-bottom: var(--space-1);
+}
+
+.stat-label--red {
+  color: #EF4444;
+}
+
+.stat-label--amber {
+  color: #F59E0B;
+}
+
+.stat-label--purple {
+  color: #8B5CF6;
+}
+
+.muted-small {
+  font-size: var(--fs-ui-small);
+  color: var(--clr-muted);
+  line-height: 1.6;
+}
+
+.monospace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: var(--fs-ui-small);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-2);
+}
+
+.intro-large {
+  font-size: var(--fs-body-large);
+}
+
+.feature-list {
+  font-size: var(--fs-body);
+  color: var(--clr-primary);
+  line-height: 1.8;
+  font-weight: var(--fw-ui);
+}
+
+.emoji-xxl {
+  font-size: 3rem;
+  display: inline-block;
+  line-height: 1;
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.lead-strong {
+  font-weight: var(--fw-heading);
+  font-size: var(--fs-body-large);
+  line-height: 1.4;
+}
+
+.meta-white {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--fs-ui-small);
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  color: #94a3b8;
+  margin: 0;
+}
+
+.list-meta {
+  font-size: var(--fs-ui-small);
+  color: var(--clr-primary);
+  line-height: 1.8;
+  font-weight: var(--fw-ui);
+}
+
+.icon-lg {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+  line-height: 1;
+}
+
+.card-title {
+  font-size: var(--fs-body-large);
+  font-weight: var(--fw-heading);
+  color: var(--clr-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  color: var(--clr-secondary);
+  line-height: 1.6;
+  font-size: var(--fs-body);
+  margin-bottom: var(--space-2);
+}
+
+.stat-desc {
+  color: #cbd5e1;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.faq-summary {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-hero);
+  color: var(--clr-primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-paragraph {
+  color: var(--clr-secondary);
+  line-height: 1.6;
+  font-size: var(--fs-body);
+  margin-top: var(--space-2);
+  padding-left: 0;
+}
+
+/* ================================================
+   Goal Cards
+   ================================================ */
+.goal-card {
+  border-radius: var(--space-3);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.goal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-2);
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* ================================================
