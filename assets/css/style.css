@@ -7,41 +7,37 @@
    Environmental Color Palette - Nature-Inspired
    ================================================ */
 :root {
-  /* Primary - Deep Ocean Blue (Water Protection) */
-  --ocean-primary: #006994;
-  --ocean-deep: #004E6F;
-  --ocean-medium: #0077B6;
-  --ocean-light: #0096C7;
-  --ocean-pale: #90E0EF;
+  /* Agentic Dark Mode Palette */
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-dark: #020617;
+  --bg-card: rgba(15, 23, 42, 0.6);
 
-  /* Secondary - Forest Green (Environmental Health) */
-  --forest-primary: #2D6A4F;
-  --forest-deep: #1B4332;
-  --forest-medium: #40916C;
-  --forest-light: #52B788;
-  --forest-pale: #95D5B2;
+  /* Emerald Accents */
+  --ocean-primary: #10B981;
+  --ocean-deep: #059669;
+  --ocean-medium: #10B981;
+  --ocean-light: #34D399;
+  --ocean-pale: rgba(16, 185, 129, 0.1);
 
-  /* Accent - Earth Tones (Natural Action) */
-  --earth-primary: #D4A574;
-  --earth-deep: #B8860B;
-  --earth-warm: #E9C46A;
-  --earth-light: #F4E1C1;
-  --earth-pale: #FAF3E0;
+  /* Text Colors - High Contrast for Dark Mode */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
+  --text-on-dark: #F8FAFC;
 
-  /* Success - Living Green */
-  --success-primary: #52B788;
-  --success-deep: #40916C;
-  --success-light: #74C69D;
+  /* Glassmorphism System */
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 
-  /* Warning - Amber Alert */
-  --warning-primary: #F4A261;
-  --warning-light: #F8B878;
+  /* Primary Glow */
+  --glow-emerald: 0 0 20px rgba(16, 185, 129, 0.2);
+  --glow-emerald-strong: 0 0 40px rgba(16, 185, 129, 0.4);
 
-  /* Danger - Alert Red */
-  --danger-primary: #E76F51;
-  --danger-deep: #D62828;
-
-  /* Modern Neutrals - Clean & Natural */
+  /* Foundation variables adjustment */
   --white: #FFFFFF;
   --snow: #F8FAFC;
   --cloud: #F1F5F9;
@@ -52,7 +48,7 @@
   --slate-dark: #475569;
   --charcoal: #334155;
   --carbon: #1E293B;
-  --midnight: #0F172A;
+  --midnight: #020617;
 
   /* Legacy Aliases (backward compatibility) */
   --electric-primary: var(--ocean-primary);
@@ -142,13 +138,126 @@
   --pattern-waves: repeating-linear-gradient(45deg,
       transparent,
       transparent 10px,
-      var(--stone-light) 10px,
-      var(--stone-light) 11px);
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(255, 255, 255, 0.05) 11px);
+
+  /* ================================================
+   Bento Grid System
+   ================================================ */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    gap: 24px;
+  }
+
+  .bento-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .bento-large {
+    grid-column: span 12;
+  }
+
+  .bento-medium {
+    grid-column: span 6;
+  }
+
+  @media (min-width: 1024px) {
+    .bento-large {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
+
+    .bento-medium {
+      grid-column: span 6;
+    }
+  }
+
+  .bento-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .bento-icon {
+    font-size: 1.5rem;
+  }
+
+  .bento-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .bento-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .bento-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bento-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+  }
+
+  .bento-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--ocean-primary);
+  }
+
+  .bento-bg-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
 
   /* ---- Unified Typography & Spacing System ---- */
 
   /* Font: Inter only */
-  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-base: 'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
 
   /* Font weights: 400 body, 500 UI/nav, 600 headings, 700 hero only */
   --fw-regular: 400;
@@ -688,34 +797,38 @@ body.has-testing-banner .page-hero {
 }
 
 /* ================================================
-   Navigation - Natural Glassmorphism
+   Navigation - Floating Pill Glassmorphism
    ================================================ */
 #navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 90%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(173, 181, 189, 0.2);
-  transition: var(--transition-smooth);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-smooth);
+  padding: 0 12px;
 }
 
 #navbar.scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--shadow-md);
-  border-bottom-color: var(--stone-light);
+  padding: 0 8px;
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(16, 185, 129, 0.3);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 32px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 12px 24px;
+  gap: 40px;
 }
 
 .logo {
@@ -789,12 +902,14 @@ body.has-testing-banner .page-hero {
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--ocean-blue);
+  color: var(--ocean-primary);
 }
 
 .nav-links a:hover::before,
 .nav-links a.active::before {
   width: 100%;
+  background: var(--ocean-primary);
+  box-shadow: var(--glow-emerald);
 }
 
 .nav-cta {
@@ -859,12 +974,11 @@ body.has-testing-banner .page-hero {
   min-height: auto;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
+  background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
   position: relative;
   overflow: hidden;
-  padding: 120px 32px 40px;
-  /* Increased top padding to avoid nav overlap */
-
+  padding: 180px 32px 60px;
+  /* Adjusted for floating nav and spacing */
 }
 
 .hero-bg {
@@ -874,12 +988,10 @@ body.has-testing-banner .page-hero {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(0, 105, 148, 0.08) 0px, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(45, 106, 79, 0.06) 0px, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(82, 183, 136, 0.05) 0px, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.05) 0px, transparent 50%);
   opacity: 1;
   z-index: 0;
-  /* Ensure background stays behind text */
   animation: gradientShift 15s ease infinite;
 }
 
@@ -972,21 +1084,22 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3.75rem);
-  /* text-4xl to text-6xl approx */
-  font-weight: 700;
-  color: var(--midnight);
-  /* Deep Slate / Navy */
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
   margin: 0 auto 32px auto;
-  max-width: 600px;
+  max-width: 800px;
   line-height: 1.2;
-  letter-spacing: normal;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
+  /* Emerald Glow */
   animation: fadeInUp 0.8s ease-out;
   position: relative;
   z-index: 2;
   padding-top: 10px;
   text-align: center;
+  overflow: visible;
+  /* Ensure no clipping */
 }
 
 .hero-highlight {
