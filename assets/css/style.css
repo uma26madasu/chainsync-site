@@ -724,9 +724,13 @@ a,
   left: 0;
   right: 0;
   z-index: 1100;
-  background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
-  color: white;
-  padding: 12px 24px;
+  background: rgba(2, 6, 23, 0.95);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  color: #10B981;
+  font-family: 'Space Grotesk', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 24px;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
@@ -1014,6 +1018,7 @@ body.has-testing-banner .page-hero {
   opacity: 0.3;
   animation: floatSmooth 20s infinite ease-in-out;
   border-radius: 50%;
+  /* Kept absolute as they are background decorations, not content */
 }
 
 .shape-1 {
@@ -1084,22 +1089,22 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
   color: var(--text-primary);
   margin: 0 auto 32px auto;
-  max-width: 800px;
+  max-width: 900px;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
+  white-space: normal;
+  word-spacing: normal;
+  overflow: visible;
   text-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
-  /* Emerald Glow */
   animation: fadeInUp 0.8s ease-out;
   position: relative;
   z-index: 2;
   padding-top: 10px;
   text-align: center;
-  overflow: visible;
-  /* Ensure no clipping */
 }
 
 .hero-highlight {
