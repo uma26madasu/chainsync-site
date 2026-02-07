@@ -323,6 +323,17 @@ h6 {
 
   /* Ensure consistent buttons and card spacing */
   .cta-buttons a{margin-right:16px}
+
+  /* ------------------ Utility Typography Classes ------------------ */
+  .kicker{font-size:var(--fs-ui-small);font-weight:var(--fw-heading);color:var(--success);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:var(--space-2)}
+  .stat-number{font-weight:var(--fw-heading);font-size:var(--fs-stats-number);line-height:1;margin-bottom:var(--space-1)}
+  .stat-label{font-size:var(--fs-stats-label);color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:var(--space-2)}
+  .component-title{font-size:var(--fs-h4);font-weight:var(--fw-heading);color:var(--text-primary);margin-bottom:var(--space-2);letter-spacing:-0.01em}
+  .component-desc{font-size:var(--fs-body);color:var(--text-secondary-soft);line-height:1.7;margin-bottom:var(--space-3)}
+  .muted-small{font-size:var(--fs-ui-small);color:var(--text-muted);line-height:1.6}
+  .monospace{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;font-size:var(--fs-ui-small);color:rgba(255,255,255,0.8);margin-bottom:var(--space-2)}
+  .faq-summary{font-size:var(--fs-body);font-weight:700;color:var(--text-primary);cursor:pointer;list-style:none}
+  .faq-paragraph{color:var(--text-secondary-soft);line-height:1.7;font-size:0.95rem;margin-top:var(--space-2);padding-left:0}
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
