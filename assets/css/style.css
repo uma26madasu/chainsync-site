@@ -310,6 +310,7 @@ h6 {
   /* Stats */
   .stat-number{font-weight:600;font-size:var(--fs-stats-number)}
   .stat-label{font-size:var(--fs-stats-label);color:var(--text-muted)}
+  .stat-desc{color:#cbd5e1;font-size:1rem;line-height:1.6;margin:0}
 
   /* Utility: ensure text blocks don't overflow */
   .hero-title{word-break:keep-all}
@@ -335,11 +336,24 @@ h6 {
   .faq-summary{font-size:var(--fs-body);font-weight:700;color:var(--text-primary);cursor:pointer;list-style:none}
   .faq-paragraph{color:var(--text-secondary-soft);line-height:1.7;font-size:0.95rem;margin-top:var(--space-2);padding-left:0}
   .feature-list{font-size:0.9375rem;color:var(--text-primary);line-height:1.8;font-weight:500}
+  .emoji-xxl{font-size:3rem;display:inline-block;line-height:1}
+  /* Dark background helpers */
+  .text-white{color:var(--white)}
+  .section-title--white{color:var(--white)}
+  .section-text--muted-white{color:#94a3b8}
+  .lead-strong{font-weight:600;font-size:1.15rem;line-height:1.4}
+  .meta-white{color:rgba(255,255,255,0.85);font-size:0.9rem}
+  .caption{font-size:0.8125rem;color:#94a3b8;margin:0}
+  .list-meta{font-size:var(--fs-ui-small);color:#0f172a;line-height:1.8;font-weight:500}
   /* Stat variants */
   .stat-number--blue{color:#0284c7;margin-bottom:var(--space-2)}
   .stat-number--green{color:#16a34a;margin-bottom:var(--space-2)}
   .stat-number--amber{color:#F59E0B;margin-bottom:var(--space-2)}
   .stat-number--white{color:var(--white);margin-bottom:var(--space-2)}
+  /* Stat label color variants */
+  .stat-label--red{color:#EF4444}
+  .stat-label--amber{color:#F59E0B}
+  .stat-label--purple{color:#8B5CF6}
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
