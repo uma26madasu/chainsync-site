@@ -185,14 +185,14 @@
   --fs-stats-number: 40px;
   --fs-stats-label: 14px;
 
-  /* 8px spacing scale */
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
-  --space-4: 32px;
-  --space-5: 48px;
-  --space-6: 64px;
-  --space-7: 80px;
+  /* Compact spacing scale */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 20px;
+  --space-4: 28px;
+  --space-5: 36px;
+  --space-6: 48px;
+  --space-7: 64px;
 
   /* Layout widths */
   --max-content-width: 1200px;
@@ -422,14 +422,14 @@ a,
 .grid-2 {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 48px;
+  gap: var(--space-4);
   align-items: center;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: var(--space-3);
 }
 
 /* Organic Wave Dividers */
@@ -701,7 +701,7 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: var(--space-2) var(--space-4) var(--space-6);
+  padding: var(--space-2) var(--space-4) var(--space-5);
 }
 
 .hero-bg {
@@ -836,7 +836,7 @@ body.has-testing-banner .page-hero {
 
 .hero-components {
   max-width: 900px;
-  margin: 0 auto var(--space-4);
+  margin: 0 auto var(--space-3);
 }
 
 .hero-section-label {
@@ -845,13 +845,13 @@ body.has-testing-banner .page-hero {
   color: var(--ocean-primary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .component-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .component-card {
@@ -1260,7 +1260,7 @@ button:focus:not(:focus-visible) {
    Page Hero (Internal Pages) - Sky & Light
    ================================================ */
 .page-hero {
-  padding: 40px 32px 20px;
+  padding: var(--space-3) var(--space-4) var(--space-2);
   background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
   position: relative;
   overflow: hidden;
@@ -1653,8 +1653,8 @@ button:focus:not(:focus-visible) {
 .solution-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--space-4);
+  gap: var(--space-3);
+  margin-top: var(--space-3);
 }
 
 .stat-item {
@@ -1733,7 +1733,7 @@ button:focus:not(:focus-visible) {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-3);
-  margin: var(--space-5) 0;
+  margin: var(--space-4) 0;
   position: relative;
 }
 
@@ -1837,7 +1837,7 @@ button:focus:not(:focus-visible) {
   background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
   color: white;
   text-align: center;
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-5) var(--space-4);
   position: relative;
   overflow: hidden;
 }
@@ -1922,25 +1922,25 @@ button:focus:not(:focus-visible) {
 footer {
   background: var(--night-sky);
   color: rgba(255, 255, 255, 0.75);
-  padding: var(--space-6) 0 var(--space-4);
+  padding: var(--space-5) 0 var(--space-3);
   border-top: 2px solid rgba(82, 183, 136, 0.2);
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: var(--space-4);
+  gap: var(--space-3);
   max-width: var(--max-content-width);
   margin: 0 auto;
-  padding: 0 var(--space-4) var(--space-3);
+  padding: 0 var(--space-4) var(--space-2);
 }
 
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 0 20px 20px;
+    gap: var(--space-3);
+    padding: 0 var(--space-3) var(--space-2);
   }
 }
 
@@ -2094,10 +2094,10 @@ body.use-cases-page .process-node {
 }
 
 .scenario-content {
-  padding: 60px;
+  padding: var(--space-5);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  gap: var(--space-5);
   align-items: start;
 }
 
@@ -2270,7 +2270,7 @@ body.use-cases-page .process-node {
   }
 
   .hero {
-    padding: 60px 24px 40px;
+    padding: var(--space-5) var(--space-3) var(--space-4);
     min-height: auto;
   }
 
@@ -2292,13 +2292,13 @@ body.use-cases-page .process-node {
   .feature-card,
   .tech-card,
   .step-card {
-    padding: 32px 24px;
+    padding: var(--space-3) var(--space-3);
   }
 
   .cta-section,
   .demo-cta,
   .tech-cta {
-    padding: 80px 24px;
+    padding: var(--space-5) var(--space-3);
   }
 
   .cta-buttons {
@@ -2312,11 +2312,11 @@ body.use-cases-page .process-node {
   }
 
   .scenario-header {
-    padding: 32px 24px;
+    padding: var(--space-3) var(--space-3);
   }
 
   .scenario-content {
-    padding: 32px 24px;
+    padding: var(--space-3) var(--space-3);
   }
 }
 
