@@ -610,11 +610,14 @@ a,
    Testing Banner
    ================================================ */
 .testing-banner {
-  position: fixed;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1100;
+  z-index: 50;
+  /* Requested z-index */
   background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
   color: white;
   padding: 12px 24px;
@@ -858,7 +861,11 @@ body.has-testing-banner .page-hero {
 .hero {
   min-height: auto;
   display: flex;
+  flex-direction: column;
+  /* Requested column layout */
   align-items: center;
+  text-align: center;
+  /* Requested text alignment */
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
@@ -966,7 +973,8 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  /* Updated clamp */
   font-weight: 800;
   margin-top: 0;
   margin-bottom: var(--space-2);
@@ -981,6 +989,8 @@ body.has-testing-banner .page-hero {
   overflow: visible;
   white-space: normal;
   word-spacing: normal;
+  max-width: 100%;
+  /* Remove constraining max-width */
 }
 
 .hero-explainer {
