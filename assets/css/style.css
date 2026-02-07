@@ -348,6 +348,11 @@ h6 {
   .icon-lg{font-size:2.5rem;margin-bottom:16px;line-height:1}
   .card-title{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:16px;letter-spacing:-0.01em}
   .card-desc{color:var(--text-secondary);line-height:1.7;font-size:0.95rem;margin-bottom:20px}
+  /* Section utilities */
+  .section--lg{padding-top:100px;padding-bottom:100px}
+  .section--white{background:white}
+  .container--narrow{max-width:1200px;margin:0 auto;padding:0 24px}
+  .mb-6{margin-bottom:var(--space-6)}
   /* Stat variants */
   .stat-number--blue{color:#0284c7;margin-bottom:var(--space-2)}
   .stat-number--green{color:#16a34a;margin-bottom:var(--space-2)}
