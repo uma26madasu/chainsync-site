@@ -972,13 +972,15 @@ body.has-testing-banner .page-hero {
 }
 
 .hero-title {
-  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-size: clamp(2rem, 5vw, 3.75rem);
   /* text-4xl to text-6xl approx */
-  font-weight: 800;
-  margin-bottom: 32px;
+  font-weight: 700;
+  color: var(--midnight);
+  /* Deep Slate / Navy */
+  margin: 0 auto 32px auto;
+  max-width: 600px;
   line-height: 1.2;
   letter-spacing: normal;
-  color: var(--text-primary);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.8s ease-out;
   position: relative;
