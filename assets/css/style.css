@@ -146,8 +146,8 @@
       var(--stone-light) 11px);
 
   /* Typography Scale */
-  --font-size-xs: 0.8125rem;
-  /* 13px */
+  --font-size-xs: 0.875rem;
+  /* 14px */
   --font-size-sm: 0.875rem;
   /* 14px */
   --font-size-base: 1rem;
@@ -272,10 +272,66 @@ img {
    Layout Utilities
    ================================================ */
 .container {
-  max-width: 1380px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;
+}
+
+.premium-section {
+  padding: 100px 0;
+  background: var(--bg-primary);
+}
+
+.premium-feature-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--silver);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-smooth);
+}
+
+.premium-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 105, 148, 0.15);
+  border-color: var(--ocean-light);
+}
+
+.premium-card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.premium-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.premium-card-text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.premium-card-footer {
+  padding: 20px;
+  border-radius: 16px;
 }
 
 .text-center {
@@ -392,7 +448,7 @@ body.has-testing-banner #navbar {
 }
 
 body.has-testing-banner .hero {
-  padding-top: 224px;
+  padding-top: 180px;
 }
 
 body.has-testing-banner .page-hero {
@@ -531,34 +587,24 @@ body.has-testing-banner .page-hero {
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 32px;
   gap: 8px;
-  background: var(--gradient-ocean);
+  background: var(--midnight);
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 105, 148, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
   color: white !important;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 0.95rem;
   line-height: 1.2;
-  letter-spacing: 0.01em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: none;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
 }
 
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+/* Removed complex ::before hover effect */
 
 .nav-cta::after {
   content: '→';
@@ -567,14 +613,15 @@ body.has-testing-banner .page-hero {
 }
 
 .nav-cta:hover {
-  background: linear-gradient(135deg, #0077B6 0%, #00A8CC 100%);
-  box-shadow: 0 4px 16px rgba(0, 105, 148, 0.3);
+  background: var(--midnight);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
   color: white !important;
   transform: translateY(-2px);
+  filter: brightness(1.2);
 }
 
 .nav-cta:hover::before {
-  opacity: 1;
+  opacity: 0;
 }
 
 .nav-cta:hover::after {
@@ -602,7 +649,7 @@ body.has-testing-banner .page-hero {
   background: linear-gradient(135deg, #F0F7FA 0%, #FFFFFF 50%, #F8FCFD 100%);
   position: relative;
   overflow: hidden;
-  padding: 80px 32px 40px;
+  padding: 80px 32px 20px;
 }
 
 .hero-bg {
@@ -726,7 +773,7 @@ body.has-testing-banner .page-hero {
 .hero-subtitle {
   font-size: clamp(1.125rem, 1.5vw, 1.25rem);
   max-width: 700px;
-  margin: 0 auto 48px;
+  margin: 0 auto 32px;
   color: var(--text-secondary);
   line-height: 1.7;
   font-weight: 400;

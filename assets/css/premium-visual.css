@@ -311,33 +311,7 @@
 /* ================================================
    BUTTON ENHANCEMENTS
    ================================================ */
-.nav-cta {
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 105, 148, 0.3);
-}
-
-.nav-cta::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.nav-cta:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.nav-cta:active {
-    transform: translateY(-1px) scale(0.98);
-}
+/* .nav-cta styles removed to enforce simple pill design */
 
 /* ================================================
    HERO STATUS BOX ENHANCEMENT
