@@ -492,7 +492,7 @@ img {
 }
 
 .premium-section {
-  padding: 100px 0;
+  padding: var(--space-6) 0;
   background: var(--bg-primary);
 }
 
@@ -552,7 +552,7 @@ img {
 }
 
 section {
-  padding: 60px 0;
+  padding: var(--space-6) 0;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-fluid);
@@ -961,18 +961,23 @@ body.has-testing-banner .page-hero {
 
 .hero-content {
   text-align: center;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
-  font-weight: 800;
-  margin-bottom: 24px;
+  font-size: 36px;
+  font-weight: var(--fw-hero);
+  margin-top: 0;
+  margin-bottom: var(--space-2);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   animation: fadeInUp 0.8s ease-out;
+  text-wrap: balance;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-explainer {
@@ -1145,13 +1150,6 @@ body.has-testing-banner .page-hero {
 .tech-card:hover,
 .step-card:hover {
   transform: translateY(-6px);
-}
-
-/* Smooth button transformations */
-.btn-primary,
-.btn-secondary,
-.nav-cta {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
@@ -1393,19 +1391,7 @@ img:hover {
   }
 }
 
-/* Smooth color transitions for all interactive elements */
-a,
-button,
-.btn-primary,
-.btn-secondary,
-.nav-cta {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-/* Page transition smoothness */
-* {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* Focus states for accessibility with smooth transitions */
 a:focus,
@@ -1851,7 +1837,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .features-section {
   background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
-  padding: 10px 0;
+  padding: var(--space-6) 0;
   position: relative;
   overflow: hidden;
 }
@@ -1878,7 +1864,7 @@ button:focus:not(:focus-visible) {
    ================================================ */
 .how-it-works-section {
   background: white;
-  padding: 10px 0;
+  padding: var(--space-6) 0;
 }
 
 .process-flow {
@@ -2050,9 +2036,9 @@ button:focus:not(:focus-visible) {
 .cta-section .btn-primary,
 .demo-cta .btn-primary,
 .tech-cta .btn-primary {
-  background: var(--gradient-aurora);
+  background: #2d2d2d;
   color: white;
-  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3), 0 0 32px rgba(236, 72, 153, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .cta-section .btn-secondary,
@@ -2170,7 +2156,7 @@ footer {
    ================================================ */
 .use-cases-section {
   background: white;
-  padding: 10px 0;
+  padding: var(--space-6) 0;
   min-height: auto;
 }
 
@@ -2240,10 +2226,10 @@ body.use-cases-page .process-node {
 }
 
 .scenario-content {
-  padding: 60px;
+  padding: var(--space-6);
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  gap: var(--space-6);
   align-items: start;
 }
 
@@ -2326,7 +2312,7 @@ body.use-cases-page .process-node {
 /* Tablet */
 @media (max-width: 992px) {
   section {
-    padding: 80px 0;
+    padding: var(--space-6) 0;
   }
 
   .grid-2,
@@ -2417,7 +2403,7 @@ body.use-cases-page .process-node {
   }
 
   .hero {
-    padding: 60px 24px 40px;
+    padding: var(--space-5) var(--space-3) var(--space-4);
     min-height: auto;
   }
 
@@ -2433,7 +2419,7 @@ body.use-cases-page .process-node {
   }
 
   section {
-    padding: 60px 0;
+    padding: var(--space-6) 0;
   }
 
   .feature-card,
@@ -2445,7 +2431,7 @@ body.use-cases-page .process-node {
   .cta-section,
   .demo-cta,
   .tech-cta {
-    padding: 80px 24px;
+    padding: var(--space-5) var(--space-3);
   }
 
   .cta-buttons {
@@ -2921,15 +2907,7 @@ footer::before {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Neon glow on scroll */
-body.scrolling-down .hero-title,
-body.scrolling-down .page-title {
-  text-shadow:
-    0 0 10px rgba(0, 180, 216, 0.5),
-    0 0 20px rgba(0, 180, 216, 0.3),
-    0 0 30px rgba(0, 180, 216, 0.2);
-  animation: neonPulse 2s ease-in-out infinite;
-}
+/* No scroll glow effects */
 
 @keyframes neonPulse {
 
@@ -3049,13 +3027,6 @@ section:hover::before {
   }
 }
 
-/* Parallax depth layers */
-.hero-title,
-.hero-subtitle,
-.hero-actions {
-  transform: translateZ(0);
-  will-change: transform;
-}
 
 /* Liquid morphing effect */
 @keyframes liquidMorph {
