@@ -980,8 +980,8 @@ body.has-testing-banner .page-hero {
   font-weight: 800;
   margin-top: 0;
   margin-bottom: var(--space-2);
-  line-height: 1.2;
-  /* Explicitly set to 1.2 */
+  line-height: 1.25;
+  /* Increased line-height */
   letter-spacing: normal;
   color: var(--text-primary);
   animation: fadeInUp 0.8s ease-out;
@@ -994,9 +994,9 @@ body.has-testing-banner .page-hero {
   word-spacing: normal;
   max-width: 100%;
   height: auto;
-  /* Ensure height is auto */
   max-height: none;
-  /* remove any height constraints */
+  padding-bottom: 8px;
+  /* Added padding for descenders */
 }
 
 
