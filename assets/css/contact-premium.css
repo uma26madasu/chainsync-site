@@ -232,6 +232,45 @@
 
 @media (max-width: 768px) {
     .contact-section {
-        padding: 40px 20px;
+        padding: 40px 0;
+    }
+
+    .contact-content {
+        border-radius: 12px;
+        margin: 0;
+    }
+
+    .contact-info {
+        padding: 28px 20px;
+    }
+
+    .form-container {
+        padding: 28px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 20px 16px;
+    }
+
+    .form-container {
+        padding: 20px 16px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.25rem;
+    }
+
+    .form-container h3 {
+        font-size: 1.15rem;
     }
 }

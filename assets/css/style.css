@@ -2378,48 +2378,7 @@ body.use-cases-page .process-node {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 20px 32px;
-    box-shadow: var(--shadow-xl);
-    gap: 16px;
-    border-top: 2px solid rgba(82, 183, 136, 0.3);
-    align-items: center;
-  }
-
-  .nav-links a {
-    text-align: center;
-    color: var(--ocean-blue) !important;
-    font-weight: 500;
-    font-size: 1.1rem;
-  }
-
-  .nav-links a.active {
-    color: var(--emerald-primary) !important;
-  }
-
-  .nav-links .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff !important;
-    background: #2d2d2d;
-    padding: 12px 32px;
-    border-radius: 100px;
-    font-size: 1rem;
-  }
-
-  .nav-links.mobile-open {
-    display: flex;
-  }
+  /* Nav mobile styles handled by mobile-responsive.css */
 
   .mobile-menu-btn {
     display: block;
