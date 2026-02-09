@@ -62,7 +62,7 @@ img, svg, video, iframe {
 
     /* ---- Hero Section ---- */
     .hero {
-        padding: var(--space-5) var(--space-2) var(--space-4);
+        padding: 12px var(--space-2) var(--space-3);
         min-height: auto;
     }
 
@@ -77,12 +77,12 @@ img, svg, video, iframe {
 
     .hero-subtitle {
         font-size: var(--fs-body);
-        margin-bottom: var(--space-3);
-        padding: 16px;
+        margin-bottom: var(--space-2);
+        padding: 12px;
     }
 
     .hero-components {
-        margin-bottom: var(--space-3);
+        margin-bottom: var(--space-2);
     }
 
     .component-grid {
@@ -206,7 +206,7 @@ img, svg, video, iframe {
 
     /* ---- Section spacing ---- */
     section {
-        padding: var(--space-5) 0;
+        padding: 12px 0;
     }
 
     /* ---- Section titles ---- */
@@ -238,7 +238,7 @@ img, svg, video, iframe {
     }
 
     body.has-testing-banner .hero {
-        padding-top: 140px;
+        padding-top: 100px;
     }
 
     /* ---- Inline-styled grids (override inline styles) ---- */
@@ -274,15 +274,15 @@ img, svg, video, iframe {
     }
 
     [style*="margin-bottom: 80px"] {
-        margin-bottom: 40px !important;
+        margin-bottom: 20px !important;
     }
 
     [style*="margin-bottom: 72px"] {
-        margin-bottom: 32px !important;
+        margin-bottom: 16px !important;
     }
 
     [style*="margin-bottom: 60px"] {
-        margin-bottom: 32px !important;
+        margin-bottom: 16px !important;
     }
 
     /* ---- Premium Feature Cards ---- */
@@ -308,8 +308,8 @@ img, svg, video, iframe {
     /* ---- Process Flow ---- */
     .process-flow {
         flex-direction: column;
-        gap: 24px;
-        margin: 40px 0;
+        gap: 16px;
+        margin: 20px 0;
     }
 
     .flow-arrow {
