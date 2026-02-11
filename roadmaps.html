@@ -76,7 +76,329 @@
             margin: 0 auto;
         }
 
-        /* Quarterly Timeline */
+        /* Journey Path Timeline */
+        .journey-container {
+            position: relative;
+            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Animated SVG Path */
+        .journey-path {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .journey-path path {
+            fill: none;
+            stroke: url(#roadGradient);
+            stroke-width: 4;
+            stroke-dasharray: 10, 5;
+            opacity: 0.3;
+            animation: dashAnimation 30s linear infinite;
+        }
+
+        @keyframes dashAnimation {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        /* Journey Milestones */
+        .journey-milestones {
+            position: relative;
+            z-index: 1;
+        }
+
+        .milestone {
+            position: relative;
+            margin-bottom: 100px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .milestone:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .milestone-marker {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+
+        .milestone-marker::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--marker-color-1), var(--marker-color-2));
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .milestone-marker .icon {
+            position: absolute;
+            inset: 10px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .milestone:nth-child(1) {
+            --marker-color-1: #10B981;
+            --marker-color-2: #059669;
+        }
+
+        .milestone:nth-child(2) {
+            --marker-color-1: #06B6D4;
+            --marker-color-2: #0891B2;
+        }
+
+        .milestone:nth-child(3) {
+            --marker-color-1: #8B5CF6;
+            --marker-color-2: #7C3AED;
+        }
+
+        .milestone:nth-child(4) {
+            --marker-color-1: #EF4444;
+            --marker-color-2: #DC2626;
+        }
+
+        .milestone-content {
+            flex: 1;
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .milestone-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .milestone:nth-child(odd) .milestone-content::before {
+            left: -12px;
+            transform: translateY(-50%);
+            border-width: 12px 12px 12px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .milestone:nth-child(even) .milestone-content::before {
+            right: -12px;
+            transform: translateY(-50%);
+            border-width: 12px 0 12px 12px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .milestone-content:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .milestone-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--marker-color-1), var(--marker-color-2));
+            color: white;
+        }
+
+        .milestone-title {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .milestone-focus {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: block;
+            font-style: italic;
+        }
+
+        .milestone-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .milestone-list li {
+            padding: 8px 0 8px 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .milestone-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--marker-color-1);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Slotify Journey Map */
+        .slotify-journey {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .journey-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            position: relative;
+        }
+
+        .journey-node {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 3px solid;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .journey-node:nth-child(1) {
+            border-color: #3B82F6;
+            animation-delay: 0.1s;
+        }
+        .journey-node:nth-child(2) {
+            border-color: #10B981;
+            animation-delay: 0.2s;
+        }
+        .journey-node:nth-child(3) {
+            border-color: #8B5CF6;
+            animation-delay: 0.3s;
+        }
+        .journey-node:nth-child(4) {
+            border-color: #F59E0B;
+            animation-delay: 0.4s;
+        }
+        .journey-node:nth-child(5) {
+            border-color: #EC4899;
+            animation-delay: 0.5s;
+        }
+        .journey-node:nth-child(6) {
+            border-color: #EF4444;
+            animation-delay: 0.6s;
+        }
+        .journey-node:nth-child(7) {
+            border-color: #06B6D4;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .journey-node:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .journey-node::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, currentColor, transparent);
+            opacity: 0.1;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .journey-node:hover::before {
+            opacity: 0.2;
+        }
+
+        .node-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .node-title {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .node-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .node-list li {
+            padding: 6px 0 6px 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .node-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: currentColor;
+            font-size: 1rem;
+        }
+
+        /* Quarterly Timeline - Keep for growth table */
         .quarterly-timeline {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -492,15 +814,43 @@
                 font-size: 1.6rem;
             }
 
+            /* Journey Mobile Styles */
+            .journey-path {
+                display: none;
+            }
+
+            .milestone {
+                flex-direction: column !important;
+                margin-bottom: 60px;
+                gap: 20px;
+            }
+
+            .milestone-marker {
+                width: 100px;
+                height: 100px;
+            }
+
+            .milestone-marker .icon {
+                font-size: 2.5rem;
+            }
+
+            .milestone-content::before {
+                display: none;
+            }
+
+            .milestone-list {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-map {
+                grid-template-columns: 1fr;
+            }
+
             .quarterly-timeline {
                 grid-template-columns: 1fr;
             }
 
             .suite-spotlight {
-                grid-template-columns: 1fr;
-            }
-
-            .addons-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -588,71 +938,108 @@
                 </div>
 
                 <!-- Quarterly Execution Plan -->
-                <h3 style="font-size: 1.8rem; margin-bottom: 32px; text-align: center;">2026 Quarterly Execution Plan</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 48px; text-align: center;">🗺️ 2026 Journey: Four Quarters to Transform</h3>
 
-                <div class="quarterly-timeline">
-                    <!-- Q1 -->
-                    <div class="quarter-card">
-                        <span class="quarter-tag">Q1 | Jan–Mar</span>
-                        <h3>Infrastructure Foundation</h3>
-                        <span class="focus-label">Focus: Scalability & Enterprise Readiness</span>
-                        <ul>
-                            <li>Vector Databases (10x faster retrieval)</li>
-                            <li>Multi-model AI support (Claude, Gemini)</li>
-                            <li>V2 updates: Continuous Learning</li>
-                            <li>Root Cause Analysis (RCA) agent</li>
-                            <li>Compliance agent enhancements</li>
-                            <li>Real-time monitoring dashboards</li>
-                            <li>Multi-region deployment (3+ AWS)</li>
-                        </ul>
-                    </div>
+                <!-- Journey Container -->
+                <div class="journey-container">
+                    <!-- SVG Path Background -->
+                    <svg class="journey-path" viewBox="0 0 1200 1600" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+                                <stop offset="33%" style="stop-color:#06B6D4;stop-opacity:1" />
+                                <stop offset="66%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M 100 100 Q 900 150, 600 400 T 600 700 Q 200 800, 600 1000 T 600 1400" />
+                    </svg>
 
-                    <!-- Q2 -->
-                    <div class="quarter-card">
-                        <span class="quarter-tag">Q2 | Apr–Jun</span>
-                        <h3>Healthcare Suite Launch</h3>
-                        <span class="focus-label">Focus: High-Urgency Healthcare Market</span>
-                        <ul>
-                            <li>5 new healthcare agents</li>
-                            <li>Hospital Operations agent</li>
-                            <li>Clinical Decision Support</li>
-                            <li>HIPAA Compliance automation</li>
-                            <li>Web UI beta launch</li>
-                            <li>Mobile apps (iOS/Android)</li>
-                            <li>8-hospital pilot program</li>
-                        </ul>
-                    </div>
+                    <!-- Journey Milestones -->
+                    <div class="journey-milestones">
+                        <!-- Q1 Milestone -->
+                        <div class="milestone">
+                            <div class="milestone-marker">
+                                <div class="icon">🏗️</div>
+                            </div>
+                            <div class="milestone-content">
+                                <span class="milestone-tag">Q1 | Jan–Mar 2026</span>
+                                <h3 class="milestone-title">Infrastructure Foundation</h3>
+                                <span class="milestone-focus">Building the bedrock for scalability & enterprise readiness</span>
+                                <ul class="milestone-list">
+                                    <li>Vector Databases (10x faster retrieval)</li>
+                                    <li>Multi-model AI support (Claude, Gemini)</li>
+                                    <li>V2 updates: Continuous Learning</li>
+                                    <li>Root Cause Analysis (RCA) agent</li>
+                                    <li>Compliance agent enhancements</li>
+                                    <li>Real-time monitoring dashboards</li>
+                                    <li>Multi-region deployment (3+ AWS)</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    <!-- Q3 -->
-                    <div class="quarter-card">
-                        <span class="quarter-tag">Q3 | Jul–Sep</span>
-                        <h3>Manufacturing & Analytics</h3>
-                        <span class="focus-label">Focus: Operations-Driven Automation</span>
-                        <ul>
-                            <li>Predictive Maintenance agent</li>
-                            <li>Quality Control agent</li>
-                            <li>Supply Chain Optimizer</li>
-                            <li>Performance Optimization</li>
-                            <li>Advanced Analytics Engine</li>
-                            <li>ML models with 85%+ accuracy</li>
-                            <li>Agent Marketplace beta</li>
-                        </ul>
-                    </div>
+                        <!-- Q2 Milestone -->
+                        <div class="milestone">
+                            <div class="milestone-marker">
+                                <div class="icon">🏥</div>
+                            </div>
+                            <div class="milestone-content">
+                                <span class="milestone-tag">Q2 | Apr–Jun 2026</span>
+                                <h3 class="milestone-title">Healthcare Suite Launch</h3>
+                                <span class="milestone-focus">Entering the high-urgency healthcare market</span>
+                                <ul class="milestone-list">
+                                    <li>5 new healthcare agents</li>
+                                    <li>Hospital Operations agent</li>
+                                    <li>Clinical Decision Support</li>
+                                    <li>HIPAA Compliance automation</li>
+                                    <li>Web UI beta launch</li>
+                                    <li>Mobile apps (iOS/Android)</li>
+                                    <li>8-hospital pilot program</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    <!-- Q4 -->
-                    <div class="quarter-card">
-                        <span class="quarter-tag">Q4 | Oct–Dec</span>
-                        <h3>Energy, Finance & Autonomy</h3>
-                        <span class="focus-label">Focus: Critical Infrastructure & Finance</span>
-                        <ul>
-                            <li>5 energy agents (Grid, Oil & Gas)</li>
-                            <li>4 finance agents (Fraud, Risk)</li>
-                            <li>Smart City Coordinator</li>
-                            <li>Climate Risk Assessor</li>
-                            <li>Autonomous self-healing workflows</li>
-                            <li>Zero-touch operations</li>
-                            <li>70% reduction in manual work</li>
-                        </ul>
+                        <!-- Q3 Milestone -->
+                        <div class="milestone">
+                            <div class="milestone-marker">
+                                <div class="icon">🏭</div>
+                            </div>
+                            <div class="milestone-content">
+                                <span class="milestone-tag">Q3 | Jul–Sep 2026</span>
+                                <h3 class="milestone-title">Manufacturing & Analytics</h3>
+                                <span class="milestone-focus">Operations-driven automation for industrial excellence</span>
+                                <ul class="milestone-list">
+                                    <li>Predictive Maintenance agent</li>
+                                    <li>Quality Control agent</li>
+                                    <li>Supply Chain Optimizer</li>
+                                    <li>Performance Optimization</li>
+                                    <li>Advanced Analytics Engine</li>
+                                    <li>ML models with 85%+ accuracy</li>
+                                    <li>Agent Marketplace beta</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Q4 Milestone -->
+                        <div class="milestone">
+                            <div class="milestone-marker">
+                                <div class="icon">⚡</div>
+                            </div>
+                            <div class="milestone-content">
+                                <span class="milestone-tag">Q4 | Oct–Dec 2026</span>
+                                <h3 class="milestone-title">Energy, Finance & Autonomy</h3>
+                                <span class="milestone-focus">Critical infrastructure & autonomous operations</span>
+                                <ul class="milestone-list">
+                                    <li>5 energy agents (Grid, Oil & Gas)</li>
+                                    <li>4 finance agents (Fraud, Risk)</li>
+                                    <li>Smart City Coordinator</li>
+                                    <li>Climate Risk Assessor</li>
+                                    <li>Autonomous self-healing workflows</li>
+                                    <li>Zero-touch operations</li>
+                                    <li>70% reduction in manual work</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -842,12 +1229,14 @@
                     </p>
                 </div>
 
-                <div class="addons-grid">
+                <h3 style="font-size: 1.8rem; margin-bottom: 40px; text-align: center;">🌐 Add-on Ecosystem Journey</h3>
+
+                <div class="journey-map">
                     <!-- Calendar & Scheduling -->
-                    <div class="addon-category">
-                        <span class="category-icon">📆</span>
-                        <h3>Calendar & Scheduling</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">📆</span>
+                        <h3 class="node-title">Calendar & Scheduling</h3>
+                        <ul class="node-list">
                             <li>Auto-generate Zoom/Teams/Meet links</li>
                             <li>Smart timezone detection & conversion</li>
                             <li>Multi-calendar sync</li>
@@ -857,10 +1246,10 @@
                     </div>
 
                     <!-- Communication & Notifications -->
-                    <div class="addon-category">
-                        <span class="category-icon">📲</span>
-                        <h3>Communication & Notifications</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">📲</span>
+                        <h3 class="node-title">Communication & Notifications</h3>
+                        <ul class="node-list">
                             <li>SMS via Twilio/Plivo integration</li>
                             <li>Slack & Teams messaging</li>
                             <li>Custom webhooks for external systems</li>
@@ -870,10 +1259,10 @@
                     </div>
 
                     <!-- AI & Automation -->
-                    <div class="addon-category">
-                        <span class="category-icon">🤖</span>
-                        <h3>AI & Automation</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">🤖</span>
+                        <h3 class="node-title">AI & Automation</h3>
+                        <ul class="node-list">
                             <li>AI meeting summaries & transcripts</li>
                             <li>ML-based optimal time suggestions</li>
                             <li>LinkedIn/company data enrichment</li>
@@ -883,10 +1272,10 @@
                     </div>
 
                     <!-- Analytics & Reporting -->
-                    <div class="addon-category">
-                        <span class="category-icon">📊</span>
-                        <h3>Analytics & Reporting</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">📊</span>
+                        <h3 class="node-title">Analytics & Reporting</h3>
+                        <ul class="node-list">
                             <li>Custom dashboards (Metabase/Tableau)</li>
                             <li>Revenue tracking & conversion metrics</li>
                             <li>Attendance & cancellation patterns</li>
@@ -896,10 +1285,10 @@
                     </div>
 
                     <!-- Team & Resource Management -->
-                    <div class="addon-category">
-                        <span class="category-icon">👥</span>
-                        <h3>Team & Resource Management</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">👥</span>
+                        <h3 class="node-title">Team & Resource Management</h3>
+                        <ul class="node-list">
                             <li>Round-robin & load balancing</li>
                             <li>Room & equipment booking</li>
                             <li>Delegation workflows</li>
@@ -909,10 +1298,10 @@
                     </div>
 
                     <!-- Compliance & Security -->
-                    <div class="addon-category">
-                        <span class="category-icon">🔒</span>
-                        <h3>Compliance & Security</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">🔒</span>
+                        <h3 class="node-title">Compliance & Security</h3>
+                        <ul class="node-list">
                             <li>GDPR/HIPAA compliance tools</li>
                             <li>Audit logging & tracking</li>
                             <li>2FA authentication</li>
@@ -922,10 +1311,10 @@
                     </div>
 
                     <!-- Specialized Integrations -->
-                    <div class="addon-category">
-                        <span class="category-icon">🔌</span>
-                        <h3>Specialized Integrations</h3>
-                        <ul>
+                    <div class="journey-node">
+                        <span class="node-icon">🔌</span>
+                        <h3 class="node-title">Specialized Integrations</h3>
+                        <ul class="node-list">
                             <li>ChainSync emergency coordination</li>
                             <li>Healthcare EHR (Epic, Cerner)</li>
                             <li>Education LMS (Canvas, Blackboard)</li>
