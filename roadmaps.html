@@ -167,26 +167,6 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
-        .milestone:nth-child(1) {
-            --marker-color-1: #10B981;
-            --marker-color-2: #059669;
-        }
-
-        .milestone:nth-child(2) {
-            --marker-color-1: #06B6D4;
-            --marker-color-2: #0891B2;
-        }
-
-        .milestone:nth-child(3) {
-            --marker-color-1: #8B5CF6;
-            --marker-color-2: #7C3AED;
-        }
-
-        .milestone:nth-child(4) {
-            --marker-color-1: #EF4444;
-            --marker-color-2: #DC2626;
-        }
-
         .milestone-content {
             flex: 1;
             background: white;
@@ -276,6 +256,100 @@
             color: var(--marker-color-1);
             font-weight: bold;
             font-size: 1.2rem;
+        }
+
+        /* Quarterly Sub-sections */
+        .quarter-section {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .quarter-section:first-of-type {
+            margin-top: 20px;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--marker-color-1);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-label .emoji {
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(var(--marker-rgb), 0.05), rgba(var(--marker-rgb), 0.02));
+            border-left: 3px solid var(--marker-color-1);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        .milestone:nth-child(1) {
+            --marker-color-1: #10B981;
+            --marker-color-2: #059669;
+            --marker-rgb: 16, 185, 129;
+        }
+
+        .milestone:nth-child(2) {
+            --marker-color-1: #06B6D4;
+            --marker-color-2: #0891B2;
+            --marker-rgb: 6, 182, 212;
+        }
+
+        .milestone:nth-child(3) {
+            --marker-color-1: #8B5CF6;
+            --marker-color-2: #7C3AED;
+            --marker-rgb: 139, 92, 246;
+        }
+
+        .milestone:nth-child(4) {
+            --marker-color-1: #EF4444;
+            --marker-color-2: #DC2626;
+            --marker-rgb: 239, 68, 68;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .mini-card {
+            background: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            border: 2px solid #f0f0f0;
+            transition: all 0.2s ease;
+        }
+
+        .mini-card:hover {
+            border-color: var(--marker-color-1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .mini-card-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .mini-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
         /* Slotify Journey Map */
@@ -906,8 +980,8 @@
         <section class="roadmap-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>🚀 ChainSync 2026: Agent Development Roadmap</h2>
-                    <p class="subtitle">Version 1.0 | Last Updated: February 10, 2026</p>
+                    <h2>🚀 2026 Product Roadmap: ChainSync & Slotify</h2>
+                    <p class="subtitle">Integrated quarterly view across agents, industry suites, and scheduling innovations | Version 1.0 | Last Updated: February 11, 2026</p>
                 </div>
 
                 <!-- Executive Summary -->
@@ -966,15 +1040,45 @@
                                 <span class="milestone-tag">Q1 | Jan–Mar 2026</span>
                                 <h3 class="milestone-title">Infrastructure Foundation</h3>
                                 <span class="milestone-focus">Building the bedrock for scalability & enterprise readiness</span>
-                                <ul class="milestone-list">
-                                    <li>Vector Databases (10x faster retrieval)</li>
-                                    <li>Multi-model AI support (Claude, Gemini)</li>
-                                    <li>V2 updates: Continuous Learning</li>
-                                    <li>Root Cause Analysis (RCA) agent</li>
-                                    <li>Compliance agent enhancements</li>
-                                    <li>Real-time monitoring dashboards</li>
-                                    <li>Multi-region deployment (3+ AWS)</li>
-                                </ul>
+
+                                <!-- ChainSync Agents -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">🤖</span>
+                                        <span>ChainSync Agent Development</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Vector Databases (10x faster retrieval)</li>
+                                        <li>Multi-model AI support (Claude, Gemini)</li>
+                                        <li>V2 updates: Continuous Learning</li>
+                                        <li>Root Cause Analysis (RCA) agent</li>
+                                        <li>Compliance agent enhancements</li>
+                                        <li>Real-time monitoring dashboards</li>
+                                        <li>Multi-region deployment (3+ AWS)</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Slotify Add-ons -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📅</span>
+                                        <span>Slotify Foundation</span>
+                                    </div>
+                                    <div class="mini-grid">
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">📆 Calendar Integration</div>
+                                            <div class="mini-card-desc">Auto-generate meeting links, timezone detection</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">📲 Basic Notifications</div>
+                                            <div class="mini-card-desc">Email reminders, SMS integration (Twilio)</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🔒 Security Core</div>
+                                            <div class="mini-card-desc">2FA authentication, role-based access</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -986,16 +1090,63 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q2 | Apr–Jun 2026</span>
                                 <h3 class="milestone-title">Healthcare Suite Launch</h3>
-                                <span class="milestone-focus">Entering the high-urgency healthcare market</span>
-                                <ul class="milestone-list">
-                                    <li>5 new healthcare agents</li>
-                                    <li>Hospital Operations agent</li>
-                                    <li>Clinical Decision Support</li>
-                                    <li>HIPAA Compliance automation</li>
-                                    <li>Web UI beta launch</li>
-                                    <li>Mobile apps (iOS/Android)</li>
-                                    <li>8-hospital pilot program</li>
-                                </ul>
+                                <span class="milestone-focus">Entering the high-urgency healthcare market with enhanced scheduling</span>
+
+                                <!-- ChainSync Healthcare Agents -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">🏥</span>
+                                        <span>Healthcare Agent Suite (5 Agents)</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Hospital Operations agent (bed utilization, patient flow)</li>
+                                        <li>Clinical Decision Support (treatment recommendations)</li>
+                                        <li>Medical Emergency Coordinator (code blue, trauma alerts)</li>
+                                        <li>HIPAA Compliance automation</li>
+                                        <li>Patient Flow Optimizer</li>
+                                    </ul>
+                                    <div class="highlight-box">
+                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                                            📊 Bed Utilization: 70% → 91% • 🦠 Hospital Infections: -53% • 💰 HIPAA Audit Costs: -70%
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Platform Expansion -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📱</span>
+                                        <span>Platform Expansion</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Web UI beta launch</li>
+                                        <li>Mobile apps (iOS/Android)</li>
+                                        <li>8-hospital pilot program</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Slotify Healthcare Add-ons -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📅</span>
+                                        <span>Slotify Healthcare Integration</span>
+                                    </div>
+                                    <div class="mini-grid">
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🏥 EHR Integration</div>
+                                            <div class="mini-card-desc">Epic, Cerner connectivity for patient scheduling</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🔒 HIPAA Compliance</div>
+                                            <div class="mini-card-desc">Audit logging, data encryption, privacy tools</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">📊 Patient Analytics</div>
+                                            <div class="mini-card-desc">Attendance tracking, no-show patterns</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1007,16 +1158,62 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q3 | Jul–Sep 2026</span>
                                 <h3 class="milestone-title">Manufacturing & Analytics</h3>
-                                <span class="milestone-focus">Operations-driven automation for industrial excellence</span>
-                                <ul class="milestone-list">
-                                    <li>Predictive Maintenance agent</li>
-                                    <li>Quality Control agent</li>
-                                    <li>Supply Chain Optimizer</li>
-                                    <li>Performance Optimization</li>
-                                    <li>Advanced Analytics Engine</li>
-                                    <li>ML models with 85%+ accuracy</li>
-                                    <li>Agent Marketplace beta</li>
-                                </ul>
+                                <span class="milestone-focus">Operations-driven automation for industrial excellence with AI-powered scheduling</span>
+
+                                <!-- ChainSync Manufacturing Agents -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">🏭</span>
+                                        <span>Manufacturing Agent Suite (4 Agents)</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Predictive Maintenance agent (equipment failure prediction)</li>
+                                        <li>Quality Control agent (defect detection & optimization)</li>
+                                        <li>Supply Chain Optimizer (logistics & inventory)</li>
+                                        <li>Performance Optimization agent (OEE tracking)</li>
+                                    </ul>
+                                    <div class="highlight-box">
+                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                                            ⏱️ Unplanned Downtime: -40% • ✅ Quality Pass Rate: 85% → 96% • 💰 Maintenance Costs: -40%
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Analytics Platform -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📊</span>
+                                        <span>Advanced Analytics Engine</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>ML models with 85%+ accuracy</li>
+                                        <li>Agent Marketplace beta launch</li>
+                                        <li>Predictive analytics dashboards</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Slotify Analytics & Automation -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📅</span>
+                                        <span>Slotify AI & Analytics</span>
+                                    </div>
+                                    <div class="mini-grid">
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🤖 AI Meeting Tools</div>
+                                            <div class="mini-card-desc">Summaries, transcripts, optimal time suggestions</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">📊 Custom Dashboards</div>
+                                            <div class="mini-card-desc">Metabase/Tableau, revenue tracking, metrics</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">👥 Team Management</div>
+                                            <div class="mini-card-desc">Round-robin, load balancing, capacity planning</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1027,17 +1224,86 @@
                             </div>
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q4 | Oct–Dec 2026</span>
-                                <h3 class="milestone-title">Energy, Finance & Autonomy</h3>
-                                <span class="milestone-focus">Critical infrastructure & autonomous operations</span>
-                                <ul class="milestone-list">
-                                    <li>5 energy agents (Grid, Oil & Gas)</li>
-                                    <li>4 finance agents (Fraud, Risk)</li>
-                                    <li>Smart City Coordinator</li>
-                                    <li>Climate Risk Assessor</li>
-                                    <li>Autonomous self-healing workflows</li>
-                                    <li>Zero-touch operations</li>
-                                    <li>70% reduction in manual work</li>
-                                </ul>
+                                <h3 class="milestone-title">Energy, Finance & Full Autonomy</h3>
+                                <span class="milestone-focus">Critical infrastructure, financial services & complete ecosystem maturity</span>
+
+                                <!-- ChainSync Energy Agents -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">⚡</span>
+                                        <span>Energy & Utilities Suite (5 Agents)</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Grid Management agent (load balancing, outage prevention)</li>
+                                        <li>Oil & Gas Operations agent (pipeline monitoring, drilling)</li>
+                                        <li>Smart City Coordinator (traffic, utilities, emergency)</li>
+                                        <li>Climate Risk Assessor (weather impacts, adaptation)</li>
+                                        <li>Environmental Compliance agent (EPA reporting)</li>
+                                    </ul>
+                                    <div class="highlight-box">
+                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                                            ⚡ Grid Uptime: +3% • ⏱️ Outage Duration: -68% • 💰 Outage Costs: -40%
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ChainSync Finance Agents -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">💰</span>
+                                        <span>Financial Services Suite (4 Agents)</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Fraud Detection agent (real-time monitoring)</li>
+                                        <li>Risk Management agent (portfolio analysis)</li>
+                                        <li>Customer Service agent (support automation)</li>
+                                        <li>Financial Regulatory Reporting agent</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Autonomous Operations -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">🤖</span>
+                                        <span>Autonomous Platform Features</span>
+                                    </div>
+                                    <ul class="milestone-list">
+                                        <li>Self-healing workflows (automatic recovery)</li>
+                                        <li>Zero-touch operations</li>
+                                        <li>70% reduction in manual interventions</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Slotify Advanced Features -->
+                                <div class="quarter-section">
+                                    <div class="section-label">
+                                        <span class="emoji">📅</span>
+                                        <span>Slotify Enterprise & Specialized</span>
+                                    </div>
+                                    <div class="mini-grid">
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🔌 ChainSync Integration</div>
+                                            <div class="mini-card-desc">Emergency coordination scheduling</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">⚖️ Legal Integration</div>
+                                            <div class="mini-card-desc">Case management systems connectivity</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🏢 Real Estate MLS</div>
+                                            <div class="mini-card-desc">Property showing coordination</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🎓 Education LMS</div>
+                                            <div class="mini-card-desc">Canvas, Blackboard integration</div>
+                                        </div>
+                                        <div class="mini-card">
+                                            <div class="mini-card-title">🔔 Advanced Webhooks</div>
+                                            <div class="mini-card-desc">Custom external system triggers</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1209,124 +1475,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </section>
 
-        <!-- Slotify Roadmap -->
-        <section class="roadmap-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>📅 Slotify: Add-ons & Extensions Roadmap</h2>
-                    <p class="subtitle">Expanding intelligent scheduling with powerful integrations and AI-driven automation</p>
-                </div>
-
-                <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg); margin-bottom: 48px;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">🎯 Strategic Vision</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">
-                        Slotify is evolving beyond core scheduling functionality into a comprehensive ecosystem of
-                        intelligent add-ons. Each extension is designed to integrate seamlessly with existing workflows
-                        while providing specialized capabilities for different industries and use cases.
-                    </p>
-                </div>
-
-                <h3 style="font-size: 1.8rem; margin-bottom: 40px; text-align: center;">🌐 Add-on Ecosystem Journey</h3>
-
-                <div class="journey-map">
-                    <!-- Calendar & Scheduling -->
-                    <div class="journey-node">
-                        <span class="node-icon">📆</span>
-                        <h3 class="node-title">Calendar & Scheduling</h3>
-                        <ul class="node-list">
-                            <li>Auto-generate Zoom/Teams/Meet links</li>
-                            <li>Smart timezone detection & conversion</li>
-                            <li>Multi-calendar sync</li>
-                            <li>Intelligent availability detection</li>
-                            <li>Buffer time management</li>
-                        </ul>
-                    </div>
-
-                    <!-- Communication & Notifications -->
-                    <div class="journey-node">
-                        <span class="node-icon">📲</span>
-                        <h3 class="node-title">Communication & Notifications</h3>
-                        <ul class="node-list">
-                            <li>SMS via Twilio/Plivo integration</li>
-                            <li>Slack & Teams messaging</li>
-                            <li>Custom webhooks for external systems</li>
-                            <li>Multi-channel reminder sequences</li>
-                            <li>Email template builder</li>
-                        </ul>
-                    </div>
-
-                    <!-- AI & Automation -->
-                    <div class="journey-node">
-                        <span class="node-icon">🤖</span>
-                        <h3 class="node-title">AI & Automation</h3>
-                        <ul class="node-list">
-                            <li>AI meeting summaries & transcripts</li>
-                            <li>ML-based optimal time suggestions</li>
-                            <li>LinkedIn/company data enrichment</li>
-                            <li>Sentiment analysis on bookings</li>
-                            <li>Automated follow-ups & action items</li>
-                        </ul>
-                    </div>
-
-                    <!-- Analytics & Reporting -->
-                    <div class="journey-node">
-                        <span class="node-icon">📊</span>
-                        <h3 class="node-title">Analytics & Reporting</h3>
-                        <ul class="node-list">
-                            <li>Custom dashboards (Metabase/Tableau)</li>
-                            <li>Revenue tracking & conversion metrics</li>
-                            <li>Attendance & cancellation patterns</li>
-                            <li>Advisor efficiency metrics</li>
-                            <li>CSV/PDF export tools</li>
-                        </ul>
-                    </div>
-
-                    <!-- Team & Resource Management -->
-                    <div class="journey-node">
-                        <span class="node-icon">👥</span>
-                        <h3 class="node-title">Team & Resource Management</h3>
-                        <ul class="node-list">
-                            <li>Round-robin & load balancing</li>
-                            <li>Room & equipment booking</li>
-                            <li>Delegation workflows</li>
-                            <li>Multi-advisor performance tracking</li>
-                            <li>Capacity planning automation</li>
-                        </ul>
-                    </div>
-
-                    <!-- Compliance & Security -->
-                    <div class="journey-node">
-                        <span class="node-icon">🔒</span>
-                        <h3 class="node-title">Compliance & Security</h3>
-                        <ul class="node-list">
-                            <li>GDPR/HIPAA compliance tools</li>
-                            <li>Audit logging & tracking</li>
-                            <li>2FA authentication</li>
-                            <li>End-to-end data encryption</li>
-                            <li>Role-based access controls</li>
-                        </ul>
-                    </div>
-
-                    <!-- Specialized Integrations -->
-                    <div class="journey-node">
-                        <span class="node-icon">🔌</span>
-                        <h3 class="node-title">Specialized Integrations</h3>
-                        <ul class="node-list">
-                            <li>ChainSync emergency coordination</li>
-                            <li>Healthcare EHR (Epic, Cerner)</li>
-                            <li>Education LMS (Canvas, Blackboard)</li>
-                            <li>Legal case management systems</li>
-                            <li>Real estate MLS integration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Technical Architecture Note -->
+                <!-- Slotify Technical Architecture -->
                 <div style="background: #f0f9ff; border-left: 4px solid #3B82F6; border-radius: 12px; padding: 28px; margin-top: 48px;">
-                    <h4 style="font-size: 1.2rem; margin-bottom: 12px; color: #1e40af;">🏗️ Technical Architecture</h4>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 12px; color: #1e40af;">📅 Slotify Technical Architecture</h4>
                     <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
                         <strong>Current State:</strong> Slotify has a modular structure but no formal plugin system yet.
                     </p>
