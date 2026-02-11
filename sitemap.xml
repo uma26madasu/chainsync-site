@@ -21,9 +21,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://chainsync-site-kohl.vercel.app/insights.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://chainsync-site-kohl.vercel.app/technology.html</loc>
     <lastmod>2025-01-01</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chainsync-site-kohl.vercel.app/roadmaps.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chainsync-site-kohl.vercel.app/contact.html</loc>
