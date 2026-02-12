@@ -673,9 +673,8 @@ body.has-testing-banner #navbar {
   top: var(--testing-banner-height);
 }
 
-body.has-testing-banner .hero,
-body.has-testing-banner .page-hero,
-body.has-testing-banner .roadmap-hero {
+body.has-testing-banner #main-content,
+body.has-testing-banner .hero {
   margin-top: var(--total-header-height);
 }
 
@@ -689,9 +688,8 @@ body.has-testing-banner .roadmap-hero {
     top: var(--testing-banner-height);
   }
 
-  body.has-testing-banner .hero,
-  body.has-testing-banner .page-hero,
-  body.has-testing-banner .roadmap-hero {
+  body.has-testing-banner #main-content,
+  body.has-testing-banner .hero {
     margin-top: var(--total-header-height);
   }
 }
@@ -871,6 +869,11 @@ body.has-testing-banner .roadmap-hero {
 /* ================================================
    Hero Section - Environmental Immersion
    ================================================ */
+/* Main content wrapper - pushes content below fixed navbar */
+#main-content {
+  margin-top: var(--nav-height);
+}
+
 .hero {
   min-height: auto;
   display: flex;
@@ -1450,18 +1453,12 @@ button:focus:not(:focus-visible) {
    Page Hero (Internal Pages) - Sky & Light
    ================================================ */
 .page-hero {
-  margin-top: var(--nav-height);
   padding: var(--space-7) 32px 20px;
   background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--stone-light);
   animation: heroGradient 10s ease infinite;
-}
-
-/* Roadmap Hero - Same spacing as page-hero */
-.roadmap-hero {
-  margin-top: var(--nav-height);
 }
 
 @keyframes heroGradient {
