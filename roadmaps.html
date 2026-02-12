@@ -14,932 +14,16 @@
     <meta name="theme-color" content="#0077B6">
 
     <meta property="og:title" content="ChainSync & Slotify Product Roadmaps">
-    <meta property="og:description" content="2026 strategic roadmaps for multi-vertical AI expansion and scheduling innovation.">
+    <meta property="og:description"
+        content="2026 strategic roadmaps for multi-vertical AI expansion and scheduling innovation.">
     <meta property="og:image" content="https://getchainsync.com/assets/images/og-image.png">
     <meta property="og:url" content="https://getchainsync.com/roadmaps.html">
     <meta name="twitter:card" content="summary_large_image">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2">
-    <link rel="stylesheet" href="assets/css/premium-enhancements.css?v=2">
-    <link rel="stylesheet" href="assets/css/advanced-animations.css?v=2">
-    <link rel="stylesheet" href="assets/css/glassmorphism.css?v=2">
-    <link rel="stylesheet" href="assets/css/mobile-responsive.css?v=2">
-    <link rel="stylesheet" href="assets/css/premium-visual.css?v=2">
-  <link rel="stylesheet" href="assets/css/compact-spacing.css?v=2">
+    <link rel="stylesheet" href="assets/css/main.css">
 
-    <style>
-        /* Roadmap specific styles */
-        .roadmap-hero {
-            background: linear-gradient(135deg, #0077B6 0%, #00B4D8 100%);
-            padding: 80px 0 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .roadmap-hero h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .roadmap-hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .roadmap-section {
-            padding: 60px 0;
-        }
-
-        .roadmap-section.alt-bg {
-            background: #f8fafc;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .section-header .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Journey Path Timeline */
-        .journey-container {
-            position: relative;
-            padding: 60px 0;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Animated SVG Path */
-        .journey-path {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .journey-path path {
-            fill: none;
-            stroke: url(#roadGradient);
-            stroke-width: 4;
-            stroke-dasharray: 10, 5;
-            opacity: 0.3;
-            animation: dashAnimation 30s linear infinite;
-        }
-
-        @keyframes dashAnimation {
-            to {
-                stroke-dashoffset: -1000;
-            }
-        }
-
-        /* Journey Milestones */
-        .journey-milestones {
-            position: relative;
-            z-index: 1;
-        }
-
-        .milestone {
-            position: relative;
-            margin-bottom: 100px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .milestone:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .milestone-marker {
-            flex-shrink: 0;
-            width: 120px;
-            height: 120px;
-            position: relative;
-        }
-
-        .milestone-marker::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--marker-color-1), var(--marker-color-2));
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
-        }
-
-        .milestone-marker .icon {
-            position: absolute;
-            inset: 10px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .milestone-content {
-            flex: 1;
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .milestone-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-
-        .milestone:nth-child(odd) .milestone-content::before {
-            left: -12px;
-            transform: translateY(-50%);
-            border-width: 12px 12px 12px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        .milestone:nth-child(even) .milestone-content::before {
-            right: -12px;
-            transform: translateY(-50%);
-            border-width: 12px 0 12px 12px;
-            border-color: transparent transparent transparent white;
-        }
-
-        .milestone-content:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .milestone-tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, var(--marker-color-1), var(--marker-color-2));
-            color: white;
-        }
-
-        .milestone-title {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        .milestone-focus {
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            display: block;
-            font-style: italic;
-        }
-
-        .milestone-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-        }
-
-        .milestone-list li {
-            padding: 8px 0 8px 24px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            position: relative;
-        }
-
-        .milestone-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--marker-color-1);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Quarterly Sub-sections */
-        .quarter-section {
-            margin-top: 28px;
-            padding-top: 24px;
-            border-top: 2px solid #f0f0f0;
-        }
-
-        .quarter-section:first-of-type {
-            margin-top: 20px;
-            border-top: none;
-            padding-top: 0;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--marker-color-1);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .section-label .emoji {
-            font-size: 1.2rem;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(var(--marker-rgb), 0.05), rgba(var(--marker-rgb), 0.02));
-            border-left: 3px solid var(--marker-color-1);
-            border-radius: 8px;
-            padding: 16px;
-            margin-top: 12px;
-        }
-
-        .milestone:nth-child(1) {
-            --marker-color-1: #10B981;
-            --marker-color-2: #059669;
-            --marker-rgb: 16, 185, 129;
-        }
-
-        .milestone:nth-child(2) {
-            --marker-color-1: #06B6D4;
-            --marker-color-2: #0891B2;
-            --marker-rgb: 6, 182, 212;
-        }
-
-        .milestone:nth-child(3) {
-            --marker-color-1: #8B5CF6;
-            --marker-color-2: #7C3AED;
-            --marker-rgb: 139, 92, 246;
-        }
-
-        .milestone:nth-child(4) {
-            --marker-color-1: #EF4444;
-            --marker-color-2: #DC2626;
-            --marker-rgb: 239, 68, 68;
-        }
-
-        .mini-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .mini-card {
-            background: white;
-            border-radius: 8px;
-            padding: 12px 16px;
-            border: 2px solid #f0f0f0;
-            transition: all 0.2s ease;
-        }
-
-        .mini-card:hover {
-            border-color: var(--marker-color-1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .mini-card-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .mini-card-desc {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
-
-        /* Slotify Journey Map */
-        .slotify-journey {
-            position: relative;
-            padding: 60px 0;
-        }
-
-        .journey-map {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            position: relative;
-        }
-
-        .journey-node {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            border: 3px solid;
-            animation: fadeInUp 0.6s ease-out backwards;
-        }
-
-        .journey-node:nth-child(1) {
-            border-color: #3B82F6;
-            animation-delay: 0.1s;
-        }
-        .journey-node:nth-child(2) {
-            border-color: #10B981;
-            animation-delay: 0.2s;
-        }
-        .journey-node:nth-child(3) {
-            border-color: #8B5CF6;
-            animation-delay: 0.3s;
-        }
-        .journey-node:nth-child(4) {
-            border-color: #F59E0B;
-            animation-delay: 0.4s;
-        }
-        .journey-node:nth-child(5) {
-            border-color: #EC4899;
-            animation-delay: 0.5s;
-        }
-        .journey-node:nth-child(6) {
-            border-color: #EF4444;
-            animation-delay: 0.6s;
-        }
-        .journey-node:nth-child(7) {
-            border-color: #06B6D4;
-            animation-delay: 0.7s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .journey-node:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .journey-node::before {
-            content: '';
-            position: absolute;
-            inset: -6px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, currentColor, transparent);
-            opacity: 0.1;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-
-        .journey-node:hover::before {
-            opacity: 0.2;
-        }
-
-        .node-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-        }
-
-        .node-title {
-            font-size: 1.4rem;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        .node-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .node-list li {
-            padding: 6px 0 6px 20px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            position: relative;
-            line-height: 1.5;
-        }
-
-        .node-list li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: currentColor;
-            font-size: 1rem;
-        }
-
-        /* Quarterly Timeline - Keep for growth table */
-        .quarterly-timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .quarter-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid;
-            position: relative;
-        }
-
-        .quarter-card:nth-child(1) {
-            border-top-color: #10B981;
-        }
-
-        .quarter-card:nth-child(2) {
-            border-top-color: #06B6D4;
-        }
-
-        .quarter-card:nth-child(3) {
-            border-top-color: #8B5CF6;
-        }
-
-        .quarter-card:nth-child(4) {
-            border-top-color: #EF4444;
-        }
-
-        .quarter-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .quarter-tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin-bottom: 16px;
-        }
-
-        .quarter-card:nth-child(1) .quarter-tag {
-            background: rgba(16, 185, 129, 0.1);
-            color: #10B981;
-        }
-
-        .quarter-card:nth-child(2) .quarter-tag {
-            background: rgba(6, 182, 212, 0.1);
-            color: #06B6D4;
-        }
-
-        .quarter-card:nth-child(3) .quarter-tag {
-            background: rgba(139, 92, 246, 0.1);
-            color: #8B5CF6;
-        }
-
-        .quarter-card:nth-child(4) .quarter-tag {
-            background: rgba(239, 68, 68, 0.1);
-            color: #EF4444;
-        }
-
-        .quarter-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .quarter-card .focus-label {
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .quarter-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .quarter-card li {
-            padding: 8px 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .quarter-card li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Growth Table */
-        .growth-table {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            margin-bottom: 40px;
-        }
-
-        .growth-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .growth-table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .growth-table th {
-            color: white;
-            padding: 16px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .growth-table td {
-            padding: 16px;
-            border-bottom: 1px solid #f0f0f0;
-            color: var(--text-secondary);
-        }
-
-        .growth-table tbody tr:hover {
-            background: #f8fafc;
-        }
-
-        .growth-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .badge-success {
-            background: rgba(16, 185, 129, 0.1);
-            color: #10B981;
-        }
-
-        .badge-info {
-            background: rgba(6, 182, 212, 0.1);
-            color: #06B6D4;
-        }
-
-        .badge-purple {
-            background: rgba(139, 92, 246, 0.1);
-            color: #8B5CF6;
-        }
-
-        .badge-warning {
-            background: rgba(245, 158, 11, 0.1);
-            color: #F59E0B;
-        }
-
-        /* Suite Spotlight Cards */
-        .suite-spotlight {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            margin-bottom: 40px;
-        }
-
-        .suite-card {
-            background: white;
-            border-radius: 20px;
-            padding: 36px;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .suite-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-        }
-
-        .suite-card.healthcare {
-            --gradient-start: #10B981;
-            --gradient-end: #06B6D4;
-        }
-
-        .suite-card.manufacturing {
-            --gradient-start: #8B5CF6;
-            --gradient-end: #EC4899;
-        }
-
-        .suite-card.energy {
-            --gradient-start: #F59E0B;
-            --gradient-end: #EF4444;
-        }
-
-        .suite-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .suite-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .suite-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .suite-card .launch-date {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .suite-card h4 {
-            font-size: 1.1rem;
-            margin: 24px 0 12px;
-            color: var(--text-primary);
-        }
-
-        .suite-card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 24px;
-        }
-
-        .suite-card li {
-            padding: 6px 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .suite-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .impact-stats {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 16px;
-            margin-top: 20px;
-        }
-
-        .impact-stats strong {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .impact-stats p {
-            margin: 4px 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Slotify Add-ons Section */
-        .addons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .addon-category {
-            background: white;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease;
-            border-left: 4px solid;
-        }
-
-        .addon-category:nth-child(1) {
-            border-left-color: #3B82F6;
-        }
-
-        .addon-category:nth-child(2) {
-            border-left-color: #10B981;
-        }
-
-        .addon-category:nth-child(3) {
-            border-left-color: #8B5CF6;
-        }
-
-        .addon-category:nth-child(4) {
-            border-left-color: #F59E0B;
-        }
-
-        .addon-category:nth-child(5) {
-            border-left-color: #EC4899;
-        }
-
-        .addon-category:nth-child(6) {
-            border-left-color: #EF4444;
-        }
-
-        .addon-category:nth-child(7) {
-            border-left-color: #06B6D4;
-        }
-
-        .addon-category:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .addon-category h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .addon-category .category-icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .addon-category ul {
-            list-style: none;
-            padding: 0;
-            margin: 12px 0 0 0;
-        }
-
-        .addon-category li {
-            padding: 6px 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .addon-category li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        /* Tech Stack Table */
-        .tech-stack-table {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            margin-top: 40px;
-        }
-
-        .tech-stack-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .tech-stack-table thead {
-            background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
-        }
-
-        .tech-stack-table th {
-            color: white;
-            padding: 16px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .tech-stack-table td {
-            padding: 16px;
-            border-bottom: 1px solid #f0f0f0;
-            color: var(--text-secondary);
-        }
-
-        .tech-stack-table tbody tr:hover {
-            background: #f8fafc;
-        }
-
-        @media (max-width: 768px) {
-            .roadmap-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-
-            /* Journey Mobile Styles */
-            .journey-path {
-                display: none;
-            }
-
-            .milestone {
-                flex-direction: column !important;
-                margin-bottom: 60px;
-                gap: 20px;
-            }
-
-            .milestone-marker {
-                width: 100px;
-                height: 100px;
-            }
-
-            .milestone-marker .icon {
-                font-size: 2.5rem;
-            }
-
-            .milestone-content::before {
-                display: none;
-            }
-
-            .milestone-list {
-                grid-template-columns: 1fr;
-            }
-
-            .journey-map {
-                grid-template-columns: 1fr;
-            }
-
-            .quarterly-timeline {
-                grid-template-columns: 1fr;
-            }
-
-            .suite-spotlight {
-                grid-template-columns: 1fr;
-            }
-
-            .growth-table,
-            .tech-stack-table {
-                overflow-x: auto;
-            }
-
-            .growth-table table,
-            .tech-stack-table table {
-                min-width: 600px;
-            }
-        }
-    </style>
 </head>
 
 <body class="has-testing-banner">
@@ -972,7 +56,8 @@
             <div class="gradient-orb orb-2"></div>
             <div class="container">
                 <h1>📊 Product Roadmaps</h1>
-                <p>Our strategic vision for 2026 and beyond. Explore how ChainSync and Slotify are expanding into new verticals and building the future of intelligent automation.</p>
+                <p>Our strategic vision for 2026 and beyond. Explore how ChainSync and Slotify are expanding into new
+                    verticals and building the future of intelligent automation.</p>
             </div>
         </section>
 
@@ -981,38 +66,48 @@
             <div class="container">
                 <div class="section-header">
                     <h2>🚀 2026 Product Roadmap: ChainSync & Slotify</h2>
-                    <p class="subtitle">Integrated quarterly view across agents, industry suites, and scheduling innovations | Version 1.0 | Last Updated: February 11, 2026</p>
+                    <p class="subtitle">Integrated quarterly view across agents, industry suites, and scheduling
+                        innovations | Version 1.0 | Last Updated: February 11, 2026</p>
                 </div>
 
                 <!-- Executive Summary -->
-                <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg); margin-bottom: 48px;">
+                <div
+                    style="background: white; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-lg); margin-bottom: 48px;">
                     <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Executive Summary</h3>
                     <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
-                        ChainSync is evolving from a specialized water emergency platform into a multi-vertical AI powerhouse.
-                        Our strategy prioritizes a robust infrastructure foundation to enable rapid scaling into high-impact industries.
+                        ChainSync is evolving from a specialized water emergency platform into a multi-vertical AI
+                        powerhouse.
+                        Our strategy prioritizes a robust infrastructure foundation to enable rapid scaling into
+                        high-impact industries.
                     </p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 28px;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 28px;">
                         <div>
-                            <strong style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">12</strong>
+                            <strong
+                                style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">12</strong>
                             <span style="color: var(--text-secondary);">Current Production Agents</span>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">30</strong>
+                            <strong
+                                style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">30</strong>
                             <span style="color: var(--text-secondary);">2026 Target Agents</span>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">6</strong>
+                            <strong
+                                style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">6</strong>
                             <span style="color: var(--text-secondary);">Industry Verticals</span>
                         </div>
                         <div>
-                            <strong style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">99.99%</strong>
+                            <strong
+                                style="display: block; color: var(--primary-color); font-size: 2rem; margin-bottom: 4px;">99.99%</strong>
                             <span style="color: var(--text-secondary);">Target Uptime (Q4)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Quarterly Execution Plan -->
-                <h3 style="font-size: 1.8rem; margin-bottom: 48px; text-align: center;">🗺️ 2026 Journey: Four Quarters to Transform</h3>
+                <h3 style="font-size: 1.8rem; margin-bottom: 48px; text-align: center;">🗺️ 2026 Journey: Four Quarters
+                    to Transform</h3>
 
                 <!-- Journey Container -->
                 <div class="journey-container">
@@ -1039,7 +134,8 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q1 | Jan–Mar 2026</span>
                                 <h3 class="milestone-title">Infrastructure Foundation</h3>
-                                <span class="milestone-focus">Building the bedrock for scalability & enterprise readiness</span>
+                                <span class="milestone-focus">Building the bedrock for scalability & enterprise
+                                    readiness</span>
 
                                 <!-- ChainSync Agents -->
                                 <div class="quarter-section">
@@ -1067,7 +163,8 @@
                                     <div class="mini-grid">
                                         <div class="mini-card">
                                             <div class="mini-card-title">📆 Calendar Integration</div>
-                                            <div class="mini-card-desc">Auto-generate meeting links, timezone detection</div>
+                                            <div class="mini-card-desc">Auto-generate meeting links, timezone detection
+                                            </div>
                                         </div>
                                         <div class="mini-card">
                                             <div class="mini-card-title">📲 Basic Notifications</div>
@@ -1090,7 +187,8 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q2 | Apr–Jun 2026</span>
                                 <h3 class="milestone-title">Healthcare Suite Launch</h3>
-                                <span class="milestone-focus">Entering the high-urgency healthcare market with enhanced scheduling</span>
+                                <span class="milestone-focus">Entering the high-urgency healthcare market with enhanced
+                                    scheduling</span>
 
                                 <!-- ChainSync Healthcare Agents -->
                                 <div class="quarter-section">
@@ -1106,9 +204,12 @@
                                         <li>Patient Flow Optimizer</li>
                                     </ul>
                                     <div class="highlight-box">
-                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <strong
+                                            style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected
+                                            Impact</strong>
                                         <div style="color: var(--text-secondary); font-size: 0.9rem;">
-                                            📊 Bed Utilization: 70% → 91% • 🦠 Hospital Infections: -53% • 💰 HIPAA Audit Costs: -70%
+                                            📊 Bed Utilization: 70% → 91% • 🦠 Hospital Infections: -53% • 💰 HIPAA
+                                            Audit Costs: -70%
                                         </div>
                                     </div>
                                 </div>
@@ -1135,11 +236,13 @@
                                     <div class="mini-grid">
                                         <div class="mini-card">
                                             <div class="mini-card-title">🏥 EHR Integration</div>
-                                            <div class="mini-card-desc">Epic, Cerner connectivity for patient scheduling</div>
+                                            <div class="mini-card-desc">Epic, Cerner connectivity for patient scheduling
+                                            </div>
                                         </div>
                                         <div class="mini-card">
                                             <div class="mini-card-title">🔒 HIPAA Compliance</div>
-                                            <div class="mini-card-desc">Audit logging, data encryption, privacy tools</div>
+                                            <div class="mini-card-desc">Audit logging, data encryption, privacy tools
+                                            </div>
                                         </div>
                                         <div class="mini-card">
                                             <div class="mini-card-title">📊 Patient Analytics</div>
@@ -1158,7 +261,8 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q3 | Jul–Sep 2026</span>
                                 <h3 class="milestone-title">Manufacturing & Analytics</h3>
-                                <span class="milestone-focus">Operations-driven automation for industrial excellence with AI-powered scheduling</span>
+                                <span class="milestone-focus">Operations-driven automation for industrial excellence
+                                    with AI-powered scheduling</span>
 
                                 <!-- ChainSync Manufacturing Agents -->
                                 <div class="quarter-section">
@@ -1173,9 +277,12 @@
                                         <li>Performance Optimization agent (OEE tracking)</li>
                                     </ul>
                                     <div class="highlight-box">
-                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <strong
+                                            style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected
+                                            Impact</strong>
                                         <div style="color: var(--text-secondary); font-size: 0.9rem;">
-                                            ⏱️ Unplanned Downtime: -40% • ✅ Quality Pass Rate: 85% → 96% • 💰 Maintenance Costs: -40%
+                                            ⏱️ Unplanned Downtime: -40% • ✅ Quality Pass Rate: 85% → 96% • 💰
+                                            Maintenance Costs: -40%
                                         </div>
                                     </div>
                                 </div>
@@ -1202,15 +309,18 @@
                                     <div class="mini-grid">
                                         <div class="mini-card">
                                             <div class="mini-card-title">🤖 AI Meeting Tools</div>
-                                            <div class="mini-card-desc">Summaries, transcripts, optimal time suggestions</div>
+                                            <div class="mini-card-desc">Summaries, transcripts, optimal time suggestions
+                                            </div>
                                         </div>
                                         <div class="mini-card">
                                             <div class="mini-card-title">📊 Custom Dashboards</div>
-                                            <div class="mini-card-desc">Metabase/Tableau, revenue tracking, metrics</div>
+                                            <div class="mini-card-desc">Metabase/Tableau, revenue tracking, metrics
+                                            </div>
                                         </div>
                                         <div class="mini-card">
                                             <div class="mini-card-title">👥 Team Management</div>
-                                            <div class="mini-card-desc">Round-robin, load balancing, capacity planning</div>
+                                            <div class="mini-card-desc">Round-robin, load balancing, capacity planning
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1225,7 +335,8 @@
                             <div class="milestone-content">
                                 <span class="milestone-tag">Q4 | Oct–Dec 2026</span>
                                 <h3 class="milestone-title">Energy, Finance & Full Autonomy</h3>
-                                <span class="milestone-focus">Critical infrastructure, financial services & complete ecosystem maturity</span>
+                                <span class="milestone-focus">Critical infrastructure, financial services & complete
+                                    ecosystem maturity</span>
 
                                 <!-- ChainSync Energy Agents -->
                                 <div class="quarter-section">
@@ -1241,7 +352,9 @@
                                         <li>Environmental Compliance agent (EPA reporting)</li>
                                     </ul>
                                     <div class="highlight-box">
-                                        <strong style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected Impact</strong>
+                                        <strong
+                                            style="font-size: 0.85rem; color: var(--marker-color-1); margin-bottom: 8px; display: block;">Projected
+                                            Impact</strong>
                                         <div style="color: var(--text-secondary); font-size: 0.9rem;">
                                             ⚡ Grid Uptime: +3% • ⏱️ Outage Duration: -68% • 💰 Outage Costs: -40%
                                         </div>
@@ -1407,19 +520,23 @@
                 </div>
 
                 <!-- Slotify Technical Architecture -->
-                <div style="background: #f0f9ff; border-left: 4px solid #3B82F6; border-radius: 12px; padding: 28px; margin-top: 48px;">
-                    <h4 style="font-size: 1.2rem; margin-bottom: 12px; color: #1e40af;">📅 Slotify Technical Architecture</h4>
+                <div
+                    style="background: #f0f9ff; border-left: 4px solid #3B82F6; border-radius: 12px; padding: 28px; margin-top: 48px;">
+                    <h4 style="font-size: 1.2rem; margin-bottom: 12px; color: #1e40af;">📅 Slotify Technical
+                        Architecture</h4>
                     <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
                         <strong>Current State:</strong> Slotify has a modular structure but no formal plugin system yet.
                     </p>
                     <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
-                        <strong>Approach:</strong> Create add-ons as npm packages in the monorepo's <code>/packages</code> directory.
+                        <strong>Approach:</strong> Create add-ons as npm packages in the monorepo's
+                        <code>/packages</code> directory.
                     </p>
                     <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px;">
                         <strong>Integration Points:</strong> Service layer, middleware pipeline, API routes.
                     </p>
                     <p style="color: var(--text-secondary); line-height: 1.7;">
-                        <strong>Tech Stack:</strong> React + Vite (frontend), Express.js + MongoDB (backend), pnpm workspaces.
+                        <strong>Tech Stack:</strong> React + Vite (frontend), Express.js + MongoDB (backend), pnpm
+                        workspaces.
                     </p>
                 </div>
             </div>
@@ -1450,7 +567,8 @@
                             Competition and long healthcare sales cycles.
                         </p>
                         <p style="color: var(--text-secondary); line-height: 1.7;">
-                            <strong>Mitigation:</strong> Domain expertise focus and early pilot programs to demonstrate value.
+                            <strong>Mitigation:</strong> Domain expertise focus and early pilot programs to demonstrate
+                            value.
                         </p>
                     </div>
 

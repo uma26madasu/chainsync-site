@@ -32,16 +32,8 @@
     gtag('config', 'YOUR-GA-ID');
   </script>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
-  <link rel="stylesheet" href="assets/css/premium-enhancements.css?v=2">
-  <link rel="stylesheet" href="assets/css/advanced-animations.css?v=2">
-  <link rel="stylesheet" href="assets/css/glassmorphism.css?v=2">
-  <link rel="stylesheet" href="assets/css/mobile-responsive.css?v=2">
-  <link rel="stylesheet" href="assets/css/premium-visual.css?v=2">
-  <link rel="stylesheet" href="assets/css/compact-spacing.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="has-testing-banner">
@@ -76,9 +68,10 @@
       </div>
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
-      <div class="container">
-        <h1 class="page-title hero-title">From Detection to Resolution in Minutes</h1>
-        <p class="page-subtitle hero-subtitle">ChainSync replaces slow, manual emergency response with intelligent
+      <div class="container text-center">
+        <h1 class="hero-title">From Detection to Resolution in Minutes</h1>
+        <p class="hero-subtitle text-center" style="margin: 0 auto;">ChainSync replaces slow, manual emergency response
+          with intelligent
           automation — see exactly how it works.</p>
       </div>
     </section>
@@ -185,78 +178,70 @@
           specialized for one task, but they coordinate seamlessly. Here's what happens in the critical first 60 seconds
           of a water contamination incident:</p>
 
-        <div
-          style="background: white; border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-lg); max-width: 900px; margin: 0 auto;">
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <!-- Second 0 -->
-            <div style="display: flex; gap: 10px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
-              <div style="min-width: 100px;">
-                <span style="font-weight: 700; font-size: 1.25rem; color: var(--electric-primary);">00:00</span>
-              </div>
-              <div>
-                <h4 style="margin: 0 0 8px 0; color: var(--electric-primary);">🔍 Detection Agent identifies anomaly
-                </h4>
-                <p style="margin: 0; color: var(--text-secondary);">Lead levels spike to 22 ppb (regulatory limit: 15
-                  ppb). Detection Agent flags incident and triggers Analysis Agent.</p>
-              </div>
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span
+                style="font-weight: 700; font-size: 1.25rem; color: var(--electric-primary); display: block; margin-bottom: 8px;">00:00</span>
+              <h4 style="margin: 0 0 8px 0; color: var(--electric-primary);">🔍 Detection Agent identifies anomaly</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Lead levels spike to 22 ppb. Detection Agent flags
+                incident and triggers Analysis Agent.</p>
             </div>
+          </div>
 
-            <!-- Second 3 -->
-            <div style="display: flex; gap: 10px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
-              <div style="min-width: 100px;">
-                <span style="font-weight: 700; font-size: 1.25rem; color: var(--cyber-primary);">00:03</span>
-              </div>
-              <div>
-                <h4 style="margin: 0 0 8px 0; color: var(--cyber-primary);">🧠 Analysis Agent evaluates severity</h4>
-                <p style="margin: 0; color: var(--text-secondary);">Determines this is HIGH severity: 50,000 residents
-                  affected, schools opening in 5 hours. Selects "Critical Water Quality" response protocol.</p>
-              </div>
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span
+                style="font-weight: 700; font-size: 1.25rem; color: var(--cyber-primary); display: block; margin-bottom: 8px;">00:03</span>
+              <h4 style="margin: 0 0 8px 0; color: var(--cyber-primary);">🧠 Analysis Agent evaluates severity</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Determines HIGH severity: 50,000 residents affected.
+                Selects "Critical Water Quality" protocol.</p>
             </div>
+          </div>
 
-            <!-- Second 5 -->
-            <div style="display: flex; gap: 10px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
-              <div style="min-width: 100px;">
-                <span style="font-weight: 700; font-size: 1.25rem; color: var(--flame-primary);">00:05</span>
-              </div>
-              <div>
-                <h4 style="margin: 0 0 8px 0; color: var(--flame-primary);">📡 Coordination Agent activates response
-                </h4>
-                <p style="margin: 0; color: var(--text-secondary);">Simultaneously sends: SMS/email/phone to on-call
-                  team, automated report to state EPA, alerts to all schools in affected area, public notification
-                  system activation request.</p>
-              </div>
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span
+                style="font-weight: 700; font-size: 1.25rem; color: var(--flame-primary); display: block; margin-bottom: 8px;">00:05</span>
+              <h4 style="margin: 0 0 8px 0; color: var(--flame-primary);">📡 Coordination Agent activates response</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Sends SMS to on-call team, report to EPA, alerts to
+                schools, and public notifications.</p>
             </div>
+          </div>
 
-            <!-- Second 8 -->
-            <div style="display: flex; gap: 10px; padding-bottom: 24px; border-bottom: 2px solid var(--bg-secondary);">
-              <div style="min-width: 100px;">
-                <span style="font-weight: 700; font-size: 1.25rem; color: var(--emerald-primary);">00:08</span>
-              </div>
-              <div>
-                <h4 style="margin: 0 0 8px 0; color: var(--emerald-primary);">📝 Documentation Agent begins logging</h4>
-                <p style="margin: 0; color: var(--text-secondary);">Starts incident timeline, records all notifications
-                  sent, prepares regulatory compliance report templates.</p>
-              </div>
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span
+                style="font-weight: 700; font-size: 1.25rem; color: var(--emerald-primary); display: block; margin-bottom: 8px;">00:08</span>
+              <h4 style="margin: 0 0 8px 0; color: var(--emerald-primary);">📝 Documentation Agent begins logging</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Starts incident timeline, records all notifications
+                sent, prepares compliance reports.</p>
             </div>
+          </div>
 
-            <!-- Second 60 -->
-            <div style="display: flex; gap: 10px;">
-              <div style="min-width: 100px;">
-                <span style="font-weight: 700; font-size: 1.25rem; color: var(--text-primary);">01:00</span>
-              </div>
-              <div>
-                <h4 style="margin: 0 0 8px 0; color: var(--text-primary);">✅ Full coordination achieved</h4>
-                <p style="margin: 0; color: var(--text-secondary);">Response team mobilized, regulators notified,
-                  schools warned, public alerts active, complete audit trail recorded. What traditionally takes 4-6
-                  hours completed in 60 seconds.</p>
-              </div>
+          <!-- Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span
+                style="font-weight: 700; font-size: 1.25rem; color: var(--text-primary); display: block; margin-bottom: 8px;">01:00</span>
+              <h4 style="margin: 0 0 8px 0; color: var(--text-primary);">✅ Full coordination achieved</h4>
+              <p style="margin: 0; color: var(--text-secondary);">Response team mobilized, regulators notified, schools
+                warned. 4-6 hours of work in 60 seconds.</p>
             </div>
           </div>
         </div>
 
         <div style="margin-top: 40px; text-align: center;">
-          <p
-            style="font-size: 1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+          <p style="font-size: 1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
             This level of coordination isn't possible with manual processes. When every second counts, intelligent
             agents ensure nothing falls through the cracks.</p>
         </div>

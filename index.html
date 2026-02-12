@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/enterprise-redesign.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
@@ -68,8 +68,8 @@
           ChainSync connects real-time monitoring, AI analysis, and automated coordination to help environmental teams respond to threats before they become disasters.
         </p>
         <div class="hero-ctas">
-          <a href="#early-access" class="btn-primary">Join Early Access Program</a>
-          <a href="#solution" class="btn-secondary">See How It Works</a>
+          <a href="#early-access" class="btn btn-primary">Join Early Access Program</a>
+          <a href="#solution" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-trust-bar">
           <span>Multi-Region AWS Infrastructure</span>
@@ -80,9 +80,44 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="placeholder-visual">
-          <p>Dashboard Visual</p>
-          <p class="small">Threat Detection → Response Timeline</p>
+        <div class="visual-mockup-dashboard">
+          <div class="dashboard-header">
+            <div class="dashboard-traffic-lights">
+              <span style="background:#ef4444"></span>
+              <span style="background:#eab308"></span>
+              <span style="background:#22c55e"></span>
+            </div>
+          </div>
+          <div class="dashboard-body">
+            <div class="dashboard-sidebar">
+              <div class="sidebar-item"></div>
+              <div class="sidebar-item"></div>
+              <div class="sidebar-item"></div>
+            </div>
+            <div class="dashboard-content">
+              <div class="dashboard-metrics-row">
+                <div class="metric-card">
+                  <div class="metric-val" style="width: 80%"></div>
+                  <div class="metric-lbl"></div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-val" style="width: 60%; background: var(--accent-amber)"></div>
+                  <div class="metric-lbl"></div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-val" style="width: 90%; background: var(--accent-emerald)"></div>
+                  <div class="metric-lbl"></div>
+                </div>
+              </div>
+              <div class="dashboard-chart-area">
+                <div class="chart-line"></div>
+                <!-- Simulated graph line -->
+                <svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="none" style="opacity:0.5">
+                  <path d="M0,150 Q100,100 200,150 T400,50" fill="none" stroke="var(--accent-cyan)" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -267,10 +302,10 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 32px; padding: 16px; background: white; border-radius: 12px; border: 2px solid #10B981;">
-        <p style="font-size: 16px; font-weight: 600; color: #065F46; margin: 0;">
-          <span style="font-size: 20px; font-weight: 700;">Total: Under 90 seconds</span>
-          <span style="display: block; margin-top: 8px; font-size: 14px; color: #64748B; font-weight: 500;">from threat detection to coordinated response</span>
+      <div class="text-center mt-4 py-12" style="background: var(--white); border-radius: var(--radius-lg); border: 2px solid var(--accent-emerald);">
+        <p class="text-brand" style="margin: 0; color: var(--accent-emerald);">
+          <span style="font-size: var(--font-h3); font-weight: var(--fw-bold);">Total: Under 90 seconds</span>
+          <span style="display: block; margin-top: 8px; font-size: var(--font-ui); color: var(--text-secondary);">from threat detection to coordinated response</span>
         </p>
       </div>
     </div>
@@ -287,39 +322,39 @@
         </p>
       </div>
 
-      <div style="max-width: 900px; margin: 0 auto;">
-        <div style="background: white; border: 1px solid #CBD5E1; border-radius: 12px; padding: 32px; margin-bottom: 24px;">
-          <h3 style="font-size: 20px; margin-bottom: 20px; color: #0F172A;">Technical Specifications</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+      <div class="container text-center">
+        <div class="card mb-4 text-left">
+          <h3 class="mb-4">Technical Specifications</h3>
+          <div class="grid-3">
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">Deployment</div>
-              <div style="font-size: 15px; color: #334155;">Multi-region (US-East-1, US-West-2, EU-West-1)</div>
+              <div class="text-secondary font-bold text-sm">Deployment</div>
+              <div class="text-primary">Multi-region (US-East-1, US-West-2, EU-West-1)</div>
             </div>
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">Availability</div>
-              <div style="font-size: 15px; color: #334155;">99.99% uptime SLA</div>
+              <div class="text-secondary font-bold text-sm">Availability</div>
+              <div class="text-primary">99.99% uptime SLA</div>
             </div>
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">Platform</div>
-              <div style="font-size: 15px; color: #334155;">AWS Multi-AZ with automatic failover</div>
+              <div class="text-secondary font-bold text-sm">Platform</div>
+              <div class="text-primary">AWS Multi-AZ with automatic failover</div>
             </div>
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">Agent Framework</div>
-              <div style="font-size: 15px; color: #334155;">Python + FastAPI</div>
+              <div class="text-secondary font-bold text-sm">Agent Framework</div>
+              <div class="text-primary">Python + FastAPI</div>
             </div>
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">AI Models</div>
-              <div style="font-size: 15px; color: #334155;">GPT-4, ChromaDB vector storage</div>
+              <div class="text-secondary font-bold text-sm">AI Models</div>
+              <div class="text-primary">GPT-4, ChromaDB vector storage</div>
             </div>
             <div>
-              <div style="font-size: 13px; font-weight: 500; color: #64748B; margin-bottom: 4px;">Integration</div>
-              <div style="font-size: 15px; color: #334155;">Standard webhooks (platform-agnostic)</div>
+              <div class="text-secondary font-bold text-sm">Integration</div>
+              <div class="text-primary">Standard webhooks (platform-agnostic)</div>
             </div>
           </div>
         </div>
 
-        <div style="text-align: center;">
-          <a href="technology.html" class="btn-secondary">View Full Technical Documentation →</a>
+        <div class="text-center">
+          <a href="technology.html" class="btn btn-secondary">View Full Technical Documentation →</a>
         </div>
       </div>
     </div>
@@ -434,7 +469,7 @@
             placeholder="What environmental challenges are you trying to solve?" required></textarea>
         </div>
 
-        <button type="submit" class="btn-primary" style="width: 100%;">Request Early Access</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Early Access</button>
 
         <p class="form-note" style="text-align: center;">
           We'll review your application and reach out within 2 business days.
@@ -460,7 +495,7 @@
         <p style="font-size: 16px; color: #334155; line-height: 1.6; margin-bottom: 24px;">
           "We're solving the coordination problem that slows down every environmental emergency response. The technology is ready. Now we're proving it in the real world."
         </p>
-        <a href="https://www.linkedin.com/in/umamadasu" target="_blank" rel="noopener" class="btn-secondary">
+        <a href="https://www.linkedin.com/in/umamadasu" target="_blank" rel="noopener" class="btn btn-secondary">
           Connect on LinkedIn →
         </a>
       </div>
@@ -534,7 +569,7 @@
   </section>
 
   <!-- Final CTA -->
-  <section style="background: #0066FF; padding: 80px 32px; text-align: center;">
+  <section class="py-20 text-center" style="background: var(--primary-blue);">
     <div class="container" style="max-width: 700px;">
       <h2 style="font-size: 40px; font-weight: 700; color: white; margin-bottom: 16px; letter-spacing: -0.02em;">
         Help Build the Future of Environmental Response
@@ -543,10 +578,10 @@
         Join us in creating technology that protects communities and ecosystems.
       </p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="#early-access" style="background: white; color: #0066FF; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; display: inline-block; transition: 200ms ease;">
+        <a href="#early-access" class="btn btn-secondary" style="background: white; color: var(--primary-blue); border: none;">
           Request Early Access
         </a>
-        <a href="contact.html" style="background: transparent; border: 2px solid white; color: white; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; display: inline-block; transition: 200ms ease;">
+        <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white;">
           Schedule Founder Call
         </a>
       </div>
