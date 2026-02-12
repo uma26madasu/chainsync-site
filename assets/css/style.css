@@ -998,7 +998,7 @@ body.has-testing-banner .hero {
   line-height: 1.3;
   letter-spacing: normal;
   color: var(--text-primary);
-  animation: fadeInUp 0.8s ease-out;
+  /* Removed: animation: fadeInUp 0.8s ease-out; - causing transparency issues */
   text-wrap: balance;
   text-align: center;
   margin-left: auto;
