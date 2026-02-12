@@ -22,8 +22,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ChainSync - Environmental Emergency Response Platform">
-  <meta name="twitter:description"
-    content="From threat detection to coordinated response in under 90 seconds.">
+  <meta name="twitter:description" content="From threat detection to coordinated response in under 90 seconds.">
 
   <link rel="canonical" href="https://getchainsync.com/">
 
@@ -62,21 +61,20 @@
     <div class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Environmental Emergency Response in Under 90 Seconds
+          The Operating System for Environmental Emergency Response
         </h1>
         <p class="hero-subtitle">
-          ChainSync connects real-time monitoring, AI analysis, and automated coordination to help environmental teams respond to threats before they become disasters.
+          ChainSync is a live platform that ingests real-time sensor data, correlates alerts with AI, and automates
+          cross-team dispatch workflows. Coordinate response in seconds, not hours.
         </p>
         <div class="hero-ctas">
-          <a href="#early-access" class="btn btn-primary">Join Early Access Program</a>
-          <a href="#solution" class="btn btn-secondary">See How It Works</a>
+          <a href="contact.html" class="btn btn-primary">Request Platform Demo</a>
+          <a href="technology.html" class="btn btn-secondary">View Architecture</a>
         </div>
         <div class="hero-trust-bar">
-          <span>Multi-Region AWS Infrastructure</span>
-          <span>•</span>
-          <span>12 Specialized AI Agents</span>
-          <span>•</span>
-          <span>Production-Ready Integration Hub</span>
+          <span><span class="trust-icon">⚡</span> Sub-90 Second Response</span>
+          <span><span class="trust-icon">🔒</span> SOC2 Compliant Cloud</span>
+          <span><span class="trust-icon">🔌</span> Universal API Integration</span>
         </div>
       </div>
       <div class="hero-visual">
@@ -87,34 +85,73 @@
               <span style="background:#eab308"></span>
               <span style="background:#22c55e"></span>
             </div>
+            <div class="dashboard-search">
+              <span>Active Incidents: <strong>3</strong></span>
+              <span>System Status: <strong style="color:#22c55e">Operational</strong></span>
+            </div>
           </div>
           <div class="dashboard-body">
             <div class="dashboard-sidebar">
-              <div class="sidebar-item"></div>
-              <div class="sidebar-item"></div>
-              <div class="sidebar-item"></div>
+              <div class="sidebar-item active">
+                <span class="icon">📊</span> Dashboard
+              </div>
+              <div class="sidebar-item">
+                <span class="icon">🚨</span> Active Alerts <span class="badge-red">3</span>
+              </div>
+              <div class="sidebar-item">
+                <span class="icon">📡</span> Sensors
+              </div>
+              <div class="sidebar-item">
+                <span class="icon">📝</span> Reports
+              </div>
             </div>
             <div class="dashboard-content">
               <div class="dashboard-metrics-row">
                 <div class="metric-card">
-                  <div class="metric-val" style="width: 80%"></div>
-                  <div class="metric-lbl"></div>
+                  <span class="metric-title">Avg Response Time</span>
+                  <div class="metric-val-text">1m 24s</div>
+                  <div class="metric-trend up">↓ 12% vs last week</div>
                 </div>
                 <div class="metric-card">
-                  <div class="metric-val" style="width: 60%; background: var(--accent-amber)"></div>
-                  <div class="metric-lbl"></div>
+                  <span class="metric-title">Active Seniors</span>
+                  <div class="metric-val-text">1,420</div>
+                  <div class="metric-trend">98.5% Online</div>
                 </div>
-                <div class="metric-card">
-                  <div class="metric-val" style="width: 90%; background: var(--accent-emerald)"></div>
-                  <div class="metric-lbl"></div>
+                <div class="metric-card alert">
+                  <span class="metric-title">Critical Alerts</span>
+                  <div class="metric-val-text" style="color: #ef4444">3</div>
+                  <div class="metric-trend">Requires Action</div>
                 </div>
               </div>
-              <div class="dashboard-chart-area">
-                <div class="chart-line"></div>
-                <!-- Simulated graph line -->
-                <svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="none" style="opacity:0.5">
-                  <path d="M0,150 Q100,100 200,150 T400,50" fill="none" stroke="var(--accent-cyan)" stroke-width="2"/>
-                </svg>
+              <div class="dashboard-main-area">
+                <div class="dashboard-map-placeholder">
+                  <!-- Stylized Map CSS -->
+                  <div class="map-point critical" style="top: 30%; left: 40%"></div>
+                  <div class="map-point warning" style="top: 50%; left: 60%"></div>
+                  <div class="map-tooltip">
+                    <strong>Contamination Alert</strong><br>
+                    Zone B-12<br>
+                    Status: Dispatched
+                  </div>
+                </div>
+                <div class="dashboard-list">
+                  <div class="list-header">Real-time Feed</div>
+                  <div class="list-item">
+                    <span class="time">10:42 AM</span>
+                    <span class="event">Turbidity spike detected (Zone B-12)</span>
+                    <span class="status dispatched">Dispatched</span>
+                  </div>
+                  <div class="list-item">
+                    <span class="time">10:41 AM</span>
+                    <span class="event">AI verification complete (98% Conf)</span>
+                    <span class="status verified">Verified</span>
+                  </div>
+                  <div class="list-item">
+                    <span class="time">10:40 AM</span>
+                    <span class="event">Sensor #4092 reported anomaly</span>
+                    <span class="status pending">Analyzing</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -211,7 +248,9 @@
         <span class="section-label">The Reality</span>
         <h2 class="section-title">Environmental Emergencies Don't Wait for Spreadsheets</h2>
         <p class="section-subtitle">
-          When contamination threatens a water system, when chemical spills endanger communities, when waste overflow spreads through neighborhoods—every minute counts. But response teams are fighting with phone calls, email chains, and manual processes while the threat grows and the impact spreads.
+          When contamination threatens a water system, when chemical spills endanger communities, when waste overflow
+          spreads through neighborhoods—every minute counts. But response teams are fighting with phone calls, email
+          chains, and manual processes while the threat grows and the impact spreads.
         </p>
       </div>
 
@@ -276,7 +315,8 @@
           <div class="process-number">2</div>
           <h3>Analyze</h3>
           <p>
-            Context enrichment, risk scoring, and root cause analysis. Historical data + weather patterns + regulatory thresholds.
+            Context enrichment, risk scoring, and root cause analysis. Historical data + weather patterns + regulatory
+            thresholds.
           </p>
           <div class="process-time">~30 seconds</div>
         </div>
@@ -296,16 +336,19 @@
           <div class="process-number">4</div>
           <h3>Protect</h3>
           <p>
-            Complete audit trails, automated reports, compliance tracking. Your team focuses on resolution, not paperwork.
+            Complete audit trails, automated reports, compliance tracking. Your team focuses on resolution, not
+            paperwork.
           </p>
           <div class="process-time">Continuous</div>
         </div>
       </div>
 
-      <div class="text-center mt-4 py-12" style="background: var(--white); border-radius: var(--radius-lg); border: 2px solid var(--accent-emerald);">
+      <div class="text-center mt-4 py-12"
+        style="background: var(--white); border-radius: var(--radius-lg); border: 2px solid var(--accent-emerald);">
         <p class="text-brand" style="margin: 0; color: var(--accent-emerald);">
           <span style="font-size: var(--font-h3); font-weight: var(--fw-bold);">Total: Under 90 seconds</span>
-          <span style="display: block; margin-top: 8px; font-size: var(--font-ui); color: var(--text-secondary);">from threat detection to coordinated response</span>
+          <span style="display: block; margin-top: 8px; font-size: var(--font-ui); color: var(--text-secondary);">from
+            threat detection to coordinated response</span>
         </p>
       </div>
     </div>
@@ -372,13 +415,14 @@
         <div class="proof-card">
           <div class="proof-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
           <h3 class="proof-title">Water Treatment Facilities</h3>
           <p class="proof-description">
-            Detect contamination events, coordinate multi-agency response, automate regulatory reporting for drinking water systems.
+            Detect contamination events, coordinate multi-agency response, automate regulatory reporting for drinking
+            water systems.
           </p>
         </div>
 
@@ -393,7 +437,8 @@
           </div>
           <h3 class="proof-title">Industrial Environmental Compliance</h3>
           <p class="proof-description">
-            Monitor emissions, manage incident response, maintain compliance documentation automatically for manufacturing and industrial sites.
+            Monitor emissions, manage incident response, maintain compliance documentation automatically for
+            manufacturing and industrial sites.
           </p>
         </div>
 
@@ -408,7 +453,8 @@
           </div>
           <h3 class="proof-title">Municipal Emergency Response</h3>
           <p class="proof-description">
-            Coordinate environmental emergencies across departments, stakeholders, and regulatory bodies for local government agencies.
+            Coordinate environmental emergencies across departments, stakeholders, and regulatory bodies for local
+            government agencies.
           </p>
         </div>
       </div>
@@ -422,7 +468,8 @@
         <span class="section-label">Early Access Program</span>
         <h2 class="section-title">Join the Q3 2026 Pilot Program</h2>
         <p class="section-subtitle">
-          We're working with select pilot partners to validate real-world performance across different environmental scenarios. Limited spots available.
+          We're working with select pilot partners to validate real-world performance across different environmental
+          scenarios. Limited spots available.
         </p>
       </div>
 
@@ -487,13 +534,15 @@
       </div>
 
       <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0066FF 0%, #06B6D4 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 32px; margin: 0 auto 24px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);">
+        <div
+          style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0066FF 0%, #06B6D4 100%); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 32px; margin: 0 auto 24px; border: 3px solid white; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);">
           UM
         </div>
         <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 8px; color: #0F172A;">Uma Madasu</h3>
         <p style="font-size: 16px; color: #64748B; margin-bottom: 24px;">Founder & CEO</p>
         <p style="font-size: 16px; color: #334155; line-height: 1.6; margin-bottom: 24px;">
-          "We're solving the coordination problem that slows down every environmental emergency response. The technology is ready. Now we're proving it in the real world."
+          "We're solving the coordination problem that slows down every environmental emergency response. The technology
+          is ready. Now we're proving it in the real world."
         </p>
         <a href="https://www.linkedin.com/in/umamadasu" target="_blank" rel="noopener" class="btn btn-secondary">
           Connect on LinkedIn →
@@ -511,57 +560,76 @@
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 16px;">
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             When will ChainSync be available?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            We're currently in active development and working with select pilot partners for Q3 2026 testing. We don't have a public launch date yet—we're prioritizing building the system correctly over launching quickly. Join our early access list to be notified when testing opportunities become available.
+            We're currently in active development and working with select pilot partners for Q3 2026 testing. We don't
+            have a public launch date yet—we're prioritizing building the system correctly over launching quickly. Join
+            our early access list to be notified when testing opportunities become available.
           </p>
         </details>
 
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             Who is ChainSync designed for?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            We're building ChainSync for environmental agencies, water treatment facilities, industrial sites with environmental monitoring requirements, and municipalities managing environmental health. Anyone responsible for detecting and responding to environmental emergencies could benefit from automated coordination.
+            We're building ChainSync for environmental agencies, water treatment facilities, industrial sites with
+            environmental monitoring requirements, and municipalities managing environmental health. Anyone responsible
+            for detecting and responding to environmental emergencies could benefit from automated coordination.
           </p>
         </details>
 
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             What makes the Python agent approach different?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            Instead of a single monolithic system trying to do everything, we're building specialized Python agents that each excel at one task (detection, analysis, coordination, documentation). This modular approach makes the system more reliable, easier to update, and more adaptable to different scenarios. If one agent needs improvement, we can update it without disrupting the entire system.
+            Instead of a single monolithic system trying to do everything, we're building specialized Python agents that
+            each excel at one task (detection, analysis, coordination, documentation). This modular approach makes the
+            system more reliable, easier to update, and more adaptable to different scenarios. If one agent needs
+            improvement, we can update it without disrupting the entire system.
           </p>
         </details>
 
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             What's your pricing model?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            Pricing will be announced with public launch. Early access partners receive preferential rates. During the pilot phase, there are no upfront costs.
+            Pricing will be announced with public launch. Early access partners receive preferential rates. During the
+            pilot phase, there are no upfront costs.
           </p>
         </details>
 
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             Is this production-ready?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            Core components are built and tested. We're validating integrated system performance with pilot partners before general availability. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational.
+            Core components are built and tested. We're validating integrated system performance with pilot partners
+            before general availability. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all
+            operational.
           </p>
         </details>
 
-        <details style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
+        <details
+          style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #CBD5E1; cursor: pointer;">
           <summary style="font-size: 18px; font-weight: 600; color: #0F172A; cursor: pointer; list-style: none;">
             Will this replace human responders?
           </summary>
           <p style="color: #334155; line-height: 1.6; margin-top: 16px;">
-            No. ChainSync is designed to augment human expertise, not replace it. The system handles coordination, notifications, and documentation—the administrative overhead that slows down response. This frees up environmental professionals to focus on what they do best: making decisions and taking action to protect communities and ecosystems.
+            No. ChainSync is designed to augment human expertise, not replace it. The system handles coordination,
+            notifications, and documentation—the administrative overhead that slows down response. This frees up
+            environmental professionals to focus on what they do best: making decisions and taking action to protect
+            communities and ecosystems.
           </p>
         </details>
       </div>
@@ -578,7 +646,8 @@
         Join us in creating technology that protects communities and ecosystems.
       </p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="#early-access" class="btn btn-secondary" style="background: white; color: var(--primary-blue); border: none;">
+        <a href="#early-access" class="btn btn-secondary"
+          style="background: white; color: var(--primary-blue); border: none;">
           Request Early Access
         </a>
         <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white;">
@@ -594,7 +663,8 @@
       <div class="footer-brand">
         <h3>ChainSync</h3>
         <p>
-          Building intelligent coordination for environmental protection—because every ecosystem, every community, and every drop of clean water matters.
+          Building intelligent coordination for environmental protection—because every ecosystem, every community, and
+          every drop of clean water matters.
         </p>
       </div>
 
@@ -625,7 +695,7 @@
 
   <script>
     // Simple form handling
-    document.getElementById('early-access-form')?.addEventListener('submit', function(e) {
+    document.getElementById('early-access-form')?.addEventListener('submit', function (e) {
       e.preventDefault();
       alert('Early access form submitted! We\'ll review your application and be in touch within 2 business days.');
       this.reset();
