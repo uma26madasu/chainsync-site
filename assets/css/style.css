@@ -986,6 +986,8 @@ body.has-testing-banner .hero {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 15;
 }
 
 .hero-title {
@@ -1004,6 +1006,11 @@ body.has-testing-banner .hero {
   overflow: visible;
   white-space: normal;
   word-spacing: normal;
+  /* Fix: Ensure no transparency layer appears over text */
+  opacity: 1 !important;
+  position: relative;
+  z-index: 20;
+}
   max-width: 100%;
   height: auto;
   max-height: none;
@@ -1522,7 +1529,7 @@ button:focus:not(:focus-visible) {
 
 .page-hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 15;
 }
 
 .page-title {
@@ -1532,6 +1539,14 @@ button:focus:not(:focus-visible) {
   margin-bottom: 24px;
   line-height: 1.15;
   letter-spacing: -0.025em;
+}
+
+/* Fix: Set solid black color for use-cases hero title */
+.page-title.hero-title {
+  color: #000000 !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 20;
 }
 
 .page-subtitle {
