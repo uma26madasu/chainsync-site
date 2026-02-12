@@ -40,11 +40,14 @@
     --white: #FFFFFF;
 
     /* Semantic Aliases */
-    --text-primary: var(--gray-900);
-    --text-secondary: var(--gray-700);
+    --text-primary: #1A1F36;
+    /* Darker, solid color */
+    --text-secondary: #000000;
+    /* Black for taglines */
     --text-tertiary: var(--gray-500);
-    --bg-primary: var(--white);
-    --bg-secondary: var(--gray-50);
+    --bg-primary: #f6f9fc;
+    /* Stripe-style light gray global bg */
+    --bg-secondary: #ffffff;
     --bg-tertiary: var(--gray-100);
     --bg-dark: var(--gray-900);
 
@@ -65,12 +68,15 @@
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 
     /* Desktop Type Scale */
-    --font-hero: 56px;
-    --font-h1: 48px;
+    --font-hero: 4rem;
+    /* Slightly larger for impact */
+    --font-h1: 3.5rem;
+    /* Standardized H1 */
     --font-h2: 40px;
     --font-h3: 28px;
     --font-h4: 20px;
-    --font-body-lg: 18px;
+    --font-body-lg: 1.25rem;
+    /* Tagline size */
     --font-body: 16px;
     --font-ui: 14px;
     --font-caption: 12px;
@@ -133,8 +139,8 @@ body {
     color: var(--text-primary);
     background: var(--bg-primary);
     overflow-x: hidden;
-    padding-top: 105px;
-    /* Navbar + Banner offset */
+    padding-top: 150px !important;
+    /* Universal Spacer: 35px Banner + 80px Nav + Padding */
 }
 
 /* Typography Helpers */
@@ -152,6 +158,12 @@ h6 {
 
 h1 {
     font-size: var(--font-h1);
+    color: #1A1F36;
+    /* Explicit Dark Solid */
+    text-shadow: none !important;
+    /* Remove ghosts */
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 h2 {
@@ -170,6 +182,7 @@ p {
     margin-bottom: 1em;
     color: var(--text-secondary);
 }
+
 
 a {
     color: var(--primary-blue);
@@ -362,13 +375,20 @@ a:hover {
    4. NAVIGATION & FOOTER
    ================================================ */
 /* Copied from enterprise-redesign.css with updates */
+/* ================================================
+   4. NAVIGATION & FOOTER
+   ================================================ */
+/* Copied from enterprise-redesign.css with updates */
 .status-banner {
     background: #FEF3C7;
     /* Amber 100 */
     color: #92400E;
     /* Amber 800 */
     text-align: center;
-    padding: 10px 20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: var(--font-ui);
     font-weight: var(--fw-medium);
     border-bottom: 1px solid #FCD34D;
@@ -377,19 +397,23 @@ a:hover {
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 41px;
+    height: 35px;
+    /* Layer 1: 35px Fixed Height */
 }
 
 #navbar {
     position: fixed;
-    top: 41px;
+    top: 35px;
+    /* Layer 2: Starts after banner */
     left: 0;
     right: 0;
     z-index: 999;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    /* Increased opacity for cleaner look */
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--gray-200);
-    height: 72px;
+    height: 80px;
+    /* Layer 2: 80px Fixed Height */
     display: flex;
     align-items: center;
 }
@@ -405,7 +429,8 @@ a:hover {
 }
 
 .logo-text {
-    font-size: 20px;
+    font-size: 24px;
+    /* Bumped up slightly */
     font-weight: var(--fw-bold);
     color: var(--primary-blue);
 }
@@ -533,6 +558,8 @@ footer a:hover {
 
 .sidebar-item:nth-child(2) {
     width: 60%;
+    height: auto;
+    /* Allow expanding if needed for mockup text */
 }
 
 .sidebar-item:nth-child(3) {
@@ -558,6 +585,39 @@ footer a:hover {
     border-radius: var(--radius-md);
     height: 60px;
     padding: var(--space-2);
+    position: relative;
+    /* For tooltip */
+}
+
+/* Tooltip Support */
+.metric-card[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    border: 1px solid #333;
+}
+
+.metric-card[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #111 transparent transparent transparent;
+    z-index: 100;
 }
 
 .metric-val {
@@ -605,24 +665,35 @@ footer a:hover {
 
 /* Hero Section Specifics */
 .hero {
-    padding: var(--space-16) 0;
+    padding: var(--space-12) 0;
+    /* Reduced top padding since body has Universal Spacer */
     background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
 }
 
 .hero-title {
     margin-bottom: var(--space-6);
-    font-size: var(--font-hero);
+    font-size: var(--font-h1);
+    /* Uses 3.5rem from variable */
     line-height: 1.1;
-    background: -webkit-linear-gradient(45deg, var(--gray-900), var(--primary-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #1A1F36 !important;
+    /* Explicit Override */
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: initial !important;
+    text-shadow: none !important;
 }
 
 .hero-subtitle {
-    font-size: var(--font-body-lg);
+    font-size: 1.25rem;
+    /* Explicit 1.25rem */
+    color: #000000;
+    /* Explicit Black */
     max-width: 600px;
     margin-bottom: var(--space-8);
+    opacity: 1;
+    /* Remove ghosting */
 }
+
 
 /* ================================================
    6. DIAGRAM VISUALIZATIONS
