@@ -187,7 +187,7 @@
 
   /* Layout Heights - Navbar & Spacing */
   --nav-height: 80px;
-  --testing-banner-height: 44px;
+  --testing-banner-height: 35px;
   --total-header-height: calc(var(--nav-height) + var(--testing-banner-height));
 
   /* Text colors */
@@ -626,16 +626,22 @@ a,
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  /* Requested z-index */
-  background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
+  z-index: 1001;
+  /* Above navbar */
+  background: #4F46E5;
+  /* Professional Indigo */
   color: white;
-  padding: 12px 24px;
+  padding: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  animation: slideDown 0.5s ease-out;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .testing-banner strong {
@@ -680,8 +686,9 @@ body.has-testing-banner .hero {
 
 @media (max-width: 768px) {
   .testing-banner {
-    font-size: 0.8125rem;
-    padding: 10px 16px;
+    font-size: 11px;
+    padding: 0;
+    height: 35px;
   }
 
   body.has-testing-banner #navbar {
@@ -704,10 +711,10 @@ body.has-testing-banner .hero {
   right: 0;
   height: var(--nav-height);
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(173, 181, 189, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
   transition: var(--transition-smooth);
 }
 
@@ -1349,17 +1356,7 @@ img:hover {
   transform: translate(-10px, 10px);
 }
 
-/* Navbar smooth appearance */
-#navbar {
-  transform: translateY(-100%);
-  animation: slideDown 0.5s ease-out forwards;
-}
-
-@keyframes slideDown {
-  to {
-    transform: translateY(0);
-  }
-}
+/* Navbar smooth appearance - removed animation for cleaner load */
 
 /* Logo subtle pulse on hover */
 .logo {
@@ -3210,16 +3207,7 @@ body::before {
   box-shadow: 0 8px 20px rgba(82, 183, 136, 0.15);
 }
 
-/* Simpler navigation blur */
-#navbar {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#navbar.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
+/* Simpler navigation blur - removed duplicate, see main #navbar rule */
 
 /* Simplified CTA - removed pseudo-elements */
 
@@ -3793,17 +3781,23 @@ details summary::-webkit-details-marker {
    SOLO FOUNDER FIX - Immediate Text & Layout Fixes
    ================================================ */
 
-/* 1. Clear the 'Ghost' Layer on Hero Text */
-#home h1, .hero-parallax h1 {
-    color: #2D3748 !important; /* Force a solid dark gray/black */
+/* 1. Clear the 'Ghost' Layer on Hero Text - Dark Charcoal for Maximum Contrast */
+#home h1,
+.hero-parallax h1,
+.hero-title {
+    color: #1A1F36 !important; /* Solid dark charcoal - high contrast */
     opacity: 1 !important;     /* Remove any transparency */
     position: relative;
     z-index: 10;               /* Pulls text above any background overlays */
 }
 
 /* 2. Fix the Overlap/Inconsistency across all pages */
-section#home, .hero.parallax-section {
-    padding-top: 140px !important; /* Nav height + Banner height + Padding */
+section#home,
+.hero.parallax-section,
+#main-content .page-hero,
+#main-content .roadmap-hero,
+.hero {
+    padding-top: 140px !important; /* Nav height (80px) + Banner (35px) + Spacing (25px) = 140px */
     margin-top: 0 !important;
 }
 
@@ -3815,4 +3809,59 @@ section#home p, .hero-section .tagline {
 /* 3b. Also target the actual "Real emergencies" h1 on use-cases page */
 h1.page-title.hero-title {
     color: #000000 !important; /* Solid black for use-cases hero */
+}
+
+/* ================================================
+   Technical Specifications Section - Stripe/Vercel Style
+   ================================================ */
+.tech-specs-section {
+  background: #fafbfc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 32px 0;
+  margin: 0;
+}
+
+.tech-specs-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.tech-spec-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tech-spec-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+.tech-spec-value {
+  font-weight: 400;
+  color: #64748b;
+}
+
+.tech-spec-separator {
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .tech-specs-content {
+    flex-direction: column;
+    gap: 16px;
+    font-size: 12px;
+  }
+  
+  .tech-spec-separator {
+    display: none;
+  }
 }
