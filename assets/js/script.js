@@ -999,18 +999,22 @@
      Interactive Tooltips
      ========================================== */
   function initInteractiveTooltips() {
-    // Add tooltips to stat items
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach(item => {
-      const label = item.querySelector('.stat-label')?.textContent || '';
-      const number = item.querySelector('.stat-number')?.textContent || '';
+    // Add tooltips to ONLY the goals-grid stat items (70%, 95%)
+    // NOT the counter stat-items that show "0%" initially
+    const goalsGrid = document.querySelector('.goals-grid');
+    if (goalsGrid) {
+      const statItems = goalsGrid.querySelectorAll('.stat-item');
+      statItems.forEach(item => {
+        const label = item.querySelector('.stat-label')?.textContent || '';
+        const number = item.querySelector('.stat-number')?.textContent || '';
 
-      if (label && number) {
-        item.setAttribute('data-tooltip', `Goal: ${number} ${label}`);
-        item.style.position = 'relative';
-        item.style.cursor = 'help';
-      }
-    });
+        if (label && number) {
+          item.setAttribute('data-tooltip', `Goal: ${number} ${label}`);
+          item.style.position = 'relative';
+          item.style.cursor = 'help';
+        }
+      });
+    }
 
     // Add tooltips to feature cards
     const featureCards = document.querySelectorAll('.feature-card');
