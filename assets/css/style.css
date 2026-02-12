@@ -188,7 +188,8 @@
   /* Layout Heights - Navbar & Spacing */
   --nav-height: 80px;
   --testing-banner-height: 35px;
-  --total-header-height: calc(var(--nav-height) + var(--testing-banner-height));
+  --header-height: calc(var(--nav-height) + var(--testing-banner-height)); /* 115px */
+  --total-header-height: calc(var(--header-height) + 60px); /* 175px with breathing room */
 
   /* Text colors */
   --clr-primary: #111111;
@@ -3865,3 +3866,162 @@ h1.page-title.hero-title {
     display: none;
   }
 }
+
+/* ================================================
+   PERMANENT FIX - Universal Header & Text Consistency
+   Solo Founder Solution - Apply Once, Works Everywhere
+   ================================================ */
+
+/* 1. FIXED HEADER STACK - Banner + Navbar Always On Top */
+.testing-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001; /* Above navbar */
+  height: var(--testing-banner-height);
+}
+
+#navbar {
+  position: fixed;
+  top: var(--testing-banner-height); /* Sits below banner */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Below banner, above content */
+  height: var(--nav-height);
+}
+
+body.has-testing-banner #navbar {
+  top: var(--testing-banner-height);
+}
+
+/* 2. UNIVERSAL SPACER - Applies to ALL First Sections */
+body.has-testing-banner section:first-of-type,
+body.has-testing-banner .hero:first-of-type,
+body.has-testing-banner main > section:first-child,
+body.has-testing-banner main > .hero:first-child,
+section#home,
+.hero.parallax-section {
+  padding-top: var(--total-header-height) !important; /* 175px = 115px header + 60px breathing room */
+  margin-top: 0 !important; /* Prevent double spacing */
+}
+
+/* Fallback for pages without testing banner */
+body:not(.has-testing-banner) section:first-of-type,
+body:not(.has-testing-banner) .hero:first-of-type,
+body:not(.has-testing-banner) main > section:first-child {
+  padding-top: calc(var(--nav-height) + 60px) !important; /* 140px = 80px nav + 60px breathing */
+  margin-top: 0 !important;
+}
+
+/* 3. HIGH-CONTRAST TEXT - Kill the Ghost Effect */
+/* Hero Title - Solid Charcoal */
+h1.hero-title,
+#home h1,
+.hero h1,
+.hero-parallax h1,
+section.hero h1 {
+  color: #1A1F36 !important; /* Solid charcoal - maximum contrast */
+  opacity: 1 !important; /* Remove ALL transparency */
+  background: none !important; /* No background overlays */
+  backdrop-filter: none !important; /* Remove blur effects */
+  -webkit-backdrop-filter: none !important;
+  text-shadow: none !important; /* No shadows causing ghosting */
+  position: relative;
+  z-index: 2; /* Above background elements */
+}
+
+/* Tagline - Solid Black */
+.page-title.hero-title,
+.hero-subtitle,
+section#home p,
+.hero-section .tagline {
+  color: #000000 !important; /* Pure black */
+  opacity: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-shadow: none !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* 4. Z-INDEX HIERARCHY - Proper Layering */
+/* Background elements stay at bottom */
+.hero-bg,
+.animated-bg,
+.floating-shape,
+.gradient-orb {
+  z-index: 0 !important; /* Bottom layer */
+}
+
+/* Decorative overlays */
+.hero::after,
+.page-hero::after {
+  z-index: 1 !important; /* Above background, below content */
+}
+
+/* Content containers */
+.hero-container,
+.hero-content,
+.page-hero .container {
+  position: relative;
+  z-index: 2 !important; /* Above decorative elements */
+}
+
+/* Text elements - highest in hero section */
+.hero h1,
+.hero h2,
+.hero p,
+.page-hero h1,
+.page-hero h2 {
+  position: relative;
+  z-index: 3 !important; /* Top of hero section */
+}
+
+/* Navigation - always on top */
+.testing-banner {
+  z-index: 1001 !important;
+}
+
+#navbar {
+  z-index: 1000 !important;
+}
+
+/* 5. MOBILE OPTIMIZATION - Maintain Consistency */
+@media (max-width: 768px) {
+  body.has-testing-banner section:first-of-type,
+  body.has-testing-banner .hero:first-of-type,
+  section#home,
+  .hero.parallax-section {
+    padding-top: var(--total-header-height) !important;
+  }
+  
+  /* Reduce breathing room slightly on mobile */
+  :root {
+    --total-header-height: calc(var(--header-height) + 40px); /* 155px on mobile */
+  }
+}
+
+/* 6. ACCESSIBILITY - Ensure Text is Always Readable */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove any lingering transparency from animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1 !important; /* Force full opacity */
+    transform: translateY(0);
+  }
+}
+
+/* ================================================
+   END PERMANENT FIX
+   ================================================ */
