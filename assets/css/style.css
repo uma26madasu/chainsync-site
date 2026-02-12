@@ -4025,3 +4025,281 @@ h1, h2, h3, h4, h5, h6 {
 /* ================================================
    END PERMANENT FIX
    ================================================ */
+
+/* ================================================
+   UNIVERSAL TYPOGRAPHY SYNC - All Pages Consistency
+   Ensures every page matches the perfected Home page
+   ================================================ */
+
+/* Universal H1 Hero Titles - 3.5rem Bold Charcoal */
+h1.hero-title,
+h1.page-title,
+.page-title.hero-title,
+.hero h1,
+.page-hero h1,
+.roadmap-hero h1,
+#home h1 {
+  font-size: 3.5rem !important; /* Consistent across all pages */
+  font-weight: 800 !important;  /* Bold */
+  color: #1A1F36 !important;    /* Solid charcoal */
+  line-height: 1.2 !important;
+  margin-bottom: 1.5rem !important;
+  opacity: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-shadow: none !important;
+}
+
+/* Universal Taglines/Subtitles - 1.25rem Black */
+p.hero-subtitle,
+p.page-subtitle,
+.hero-subtitle.page-subtitle,
+.hero p.subtitle,
+.page-hero p.subtitle,
+.roadmap-hero p {
+  font-size: 1.25rem !important; /* 20px */
+  font-weight: 400 !important;   /* Regular */
+  color: #000000 !important;     /* Solid black */
+  line-height: 1.6 !important;
+  margin-bottom: 2rem !important;
+  opacity: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Responsive Typography - Mobile Optimization */
+@media (max-width: 768px) {
+  h1.hero-title,
+  h1.page-title,
+  .page-title.hero-title,
+  .hero h1,
+  .page-hero h1,
+  .roadmap-hero h1 {
+    font-size: 2.5rem !important; /* Scales down on mobile */
+  }
+  
+  p.hero-subtitle,
+  p.page-subtitle,
+  .hero-subtitle.page-subtitle,
+  .roadmap-hero p {
+    font-size: 1.125rem !important; /* 18px on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  h1.hero-title,
+  h1.page-title,
+  .page-title.hero-title,
+  .hero h1,
+  .page-hero h1,
+  .roadmap-hero h1 {
+    font-size: 2rem !important; /* Further scale on small mobile */
+  }
+  
+  p.hero-subtitle,
+  p.page-subtitle,
+  .hero-subtitle.page-subtitle,
+  .roadmap-hero p {
+    font-size: 1rem !important; /* 16px on small mobile */
+  }
+}
+
+/* Override any inline styles that might conflict */
+.page-hero h1[style],
+.roadmap-hero h1[style],
+.hero h1[style] {
+  font-size: 3.5rem !important;
+  color: #1A1F36 !important;
+}
+
+.page-hero p[style],
+.roadmap-hero p[style],
+.hero p[style] {
+  font-size: 1.25rem !important;
+  color: #000000 !important;
+}
+
+/* ================================================
+   END UNIVERSAL TYPOGRAPHY SYNC
+   ================================================ */
+
+/* ================================================
+   GLOBAL STRIPE-STYLE DESIGN SYSTEM
+   Unified background, typography, and spacing
+   ================================================ */
+
+/* 1. UNIFIED BACKGROUND - Professional Off-White */
+body {
+  background: #f6f9fc !important;
+}
+
+/* Apply to all main sections and containers */
+section,
+main,
+.container,
+.hero,
+.page-hero,
+.premium-section,
+.features-section,
+.problem-solution,
+.timeline-container,
+.roadmap-section {
+  background: #f6f9fc !important;
+}
+
+/* Remove all gradient backgrounds */
+section[style*="background"],
+.premium-section[style*="background"] {
+  background: #f6f9fc !important;
+}
+
+/* 2. GLOBAL TYPOGRAPHY SCALE (Stripe Standard) */
+
+/* Header 1 (Main Titles) - 3.5rem Bold Charcoal */
+h1,
+.hero h1,
+.page-hero h1,
+.roadmap-hero h1,
+h1.hero-title,
+h1.page-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  color: #1A1F36 !important;
+  line-height: 1.2 !important;
+  opacity: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-shadow: none !important;
+}
+
+/* Taglines - 1.25rem Solid Black */
+.hero-subtitle,
+.page-subtitle,
+p.hero-subtitle,
+p.page-subtitle {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+  line-height: 1.6 !important;
+  opacity: 1 !important;
+  background: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Header 2 (Section Titles) - 2.25rem Semi-Bold */
+h2,
+.section-title,
+.feature-title {
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
+  color: #1A1F36 !important;
+  line-height: 1.3 !important;
+}
+
+/* 3. STRUCTURAL SPACING - Universal 140px */
+body.has-testing-banner section:first-of-type,
+body.has-testing-banner .hero:first-of-type,
+body.has-testing-banner main > section:first-child,
+section#home,
+.hero.parallax-section {
+  padding-top: 140px !important;
+  margin-top: 0 !important;
+}
+
+/* Without banner */
+body:not(.has-testing-banner) section:first-of-type,
+body:not(.has-testing-banner) .hero:first-of-type {
+  padding-top: 140px !important;
+  margin-top: 0 !important;
+}
+
+/* 4. MOBILE RESPONSIVENESS - Phones (<768px) */
+@media (max-width: 768px) {
+  /* Reduce H1 size */
+  h1,
+  .hero h1,
+  .page-hero h1,
+  .roadmap-hero h1,
+  h1.hero-title,
+  h1.page-title {
+    font-size: 2.25rem !important;
+  }
+  
+  /* Reduce tagline size */
+  .hero-subtitle,
+  .page-subtitle,
+  p.hero-subtitle,
+  p.page-subtitle {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Reduce H2 size */
+  h2,
+  .section-title,
+  .feature-title {
+    font-size: 1.875rem !important;
+  }
+  
+  /* Reduce first section padding */
+  body.has-testing-banner section:first-of-type,
+  body.has-testing-banner .hero:first-of-type,
+  body.has-testing-banner main > section:first-child,
+  section#home,
+  .hero.parallax-section {
+    padding-top: 110px !important;
+  }
+  
+  body:not(.has-testing-banner) section:first-of-type,
+  body:not(.has-testing-banner) .hero:first-of-type {
+    padding-top: 110px !important;
+  }
+}
+
+/* 5. REMOVE ALL TEXT TRANSPARENCY/FILTERS */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove any lingering opacity from text elements */
+.hero h1,
+.hero h2,
+.hero p,
+.page-hero h1,
+.page-hero h2,
+.page-hero p {
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 6. CARD/SECTION BACKGROUNDS - Keep White */
+.component-card,
+.feature-card,
+.tech-card,
+.scenario-card,
+.timeline-card {
+  background: white !important;
+}
+
+/* 7. NAVBAR & BANNER - Maintain Fixed Positioning */
+.testing-banner {
+  height: 35px !important;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 1001 !important;
+}
+
+#navbar {
+  height: 80px !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 1000 !important;
+}
+
+/* ================================================
+   END GLOBAL STRIPE-STYLE DESIGN SYSTEM
+   ================================================ */
