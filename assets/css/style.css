@@ -3788,3 +3788,31 @@ details summary:hover {
 details summary::-webkit-details-marker {
   display: none;
 }
+
+/* ================================================
+   SOLO FOUNDER FIX - Immediate Text & Layout Fixes
+   ================================================ */
+
+/* 1. Clear the 'Ghost' Layer on Hero Text */
+#home h1, .hero-parallax h1 {
+    color: #2D3748 !important; /* Force a solid dark gray/black */
+    opacity: 1 !important;     /* Remove any transparency */
+    position: relative;
+    z-index: 10;               /* Pulls text above any background overlays */
+}
+
+/* 2. Fix the Overlap/Inconsistency across all pages */
+section#home, .hero.parallax-section {
+    padding-top: 140px !important; /* Nav height + Banner height + Padding */
+    margin-top: 0 !important;
+}
+
+/* 3. Fix the "Real emergencies..." statement color */
+section#home p, .hero-section .tagline {
+    color: #000000 !important; /* Changes the statement to solid black */
+}
+
+/* 3b. Also target the actual "Real emergencies" h1 on use-cases page */
+h1.page-title.hero-title {
+    color: #000000 !important; /* Solid black for use-cases hero */
+}
