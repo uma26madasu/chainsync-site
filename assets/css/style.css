@@ -1444,7 +1444,7 @@ button:focus:not(:focus-visible) {
    Page Hero (Internal Pages) - Sky & Light
    ================================================ */
 .page-hero {
-  padding: 40px 32px 20px;
+  padding: 140px 32px 20px;
   background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
   position: relative;
   overflow: hidden;
