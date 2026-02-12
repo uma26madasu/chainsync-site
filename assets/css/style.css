@@ -185,6 +185,11 @@
   --max-content-width: 1200px;
   --max-text-width: 720px;
 
+  /* Layout Heights - Navbar & Spacing */
+  --nav-height: 80px;
+  --testing-banner-height: 44px;
+  --total-header-height: calc(var(--nav-height) + var(--testing-banner-height));
+
   /* Text colors */
   --clr-primary: #111111;
   --clr-secondary: #555555;
@@ -665,15 +670,13 @@ a,
 
 /* Adjust navbar and hero positioning when banner is present */
 body.has-testing-banner #navbar {
-  top: 44px;
+  top: var(--testing-banner-height);
 }
 
-body.has-testing-banner .hero {
-  padding-top: 220px;
-}
-
-body.has-testing-banner .page-hero {
-  padding-top: 220px;
+body.has-testing-banner .hero,
+body.has-testing-banner .page-hero,
+body.has-testing-banner .roadmap-hero {
+  margin-top: var(--total-header-height);
 }
 
 @media (max-width: 768px) {
@@ -683,15 +686,13 @@ body.has-testing-banner .page-hero {
   }
 
   body.has-testing-banner #navbar {
-    top: 40px;
+    top: var(--testing-banner-height);
   }
 
-  body.has-testing-banner .hero {
-    padding-top: 220px;
-  }
-
-  body.has-testing-banner .page-hero {
-    padding-top: 200px;
+  body.has-testing-banner .hero,
+  body.has-testing-banner .page-hero,
+  body.has-testing-banner .roadmap-hero {
+    margin-top: var(--total-header-height);
   }
 }
 
@@ -703,6 +704,7 @@ body.has-testing-banner .page-hero {
   top: 0;
   left: 0;
   right: 0;
+  height: var(--nav-height);
   z-index: 1000;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px) saturate(180%);
@@ -721,7 +723,8 @@ body.has-testing-banner .page-hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 32px;
+  height: 100%;
+  padding: 0 32px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -771,6 +774,8 @@ body.has-testing-banner .page-hero {
   gap: 40px;
   align-items: center;
   list-style: none;
+  position: relative;
+  z-index: 1001;
 }
 
 .nav-links a {
@@ -876,6 +881,7 @@ body.has-testing-banner .page-hero {
   position: relative;
   overflow: visible;
   /* Changed to visible to prevent headline clipping */
+  margin-top: var(--nav-height);
   padding: 2rem var(--space-4) var(--space-4);
 }
 
@@ -1444,12 +1450,18 @@ button:focus:not(:focus-visible) {
    Page Hero (Internal Pages) - Sky & Light
    ================================================ */
 .page-hero {
-  padding: 140px 32px 20px;
+  margin-top: var(--nav-height);
+  padding: var(--space-7) 32px 20px;
   background: linear-gradient(135deg, #CAF0F8 0%, #90E0EF 50%, #B7E4C7 100%);
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--stone-light);
   animation: heroGradient 10s ease infinite;
+}
+
+/* Roadmap Hero - Same spacing as page-hero */
+.roadmap-hero {
+  margin-top: var(--nav-height);
 }
 
 @keyframes heroGradient {
