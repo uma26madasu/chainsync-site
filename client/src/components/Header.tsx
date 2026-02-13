@@ -1,0 +1,119 @@
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/">
+            <a className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">
+                CS
+              </div>
+              <span>ChainSync</span>
+            </a>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/use-cases">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                Use Cases
+              </a>
+            </Link>
+            <Link href="/how-it-works">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                How It Works
+              </a>
+            </Link>
+            <Link href="/technology">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                Technology
+              </a>
+            </Link>
+            <Link href="/roadmaps">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                Roadmaps
+              </a>
+            </Link>
+            <Link href="/insights">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                Insights
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+                Contact
+              </a>
+            </Link>
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Link href="#early-access">
+              <Button className="bg-primary hover:bg-primary/90 text-white">
+                Request Early Access
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 flex flex-col gap-3">
+            <Link href="/use-cases">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Use Cases
+              </a>
+            </Link>
+            <Link href="/how-it-works">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                How It Works
+              </a>
+            </Link>
+            <Link href="/technology">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Technology
+              </a>
+            </Link>
+            <Link href="/roadmaps">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Roadmaps
+              </a>
+            </Link>
+            <Link href="/insights">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Insights
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Contact
+              </a>
+            </Link>
+            <Link href="#early-access">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white mt-2">
+                Request Early Access
+              </Button>
+            </Link>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+}
