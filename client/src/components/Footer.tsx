@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-8 w-auto" />
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-10 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
               Environmental emergency response in under 90 seconds.
@@ -76,7 +76,7 @@ export default function Footer() {
         {/* Social Links & Copyright */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm">
-            © 2026 ChainSync. All rights reserved. Early Access Program.
+            © 2024 ChainSync. All rights reserved. Early Access Program.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
