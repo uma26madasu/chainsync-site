@@ -9,10 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">
-                CS
-              </div>
-              <span className="font-bold text-lg">ChainSync</span>
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-8 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
               Environmental emergency response in under 90 seconds.
