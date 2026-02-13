@@ -237,35 +237,62 @@ export default function Roadmaps() {
             Pilot Partner Benefits
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Direct Influence</h3>
-              <p className="text-muted-foreground text-sm">
-                Your feedback directly shapes product development. Help us build the features that matter most to your organization.
-              </p>
-            </Card>
+          <Card className="p-8 bg-blue-50 border-2 border-primary max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Priority Access to Platform</h3>
+                  <p className="text-sm text-foreground">
+                    Get early access to features and updates before general availability.
+                  </p>
+                </div>
+              </div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Preferential Pricing</h3>
-              <p className="text-muted-foreground text-sm">
-                Pilot partners receive special pricing at public launch, rewarding your early commitment and partnership.
-              </p>
-            </Card>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Direct Input on Features</h3>
+                  <p className="text-sm text-foreground">
+                    Your feedback directly shapes product development and roadmap priorities.
+                  </p>
+                </div>
+              </div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Dedicated Support</h3>
-              <p className="text-muted-foreground text-sm">
-                Get priority technical support and direct access to our engineering team during the pilot phase.
-              </p>
-            </Card>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Preferential Pricing</h3>
+                  <p className="text-sm text-foreground">
+                    Special pricing at public launch, rewarding your early commitment.
+                  </p>
+                </div>
+              </div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">No Long-Term Commitment</h3>
-              <p className="text-muted-foreground text-sm">
-                Pilot participation is flexible with no long-term contracts or upfront costs. Try it risk-free.
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Dedicated Technical Support</h3>
+                  <p className="text-sm text-foreground">
+                    Priority support and direct access to our engineering team.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 pt-6 border-t border-primary/20">
+              <p className="text-sm text-foreground font-medium">
+                No long-term commitment required. No upfront costs during pilot phase.
               </p>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
       </section>
 

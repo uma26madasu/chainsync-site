@@ -78,26 +78,26 @@ export default function Insights() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-6 bg-white border border-border">
-              <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-              <h3 className="font-semibold text-foreground mb-2">Annual U.S. Environmental Incidents</h3>
-              <p className="text-muted-foreground text-sm">
+            <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
+              <div className="text-5xl font-bold text-primary mb-3">50K+</div>
+              <h3 className="font-semibold text-foreground mb-3 text-lg">Annual U.S. Environmental Incidents</h3>
+              <p className="text-foreground text-sm leading-relaxed">
                 Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
               </p>
             </Card>
 
-            <Card className="p-6 bg-white border border-border">
-              <div className="text-4xl font-bold text-secondary mb-2">4-6 hrs</div>
-              <h3 className="font-semibold text-foreground mb-2">Average Manual Coordination Time</h3>
-              <p className="text-muted-foreground text-sm">
+            <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
+              <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
+              <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
+              <p className="text-foreground text-sm leading-relaxed">
                 Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
               </p>
             </Card>
 
-            <Card className="p-6 bg-white border border-border">
-              <div className="text-4xl font-bold text-accent mb-2">73%</div>
-              <h3 className="font-semibold text-foreground mb-2">Delayed Response Rate</h3>
-              <p className="text-muted-foreground text-sm">
+            <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
+              <div className="text-5xl font-bold text-red-600 mb-3">73%</div>
+              <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
+              <p className="text-foreground text-sm leading-relaxed">
                 Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
               </p>
             </Card>
