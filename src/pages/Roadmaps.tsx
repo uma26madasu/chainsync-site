@@ -11,7 +11,7 @@ export default function Roadmaps() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-8 md:py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
             2026 Agent Development Roadmap
@@ -23,9 +23,9 @@ export default function Roadmaps() {
       </section>
 
       {/* Executive Summary */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Executive Summary
           </h2>
 
@@ -54,15 +54,15 @@ export default function Roadmaps() {
       </section>
 
       {/* Quarterly Execution Plan */}
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             2026 Quarterly Execution Plan
           </h2>
 
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-6">
             {/* Q1 */}
-            <Card className="p-8 bg-gradient-to-r from-blue-50 to-white border-2 border-blue-600">
+            <Card className="p-6 bg-gradient-to-r from-blue-50 to-white border-2 border-blue-600">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Phase 1: Q1 (Jan–Mar)</h3>
@@ -96,7 +96,7 @@ export default function Roadmaps() {
             </Card>
 
             {/* Q2 */}
-            <Card className="p-8 bg-gradient-to-r from-green-50 to-white border-2 border-green-600">
+            <Card className="p-6 bg-gradient-to-r from-green-50 to-white border-2 border-green-600">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Phase 2: Q2 (Apr–Jun)</h3>
@@ -130,7 +130,7 @@ export default function Roadmaps() {
             </Card>
 
             {/* Q3 */}
-            <Card className="p-8 bg-gradient-to-r from-amber-50 to-white border-2 border-amber-600">
+            <Card className="p-6 bg-gradient-to-r from-amber-50 to-white border-2 border-amber-600">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Phase 3: Q3 (Jul–Sep)</h3>
@@ -164,7 +164,7 @@ export default function Roadmaps() {
             </Card>
 
             {/* Q4 */}
-            <Card className="p-8 bg-gradient-to-r from-red-50 to-white border-2 border-red-600">
+            <Card className="p-6 bg-gradient-to-r from-red-50 to-white border-2 border-red-600">
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Phase 4: Q4 (Oct–Dec)</h3>
@@ -201,9 +201,9 @@ export default function Roadmaps() {
       </section>
 
       {/* Growth Trajectory */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             2026 Growth Trajectory
           </h2>
 
@@ -255,13 +255,13 @@ export default function Roadmaps() {
       </section>
 
       {/* Healthcare Spotlight */}
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Healthcare Suite (Q2 Launch)
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 bg-white border-2 border-green-600">
               <h3 className="text-xl font-semibold text-foreground mb-4">Core Healthcare Agents</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
@@ -313,13 +313,13 @@ export default function Roadmaps() {
       </section>
 
       {/* Manufacturing Spotlight */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Manufacturing Suite (Q3 Launch)
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 bg-white border-2 border-amber-600">
               <h3 className="text-xl font-semibold text-foreground mb-4">Core Manufacturing Agents</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
@@ -367,13 +367,13 @@ export default function Roadmaps() {
       </section>
 
       {/* Energy & Utilities Spotlight */}
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Energy & Utilities Suite (Q4 Launch)
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 bg-white border-2 border-red-600">
               <h3 className="text-xl font-semibold text-foreground mb-4">Core Energy Agents</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
@@ -425,9 +425,9 @@ export default function Roadmaps() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Technology Stack Evolution
           </h2>
 
@@ -473,13 +473,13 @@ export default function Roadmaps() {
       </section>
 
       {/* Risk Mitigation */}
-      <section className="py-12 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             Risk Mitigation & Next Steps
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <Card className="p-6 bg-white border-2 border-amber-600">
               <h3 className="text-lg font-semibold text-foreground mb-4">Technical Risks</h3>
               <p className="text-sm text-muted-foreground">

@@ -66,7 +66,7 @@ export default function Insights() {
       <Header />
 
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: 'radial-gradient(circle at 2px 2px, #0F5A8F 1px, transparent 0)',
@@ -77,7 +77,7 @@ export default function Insights() {
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 text-center tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-center tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -94,10 +94,10 @@ export default function Insights() {
       </section>
 
       {/* Featured Articles */}
-      <section className="py-16 md:py-24">
+      <section className="py-10 md:py-14">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 text-center tracking-tight">
               Featured Articles
             </h2>
           </AnimatedSection>
@@ -118,7 +118,7 @@ export default function Insights() {
                   transition={{ delay: index * 0.05, duration: 0.5 }}
                   whileHover={{ y: -8 }}
                 >
-                  <GlassCard className="p-8 h-full flex flex-col hover:border-primary">
+                  <GlassCard className="p-6 h-full flex flex-col hover:border-primary">
                     <div className="mb-6">
                       <motion.div
                         whileHover={{ scale: 1.2, rotate: 5 }}
@@ -149,7 +149,7 @@ export default function Insights() {
       <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 text-center tracking-tight">
               Environmental Emergency Response Facts
             </h2>
           </AnimatedSection>
@@ -162,7 +162,7 @@ export default function Insights() {
               transition={{ delay: 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <GlassCard className="p-10 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
+              <GlassCard className="p-6 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
                 <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700 mb-4">
                   <AnimatedCounter end={50000} />+
                 </div>
@@ -180,7 +180,7 @@ export default function Insights() {
               transition={{ delay: 0.2, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <GlassCard className="p-10 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
+              <GlassCard className="p-6 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
                 <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-700 mb-4">4-6 hrs</div>
                 <h3 className="font-bold text-foreground mb-4 text-xl">Average Manual Coordination Time</h3>
                 <p className="text-foreground text-base leading-relaxed">
@@ -196,7 +196,7 @@ export default function Insights() {
               transition={{ delay: 0.3, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
             >
-              <GlassCard className="p-10 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
+              <GlassCard className="p-6 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
                 <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-700 mb-4">
                   <AnimatedCounter end={73} />%
                 </div>
@@ -214,7 +214,7 @@ export default function Insights() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 text-center tracking-tight">
               Key Topics Covered
             </h2>
           </AnimatedSection>
@@ -246,7 +246,7 @@ export default function Insights() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 whileHover={{ y: -4 }}
               >
-                <GlassCard className="p-8">
+                <GlassCard className="p-6">
                   <h3 className="text-2xl font-bold text-foreground mb-4">{topic.title}</h3>
                   <p className="text-muted-foreground text-base leading-relaxed">
                     {topic.description}

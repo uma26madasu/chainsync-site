@@ -21,7 +21,7 @@ export default function Technology() {
       <Header />
 
       {/* Hero */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
+      <section className="py-8 md:py-12 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <motion.div
@@ -29,7 +29,7 @@ export default function Technology() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-secondary">
+              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-600 to-secondary">
                 Technical Architecture
               </h1>
             </motion.div>
@@ -43,16 +43,16 @@ export default function Technology() {
       <SectionDivider variant="wave" />
 
       {/* Infrastructure */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Production-Grade Infrastructure
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-            <GlassCard className="p-10" delay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <GlassCard className="p-6" delay={0.1}>
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -80,14 +80,10 @@ export default function Technology() {
               </ul>
             </GlassCard>
 
-            <GlassCard className="p-10" delay={0.2}>
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="mb-6"
-              >
+            <GlassCard className="p-6" delay={0.2}>
+              <div className="mb-6">
                 <Shield className="text-secondary" size={56} />
-              </motion.div>
+              </div>
               <h3 className="text-3xl font-semibold text-foreground mb-4">Security & Compliance</h3>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Enterprise-grade security with SOC2 compliance, encryption at rest and in transit, and comprehensive audit logging.
@@ -114,7 +110,7 @@ export default function Technology() {
       <SectionDivider variant="diagonal" />
 
       {/* Technical Stack */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-slate-50 to-white relative">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent">
@@ -183,7 +179,7 @@ export default function Technology() {
       <SectionDivider variant="dots" />
 
       {/* Core Components */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary">
@@ -191,9 +187,9 @@ export default function Technology() {
             </h2>
           </AnimatedSection>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {/* Universal Integration Hub */}
-            <GlassCard className="p-10" delay={0.1}>
+            <GlassCard className="p-6" delay={0.1}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -234,7 +230,7 @@ export default function Technology() {
             </GlassCard>
 
             {/* AI Agent Layer */}
-            <GlassCard className="p-10" delay={0.2}>
+            <GlassCard className="p-6" delay={0.2}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -318,7 +314,7 @@ export default function Technology() {
       <SectionDivider variant="wave" />
 
       {/* Performance & Reliability */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-slate-50 to-white relative">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
@@ -326,8 +322,8 @@ export default function Technology() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <GlassCard className="p-10" delay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <GlassCard className="p-6" delay={0.1}>
               <h3 className="text-3xl font-semibold text-foreground mb-8">Uptime & Availability</h3>
               <div className="space-y-6">
                 <div>
@@ -345,7 +341,7 @@ export default function Technology() {
               </div>
             </GlassCard>
 
-            <GlassCard className="p-10" delay={0.2}>
+            <GlassCard className="p-6" delay={0.2}>
               <h3 className="text-3xl font-semibold text-foreground mb-8">Response Times</h3>
               <div className="space-y-6">
                 <div>
@@ -369,13 +365,13 @@ export default function Technology() {
       <SectionDivider variant="diagonal" />
 
       {/* API Documentation */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary">
               API Documentation
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground text-center mb-8 max-w-3xl mx-auto leading-relaxed">
               ChainSync provides comprehensive REST APIs for integration, monitoring, and management. Full documentation is available to pilot partners.
             </p>
             <div className="text-center">
@@ -390,7 +386,7 @@ export default function Technology() {
       <SectionDivider variant="wave" />
 
       {/* CTA */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0tOC04YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0yNCAyNGMwLTEuMTA1Ljg5NS0yIDItMnMyIC44OTUgMiAyLS44OTUgMi0yIDItMi0uODk1LTItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <AnimatedSection>

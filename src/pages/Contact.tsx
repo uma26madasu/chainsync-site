@@ -82,7 +82,7 @@ ${formData.message}`,
       <Header />
 
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
@@ -114,13 +114,13 @@ ${formData.message}`,
       </section>
 
       {/* Contact Form & Chatbot */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Contact Form */}
             <AnimatedSection delay={0.1}>
-              <GlassCard className="p-8 md:p-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Send us a Message</h2>
+              <GlassCard className="p-6 md:p-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Send us a Message</h2>
 
                 {submitted ? (
                   <motion.div
@@ -288,8 +288,8 @@ ${formData.message}`,
 
             {/* Chatbot */}
             <AnimatedSection delay={0.2}>
-              <GlassCard className="p-8 md:p-10 h-full">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Chat with ChainSync</h2>
+              <GlassCard className="p-6 md:p-8 h-full">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Chat with ChainSync</h2>
                 <Chatbot />
               </GlassCard>
             </AnimatedSection>
@@ -298,10 +298,10 @@ ${formData.message}`,
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-10 md:py-14 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-10 text-center tracking-tight">
               Frequently Asked Questions
             </h2>
 
@@ -340,7 +340,7 @@ ${formData.message}`,
                   transition={{ delay: idx * 0.05, duration: 0.5 }}
                   whileHover={{ y: -4 }}
                 >
-                  <GlassCard className="p-8">
+                  <GlassCard className="p-6">
                     <h3 className="font-bold text-foreground mb-4 text-xl">{faq.question}</h3>
                     <p className="text-muted-foreground leading-relaxed text-base">
                       {faq.answer}
@@ -354,7 +354,7 @@ ${formData.message}`,
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-blue-700 to-indigo-800 text-white">
+      <section className="py-10 md:py-14 bg-gradient-to-br from-primary via-blue-700 to-indigo-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">

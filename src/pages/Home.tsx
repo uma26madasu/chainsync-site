@@ -24,7 +24,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section - Enhanced with gradients and animations */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <section className="relative py-10 md:py-14 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
@@ -54,10 +54,10 @@ export default function Home() {
         />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <motion.div
-              className="space-y-8"
+              className="space-y-6"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -115,7 +115,7 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-8"
+                className="flex flex-col sm:flex-row gap-4 pt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.8 }}
@@ -160,10 +160,10 @@ export default function Home() {
       <SectionDivider variant="wave" />
 
       {/* Problem Statement - Enhanced with animated stats */}
-      <section className="py-16 md:py-24 bg-slate-50 relative">
+      <section className="py-10 md:py-14 bg-slate-50 relative">
         <AnimatedSection>
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
                 The Reality of Environmental Emergencies
               </h2>
@@ -207,10 +207,10 @@ export default function Home() {
       <SectionDivider variant="diagonal" />
 
       {/* How It Works Preview - Enhanced with animations */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
                 From Threat Detection to Coordinated Response
               </h2>
@@ -254,7 +254,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
                 Built for Environmental Protection Teams
               </h2>
@@ -317,7 +317,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
                 Built on Production-Grade Infrastructure
               </h2>

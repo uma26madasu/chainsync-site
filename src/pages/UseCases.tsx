@@ -23,7 +23,7 @@ export default function UseCases() {
       <Header />
 
       {/* Hero */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <motion.div
@@ -31,7 +31,7 @@ export default function UseCases() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-700 to-secondary">
+              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-700 to-secondary">
                 Use Cases for Environmental Emergency Response
               </h1>
             </motion.div>
@@ -45,9 +45,9 @@ export default function UseCases() {
       <SectionDivider variant="wave" />
 
       {/* Water Treatment Facilities */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
             <AnimatedSection delay={0.1}>
               <div>
                 <motion.div
@@ -63,7 +63,7 @@ export default function UseCases() {
                   Water Treatment Facilities
                 </h2>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">The Challenge</h3>
                     <p className="text-lg text-muted-foreground leading-relaxed">
@@ -126,7 +126,7 @@ export default function UseCases() {
       {/* Industrial Environmental Compliance */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-slate-50 to-white relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
             <AnimatedSection delay={0.1} className="order-2 lg:order-1">
               <GlassCard className="p-12 h-full flex items-center justify-center" delay={0.2}>
                 <div className="text-center">
@@ -157,7 +157,7 @@ export default function UseCases() {
                   Industrial Environmental Compliance
                 </h2>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">The Challenge</h3>
                     <p className="text-lg text-muted-foreground leading-relaxed">
@@ -205,7 +205,7 @@ export default function UseCases() {
       {/* Municipal Emergency Response */}
       <section className="py-20 md:py-32 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
             <AnimatedSection delay={0.1}>
               <div>
                 <motion.div
@@ -221,7 +221,7 @@ export default function UseCases() {
                   Municipal Emergency Response
                 </h2>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">The Challenge</h3>
                     <p className="text-lg text-muted-foreground leading-relaxed">

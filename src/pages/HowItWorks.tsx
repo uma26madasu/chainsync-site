@@ -25,7 +25,7 @@ export default function HowItWorks() {
       <Header />
 
       {/* Hero */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-blue-50 via-white to-transparent relative">
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection>
             <motion.div
@@ -33,7 +33,7 @@ export default function HowItWorks() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
                 From Threat Detection to Coordinated Response
               </h1>
             </motion.div>
@@ -47,7 +47,7 @@ export default function HowItWorks() {
       <SectionDivider variant="wave" />
 
       {/* Process Overview */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <motion.div
@@ -59,13 +59,13 @@ export default function HowItWorks() {
               <img
                 src={processImage}
                 alt="ChainSync 4-Step Process"
-                className="relative w-full rounded-2xl shadow-2xl ring-1 ring-white/50 mb-12"
+                className="relative w-full rounded-2xl shadow-2xl ring-1 ring-white/50 mb-8"
               />
             </motion.div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <p className="text-2xl md:text-3xl text-muted-foreground">
                 <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Total: Under 90 seconds</span> from threat detection to coordinated response
               </p>
@@ -74,7 +74,7 @@ export default function HowItWorks() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Step 1 */}
-            <GlassCard className="p-8" delay={0.1}>
+            <GlassCard className="p-6" delay={0.1}>
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -92,7 +92,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Step 2 */}
-            <GlassCard className="p-8" delay={0.2}>
+            <GlassCard className="p-6" delay={0.2}>
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
@@ -110,7 +110,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Step 3 */}
-            <GlassCard className="p-8" delay={0.3}>
+            <GlassCard className="p-6" delay={0.3}>
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
@@ -128,7 +128,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Step 4 */}
-            <GlassCard className="p-8" delay={0.4}>
+            <GlassCard className="p-6" delay={0.4}>
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
@@ -151,17 +151,17 @@ export default function HowItWorks() {
       <SectionDivider variant="diagonal" />
 
       {/* Detailed Steps */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-slate-50 to-white relative">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
               Detailed Process Breakdown
             </h2>
           </AnimatedSection>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {/* Detect */}
-            <GlassCard className="p-10" delay={0.1}>
+            <GlassCard className="p-6" delay={0.1}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -187,7 +187,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Analyze */}
-            <GlassCard className="p-10" delay={0.2}>
+            <GlassCard className="p-6" delay={0.2}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -213,7 +213,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Coordinate */}
-            <GlassCard className="p-10" delay={0.3}>
+            <GlassCard className="p-6" delay={0.3}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -239,7 +239,7 @@ export default function HowItWorks() {
             </GlassCard>
 
             {/* Protect */}
-            <GlassCard className="p-10" delay={0.4}>
+            <GlassCard className="p-6" delay={0.4}>
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0">
                   <motion.div
@@ -270,7 +270,7 @@ export default function HowItWorks() {
       <SectionDivider variant="dots" />
 
       {/* System Architecture */}
-      <section className="py-20 md:py-32 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent">
@@ -282,7 +282,7 @@ export default function HowItWorks() {
             <motion.div
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
-              className="relative mb-16"
+              className="relative mb-10"
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-accent/20 to-primary/20 rounded-2xl blur-2xl"></div>
               <img
@@ -321,7 +321,7 @@ export default function HowItWorks() {
       <SectionDivider variant="wave" />
 
       {/* CTA */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-primary via-blue-700 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0tOC04YzAtMS4xMDUuODk1LTIgMi0yczIgLjg5NSAyIDItLjg5NSAyLTIgMi0yLS44OTUtMi0yem0yNCAyNGMwLTEuMTA1Ljg5NS0yIDItMnMyIC44OTUgMiAyLS44OTUgMi0yIDItMi0uODk1LTItMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <AnimatedSection>
