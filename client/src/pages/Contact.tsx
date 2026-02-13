@@ -2,8 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Linkedin } from "lucide-react";
 import { useState } from "react";
+import Chatbot from "@/components/Chatbot";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -42,85 +42,17 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Have questions about ChainSync? Want to join our pilot program? We'd love to hear from you.
+            Have questions about ChainSync? Want to join our pilot program? We'd love to hear from you. Use the chatbot below or fill out the form.
           </p>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Form & Chatbot */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Information */}
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-foreground mb-8">Contact Information</h2>
-
-              <div className="space-y-8">
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <Mail className="text-primary" size={20} />
-                    Email
-                  </h3>
-                  <a
-                    href="mailto:contact@chainsync.com"
-                    className="text-primary hover:text-primary/80 transition-colors"
-                  >
-                    contact@chainsync.com
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    General inquiries and partnership opportunities
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <Mail className="text-secondary" size={20} />
-                    Sales
-                  </h3>
-                  <a
-                    href="mailto:sales@chainsync.com"
-                    className="text-secondary hover:text-secondary/80 transition-colors"
-                  >
-                    sales@chainsync.com
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Pilot program and partnership inquiries
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <Mail className="text-accent" size={20} />
-                    Technical Support
-                  </h3>
-                  <a
-                    href="mailto:support@chainsync.com"
-                    className="text-accent hover:text-accent/80 transition-colors"
-                  >
-                    support@chainsync.com
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Technical questions and support for pilot partners
-                  </p>
-                </div>
-
-                <div className="pt-8 border-t border-border">
-                  <h3 className="font-semibold text-foreground mb-4">Connect With Us</h3>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <Linkedin size={20} />
-                    Follow on LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <div>
               <Card className="p-8 bg-white border border-border">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
 
@@ -214,6 +146,14 @@ export default function Contact() {
                     </p>
                   </form>
                 )}
+              </Card>
+            </div>
+
+            {/* Chatbot */}
+            <div>
+              <Card className="p-6 bg-white border border-border h-full">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Chat with ChainSync</h2>
+                <Chatbot />
               </Card>
             </div>
           </div>
