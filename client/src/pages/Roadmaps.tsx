@@ -237,15 +237,15 @@ export default function Roadmaps() {
             Pilot Partner Benefits
           </h2>
 
-          <Card className="p-8 bg-blue-50 border-2 border-primary max-w-4xl mx-auto">
+          <Card className="p-8 bg-white border-2 border-primary max-w-4xl mx-auto shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-green-600 text-white font-bold text-sm">✓</div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Priority Access to Platform</h3>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-slate-900 mb-1">Priority Access to Platform</h3>
+                  <p className="text-sm text-slate-700">
                     Get early access to features and updates before general availability.
                   </p>
                 </div>
@@ -253,11 +253,11 @@ export default function Roadmaps() {
 
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-green-600 text-white font-bold text-sm">✓</div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Direct Input on Features</h3>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-slate-900 mb-1">Direct Input on Features</h3>
+                  <p className="text-sm text-slate-700">
                     Your feedback directly shapes product development and roadmap priorities.
                   </p>
                 </div>
@@ -265,11 +265,11 @@ export default function Roadmaps() {
 
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-green-600 text-white font-bold text-sm">✓</div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Preferential Pricing</h3>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-slate-900 mb-1">Preferential Pricing</h3>
+                  <p className="text-sm text-slate-700">
                     Special pricing at public launch, rewarding your early commitment.
                   </p>
                 </div>
@@ -277,18 +277,18 @@ export default function Roadmaps() {
 
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-primary text-white font-bold text-sm">✓</div>
+                  <div className="flex items-center justify-center h-6 w-6 rounded-full bg-green-600 text-white font-bold text-sm">✓</div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Dedicated Technical Support</h3>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-slate-900 mb-1">Dedicated Technical Support</h3>
+                  <p className="text-sm text-slate-700">
                     Priority support and direct access to our engineering team.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="mt-6 pt-6 border-t border-primary/20">
-              <p className="text-sm text-foreground font-medium">
+            <div className="mt-6 pt-6 border-t border-slate-200">
+              <p className="text-sm text-slate-900 font-medium">
                 No long-term commitment required. No upfront costs during pilot phase.
               </p>
             </div>
