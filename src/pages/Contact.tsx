@@ -8,9 +8,11 @@ import Chatbot from "@/components/Chatbot";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    organization: "",
-    role: "",
+    company: "",
+    name: "",
     email: "",
+    phone: "",
+    industry: "",
     message: "",
   });
 
@@ -40,17 +42,31 @@ export default function Contact() {
         "service_6mitzhj",
         "template_4579caf",
         {
-          organization: formData.organization,
-          role: formData.role,
+          subject: `New Demo Request from ${formData.company}`,
+          company: formData.company,
+          name: formData.name,
           email: formData.email,
+          phone: formData.phone,
+          industry: formData.industry,
           message: formData.message,
+          // Formatted email body
+          email_body: `New Contact Form Submission
+
+Company: ${formData.company}
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Industry: ${formData.industry}
+
+Message:
+${formData.message}`,
         }
       );
 
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ organization: "", role: "", email: "", message: "" });
+        setFormData({ company: "", name: "", email: "", phone: "", industry: "", message: "" });
       }, 3000);
     } catch (err) {
       console.error("Error sending email:", err);
@@ -101,40 +117,35 @@ export default function Contact() {
                     )}
 
                     <div>
-                      <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                        Organization Name *
+                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                        Company Name *
                       </label>
                       <input
                         type="text"
-                        id="organization"
-                        name="organization"
-                        value={formData.organization}
+                        id="company"
+                        name="company"
+                        value={formData.company}
                         onChange={handleChange}
-                        placeholder="Your organization"
+                        placeholder="Your company"
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="role" className="block text-sm font-medium text-foreground mb-2">
-                        Your Role *
+                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                        Your Name *
                       </label>
-                      <select
-                        id="role"
-                        name="role"
-                        value={formData.role}
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
+                        placeholder="John Doe"
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
-                      >
-                        <option value="">Select your role...</option>
-                        <option value="government">Government / Municipal Agency</option>
-                        <option value="water">Water Treatment Facility</option>
-                        <option value="industrial">Industrial / Manufacturing</option>
-                        <option value="consulting">Environmental Consulting</option>
-                        <option value="other">Other</option>
-                      </select>
+                      />
                     </div>
 
                     <div>
@@ -151,6 +162,43 @@ export default function Contact() {
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+1 (555) 123-4567"
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
+                        Industry *
+                      </label>
+                      <select
+                        id="industry"
+                        name="industry"
+                        value={formData.industry}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        required
+                      >
+                        <option value="">Select your industry...</option>
+                        <option value="Government / Municipal Agency">Government / Municipal Agency</option>
+                        <option value="Water Treatment Facility">Water Treatment Facility</option>
+                        <option value="Industrial / Manufacturing">Industrial / Manufacturing</option>
+                        <option value="Environmental Consulting">Environmental Consulting</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
 
                     <div>
