@@ -237,35 +237,35 @@ export default function Home() {
             We're working with select pilot partners to validate real-world performance across different environmental scenarios. Limited spots available.
           </p>
 
-          <div className="bg-white bg-opacity-10 rounded-lg p-8 max-w-2xl mx-auto backdrop-blur-sm">
+          <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto shadow-lg">
             <div className="space-y-4 text-left mb-6">
               <div className="flex items-start gap-3">
-                <div className="text-blue-200 mt-1">✓</div>
+                <div className="text-green-600 mt-1 font-bold text-lg">✓</div>
                 <div>
-                  <p className="font-semibold">Priority access to the platform</p>
+                  <p className="font-semibold text-slate-900">Priority access to the platform</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-blue-200 mt-1">✓</div>
+                <div className="text-green-600 mt-1 font-bold text-lg">✓</div>
                 <div>
-                  <p className="font-semibold">Direct input on feature development</p>
+                  <p className="font-semibold text-slate-900">Direct input on feature development</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-blue-200 mt-1">✓</div>
+                <div className="text-green-600 mt-1 font-bold text-lg">✓</div>
                 <div>
-                  <p className="font-semibold">Preferential pricing at public launch</p>
+                  <p className="font-semibold text-slate-900">Preferential pricing at public launch</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-blue-200 mt-1">✓</div>
+                <div className="text-green-600 mt-1 font-bold text-lg">✓</div>
                 <div>
-                  <p className="font-semibold">Dedicated technical support</p>
+                  <p className="font-semibold text-slate-900">Dedicated technical support</p>
                 </div>
               </div>
             </div>
 
-            <p className="text-blue-100 text-sm mb-6">
+            <p className="text-slate-700 text-sm mb-6">
               No long-term commitment required. No upfront costs during pilot phase.
             </p>
 
