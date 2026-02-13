@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import AnimatedSection from "@/components/AnimatedSection";
+import GlassCard from "@/components/GlassCard";
+import EnhancedButton from "@/components/EnhancedButton";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 import { BookOpen, TrendingUp, AlertCircle, ExternalLink } from "lucide-react";
 
 export default function Insights() {
@@ -63,51 +66,79 @@ export default function Insights() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
-            Insights & Articles
-          </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Deep dives into environmental emergency response, AI-powered automation, and the technical challenges of building specialized intelligence systems.
-          </p>
+      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, #0F5A8F 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <AnimatedSection>
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-8 text-center tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-purple-600">
+                Insights & Articles
+              </span>
+            </motion.h1>
+            <p className="text-xl md:text-2xl text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
+              Deep dives into environmental emergency response, AI-powered automation, and the technical challenges of building specialized intelligence systems.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Featured Articles */}
-      <section className="py-12 md:py-20">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Featured Articles
-          </h2>
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+              Featured Articles
+            </h2>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {articles.map((article, index) => {
               const IconComponent = article.icon;
               return (
-                <a
+                <motion.a
                   key={index}
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05, duration: 0.5 }}
+                  whileHover={{ y: -8 }}
                 >
-                  <Card className="p-6 bg-white border border-border hover:shadow-lg hover:border-primary transition-all h-full flex flex-col">
-                    <div className="mb-4">
-                      <IconComponent className={`${article.color}`} size={32} />
+                  <GlassCard className="p-8 h-full flex flex-col hover:border-primary">
+                    <div className="mb-6">
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <IconComponent className={`${article.color}`} size={40} />
+                      </motion.div>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-3">
+                    <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-3">
                       {article.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                    <p className="text-muted-foreground text-base mb-6 flex-grow leading-relaxed">
                       {article.description}
                     </p>
-                    <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-primary font-semibold text-base group-hover:gap-3 transition-all">
                       <span>Read on Medium</span>
-                      <ExternalLink size={16} />
+                      <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
                     </div>
-                  </Card>
-                </a>
+                  </GlassCard>
+                </motion.a>
               );
             })}
           </div>
@@ -115,137 +146,182 @@ export default function Insights() {
       </section>
 
       {/* Industry Data */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Environmental Emergency Response Facts
-          </h2>
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+              Environmental Emergency Response Facts
+            </h2>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
-              <div className="text-5xl font-bold text-primary mb-3">50K+</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Annual U.S. Environmental Incidents</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
-              </p>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <GlassCard className="p-10 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
+                <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700 mb-4">
+                  <AnimatedCounter end={50000} />+
+                </div>
+                <h3 className="font-bold text-foreground mb-4 text-xl">Annual U.S. Environmental Incidents</h3>
+                <p className="text-foreground text-base leading-relaxed">
+                  Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
+                </p>
+              </GlassCard>
+            </motion.div>
 
-            <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
-              <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
-              </p>
-            </Card>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <GlassCard className="p-10 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
+                <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-700 mb-4">4-6 hrs</div>
+                <h3 className="font-bold text-foreground mb-4 text-xl">Average Manual Coordination Time</h3>
+                <p className="text-foreground text-base leading-relaxed">
+                  Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
+                </p>
+              </GlassCard>
+            </motion.div>
 
-            <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
-              <div className="text-5xl font-bold text-red-600 mb-3">73%</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
-              </p>
-            </Card>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <GlassCard className="p-10 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
+                <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-700 mb-4">
+                  <AnimatedCounter end={73} />%
+                </div>
+                <h3 className="font-bold text-foreground mb-4 text-xl">Delayed Response Rate</h3>
+                <p className="text-foreground text-base leading-relaxed">
+                  Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
+                </p>
+              </GlassCard>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Key Topics */}
-      <section className="py-12 md:py-20">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Key Topics Covered
-          </h2>
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-16 text-center tracking-tight">
+              Key Topics Covered
+            </h2>
+          </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Infrastructure & Architecture</h3>
-              <p className="text-muted-foreground text-sm">
-                Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">AI & Automation</h3>
-              <p className="text-muted-foreground text-sm">
-                How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Integration Challenges</h3>
-              <p className="text-muted-foreground text-sm">
-                Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Operational Impact</h3>
-              <p className="text-muted-foreground text-sm">
-                Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems.
-              </p>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Infrastructure & Architecture",
+                description: "Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems."
+              },
+              {
+                title: "AI & Automation",
+                description: "How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems."
+              },
+              {
+                title: "Integration Challenges",
+                description: "Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms."
+              },
+              {
+                title: "Operational Impact",
+                description: "Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems."
+              }
+            ].map((topic, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -4 }}
+              >
+                <GlassCard className="p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{topic.title}</h3>
+                  <p className="text-muted-foreground text-base leading-relaxed">
+                    {topic.description}
+                  </p>
+                </GlassCard>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Newsletter */}
-      <section className="py-12 md:py-20 bg-blue-50">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-            Stay Updated
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-8">
-            Subscribe to receive updates on new articles, industry research, and ChainSync product announcements.
-          </p>
+      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
+              Stay Updated
+            </h2>
+            <p className="text-xl text-muted-foreground text-center mb-12 leading-relaxed">
+              Subscribe to receive updates on new articles, industry research, and ChainSync product announcements.
+            </p>
 
-          <Card className="p-8 bg-white border border-border">
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="you@organization.com"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                  Organization
-                </label>
-                <input
-                  type="text"
-                  id="organization"
-                  placeholder="Your organization name"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base">
-                Subscribe to Updates
-              </Button>
-            </form>
-          </Card>
+            <GlassCard className="p-10">
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="you@organization.com"
+                    className="w-full px-4 py-3 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="organization" className="block text-sm font-semibold text-foreground mb-2">
+                    Organization
+                  </label>
+                  <input
+                    type="text"
+                    id="organization"
+                    placeholder="Your organization name"
+                    className="w-full px-4 py-3 border-2 border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
+                  />
+                </div>
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <EnhancedButton variant="primary" size="lg" className="w-full">
+                    Subscribe to Updates
+                  </EnhancedButton>
+                </motion.div>
+              </form>
+            </GlassCard>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-primary text-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-blue-700 to-indigo-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Response?
-          </h2>
-          <p className="text-lg text-blue-100 mb-8">
-            Learn how ChainSync helps organizations respond to environmental emergencies faster.
-          </p>
+          <AnimatedSection>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Ready to Transform Your Response?
+            </h2>
+            <p className="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed max-w-3xl mx-auto">
+              Learn how ChainSync helps organizations respond to environmental emergencies faster.
+            </p>
 
-          <Link href="/contact">
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-              Request Early Access
-            </Button>
-          </Link>
+            <Link href="/contact">
+              <EnhancedButton variant="secondary" size="xl" showArrow className="bg-white text-primary hover:bg-gray-100">
+                Request Early Access
+              </EnhancedButton>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 
