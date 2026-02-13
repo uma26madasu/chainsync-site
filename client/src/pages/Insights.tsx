@@ -3,9 +3,61 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { BookOpen, TrendingUp, AlertCircle } from "lucide-react";
+import { BookOpen, TrendingUp, AlertCircle, ExternalLink } from "lucide-react";
 
 export default function Insights() {
+  const articles = [
+    {
+      title: "The Infrastructure for Specialized Intelligence is Live",
+      description: "Exploring the foundational infrastructure that powers specialized AI agents and how it enables rapid deployment across multiple domains.",
+      url: "https://medium.com/@umamadasu/the-infrastructure-for-specialized-intelligence-is-live-95fe628f90c9",
+      icon: AlertCircle,
+      color: "text-primary"
+    },
+    {
+      title: "Why Your Incident Response Shouldn't Be Held Hostage by Your Integration Stack",
+      description: "Breaking free from integration constraints: how modern platforms enable rapid incident response without legacy system dependencies.",
+      url: "https://medium.com/@umamadasu/why-your-incident-response-shouldnt-be-held-hostage-by-your-integration-stack-cde3bc320293",
+      icon: TrendingUp,
+      color: "text-green-600"
+    },
+    {
+      title: "The Real Cost of Integration Gaps: What I Learned Building for Water Utilities",
+      description: "Real-world lessons from building environmental response systems: how integration gaps create operational friction and delay critical response.",
+      url: "https://medium.com/@umamadasu/the-real-cost-of-integration-gaps-what-i-learned-building-for-water-utilities-88f6dc4b3851",
+      icon: AlertCircle,
+      color: "text-amber-600"
+    },
+    {
+      title: "12 AI Agents Walk Into a Water Crisis: How Specialized Intelligence Beats Generic Automation",
+      description: "Why specialized AI agents outperform generic automation in environmental emergencies: a case study in domain-specific intelligence.",
+      url: "https://medium.com/@umamadasu/12-ai-agents-walk-into-a-water-crisis-how-specialized-intelligence-beats-generic-automation-808a5a585a33",
+      icon: BookOpen,
+      color: "text-blue-600"
+    },
+    {
+      title: "Why I Chose MuleSoft + Python + AI Over Pure Enterprise Platforms",
+      description: "Technical architecture decisions: balancing enterprise integration platforms with modern AI capabilities for environmental response systems.",
+      url: "https://medium.com/@umamadasu/why-i-chose-mulesoft-python-ai-over-pure-enterprise-platforms-for-environmental-emergency-24e232b40dcb",
+      icon: TrendingUp,
+      color: "text-red-600"
+    },
+    {
+      title: "Environmental Emergency Response in Utilities: An Integration Challenge",
+      description: "Understanding the integration complexity of environmental response systems and how to architect solutions that work across disparate systems.",
+      url: "https://medium.com/@umamadasu/environmental-emergency-response-in-utilities-an-integration-challenge-0098fc6eb086",
+      icon: AlertCircle,
+      color: "text-purple-600"
+    },
+    {
+      title: "Building ChainSync: An Environmental Emergency Response Platform with MuleSoft",
+      description: "The complete journey of building ChainSync: architecture decisions, integration patterns, and lessons learned from the ground up.",
+      url: "https://medium.com/@umamadasu/building-chainsync-an-environmental-emergency-response-platform-with-mulesoft-bdda38e1d07a",
+      icon: BookOpen,
+      color: "text-indigo-600"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -14,58 +66,50 @@ export default function Insights() {
       <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
-            Environmental Response Insights
+            Insights & Articles
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Research, best practices, and industry insights on environmental emergency response and coordination.
+            Deep dives into environmental emergency response, AI-powered automation, and the technical challenges of building specialized intelligence systems.
           </p>
         </div>
       </section>
 
-      {/* Featured Resources */}
+      {/* Featured Articles */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Featured Resources
+            Featured Articles
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 bg-white border border-border hover:shadow-lg transition-shadow">
-              <AlertCircle className="text-primary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                The Cost of Coordination Delays in Environmental Response
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                A comprehensive analysis of how coordination failures impact environmental incident response times and outcomes.
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">Coming Soon</p>
-              <Button variant="outline" className="w-full" disabled>
-                Read Article
-              </Button>
-            </Card>
-
-            <Card className="p-6 bg-white border border-border hover:shadow-lg transition-shadow">
-              <TrendingUp className="text-secondary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Automation in Environmental Compliance: Best Practices
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                How leading organizations are using automation to improve compliance documentation and reduce regulatory risk.
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">Coming Soon</p>
-              <Button variant="outline" className="w-full" disabled>
-                Read Article
-              </Button>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <p className="text-muted-foreground mb-4">
-              We're building a resource library of environmental response best practices and industry research.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Subscribe below to be notified when new insights are published.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {articles.map((article, index) => {
+              const IconComponent = article.icon;
+              return (
+                <a
+                  key={index}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Card className="p-6 bg-white border border-border hover:shadow-lg hover:border-primary transition-all h-full flex flex-col">
+                    <div className="mb-4">
+                      <IconComponent className={`${article.color}`} size={32} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-3">
+                      {article.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                      {article.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                      <span>Read on Medium</span>
+                      <ExternalLink size={16} />
+                    </div>
+                  </Card>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -105,78 +149,40 @@ export default function Insights() {
         </div>
       </section>
 
-      {/* Resources */}
+      {/* Key Topics */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Recommended Resources
+            Key Topics Covered
           </h2>
 
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="p-6 bg-white border border-border">
-              <div className="flex items-start gap-4">
-                <BookOpen className="text-primary flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">
-                    EPA Environmental Data & Resources
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Official EPA data on environmental incidents, water quality, air quality, and regulatory requirements.
-                  </p>
-                  <a
-                    href="https://www.epa.gov"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 text-sm font-medium"
-                  >
-                    Visit EPA.gov →
-                  </a>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Infrastructure & Architecture</h3>
+              <p className="text-muted-foreground text-sm">
+                Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems.
+              </p>
             </Card>
 
             <Card className="p-6 bg-white border border-border">
-              <div className="flex items-start gap-4">
-                <BookOpen className="text-secondary flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">
-                    FEMA Emergency Response Coordination
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Best practices and guidelines for emergency response coordination from the Federal Emergency Management Agency.
-                  </p>
-                  <a
-                    href="https://www.fema.gov"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-secondary/80 text-sm font-medium"
-                  >
-                    Visit FEMA.gov →
-                  </a>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">AI & Automation</h3>
+              <p className="text-muted-foreground text-sm">
+                How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems.
+              </p>
             </Card>
 
             <Card className="p-6 bg-white border border-border">
-              <div className="flex items-start gap-4">
-                <BookOpen className="text-accent flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">
-                    Water Quality Association Standards
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    Industry standards and best practices for water quality monitoring and emergency response.
-                  </p>
-                  <a
-                    href="https://www.wqa.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-accent/80 text-sm font-medium"
-                  >
-                    Visit WQA.org →
-                  </a>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">Integration Challenges</h3>
+              <p className="text-muted-foreground text-sm">
+                Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms.
+              </p>
+            </Card>
+
+            <Card className="p-6 bg-white border border-border">
+              <h3 className="text-lg font-semibold text-foreground mb-3">Operational Impact</h3>
+              <p className="text-muted-foreground text-sm">
+                Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems.
+              </p>
             </Card>
           </div>
         </div>
@@ -189,7 +195,7 @@ export default function Insights() {
             Stay Updated
           </h2>
           <p className="text-lg text-muted-foreground text-center mb-8">
-            Subscribe to receive updates on new insights, industry research, and ChainSync product announcements.
+            Subscribe to receive updates on new articles, industry research, and ChainSync product announcements.
           </p>
 
           <Card className="p-8 bg-white border border-border">
@@ -218,7 +224,7 @@ export default function Insights() {
                 />
               </div>
               <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base">
-                Subscribe to Insights
+                Subscribe to Updates
               </Button>
             </form>
           </Card>
