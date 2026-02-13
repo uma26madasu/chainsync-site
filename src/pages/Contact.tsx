@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import Chatbot from "@/components/Chatbot";
 
 export default function Contact() {
@@ -14,21 +15,49 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init("mvRcXt-RUQv_C4hzo");
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ organization: "", role: "", email: "", message: "" });
-    }, 3000);
+    setLoading(true);
+    setError("");
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_6mitzhj",
+        "template_4579caf",
+        {
+          organization: formData.organization,
+          role: formData.role,
+          email: formData.email,
+          message: formData.message,
+        }
+      );
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ organization: "", role: "", email: "", message: "" });
+      }, 3000);
+    } catch (err) {
+      console.error("Error sending email:", err);
+      setError("There was an error sending your message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,6 +94,12 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <p className="text-red-800 text-sm">{error}</p>
+                      </div>
+                    )}
+
                     <div>
                       <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
                         Organization Name *
@@ -136,9 +171,10 @@ export default function Contact() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base font-semibold"
+                      disabled={loading}
+                      className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {loading ? "Sending..." : "Send Message"}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">
