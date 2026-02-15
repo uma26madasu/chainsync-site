@@ -2,33 +2,69 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import Chatbot from "@/components/Chatbot";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    organization: "",
-    role: "",
+    company: "",
+    name: "",
     email: "",
+    phone: "",
+    industry: "",
     message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init("mvRcXt-RUQv_C4hzo");
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ organization: "", role: "", email: "", message: "" });
-    }, 3000);
+    setLoading(true);
+    setError("");
+
+    try {
+      // Send email using EmailJS with formatted subject and body
+      await emailjs.send(
+        "service_6mitzhj",
+        "template_4579caf",
+        {
+          subject: `New Demo Request from ${formData.company}`,
+          company: formData.company,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          industry: formData.industry,
+          message: formData.message,
+          // Also send a formatted message for the email body
+          formatted_message: `New Contact Form Submission\n\nCompany: ${formData.company}\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nIndustry: ${formData.industry}\n\nMessage:\n${formData.message}`,
+        }
+      );
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ company: "", name: "", email: "", phone: "", industry: "", message: "" });
+      }, 3000);
+    } catch (err) {
+      console.error("Error sending email:", err);
+      setError("There was an error sending your message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,41 +101,42 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <p className="text-red-800 text-sm">{error}</p>
+                      </div>
+                    )}
+
                     <div>
-                      <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                        Organization Name *
+                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                        Company Name *
                       </label>
                       <input
                         type="text"
-                        id="organization"
-                        name="organization"
-                        value={formData.organization}
+                        id="company"
+                        name="company"
+                        value={formData.company}
                         onChange={handleChange}
-                        placeholder="Your organization"
+                        placeholder="Your company name"
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="role" className="block text-sm font-medium text-foreground mb-2">
-                        Your Role *
+                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                        Your Name *
                       </label>
-                      <select
-                        id="role"
-                        name="role"
-                        value={formData.role}
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
+                        placeholder="Your full name"
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
-                      >
-                        <option value="">Select your role...</option>
-                        <option value="government">Government / Municipal Agency</option>
-                        <option value="water">Water Treatment Facility</option>
-                        <option value="industrial">Industrial / Manufacturing</option>
-                        <option value="consulting">Environmental Consulting</option>
-                        <option value="other">Other</option>
-                      </select>
+                      />
                     </div>
 
                     <div>
@@ -116,6 +153,43 @@ export default function Contact() {
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Your phone number"
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
+                        Industry *
+                      </label>
+                      <select
+                        id="industry"
+                        name="industry"
+                        value={formData.industry}
+                        onChange={handleChange}
+                        className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                        required
+                      >
+                        <option value="">Select your industry...</option>
+                        <option value="government">Government / Municipal Agency</option>
+                        <option value="water">Water Treatment Facility</option>
+                        <option value="industrial">Industrial / Manufacturing</option>
+                        <option value="consulting">Environmental Consulting</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
 
                     <div>
@@ -136,9 +210,10 @@ export default function Contact() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base font-semibold"
+                      disabled={loading}
+                      className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {loading ? "Sending..." : "Send Message"}
                     </Button>
 
                     <p className="text-xs text-muted-foreground text-center">

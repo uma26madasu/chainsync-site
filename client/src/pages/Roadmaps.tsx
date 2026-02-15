@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckCircle2, Circle, ArrowRight, TrendingUp, Zap } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Droplet, Heart, Factory, Bolt, Target, Layers, Users, Shield, MessageSquare, Brain, BarChart3 } from "lucide-react";
 
 export default function Roadmaps() {
   return (
@@ -11,507 +11,447 @@ export default function Roadmaps() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-8 md:py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
-            2026 Agent Development Roadmap
+            2026 Development Roadmap
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            ChainSync is evolving from a specialized water emergency platform into a multi-vertical AI powerhouse. Our strategy prioritizes robust infrastructure to enable rapid scaling across high-impact industries.
+            Building on our foundation of 12 proven agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
           </p>
         </div>
       </section>
 
-      {/* Executive Summary */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      {/* Agent Growth Overview */}
+      <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Executive Summary
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-2 border-primary">
-              <div className="text-4xl font-bold text-primary mb-2">12</div>
-              <p className="text-sm text-muted-foreground">Production-ready agents (6 general + 6 water)</p>
-            </Card>
-
-            <Card className="p-6 bg-white border-2 border-green-600">
-              <div className="text-4xl font-bold text-green-600 mb-2">30</div>
-              <p className="text-sm text-muted-foreground">2026 Target: Specialized agents across 6 verticals</p>
-            </Card>
-
-            <Card className="p-6 bg-white border-2 border-blue-600">
-              <div className="text-4xl font-bold text-blue-600 mb-2">99.99%</div>
-              <p className="text-sm text-muted-foreground">Target uptime by Q4 2026</p>
-            </Card>
-
-            <Card className="p-6 bg-white border-2 border-amber-600">
-              <div className="text-4xl font-bold text-amber-600 mb-2">&lt;200ms</div>
-              <p className="text-sm text-muted-foreground">Target average response time</p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Quarterly Execution Plan */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            2026 Quarterly Execution Plan
-          </h2>
-
-          <div className="max-w-5xl mx-auto space-y-8">
-            {/* Q1 */}
-            <Card className="p-8 bg-gradient-to-r from-blue-50 to-white border-2 border-blue-600">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Phase 1: Q1 (Jan–Mar)</h3>
-                  <p className="text-muted-foreground">Infrastructure Foundation</p>
-                </div>
-                <div className="text-blue-600 text-4xl font-bold">Q1</div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">P0 Infrastructure Upgrades</p>
-                    <p className="text-sm text-muted-foreground">Vector Databases for 10x faster retrieval and Multi-model AI support (Claude, Gemini)</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Key Enhancements</p>
-                    <p className="text-sm text-muted-foreground">V2 updates for Continuous Learning, Root Cause Analysis (RCA), and Compliance agents</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Deliverables</p>
-                    <p className="text-sm text-muted-foreground">Real-time monitoring dashboards and multi-region deployment across 3+ AWS regions</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Q2 */}
-            <Card className="p-8 bg-gradient-to-r from-green-50 to-white border-2 border-green-600">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Phase 2: Q2 (Apr–Jun)</h3>
-                  <p className="text-muted-foreground">Healthcare Suite Launch</p>
-                </div>
-                <div className="text-green-600 text-4xl font-bold">Q2</div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-green-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">5 New Healthcare Agents</p>
-                    <p className="text-sm text-muted-foreground">Hospital Operations, Clinical Decision Support, HIPAA Compliance, Medical Emergency Coordinator, Patient Flow Optimizer</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-green-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Expansion</p>
-                    <p className="text-sm text-muted-foreground">Beta launch of Web UI and mobile applications (iOS and Android)</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-green-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Strategic Milestone</p>
-                    <p className="text-sm text-muted-foreground">First healthcare customer pilot with an 8-hospital system</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Q3 */}
-            <Card className="p-8 bg-gradient-to-r from-amber-50 to-white border-2 border-amber-600">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Phase 3: Q3 (Jul–Sep)</h3>
-                  <p className="text-muted-foreground">Manufacturing & Analytics</p>
-                </div>
-                <div className="text-amber-600 text-4xl font-bold">Q3</div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-amber-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">4 New Manufacturing Agents</p>
-                    <p className="text-sm text-muted-foreground">Predictive Maintenance, Quality Control, Supply Chain Optimizer, Performance Optimization</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-amber-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Core Feature</p>
-                    <p className="text-sm text-muted-foreground">Advanced Analytics Engine with predictive ML models (85%+ accuracy)</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-amber-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Milestone</p>
-                    <p className="text-sm text-muted-foreground">Beta launch of Agent Marketplace</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Q4 */}
-            <Card className="p-8 bg-gradient-to-r from-red-50 to-white border-2 border-red-600">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Phase 4: Q4 (Oct–Dec)</h3>
-                  <p className="text-muted-foreground">Energy, Finance & Autonomy</p>
-                </div>
-                <div className="text-red-600 text-4xl font-bold">Q4</div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-red-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">5 New Energy Agents</p>
-                    <p className="text-sm text-muted-foreground">Grid Management, Oil & Gas Operations, Smart City Coordinator, Climate Risk Assessor, Environmental Compliance</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-red-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">4 New Finance Agents</p>
-                    <p className="text-sm text-muted-foreground">Fraud Detection, Risk Management, Customer Service, Financial Regulatory Reporting</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="text-red-600 mt-1 flex-shrink-0" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground">Advanced Capabilities</p>
-                    <p className="text-sm text-muted-foreground">Autonomous self-healing workflows and zero-touch operations (70% manual intervention reduction)</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Growth Trajectory */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
             2026 Growth Trajectory
           </h2>
 
-          <div className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-primary">
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Quarter</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">New Agents</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Total Agents</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Key Milestone</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Current</td>
-                  <td className="py-4 px-4 text-muted-foreground">—</td>
-                  <td className="py-4 px-4 font-semibold text-foreground">12</td>
-                  <td className="py-4 px-4 text-muted-foreground">Water Emergency Platform</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Q1 2026</td>
-                  <td className="py-4 px-4 text-muted-foreground">+0</td>
-                  <td className="py-4 px-4 font-semibold text-foreground">12</td>
-                  <td className="py-4 px-4 text-muted-foreground">Infrastructure Upgrades</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-green-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Q2 2026</td>
-                  <td className="py-4 px-4 text-green-600 font-semibold">+5</td>
-                  <td className="py-4 px-4 font-semibold text-foreground">17</td>
-                  <td className="py-4 px-4 text-muted-foreground">Healthcare Suite Launch</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-amber-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Q3 2026</td>
-                  <td className="py-4 px-4 text-amber-600 font-semibold">+4</td>
-                  <td className="py-4 px-4 font-semibold text-foreground">21</td>
-                  <td className="py-4 px-4 text-muted-foreground">Manufacturing Suite Launch</td>
-                </tr>
-                <tr className="hover:bg-red-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Q4 2026</td>
-                  <td className="py-4 px-4 text-red-600 font-semibold">+9</td>
-                  <td className="py-4 px-4 font-semibold text-foreground">30</td>
-                  <td className="py-4 px-4 text-muted-foreground">Energy & Finance Suites</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-5xl mx-auto mb-8">
+            <Card className="p-6 bg-white border-2 border-slate-300 text-center">
+              <div className="text-3xl font-bold text-slate-600 mb-2">12</div>
+              <p className="text-sm font-semibold text-slate-700">Existing Agents</p>
+              <p className="text-xs text-muted-foreground">Already deployed</p>
+            </Card>
+
+            <div className="flex items-center justify-center">
+              <ArrowRight className="w-6 h-6 text-primary" />
+            </div>
+
+            <Card className="p-6 bg-white border-2 border-blue-300">
+              <div className="text-3xl font-bold text-blue-600 mb-2">15</div>
+              <p className="text-sm font-semibold text-blue-700">Q1 Target</p>
+              <p className="text-xs text-muted-foreground">+3 agents</p>
+            </Card>
+
+            <Card className="p-6 bg-white border-2 border-green-300">
+              <div className="text-3xl font-bold text-green-600 mb-2">18</div>
+              <p className="text-sm font-semibold text-green-700">Q2 Target</p>
+              <p className="text-xs text-muted-foreground">+3 agents</p>
+            </Card>
+
+            <Card className="p-6 bg-white border-2 border-amber-300">
+              <div className="text-3xl font-bold text-amber-600 mb-2">24</div>
+              <p className="text-sm font-semibold text-amber-700">Q3 Target</p>
+              <p className="text-xs text-muted-foreground">+6 agents</p>
+            </Card>
+
+            <Card className="p-6 bg-white border-2 border-red-300">
+              <div className="text-3xl font-bold text-red-600 mb-2">30</div>
+              <p className="text-sm font-semibold text-red-700">Q4 Target</p>
+              <p className="text-xs text-muted-foreground">+6 agents</p>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Healthcare Spotlight */}
-      <section className="py-12 md:py-20">
+      {/* Q1 2026 */}
+      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Healthcare Suite (Q2 Launch)
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+                Q1
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
+                <p className="text-muted-foreground">12 existing agents + 3 new agents = 15 total</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* ChainSync Q1 */}
+              <Card className="p-6 bg-blue-50 border-2 border-blue-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Zap className="w-6 h-6 text-blue-600" />
+                  <h3 className="text-lg font-semibold text-foreground">ChainSync Core</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>3 Infrastructure Agents:</strong> System Health Monitor, Data Integration, Event Orchestration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>Distributed agent orchestration framework</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>Real-time event streaming pipeline (&lt;200ms latency)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>Multi-region deployment capabilities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>SOC 2 Type II Compliance</strong> - Full audit completion</span>
+                  </li>
+                </ul>
+              </Card>
+
+              {/* Slotify Q1 */}
+              <Card className="p-6 bg-purple-50 border-2 border-purple-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Layers className="w-6 h-6 text-purple-600" />
+                  <h3 className="text-lg font-semibold text-foreground">Slotify Enhancement</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Security Foundation:</strong> GDPR/HIPAA compliance framework</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span>2FA authentication & comprehensive audit logging</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Team Scheduling:</strong> Shift management, availability tracking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Resource Booking:</strong> Capacity planning, booking workflows</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Calendar Integrations:</strong> Zoom, Teams, Google Meet, iCal sync</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Q2 2026 */}
+      <section className="py-8 md:py-12 bg-slate-50 border-t border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg">
+                Q2
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-foreground">Healthcare Vertical Expansion</h2>
+                <p className="text-muted-foreground">15 existing agents + 3 new agents = 18 total</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* ChainSync Q2 */}
+              <Card className="p-6 bg-green-50 border-2 border-green-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Heart className="w-6 h-6 text-green-600" />
+                  <h3 className="text-lg font-semibold text-foreground">ChainSync Healthcare</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>3 Healthcare Agents:</strong> Hospital Emergency Coordinator, Patient Safety Monitor, Crisis Response Coordinator</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span>Multi-department emergency coordination</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span>Real-time patient safety monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span>Mass casualty incident management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>HIPAA Compliance Certification</strong></span>
+                  </li>
+                </ul>
+              </Card>
+
+              {/* Slotify Q2 */}
+              <Card className="p-6 bg-pink-50 border-2 border-pink-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <MessageSquare className="w-6 h-6 text-pink-600" />
+                  <h3 className="text-lg font-semibold text-foreground">Slotify Communications</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>SMS Notifications:</strong> Twilio/Plivo integration, delivery tracking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Slack Integration:</strong> Channel notifications, incident alerts, bot commands</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Microsoft Teams Integration:</strong> Teams alerts, workflow automation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
+                    <span>Multi-channel reminders (Email, SMS, Slack, Teams, In-app)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
+                    <span>Custom webhooks & delegation workflows</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Q3 2026 */}
+      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-lg">
+                Q3
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-foreground">Manufacturing Vertical Expansion</h2>
+                <p className="text-muted-foreground">18 existing agents + 6 new agents = 24 total</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* ChainSync Q3 */}
+              <Card className="p-6 bg-amber-50 border-2 border-amber-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Factory className="w-6 h-6 text-amber-600" />
+                  <h3 className="text-lg font-semibold text-foreground">ChainSync Manufacturing</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>6 Manufacturing Agents:</strong> Facility Safety Monitor, Equipment Health, Supply Chain Disruption, Production Quality, Environmental Compliance, Operational Resilience</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span>Facility safety system monitoring & violation detection</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span>Predictive equipment failure analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span>Supply chain disruption detection & alternative sourcing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>ISO 27001 Certification</strong></span>
+                  </li>
+                </ul>
+              </Card>
+
+              {/* Slotify Q3 */}
+              <Card className="p-6 bg-blue-50 border-2 border-blue-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Brain className="w-6 h-6 text-blue-600" />
+                  <h3 className="text-lg font-semibold text-foreground">Slotify AI & Automation</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Smart Scheduling Engine:</strong> ML-based recommendations, optimal resource allocation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>AI Meeting Summaries:</strong> Automatic transcription, key points extraction, action items</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Context Enrichment:</strong> Historical context retrieval, incident linking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>Sentiment analysis & automated follow-ups</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span>Capacity planning & resource optimization</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Q4 2026 */}
+      <section className="py-8 md:py-12 bg-slate-50 border-t border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg">
+                Q4
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-foreground">Energy & Finance Vertical Expansion</h2>
+                <p className="text-muted-foreground">24 existing agents + 6 new agents = 30 total</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* ChainSync Q4 */}
+              <Card className="p-6 bg-red-50 border-2 border-red-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <Bolt className="w-6 h-6 text-red-600" />
+                  <h3 className="text-lg font-semibold text-foreground">ChainSync Energy & Finance</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>6 Energy & Finance Agents:</strong> Grid Stability Monitor, Energy Demand Forecasting, Fraud Detection, Systemic Risk Monitor, Regulatory Compliance, Crisis Response</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Real-time grid stability monitoring & anomaly detection</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Financial fraud detection & transaction monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Systemic risk identification & mitigation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>GDPR Compliance Validation</strong></span>
+                  </li>
+                </ul>
+              </Card>
+
+              {/* Slotify Q4 */}
+              <Card className="p-6 bg-indigo-50 border-2 border-indigo-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <BarChart3 className="w-6 h-6 text-indigo-600" />
+                  <h3 className="text-lg font-semibold text-foreground">Slotify Analytics & Integrations</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Deep Analytics Dashboard:</strong> Real-time metrics, KPI tracking, custom reports</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Vertical Integrations:</strong> Healthcare EHR, Education LMS, Legal case management, Real Estate MLS</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <span>Performance metrics tracking (agent performance, response time, accuracy)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Revenue Tracking & ROI Analytics:</strong> ROI calculation, cost-benefit analysis, value delivery</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 flex-shrink-0" />
+                    <span>SLA monitoring & compliance reporting</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Performance Summary */}
+      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+            2026 Compliance & Performance Roadmap
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-2 border-green-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Core Healthcare Agents</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <Card className="p-6 bg-slate-50 border-2 border-slate-200">
+              <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-slate-600" />
+                Compliance Milestones
+              </h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold mt-1">•</span>
-                  <span><strong>Clinical Decision Support:</strong> Treatment recommendations and protocol adherence</span>
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q1:</strong> SOC 2 Type II audit completion</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold mt-1">•</span>
-                  <span><strong>Hospital Operations:</strong> Bed utilization, patient flow, staffing optimization</span>
+                  <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q2:</strong> HIPAA compliance certification</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold mt-1">•</span>
-                  <span><strong>Medical Emergency Coordinator:</strong> Code blue events, trauma alerts, resource dispatch</span>
+                  <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q3:</strong> ISO 27001 certification</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold mt-1">•</span>
-                  <span><strong>HIPAA Compliance:</strong> Auditing, breach detection, regulatory reporting</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold mt-1">•</span>
-                  <span><strong>Patient Flow Optimizer:</strong> Admission/discharge timing for improved throughput</span>
+                  <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q4:</strong> GDPR compliance validation</span>
                 </li>
               </ul>
             </Card>
 
-            <Card className="p-6 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Projected Healthcare Impact</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Efficiency</p>
-                  <p className="text-lg font-bold text-green-600">70% → 91%</p>
-                  <p className="text-xs text-muted-foreground">Bed utilization increase</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Safety</p>
-                  <p className="text-lg font-bold text-green-600">53% reduction</p>
-                  <p className="text-xs text-muted-foreground">Hospital-acquired infections</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Compliance</p>
-                  <p className="text-lg font-bold text-green-600">70% reduction</p>
-                  <p className="text-xs text-muted-foreground">HIPAA audit-related costs</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Manufacturing Spotlight */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Manufacturing Suite (Q3 Launch)
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-2 border-amber-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Core Manufacturing Agents</h3>
+            <Card className="p-6 bg-slate-50 border-2 border-slate-200">
+              <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-slate-600" />
+                Performance Targets
+              </h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-600 font-bold mt-1">•</span>
-                  <span><strong>Predictive Maintenance:</strong> Equipment failure prediction and maintenance scheduling</span>
+                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>Response Time:</strong> &lt;200ms average latency</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-600 font-bold mt-1">•</span>
-                  <span><strong>Quality Control:</strong> Defect detection and process optimization</span>
+                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>Uptime:</strong> 99.99% SLA by Q4</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-600 font-bold mt-1">•</span>
-                  <span><strong>Supply Chain Optimizer:</strong> Logistics and inventory coordination</span>
+                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>Accuracy:</strong> 98%+ incident detection rate</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-amber-600 font-bold mt-1">•</span>
-                  <span><strong>Performance Optimization:</strong> OEE tracking and bottleneck identification</span>
+                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span><strong>Scalability:</strong> Support 1000+ concurrent incidents</span>
                 </li>
               </ul>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-amber-50 to-white border-2 border-amber-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Projected Manufacturing Impact</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Downtime</p>
-                  <p className="text-lg font-bold text-amber-600">40% reduction</p>
-                  <p className="text-xs text-muted-foreground">Unplanned downtime</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Quality</p>
-                  <p className="text-lg font-bold text-amber-600">85% → 96%</p>
-                  <p className="text-xs text-muted-foreground">Quality pass rate</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Maintenance</p>
-                  <p className="text-lg font-bold text-amber-600">40% reduction</p>
-                  <p className="text-xs text-muted-foreground">Annual maintenance costs</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Energy & Utilities Spotlight */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Energy & Utilities Suite (Q4 Launch)
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-2 border-red-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Core Energy Agents</h3>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold mt-1">•</span>
-                  <span><strong>Grid Management:</strong> Load balancing, outage prevention, performance optimization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold mt-1">•</span>
-                  <span><strong>Oil & Gas Operations:</strong> Pipeline monitoring, drilling optimization, safety compliance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold mt-1">•</span>
-                  <span><strong>Smart City Coordinator:</strong> Traffic, utility, and emergency services coordination</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold mt-1">•</span>
-                  <span><strong>Climate Risk Assessor:</strong> Weather impact prediction and adaptation planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-600 font-bold mt-1">•</span>
-                  <span><strong>Environmental Compliance:</strong> Emissions tracking and EPA/state reporting</span>
-                </li>
-              </ul>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Projected Energy Impact</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Grid Resilience</p>
-                  <p className="text-lg font-bold text-red-600">+3%</p>
-                  <p className="text-xs text-muted-foreground">Overall grid uptime increase</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Response Speed</p>
-                  <p className="text-lg font-bold text-red-600">68% reduction</p>
-                  <p className="text-xs text-muted-foreground">Average outage duration</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground mb-1">Cost Efficiency</p>
-                  <p className="text-lg font-bold text-red-600">40% reduction</p>
-                  <p className="text-xs text-muted-foreground">Annual outage-related costs</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Technology Stack Evolution
-          </h2>
-
-          <div className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-primary">
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Category</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Current (2025)</th>
-                  <th className="text-left py-4 px-4 font-semibold text-foreground">Target (Q4 2026)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">AI Models</td>
-                  <td className="py-4 px-4 text-muted-foreground">GPT-4</td>
-                  <td className="py-4 px-4 text-foreground">GPT-4 Turbo, Claude 3.5, Gemini Ultra</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Memory</td>
-                  <td className="py-4 px-4 text-muted-foreground">In-memory lists</td>
-                  <td className="py-4 px-4 text-foreground">Vector DBs (Pinecone, Weaviate, Qdrant)</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Security</td>
-                  <td className="py-4 px-4 text-muted-foreground">API keys, HMAC</td>
-                  <td className="py-4 px-4 text-foreground">Zero Trust, SOC 2 Type II, ISO 27001, FedRAMP</td>
-                </tr>
-                <tr className="border-b border-border hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">UI</td>
-                  <td className="py-4 px-4 text-muted-foreground">CLI only</td>
-                  <td className="py-4 px-4 text-foreground">Web Console, Mobile (iOS/Android)</td>
-                </tr>
-                <tr className="hover:bg-blue-50">
-                  <td className="py-4 px-4 font-semibold text-foreground">Integrations</td>
-                  <td className="py-4 px-4 text-muted-foreground">ChainSync, Slotify</td>
-                  <td className="py-4 px-4 text-foreground">ServiceNow, Jira, PagerDuty, Slack, Datadog</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Risk Mitigation */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Risk Mitigation & Next Steps
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-6 bg-white border-2 border-amber-600">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Technical Risks</h3>
-              <p className="text-sm text-muted-foreground">
-                Mitigating Vector DB integration delays and multi-model AI complexity through phased rollouts and buffers.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white border-2 border-blue-600">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Business Risks</h3>
-              <p className="text-sm text-muted-foreground">
-                Addressing competition and long healthcare sales cycles by focusing on domain-specific expertise and early pilot programs.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white border-2 border-green-600">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Immediate Next Steps</h3>
-              <p className="text-sm text-muted-foreground">
-                Finalize Q1 sprint planning, initiate SOC 2 Type II audit, and begin outreach for healthcare pilot programs.
-              </p>
             </Card>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-primary text-white">
+      <section className="py-8 md:py-12 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Join Us on This Journey
           </h2>
           <p className="text-lg text-blue-100 mb-8">
-            We're building the future of AI-powered emergency response. Interested in partnering with us?
+            We're building the future of AI-powered emergency response with integrated scheduling capabilities. Interested in partnering with us?
           </p>
 
           <Link href="/contact">
