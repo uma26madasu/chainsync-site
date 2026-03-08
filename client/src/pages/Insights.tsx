@@ -8,6 +8,13 @@ import { BookOpen, TrendingUp, AlertCircle, ExternalLink } from "lucide-react";
 export default function Insights() {
   const articles = [
     {
+      title: "I Got Tired of Living Across 4 Calendar Apps, So I Built Slotify",
+      description: "The personal journey behind building Slotify—ChainSync's autonomous scheduling engine. What started as calendar chaos became a core component for emergency meeting coordination.",
+      url: "https://medium.com/@umamadasu/i-got-tired-of-living-across-4-calendar-apps-so-i-built-slotify-b0445c595648",
+      icon: BookOpen,
+      color: "text-orange-600"
+    },
+    {
       title: "The Infrastructure for Specialized Intelligence is Live",
       description: "Exploring the foundational infrastructure that powers specialized AI agents and how it enables rapid deployment across multiple domains.",
       url: "https://medium.com/@umamadasu/the-infrastructure-for-specialized-intelligence-is-live-95fe628f90c9",
