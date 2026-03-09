@@ -8,44 +8,44 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-10 w-auto" />
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-16 w-auto" />
             </a>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             <Link href="/use-cases">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Use Cases
               </a>
             </Link>
             <Link href="/how-it-works">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 How It Works
               </a>
             </Link>
             <Link href="/technology">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Technology
               </a>
             </Link>
             <Link href="/roadmaps">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Roadmaps
               </a>
             </Link>
             <Link href="/insights">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Insights
               </a>
             </Link>
             <Link href="/contact">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Contact
               </a>
             </Link>
@@ -54,7 +54,7 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="#early-access">
-              <Button className="bg-primary hover:bg-primary/90 text-white">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 text-base font-semibold">
                 Request Early Access
               </Button>
             </Link>
