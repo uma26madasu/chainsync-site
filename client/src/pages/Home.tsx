@@ -156,7 +156,12 @@ export default function Home() {
             </Card>
 
             <Card className="p-6 bg-white border border-border hover:shadow-lg transition-shadow">
-              <Calendar className="text-secondary mb-4" size={32} />
+              <div className="flex items-center justify-between mb-4">
+                <Calendar className="text-secondary" size={32} />
+                <span className="text-xs font-medium px-2 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200">
+                  Under Development
+                </span>
+              </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Slotify</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Intelligent emergency response scheduling and multi-agency coordination. Autonomous meeting coordination with Google Calendar and Microsoft 365 integration.
