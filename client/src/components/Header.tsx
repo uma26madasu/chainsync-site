@@ -44,6 +44,14 @@ export default function Header() {
                 Insights
               </a>
             </Link>
+            <a
+              href="https://slotify.getchainsync.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors text-base font-medium"
+            >
+              Slotify
+            </a>
             <Link href="/contact">
               <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 Contact
@@ -98,6 +106,14 @@ export default function Header() {
                 Insights
               </a>
             </Link>
+            <a
+              href="https://slotify.getchainsync.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2"
+            >
+              Slotify
+            </a>
             <Link href="/contact">
               <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
                 Contact
