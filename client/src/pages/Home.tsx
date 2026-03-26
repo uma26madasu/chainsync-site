@@ -280,6 +280,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Founder Section */}
+      <section className="py-12 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+            Built by someone who's done this
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <span className="font-semibold text-foreground">Uma Madasu</span> — 6+ years as a MuleSoft Integration Engineer, working with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. I built ChainSync because I kept seeing the same problem: critical systems that couldn't talk to each other when it mattered most. Emergency response shouldn't depend on phone trees and spreadsheets.
+          </p>
+          <p className="text-muted-foreground mb-6">
+            Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/madasu-r-3265aba7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+          >
+            Connect on LinkedIn →
+          </a>
+        </div>
+      </section>
+
       {/* Early Access CTA */}
       <section id="early-access" className="py-12 md:py-20 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
