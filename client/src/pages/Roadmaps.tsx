@@ -17,7 +17,7 @@ export default function Roadmaps() {
             2026 Development Roadmap
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Building on our foundation of 12 proven agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
+            Building on our foundation of 15 proven agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
           </p>
         </div>
       </section>
@@ -40,9 +40,12 @@ export default function Roadmaps() {
               <ArrowRight className="w-6 h-6 text-primary" />
             </div>
 
-            <Card className="p-6 bg-white border-2 border-blue-300">
-              <div className="text-3xl font-bold text-blue-600 mb-2">15</div>
-              <p className="text-sm font-semibold text-blue-700">Q1 Target</p>
+            <Card className="p-6 bg-green-50 border-2 border-green-400 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-green-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full">✓ Completed</span>
+              </div>
+              <div className="text-3xl font-bold text-green-600 mb-2">15</div>
+              <p className="text-sm font-semibold text-green-700">Q1 — Done</p>
               <p className="text-xs text-muted-foreground">+3 agents</p>
             </Card>
 
@@ -72,11 +75,14 @@ export default function Roadmaps() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg">
                 Q1
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
+                <div className="flex items-center gap-3">
+                  <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
+                  <span className="bg-green-100 text-green-700 border border-green-300 text-sm font-semibold px-3 py-1 rounded-full">✓ Completed</span>
+                </div>
                 <p className="text-muted-foreground">12 existing agents + 3 new agents = 15 total</p>
               </div>
             </div>
