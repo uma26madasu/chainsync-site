@@ -50,7 +50,7 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Link href="#early-access">
+                <Link href="/contact">
                   <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-3 h-auto text-base">
                     Request Early Access
                   </Button>
