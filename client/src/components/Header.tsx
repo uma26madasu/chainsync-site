@@ -61,7 +61,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="#early-access">
+            <Link href="/contact">
               <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 text-base font-semibold">
                 Request Early Access
               </Button>
@@ -119,7 +119,7 @@ export default function Header() {
                 Contact
               </a>
             </Link>
-            <Link href="#early-access">
+            <Link href="/contact">
               <Button className="w-full bg-primary hover:bg-primary/90 text-white mt-2">
                 Request Early Access
               </Button>
