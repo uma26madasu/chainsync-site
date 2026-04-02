@@ -55,9 +55,11 @@ export default function Home() {
                     Request Early Access
                   </Button>
                 </Link>
-                <Button variant="outline" className="px-6 py-3 h-auto text-base">
-                  View Architecture
-                </Button>
+                <Link href="/technology">
+                  <Button variant="outline" className="px-6 py-3 h-auto text-base">
+                    View Architecture
+                  </Button>
+                </Link>
               </div>
             </div>
 
