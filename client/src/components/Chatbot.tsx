@@ -154,10 +154,11 @@ export default function Chatbot() {
     questionCount: 0,
     topics: []
   });
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const el = messagesContainerRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [messages]);
 
   const sendReply = (userText: string) => {
@@ -206,7 +207,7 @@ export default function Chatbot() {
   return (
     <div className="flex flex-col h-full">
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto mb-4 space-y-4 max-h-96">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto mb-4 space-y-4 max-h-96">
         {messages.map((message) => (
           <div key={message.id} className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}>
             <div
@@ -233,7 +234,6 @@ export default function Chatbot() {
             </div>
           </div>
         ))}
-        <div ref={messagesEndRef} />
       </div>
 
       {/* Input */}
