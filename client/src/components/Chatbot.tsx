@@ -17,68 +17,135 @@ interface ChatbotContext {
 
 const KNOWLEDGE_BASE = [
   {
-    keywords: ["python", "agent", "agents", "architecture"],
+    keywords: ["python", "agent", "agents", "12 agents", "15 agents", "specialized"],
     topic: "pythonAgents",
-    text: "ChainSync uses specialized Python agents for environmental emergency response. Each agent excels at one task: Detection (monitors for anomalies), Analysis (evaluates severity), Coordination (routes notifications), and Documentation (records actions). This modular approach makes the system more reliable and easier to update than monolithic systems.",
+    text: "ChainSync has 15 specialized Python agents (we completed Q1 targets!). Each agent owns one job: Detection monitors for anomalies, Analysis evaluates severity, Coordination routes notifications, and Documentation records actions. We're expanding to 30 agents by end of 2026 across healthcare, manufacturing, and energy verticals.",
+    quickReplies: ["How does it work?", "2026 roadmap", "Join early access"]
+  },
+  {
+    keywords: ["how it works", "works", "system", "flow", "process", "pipeline"],
+    topic: "howItWorks",
+    text: "Data flows in from SCADA systems, IoT sensors, and monitoring platforms → Detection agents spot anomalies → Analysis agents assess severity → Coordination agents route alerts to the right people → Documentation agents create records — all in under 90 seconds. The Integration Hub connects everything without replacing your existing tools.",
+    quickReplies: ["What's the Integration Hub?", "Python agents?", "Join early access"]
+  },
+  {
+    keywords: ["mulesoft", "workato", "boomi", "integration hub", "integration", "api", "webhook", "connector", "universal"],
+    topic: "integrationHub",
+    text: "The Universal Integration Hub is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks — 22 flow implementations deployed today with AWS, Azure, and MuleSoft compatibility. No rip-and-replace required.",
+    quickReplies: ["How does it work?", "What about security?", "Implementation"]
+  },
+  {
+    keywords: ["slotify", "scheduling", "scheduler", "calendar", "outlook", "google calendar", "meeting", "coordination"],
+    topic: "slotify",
+    text: "Slotify is ChainSync's intelligent scheduling component, live at slotify.getchainsync.com. It handles autonomous meeting coordination — detecting the right authority, resolving multi-calendar conflicts, and triggering emergency overrides. Google Calendar and Microsoft 365 integrations are live; Outlook backend is still in development.",
     quickReplies: ["How does it work?", "Development status", "Join early access"]
   },
   {
-    keywords: ["how it works", "works", "architecture", "system", "integration"],
-    topic: "development",
-    text: "ChainSync integrates with your existing systems through the Universal Integration Hub. Data flows from SCADA systems, IoT sensors, and monitoring platforms → Detection agents identify anomalies → Analysis agents evaluate severity → Coordination agents route notifications to the right teams → Documentation agents create records. Response time: under 90 seconds from detection to human notification.",
-    quickReplies: ["Python agents?", "Timeline details", "Join early access"]
+    keywords: ["security", "secure", "soc2", "soc 2", "hipaa", "encrypt", "data", "compliance", "gdpr", "iso"],
+    topic: "security",
+    text: "Security is built into the roadmap: SOC 2 Type II audit is targeted for Q1, HIPAA certification for Q2, ISO 27001 for Q3, and GDPR validation for Q4 2026. Data is encrypted in transit and at rest. The platform is designed for regulated environments — water utilities, hospitals, and industrial facilities.",
+    quickReplies: ["Compliance details", "Implementation", "Join early access"]
   },
   {
-    keywords: ["government", "agency", "municipal", "compliance", "regulations"],
+    keywords: ["implement", "deploy", "setup", "set up", "get started", "onboard", "rollout", "install"],
+    topic: "implementation",
+    text: "Implementation is designed to be non-disruptive. The Integration Hub connects to your existing SCADA, IoT, and communication systems via APIs and webhooks — no rip-and-replace. Pilot partners get dedicated technical support throughout onboarding. We handle the integration complexity so your team can focus on response.",
+    quickReplies: ["What's the Integration Hub?", "Pricing", "Join early access"]
+  },
+  {
+    keywords: ["cost", "savings", "roi", "value", "benefit", "save", "reduce", "efficient"],
+    topic: "costSavings",
+    text: "The core value: reducing response time from 4–6 hours to under 90 seconds. For environmental incidents, that window directly impacts regulatory penalties, remediation costs, and community health outcomes. Early access partners get preferential pricing — no upfront costs during the pilot phase.",
+    quickReplies: ["Pricing", "Join early access", "How does it work?"]
+  },
+  {
+    keywords: ["government", "agency", "municipal", "municipality", "city", "county", "public"],
     topic: "government",
-    text: "ChainSync is designed for government agencies and municipalities managing environmental health. We help with emergency response coordination, compliance documentation, and cross-agency communication. Our system reduces response time from 4-6 hours to under 90 seconds, improving outcomes for communities and ecosystems.",
+    text: "ChainSync is built for government agencies and municipalities managing environmental health. It reduces response time from 4–6 hours to under 90 seconds, automates cross-agency communication, and handles compliance documentation. Works with existing regulatory reporting workflows.",
     quickReplies: ["Water treatment?", "Cost savings", "Implementation"]
   },
   {
-    keywords: ["water", "treatment", "scada", "facility", "wastewater"],
+    keywords: ["water", "treatment", "scada", "facility", "wastewater", "drinking water", "contamination"],
     topic: "waterTreatment",
-    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor water quality parameters in real-time. When anomalies are detected, the system automatically coordinates response protocols, notifies operators, and documents actions. This is critical for protecting public health and meeting regulatory requirements.",
-    quickReplies: ["Response protocols", "SCADA integration", "Monitoring details"]
+    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor quality parameters in real-time. Anomalies trigger automatic response coordination, operator notifications, and regulatory documentation — all within 90 seconds. Critical for public health protection and compliance.",
+    quickReplies: ["SCADA integration", "What about security?", "Join early access"]
   },
   {
-    keywords: ["early access", "pilot", "join", "beta", "testing", "partner"],
+    keywords: ["early access", "pilot", "join", "beta", "testing", "partner", "sign up"],
     topic: "earlyAccess",
-    text: "We're actively recruiting pilot partners for Q3 2026 testing. Early access benefits include: Priority access to the platform, Direct input on feature development, Preferential pricing at public launch, Dedicated technical support. No long-term commitment required. No upfront costs during pilot phase. Interested? Fill out the contact form or ask us more questions!",
-    quickReplies: ["Timeline details", "Pricing", "Contact us"]
+    text: "We're recruiting pilot partners for Q3 2026 testing. Benefits: priority platform access, direct input on features, preferential pricing at launch, and dedicated technical support. No long-term commitment, no upfront costs during the pilot. Interested? Head to the Contact page and we'll follow up.",
+    quickReplies: ["Pricing", "Timeline details", "Contact us"]
   },
   {
-    keywords: ["timeline", "launch", "when", "available", "release", "date"],
+    keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "2026"],
     topic: "timeline",
-    text: "We're in active development with Q3 2026 pilot testing planned. We don't have a public launch date yet—we're prioritizing building the system correctly over launching quickly. Core components (Integration Hub, AI Agent Layer, Scheduler) are operational. We're validating performance with pilot partners before general availability.",
-    quickReplies: ["Early access", "Development status", "Pricing"]
+    text: "Q1 2026 is complete — 15 agents deployed. Q2 adds 3 healthcare agents, Q3 adds 6 manufacturing agents, Q4 adds 6 energy & finance agents (30 total). Pilot testing runs Q3 2026. Public launch date TBD — we're prioritizing correctness over speed.",
+    quickReplies: ["Join early access", "Development status", "Pricing"]
   },
   {
-    keywords: ["pricing", "cost", "price", "fee", "payment", "subscription"],
+    keywords: ["pricing", "cost", "price", "fee", "payment", "subscription", "plan"],
     topic: "pricing",
-    text: "Pricing will be announced with public launch. Early access partners receive preferential rates. During the pilot phase, there are no upfront costs. We're designing a model that works for organizations of all sizes—from small municipalities to large industrial facilities.",
-    quickReplies: ["Early access", "Timeline details", "Implementation"]
+    text: "Pricing will be announced at public launch. Early access partners receive preferential rates and no upfront costs during the pilot phase. We're designing a model that scales from small municipalities to large industrial facilities. Get in touch to discuss what works for your organization.",
+    quickReplies: ["Join early access", "Contact us", "Implementation"]
   },
   {
-    keywords: ["development", "status", "progress", "built", "ready", "production"],
+    keywords: ["development", "status", "progress", "built", "ready", "production", "live"],
     topic: "devStatus",
-    text: "Core components are built and tested: Universal Integration Hub (connects to any system), AI Agent Layer (Python agents for detection, analysis, coordination, documentation), Slotify Scheduler (manages response workflows). We're validating integrated system performance with pilot partners before general availability.",
+    text: "Q1 2026 targets are complete — 15 agents deployed. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational. We're currently validating integrated system performance with pilot partners ahead of the Q3 2026 pilot program.",
     quickReplies: ["Python agents?", "Timeline details", "Join early access"]
   },
   {
-    keywords: ["replace", "human", "responder", "automation", "augment"],
+    keywords: ["replace", "human", "responder", "automation", "augment", "job", "people"],
     topic: "humanRole",
-    text: "ChainSync is designed to augment human expertise, not replace it. The system handles coordination, notifications, and documentation—the administrative overhead that slows down response. This frees up environmental professionals to focus on what they do best: making decisions and taking action to protect communities and ecosystems.",
-    quickReplies: ["How it works", "Development status", "Join early access"]
+    text: "ChainSync augments human expertise — it doesn't replace it. The system handles coordination, notifications, and documentation (the overhead that slows response). That frees your team to focus on what matters: making decisions and taking action to protect communities.",
+    quickReplies: ["How does it work?", "Development status", "Join early access"]
+  },
+  {
+    keywords: ["contact", "reach", "talk", "demo", "call", "email", "speak", "get in touch", "hello"],
+    topic: "contact",
+    text: "Best way to reach us is through the Contact page on the site. Whether you're interested in the pilot program, have a technical question, or want to discuss a specific use case — fill out the form and we'll get back to you directly.",
+    quickReplies: ["Join early access", "Pricing", "Implementation"]
+  },
+  {
+    keywords: ["uma", "founder", "who built", "who made", "team", "about", "background"],
+    topic: "founder",
+    text: "ChainSync was built by Uma Madasu — 6+ years as a MuleSoft Integration Engineer with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. Dual Master's in MIS and Cybersecurity, MuleSoft Developer Level 1 certified, based in Atlanta, GA. Built ChainSync after repeatedly seeing critical systems that couldn't talk to each other during emergencies.",
+    quickReplies: ["How does it work?", "Join early access", "Contact us"]
   }
 ];
+
+function findBestMatch(message: string, lastTopic: string | null) {
+  const lower = message.toLowerCase();
+  let bestMatch = null;
+  let bestScore = 0;
+
+  for (const item of KNOWLEDGE_BASE) {
+    let score = 0;
+    for (const keyword of item.keywords) {
+      if (lower.includes(keyword.toLowerCase())) {
+        // Score by number of words in keyword (multi-word phrases score higher)
+        score += keyword.split(" ").length * 2 + 1;
+      }
+    }
+    // Slightly penalise repeating the same topic back-to-back
+    if (item.topic === lastTopic) score *= 0.6;
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = item;
+    }
+  }
+
+  return bestScore > 0 ? bestMatch : null;
+}
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
       type: "bot",
-      text: "Hi! I'm the ChainSync assistant. I can help you understand our environmental emergency response platform. What would you like to know?",
-      quickReplies: ["Python agents?", "Development status", "How does it work?"]
+      text: "Hi! I'm the ChainSync assistant. Ask me anything about the platform, our agents, Slotify, or the pilot program.",
+      quickReplies: ["How does it work?", "Development status", "Join early access"]
     }
   ]);
   const [input, setInput] = useState("");
@@ -89,116 +156,56 @@ export default function Chatbot() {
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   useEffect(() => {
-    scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const findBestMatch = (message: string) => {
-    const lowerMessage = message.toLowerCase();
-    let bestMatch = null;
-    let bestScore = 0;
-
-    for (const item of KNOWLEDGE_BASE) {
-      let score = 0;
-      for (const keyword of item.keywords) {
-        if (lowerMessage.includes(keyword.toLowerCase())) {
-          score += keyword.length;
-        }
-      }
-      if (score > bestScore) {
-        bestScore = score;
-        bestMatch = item;
-      }
-    }
-
-    return bestMatch;
-  };
-
-  const handleSendMessage = () => {
-    if (!input.trim()) return;
+  const sendReply = (userText: string) => {
+    if (!userText.trim()) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       type: "user",
-      text: input
+      text: userText
     };
-
     setMessages(prev => [...prev, userMessage]);
 
-    // Find best match in knowledge base
-    const match = findBestMatch(input);
+    const match = findBestMatch(userText, context.lastTopic);
+
+    let botText: string;
+    let quickReplies: string[];
 
     if (match) {
+      // If same topic repeated, acknowledge it briefly then give the answer
+      const repeated = match.topic === context.lastTopic;
+      botText = repeated
+        ? `To add a bit more on that — ${match.text}`
+        : match.text;
+      quickReplies = match.quickReplies ?? [];
       setContext(prev => ({
-        ...prev,
         lastTopic: match.topic,
         questionCount: prev.questionCount + 1,
         topics: [...prev.topics, match.topic]
       }));
-
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        type: "bot",
-        text: match.text,
-        quickReplies: match.quickReplies
-      };
-      setMessages(prev => [...prev, botMessage]);
     } else {
-      // Fallback response
-      const suggestions = context.lastTopic
-        ? ["Python agents?", "Development status", "Join early access"]
-        : ["Python agents?", "Development status", "How does it work?"];
-
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        type: "bot",
-        text: `I don't have specific information about that yet. Based on our conversation, you might be interested in learning about: ${suggestions.join(", ")}. Feel free to ask!`,
-        quickReplies: suggestions
-      };
-      setMessages(prev => [...prev, botMessage]);
+      botText = "I don't have specifics on that yet — but I can help with our agents, integrations, Slotify, security, pricing, or the pilot program.";
+      quickReplies = ["How does it work?", "Join early access", "Contact us"];
     }
 
+    setMessages(prev => [
+      ...prev,
+      { id: (Date.now() + 1).toString(), type: "bot", text: botText, quickReplies }
+    ]);
     setInput("");
   };
 
   const handleQuickReply = (reply: string) => {
-    setInput(reply);
-    setTimeout(() => {
-      const userMessage: Message = {
-        id: Date.now().toString(),
-        type: "user",
-        text: reply
-      };
-      setMessages(prev => [...prev, userMessage]);
-
-      const match = findBestMatch(reply);
-      if (match) {
-        setContext(prev => ({
-          ...prev,
-          lastTopic: match.topic,
-          questionCount: prev.questionCount + 1,
-          topics: [...prev.topics, match.topic]
-        }));
-
-        const botMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          type: "bot",
-          text: match.text,
-          quickReplies: match.quickReplies
-        };
-        setMessages(prev => [...prev, botMessage]);
-      }
-      setInput("");
-    }, 100);
+    sendReply(reply);
   };
 
   return (
     <div className="flex flex-col h-full">
-      {/* Messages Container */}
+      {/* Messages */}
       <div className="flex-1 overflow-y-auto mb-4 space-y-4 max-h-96">
         {messages.map((message) => (
           <div key={message.id} className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}>
@@ -229,7 +236,7 @@ export default function Chatbot() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input Area */}
+      {/* Input */}
       <div className="flex gap-2">
         <input
           type="text"
@@ -238,14 +245,14 @@ export default function Chatbot() {
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              handleSendMessage();
+              sendReply(input);
             }
           }}
           placeholder="Ask about ChainSync..."
           className="flex-1 px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <Button
-          onClick={handleSendMessage}
+          onClick={() => sendReply(input)}
           size="sm"
           className="bg-primary hover:bg-primary/90 text-white"
         >
