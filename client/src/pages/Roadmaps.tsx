@@ -29,30 +29,17 @@ export default function Roadmaps() {
             2026 Growth Trajectory
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-5xl mx-auto mb-8">
-            <Card className="p-6 bg-white border-2 border-slate-300 text-center">
-              <div className="text-3xl font-bold text-slate-600 mb-2">12</div>
-              <p className="text-sm font-semibold text-slate-700">Existing Agents</p>
-              <p className="text-xs text-muted-foreground">Already deployed</p>
-            </Card>
-
-            <div className="flex items-center justify-center">
-              <ArrowRight className="w-6 h-6 text-primary" />
-            </div>
-
-            <Card className="p-6 bg-green-50 border-2 border-green-400 relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-green-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full">✓ Completed</span>
-              </div>
-              <div className="text-3xl font-bold text-green-600 mb-2">15</div>
-              <p className="text-sm font-semibold text-green-700">Q1 — Done</p>
-              <p className="text-xs text-muted-foreground">+3 agents</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+            <Card className="p-6 bg-green-50 border-2 border-green-400 text-center">
+              <div className="text-3xl font-bold text-green-600 mb-2">14</div>
+              <p className="text-sm font-semibold text-green-700">Live Now</p>
+              <p className="text-xs text-muted-foreground">Currently deployed</p>
             </Card>
 
             <Card className="p-6 bg-white border-2 border-green-300">
               <div className="text-3xl font-bold text-green-600 mb-2">18</div>
               <p className="text-sm font-semibold text-green-700">Q2 Target</p>
-              <p className="text-xs text-muted-foreground">+3 agents</p>
+              <p className="text-xs text-muted-foreground">+4 agents</p>
             </Card>
 
             <Card className="p-6 bg-white border-2 border-amber-300">
@@ -83,7 +70,7 @@ export default function Roadmaps() {
                   <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
                   <span className="bg-green-100 text-green-700 border border-green-300 text-sm font-semibold px-3 py-1 rounded-full">✓ Completed</span>
                 </div>
-                <p className="text-muted-foreground">12 existing agents + 3 new agents = 15 total</p>
+                <p className="text-muted-foreground">14 agents currently live — infrastructure complete</p>
               </div>
             </div>
 
@@ -162,7 +149,7 @@ export default function Roadmaps() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-foreground">Healthcare Vertical Expansion</h2>
-                <p className="text-muted-foreground">15 existing agents + 3 new agents = 18 total</p>
+                <p className="text-muted-foreground">14 existing agents + 4 new agents = 18 total</p>
               </div>
             </div>
 

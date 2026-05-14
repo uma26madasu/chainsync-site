@@ -153,7 +153,7 @@ export default function Home() {
               <Layers className="text-primary mb-4" size={32} />
               <h3 className="text-xl font-semibold text-foreground mb-3">Integration Layer</h3>
               <p className="text-muted-foreground text-sm">
-                Platform-agnostic orchestration built on MuleSoft — swappable with Workato, Boomi, and more. Connects sensors, APIs, and external systems via standard webhooks.
+                Platform-agnostic orchestration built on MuleSoft — swappable with Workato, Boomi, and more. Any external system can trigger ChainSync via HTTP POST using the Universal Webhook Endpoint.
               </p>
             </Card>
 

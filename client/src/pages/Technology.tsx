@@ -166,7 +166,7 @@ export default function Technology() {
                         <li>✓ AWS IoT Core</li>
                         <li>✓ Azure IoT Hub</li>
                         <li>✓ MuleSoft</li>
-                        <li>✓ Custom REST APIs</li>
+                        <li>✓ Universal Webhook (HTTP POST from any system)</li>
                       </ul>
                     </div>
                     <div>
