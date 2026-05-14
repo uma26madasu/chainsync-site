@@ -192,7 +192,7 @@ export default function Technology() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">AI Agent Layer</h3>
                   <p className="text-muted-foreground mb-4">
-                    12 specialized Python agents, each designed to excel at a specific task. Modular architecture means we can improve individual agents without disrupting the entire system.
+                    14 specialized Python agents, each designed to excel at a specific task. Modular architecture means we can improve individual agents without disrupting the entire system.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

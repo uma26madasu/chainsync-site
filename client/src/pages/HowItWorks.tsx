@@ -146,7 +146,7 @@ export default function HowItWorks() {
                   </p>
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">AI Agents:</span> 12 specialized Python agents including water emergency suite, industrial compliance suite, and general analysis agents.
+                      <span className="font-semibold">AI Agents:</span> 14 specialized Python agents including water emergency suite, industrial compliance suite, and general analysis agents.
                     </p>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export default function HowItWorks() {
             <Card className="p-6 bg-white border border-border">
               <h3 className="text-lg font-semibold text-foreground mb-3">AI Agent Layer</h3>
               <p className="text-muted-foreground text-sm">
-                12 specialized Python agents for detection, analysis, coordination, and documentation. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning engine.
+                14 specialized Python agents for detection, analysis, coordination, and documentation. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning engine.
               </p>
             </Card>
 

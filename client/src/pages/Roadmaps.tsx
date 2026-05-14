@@ -17,7 +17,7 @@ export default function Roadmaps() {
             2026 Development Roadmap
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Building on our foundation of 15 proven agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
+            Building on our foundation of 14 live agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
           </p>
         </div>
       </section>
