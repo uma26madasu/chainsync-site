@@ -65,7 +65,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://linkedin.com" className="hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/in/madasu-r-3265aba7" className="hover:text-white transition-colors">
                   LinkedIn
                 </a>
               </li>
@@ -76,11 +76,11 @@ export default function Footer() {
         {/* Social Links & Copyright */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm">
-            © 2024 ChainSync. All rights reserved. Early Access Program.
+            © 2026 ChainSync. All rights reserved. Early Access Program.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/madasu-r-3265aba7"
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >

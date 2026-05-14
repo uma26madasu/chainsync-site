@@ -153,20 +153,20 @@ export default function Home() {
               <Layers className="text-primary mb-4" size={32} />
               <h3 className="text-xl font-semibold text-foreground mb-3">Integration Layer</h3>
               <p className="text-muted-foreground text-sm">
-                Platform-agnostic orchestration built on MuleSoft — swappable with Workato, Boomi, and more. Connects sensors, APIs, and external systems via standard webhooks.
+                Platform-agnostic orchestration built on MuleSoft — swappable with Workato, Boomi, and more. Any external system can trigger ChainSync via HTTP POST using the Universal Webhook Endpoint.
               </p>
             </Card>
 
             <Card className="p-6 bg-white border border-border hover:shadow-lg transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <Calendar className="text-secondary" size={32} />
-                <span className="text-xs font-medium px-2 py-1 rounded-full bg-amber-50 text-amber-600 border border-amber-200">
-                  Under Development
+                <span className="text-xs font-medium px-2 py-1 rounded-full bg-green-50 text-green-600 border border-green-200">
+                  Live
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Slotify</h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Intelligent emergency response scheduling and multi-agency coordination. Autonomous meeting coordination with Google Calendar and Microsoft 365 integration.
+                Intelligent emergency response scheduling and multi-agency coordination. Google Calendar two-way sync, automated emergency response scheduling, and Closed-Loop Incident Management across all 7 phases.
               </p>
               <a
                 href="https://slotify.getchainsync.com"
@@ -182,7 +182,7 @@ export default function Home() {
               <Bot className="text-accent mb-4" size={32} />
               <h3 className="text-xl font-semibold text-foreground mb-3">AI Agents</h3>
               <p className="text-muted-foreground text-sm">
-                12 specialized Python agents providing intelligent risk analysis and incident coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
+                14 specialized Python agents providing intelligent risk analysis and incident coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
               </p>
             </Card>
           </div>
@@ -252,14 +252,14 @@ export default function Home() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">AI Agent Layer</h3>
                   <p className="text-muted-foreground">
-                    12 specialized Python agents providing intelligent analysis, decision support, and response coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
+                    14 specialized Python agents providing intelligent analysis, decision support, and response coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Slotify Emergency Scheduler</h3>
                   <p className="text-muted-foreground">
-                    Autonomous meeting coordination with intelligent authority selection and multi-calendar conflict detection. Google Calendar and Microsoft 365 integration with emergency override protocols.
+                    Now live at slotify.getchainsync.com. Google Calendar two-way sync, automated emergency response scheduling, and Closed-Loop Incident Management across all 7 phases.
                   </p>
                 </div>
 
