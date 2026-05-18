@@ -17,9 +17,9 @@ interface ChatbotContext {
 
 const KNOWLEDGE_BASE = [
   {
-    keywords: ["python", "agent", "agents", "12 agents", "15 agents", "specialized"],
+    keywords: ["python", "agent", "agents", "17 agents", "specialized"],
     topic: "pythonAgents",
-    text: "ChainSync has 15 specialized Python agents (we completed Q1 targets!). Each agent owns one job: Detection monitors for anomalies, Analysis evaluates severity, Coordination routes notifications, and Documentation records actions. We're expanding to 30 agents by end of 2026 across healthcare, manufacturing, and energy verticals.",
+    text: "ChainSync has 17 specialized Python agents. Each agent owns one job: Detection monitors for anomalies, Analysis evaluates severity, Coordination routes notifications, and Documentation records actions. Five healthcare agents are live covering Joint Commission, CMS QSO-17-30, and medical equipment compliance. We're expanding to 30 agents by end of 2026 across manufacturing and energy verticals.",
     quickReplies: ["How does it work?", "2026 roadmap", "Join early access"]
   },
   {
@@ -79,7 +79,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "2026"],
     topic: "timeline",
-    text: "Q1 2026 is complete — 15 agents deployed. Q2 adds 3 healthcare agents, Q3 adds 6 manufacturing agents, Q4 adds 6 energy & finance agents (30 total). Pilot testing runs Q3 2026. Public launch date TBD — we're prioritizing correctness over speed.",
+    text: "17 agents are live today — healthcare vertical complete with 5 agents covering Joint Commission and medical equipment compliance. Q2 closes the healthcare phase at 18, Q3 adds 6 manufacturing agents, Q4 adds 6 energy & finance agents (30 total). Pilot testing runs Q3 2026.",
     quickReplies: ["Join early access", "Development status", "Pricing"]
   },
   {
@@ -91,7 +91,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["development", "status", "progress", "built", "ready", "production", "live"],
     topic: "devStatus",
-    text: "Q1 2026 targets are complete — 15 agents deployed. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational. We're currently validating integrated system performance with pilot partners ahead of the Q3 2026 pilot program.",
+    text: "17 agents are live today — healthcare vertical complete. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational. We're currently validating integrated system performance with pilot partners ahead of the Q3 2026 pilot program.",
     quickReplies: ["Python agents?", "Timeline details", "Join early access"]
   },
   {
