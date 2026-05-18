@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { AlertCircle, Gauge, Building2, TrendingDown } from "lucide-react";
+import { AlertCircle, Gauge, Building2, TrendingDown, Heart } from "lucide-react";
 
 const waterImage = "https://private-us-east-1.manuscdn.com/sessionFile/fLHByENkh1NN8vyrgLTxDx/sandbox/AOG14CIjCWaDgvTPqw9mk1-img-4_1770941851000_na1fn_Y2hhaW5zeW5jLXdhdGVyLW1vbml0b3Jpbmc.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZkxIQnlFTmtoMU5OOHZ5cmdMVHhEeC9zYW5kYm94L0FPRzE0Q0lqQ1dhRGd2VFBxdzltazEtaW1nLTRfMTc3MDk0MTg1MTAwMF9uYTFmbl9ZMmhoYVc1emVXNWpMWGRoZEdWeUxXMXZibWwwYjNKcGJtYy5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Yrws-~L2p0hQkTjEcUwHNEao4wTpjSSRioF1eg6PdrxmZCXN8q0-QvRpXMWvSjH9vsOFlz~pA7j0On-79rXDIlTbkCWIVsKXBuy0J9V0ieLSkMQ7TrYf4DPpXYKIT0zTp7ZkcKDiA6Sl0gV9wTM14Q3kVP87Dw7o2neTgqCPKMKytVY2f0PQGvS0OIGDTtOYxqn6G6sLi-biQ0U1hguQsKDv85Zvvgt-tZLJx9rzX0nb2I1OlSsmphtYNV-~Gf7o4E2IQ6I5XKkXYjsgkxlJI4E57IPCupeULGdF2~8EHbdHbySdBXX3NaV2yKH6LGB-DjFgxOqw6vWn~ur~bAT6uQ__";
 
@@ -205,6 +205,69 @@ export default function UseCases() {
                 <div className="text-center">
                   <Building2 className="text-accent mx-auto mb-4" size={48} />
                   <p className="text-muted-foreground">Multi-agency emergency coordination and response</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hospital & Healthcare Facilities */}
+      <section className="py-12 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                Hospital Facilities Management
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Hospital &amp; Healthcare Facilities
+              </h2>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">The Challenge</h3>
+                  <p className="text-muted-foreground">
+                    Hospital facilities directors face simultaneous compliance demands from Joint Commission, CMS, and FDA — while managing real-time equipment failures and preventive maintenance schedules that directly affect patient safety and survey readiness. Manual tracking creates dangerous gaps, and a missed PM cycle can trigger a Joint Commission finding.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
+                  <p className="text-muted-foreground">
+                    Five specialized healthcare agents cover the full compliance lifecycle. Joint Commission documentation (EC.02.05, EC.02.06, EC.04.01) and CMS QSO-17-30 reporting are generated automatically. Critical device failures across ventilators, dialysis machines, and infusion pumps trigger immediate Biomedical Engineering coordination and FDA MDR checks. Daily PM scans flag overdue maintenance before a surveyor does.
+                  </p>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>Joint Commission EC.02.06 and CMS QSO-17-30 documentation automated</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>Medical equipment failure response with FDA MDR obligation checks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>Daily PM compliance scan with survey readiness scoring</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>Biomedical Engineering dispatch and loaner equipment coordination</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg p-8 h-full flex items-center justify-center">
+                <div className="text-center">
+                  <Heart className="text-primary mx-auto mb-4" size={48} />
+                  <p className="text-muted-foreground">5 specialized agents for Joint Commission, CMS, and medical equipment compliance</p>
                 </div>
               </div>
             </div>

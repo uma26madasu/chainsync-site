@@ -17,7 +17,7 @@ export default function Roadmaps() {
             2026 Development Roadmap
           </h1>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            Building on our foundation of 14 live agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
+            Building on our foundation of 17 live agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
           </p>
         </div>
       </section>
@@ -31,7 +31,7 @@ export default function Roadmaps() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
             <Card className="p-6 bg-green-50 border-2 border-green-400 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">14</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">17</div>
               <p className="text-sm font-semibold text-green-700">Live Now</p>
               <p className="text-xs text-muted-foreground">Currently deployed</p>
             </Card>
@@ -39,7 +39,7 @@ export default function Roadmaps() {
             <Card className="p-6 bg-white border-2 border-green-300">
               <div className="text-3xl font-bold text-green-600 mb-2">18</div>
               <p className="text-sm font-semibold text-green-700">Q2 Target</p>
-              <p className="text-xs text-muted-foreground">+4 agents</p>
+              <p className="text-xs text-muted-foreground">+1 agent</p>
             </Card>
 
             <Card className="p-6 bg-white border-2 border-amber-300">
@@ -70,7 +70,7 @@ export default function Roadmaps() {
                   <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
                   <span className="bg-green-100 text-green-700 border border-green-300 text-sm font-semibold px-3 py-1 rounded-full">✓ Completed</span>
                 </div>
-                <p className="text-muted-foreground">14 agents currently live — infrastructure complete</p>
+                <p className="text-muted-foreground">17 agents currently live — infrastructure complete</p>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ export default function Roadmaps() {
               </div>
               <div>
                 <h2 className="text-3xl font-bold text-foreground">Healthcare Vertical Expansion</h2>
-                <p className="text-muted-foreground">14 existing agents + 4 new agents = 18 total</p>
+                <p className="text-muted-foreground">17 existing agents + 1 new agent = 18 total</p>
               </div>
             </div>
 
@@ -163,19 +163,19 @@ export default function Roadmaps() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>3 Healthcare Agents:</strong> Hospital Emergency Coordinator, Patient Safety Monitor, Crisis Response Coordinator</span>
+                    <span><strong>5 Healthcare Agents:</strong> Hospital Operations, Joint Commission Documentation, Infection Control Coordination, Medical Equipment Failure, Preventive Maintenance Tracker</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Multi-department emergency coordination</span>
+                    <span>Joint Commission (EC.02.05, EC.02.06, EC.04.01) and CMS QSO-17-30 documentation automated</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Real-time patient safety monitoring</span>
+                    <span>Medical equipment failure response — FDA MDR checks, Biomedical Engineering dispatch, EC.02.06 documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Mass casualty incident management</span>
+                    <span>Daily PM scan — overdue maintenance flagged, EC.02.06.01 compliance docs, survey readiness score</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
