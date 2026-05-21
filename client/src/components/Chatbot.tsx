@@ -29,9 +29,9 @@ const KNOWLEDGE_BASE = [
     quickReplies: ["What's the Integration Hub?", "Python agents?", "Join early access"]
   },
   {
-    keywords: ["mulesoft", "workato", "boomi", "integration hub", "integration", "api", "webhook", "connector", "universal"],
+    keywords: ["mulesoft", "workato", "boomi", "integration hub", "integration", "api", "webhook", "connector", "universal", "bosch", "climatic", "bms", "building management"],
     topic: "integrationHub",
-    text: "The Universal Integration Hub is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks — 22 flow implementations deployed today with AWS, Azure, and MuleSoft compatibility. No rip-and-replace required.",
+    text: "The Universal Integration Hub is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks — 22 flow implementations deployed today with AWS, Azure, and MuleSoft compatibility. For healthcare facilities running Bosch Climatic BMS, a dedicated adapter receives threshold breach events automatically and routes them to the AI agent layer — no manual handoff required. No rip-and-replace required.",
     quickReplies: ["How does it work?", "What about security?", "Implementation"]
   },
   {

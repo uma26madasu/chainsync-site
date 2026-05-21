@@ -235,7 +235,7 @@ export default function UseCases() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
                   <p className="text-muted-foreground">
-                    Five specialized healthcare agents cover the full compliance lifecycle. Joint Commission documentation (EC.02.05, EC.02.06, EC.04.01) and CMS QSO-17-30 reporting are generated automatically. Critical device failures across ventilators, dialysis machines, and infusion pumps trigger immediate Biomedical Engineering coordination and FDA MDR checks. Daily PM scans flag overdue maintenance before a surveyor does.
+                    Five specialized healthcare agents cover the full compliance lifecycle. Joint Commission documentation (EC.02.05, EC.02.06, EC.04.01) and CMS QSO-17-30 reporting are generated automatically. Critical device failures across ventilators, dialysis machines, and infusion pumps trigger immediate Biomedical Engineering coordination and FDA MDR checks. Daily PM scans flag overdue maintenance before a surveyor does. For facilities running Bosch Climatic Building Management Systems, ChainSync's dedicated adapter receives threshold breach events directly — no manual handoff required.
                   </p>
                 </div>
 
