@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Code2, Database, Cloud, Shield } from "lucide-react";
+import { Code2, Database, Shield } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -30,28 +30,6 @@ export default function Technology() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 bg-white border border-border">
-              <Cloud className="text-primary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-foreground mb-3">Multi-Region Deployment</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                ChainSync is deployed across multiple AWS regions (US-East-1, US-West-2, EU-West-1) with automatic failover and load balancing.
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>AWS Multi-AZ with automatic failover</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>99.99% uptime SLA</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>Zero downtime deployments</span>
-                </li>
-              </ul>
-            </Card>
-
             <Card className="p-6 bg-white border border-border">
               <Shield className="text-secondary mb-4" size={32} />
               <h3 className="text-xl font-semibold text-foreground mb-3">Security & Compliance</h3>
@@ -101,13 +79,13 @@ export default function Technology() {
                 </tr>
                 <tr className="border-b border-border bg-slate-50">
                   <td className="py-3 px-4 text-muted-foreground">AI Models</td>
-                  <td className="py-3 px-4 text-foreground font-medium">GPT-4 + Custom Models</td>
+                  <td className="py-3 px-4 text-foreground font-medium">GPT-4 (OpenAI API)</td>
                   <td className="py-3 px-4 text-muted-foreground">Reasoning, analysis, and decision support</td>
                 </tr>
                 <tr className="border-b border-border bg-white">
-                  <td className="py-3 px-4 text-muted-foreground">Vector Storage</td>
-                  <td className="py-3 px-4 text-foreground font-medium">ChromaDB</td>
-                  <td className="py-3 px-4 text-muted-foreground">Memory and pattern learning for agents</td>
+                  <td className="py-3 px-4 text-muted-foreground">Integration Layer</td>
+                  <td className="py-3 px-4 text-foreground font-medium">MuleSoft + DataWeave</td>
+                  <td className="py-3 px-4 text-muted-foreground">Enterprise integration and data transformation</td>
                 </tr>
                 <tr className="border-b border-border bg-slate-50">
                   <td className="py-3 px-4 text-muted-foreground">Scheduler</td>
@@ -116,23 +94,18 @@ export default function Technology() {
                 </tr>
                 <tr className="border-b border-border bg-white">
                   <td className="py-3 px-4 text-muted-foreground">Database</td>
-                  <td className="py-3 px-4 text-foreground font-medium">PostgreSQL + MongoDB</td>
-                  <td className="py-3 px-4 text-muted-foreground">Structured data and document storage</td>
+                  <td className="py-3 px-4 text-foreground font-medium">MongoDB</td>
+                  <td className="py-3 px-4 text-muted-foreground">Structured and document data storage</td>
                 </tr>
                 <tr className="border-b border-border bg-slate-50">
-                  <td className="py-3 px-4 text-muted-foreground">Message Queue</td>
-                  <td className="py-3 px-4 text-foreground font-medium">AWS SQS</td>
-                  <td className="py-3 px-4 text-muted-foreground">Asynchronous event processing</td>
+                  <td className="py-3 px-4 text-muted-foreground">Event Transport</td>
+                  <td className="py-3 px-4 text-foreground font-medium">FastAPI HTTP Webhooks</td>
+                  <td className="py-3 px-4 text-muted-foreground">Platform-agnostic event routing between agents</td>
                 </tr>
-                <tr className="border-b border-border bg-white">
+                <tr className="bg-white">
                   <td className="py-3 px-4 text-muted-foreground">Monitoring</td>
-                  <td className="py-3 px-4 text-foreground font-medium">CloudWatch + DataDog</td>
+                  <td className="py-3 px-4 text-foreground font-medium">Prometheus + Grafana</td>
                   <td className="py-3 px-4 text-muted-foreground">System health and performance tracking</td>
-                </tr>
-                <tr className="bg-slate-50">
-                  <td className="py-3 px-4 text-muted-foreground">Integration</td>
-                  <td className="py-3 px-4 text-foreground font-medium">Standard Webhooks</td>
-                  <td className="py-3 px-4 text-muted-foreground">Platform-agnostic API integration</td>
                 </tr>
               </tbody>
             </table>
