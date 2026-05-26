@@ -182,7 +182,7 @@ export default function Home() {
               <Bot className="text-accent mb-4" size={32} />
               <h3 className="text-xl font-semibold text-foreground mb-3">AI Agents</h3>
               <p className="text-muted-foreground text-sm">
-                17 specialized Python agents providing intelligent risk analysis and incident coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
+                17 specialized Python agents providing intelligent risk analysis and incident coordination. GPT-4 powered reasoning for detection, analysis, and response coordination.
               </p>
             </Card>
           </div>
@@ -252,7 +252,7 @@ export default function Home() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">AI Agent Layer</h3>
                   <p className="text-muted-foreground">
-                    17 specialized Python agents providing intelligent analysis, decision support, and response coordination. Memory agent with ChromaDB vector storage and GPT-4 powered reasoning.
+                    17 specialized Python agents providing intelligent analysis, decision support, and response coordination. GPT-4 powered reasoning for detection, analysis, and documentation.
                   </p>
                 </div>
 
