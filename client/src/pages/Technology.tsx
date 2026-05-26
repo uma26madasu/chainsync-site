@@ -110,10 +110,15 @@ export default function Technology() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
+            <p className="text-sm text-muted-foreground">
+              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack — can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
+            </p>
+          </div>
         </div>
       </section>
-
-      {/* Core Components */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
