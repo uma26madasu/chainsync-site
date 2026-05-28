@@ -4,6 +4,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { BookOpen, TrendingUp, AlertCircle, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/lib/motion";
+import CountUp from "@/components/CountUp";
 
 export default function Insights() {
   const articles = [
@@ -72,34 +75,58 @@ export default function Insights() {
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
             Insights & Articles
-          </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-lg text-muted-foreground text-center max-w-3xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
             Deep dives into environmental emergency response, AI-powered automation, and the technical challenges of building specialized intelligence systems.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Featured Articles */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             Featured Articles
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             {articles.map((article, index) => {
               const IconComponent = article.icon;
               return (
-                <a
+                <motion.a
                   key={index}
                   href={article.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  variants={fadeUp}
+                  whileHover={{ y: -4, transition: { duration: 0.15 } }}
                 >
-                  <Card className="p-6 bg-white border border-border hover:shadow-lg hover:border-primary transition-all h-full flex flex-col">
+                  <Card className="p-6 bg-white border border-border hover:shadow-lg hover:border-primary transition-shadow h-full flex flex-col">
                     <div className="mb-4">
                       <IconComponent className={`${article.color}`} size={32} />
                     </div>
@@ -114,84 +141,126 @@ export default function Insights() {
                       <ExternalLink size={16} />
                     </div>
                   </Card>
-                </a>
+                </motion.a>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Industry Data */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             Environmental Emergency Response Facts
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary">
-              <div className="text-5xl font-bold text-primary mb-3">50K+</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Annual U.S. Environmental Incidents</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
-              </p>
-            </Card>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary h-full">
+                <div className="text-5xl font-bold text-primary mb-3">
+                  <CountUp end={50} suffix="K+" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-3 text-lg">Annual U.S. Environmental Incidents</h3>
+                <p className="text-foreground text-sm leading-relaxed">
+                  Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
+                </p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600">
-              <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
-              </p>
-            </Card>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600 h-full">
+                <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
+                <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
+                <p className="text-foreground text-sm leading-relaxed">
+                  Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
+                </p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600">
-              <div className="text-5xl font-bold text-red-600 mb-3">73%</div>
-              <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
-              <p className="text-foreground text-sm leading-relaxed">
-                Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
-              </p>
-            </Card>
-          </div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600 h-full">
+                <div className="text-5xl font-bold text-red-600 mb-3">
+                  <CountUp end={73} suffix="%" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
+                <p className="text-foreground text-sm leading-relaxed">
+                  Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
+                </p>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Key Topics */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             Key Topics Covered
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Infrastructure & Architecture</h3>
-              <p className="text-muted-foreground text-sm">
-                Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems.
-              </p>
-            </Card>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp}>
+              <Card className="p-6 bg-white border border-border h-full">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Infrastructure & Architecture</h3>
+                <p className="text-muted-foreground text-sm">
+                  Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems.
+                </p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">AI & Automation</h3>
-              <p className="text-muted-foreground text-sm">
-                How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems.
-              </p>
-            </Card>
+            <motion.div variants={fadeUp}>
+              <Card className="p-6 bg-white border border-border h-full">
+                <h3 className="text-lg font-semibold text-foreground mb-3">AI & Automation</h3>
+                <p className="text-muted-foreground text-sm">
+                  How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems.
+                </p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Integration Challenges</h3>
-              <p className="text-muted-foreground text-sm">
-                Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms.
-              </p>
-            </Card>
+            <motion.div variants={fadeUp}>
+              <Card className="p-6 bg-white border border-border h-full">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Integration Challenges</h3>
+                <p className="text-muted-foreground text-sm">
+                  Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms.
+                </p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Operational Impact</h3>
-              <p className="text-muted-foreground text-sm">
-                Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems.
-              </p>
-            </Card>
-          </div>
+            <motion.div variants={fadeUp}>
+              <Card className="p-6 bg-white border border-border h-full">
+                <h3 className="text-lg font-semibold text-foreground mb-3">Operational Impact</h3>
+                <p className="text-muted-foreground text-sm">
+                  Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems.
+                </p>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -240,7 +309,13 @@ export default function Insights() {
 
       {/* CTA */}
       <section className="py-12 md:py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
+        <motion.div
+          className="container mx-auto px-4 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Response?
           </h2>
@@ -248,12 +323,14 @@ export default function Insights() {
             Learn how ChainSync helps organizations respond to environmental emergencies faster.
           </p>
 
-          <Link href="/contact">
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-              Request Early Access
-            </Button>
-          </Link>
-        </div>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+            <Link href="/contact">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
+                Request Early Access
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
 
       <Footer />
