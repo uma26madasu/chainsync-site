@@ -71,7 +71,7 @@ export default function Home() {
                 Early Access Program
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                Coordinated Emergency Response in Under 15 Minutes
+                From Hours of Coordination to Minutes — Automatically
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed">
                 ChainSync ingests alerts from any monitoring system, runs them through 17 specialized AI agents, and automatically coordinates the right people — from detection to a scheduled response meeting, without manual handoff.
@@ -81,7 +81,7 @@ export default function Home() {
               <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <Clock className="text-primary mb-2" size={20} />
-                  <p className="font-semibold text-foreground text-sm mb-1">Coordinated Response in Under 15 Minutes</p>
+                  <p className="font-semibold text-foreground text-sm mb-1">Coordination in Minutes, Not Hours</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">From detection to a scheduled emergency response with the right people — automatically.</p>
                 </div>
                 <div className="border border-border rounded-lg p-4 bg-white">
