@@ -21,37 +21,37 @@ const CAPABILITIES = [
 ];
 
 const HOVER_DESCS: Record<string, string> = {
-  "Water Utilities-Detection": "Turbidity spikes, pH anomalies, chemical contamination via SCADA and water quality sensors",
+  "Water Utilities-Incident Detection": "Turbidity spikes, pH anomalies, chemical contamination via SCADA and water quality sensors",
   "Water Utilities-Response Coordination": "Auto-notifies EPA contacts, utility operators, and municipal emergency management",
   "Water Utilities-Calendar Integration": "Schedules multi-stakeholder emergency meetings across Google/MS365 calendars",
   "Water Utilities-Compliance Reporting": "Generates EPA Safe Drinking Water Act notification templates",
   "Water Utilities-Multi-agency Sync": "Coordinates between water authority, health department, and public works",
 
-  "Healthcare-Detection": "HVAC anomalies, air quality events, equipment failures via Bosch Climatic BMS",
+  "Healthcare-Incident Detection": "HVAC anomalies, air quality events, equipment failures via Bosch Climatic BMS",
   "Healthcare-Response Coordination": "Alerts facility management, clinical leadership, and patient safety officers",
   "Healthcare-Calendar Integration": "Books emergency operations meetings within clinical scheduling constraints",
   "Healthcare-Compliance Reporting": "OSHA and Joint Commission-formatted incident documentation",
   "Healthcare-Multi-agency Sync": "Coordinates facility team, county health, and regulatory contacts",
 
-  "Industrial / Mfg-Detection": "Emissions threshold breaches, chemical releases, equipment sensor anomalies",
+  "Industrial / Mfg-Incident Detection": "Emissions threshold breaches, chemical releases, equipment sensor anomalies",
   "Industrial / Mfg-Response Coordination": "Mobilizes EHS team, plant manager, and regulatory contacts",
   "Industrial / Mfg-Calendar Integration": "Emergency scheduling across shift-based and corporate calendars",
   "Industrial / Mfg-Compliance Reporting": "EPA and OSHA incident reporting templates generated automatically",
   "Industrial / Mfg-Multi-agency Sync": "Plant operations + corporate EHS + state environmental agency",
 
-  "Municipal Gov't-Detection": "Environmental sensor networks, weather-triggered events, infrastructure alerts",
+  "Municipal Gov't-Incident Detection": "Environmental sensor networks, weather-triggered events, infrastructure alerts",
   "Municipal Gov't-Response Coordination": "Notifies department heads, elected officials, and public safety",
   "Municipal Gov't-Calendar Integration": "Schedules across municipal staff calendars with emergency overrides",
   "Municipal Gov't-Compliance Reporting": "State and federal agency reporting documentation",
   "Municipal Gov't-Multi-agency Sync": "Fire, police, public works, health, and utilities coordination",
 
-  "Oil & Gas-Detection": "Emissions monitoring, pipeline sensor anomalies, spill detection",
+  "Oil & Gas-Incident Detection": "Emissions monitoring, pipeline sensor anomalies, spill detection",
   "Oil & Gas-Response Coordination": "Alerts field operations, safety, and environmental compliance teams",
   "Oil & Gas-Calendar Integration": "24/7 on-call scheduling with emergency escalation protocols",
   "Oil & Gas-Compliance Reporting": "EPA and state regulatory notifications and spill report templates",
   "Oil & Gas-Multi-agency Sync": "Operations + corporate + EPA + state environmental + local emergency management",
 
-  "Food & Agriculture-Detection": "Water quality for irrigation, pesticide threshold alerts, weather pattern anomalies",
+  "Food & Agriculture-Incident Detection": "Water quality for irrigation, pesticide threshold alerts, weather pattern anomalies",
   "Food & Agriculture-Response Coordination": "Alerts quality assurance, operations, and supply chain contacts",
   "Food & Agriculture-Calendar Integration": "Schedules emergency quality review meetings across business calendars",
   "Food & Agriculture-Compliance Reporting": "FDA and USDA incident reporting documentation",
