@@ -7,7 +7,7 @@ const ROWS = [
   {
     metric: "Emergency Meeting Scheduled",
     before: "4–6 hours of phone calls and emails",
-    after: "< 15 minutes, fully automated",
+    after: "Minutes, not hours — fully automated (target)",
     highlight: true,
   },
   {

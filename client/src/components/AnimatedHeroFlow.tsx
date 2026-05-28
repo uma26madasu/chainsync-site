@@ -170,7 +170,7 @@ export default function AnimatedHeroFlow() {
         <rect x={meetingX - 46} y={meetingY - 20} width={92} height={40} rx={8}
           fill="#1e1b4b" stroke="#8b5cf6" strokeWidth={1.5} />
         <text x={meetingX} y={meetingY - 4} textAnchor="middle" fontSize={7} fill="#c4b5fd" fontWeight="700">RESPONSE MEETING</text>
-        <text x={meetingX} y={meetingY + 8} textAnchor="middle" fontSize={6} fill="#a78bfa">Scheduled in &lt;15 min</text>
+        <text x={meetingX} y={meetingY + 8} textAnchor="middle" fontSize={6} fill="#a78bfa">Scheduled in minutes</text>
 
         {/* Checkmark */}
         <motion.circle cx={meetingX + 34} cy={meetingY - 14} r={8} fill="#16a34a"
@@ -188,7 +188,7 @@ export default function AnimatedHeroFlow() {
           External Monitoring Systems
         </text>
         <text x={W - 8} y={H - 10} fontSize={7} fill="#475569" textAnchor="end">
-          Automated in under 15 minutes
+          Automated — hours of coordination, in minutes
         </text>
       </svg>
 
