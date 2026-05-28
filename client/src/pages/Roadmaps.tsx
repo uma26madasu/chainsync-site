@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, ArrowRight, Zap, Droplet, Heart, Factory, Bolt, Target, Layers, Users, Shield, MessageSquare, Brain, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/lib/motion";
 
 export default function Roadmaps() {
   return (
@@ -13,47 +15,77 @@ export default function Roadmaps() {
       {/* Hero */}
       <section className="py-8 md:py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
             2026 Development Roadmap
-          </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-lg text-muted-foreground text-center max-w-3xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
             Building on our foundation of 17 live agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Agent Growth Overview */}
       <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             2026 Growth Trajectory
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            <Card className="p-6 bg-green-50 border-2 border-green-400 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">17</div>
-              <p className="text-sm font-semibold text-green-700">Live Now</p>
-              <p className="text-xs text-muted-foreground">Currently deployed</p>
-            </Card>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-6 bg-green-50 border-2 border-green-400 text-center h-full">
+                <div className="text-3xl font-bold text-green-600 mb-2">17</div>
+                <p className="text-sm font-semibold text-green-700">Live Now</p>
+                <p className="text-xs text-muted-foreground">Currently deployed</p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border-2 border-green-300">
-              <div className="text-3xl font-bold text-green-600 mb-2">18</div>
-              <p className="text-sm font-semibold text-green-700">Q2 Target</p>
-              <p className="text-xs text-muted-foreground">+1 agent</p>
-            </Card>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-6 bg-white border-2 border-green-300 h-full">
+                <div className="text-3xl font-bold text-green-600 mb-2">18</div>
+                <p className="text-sm font-semibold text-green-700">Q2 Target</p>
+                <p className="text-xs text-muted-foreground">+1 agent</p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border-2 border-amber-300">
-              <div className="text-3xl font-bold text-amber-600 mb-2">24</div>
-              <p className="text-sm font-semibold text-amber-700">Q3 Target</p>
-              <p className="text-xs text-muted-foreground">+6 agents</p>
-            </Card>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-6 bg-white border-2 border-amber-300 h-full">
+                <div className="text-3xl font-bold text-amber-600 mb-2">24</div>
+                <p className="text-sm font-semibold text-amber-700">Q3 Target</p>
+                <p className="text-xs text-muted-foreground">+6 agents</p>
+              </Card>
+            </motion.div>
 
-            <Card className="p-6 bg-white border-2 border-red-300">
-              <div className="text-3xl font-bold text-red-600 mb-2">30</div>
-              <p className="text-sm font-semibold text-red-700">Q4 Target</p>
-              <p className="text-xs text-muted-foreground">+6 agents</p>
-            </Card>
-          </div>
+            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+              <Card className="p-6 bg-white border-2 border-red-300 h-full">
+                <div className="text-3xl font-bold text-red-600 mb-2">30</div>
+                <p className="text-sm font-semibold text-red-700">Q4 Target</p>
+                <p className="text-xs text-muted-foreground">+6 agents</p>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -61,7 +93,13 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg">
                 Q1
               </div>
@@ -72,10 +110,17 @@ export default function Roadmaps() {
                 </div>
                 <p className="text-muted-foreground">17 agents currently live — infrastructure complete</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               {/* ChainSync Q1 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-blue-50 border-2 border-blue-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Zap className="w-6 h-6 text-blue-600" />
@@ -104,8 +149,10 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
+              </motion.div>
 
               {/* Slotify Q1 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-purple-50 border-2 border-purple-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Layers className="w-6 h-6 text-purple-600" />
@@ -134,7 +181,8 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -143,7 +191,13 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-slate-50 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg">
                 Q2
               </div>
@@ -151,10 +205,17 @@ export default function Roadmaps() {
                 <h2 className="text-3xl font-bold text-foreground">Healthcare Vertical Expansion</h2>
                 <p className="text-muted-foreground">17 existing agents + 1 new agent = 18 total</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               {/* ChainSync Q2 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-green-50 border-2 border-green-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Heart className="w-6 h-6 text-green-600" />
@@ -183,8 +244,10 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
+              </motion.div>
 
               {/* Slotify Q2 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-pink-50 border-2 border-pink-200">
                 <div className="flex items-center gap-2 mb-4">
                   <MessageSquare className="w-6 h-6 text-pink-600" />
@@ -213,7 +276,8 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -222,7 +286,13 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               <div className="w-12 h-12 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-lg">
                 Q3
               </div>
@@ -230,10 +300,17 @@ export default function Roadmaps() {
                 <h2 className="text-3xl font-bold text-foreground">Manufacturing Vertical Expansion</h2>
                 <p className="text-muted-foreground">18 existing agents + 6 new agents = 24 total</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               {/* ChainSync Q3 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-amber-50 border-2 border-amber-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Factory className="w-6 h-6 text-amber-600" />
@@ -262,8 +339,10 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
+              </motion.div>
 
               {/* Slotify Q3 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-blue-50 border-2 border-blue-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Brain className="w-6 h-6 text-blue-600" />
@@ -292,7 +371,8 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -301,7 +381,13 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-slate-50 border-t border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
+            <motion.div
+              className="flex items-center gap-3 mb-8"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg">
                 Q4
               </div>
@@ -309,10 +395,17 @@ export default function Roadmaps() {
                 <h2 className="text-3xl font-bold text-foreground">Energy & Finance Vertical Expansion</h2>
                 <p className="text-muted-foreground">24 existing agents + 6 new agents = 30 total</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
               {/* ChainSync Q4 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-red-50 border-2 border-red-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Bolt className="w-6 h-6 text-red-600" />
@@ -341,8 +434,10 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
+              </motion.div>
 
               {/* Slotify Q4 */}
+              <motion.div variants={fadeUp}>
               <Card className="p-6 bg-indigo-50 border-2 border-indigo-200">
                 <div className="flex items-center gap-2 mb-4">
                   <BarChart3 className="w-6 h-6 text-indigo-600" />
@@ -371,7 +466,8 @@ export default function Roadmaps() {
                   </li>
                 </ul>
               </Card>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -379,11 +475,24 @@ export default function Roadmaps() {
       {/* Compliance & Performance Summary */}
       <section className="py-8 md:py-12 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             2026 Compliance & Performance Roadmap
-          </h2>
+          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp}>
             <Card className="p-6 bg-slate-50 border-2 border-slate-200">
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-slate-600" />
@@ -408,7 +517,9 @@ export default function Roadmaps() {
                 </li>
               </ul>
             </Card>
+            </motion.div>
 
+            <motion.div variants={fadeUp}>
             <Card className="p-6 bg-slate-50 border-2 border-slate-200">
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Target className="w-5 h-5 text-slate-600" />
@@ -433,13 +544,20 @@ export default function Roadmaps() {
                 </li>
               </ul>
             </Card>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-8 md:py-12 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
+        <motion.div
+          className="container mx-auto px-4 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Join Us on This Journey
           </h2>
@@ -447,12 +565,14 @@ export default function Roadmaps() {
             We're building the future of AI-powered emergency response with integrated scheduling capabilities. Interested in partnering with us?
           </p>
 
-          <Link href="/contact">
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-              Get in Touch
-            </Button>
-          </Link>
-        </div>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+            <Link href="/contact">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
+                Get in Touch
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
 
       <Footer />
