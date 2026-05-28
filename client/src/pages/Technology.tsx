@@ -290,9 +290,11 @@ export default function Technology() {
             ChainSync provides comprehensive REST APIs for integration, monitoring, and management. Full documentation is available to pilot partners.
           </p>
           <div className="text-center">
-            <Button variant="outline" className="px-6 py-3 h-auto text-base">
-              View Full Technical Documentation
-            </Button>
+            <Link href="/contact">
+              <Button variant="outline" className="px-6 py-3 h-auto text-base">
+                Request API Documentation Access
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
