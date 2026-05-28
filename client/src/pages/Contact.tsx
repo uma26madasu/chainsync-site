@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import Chatbot from "@/components/Chatbot";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
+import SuccessAnimation from "@/components/SuccessAnimation";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -111,12 +112,7 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
 
                 {submitted ? (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                    <h3 className="font-semibold text-green-900 mb-2">Thank You!</h3>
-                    <p className="text-green-800">
-                      We've received your message and will get back to you within 2 business days.
-                    </p>
-                  </div>
+                  <SuccessAnimation />
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {error && (
