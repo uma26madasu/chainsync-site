@@ -3,7 +3,15 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Code2, Database, Shield } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/lib/motion";
+import TechStackFlow from "@/components/TechStackFlow";
+import ArchitectureFlow from "@/components/ArchitectureFlow";
+import SwappableIntegration from "@/components/SwappableIntegration";
+import AgentDeploymentMap from "@/components/AgentDeploymentMap";
+import TechComparisonTable from "@/components/TechComparisonTable";
+import PerformanceMetrics from "@/components/PerformanceMetrics";
+import CapabilityMatrix from "@/components/CapabilityMatrix";
 
 export default function Technology() {
   return (
@@ -13,308 +21,503 @@ export default function Technology() {
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
-            Technical Architecture
-          </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            ChainSync is built on production-grade infrastructure designed for reliability, scalability, and zero downtime. Explore our technical stack and architecture.
-          </p>
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
+            Enterprise-Grade Technology for Critical Infrastructure
+          </motion.h1>
+          <motion.p
+            className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-6"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
+            Reliable, flexible, and compliance-ready. Built from the ground up with specialized components that each do one thing well.
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-3"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
+            {["17 Python Agents", "GPT-4 Reasoning", "MuleSoft Integration", "Slotify Scheduler", "Prometheus + Grafana"].map((tag) => (
+              <span key={tag} className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+                {tag}
+              </span>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Infrastructure */}
+      {/* 1. Tech Stack Overview */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Production-Grade Infrastructure
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 bg-white border border-border">
-              <Shield className="text-secondary mb-4" size={32} />
-              <h3 className="text-xl font-semibold text-foreground mb-3">Security & Compliance</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Enterprise-grade security with SOC2 compliance, encryption at rest and in transit, and comprehensive audit logging.
-              </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>SOC2 Type II compliant</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>AES-256 encryption at rest</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-secondary mt-1">✓</span>
-                  <span>TLS 1.3 for all data in transit</span>
-                </li>
-              </ul>
-            </Card>
-          </div>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            What Powers ChainSync
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Four distinct layers, each independently deployable, communicating via standard HTTP.
+          </motion.p>
+          <TechStackFlow />
         </div>
       </section>
 
-      {/* Technical Stack */}
+      {/* 2. Architecture Deep Dive */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Technical Stack
-          </h2>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Data Flow: Incident to Resolution
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            From the first sensor reading to a scheduled emergency response meeting — every step is automated.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <ArchitectureFlow />
+          </motion.div>
+        </div>
+      </section>
 
-          <div className="overflow-x-auto">
+      {/* 3. Swappable Integration Layer */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp} className="text-center mb-3">
+              <span className="text-xs font-bold tracking-widest text-primary uppercase">The Moat</span>
+            </motion.div>
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+              variants={fadeUp}
+            >
+              Not Locked In. Ever.
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+              variants={fadeUp}
+            >
+              ChainSync's Universal Webhook Endpoint accepts HTTP POST from any integration platform. Switch from MuleSoft to Workato, Boomi, or Azure Logic Apps without touching the AI agent layer or Slotify.
+            </motion.p>
+            <motion.div variants={fadeUp}>
+              <SwappableIntegration />
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. Agent Ecosystem */}
+      <section className="py-12 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            17 Live Agents. More Coming.
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <AgentDeploymentMap />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. Technology Comparison */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Why Purpose-Built Matters
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Generic tools require humans to coordinate. ChainSync coordinates so humans can act.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <TechComparisonTable />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 6. Performance Metrics */}
+      <section className="py-12 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Built for Scale
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Key operational metrics from the live system.
+          </motion.p>
+          <PerformanceMetrics />
+        </div>
+      </section>
+
+      {/* 7. Capability Matrix */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Comprehensive Coverage Across Sectors
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            The same core architecture applies across verticals — specialized agents handle domain-specific logic.
+          </motion.p>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <CapabilityMatrix />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 8. Tech Stack Details */}
+      <section className="py-12 md:py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Stack Reference
+          </motion.h2>
+
+          <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border">
+                <tr className="border-b border-border bg-slate-100">
                   <th className="text-left py-3 px-4 font-semibold text-foreground">Component</th>
                   <th className="text-left py-3 px-4 font-semibold text-foreground">Technology</th>
                   <th className="text-left py-3 px-4 font-semibold text-foreground">Purpose</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-border bg-white">
-                  <td className="py-3 px-4 text-muted-foreground">Agent Framework</td>
-                  <td className="py-3 px-4 text-foreground font-medium">Python 3.11 + FastAPI</td>
-                  <td className="py-3 px-4 text-muted-foreground">Specialized agent execution and API webhooks</td>
-                </tr>
-                <tr className="border-b border-border bg-slate-50">
-                  <td className="py-3 px-4 text-muted-foreground">AI Models</td>
-                  <td className="py-3 px-4 text-foreground font-medium">GPT-4 (OpenAI API)</td>
-                  <td className="py-3 px-4 text-muted-foreground">Reasoning, analysis, and decision support</td>
-                </tr>
-                <tr className="border-b border-border bg-white">
-                  <td className="py-3 px-4 text-muted-foreground">Integration Layer</td>
-                  <td className="py-3 px-4 text-foreground font-medium">MuleSoft + DataWeave</td>
-                  <td className="py-3 px-4 text-muted-foreground">Enterprise integration and data transformation</td>
-                </tr>
-                <tr className="border-b border-border bg-slate-50">
-                  <td className="py-3 px-4 text-muted-foreground">Scheduler</td>
-                  <td className="py-3 px-4 text-foreground font-medium">React + Express + MongoDB</td>
-                  <td className="py-3 px-4 text-muted-foreground">Emergency meeting scheduling (Slotify)</td>
-                </tr>
-                <tr className="border-b border-border bg-white">
-                  <td className="py-3 px-4 text-muted-foreground">Database</td>
-                  <td className="py-3 px-4 text-foreground font-medium">MongoDB</td>
-                  <td className="py-3 px-4 text-muted-foreground">Structured and document data storage</td>
-                </tr>
-                <tr className="border-b border-border bg-slate-50">
-                  <td className="py-3 px-4 text-muted-foreground">Event Transport</td>
-                  <td className="py-3 px-4 text-foreground font-medium">FastAPI HTTP Webhooks</td>
-                  <td className="py-3 px-4 text-muted-foreground">Platform-agnostic event routing between agents</td>
-                </tr>
-                <tr className="bg-white">
-                  <td className="py-3 px-4 text-muted-foreground">Monitoring</td>
-                  <td className="py-3 px-4 text-foreground font-medium">Prometheus + Grafana</td>
-                  <td className="py-3 px-4 text-muted-foreground">System health and performance tracking</td>
-                </tr>
+                {[
+                  ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
+                  ["AI Reasoning", "GPT-4 (OpenAI API)", "Context-aware analysis, risk classification, decision support"],
+                  ["Integration Layer", "MuleSoft + DataWeave", "Enterprise integration and data transformation (swappable)"],
+                  ["Scheduler", "Slotify (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
+                  ["Database", "MongoDB", "Event storage, audit trails, and document records"],
+                  ["Event Transport", "FastAPI HTTP Webhooks", "Platform-agnostic event routing between agents"],
+                  ["Monitoring", "Prometheus + Grafana", "System health metrics and operational dashboards"],
+                ].map(([comp, tech, purpose], i) => (
+                  <motion.tr
+                    key={comp}
+                    className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewport}
+                    transition={{ delay: i * 0.06 }}
+                  >
+                    <td className="py-3 px-4 text-muted-foreground">{comp}</td>
+                    <td className="py-3 px-4 text-foreground font-medium">{tech}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{purpose}</td>
+                  </motion.tr>
+                ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <motion.div
+            className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-5"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
             <p className="text-sm text-muted-foreground">
-              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack — can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
+              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack — can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
             </p>
-          </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              See also:{" "}
+              <button
+                onClick={() => document.querySelector("[data-section='swappable']")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-primary underline hover:no-underline"
+              >
+                Swappable Integration Layer ↑
+              </button>
+            </p>
+          </motion.div>
         </div>
       </section>
+
+      {/* 9. Core Components Detail */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
             Core Components
-          </h2>
+          </motion.h2>
 
-          <div className="space-y-8">
-            {/* Universal Integration Hub */}
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Code2 className="text-primary" size={32} />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Universal Integration Hub</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Platform-agnostic orchestration layer that connects to any sensor, API, or external system via standard webhooks. No vendor lock-in, no proprietary protocols.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Supported Integrations</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ AWS IoT Core</li>
-                        <li>✓ Azure IoT Hub</li>
-                        <li>✓ MuleSoft</li>
-                        <li>✓ Universal Webhook (HTTP POST from any system)</li>
-                        <li>✓ Bosch Climatic BMS (hospitals &amp; healthcare facilities)</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Data Sources</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ 22+ flow implementations</li>
-                        <li>✓ NASA satellite data</li>
-                        <li>✓ Weather APIs</li>
-                        <li>✓ Custom sensors</li>
-                      </ul>
+          <motion.div
+            className="space-y-6"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            {/* Integration Hub */}
+            <motion.div variants={fadeUp}>
+              <Card className="p-8 bg-white border border-border">
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <span className="text-blue-600 font-bold text-lg">↔</span>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Universal Integration Hub</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Platform-agnostic orchestration connecting any sensor, API, or external system via standard webhooks. No vendor lock-in, no proprietary protocols.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Supported Integrations</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ AWS IoT Core</li>
+                          <li>✓ Azure IoT Hub</li>
+                          <li>✓ MuleSoft</li>
+                          <li>✓ Universal Webhook (HTTP POST from any system)</li>
+                          <li>✓ Bosch Climatic BMS</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Data Sources</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ 22+ flow implementations</li>
+                          <li>✓ NASA satellite data</li>
+                          <li>✓ Weather APIs</li>
+                          <li>✓ Custom sensors</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
 
             {/* AI Agent Layer */}
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Code2 className="text-secondary" size={32} />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">AI Agent Layer</h3>
-                  <p className="text-muted-foreground mb-4">
-                    17 specialized Python agents, each designed to excel at a specific task. Modular architecture means we can improve individual agents without disrupting the entire system.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Core Agents</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ Detection Agent</li>
-                        <li>✓ Analysis Agent</li>
-                        <li>✓ Reasoning Agent (GPT-4)</li>
-                        <li>✓ Coordination Agent</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Specialized Agents</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ Water Emergency Suite (5 agents)</li>
-                        <li>✓ Healthcare Suite (5 agents)</li>
-                        <li>✓ Industrial Compliance Suite</li>
-                        <li>✓ Documentation Agent</li>
-                      </ul>
+            <motion.div variants={fadeUp}>
+              <Card className="p-8 bg-white border border-border">
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-lg">⚡</span>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">AI Agent Layer</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      17 specialized Python agents, each an independent FastAPI service. Modular architecture means we can improve individual agents without disrupting the system.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Core Agents</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ Detection Agent</li>
+                          <li>✓ Analysis Agent</li>
+                          <li>✓ Reasoning Agent (GPT-4)</li>
+                          <li>✓ Coordination Agent</li>
+                          <li>✓ Documentation Agent</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Specialized Suites</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ Water Emergency Suite (5 agents)</li>
+                          <li>✓ Healthcare Suite (5 agents)</li>
+                          <li>✓ Notification Agent</li>
+                          <li>✓ Scheduler Agent</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
 
-            {/* Slotify Scheduler */}
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <Database className="text-accent" size={32} />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Slotify Emergency Scheduler</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Autonomous meeting coordination that intelligently selects the right stakeholders and books emergency meetings across multiple calendar systems with conflict detection and override protocols.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Calendar Integration</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ Google Calendar</li>
-                        <li>✓ Microsoft 365</li>
-                        <li>✓ Custom calendar systems</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm mb-2">Features</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>✓ Multi-calendar conflict detection</li>
-                        <li>✓ Emergency override protocols</li>
-                        <li>✓ Intelligent authority selection</li>
-                      </ul>
+            {/* Slotify */}
+            <motion.div variants={fadeUp}>
+              <Card className="p-8 bg-white border border-border">
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <span className="text-emerald-600 font-bold text-lg">📅</span>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Slotify Emergency Scheduler</h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Autonomous meeting coordination that selects the right stakeholders and books emergency meetings across multiple calendar systems with conflict detection and override protocols.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Calendar Integration</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ Google Calendar</li>
+                          <li>✓ Microsoft 365</li>
+                          <li>✓ Custom calendar systems</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Features</h4>
+                        <ul className="space-y-1 text-sm text-muted-foreground">
+                          <li>✓ Multi-calendar conflict detection</li>
+                          <li>✓ Emergency override protocols</li>
+                          <li>✓ Intelligent authority selection</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
-          </div>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Performance & Reliability */}
+      {/* 10. API Access */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Performance & Reliability
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Uptime & Availability</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">SLA Guarantee</p>
-                  <p className="text-2xl font-bold text-primary">99.99%</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Automatic Failover</p>
-                  <p className="text-lg font-semibold text-foreground">Multi-AZ with &lt;1s recovery</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Deployment Strategy</p>
-                  <p className="text-lg font-semibold text-foreground">Zero-downtime deployments</p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-white border border-border">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Response Times</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Detection</p>
-                  <p className="text-2xl font-bold text-primary">~2 seconds</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Analysis & Coordination</p>
-                  <p className="text-2xl font-bold text-primary">~80 seconds</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Total Response Time</p>
-                  <p className="text-2xl font-bold text-primary">&lt;90 seconds</p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* API Documentation */}
-      <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-            API Documentation
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
-            ChainSync provides comprehensive REST APIs for integration, monitoring, and management. Full documentation is available to pilot partners.
-          </p>
-          <div className="text-center">
+          <motion.div
+            className="text-center max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              API Documentation
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              ChainSync provides REST APIs for integration, monitoring, and management. Full documentation available to pilot partners.
+            </p>
             <Link href="/contact">
               <Button variant="outline" className="px-6 py-3 h-auto text-base">
                 Request API Documentation Access
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-12 md:py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
+        <motion.div
+          className="container mx-auto px-4 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Interested in the Technical Details?
           </h2>
           <p className="text-lg text-blue-100 mb-8">
             Get access to our full API documentation and technical specifications as a pilot partner.
           </p>
-
-          <Link href="/contact">
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-              Request Early Access
-            </Button>
-          </Link>
-        </div>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+            <Link href="/contact">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
+                Request Early Access
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
 
       <Footer />
