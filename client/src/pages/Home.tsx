@@ -4,10 +4,12 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { Clock, ShieldCheck, Plug, Wifi, Cpu, GitBranch, ClipboardList, Droplets, Factory, Building2, Play, Layers, Bot, Calendar, ChevronDown, ArrowRight, Server, Wrench } from "lucide-react";
+import { Clock, ShieldCheck, Plug, Wifi, Cpu, GitBranch, ClipboardList, Droplets, Factory, Building2, Play, Layers, Bot, Calendar, ArrowRight, Server, Wrench } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, fadeIn, stagger, viewport } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
+import AnimatedHeroFlow from "@/components/AnimatedHeroFlow";
+import ArchitectureAnimation from "@/components/ArchitectureAnimation";
 
 const TAB_DATA = {
   water: {
@@ -45,7 +47,6 @@ const TAB_DATA = {
   },
 } as const;
 
-const heroImage = "https://private-us-east-1.manuscdn.com/sessionFile/fLHByENkh1NN8vyrgLTxDx/sandbox/AOG14CIjCWaDgvTPqw9mk1-img-1_1770941850000_na1fn_Y2hhaW5zeW5jLWhlcm8.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZkxIQnlFTmtoMU5OOHZ5cmdMVHhEeC9zYW5kYm94L0FPRzE0Q0lqQ1dhRGd2VFBxdzltazEtaW1nLTFfMTc3MDk0MTg1MDAwMF9uYTFmbl9ZMmhoYVc1emVXNWpMV2hsY204LnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=fPdd~r9jerr1LgKsR4PlbPIsR05w33-GCfuabBbEhLszznLamJyF~wnTDxtxie0efwIq8hYp7BGSa-CIfYdj-CFkMHm9C8jcoGS5CCt3U19qFlRdfF-57-5wF~kwW4H7kuZpak9UUrsGmQlib9JVWCzRRweNk1GukcpgYJxzvZ6WAwPZRBDhbevihD67D1uvCFTw~vZWv5CScO5lBnBq~Y~MHs9pWgMhqMUg3Sd06UFCG2Io9VRiBuhyNep6T2N0bfUaFD4bL5N5ValtU2YqONleXZVpMDim95HLOZfr4aHOXvdx6THz5OI9F8iOD9gqqoFo-QPzc2RMMr6empwoTA__";
 
 
 export default function Home() {
@@ -114,13 +115,9 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right Image */}
+            {/* Right — Animated Flow Diagram */}
             <div className="hidden lg:block">
-              <img
-                src={heroImage}
-                alt="ChainSync Environmental Monitoring Dashboard"
-                className="w-full rounded-lg shadow-lg"
-              />
+              <AnimatedHeroFlow />
             </div>
           </div>
         </div>
@@ -430,66 +427,13 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto">
             <motion.div
-              variants={stagger}
+              variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
+              className="mb-6"
             >
-              {/* Layer 1 */}
-              <motion.div variants={fadeUp} className="bg-white border border-border rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <Layers className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-muted-foreground tracking-widest">LAYER 1</p>
-                    <h3 className="font-semibold text-foreground">Integration Layer — MuleSoft + DataWeave</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  MuleSoft handles inbound event normalization and routing. Any external system — SCADA, BMS, IoT, or third-party platform — connects through the Universal Webhook Endpoint. DataWeave transforms incoming data into a standardized event format before it reaches the agent layer.
-                </p>
-              </motion.div>
-
-              <div className="flex justify-center my-2">
-                <ChevronDown className="text-muted-foreground" size={20} />
-              </div>
-
-              {/* Layer 2 */}
-              <motion.div variants={fadeUp} className="bg-white border border-border rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                    <Bot className="text-secondary" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-muted-foreground tracking-widest">LAYER 2</p>
-                    <h3 className="font-semibold text-foreground">Intelligence Layer — 17 Python FastAPI Agents</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  17 specialized agents — each owning one domain — process events using GPT-4 via the OpenAI API. Detection, analysis, risk classification, and documentation run as separate FastAPI services. Event routing between agents uses HTTP webhooks. Prometheus + Grafana provide system-wide observability.
-                </p>
-              </motion.div>
-
-              <div className="flex justify-center my-2">
-                <ChevronDown className="text-muted-foreground" size={20} />
-              </div>
-
-              {/* Layer 3 */}
-              <motion.div variants={fadeUp} className="bg-white border border-border rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
-                    <Calendar className="text-accent" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-muted-foreground tracking-widest">LAYER 3</p>
-                    <h3 className="font-semibold text-foreground">Coordination Layer — Slotify</h3>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Slotify handles autonomous emergency response scheduling. When the agent layer determines a response meeting is required, Slotify selects the right stakeholders, resolves calendar conflicts, and books across Google Calendar and Microsoft 365 — without human coordination overhead.
-                </p>
-              </motion.div>
+              <ArchitectureAnimation />
             </motion.div>
 
             {/* Swappable callout */}

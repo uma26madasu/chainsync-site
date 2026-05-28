@@ -6,10 +6,9 @@ import { Link } from "wouter";
 import { Radio, Brain, Users, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
+import ProcessFlowAnimation from "@/components/ProcessFlowAnimation";
+import ArchitectureAnimation from "@/components/ArchitectureAnimation";
 
-const processImage = "https://private-us-east-1.manuscdn.com/sessionFile/fLHByENkh1NN8vyrgLTxDx/sandbox/AOG14CIjCWaDgvTPqw9mk1-img-3_1770941842000_na1fn_Y2hhaW5zeW5jLXByb2Nlc3MtZmxvdw.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZkxIQnlFTmtoMU5OOHZ5cmdMVHhEeC9zYW5kYm94L0FPRzE0Q0lqQ1dhRGd2VFBxdzltazEtaW1nLTNfMTc3MDk0MTg0MjAwMF9uYTFmbl9ZMmhoYVc1emVXNWpMWEJ5YjJObGMzTXRabXh2ZHcucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=JretJQ4Hi8GU13PkcYiqz~dAUEME2EjUs1WkHNSZXWVw8ExRe3q4E29Nf5t3KiwbzWVxbNqjo2j4WMmrlhwyyjhEAquOYHRgcXCzyj0MwmFE172OIF0S8-nA81rRVsxM2gnR15PBQF2zUKqW8FPMNWpkG4OUsXmKjLUNaWdAk2eA8uYlAyI2SDUMYAC9DjdjHvUKD9GTKwaUk0-HtHmDOwVYANGAoKdEiI9~brbXdgjfnr9fVI5fq6yEhQKjVQHI3PnHdIeJP8nwHYkik-pfyEtW-uZRpeHhzTb2f7Mzb3M2f-ffjBaiNXtI-W08PWcpCqCFexSHlQnyyzl~oIMQgA__";
-
-const architectureImage = "https://private-us-east-1.manuscdn.com/sessionFile/fLHByENkh1NN8vyrgLTxDx/sandbox/AOG14CIjCWaDgvTPqw9mk1-img-2_1770941846000_na1fn_Y2hhaW5zeW5jLWFyY2hpdGVjdHVyZQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZkxIQnlFTmtoMU5OOHZ5cmdMVHhEeC9zYW5kYm94L0FPRzE0Q0lqQ1dhRGd2VFBxdzltazEtaW1nLTJfMTc3MDk0MTg0NjAwMF9uYTFmbl9ZMmhoYVc1emVXNWpMV0Z5WTJocGRHVmpkSFZ5WlEucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=TyTZFqdgFxPPBUTfMpLMtOWw75zmDnbW-ZH6Q4NcJv1rfyGlzsyi-S-Go23Oos6CiMA-awcLnGvVuZA~MOmBvHG4VksTMI-Mtob4G9lqpaoZSPRSJ7yc4qCiazwnGyLS0300OAiFc0Y9C9Ses2PqmOIAJOqybthXnKKCpxAORlQINTeorGyunpqzpX40YTcd2Jo~zmsztbaYJuAF1Yf9tVbamrMwXO0T2VqnW59iplToJfOqzHRhTuXiZSeAAtTjfhlPng3ouJYD-MAHWTDSMbeUXe8mi3h5WmXMvkex7MRHTHzOh7p4aJ1Ozb0m~fp7bhdxQjaAIsKwgwzK4~2~Sg__";
 
 export default function HowItWorks() {
   return (
@@ -41,17 +40,15 @@ export default function HowItWorks() {
       {/* Process Overview */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <img
-            src={processImage}
-            alt="ChainSync 4-Step Process"
-            className="w-full rounded-lg shadow-lg mb-12"
-          />
-
-          <div className="text-center mb-12">
-            <p className="text-lg text-muted-foreground">
-              <span className="font-semibold text-foreground">Total: Under 90 seconds</span> from threat detection to coordinated response
-            </p>
-          </div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="mb-12"
+          >
+            <ProcessFlowAnimation />
+          </motion.div>
 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
@@ -259,15 +256,15 @@ export default function HowItWorks() {
             System Architecture
           </motion.h2>
 
-          <motion.img
-            src={architectureImage}
-            alt="ChainSync System Architecture"
-            className="w-full rounded-lg shadow-lg mb-12"
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-          />
+            className="mb-12"
+          >
+            <ArchitectureAnimation />
+          </motion.div>
 
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"

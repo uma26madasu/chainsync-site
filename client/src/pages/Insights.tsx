@@ -7,6 +7,7 @@ import { BookOpen, TrendingUp, AlertCircle, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
+import IncidentCostChart from "@/components/IncidentCostChart";
 
 export default function Insights() {
   const articles = [
@@ -201,6 +202,16 @@ export default function Insights() {
                 </p>
               </Card>
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="mt-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <IncidentCostChart />
           </motion.div>
         </div>
       </section>
