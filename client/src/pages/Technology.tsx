@@ -323,15 +323,6 @@ export default function Technology() {
             <p className="text-sm text-muted-foreground">
               ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack — can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
             </p>
-            <p className="text-xs text-muted-foreground mt-2">
-              See also:{" "}
-              <button
-                onClick={() => document.querySelector("[data-section='swappable']")?.scrollIntoView({ behavior: "smooth" })}
-                className="text-primary underline hover:no-underline"
-              >
-                Swappable Integration Layer ↑
-              </button>
-            </p>
           </motion.div>
         </div>
       </section>
