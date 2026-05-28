@@ -12,7 +12,7 @@ export default function Footer() {
               <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-10 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
-              Coordinated emergency response in under 15 minutes.
+              Designed to reduce emergency coordination from hours to minutes.
             </p>
           </div>
 

@@ -16,11 +16,11 @@ const METRICS = [
     textColor: "text-blue-700",
   },
   {
-    label: "Full Coordination",
+    label: "Coordination Target",
     value: 15,
     suffix: " min",
     prefix: "<",
-    desc: "Detection to scheduled emergency response meeting",
+    desc: "Design goal: detection to scheduled response meeting (vs. 4–6 hrs manual)",
     color: "#10b981",
     bg: "bg-emerald-50",
     border: "border-emerald-200",

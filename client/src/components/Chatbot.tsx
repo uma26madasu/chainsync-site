@@ -25,7 +25,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["how it works", "works", "system", "flow", "process", "pipeline"],
     topic: "howItWorks",
-    text: "Data flows in from SCADA systems, IoT sensors, and monitoring platforms → Detection agents spot anomalies → Analysis agents assess severity → Coordination agents route alerts to the right people → Documentation agents create records — all in under 90 seconds. The Integration Hub connects everything without replacing your existing tools.",
+    text: "Data flows in from SCADA systems, IoT sensors, and monitoring platforms → Detection agents spot anomalies → Analysis agents assess severity → Coordination agents route alerts to the right people → Documentation agents create records. The Integration Hub connects everything without replacing your existing tools. Designed to reduce coordination from hours to minutes.",
     quickReplies: ["What's the Integration Hub?", "Python agents?", "Join early access"]
   },
   {
@@ -55,19 +55,19 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["cost", "savings", "roi", "value", "benefit", "save", "reduce", "efficient"],
     topic: "costSavings",
-    text: "The core value: reducing response time from 4–6 hours to under 90 seconds. For environmental incidents, that window directly impacts regulatory penalties, remediation costs, and community health outcomes. Early access partners get preferential pricing — no upfront costs during the pilot phase.",
+    text: "The core value: reducing coordination time from 4–6 hours of manual phone calls and emails to minutes of automated orchestration. For environmental incidents, that window directly impacts regulatory penalties, remediation costs, and community health outcomes. Early access partners get preferential pricing — no upfront costs during the pilot phase.",
     quickReplies: ["Pricing", "Join early access", "How does it work?"]
   },
   {
     keywords: ["government", "agency", "municipal", "municipality", "city", "county", "public"],
     topic: "government",
-    text: "ChainSync is built for government agencies and municipalities managing environmental health. It reduces response time from 4–6 hours to under 90 seconds, automates cross-agency communication, and handles compliance documentation. Works with existing regulatory reporting workflows.",
+    text: "ChainSync is built for government agencies and municipalities managing environmental health. It's designed to reduce coordination time from 4–6 hours of manual effort to minutes of automated orchestration, automates cross-agency communication, and handles compliance documentation. Works with existing regulatory reporting workflows.",
     quickReplies: ["Water treatment?", "Cost savings", "Implementation"]
   },
   {
     keywords: ["water", "treatment", "scada", "facility", "wastewater", "drinking water", "contamination"],
     topic: "waterTreatment",
-    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor quality parameters in real-time. Anomalies trigger automatic response coordination, operator notifications, and regulatory documentation — all within 90 seconds. Critical for public health protection and compliance.",
+    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor quality parameters in real-time. Anomalies trigger automatic response coordination, operator notifications, and regulatory documentation — in minutes rather than hours. Critical for public health protection and compliance.",
     quickReplies: ["SCADA integration", "What about security?", "Join early access"]
   },
   {
