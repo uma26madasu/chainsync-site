@@ -31,8 +31,8 @@ const NODES = [
   },
   {
     id: "gpt4",
-    label: "GPT-4\nReasoning",
-    sublabel: "OpenAI API",
+    label: "AI\nReasoning",
+    sublabel: "Intelligence Layer",
     color: "#a855f7",
     bg: "#1e0a30",
     border: "#9333ea",

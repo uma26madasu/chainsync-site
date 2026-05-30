@@ -18,7 +18,7 @@ const LAYERS = [
     color: "#10b981",
     bg: "#052e16",
     border: "#15803d",
-    items: ["GPT-4 Reasoning", "Risk Classification", "HTTP Webhook Routing"],
+    items: ["AI Reasoning Engine", "Risk Classification", "HTTP Webhook Routing"],
   },
   {
     label: "LAYER 3",

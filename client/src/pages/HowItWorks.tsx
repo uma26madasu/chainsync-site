@@ -180,7 +180,7 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 2: Analyze</h3>
                   <p className="text-muted-foreground mb-4">
-                    Our AI Agent Layer performs intelligent analysis. The detection agent identifies the anomaly type, the analysis agent enriches context with historical data and regulatory thresholds, and the reasoning agent (powered by GPT-4) determines risk level and recommended actions.
+                    Our AI Agent Layer performs intelligent analysis. The detection agent identifies the anomaly type, the analysis agent enriches context with historical data and regulatory thresholds, and the reasoning agent (AI-powered) determines risk level and recommended actions.
                   </p>
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-muted-foreground">
@@ -286,7 +286,7 @@ export default function HowItWorks() {
             <Card className="p-6 bg-white border border-border h-full">
               <h3 className="text-lg font-semibold text-foreground mb-3">AI Agent Layer</h3>
               <p className="text-muted-foreground text-sm">
-                17 specialized Python agents for detection, analysis, coordination, and documentation. GPT-4 powered reasoning engine.
+                17 specialized Python agents for detection, analysis, coordination, and documentation. AI-powered reasoning engine.
               </p>
             </Card>
             </motion.div>

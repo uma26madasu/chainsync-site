@@ -44,7 +44,7 @@ const CATEGORIES: Category[] = [
     agents: [
       { name: "Detection Agent", desc: "Classifies anomaly type across all verticals" },
       { name: "Analysis Agent", desc: "Context enrichment with historical data and regulatory limits" },
-      { name: "Reasoning Agent (GPT-4)", desc: "Decision support: risk classification and recommended actions" },
+      { name: "Reasoning Agent", desc: "AI-powered decision support: risk classification and recommended actions" },
       { name: "Coordination Agent", desc: "Routes notifications to the right stakeholder set" },
       { name: "Documentation Agent", desc: "Generates audit-ready incident reports automatically" },
       { name: "Notification Agent", desc: "Multi-channel delivery: email, SMS, and webhook" },

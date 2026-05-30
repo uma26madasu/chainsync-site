@@ -43,7 +43,7 @@ export default function Technology() {
             initial="hidden"
             animate="visible"
           >
-            {["17 Python Agents", "GPT-4 Reasoning", "MuleSoft Integration", "Slotify Scheduler", "Prometheus + Grafana"].map((tag) => (
+            {["17 Python Agents", "AI Reasoning Engine", "MuleSoft Integration", "Slotify Scheduler", "Prometheus + Grafana"].map((tag) => (
               <span key={tag} className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
                 {tag}
               </span>
@@ -287,7 +287,7 @@ export default function Technology() {
               <tbody>
                 {[
                   ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
-                  ["AI Reasoning", "GPT-4 (OpenAI API)", "Context-aware analysis, risk classification, decision support"],
+                  ["AI Reasoning", "AI Reasoning Engine", "Context-aware analysis, risk classification, decision support"],
                   ["Integration Layer", "MuleSoft + DataWeave", "Enterprise integration and data transformation (swappable)"],
                   ["Scheduler", "Slotify (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
                   ["Database", "MongoDB", "Event storage, audit trails, and document records"],
@@ -403,7 +403,7 @@ export default function Technology() {
                         <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>✓ Detection Agent</li>
                           <li>✓ Analysis Agent</li>
-                          <li>✓ Reasoning Agent (GPT-4)</li>
+                          <li>✓ Reasoning Agent (AI-powered)</li>
                           <li>✓ Coordination Agent</li>
                           <li>✓ Documentation Agent</li>
                         </ul>

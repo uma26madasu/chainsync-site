@@ -325,7 +325,7 @@ export default function Home() {
                 <Bot className="text-accent mb-4" size={32} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">AI Agents</h3>
                 <p className="text-muted-foreground text-sm">
-                  17 specialized Python agents providing intelligent risk analysis and incident coordination. GPT-4 powered reasoning for detection, analysis, and response coordination.
+                  17 specialized Python agents providing intelligent risk analysis and incident coordination. AI-powered reasoning for detection, analysis, and response coordination.
                 </p>
               </Card>
             </motion.div>
