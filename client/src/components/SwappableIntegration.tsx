@@ -67,7 +67,7 @@ export default function SwappableIntegration() {
         >
           <p className="text-xs font-bold tracking-widest text-slate-400 mb-1">CORE ENDPOINT</p>
           <p className="text-base font-bold text-white">Universal Webhook Endpoint</p>
-          <p className="text-xs text-slate-400 mt-1">Standard HTTP POST — accepts events from any source</p>
+          <p className="text-xs text-slate-400 mt-1">Standard HTTP POST. Accepts events from any source.</p>
         </motion.div>
 
         {/* Connection line */}
@@ -155,7 +155,7 @@ export default function SwappableIntegration() {
                 <p className="text-sm text-muted-foreground">{display.desc}</p>
                 {!isMuleSoft && (
                   <p className="text-xs text-muted-foreground mt-2 italic">
-                    Switching to {display.name} requires zero changes to the AI agent layer or Slotify scheduler — only the integration adapter changes.
+                    Switching to {display.name} requires zero changes to the AI agent layer or Slotify scheduler. Only the integration adapter changes.
                   </p>
                 )}
               </div>

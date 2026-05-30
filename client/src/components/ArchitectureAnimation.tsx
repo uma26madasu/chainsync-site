@@ -18,7 +18,7 @@ const LAYERS = [
     color: "#10b981",
     bg: "#052e16",
     border: "#15803d",
-    items: ["GPT-4 Reasoning", "Risk Classification", "HTTP Webhook Routing"],
+    items: ["AI Reasoning Engine", "Risk Classification", "HTTP Webhook Routing"],
   },
   {
     label: "LAYER 3",
@@ -160,7 +160,7 @@ export default function ArchitectureAnimation() {
       </svg>
 
       <div className="flex items-center justify-center gap-2 px-4 py-2 bg-slate-800 border-t border-slate-700">
-        <span className="text-xs text-slate-400">Standard HTTP between all layers — no proprietary protocols</span>
+        <span className="text-xs text-slate-400">Standard HTTP between all layers. No proprietary protocols.</span>
       </div>
     </div>
   );

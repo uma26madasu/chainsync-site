@@ -3,9 +3,13 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { AlertCircle, Gauge, Building2, TrendingDown, Heart } from "lucide-react";
+import { AlertCircle, Gauge, Building2, Heart, Droplets } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, stagger, viewport } from "@/lib/motion";
 
-const waterImage = "https://private-us-east-1.manuscdn.com/sessionFile/fLHByENkh1NN8vyrgLTxDx/sandbox/AOG14CIjCWaDgvTPqw9mk1-img-4_1770941851000_na1fn_Y2hhaW5zeW5jLXdhdGVyLW1vbml0b3Jpbmc.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZkxIQnlFTmtoMU5OOHZ5cmdMVHhEeC9zYW5kYm94L0FPRzE0Q0lqQ1dhRGd2VFBxdzltazEtaW1nLTRfMTc3MDk0MTg1MTAwMF9uYTFmbl9ZMmhoYVc1emVXNWpMWGRoZEdWeUxXMXZibWwwYjNKcGJtYy5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Yrws-~L2p0hQkTjEcUwHNEao4wTpjSSRioF1eg6PdrxmZCXN8q0-QvRpXMWvSjH9vsOFlz~pA7j0On-79rXDIlTbkCWIVsKXBuy0J9V0ieLSkMQ7TrYf4DPpXYKIT0zTp7ZkcKDiA6Sl0gV9wTM14Q3kVP87Dw7o2neTgqCPKMKytVY2f0PQGvS0OIGDTtOYxqn6G6sLi-biQ0U1hguQsKDv85Zvvgt-tZLJx9rzX0nb2I1OlSsmphtYNV-~Gf7o4E2IQ6I5XKkXYjsgkxlJI4E57IPCupeULGdF2~8EHbdHbySdBXX3NaV2yKH6LGB-DjFgxOqw6vWn~ur~bAT6uQ__";
+const CHECK = ({ color = "text-primary" }: { color?: string }) => (
+  <span className={`${color} mt-0.5 flex-shrink-0 font-bold`}>✓</span>
+);
 
 export default function UseCases() {
   return (
@@ -15,282 +19,535 @@ export default function UseCases() {
       {/* Hero */}
       <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center">
-            Use Cases for Environmental Emergency Response
-          </h1>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-            ChainSync is purpose-built for organizations responsible for detecting and responding to environmental emergencies. Explore how different sectors benefit from automated coordination.
-          </p>
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+          >
+            Use Cases
+          </motion.h1>
+          <motion.p
+            className="text-lg text-muted-foreground text-center max-w-3xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.1 }}
+          >
+            ChainSync is purpose-built for organizations responsible for detecting and responding to environmental emergencies. Each sector has distinct agents, distinct compliance requirements, and distinct stakeholder chains.
+          </motion.p>
         </div>
       </section>
 
-      {/* Water Treatment Facilities */}
+      {/* Water Treatment */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                Water Quality Protection
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <motion.div variants={fadeUp}>
+                <span className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  Water Quality Protection
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Water Treatment Facilities
-              </h2>
+              </motion.h2>
 
-              <div className="space-y-6">
+              <motion.div variants={fadeUp} className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">The Challenge</h3>
-                  <p className="text-muted-foreground">
-                    Drinking water systems face constant threats from contamination events. When turbidity spikes, chemical anomalies appear, or pathogens are detected, treatment facilities must coordinate immediate response across multiple agencies and regulatory bodies—all while maintaining public safety and compliance documentation.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
-                  <p className="text-muted-foreground">
-                    Real-time sensor monitoring detects anomalies in seconds. The platform automatically analyzes water quality data, correlates it with historical patterns and regulatory thresholds, and initiates coordinated response. Notifications go to treatment operators, public health officials, and regulatory agencies simultaneously. Compliance reports are generated automatically.
-                  </p>
-                </div>
-
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
+                  <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Detect contamination events in seconds, not hours</span>
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Turbidity spikes, chemical anomalies, and pathogen events require immediate cross-agency coordination
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Automated multi-agency coordination and notifications</span>
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Treatment operators, public health officials, and regulators must be notified simultaneously
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Compliance documentation generated automatically</span>
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Compliance documentation must be maintained throughout the incident, not reconstructed after
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Reduced public health risk through faster response</span>
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Manual coordination takes 4-6 hours when minutes matter for public health
                     </li>
                   </ul>
                 </div>
-              </div>
-            </div>
 
-            <div>
-              <img
-                src={waterImage}
-                alt="Water Treatment Facility Monitoring"
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-3">How ChainSync Helps</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      SCADA and sensor data analyzed for anomalies within seconds of detection
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Operators, public health officials, and EPA contacts notified in parallel
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      EPA Safe Drinking Water Act notification templates generated automatically
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Emergency response meeting scheduled via Slotify without manual calls
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Full audit trail maintained from first alert to incident closure
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Water Quality Analyst", "Contamination Detector", "Regulatory Reporter", "Emergency Coordinator", "Sensor Monitor"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              transition={{ delay: 0.18 }}
+              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Droplets className="text-blue-400" size={18} />
+                <span className="text-xs font-bold tracking-widest text-slate-400">LIVE MONITORING</span>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { label: "Turbidity", value: "2.4 NTU", status: "normal", threshold: "Alert > 4 NTU" },
+                  { label: "pH", value: "7.2", status: "normal", threshold: "Alert < 6.5 or > 8.5" },
+                  { label: "Chlorine Residual", value: "0.8 mg/L", status: "normal", threshold: "Alert < 0.2 mg/L" },
+                  { label: "Coliform", value: "0 CFU/100mL", status: "normal", threshold: "Alert > 0" },
+                ].map((row, i) => (
+                  <motion.div
+                    key={row.label}
+                    className="flex items-center justify-between bg-slate-800 rounded-lg px-4 py-2.5"
+                    initial={{ opacity: 0, x: 12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.28, delay: 0.25 + i * 0.07 }}
+                  >
+                    <div>
+                      <p className="text-xs font-semibold text-slate-200">{row.label}</p>
+                      <p className="text-xs text-slate-500">{row.threshold}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-slate-100">{row.value}</span>
+                      <span className="w-2 h-2 rounded-full bg-green-400" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-3 text-center">Illustrative sensor dashboard. All values within threshold.</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Industrial Environmental Compliance */}
+      {/* Industrial */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-lg p-8 h-full flex items-center justify-center">
-                <div className="text-center">
-                  <Gauge className="text-secondary mx-auto mb-4" size={48} />
-                  <p className="text-muted-foreground">Industrial emissions monitoring and compliance tracking</p>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              className="order-2 lg:order-1 bg-slate-900 rounded-xl p-6 border border-slate-700"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              transition={{ delay: 0.12 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Gauge className="text-emerald-400" size={18} />
+                <span className="text-xs font-bold tracking-widest text-slate-400">EMISSIONS MONITOR</span>
               </div>
-            </div>
+              <div className="space-y-3">
+                {[
+                  { label: "NOx Emissions", value: "78 ppm", status: "warning", threshold: "Limit: 100 ppm" },
+                  { label: "SO₂ Discharge", value: "12 ppm", status: "normal", threshold: "Limit: 20 ppm" },
+                  { label: "Particulate Matter", value: "38 µg/m³", status: "normal", threshold: "Limit: 50 µg/m³" },
+                  { label: "Wastewater pH", value: "9.1", status: "alert", threshold: "Limit: 6-9 pH" },
+                ].map((row, i) => (
+                  <motion.div
+                    key={row.label}
+                    className="flex items-center justify-between bg-slate-800 rounded-lg px-4 py-2.5"
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.28, delay: 0.2 + i * 0.08 }}
+                  >
+                    <div>
+                      <p className="text-xs font-semibold text-slate-200">{row.label}</p>
+                      <p className="text-xs text-slate-500">{row.threshold}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-slate-100">{row.value}</span>
+                      <span className={`w-2 h-2 rounded-full ${row.status === "alert" ? "bg-red-400" : row.status === "warning" ? "bg-amber-400" : "bg-green-400"}`} />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-3 text-center">Wastewater pH breach triggers agent pipeline automatically.</p>
+            </motion.div>
 
-            <div className="order-1 lg:order-2">
-              <div className="inline-block bg-green-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                Emissions & Compliance
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <motion.div
+              className="order-1 lg:order-2"
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <motion.div variants={fadeUp}>
+                <span className="inline-block bg-green-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  Emissions and Compliance
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Industrial Environmental Compliance
-              </h2>
+              </motion.h2>
 
-              <div className="space-y-6">
+              <motion.div variants={fadeUp} className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">The Challenge</h3>
-                  <p className="text-muted-foreground">
-                    Manufacturing and industrial facilities must continuously monitor emissions, manage environmental incidents, and maintain detailed compliance documentation. Regulatory requirements are complex, penalties for violations are severe, and response coordination across multiple departments and external agencies is time-consuming and error-prone.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Emissions threshold breaches require immediate regulatory notification within hours
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Multi-department coordination is manual, error-prone, and slow under pressure
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Regulatory penalties for late reporting can exceed cost of the incident itself
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Compliance docs must be audit-ready immediately, not assembled after-the-fact
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
-                  <p className="text-muted-foreground">
-                    Continuous monitoring of emissions data with AI-powered anomaly detection. When thresholds are exceeded or incidents occur, ChainSync automatically notifies relevant teams, coordinates response actions, and generates compliance documentation. Integration with environmental management systems ensures seamless data flow.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">How ChainSync Helps</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-secondary" />
+                      Continuous emissions monitoring with instant anomaly alerts to EHS and operations
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-secondary" />
+                      EHS team, plant manager, and regulatory contacts notified automatically on breach
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-secondary" />
+                      EPA and OSHA incident report templates generated at time of detection
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-secondary" />
+                      Response meeting scheduled across shift-based and corporate calendars
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-secondary" />
+                      Full documentation chain ready before the first regulatory call
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-secondary mt-1">✓</span>
-                      <span>Continuous emissions monitoring with instant alerts</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-secondary mt-1">✓</span>
-                      <span>Automated incident response coordination</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-secondary mt-1">✓</span>
-                      <span>Compliance documentation always audit-ready</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-secondary mt-1">✓</span>
-                      <span>Reduced regulatory penalties and operational downtime</span>
-                    </li>
-                  </ul>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Detection Agent", "Analysis Agent", "Coordination Agent", "Documentation Agent", "Notification Agent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-medium">{a}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Municipal Emergency Response */}
+      {/* Municipal */}
       <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-amber-100 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
-                Emergency Coordination
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <motion.div variants={fadeUp}>
+                <span className="inline-block bg-amber-100 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  Emergency Coordination
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Municipal Emergency Response
-              </h2>
+              </motion.h2>
 
-              <div className="space-y-6">
+              <motion.div variants={fadeUp} className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">The Challenge</h3>
-                  <p className="text-muted-foreground">
-                    Cities and municipalities face diverse environmental threats—from flooding and chemical spills to air quality emergencies and waste management crises. Coordinating response across multiple departments, agencies, and jurisdictions is complex. Communication delays and coordination failures often result in delayed response and increased impact.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Environmental threats span flooding, chemical spills, air quality events, and waste emergencies
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Response requires fire, public health, utilities, and external agencies to coordinate
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      No single platform spans all incident types, departments, and jurisdictions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Communication delays between departments directly increase community impact
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
-                  <p className="text-muted-foreground">
-                    A unified platform for all environmental emergencies. Real-time monitoring feeds data from multiple sources. When incidents are detected, ChainSync automatically coordinates response across fire departments, public health, environmental agencies, and external partners. Emergency meetings are scheduled automatically with the right stakeholders.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">How ChainSync Helps</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-accent" />
+                      Single platform handles all environmental incident types across departments
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-accent" />
+                      Stakeholder routing determined by incident type and severity, not manual lookup
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-accent" />
+                      Cross-department emergency meetings scheduled automatically via Slotify
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-accent" />
+                      State and federal agency reporting documentation generated at incident time
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK color="text-accent" />
+                      Post-incident audit trail ready for public records and after-action review
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">✓</span>
-                      <span>Unified platform for all environmental incident types</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">✓</span>
-                      <span>Cross-department and cross-agency coordination</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">✓</span>
-                      <span>Faster response reduces community impact</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">✓</span>
-                      <span>Improved public communication and transparency</span>
-                    </li>
-                  </ul>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Detection Agent", "Coordination Agent", "Notification Agent", "Documentation Agent", "Scheduler Agent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-medium">{a}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div>
-              <div className="bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg p-8 h-full flex items-center justify-center">
-                <div className="text-center">
-                  <Building2 className="text-accent mx-auto mb-4" size={48} />
-                  <p className="text-muted-foreground">Multi-agency emergency coordination and response</p>
-                </div>
+            <motion.div
+              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              transition={{ delay: 0.15 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Building2 className="text-amber-400" size={18} />
+                <span className="text-xs font-bold tracking-widest text-slate-400">INCIDENT PIPELINE</span>
               </div>
-            </div>
+              <div className="space-y-2">
+                {[
+                  { step: "01", label: "Chemical spill detected at River St intersection", time: "00:00", color: "text-red-400" },
+                  { step: "02", label: "Hazmat, public works, and EPA contacts identified", time: "00:04", color: "text-amber-400" },
+                  { step: "03", label: "Multi-agency notification sent", time: "00:12", color: "text-blue-400" },
+                  { step: "04", label: "Emergency response meeting scheduled", time: "00:31", color: "text-emerald-400" },
+                  { step: "05", label: "Compliance report draft generated", time: "00:38", color: "text-slate-400" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.step}
+                    className="flex items-start gap-3 bg-slate-800 rounded-lg px-3 py-2.5"
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.25, delay: 0.2 + i * 0.09 }}
+                  >
+                    <span className={`text-xs font-bold font-mono ${item.color} mt-0.5`}>{item.step}</span>
+                    <p className="text-xs text-slate-300 flex-grow">{item.label}</p>
+                    <span className="text-xs font-mono text-slate-500 flex-shrink-0">{item.time}s</span>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-3 text-center">Illustrative timeline. All steps automated.</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Hospital & Healthcare Facilities */}
+      {/* Healthcare */}
       <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                Hospital Facilities Management
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <motion.div variants={fadeUp}>
+                <span className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  Hospital Facilities Management
+                </span>
+              </motion.div>
+              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Hospital &amp; Healthcare Facilities
-              </h2>
+              </motion.h2>
 
-              <div className="space-y-6">
+              <motion.div variants={fadeUp} className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">The Challenge</h3>
-                  <p className="text-muted-foreground">
-                    Hospital facilities directors face simultaneous compliance demands from Joint Commission, CMS, and FDA — while managing real-time equipment failures and preventive maintenance schedules that directly affect patient safety and survey readiness. Manual tracking creates dangerous gaps, and a missed PM cycle can trigger a Joint Commission finding.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Joint Commission, CMS, and FDA compliance demands run simultaneously with daily operations
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Equipment failures require immediate Biomedical Engineering response and FDA MDR obligation checks
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Missed PM cycles can trigger Joint Commission findings during unannounced surveys
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 mt-0.5 flex-shrink-0">•</span>
+                      Manual tracking creates dangerous documentation gaps across ventilators, dialysis, and infusion pumps
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">ChainSync Solution</h3>
-                  <p className="text-muted-foreground">
-                    Five specialized healthcare agents cover the full compliance lifecycle. Joint Commission documentation (EC.02.05, EC.02.06, EC.04.01) and CMS QSO-17-30 reporting are generated automatically. Critical device failures across ventilators, dialysis machines, and infusion pumps trigger immediate Biomedical Engineering coordination and FDA MDR checks. Daily PM scans flag overdue maintenance before a surveyor does. For facilities running Bosch Climatic Building Management Systems, ChainSync's dedicated adapter receives threshold breach events directly — no manual handoff required.
-                  </p>
+                  <h3 className="font-semibold text-foreground mb-3">How ChainSync Helps</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Joint Commission EC.02.05, EC.02.06, EC.04.01 documentation auto-generated on events
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      CMS QSO-17-30 reports filed automatically, not manually after the fact
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Critical device failures trigger Biomedical Engineering dispatch and loaner coordination
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Daily PM compliance scan flags overdue maintenance before a surveyor does
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CHECK />
+                      Bosch Climatic BMS adapter routes HVAC threshold breaches directly to agents, no manual handoff
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Benefits</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Joint Commission EC.02.06 and CMS QSO-17-30 documentation automated</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Medical equipment failure response with FDA MDR obligation checks</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Daily PM compliance scan with survey readiness scoring</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">✓</span>
-                      <span>Biomedical Engineering dispatch and loaner equipment coordination</span>
-                    </li>
-                  </ul>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["HVAC Monitor", "Patient Safety Agent", "Air Quality Analyst", "Equipment Coordinator", "Compliance Reporter"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div>
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg p-8 h-full flex items-center justify-center">
-                <div className="text-center">
-                  <Heart className="text-primary mx-auto mb-4" size={48} />
-                  <p className="text-muted-foreground">5 specialized agents for Joint Commission, CMS, and medical equipment compliance</p>
-                </div>
+            <motion.div
+              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <Heart className="text-red-400" size={18} />
+                <span className="text-xs font-bold tracking-widest text-slate-400">COMPLIANCE STATUS</span>
               </div>
-            </div>
+              <div className="space-y-2">
+                {[
+                  { label: "EC.02.05: Life Safety Rounding", status: "Current", ok: true },
+                  { label: "EC.02.06: PM Schedule", status: "2 overdue", ok: false },
+                  { label: "EC.04.01: Incident Reports", status: "Current", ok: true },
+                  { label: "CMS QSO-17-30 Fire Drill", status: "Current", ok: true },
+                  { label: "FDA MDR: Infusion Pump #4", status: "Triggered", ok: false },
+                ].map((row, i) => (
+                  <motion.div
+                    key={row.label}
+                    className="flex items-center justify-between bg-slate-800 rounded-lg px-3 py-2"
+                    initial={{ opacity: 0, x: 12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.25, delay: 0.25 + i * 0.07 }}
+                  >
+                    <p className="text-xs text-slate-300">{row.label}</p>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded ${row.ok ? "bg-green-900 text-green-300" : "bg-red-900 text-red-300"}`}>
+                      {row.status}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-3 text-center">Overdue items trigger agent pipeline automatically.</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-12 md:py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
+        <motion.div
+          className="container mx-auto px-4 text-center"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Is Your Organization a Good Fit?
           </h2>
           <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            If you're responsible for detecting and responding to environmental emergencies, ChainSync can help you respond faster and coordinate better.
+            If you're responsible for detecting and responding to environmental emergencies, ChainSync is built for your workflow.
           </p>
-
-          <Link href="/contact">
-            <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-              Request Early Access
-            </Button>
-          </Link>
-        </div>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+            <Link href="/contact">
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
+                Request Early Access
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
 
       <Footer />

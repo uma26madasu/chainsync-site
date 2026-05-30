@@ -7,7 +7,7 @@ const ROWS = [
   {
     metric: "Emergency Meeting Scheduled",
     before: "4–6 hours of phone calls and emails",
-    after: "Minutes, not hours — fully automated (target)",
+    after: "Minutes, not hours. Fully automated (target)",
     highlight: true,
   },
   {
@@ -31,7 +31,7 @@ const ROWS = [
   {
     metric: "Compliance Documentation",
     before: "Completed after-the-fact, prone to gaps",
-    after: "Real-time audit trail — every action logged",
+    after: "Real-time audit trail. Every action logged.",
     highlight: false,
   },
   {

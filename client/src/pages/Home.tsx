@@ -71,10 +71,10 @@ export default function Home() {
                 Early Access Program
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                From Hours of Coordination to Minutes — Automatically
+                From Hours of Coordination to Minutes, Automatically
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed">
-                ChainSync ingests alerts from any monitoring system, runs them through 17 specialized AI agents, and automatically coordinates the right people — from detection to a scheduled response meeting, without manual handoff.
+                ChainSync ingests alerts from any monitoring system, runs them through 17 specialized AI agents, and automatically coordinates the right people, from detection to a scheduled response meeting, without manual handoff.
               </motion.p>
 
               {/* Value Prop Micro-Cards */}
@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <Clock className="text-primary mb-2" size={20} />
                   <p className="font-semibold text-foreground text-sm mb-1">Coordination in Minutes, Not Hours</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a scheduled emergency response with the right people — automatically.</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a scheduled emergency response with the right people, automatically.</p>
                 </div>
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <ShieldCheck className="text-secondary mb-2" size={20} />
@@ -199,7 +199,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            ChainSync's Closed-Loop Incident Management covers all 7 phases — from the first alert to a closed, documented record.
+            ChainSync's Closed-Loop Incident Management covers all 7 phases, from the first alert to a closed, documented record.
           </motion.p>
 
           <div className="relative">
@@ -292,7 +292,7 @@ export default function Home() {
                 <Layers className="text-primary mb-4" size={32} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">Integration Layer</h3>
                 <p className="text-muted-foreground text-sm">
-                  Platform-agnostic orchestration built on MuleSoft — swappable with Workato, Boomi, and more. Any external system can trigger ChainSync via HTTP POST using the Universal Webhook Endpoint.
+                  Platform-agnostic orchestration built on MuleSoft, swappable with Workato, Boomi, and more. Any external system can trigger ChainSync via HTTP POST using the Universal Webhook Endpoint.
                 </p>
               </Card>
             </motion.div>
@@ -325,7 +325,7 @@ export default function Home() {
                 <Bot className="text-accent mb-4" size={32} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">AI Agents</h3>
                 <p className="text-muted-foreground text-sm">
-                  17 specialized Python agents providing intelligent risk analysis and incident coordination. GPT-4 powered reasoning for detection, analysis, and response coordination.
+                  17 specialized Python agents providing intelligent risk analysis and incident coordination. AI-powered reasoning for detection, analysis, and response coordination.
                 </p>
               </Card>
             </motion.div>
@@ -422,7 +422,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Three independently maintainable layers connected through standard HTTP — no proprietary protocols, no black boxes.
+            Three independently maintainable layers connected through standard HTTP. No proprietary protocols., no black boxes.
           </motion.p>
 
           <div className="max-w-3xl mx-auto">
@@ -446,7 +446,7 @@ export default function Home() {
             >
               <h4 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack — can connect through the Universal Webhook Endpoint without changes to the agent layer or Slotify.
+                ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST: Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack, can connect through the Universal Webhook Endpoint without changes to the agent layer or Slotify.
               </p>
             </motion.div>
 
@@ -544,7 +544,7 @@ export default function Home() {
             Built by someone who's done this
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            <span className="font-semibold text-foreground">Uma Madasu</span> — 6+ years as a MuleSoft Integration Engineer, working with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. I built ChainSync because I kept seeing the same problem: critical systems that couldn't talk to each other when it mattered most. Emergency response shouldn't depend on phone trees and spreadsheets.
+            <span className="font-semibold text-foreground">Uma Madasu</span>, 6+ years as a MuleSoft Integration Engineer, working with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. I built ChainSync because I kept seeing the same problem: critical systems that couldn't talk to each other when it mattered most. Emergency response shouldn't depend on phone trees and spreadsheets.
           </p>
           <p className="text-muted-foreground mb-6">
             Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
@@ -587,7 +587,7 @@ export default function Home() {
               <Server className="text-blue-200 mb-4" size={28} />
               <h3 className="font-semibold text-white mb-2">Dedicated Sandbox Instance</h3>
               <p className="text-blue-100 text-sm leading-relaxed">
-                An isolated environment to evaluate ChainSync against your own workflows — not a shared demo.
+                An isolated environment to evaluate ChainSync against your own workflows. Not a shared demo.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="bg-white/10 border border-white/20 rounded-lg p-6">
