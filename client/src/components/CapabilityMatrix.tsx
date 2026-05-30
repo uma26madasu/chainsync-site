@@ -143,7 +143,7 @@ export default function CapabilityMatrix() {
               <div className="w-2 h-2 rounded-full bg-green-500 mt-1.5 flex-shrink-0" />
               <div>
                 <p className="text-xs font-semibold text-green-800 mb-0.5">
-                  {active.vertical} — {active.cap}
+                  {active.vertical}: {active.cap}
                 </p>
                 <p className="text-sm text-green-900">{activeDesc}</p>
               </div>

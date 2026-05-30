@@ -188,7 +188,7 @@ export default function AnimatedHeroFlow() {
           External Monitoring Systems
         </text>
         <text x={W - 8} y={H - 10} fontSize={7} fill="#475569" textAnchor="end">
-          Automated — hours of coordination, in minutes
+          Automated. Hours of coordination, compressed to minutes.
         </text>
       </svg>
 

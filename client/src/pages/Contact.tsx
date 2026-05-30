@@ -275,7 +275,7 @@ export default function Contact() {
               <Card className="p-6 bg-white border border-border">
                 <h3 className="font-semibold text-foreground mb-3">When will ChainSync be available?</h3>
                 <p className="text-muted-foreground">
-                  We're currently in active development and working with select pilot partners for Q3 2026 testing. We don't have a public launch date yet—we're prioritizing building the system correctly over launching quickly. Join our early access list to be notified when testing opportunities become available.
+                  We're currently in active development and working with select pilot partners for Q3 2026 testing. We don't have a public launch date yet. We're prioritizing building the system correctly over launching quickly. Join our early access list to be notified when testing opportunities become available.
                 </p>
               </Card>
             </motion.div>
@@ -320,7 +320,7 @@ export default function Contact() {
               <Card className="p-6 bg-white border border-border">
                 <h3 className="font-semibold text-foreground mb-3">Will this replace human responders?</h3>
                 <p className="text-muted-foreground">
-                  No. ChainSync is designed to augment human expertise, not replace it. The system handles coordination, notifications, and documentation—the administrative overhead that slows down response. This frees up environmental professionals to focus on what they do best: making decisions and taking action to protect communities and ecosystems.
+                  No. ChainSync is designed to augment human expertise, not replace it. The system handles coordination, notifications, and documentation, the administrative overhead that slows down response. This frees up environmental professionals to focus on what they do best: making decisions and taking action to protect communities and ecosystems.
                 </p>
               </Card>
             </motion.div>

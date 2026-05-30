@@ -96,7 +96,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            From the first sensor reading to a scheduled emergency response meeting — every step is automated.
+            From the first sensor reading to a scheduled emergency response meeting. Every step is automated.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -249,7 +249,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            The same core architecture applies across verticals — specialized agents handle domain-specific logic.
+            The same core architecture applies across verticals. Specialized agents handle domain-specific logic.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -321,7 +321,7 @@ export default function Technology() {
           >
             <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
             <p className="text-sm text-muted-foreground">
-              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack — can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
+              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
             </p>
           </motion.div>
         </div>

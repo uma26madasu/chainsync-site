@@ -13,7 +13,7 @@ export default function Insights() {
   const articles = [
     {
       title: "I Got Tired of Living Across 4 Calendar Apps, So I Built Slotify",
-      description: "The personal journey behind building Slotify—ChainSync's autonomous scheduling engine. What started as calendar chaos became a core component for emergency meeting coordination.",
+      description: "The personal journey behind building Slotify, ChainSync's autonomous scheduling engine. What started as calendar chaos became a core component for emergency meeting coordination.",
       url: "https://medium.com/@umamadasu/i-got-tired-of-living-across-4-calendar-apps-so-i-built-slotify-b0445c595648",
       icon: BookOpen,
       color: "text-orange-600"

@@ -13,7 +13,7 @@ const STACKS = [
     textColor: "text-blue-700",
     dotColor: "bg-blue-500",
     tech: ["MuleSoft", "DataWeave", "Universal Webhook", "22+ Flows"],
-    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here — MuleSoft is the current implementation, but the architecture is swappable by design.",
+    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. MuleSoft is the current implementation, but the architecture is swappable by design.",
     items: [
       { name: "MuleSoft", desc: "Enterprise integration platform" },
       { name: "DataWeave", desc: "Data transformation language" },

@@ -15,5 +15,5 @@ export const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-// Shared viewport config — triggers once when 60px past fold
+// Shared viewport config, triggers once when 60px past fold
 export const viewport = { once: true, margin: "-60px" } as const;

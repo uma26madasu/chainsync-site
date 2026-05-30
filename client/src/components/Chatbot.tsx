@@ -31,31 +31,31 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["mulesoft", "workato", "boomi", "integration hub", "integration", "api", "webhook", "connector", "universal", "bosch", "climatic", "bms", "building management"],
     topic: "integrationHub",
-    text: "The Universal Integration Hub is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks — 22 flow implementations deployed today with AWS, Azure, and MuleSoft compatibility. For healthcare facilities running Bosch Climatic BMS, a dedicated adapter receives threshold breach events automatically and routes them to the AI agent layer — no manual handoff required. No rip-and-replace required.",
+    text: "The Universal Integration Hub is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks. 22 flow implementations deployed today with AWS, Azure, and MuleSoft compatibility. For healthcare facilities running Bosch Climatic BMS, a dedicated adapter receives threshold breach events automatically and routes them to the AI agent layer, with no manual handoff required. No rip-and-replace required.",
     quickReplies: ["How does it work?", "What about security?", "Implementation"]
   },
   {
     keywords: ["slotify", "scheduling", "scheduler", "calendar", "outlook", "google calendar", "meeting", "coordination"],
     topic: "slotify",
-    text: "Slotify is ChainSync's intelligent scheduling component, live at slotify.getchainsync.com. It handles autonomous meeting coordination — detecting the right authority, resolving multi-calendar conflicts, and triggering emergency overrides. Google Calendar and Microsoft 365 integrations are live; Outlook backend is still in development.",
+    text: "Slotify is ChainSync's intelligent scheduling component, live at slotify.getchainsync.com. It handles autonomous meeting coordination, detecting the right authority, resolving multi-calendar conflicts, and triggering emergency overrides. Google Calendar and Microsoft 365 integrations are live; Outlook backend is still in development.",
     quickReplies: ["How does it work?", "Development status", "Join early access"]
   },
   {
     keywords: ["security", "secure", "soc2", "soc 2", "hipaa", "encrypt", "data", "compliance", "gdpr", "iso"],
     topic: "security",
-    text: "Security is built into the roadmap: SOC 2 Type II audit is targeted for Q1, HIPAA certification for Q2, ISO 27001 for Q3, and GDPR validation for Q4 2026. Data is encrypted in transit and at rest. The platform is designed for regulated environments — water utilities, hospitals, and industrial facilities.",
+    text: "Security is built into the roadmap: SOC 2 Type II audit is targeted for Q1, HIPAA certification for Q2, ISO 27001 for Q3, and GDPR validation for Q4 2026. Data is encrypted in transit and at rest. The platform is designed for regulated environments: water utilities, hospitals, and industrial facilities.",
     quickReplies: ["Compliance details", "Implementation", "Join early access"]
   },
   {
     keywords: ["implement", "deploy", "setup", "set up", "get started", "onboard", "rollout", "install"],
     topic: "implementation",
-    text: "Implementation is designed to be non-disruptive. The Integration Hub connects to your existing SCADA, IoT, and communication systems via APIs and webhooks — no rip-and-replace. Pilot partners get dedicated technical support throughout onboarding. We handle the integration complexity so your team can focus on response.",
+    text: "Implementation is designed to be non-disruptive. The Integration Hub connects to your existing SCADA, IoT, and communication systems via APIs and webhooks. No rip-and-replace. Pilot partners get dedicated technical support throughout onboarding. We handle the integration complexity so your team can focus on response.",
     quickReplies: ["What's the Integration Hub?", "Pricing", "Join early access"]
   },
   {
     keywords: ["cost", "savings", "roi", "value", "benefit", "save", "reduce", "efficient"],
     topic: "costSavings",
-    text: "The core value: reducing coordination time from 4–6 hours of manual phone calls and emails to minutes of automated orchestration. For environmental incidents, that window directly impacts regulatory penalties, remediation costs, and community health outcomes. Early access partners get preferential pricing — no upfront costs during the pilot phase.",
+    text: "The core value: reducing coordination time from 4–6 hours of manual phone calls and emails to minutes of automated orchestration. For environmental incidents, that window directly impacts regulatory penalties, remediation costs, and community health outcomes. Early access partners get preferential pricing . No upfront costs during the pilot phase.",
     quickReplies: ["Pricing", "Join early access", "How does it work?"]
   },
   {
@@ -67,7 +67,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["water", "treatment", "scada", "facility", "wastewater", "drinking water", "contamination"],
     topic: "waterTreatment",
-    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor quality parameters in real-time. Anomalies trigger automatic response coordination, operator notifications, and regulatory documentation — in minutes rather than hours. Critical for public health protection and compliance.",
+    text: "For water treatment facilities, ChainSync integrates directly with SCADA systems to monitor quality parameters in real-time. Anomalies trigger automatic response coordination, operator notifications, and regulatory documentation in minutes rather than hours. Critical for public health protection and compliance.",
     quickReplies: ["SCADA integration", "What about security?", "Join early access"]
   },
   {
@@ -79,7 +79,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "2026"],
     topic: "timeline",
-    text: "17 agents are live today — healthcare vertical complete with 5 agents covering Joint Commission and medical equipment compliance. Q2 closes the healthcare phase at 18, Q3 adds 6 manufacturing agents, Q4 adds 6 energy & finance agents (30 total). Pilot testing runs Q3 2026.",
+    text: "17 agents are live today. Healthcare vertical complete with 5 agents covering Joint Commission and medical equipment compliance. Q2 closes the healthcare phase at 18, Q3 adds 6 manufacturing agents, Q4 adds 6 energy & finance agents (30 total). Pilot testing runs Q3 2026.",
     quickReplies: ["Join early access", "Development status", "Pricing"]
   },
   {
@@ -91,25 +91,25 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["development", "status", "progress", "built", "ready", "production", "live"],
     topic: "devStatus",
-    text: "17 agents are live today — healthcare vertical complete. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational. We're currently validating integrated system performance with pilot partners ahead of the Q3 2026 pilot program.",
+    text: "17 agents are live today. Healthcare vertical complete. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational. We're currently validating integrated system performance with pilot partners ahead of the Q3 2026 pilot program.",
     quickReplies: ["Python agents?", "Timeline details", "Join early access"]
   },
   {
     keywords: ["replace", "human", "responder", "automation", "augment", "job", "people"],
     topic: "humanRole",
-    text: "ChainSync augments human expertise — it doesn't replace it. The system handles coordination, notifications, and documentation (the overhead that slows response). That frees your team to focus on what matters: making decisions and taking action to protect communities.",
+    text: "ChainSync augments human expertise, not replace it. The system handles coordination, notifications, and documentation (the overhead that slows response). That frees your team to focus on what matters: making decisions and taking action to protect communities.",
     quickReplies: ["How does it work?", "Development status", "Join early access"]
   },
   {
     keywords: ["contact", "reach", "talk", "demo", "call", "email", "speak", "get in touch", "hello"],
     topic: "contact",
-    text: "Best way to reach us is through the Contact page on the site. Whether you're interested in the pilot program, have a technical question, or want to discuss a specific use case — fill out the form and we'll get back to you directly.",
+    text: "Best way to reach us is through the Contact page on the site. Whether you're interested in the pilot program, have a technical question, or want to discuss a specific use case. Fill out the form and we'll get back to you directly.",
     quickReplies: ["Join early access", "Pricing", "Implementation"]
   },
   {
     keywords: ["uma", "founder", "who built", "who made", "team", "about", "background"],
     topic: "founder",
-    text: "ChainSync was built by Uma Madasu — 6+ years as a MuleSoft Integration Engineer with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. Dual Master's in MIS and Cybersecurity, MuleSoft Developer Level 1 certified, based in Atlanta, GA. Built ChainSync after repeatedly seeing critical systems that couldn't talk to each other during emergencies.",
+    text: "ChainSync was built by Uma Madasu, with 6+ years as a MuleSoft Integration Engineer with enterprise clients including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. Dual Master's in MIS and Cybersecurity, MuleSoft Developer Level 1 certified, based in Atlanta, GA. Built ChainSync after repeatedly seeing critical systems that couldn't talk to each other during emergencies.",
     quickReplies: ["How does it work?", "Join early access", "Contact us"]
   }
 ];
@@ -180,7 +180,7 @@ export default function Chatbot() {
       // If same topic repeated, acknowledge it briefly then give the answer
       const repeated = match.topic === context.lastTopic;
       botText = repeated
-        ? `To add a bit more on that — ${match.text}`
+        ? `To add a bit more on that: ${match.text}`
         : match.text;
       quickReplies = match.quickReplies ?? [];
       setContext(prev => ({
@@ -189,7 +189,7 @@ export default function Chatbot() {
         topics: [...prev.topics, match.topic]
       }));
     } else {
-      botText = "I don't have specifics on that yet — but I can help with our agents, integrations, Slotify, security, pricing, or the pilot program.";
+      botText = "I don't have specifics on that yet, but I can help with our agents, integrations, Slotify, security, pricing, or the pilot program.";
       quickReplies = ["How does it work?", "Join early access", "Contact us"];
     }
 

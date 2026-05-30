@@ -108,7 +108,7 @@ export default function Roadmaps() {
                   <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
                   <span className="bg-green-100 text-green-700 border border-green-300 text-sm font-semibold px-3 py-1 rounded-full">✓ Completed</span>
                 </div>
-                <p className="text-muted-foreground">17 agents currently live — infrastructure complete</p>
+                <p className="text-muted-foreground">17 agents currently live. Infrastructure complete.</p>
               </div>
             </motion.div>
 
@@ -232,11 +232,11 @@ export default function Roadmaps() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Medical equipment failure response — FDA MDR checks, Biomedical Engineering dispatch, EC.02.06 documentation</span>
+                    <span>Medical equipment failure response: FDA MDR checks, Biomedical Engineering dispatch, EC.02.06 documentation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span>Daily PM scan — overdue maintenance flagged, EC.02.06.01 compliance docs, survey readiness score</span>
+                    <span>Daily PM scan: overdue maintenance flagged, EC.02.06.01 compliance docs, survey readiness score</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
