@@ -498,11 +498,11 @@ export default function UseCases() {
               </div>
               <div className="space-y-2">
                 {[
-                  { label: "EC.02.05 — Life Safety Rounding", status: "Current", ok: true },
-                  { label: "EC.02.06 — PM Schedule", status: "2 overdue", ok: false },
-                  { label: "EC.04.01 — Incident Reports", status: "Current", ok: true },
+                  { label: "EC.02.05: Life Safety Rounding", status: "Current", ok: true },
+                  { label: "EC.02.06: PM Schedule", status: "2 overdue", ok: false },
+                  { label: "EC.04.01: Incident Reports", status: "Current", ok: true },
                   { label: "CMS QSO-17-30 Fire Drill", status: "Current", ok: true },
-                  { label: "FDA MDR — Infusion Pump #4", status: "Triggered", ok: false },
+                  { label: "FDA MDR: Infusion Pump #4", status: "Triggered", ok: false },
                 ].map((row, i) => (
                   <motion.div
                     key={row.label}
