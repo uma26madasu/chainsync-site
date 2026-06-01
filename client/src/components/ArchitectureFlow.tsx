@@ -7,10 +7,11 @@ const PILLARS = [
     step: "01",
     label: "Ingestion Layer",
     sublabel: "MuleSoft / Universal Webhook",
-    color: "#2563eb",
-    bgColor: "#eff6ff",
-    borderColor: "#bfdbfe",
-    accentColor: "#3b82f6",
+    color: "#3b82f6",
+    bgColor: "#f8fbff",
+    borderColor: "#dbeafe",
+    accentColor: "#93c5fd",
+    textColor: "#1d4ed8",
     bullets: [
       "Universal Webhook Endpoint receives events",
       "DataWeave normalizes heterogeneous formats",
@@ -28,10 +29,11 @@ const PILLARS = [
     step: "02",
     label: "AI Orchestration Layer",
     sublabel: "17 Python Agents",
-    color: "#7c3aed",
-    bgColor: "#f5f3ff",
-    borderColor: "#ddd6fe",
-    accentColor: "#8b5cf6",
+    color: "#8b5cf6",
+    bgColor: "#faf8ff",
+    borderColor: "#ede9fe",
+    accentColor: "#c4b5fd",
+    textColor: "#6d28d9",
     bullets: [
       "Detection agents identify anomalies",
       "Analysis agents assess severity and scope",
@@ -49,10 +51,11 @@ const PILLARS = [
     step: "03",
     label: "Action & Dispatch",
     sublabel: "Slotify Integration",
-    color: "#059669",
-    bgColor: "#f0fdf4",
-    borderColor: "#bbf7d0",
-    accentColor: "#10b981",
+    color: "#10b981",
+    bgColor: "#f7fffe",
+    borderColor: "#d1fae5",
+    accentColor: "#6ee7b7",
+    textColor: "#065f46",
     bullets: [
       "Slotify resolves multi-calendar conflicts",
       "Emergency overrides applied automatically",
@@ -70,10 +73,11 @@ const PILLARS = [
     step: "04",
     label: "Compliance & Audit",
     sublabel: "Resolution Record",
-    color: "#0369a1",
-    bgColor: "#f0f9ff",
-    borderColor: "#bae6fd",
-    accentColor: "#0ea5e9",
+    color: "#38bdf8",
+    bgColor: "#f8fcff",
+    borderColor: "#e0f2fe",
+    accentColor: "#7dd3fc",
+    textColor: "#0369a1",
     bullets: [
       "Full audit trail persisted to MongoDB",
       "Compliance documentation auto-generated",
@@ -92,16 +96,17 @@ function PulseConnector({ color, delay }: { color: string; delay: number }) {
   return (
     <div className="hidden md:flex flex-col items-center justify-center w-12 flex-shrink-0 relative" style={{ marginTop: "60px" }}>
       <svg width="48" height="24" viewBox="0 0 48 24" fill="none" className="overflow-visible">
-        <line x1="0" y1="12" x2="40" y2="12" stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 3" />
+        <line x1="0" y1="12" x2="40" y2="12" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="4 3" />
         <motion.circle
           cx={0}
           cy={12}
           r={3.5}
           fill={color}
-          animate={{ cx: [0, 40], opacity: [0, 1, 1, 0] }}
+          opacity={0.7}
+          animate={{ cx: [0, 40], opacity: [0, 0.7, 0.7, 0] }}
           transition={{ duration: 1.4, delay, repeat: Infinity, repeatDelay: 0.8, ease: "easeInOut" }}
         />
-        <polygon points="40,8 48,12 40,16" fill="#94a3b8" />
+        <polygon points="40,8 48,12 40,16" fill="#cbd5e1" />
       </svg>
     </div>
   );
@@ -132,14 +137,14 @@ export default function ArchitectureFlow() {
               >
                 <div
                   className="rounded-lg p-2 flex-shrink-0 mt-0.5"
-                  style={{ backgroundColor: pillar.accentColor + "20", color: pillar.color }}
+                  style={{ backgroundColor: pillar.accentColor + "60", color: (pillar as any).textColor ?? pillar.color }}
                 >
                   {pillar.icon}
                 </div>
                 <div className="min-w-0">
                   <div
                     className="text-xs font-bold tracking-widest uppercase mb-0.5"
-                    style={{ color: pillar.accentColor }}
+                    style={{ color: (pillar as any).textColor ?? pillar.color }}
                   >
                     Step {pillar.step}
                   </div>
