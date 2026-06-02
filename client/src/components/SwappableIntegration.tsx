@@ -63,11 +63,11 @@ export default function SwappableIntegration() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="bg-slate-900 border-2 border-slate-600 rounded-xl px-8 py-4 text-center shadow-lg"
+          className="bg-sky-50 border-2 border-sky-200 rounded-xl px-8 py-4 text-center shadow-sm"
         >
-          <p className="text-xs font-bold tracking-widest text-slate-400 mb-1">CORE ENDPOINT</p>
-          <p className="text-base font-bold text-white">Universal Webhook Endpoint</p>
-          <p className="text-xs text-slate-400 mt-1">Standard HTTP POST. Accepts events from any source.</p>
+          <p className="text-xs font-bold tracking-widest text-sky-500 mb-1">CORE ENDPOINT</p>
+          <p className="text-base font-bold text-slate-800">Universal Webhook Endpoint</p>
+          <p className="text-xs text-slate-500 mt-1">Standard HTTP POST. Accepts events from any source.</p>
         </motion.div>
 
         {/* Connection line */}

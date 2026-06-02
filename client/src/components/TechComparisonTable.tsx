@@ -61,7 +61,7 @@ export default function TechComparisonTable() {
                   ? "bg-red-500 text-white shadow-sm"
                   : v === "after"
                   ? "bg-green-500 text-white shadow-sm"
-                  : "bg-slate-800 text-white shadow-sm"
+                  : "bg-slate-200 text-slate-700 shadow-sm"
                 : "bg-slate-100 text-muted-foreground hover:bg-slate-200"
             }`}
           >

@@ -124,10 +124,10 @@ export default function UseCases() {
               whileInView="visible"
               viewport={viewport}
               transition={{ delay: 0.18 }}
-              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+              className="bg-slate-50 rounded-xl p-6 border border-slate-200"
             >
               <div className="flex items-center gap-2 mb-4">
-                <Droplets className="text-blue-400" size={18} />
+                <Droplets className="text-blue-500" size={18} />
                 <span className="text-xs font-bold tracking-widest text-slate-400">LIVE MONITORING</span>
               </div>
               <div className="space-y-3">
@@ -139,18 +139,18 @@ export default function UseCases() {
                 ].map((row, i) => (
                   <motion.div
                     key={row.label}
-                    className="flex items-center justify-between bg-slate-800 rounded-lg px-4 py-2.5"
+                    className="flex items-center justify-between bg-white rounded-lg px-4 py-2.5 border border-slate-100"
                     initial={{ opacity: 0, x: 12 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.28, delay: 0.25 + i * 0.07 }}
                   >
                     <div>
-                      <p className="text-xs font-semibold text-slate-200">{row.label}</p>
+                      <p className="text-xs font-semibold text-slate-700">{row.label}</p>
                       <p className="text-xs text-slate-500">{row.threshold}</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-slate-100">{row.value}</span>
+                      <span className="text-sm font-bold text-slate-800">{row.value}</span>
                       <span className="w-2 h-2 rounded-full bg-green-400" />
                     </div>
                   </motion.div>
@@ -167,7 +167,7 @@ export default function UseCases() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
-              className="order-2 lg:order-1 bg-slate-900 rounded-xl p-6 border border-slate-700"
+              className="order-2 lg:order-1 bg-slate-50 rounded-xl p-6 border border-slate-200"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -175,7 +175,7 @@ export default function UseCases() {
               transition={{ delay: 0.12 }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <Gauge className="text-emerald-400" size={18} />
+                <Gauge className="text-emerald-600" size={18} />
                 <span className="text-xs font-bold tracking-widest text-slate-400">EMISSIONS MONITOR</span>
               </div>
               <div className="space-y-3">
@@ -187,18 +187,18 @@ export default function UseCases() {
                 ].map((row, i) => (
                   <motion.div
                     key={row.label}
-                    className="flex items-center justify-between bg-slate-800 rounded-lg px-4 py-2.5"
+                    className="flex items-center justify-between bg-white rounded-lg px-4 py-2.5 border border-slate-100"
                     initial={{ opacity: 0, x: -12 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.28, delay: 0.2 + i * 0.08 }}
                   >
                     <div>
-                      <p className="text-xs font-semibold text-slate-200">{row.label}</p>
+                      <p className="text-xs font-semibold text-slate-700">{row.label}</p>
                       <p className="text-xs text-slate-500">{row.threshold}</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-slate-100">{row.value}</span>
+                      <span className="text-sm font-bold text-slate-800">{row.value}</span>
                       <span className={`w-2 h-2 rounded-full ${row.status === "alert" ? "bg-red-400" : row.status === "warning" ? "bg-amber-400" : "bg-green-400"}`} />
                     </div>
                   </motion.div>
@@ -366,7 +366,7 @@ export default function UseCases() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+              className="bg-slate-50 rounded-xl p-6 border border-slate-200"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -374,20 +374,20 @@ export default function UseCases() {
               transition={{ delay: 0.15 }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <Building2 className="text-amber-400" size={18} />
+                <Building2 className="text-amber-500" size={18} />
                 <span className="text-xs font-bold tracking-widest text-slate-400">INCIDENT PIPELINE</span>
               </div>
               <div className="space-y-2">
                 {[
                   { step: "01", label: "Chemical spill detected at River St intersection", time: "00:00", color: "text-red-400" },
-                  { step: "02", label: "Hazmat, public works, and EPA contacts identified", time: "00:04", color: "text-amber-400" },
-                  { step: "03", label: "Multi-agency notification sent", time: "00:12", color: "text-blue-400" },
-                  { step: "04", label: "Emergency response meeting scheduled", time: "00:31", color: "text-emerald-400" },
+                  { step: "02", label: "Hazmat, public works, and EPA contacts identified", time: "00:04", color: "text-amber-600" },
+                  { step: "03", label: "Multi-agency notification sent", time: "00:12", color: "text-blue-600" },
+                  { step: "04", label: "Emergency response meeting scheduled", time: "00:31", color: "text-emerald-700" },
                   { step: "05", label: "Compliance report draft generated", time: "00:38", color: "text-slate-400" },
                 ].map((item, i) => (
                   <motion.div
                     key={item.step}
-                    className="flex items-start gap-3 bg-slate-800 rounded-lg px-3 py-2.5"
+                    className="flex items-start gap-3 bg-white rounded-lg px-3 py-2.5 border border-slate-100"
                     initial={{ opacity: 0, y: 8 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -485,7 +485,7 @@ export default function UseCases() {
             </motion.div>
 
             <motion.div
-              className="bg-slate-900 rounded-xl p-6 border border-slate-700"
+              className="bg-slate-50 rounded-xl p-6 border border-slate-200"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -506,7 +506,7 @@ export default function UseCases() {
                 ].map((row, i) => (
                   <motion.div
                     key={row.label}
-                    className="flex items-center justify-between bg-slate-800 rounded-lg px-3 py-2"
+                    className="flex items-center justify-between bg-white rounded-lg px-3 py-2 border border-slate-100"
                     initial={{ opacity: 0, x: 12 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
