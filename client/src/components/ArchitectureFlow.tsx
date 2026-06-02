@@ -1,17 +1,19 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
+// Palette: white, light-blue (#bae6fd / #e0f2fe), light-green (#bbf7d0 / #dcfce7), grey (#e2e8f0 / #f1f5f9)
 const PILLARS = [
   {
     id: "ingestion",
     step: "01",
     label: "Ingestion Layer",
     sublabel: "MuleSoft / Universal Webhook",
-    color: "#3b82f6",
-    bgColor: "#f8fbff",
-    borderColor: "#dbeafe",
-    accentColor: "#93c5fd",
-    textColor: "#1d4ed8",
+    headerBg: "#e0f2fe",      // sky-100
+    border: "#bae6fd",         // sky-200
+    dot: "#7dd3fc",            // sky-300  — bullet & pulse dot
+    iconBg: "#f0f9ff",         // sky-50
+    iconStroke: "#0284c7",     // sky-600 — readable icon color
+    stepText: "#0369a1",       // sky-700
     bullets: [
       "Universal Webhook Endpoint receives events",
       "DataWeave normalizes heterogeneous formats",
@@ -29,11 +31,12 @@ const PILLARS = [
     step: "02",
     label: "AI Orchestration Layer",
     sublabel: "17 Python Agents",
-    color: "#8b5cf6",
-    bgColor: "#faf8ff",
-    borderColor: "#ede9fe",
-    accentColor: "#c4b5fd",
-    textColor: "#6d28d9",
+    headerBg: "#f1f5f9",      // slate-100
+    border: "#e2e8f0",         // slate-200
+    dot: "#cbd5e1",            // slate-300
+    iconBg: "#f8fafc",         // slate-50
+    iconStroke: "#475569",     // slate-600
+    stepText: "#334155",       // slate-700
     bullets: [
       "Detection agents identify anomalies",
       "Analysis agents assess severity and scope",
@@ -51,11 +54,12 @@ const PILLARS = [
     step: "03",
     label: "Action & Dispatch",
     sublabel: "Slotify Integration",
-    color: "#10b981",
-    bgColor: "#f7fffe",
-    borderColor: "#d1fae5",
-    accentColor: "#6ee7b7",
-    textColor: "#065f46",
+    headerBg: "#dcfce7",      // green-100
+    border: "#bbf7d0",         // green-200
+    dot: "#86efac",            // green-300
+    iconBg: "#f0fdf4",         // green-50
+    iconStroke: "#16a34a",     // green-600
+    stepText: "#15803d",       // green-700
     bullets: [
       "Slotify resolves multi-calendar conflicts",
       "Emergency overrides applied automatically",
@@ -73,11 +77,12 @@ const PILLARS = [
     step: "04",
     label: "Compliance & Audit",
     sublabel: "Resolution Record",
-    color: "#38bdf8",
-    bgColor: "#f8fcff",
-    borderColor: "#e0f2fe",
-    accentColor: "#7dd3fc",
-    textColor: "#0369a1",
+    headerBg: "#e0f2fe",      // sky-100 (matches pillar 1 for bookend symmetry)
+    border: "#bae6fd",         // sky-200
+    dot: "#7dd3fc",            // sky-300
+    iconBg: "#f0f9ff",         // sky-50
+    iconStroke: "#0284c7",     // sky-600
+    stepText: "#0369a1",       // sky-700
     bullets: [
       "Full audit trail persisted to MongoDB",
       "Compliance documentation auto-generated",
@@ -92,7 +97,7 @@ const PILLARS = [
   },
 ];
 
-function PulseConnector({ color, delay }: { color: string; delay: number }) {
+function PulseConnector({ dot, delay }: { dot: string; delay: number }) {
   return (
     <div className="hidden md:flex flex-col items-center justify-center w-12 flex-shrink-0 relative" style={{ marginTop: "60px" }}>
       <svg width="48" height="24" viewBox="0 0 48 24" fill="none" className="overflow-visible">
@@ -100,13 +105,12 @@ function PulseConnector({ color, delay }: { color: string; delay: number }) {
         <motion.circle
           cx={0}
           cy={12}
-          r={3.5}
-          fill={color}
-          opacity={0.7}
-          animate={{ cx: [0, 40], opacity: [0, 0.7, 0.7, 0] }}
-          transition={{ duration: 1.4, delay, repeat: Infinity, repeatDelay: 0.8, ease: "easeInOut" }}
+          r={3}
+          fill={dot}
+          animate={{ cx: [0, 40], opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 1.5, delay, repeat: Infinity, repeatDelay: 1, ease: "easeInOut" }}
         />
-        <polygon points="40,8 48,12 40,16" fill="#cbd5e1" />
+        <polygon points="40,9 48,12 40,15" fill="#cbd5e1" />
       </svg>
     </div>
   );
@@ -118,120 +122,108 @@ export default function ArchitectureFlow() {
 
   return (
     <div ref={ref} className="w-full">
-      {/* Step label bar */}
-      <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-0 w-full">
+      <div className="flex flex-col md:flex-row items-stretch w-full">
         {PILLARS.map((pillar, i) => (
           <div key={pillar.id} className="flex flex-col md:flex-row items-stretch flex-1 min-w-0">
+
             {/* Pillar card */}
             <motion.div
-              className="flex-1 min-w-0 rounded-xl border-2 overflow-hidden shadow-sm"
-              style={{ borderColor: pillar.borderColor, backgroundColor: "#ffffff" }}
-              initial={{ opacity: 0, y: 16 }}
+              className="flex-1 min-w-0 rounded-xl border overflow-hidden"
+              style={{ borderColor: pillar.border, backgroundColor: "#ffffff", boxShadow: "0 1px 4px 0 rgba(0,0,0,0.05)" }}
+              initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.3, delay: 0.1 + i * 0.12, ease: "easeOut" }}
+              transition={{ duration: 0.28, delay: 0.08 + i * 0.11, ease: "easeOut" }}
             >
-              {/* Pillar header */}
+              {/* Header */}
               <div
-                className="px-5 py-4 flex items-start gap-3"
-                style={{ backgroundColor: pillar.bgColor, borderBottom: `1px solid ${pillar.borderColor}` }}
+                className="px-4 py-4 flex items-start gap-3"
+                style={{ backgroundColor: pillar.headerBg, borderBottom: `1px solid ${pillar.border}` }}
               >
                 <div
-                  className="rounded-lg p-2 flex-shrink-0 mt-0.5"
-                  style={{ backgroundColor: pillar.accentColor + "60", color: (pillar as any).textColor ?? pillar.color }}
+                  className="rounded-lg p-2 flex-shrink-0"
+                  style={{ backgroundColor: pillar.iconBg, color: pillar.iconStroke }}
                 >
                   {pillar.icon}
                 </div>
-                <div className="min-w-0">
-                  <div
-                    className="text-xs font-bold tracking-widest uppercase mb-0.5"
-                    style={{ color: (pillar as any).textColor ?? pillar.color }}
-                  >
+                <div className="min-w-0 pt-0.5">
+                  <div className="text-xs font-semibold tracking-widest uppercase mb-0.5" style={{ color: pillar.stepText }}>
                     Step {pillar.step}
                   </div>
-                  <div className="text-sm font-bold text-slate-800 leading-tight">{pillar.label}</div>
-                  <div className="text-xs text-slate-500 mt-0.5">{pillar.sublabel}</div>
+                  <div className="text-sm font-bold text-slate-700 leading-snug">{pillar.label}</div>
+                  <div className="text-xs text-slate-400 mt-0.5">{pillar.sublabel}</div>
                 </div>
               </div>
 
-              {/* Pillar body */}
-              <div className="px-5 py-4 bg-white">
+              {/* Body */}
+              <div className="px-4 py-4 bg-white">
                 <ul className="space-y-2">
                   {pillar.bullets.map((bullet, bi) => (
                     <motion.li
                       key={bi}
-                      className="flex items-start gap-2.5 text-xs text-slate-600 leading-relaxed"
-                      initial={{ opacity: 0, x: -6 }}
+                      className="flex items-start gap-2.5 text-xs text-slate-500 leading-relaxed"
+                      initial={{ opacity: 0, x: -5 }}
                       animate={inView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.25, delay: 0.25 + i * 0.12 + bi * 0.06, ease: "easeOut" }}
+                      transition={{ duration: 0.22, delay: 0.22 + i * 0.11 + bi * 0.055, ease: "easeOut" }}
                     >
                       <span
                         className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-1.5"
-                        style={{ backgroundColor: pillar.accentColor }}
+                        style={{ backgroundColor: pillar.dot }}
                       />
                       {bullet}
                     </motion.li>
                   ))}
                 </ul>
 
-                {/* Completed badge on last pillar */}
+                {/* Completion badge on final pillar */}
                 {pillar.id === "compliance" && (
                   <motion.div
                     className="mt-4 flex items-center gap-2 px-3 py-2 rounded-lg"
                     style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0" }}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.92 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.75, ease: "easeOut" }}
+                    transition={{ duration: 0.25, delay: 0.72, ease: "easeOut" }}
                   >
                     <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4 flex-shrink-0" stroke="#16a34a" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 10l4 4 8-8" />
                     </svg>
-                    <span className="text-xs font-semibold text-green-700">Incident Resolved & Documented</span>
+                    <span className="text-xs font-semibold" style={{ color: "#15803d" }}>Incident Resolved &amp; Documented</span>
                   </motion.div>
                 )}
               </div>
             </motion.div>
 
-            {/* Connector between pillars */}
+            {/* Connector */}
             {i < PILLARS.length - 1 && (
-              <div className="flex md:flex-col items-center justify-center w-full md:w-12 h-8 md:h-auto md:flex-shrink-0 my-1 md:my-0 md:mx-0">
-                {/* Mobile: horizontal-ish spacer with down arrow */}
+              <div className="flex md:flex-col items-center justify-center w-full md:w-12 h-8 md:h-auto md:flex-shrink-0 my-1 md:my-0">
+                {/* Mobile down arrow */}
                 <div className="flex md:hidden items-center justify-center w-full">
-                  <motion.svg
-                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : {}}
-                    transition={{ delay: 0.3 + i * 0.12 }}
-                  >
-                    <path d="M12 5v14M6 13l6 6 6-6" stroke="#94a3b8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <motion.svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                    initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.3 + i * 0.11 }}>
+                    <path d="M10 4v12M5 11l5 5 5-5" stroke="#cbd5e1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </motion.svg>
                 </div>
-                {/* Desktop: animated pulse connector */}
-                {inView && (
-                  <PulseConnector color={PILLARS[i + 1].accentColor} delay={0.4 + i * 0.3} />
-                )}
+                {/* Desktop pulse */}
+                {inView && <PulseConnector dot={PILLARS[i + 1].dot} delay={0.5 + i * 0.28} />}
               </div>
             )}
+
           </div>
         ))}
       </div>
 
-      {/* Bottom legend */}
+      {/* Legend */}
       <motion.div
-        className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2"
+        className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-1.5"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ delay: 0.7, duration: 0.3 }}
+        transition={{ delay: 0.65, duration: 0.25 }}
       >
         {PILLARS.map((p) => (
           <div key={p.id} className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.accentColor }} />
-            <span className="text-xs text-slate-500">{p.label}</span>
+            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: p.dot }} />
+            <span className="text-xs text-slate-400">{p.label}</span>
           </div>
         ))}
-        <div className="flex items-center gap-1.5">
-          <span className="text-slate-300 text-xs">--</span>
-          <span className="text-xs text-slate-400">data pulse</span>
-        </div>
       </motion.div>
     </div>
   );
