@@ -394,8 +394,8 @@ export default function UseCases() {
                     transition={{ duration: 0.25, delay: 0.2 + i * 0.09 }}
                   >
                     <span className={`text-xs font-bold font-mono ${item.color} mt-0.5`}>{item.step}</span>
-                    <p className="text-xs text-slate-300 flex-grow">{item.label}</p>
-                    <span className="text-xs font-mono text-slate-500 flex-shrink-0">{item.time}s</span>
+                    <p className="text-xs text-slate-700 flex-grow">{item.label}</p>
+                    <span className="text-xs font-mono text-slate-400 flex-shrink-0">{item.time}s</span>
                   </motion.div>
                 ))}
               </div>
@@ -512,8 +512,8 @@ export default function UseCases() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.25, delay: 0.25 + i * 0.07 }}
                   >
-                    <p className="text-xs text-slate-300">{row.label}</p>
-                    <span className={`text-xs font-semibold px-2 py-0.5 rounded ${row.ok ? "bg-green-900 text-green-300" : "bg-red-900 text-red-300"}`}>
+                    <p className="text-xs text-slate-700">{row.label}</p>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded ${row.ok ? "bg-green-100 text-green-700" : "bg-red-100 text-red-600"}`}>
                       {row.status}
                     </span>
                   </motion.div>
