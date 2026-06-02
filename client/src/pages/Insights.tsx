@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
 import IncidentCostChart from "@/components/IncidentCostChart";
+import CoordinationTimeComparison from "@/components/insights/CoordinationTimeComparison";
 
 export default function Insights() {
   const articles = [
@@ -213,6 +214,32 @@ export default function Insights() {
           >
             <IncidentCostChart />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Coordination Time Comparison */}
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Coordination Time: Manual vs. ChainSync
+          </motion.h2>
+          <motion.p
+            className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Every vertical has different bottlenecks, agency overlaps, and compliance burdens.
+            Each graph reflects that reality — same platform, different response profiles.
+          </motion.p>
+          <CoordinationTimeComparison />
         </div>
       </section>
 
