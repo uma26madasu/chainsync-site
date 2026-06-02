@@ -2,10 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const STEPS = [
-  { label: "INGEST", sublabel: "Webhook receives event", color: "#3b82f6", bg: "#1e3a5f", dot: "#60a5fa" },
-  { label: "ANALYZE", sublabel: "17 agents evaluate risk", color: "#10b981", bg: "#052e16", dot: "#34d399" },
-  { label: "ORCHESTRATE", sublabel: "Slotify schedules response", color: "#f59e0b", bg: "#2d1a00", dot: "#fbbf24" },
-  { label: "REPORT", sublabel: "Audit-ready PDF generated", color: "#8b5cf6", bg: "#1e1b4b", dot: "#a78bfa" },
+  { label: "INGEST",      sublabel: "Webhook receives event",       bg: "#f0f9ff", border: "#bae6fd", dot: "#7dd3fc",  text: "#0369a1" },
+  { label: "ANALYZE",     sublabel: "17 agents evaluate risk",       bg: "#f0fdf4", border: "#bbf7d0", dot: "#86efac",  text: "#15803d" },
+  { label: "ORCHESTRATE", sublabel: "Slotify schedules response",    bg: "#fffbeb", border: "#fde68a", dot: "#fbbf24",  text: "#92400e" },
+  { label: "REPORT",      sublabel: "Audit-ready log generated",     bg: "#faf8ff", border: "#ede9fe", dot: "#c4b5fd",  text: "#5b21b6" },
 ];
 
 const NODE_R = 28;
@@ -23,11 +23,11 @@ export default function ProcessFlowAnimation() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <div ref={ref} className="w-full rounded-xl overflow-hidden bg-slate-900 border border-slate-700 shadow-lg">
+    <div ref={ref} className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" aria-label="ChainSync 4-step process flow">
-        <rect width={W} height={H} fill="#0f172a" />
+        <rect width={W} height={H} fill="#ffffff" />
 
-        {/* Connector lines between nodes */}
+        {/* Connector lines */}
         {STEPS.slice(0, -1).map((step, i) => {
           const x1 = nodeX(i) + NODE_R;
           const x2 = nodeX(i + 1) - NODE_R;
@@ -35,17 +35,16 @@ export default function ProcessFlowAnimation() {
             <g key={i}>
               <motion.line
                 x1={x1} y1={Y} x2={x2} y2={Y}
-                stroke={step.color}
+                stroke={step.border}
                 strokeWidth={2}
                 strokeDasharray="6 4"
                 initial={{ pathLength: 0, opacity: 0 }}
-                animate={inView ? { pathLength: 1, opacity: 0.5 } : {}}
+                animate={inView ? { pathLength: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.4 }}
               />
-              {/* Flowing dot */}
               {inView && (
                 <motion.circle
-                  r={5}
+                  r={4}
                   fill={step.dot}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: [0, 1, 1, 0], x: [x1, x2] }}
@@ -68,27 +67,12 @@ export default function ProcessFlowAnimation() {
           const cx = nodeX(i);
           return (
             <g key={step.label}>
-              {/* Pulse rings */}
-              {inView && [0, 1].map((j) => (
-                <motion.circle
-                  key={j}
-                  cx={cx} cy={Y} r={NODE_R}
-                  fill="none"
-                  stroke={step.color}
-                  strokeWidth={1.5}
-                  initial={{ opacity: 0.5, scale: 1 }}
-                  animate={{ opacity: 0, scale: 2 }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 + j * 1, ease: "easeOut" }}
-                  style={{ originX: `${cx}px`, originY: `${Y}px` }}
-                />
-              ))}
-
               {/* Node circle */}
               <motion.circle
                 cx={cx} cy={Y} r={NODE_R}
                 fill={step.bg}
-                stroke={step.color}
-                strokeWidth={2}
+                stroke={step.border}
+                strokeWidth={1.8}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={inView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ type: "spring", stiffness: 200, damping: 18, delay: 0.1 + i * 0.2 }}
@@ -100,7 +84,7 @@ export default function ProcessFlowAnimation() {
                 x={cx} y={Y - 8}
                 textAnchor="middle"
                 fontSize={9}
-                fill={step.color}
+                fill={step.text}
                 fontWeight="800"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
@@ -111,10 +95,10 @@ export default function ProcessFlowAnimation() {
 
               {/* Label */}
               <motion.text
-                x={cx} y={Y + 4}
+                x={cx} y={Y + 5}
                 textAnchor="middle"
                 fontSize={7.5}
-                fill="white"
+                fill={step.text}
                 fontWeight="700"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
@@ -123,7 +107,7 @@ export default function ProcessFlowAnimation() {
                 {step.label}
               </motion.text>
 
-              {/* Sublabel below node */}
+              {/* Sublabel */}
               <motion.text
                 x={cx} y={Y + NODE_R + 16}
                 textAnchor="middle"
