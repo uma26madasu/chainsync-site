@@ -65,7 +65,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/madasu-r-3265aba7" className="hover:text-white transition-colors">
+                <a href="https://www.linkedin.com/company/getchainsync/" className="hover:text-white transition-colors">
                   LinkedIn
                 </a>
               </li>
@@ -80,7 +80,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
-              href="https://www.linkedin.com/in/madasu-r-3265aba7"
+              href="https://www.linkedin.com/company/getchainsync/"
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >

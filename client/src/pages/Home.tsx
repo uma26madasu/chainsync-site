@@ -550,7 +550,7 @@ export default function Home() {
             Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
           </p>
           <a
-            href="https://www.linkedin.com/in/madasu-r-3265aba7"
+            href="https://www.linkedin.com/company/getchainsync/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
