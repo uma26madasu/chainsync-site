@@ -98,7 +98,7 @@ export default function UseCases() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CHECK />
-                      Emergency response meeting scheduled via Slotify without manual calls
+                      Emergency response meeting scheduled automatically without manual calls
                     </li>
                     <li className="flex items-start gap-2">
                       <CHECK />
@@ -341,7 +341,7 @@ export default function UseCases() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CHECK color="text-accent" />
-                      Cross-department emergency meetings scheduled automatically via Slotify
+                      Cross-department emergency meetings scheduled automatically
                     </li>
                     <li className="flex items-start gap-2">
                       <CHECK color="text-accent" />
@@ -543,7 +543,7 @@ export default function UseCases() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link href="/contact">
               <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </motion.div>

@@ -37,7 +37,7 @@ const ROWS = [
   {
     metric: "System Integration",
     before: "Fragmented across email, phone, spreadsheets",
-    after: "Unified: sensors → agents → Slotify → output",
+    after: "Unified: sensors → agents → scheduling layer → output",
     highlight: false,
   },
 ];

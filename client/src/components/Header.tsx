@@ -19,11 +19,6 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10">
-            <Link href="/use-cases">
-              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
-                Use Cases
-              </a>
-            </Link>
             <Link href="/how-it-works">
               <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 How It Works
@@ -34,27 +29,9 @@ export default function Header() {
                 Technology
               </a>
             </Link>
-            <Link href="/roadmaps">
-              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
-                Roadmaps
-              </a>
-            </Link>
-            <Link href="/insights">
-              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
-                Insights
-              </a>
-            </Link>
-            <a
-              href="https://slotify.getchainsync.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors text-base font-medium"
-            >
-              Slotify
-            </a>
             <Link href="/contact">
               <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
-                Contact
+                Pilot Partnership
               </a>
             </Link>
           </nav>
@@ -63,7 +40,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link href="/contact">
               <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 text-base font-semibold">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </div>
@@ -81,11 +58,6 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 flex flex-col gap-3">
-            <Link href="/use-cases">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
-                Use Cases
-              </a>
-            </Link>
             <Link href="/how-it-works">
               <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
                 How It Works
@@ -96,32 +68,14 @@ export default function Header() {
                 Technology
               </a>
             </Link>
-            <Link href="/roadmaps">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
-                Roadmaps
-              </a>
-            </Link>
-            <Link href="/insights">
-              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
-                Insights
-              </a>
-            </Link>
-            <a
-              href="https://slotify.getchainsync.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2"
-            >
-              Slotify
-            </a>
             <Link href="/contact">
               <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
-                Contact
+                Pilot Partnership
               </a>
             </Link>
             <Link href="/contact">
               <Button className="w-full bg-primary hover:bg-primary/90 text-white mt-2">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </nav>

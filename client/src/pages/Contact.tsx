@@ -83,7 +83,7 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
           >
-            Get in Touch
+            Founding Pilot Partnership
           </motion.h1>
           <motion.p
             className="text-lg text-muted-foreground text-center max-w-3xl mx-auto"
@@ -91,7 +91,7 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
           >
-            Have questions about ChainSync? Want to join our pilot program? We'd love to hear from you. Use the chatbot below or fill out the form.
+            We're accepting three mid-size regional water utilities as founding pilot partners. No upfront costs. No long-term commitment. Ask us anything — or apply below.
           </motion.p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function Contact() {
             {/* Contact Form */}
             <motion.div variants={fadeUp}>
               <Card className="p-8 bg-white border border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Apply for Founding Partnership</h2>
 
                 {submitted ? (
                   <SuccessAnimation />
@@ -197,12 +197,11 @@ export default function Contact() {
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         required
                       >
-                        <option value="">Select your industry...</option>
-                        <option value="government">Government / Municipal Agency</option>
-                        <option value="water">Water Treatment Facility</option>
-                        <option value="industrial">Industrial / Manufacturing</option>
-                        <option value="consulting">Environmental Consulting</option>
-                        <option value="other">Other</option>
+                        <option value="">Select your organization type...</option>
+                        <option value="water">Water / Wastewater Utility</option>
+                        <option value="municipal">Municipal Water Authority</option>
+                        <option value="regional">Regional Water District</option>
+                        <option value="other">Other (waitlist)</option>
                       </select>
                     </div>
 
@@ -215,7 +214,7 @@ export default function Contact() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell us about your environmental challenges and how ChainSync can help..."
+                        placeholder="Tell us about your incident response workflows, current tools, and what coordination looks like today when something goes wrong..."
                         rows={6}
                         className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                         required
@@ -228,7 +227,7 @@ export default function Contact() {
                         disabled={loading}
                         className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        {loading ? "Sending..." : "Send Message"}
+                        {loading ? "Submitting..." : "Submit Application"}
                       </Button>
                     </motion.div>
 
@@ -273,18 +272,18 @@ export default function Contact() {
           >
             <motion.div variants={fadeUp}>
               <Card className="p-6 bg-white border border-border">
-                <h3 className="font-semibold text-foreground mb-3">When will ChainSync be available?</h3>
+                <h3 className="font-semibold text-foreground mb-3">What does the founding pilot look like?</h3>
                 <p className="text-muted-foreground">
-                  We're currently in active development and working with select pilot partners for Q3 2026 testing. We don't have a public launch date yet. We're prioritizing building the system correctly over launching quickly. Join our early access list to be notified when testing opportunities become available.
+                  We connect ChainSync to your existing SCADA or monitoring systems via standard HTTP webhooks, work through a real incident scenario together, and validate the coordination structure against your actual workflows. No upfront costs. No long-term commitment. Direct access to the founding team throughout.
                 </p>
               </Card>
             </motion.div>
 
             <motion.div variants={fadeUp}>
               <Card className="p-6 bg-white border border-border">
-                <h3 className="font-semibold text-foreground mb-3">Who is ChainSync designed for?</h3>
+                <h3 className="font-semibold text-foreground mb-3">Who is this for?</h3>
                 <p className="text-muted-foreground">
-                  We're building ChainSync for environmental agencies, water treatment facilities, industrial sites with environmental monitoring requirements, and municipalities managing environmental health. Anyone responsible for detecting and responding to environmental emergencies could benefit from automated coordination.
+                  Mid-size regional water utilities where the Emergency Operations Manager or equivalent is responsible for incident coordination. We're focused on water utilities first — organizations already dealing with SCADA-connected monitoring and EPA reporting requirements.
                 </p>
               </Card>
             </motion.div>
@@ -309,9 +308,9 @@ export default function Contact() {
 
             <motion.div variants={fadeUp}>
               <Card className="p-6 bg-white border border-border">
-                <h3 className="font-semibold text-foreground mb-3">Is this production-ready?</h3>
+                <h3 className="font-semibold text-foreground mb-3">How is this different from what we already have?</h3>
                 <p className="text-muted-foreground">
-                  Core components are built and tested. We're validating integrated system performance with pilot partners before general availability. The Universal Integration Hub, AI Agent Layer, and Slotify Scheduler are all operational.
+                  Tools like Everbridge push notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure. ChainSync does the alignment work — assigning ownership, mapping stakeholders, maintaining incident state — so your team executes instead of coordinates.
                 </p>
               </Card>
             </motion.div>
@@ -338,10 +337,10 @@ export default function Contact() {
           viewport={viewport}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Help Build the Future of Environmental Response
+            Three spots. Water utilities only.
           </h2>
           <p className="text-lg text-blue-100">
-            Join us in creating technology that protects communities and ecosystems.
+            We're not looking for logo customers. We're looking for founding partners who want to help build the right thing.
           </p>
         </motion.div>
       </section>

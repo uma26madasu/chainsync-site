@@ -155,7 +155,7 @@ export default function SwappableIntegration() {
                 <p className="text-sm text-muted-foreground">{display.desc}</p>
                 {!isMuleSoft && (
                   <p className="text-xs text-muted-foreground mt-2 italic">
-                    Switching to {display.name} requires zero changes to the AI agent layer or Slotify scheduler. Only the integration adapter changes.
+                    Switching to {display.name} requires zero changes to the AI agent layer or scheduling layer. Only the integration adapter changes.
                   </p>
                 )}
               </div>

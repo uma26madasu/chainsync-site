@@ -53,7 +53,7 @@ const PILLARS = [
     id: "dispatch",
     step: "03",
     label: "Action & Dispatch",
-    sublabel: "Slotify Integration",
+    sublabel: "Scheduling & Dispatch",
     headerBg: "#dcfce7",      // green-100
     border: "#bbf7d0",         // green-200
     dot: "#86efac",            // green-300
@@ -61,9 +61,9 @@ const PILLARS = [
     iconStroke: "#16a34a",     // green-600
     stepText: "#15803d",       // green-700
     bullets: [
-      "Slotify resolves multi-calendar conflicts",
+      "Calendar conflicts resolved automatically",
       "Emergency overrides applied automatically",
-      "Google Calendar and Microsoft 365 live",
+      "Google Calendar and Microsoft 365 supported",
       "Stakeholders notified via email and SMS",
     ],
     icon: (

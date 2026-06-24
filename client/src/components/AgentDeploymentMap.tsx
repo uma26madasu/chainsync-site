@@ -48,7 +48,7 @@ const CATEGORIES: Category[] = [
       { name: "Coordination Agent", desc: "Routes notifications to the right stakeholder set" },
       { name: "Documentation Agent", desc: "Generates audit-ready incident reports automatically" },
       { name: "Notification Agent", desc: "Multi-channel delivery: email, SMS, and webhook" },
-      { name: "Scheduler Agent", desc: "Triggers Slotify to book the emergency response meeting" },
+      { name: "Scheduler Agent", desc: "Triggers scheduling layer to book the emergency response meeting" },
     ],
   },
 ];

@@ -25,7 +25,7 @@ const LAYERS = [
   {
     label: "LAYER 3",
     title: "Coordination Layer",
-    subtitle: "Slotify Scheduler",
+    subtitle: "Meeting Coordination",
     color: "#78716c",
     bg: "#fafaf9",
     border: "#e7e5e4",

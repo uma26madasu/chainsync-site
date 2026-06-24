@@ -29,7 +29,7 @@ export default function Roadmaps() {
             initial="hidden"
             animate="visible"
           >
-            Building on our foundation of 17 live agents, we're expanding to 30 specialized agents across multiple verticals in 2026, enhanced by Slotify's intelligent scheduling and coordination capabilities.
+            Building on our foundation of 17 coordination agents, we're expanding capabilities across additional infrastructure verticals, enhanced by ChainSync's intelligent scheduling and coordination layers.
           </motion.p>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function Roadmaps() {
               <Card className="p-6 bg-purple-50 border-2 border-purple-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Layers className="w-6 h-6 text-purple-600" />
-                  <h3 className="text-lg font-semibold text-foreground">Slotify Enhancement</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Scheduling Layer Enhancement</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -251,7 +251,7 @@ export default function Roadmaps() {
               <Card className="p-6 bg-pink-50 border-2 border-pink-200">
                 <div className="flex items-center gap-2 mb-4">
                   <MessageSquare className="w-6 h-6 text-pink-600" />
-                  <h3 className="text-lg font-semibold text-foreground">Slotify Communications</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Scheduling Layer Communications</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -346,7 +346,7 @@ export default function Roadmaps() {
               <Card className="p-6 bg-blue-50 border-2 border-blue-200">
                 <div className="flex items-center gap-2 mb-4">
                   <Brain className="w-6 h-6 text-blue-600" />
-                  <h3 className="text-lg font-semibold text-foreground">Slotify AI & Automation</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Scheduling Layer AI & Automation</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
@@ -441,7 +441,7 @@ export default function Roadmaps() {
               <Card className="p-6 bg-indigo-50 border-2 border-indigo-200">
                 <div className="flex items-center gap-2 mb-4">
                   <BarChart3 className="w-6 h-6 text-indigo-600" />
-                  <h3 className="text-lg font-semibold text-foreground">Slotify Analytics & Integrations</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Scheduling Layer Analytics & Integrations</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
