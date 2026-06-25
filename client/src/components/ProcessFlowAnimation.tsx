@@ -4,7 +4,7 @@ import { useRef } from "react";
 const STEPS = [
   { label: "INGEST",      sublabel: "Webhook receives event",       bg: "#f0f9ff", border: "#bae6fd", dot: "#7dd3fc",  text: "#0369a1" },
   { label: "ANALYZE",     sublabel: "17 agents evaluate risk",       bg: "#f0fdf4", border: "#bbf7d0", dot: "#86efac",  text: "#15803d" },
-  { label: "ORCHESTRATE", sublabel: "Slotify schedules response",    bg: "#fffbeb", border: "#fde68a", dot: "#fbbf24",  text: "#92400e" },
+  { label: "ORCHESTRATE", sublabel: "Response meeting scheduled",    bg: "#fffbeb", border: "#fde68a", dot: "#fbbf24",  text: "#92400e" },
   { label: "REPORT",      sublabel: "Audit-ready log generated",     bg: "#faf8ff", border: "#ede9fe", dot: "#c4b5fd",  text: "#5b21b6" },
 ];
 

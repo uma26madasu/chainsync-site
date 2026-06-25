@@ -13,7 +13,7 @@ export default function Insights() {
   const articles = [
     {
       title: "I Got Tired of Living Across 4 Calendar Apps, So I Built Slotify",
-      description: "The personal journey behind building Slotify, ChainSync's autonomous scheduling engine. What started as calendar chaos became a core component for emergency meeting coordination.",
+      description: "The personal journey behind building ChainSync's autonomous scheduling layer. What started as calendar chaos became a core component for emergency meeting coordination.",
       url: "https://medium.com/@umamadasu/i-got-tired-of-living-across-4-calendar-apps-so-i-built-slotify-b0445c595648",
       icon: BookOpen,
       color: "text-orange-600"
@@ -354,7 +354,7 @@ export default function Insights() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link href="/contact">
               <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </motion.div>

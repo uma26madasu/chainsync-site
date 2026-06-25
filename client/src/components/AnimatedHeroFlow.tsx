@@ -116,8 +116,8 @@ export default function AnimatedHeroFlow() {
         {/* Slotify node */}
         <rect x={slotifyX - 38} y={slotifyY - 24} width={76} height={48} rx={8}
           fill="#fffbeb" stroke="#fde68a" strokeWidth={1.5} />
-        <text x={slotifyX} y={slotifyY - 7} textAnchor="middle" fontSize={9} fill="#92400e" fontWeight="700">SLOTIFY</text>
-        <text x={slotifyX} y={slotifyY + 5} textAnchor="middle" fontSize={6} fill="#b45309">Scheduler</text>
+        <text x={slotifyX} y={slotifyY - 7} textAnchor="middle" fontSize={9} fill="#92400e" fontWeight="700">SCHEDULER</text>
+        <text x={slotifyX} y={slotifyY + 5} textAnchor="middle" fontSize={6} fill="#b45309">Coordination</text>
         <motion.circle cx={slotifyX + 22} cy={slotifyY - 18} r={5}
           fill="#bbf7d0" stroke="#86efac" strokeWidth={1}
           animate={{ scale: [1, 1.25, 1] }}

@@ -71,7 +71,7 @@ export const VERTICALS: VerticalData[] = [
       { name: "Dept heads notified", midHours: 0.03, rangeLabel: "2 min" },
       { name: "JC docs auto-populated", midHours: 0.08, rangeLabel: "5 min" },
       { name: "CDC notification formatted", midHours: 0.05, rangeLabel: "3 min" },
-      { name: "Corrective action via Slotify", midHours: 0.03, rangeLabel: "2 min" },
+      { name: "Corrective action coordinated", midHours: 0.03, rangeLabel: "2 min" },
     ],
   },
   {

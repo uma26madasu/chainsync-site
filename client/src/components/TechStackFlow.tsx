@@ -48,10 +48,10 @@ const STACKS = [
     border: "border-emerald-200",
     textColor: "text-emerald-700",
     dotColor: "bg-emerald-500",
-    tech: ["Slotify", "Google Calendar", "MS 365", "React + Express"],
-    detail: "Autonomous emergency meeting coordination. Slotify checks calendars across platforms, resolves conflicts, applies emergency override protocols, and books multi-stakeholder meetings without human input.",
+    tech: ["Scheduling Layer", "Google Calendar", "MS 365", "React + Express"],
+    detail: "Autonomous emergency meeting coordination. ChainSync's scheduling layer checks calendars across platforms, resolves conflicts, applies emergency override protocols, and books multi-stakeholder meetings without human input.",
     items: [
-      { name: "Slotify", desc: "Autonomous scheduling engine (live)" },
+      { name: "Scheduling Layer", desc: "Autonomous emergency meeting coordination" },
       { name: "Google Calendar API", desc: "Calendar conflict detection" },
       { name: "Microsoft 365", desc: "Enterprise calendar integration" },
       { name: "React + Express", desc: "Full-stack scheduler platform" },

@@ -184,7 +184,7 @@ export default function HowItWorks() {
                   </p>
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">AI Agents:</span> 17 specialized Python agents including water emergency suite, industrial compliance suite, and general analysis agents.
+                      <span className="font-semibold">Coordination Agents:</span> 17 agents — Detection, Analysis, Coordination, and Documentation — each an independent FastAPI service.
                     </p>
                   </div>
                 </div>
@@ -204,11 +204,11 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 3: Coordinate</h3>
                   <p className="text-muted-foreground mb-4">
-                    Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. The coordination agent sends notifications to relevant teams via email, SMS, or webhook. The Slotify scheduler automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems, with emergency override protocols for critical incidents.
+                    Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. The coordination agent sends notifications to relevant teams via email, SMS, or webhook. ChainSync's scheduling layer automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems, with emergency override protocols for critical incidents.
                   </p>
                   <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Slotify Scheduler:</span> Intelligent meeting coordination with multi-calendar conflict detection and automatic authority selection.
+                      <span className="font-semibold">Scheduling Layer:</span> Intelligent meeting coordination with multi-calendar conflict detection and automatic authority selection.
                     </p>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function HowItWorks() {
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Compliance:</span> SOC2 compliant, 99.99% uptime SLA, multi-region deployment with automatic failover.
+                      <span className="font-semibold">Compliance records:</span> Full audit trail persisted to MongoDB. Compliance documentation auto-generated and exportable.
                     </p>
                   </div>
                 </div>
@@ -316,13 +316,13 @@ export default function HowItWorks() {
             Ready to See It in Action?
           </h2>
           <p className="text-lg text-blue-100 mb-8">
-            Join our Q3 2026 pilot program and experience automated environmental emergency response.
+            Apply for our founding pilot program and help validate ChainSync in a real water utility environment.
           </p>
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link href="/contact">
               <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </motion.div>

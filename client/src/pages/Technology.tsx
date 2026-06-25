@@ -43,7 +43,7 @@ export default function Technology() {
             initial="hidden"
             animate="visible"
           >
-            {["17 Python Agents", "AI Reasoning Engine", "MuleSoft Integration", "Slotify Scheduler", "Prometheus + Grafana"].map((tag) => (
+            {["17 Coordination Agents", "AI Reasoning Engine", "MuleSoft Integration", "MongoDB", "FastAPI HTTP Webhooks"].map((tag) => (
               <span key={tag} className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
                 {tag}
               </span>
@@ -132,7 +132,7 @@ export default function Technology() {
               className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
               variants={fadeUp}
             >
-              ChainSync's Universal Webhook Endpoint accepts HTTP POST from any integration platform. Switch from MuleSoft to Workato, Boomi, or Azure Logic Apps without touching the AI agent layer or Slotify.
+              ChainSync's Universal Webhook Endpoint accepts HTTP POST from any integration platform. Switch from MuleSoft to Workato, Boomi, or Azure Logic Apps without touching the AI agent or scheduling layers.
             </motion.p>
             <motion.div variants={fadeUp}>
               <SwappableIntegration />
@@ -151,7 +151,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            17 Live Agents. More Coming.
+            17 Coordination Agents Built. Seeking First Production Deployment.
           </motion.h2>
           <motion.p
             className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
@@ -289,7 +289,7 @@ export default function Technology() {
                   ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
                   ["AI Reasoning", "AI Reasoning Engine", "Context-aware analysis, risk classification, decision support"],
                   ["Integration Layer", "MuleSoft + DataWeave", "Enterprise integration and data transformation (swappable)"],
-                  ["Scheduler", "Slotify (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
+                  ["Scheduler", "Scheduling Layer (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
                   ["Database", "MongoDB", "Event storage, audit trails, and document records"],
                   ["Event Transport", "FastAPI HTTP Webhooks", "Platform-agnostic event routing between agents"],
                   ["Monitoring", "Prometheus + Grafana", "System health metrics and operational dashboards"],
@@ -321,7 +321,7 @@ export default function Technology() {
           >
             <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
             <p className="text-sm text-muted-foreground">
-              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent layer or Slotify.
+              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent or scheduling layers.
             </p>
           </motion.div>
         </div>
@@ -423,7 +423,7 @@ export default function Technology() {
               </Card>
             </motion.div>
 
-            {/* Slotify */}
+            {/* Scheduling Layer */}
             <motion.div variants={fadeUp}>
               <Card className="p-8 bg-white border border-border">
                 <div className="flex items-start gap-5">
@@ -431,7 +431,7 @@ export default function Technology() {
                     <span className="text-emerald-600 font-bold text-lg">📅</span>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Slotify Emergency Scheduler</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Scheduling Layer</h3>
                     <p className="text-muted-foreground text-sm mb-4">
                       Autonomous meeting coordination that selects the right stakeholders and books emergency meetings across multiple calendar systems with conflict detection and override protocols.
                     </p>
@@ -504,7 +504,7 @@ export default function Technology() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link href="/contact">
               <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
-                Request Early Access
+                Apply for Founding Partnership
               </Button>
             </Link>
           </motion.div>
