@@ -68,7 +68,7 @@ export default function HowItWorks() {
                   Sensor data and external alerts ingested via API gateway. Anomaly detection triggers immediate analysis.
                 </p>
                 <div className="bg-blue-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-primary">~2 seconds</p>
+                  <p className="text-sm font-semibold text-primary">~2s (target)</p>
                 </div>
               </Card>
             </motion.div>
@@ -84,7 +84,7 @@ export default function HowItWorks() {
                   Context enrichment, risk scoring, and root cause analysis. Historical data + weather patterns + regulatory thresholds.
                 </p>
                 <div className="bg-green-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-secondary">~30 seconds</p>
+                  <p className="text-sm font-semibold text-secondary">~30s (target)</p>
                 </div>
               </Card>
             </motion.div>
@@ -100,7 +100,7 @@ export default function HowItWorks() {
                   Right teams notified, stakeholders alerted, regulators informed. Emergency meetings scheduled automatically.
                 </p>
                 <div className="bg-amber-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-accent">~50 seconds</p>
+                  <p className="text-sm font-semibold text-accent">~50s (target)</p>
                 </div>
               </Card>
             </motion.div>

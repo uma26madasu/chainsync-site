@@ -70,7 +70,7 @@ export default function AgentDeploymentMap() {
           <div className="text-5xl font-bold text-primary">
             {inView ? <CountUp end={17} /> : "0"}
           </div>
-          <p className="text-sm text-muted-foreground mt-1">Live Specialized Agents</p>
+          <p className="text-sm text-muted-foreground mt-1">Coordination Agents Built</p>
         </div>
         <div className="hidden sm:block w-px h-12 bg-border" />
         <div className="hidden sm:block text-sm text-muted-foreground max-w-xs">

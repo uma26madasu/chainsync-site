@@ -5,11 +5,11 @@ import { fadeUp, stagger } from "@/lib/motion";
 
 const METRICS = [
   {
-    label: "Anomaly Detection",
+    label: "Detection Target",
     value: 2,
     suffix: "s",
     prefix: "~",
-    desc: "From sensor event to anomaly classification",
+    desc: "Target: sensor event to anomaly classification",
     color: "#3b82f6",
     bg: "bg-blue-50",
     border: "border-blue-200",
@@ -27,11 +27,11 @@ const METRICS = [
     textColor: "text-emerald-700",
   },
   {
-    label: "Live AI Agents",
+    label: "Coordination Agents",
     value: 17,
     suffix: "",
     prefix: "",
-    desc: "Specialized Python FastAPI agents deployed",
+    desc: "Specialized Python FastAPI agents built",
     color: "#8b5cf6",
     bg: "bg-purple-50",
     border: "border-purple-200",
