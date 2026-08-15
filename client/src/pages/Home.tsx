@@ -35,7 +35,7 @@ export default function Home() {
                 Your teams are ready. Your coordination isn't.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed">
-                When an incident is detected — water contamination or a facility emergency — your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
+                When an incident is detected (water contamination or a facility emergency), your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
               {/* Value Prop Micro-Cards */}
@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <Clock className="text-primary mb-2" size={20} />
                   <p className="font-semibold text-foreground text-sm mb-1">Minutes, Not Hours</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a structured response with the right people assigned — automatically.</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a structured response with the right people assigned, automatically.</p>
                 </div>
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <ShieldCheck className="text-secondary mb-2" size={20} />
@@ -104,7 +104,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Water utilities and hospitals share a coordination problem: detection works, response doesn't. When an incident is flagged, the actual bottleneck isn't the sensor data — it's the 4–6 hours of phone calls, emails, and manual handoffs required to get the right people in the same room with a shared understanding of what's happening. By the time coordination finishes, the critical response window has often closed.
+            Water utilities and hospitals share a coordination problem: detection works, response doesn't. When an incident is flagged, the actual bottleneck isn't the sensor data. It's the 4–6 hours of phone calls, emails, and manual handoffs required to get the right people in the same room with a shared understanding of what's happening. By the time coordination finishes, the critical response window has often closed.
           </motion.p>
 
           <motion.div
@@ -169,7 +169,7 @@ export default function Home() {
                 {
                   label: "ORCHESTRATE",
                   icon: <GitBranch className="text-accent" size={24} />,
-                  desc: "The scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership — automatically.",
+                  desc: "The scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership, automatically.",
                 },
                 {
                   label: "REPORT",
@@ -244,7 +244,7 @@ export default function Home() {
                 <Bot className="text-secondary mb-4" size={32} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">Coordination Engine</h3>
                 <p className="text-muted-foreground text-sm">
-                  17 Python coordination agents — each owns one job: Detection, Analysis, Coordination, Documentation. Plus an autonomous scheduling layer that books the right people without manual intervention.
+                  17 Python coordination agents, each owning one job: Detection, Analysis, Coordination, Documentation. Plus a scheduling layer that books the right people without manual intervention.
                 </p>
               </Card>
             </motion.div>
@@ -318,7 +318,7 @@ export default function Home() {
                 <Card className="p-8 bg-white border border-border">
                   <h3 className="text-2xl font-semibold text-foreground mb-4">Water & Wastewater Utilities</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Environmental incidents don't wait for phone tag. ChainSync connects directly to your SCADA systems, triggers the response structure, and gets the right team assembled — all before your first manual call would even be answered.
+                    Environmental incidents don't wait for phone tag. ChainSync connects directly to your SCADA systems, triggers the response structure, and gets the right team assembled before your first manual call would even be answered.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
@@ -346,7 +346,7 @@ export default function Home() {
                 <Card className="p-8 bg-white border border-border">
                   <h3 className="text-2xl font-semibold text-foreground mb-4">Hospital & Healthcare Facilities</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Facility emergencies — HVAC failures, hazmat incidents, power events — require cross-departmental response on short notice. ChainSync is designed to connect to building management systems and trigger coordinated response automatically.
+                    Facility emergencies (HVAC failures, hazmat incidents, power events) require cross-departmental response on short notice. ChainSync is designed to connect to building management systems and trigger coordinated response automatically.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
@@ -410,7 +410,7 @@ export default function Home() {
             >
               <h4 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST — Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack — can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
+                ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack) can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
               </p>
             </motion.div>
 
@@ -489,7 +489,7 @@ export default function Home() {
             Built by someone who's watched coordination fail
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years connecting enterprise systems across healthcare, insurance, and energy — at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+            <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
           </p>
           <p className="text-muted-foreground mb-6">
             Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
@@ -517,7 +517,7 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Three founding pilot partnerships. Water utilities and healthcare facilities.</h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              We're accepting three organizations to validate ChainSync in real incident environments — one water utility, one healthcare facility, one open. No upfront costs. No long-term commitment.
+              We're accepting three organizations to validate ChainSync in real incident environments: one water utility, one healthcare facility, one open slot. No upfront costs. No long-term commitment.
             </p>
           </motion.div>
 
