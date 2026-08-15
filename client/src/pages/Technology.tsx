@@ -160,7 +160,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest. Working Bosch Climatic BMS adapter validated. Seeking founding pilot partners for first production deployment.
+            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest. Seeking founding pilot partners for first production deployment.
           </motion.p>
           <motion.div
             variants={fadeUp}

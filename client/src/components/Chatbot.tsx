@@ -73,7 +73,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "status", "progress"],
     topic: "timeline",
-    text: "Core coordination architecture is built and tested. Working Bosch Climatic BMS adapter ready for healthcare facilities. We're seeking founding pilot partners — water utilities and healthcare facilities — to validate in real incident environments. No public launch date yet — we're prioritizing getting it right over launching quickly.",
+    text: "Core coordination architecture is built and tested. We're seeking founding pilot partners — water utilities and healthcare facilities — to validate in real incident environments. No public launch date yet — we're prioritizing getting it right over launching quickly.",
     quickReplies: ["Apply for pilot", "Development status", "Contact us"]
   },
   {

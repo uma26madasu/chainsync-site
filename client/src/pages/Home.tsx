@@ -159,7 +159,7 @@ export default function Home() {
                 {
                   label: "INGEST",
                   icon: <Wifi className="text-primary" size={24} />,
-                  desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform — including Bosch Climatic.",
+                  desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform.",
                 },
                 {
                   label: "ANALYZE",
@@ -346,11 +346,11 @@ export default function Home() {
                 <Card className="p-8 bg-white border border-border">
                   <h3 className="text-2xl font-semibold text-foreground mb-4">Hospital & Healthcare Facilities</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Facility emergencies — HVAC failures, hazmat incidents, power events — require cross-departmental response on short notice. ChainSync connects to Bosch Climatic BMS and other building management systems to trigger coordinated response automatically.
+                    Facility emergencies — HVAC failures, hazmat incidents, power events — require cross-departmental response on short notice. ChainSync is designed to connect to building management systems and trigger coordinated response automatically.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
-                      { label: "Bosch Climatic BMS adapter", desc: "Built and tested. Ready for pilot deployment." },
+                      { label: "BMS integration", desc: "Designed to connect to building management systems via standard HTTP." },
                       { label: "Facilities + Clinical + Admin", desc: "Cross-department coordination without manual handoffs." },
                       { label: "HIPAA-ready audit trails", desc: "Every action logged for compliance documentation." },
                     ].map((item) => (
