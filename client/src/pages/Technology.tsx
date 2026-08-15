@@ -367,7 +367,7 @@ export default function Technology() {
                           <li>✓ Azure IoT Hub</li>
                           <li>✓ MuleSoft</li>
                           <li>✓ Universal Webhook (HTTP POST from any system)</li>
-                          <li>✓ Bosch Climatic BMS</li>
+                          <li>✓ Building Management Systems (HTTP webhooks)</li>
                         </ul>
                       </div>
                       <div>
