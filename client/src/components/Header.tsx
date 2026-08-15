@@ -29,6 +29,11 @@ export default function Header() {
                 Technology
               </a>
             </Link>
+            <Link href="/walkthrough">
+              <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
+                Walkthrough
+              </a>
+            </Link>
             <Link href="/about">
               <a className="text-foreground hover:text-primary transition-colors text-base font-medium">
                 About
@@ -71,6 +76,11 @@ export default function Header() {
             <Link href="/technology">
               <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
                 Technology
+              </a>
+            </Link>
+            <Link href="/walkthrough">
+              <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
+                Walkthrough
               </a>
             </Link>
             <Link href="/about">
