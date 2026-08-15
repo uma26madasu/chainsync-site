@@ -464,9 +464,9 @@ export default function Home() {
                 <p className="text-foreground font-semibold text-lg mb-2">Scenario Walkthrough</p>
                 <p className="text-muted-foreground text-sm mb-6">Available to founding pilot partners</p>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                  <Link href="/contact">
+                  <Link href="/walkthrough">
                     <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 font-semibold">
-                      Request a Scenario Walkthrough
+                      View Scenario Walkthrough
                     </Button>
                   </Link>
                 </motion.div>
