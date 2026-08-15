@@ -160,7 +160,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest.
+            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest. Working Bosch Climatic BMS adapter validated. Seeking founding pilot partners for first production deployment.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -287,7 +287,7 @@ export default function Technology() {
               <tbody>
                 {[
                   ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
-                  ["AI Reasoning", "AI Reasoning Engine", "Context-aware analysis, risk classification, decision support"],
+                  ["AI Reasoning", "GPT-4 + Domain-Specific Prompts", "Context-aware analysis, risk classification, decision support"],
                   ["Integration Layer", "MuleSoft + DataWeave", "Enterprise integration and data transformation (swappable)"],
                   ["Scheduler", "Scheduling Layer (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
                   ["Database", "MongoDB", "Event storage, audit trails, and document records"],
@@ -457,31 +457,6 @@ export default function Technology() {
                 </div>
               </Card>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 10. API Access */}
-      <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-2xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              API Documentation
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              ChainSync provides REST APIs for integration, monitoring, and management. Full documentation available to pilot partners.
-            </p>
-            <Link href="/contact">
-              <Button variant="outline" className="px-6 py-3 h-auto text-base">
-                Request API Documentation Access
-              </Button>
-            </Link>
           </motion.div>
         </div>
       </section>

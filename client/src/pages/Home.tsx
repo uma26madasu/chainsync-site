@@ -3,13 +3,16 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { Clock, ShieldCheck, Plug, Wifi, Cpu, GitBranch, ClipboardList, Play, Layers, Bot, Server, Wrench, Users } from "lucide-react";
+import { Clock, ShieldCheck, ClipboardList, Wifi, Cpu, GitBranch, Play, Layers, Bot, Server, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import AnimatedHeroFlow from "@/components/AnimatedHeroFlow";
 import ArchitectureAnimation from "@/components/ArchitectureAnimation";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<"water" | "healthcare">("water");
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -26,21 +29,21 @@ export default function Home() {
               animate="visible"
             >
               <motion.div variants={fadeUp} className="inline-block bg-blue-50 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                Founding Pilot Program — Water Utilities
+                Founding Pilot Program
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
                 Your teams are ready. Your coordination isn't.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-muted-foreground leading-relaxed">
-                When a water quality incident is detected, your response structure has to form instantly. ChainSync builds it automatically — right people, clear ownership, documented record — in minutes, not hours of manual phone calls and emails.
+                When an incident is detected — water contamination or a facility emergency — your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
               {/* Value Prop Micro-Cards */}
               <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <Clock className="text-primary mb-2" size={20} />
-                  <p className="font-semibold text-foreground text-sm mb-1">Coordination in Minutes</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a structured response with the right people assigned, automatically.</p>
+                  <p className="font-semibold text-foreground text-sm mb-1">Minutes, Not Hours</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">From detection to a structured response with the right people assigned — automatically.</p>
                 </div>
                 <div className="border border-border rounded-lg p-4 bg-white">
                   <ShieldCheck className="text-secondary mb-2" size={20} />
@@ -48,9 +51,9 @@ export default function Home() {
                   <p className="text-xs text-muted-foreground leading-relaxed">Connects to your existing SCADA, BMS, or monitoring systems via standard HTTP. Nothing changes in your stack.</p>
                 </div>
                 <div className="border border-border rounded-lg p-4 bg-white">
-                  <Plug className="text-accent mb-2" size={20} />
-                  <p className="font-semibold text-foreground text-sm mb-1">Universal Integration</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">Any system that sends HTTP POST connects through ChainSync's Universal Webhook Endpoint.</p>
+                  <ClipboardList className="text-accent mb-2" size={20} />
+                  <p className="font-semibold text-foreground text-sm mb-1">Compliance Built In</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">Every action is logged. Audit-ready documentation is generated automatically for regulatory review.</p>
                 </div>
               </motion.div>
 
@@ -83,7 +86,7 @@ export default function Home() {
 
       {/* Problem Statement */}
       <section className="py-12 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
@@ -93,52 +96,28 @@ export default function Home() {
           >
             Detection works. Coordination doesn't.
           </motion.h2>
+
           <motion.p
-            className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
+            className="text-lg text-muted-foreground mb-8 leading-relaxed"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            Water utilities have sensors, SCADA systems, and monitoring infrastructure. The problem isn't detecting an incident. It's building a coordinated response fast enough to matter.
+            Water utilities and hospitals share a coordination problem: detection works, response doesn't. When an incident is flagged, the actual bottleneck isn't the sensor data — it's the 4–6 hours of phone calls, emails, and manual handoffs required to get the right people in the same room with a shared understanding of what's happening. By the time coordination finishes, the critical response window has often closed.
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={stagger}
+            className="bg-white border-l-4 border-primary rounded-r-xl p-6 shadow-sm"
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="text-4xl font-bold text-primary mb-2">4–6 hrs</div>
-                <h3 className="font-semibold text-foreground mb-2">Manual Coordination Time</h3>
-                <p className="text-muted-foreground text-sm">
-                  Phone calls, emails, and spreadsheet updates to mobilize a response. Every minute spent coordinating is a minute the incident is uncontained.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="text-2xl font-bold text-secondary mb-2">Alerts ≠ Coordination</div>
-                <h3 className="font-semibold text-foreground mb-2">Notifications don't build structure</h3>
-                <p className="text-muted-foreground text-sm">
-                  Everbridge pushes alerts. Slack enables conversation. ServiceNow tracks work after the fact. None of them build a coordinated response structure — that's still done manually.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="text-2xl font-bold text-accent mb-2">Minutes matter</div>
-                <h3 className="font-semibold text-foreground mb-2">The regulatory window is narrow</h3>
-                <p className="text-muted-foreground text-sm">
-                  For water quality incidents, delayed coordination directly affects regulatory penalties, remediation costs, and community health outcomes. The response window isn't measured in days.
-                </p>
-              </Card>
-            </motion.div>
+            <p className="text-foreground font-semibold text-lg mb-1">4–6 hours</p>
+            <p className="text-muted-foreground text-sm">
+              Average coordination time for multi-agency environmental and facility incidents. ChainSync reduces that to minutes.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -180,17 +159,17 @@ export default function Home() {
                 {
                   label: "INGEST",
                   icon: <Wifi className="text-primary" size={24} />,
-                  desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform.",
+                  desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform — including Bosch Climatic.",
                 },
                 {
                   label: "ANALYZE",
                   icon: <Cpu className="text-secondary" size={24} />,
-                  desc: "Coordination agents evaluate the incident, classify severity, identify root cause, and map who needs to be involved.",
+                  desc: "Coordination agents evaluate the incident, classify severity, identify root cause, and determine who needs to be involved.",
                 },
                 {
                   label: "ORCHESTRATE",
                   icon: <GitBranch className="text-accent" size={24} />,
-                  desc: "ChainSync's scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership — automatically.",
+                  desc: "The scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership — automatically.",
                 },
                 {
                   label: "REPORT",
@@ -231,7 +210,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Three layers, one coordinated response
+            Two layers, one coordinated response
           </motion.h2>
           <motion.p
             className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
@@ -244,7 +223,7 @@ export default function Home() {
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -263,19 +242,9 @@ export default function Home() {
             <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-white border border-border h-full">
                 <Bot className="text-secondary mb-4" size={32} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Coordination Agents</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Coordination Engine</h3>
                 <p className="text-muted-foreground text-sm">
-                  17 Python coordination agents — each owns one job in the response pipeline: Detection, Analysis, Coordination, Documentation. Independent FastAPI services, modular by design.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <Users className="text-accent mb-4" size={32} />
-                <h3 className="text-xl font-semibold text-foreground mb-3">Scheduling Layer</h3>
-                <p className="text-muted-foreground text-sm">
-                  Autonomous meeting coordination during incidents. Detects the right authority, resolves multi-calendar conflicts, applies emergency overrides. Google Calendar and Microsoft 365 supported.
+                  17 Python coordination agents — each owns one job: Detection, Analysis, Coordination, Documentation. Plus an autonomous scheduling layer that books the right people without manual intervention.
                 </p>
               </Card>
             </motion.div>
@@ -283,8 +252,123 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Architecture Showcase */}
+      {/* Verticals — Tabbed */}
       <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Built for regulated environments
+          </motion.h2>
+          <motion.p
+            className="text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Same coordination infrastructure. Domain-specific agents and integrations for each vertical.
+          </motion.p>
+
+          {/* Tab Buttons */}
+          <motion.div
+            className="flex justify-center mb-8"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <div className="inline-flex bg-slate-100 rounded-lg p-1 gap-1">
+              <button
+                onClick={() => setActiveTab("water")}
+                className={`px-6 py-2.5 rounded-md text-sm font-semibold transition-all ${
+                  activeTab === "water"
+                    ? "bg-white text-primary shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Water Utilities
+              </button>
+              <button
+                onClick={() => setActiveTab("healthcare")}
+                className={`px-6 py-2.5 rounded-md text-sm font-semibold transition-all ${
+                  activeTab === "healthcare"
+                    ? "bg-white text-primary shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Healthcare
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Tab Content */}
+          <div className="max-w-3xl mx-auto">
+            {activeTab === "water" && (
+              <motion.div
+                key="water"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Card className="p-8 bg-white border border-border">
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">Water & Wastewater Utilities</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Environmental incidents don't wait for phone tag. ChainSync connects directly to your SCADA systems, triggers the response structure, and gets the right team assembled — all before your first manual call would even be answered.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {[
+                      { label: "SCADA + BMS integration", desc: "Standard HTTP webhooks. No proprietary protocols." },
+                      { label: "EPA notification workflows", desc: "Regulatory notifications triggered automatically." },
+                      { label: "Multi-agency coordination", desc: "Right stakeholders assigned and notified simultaneously." },
+                    ].map((item) => (
+                      <div key={item.label} className="bg-blue-50 rounded-lg p-4">
+                        <p className="font-semibold text-foreground text-sm mb-1">{item.label}</p>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            )}
+
+            {activeTab === "healthcare" && (
+              <motion.div
+                key="healthcare"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Card className="p-8 bg-white border border-border">
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">Hospital & Healthcare Facilities</h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Facility emergencies — HVAC failures, hazmat incidents, power events — require cross-departmental response on short notice. ChainSync connects to Bosch Climatic BMS and other building management systems to trigger coordinated response automatically.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {[
+                      { label: "Bosch Climatic BMS adapter", desc: "Built and tested. Ready for pilot deployment." },
+                      { label: "Facilities + Clinical + Admin", desc: "Cross-department coordination without manual handoffs." },
+                      { label: "HIPAA-ready audit trails", desc: "Every action logged for compliance documentation." },
+                    ].map((item) => (
+                      <div key={item.label} className="bg-green-50 rounded-lg p-4">
+                        <p className="font-semibold text-foreground text-sm mb-1">{item.label}</p>
+                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Architecture Showcase */}
+      <section className="py-12 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
@@ -302,7 +386,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Three independently maintainable layers connected through standard HTTP. No proprietary protocols, no black boxes.
+            Three independently maintainable layers connected through standard HTTP. Built for reliability in regulated environments.
           </motion.p>
 
           <div className="max-w-3xl mx-auto">
@@ -344,7 +428,7 @@ export default function Home() {
       </section>
 
       {/* Demo / Scenario Walkthrough */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
@@ -362,7 +446,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            We walk through a water quality incident end-to-end: from the SCADA alert to a coordinated response meeting with the right people assigned and an audit-ready record generated. No live system access needed.
+            We walk through a water quality or facility emergency end-to-end: from the sensor alert to a coordinated response meeting with the right people assigned and an audit-ready record generated. No live system access needed.
           </motion.p>
 
           <motion.div
@@ -382,7 +466,7 @@ export default function Home() {
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
                   <Link href="/contact">
                     <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 font-semibold">
-                      Request a Walkthrough
+                      Request a Scenario Walkthrough
                     </Button>
                   </Link>
                 </motion.div>
@@ -405,7 +489,7 @@ export default function Home() {
             Built by someone who's watched coordination fail
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-            <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years as a MuleSoft Integration Engineer connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments — not because data was missing, but because teams lost shared context under pressure.
+            <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years connecting enterprise systems across healthcare, insurance, and energy — at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
           </p>
           <p className="text-muted-foreground mb-6">
             Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
@@ -431,9 +515,9 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Three founding pilot partnerships. Water utilities only.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Three founding pilot partnerships. Water utilities and healthcare facilities.</h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              We're accepting three mid-size regional water utilities to validate ChainSync in real incident environments. No upfront costs. No long-term commitment. Direct access to the founding team throughout.
+              We're accepting three organizations to validate ChainSync in real incident environments — one water utility, one healthcare facility, one open. No upfront costs. No long-term commitment.
             </p>
           </motion.div>
 
@@ -446,7 +530,7 @@ export default function Home() {
           >
             <motion.div variants={fadeUp} className="bg-white/10 border border-white/20 rounded-lg p-6">
               <Server className="text-blue-200 mb-4" size={28} />
-              <h3 className="font-semibold text-white mb-2">Direct influence over the product</h3>
+              <h3 className="font-semibold text-white mb-2">Founding partner influence</h3>
               <p className="text-blue-100 text-sm leading-relaxed">
                 Your workflows shape what gets built. Founding partners define the product direction before public launch.
               </p>
@@ -468,13 +552,19 @@ export default function Home() {
           </motion.div>
 
           <div className="text-center">
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block mb-4">
               <Link href="/contact">
                 <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
                   Apply for Founding Partnership
                 </Button>
               </Link>
             </motion.div>
+            <p className="text-blue-200 text-sm mt-4">
+              Not in water or healthcare?{" "}
+              <Link href="/contact">
+                <a className="underline hover:text-white transition-colors">Join the waitlist →</a>
+              </Link>
+            </p>
           </div>
         </div>
       </section>

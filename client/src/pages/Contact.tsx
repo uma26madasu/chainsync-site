@@ -91,7 +91,7 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
           >
-            We're accepting three mid-size regional water utilities as founding pilot partners. No upfront costs. No long-term commitment. Ask us anything — or apply below.
+            We're accepting founding pilot partners from water utilities and healthcare facilities. No upfront costs. No long-term commitment. Ask us anything — or apply below.
           </motion.p>
         </div>
       </section>
@@ -199,6 +199,7 @@ export default function Contact() {
                       >
                         <option value="">Select your organization type...</option>
                         <option value="water">Water / Wastewater Utility</option>
+                        <option value="healthcare">Hospital / Healthcare Facility</option>
                         <option value="municipal">Municipal Water Authority</option>
                         <option value="regional">Regional Water District</option>
                         <option value="other">Other (waitlist)</option>
@@ -337,7 +338,7 @@ export default function Contact() {
           viewport={viewport}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Three spots. Water utilities only.
+            Three spots. Water utilities and healthcare facilities.
           </h2>
           <p className="text-lg text-blue-100">
             We're not looking for logo customers. We're looking for founding partners who want to help build the right thing.

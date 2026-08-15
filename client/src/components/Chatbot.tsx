@@ -67,13 +67,13 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["pilot", "partner", "founding", "join", "beta", "testing", "sign up", "early access", "apply"],
     topic: "pilotProgram",
-    text: "We're accepting three founding pilot partnerships from municipal water utilities. Benefits: direct access to the founding team, direct influence over product direction, no upfront costs during the pilot, and priority pricing at launch. No long-term commitment. Head to the Pilot Partnership page to apply.",
+    text: "We're accepting three founding pilot partnerships — water utilities and healthcare facilities. Benefits: direct access to the founding team, direct influence over product direction, no upfront costs during the pilot, and priority pricing at launch. No long-term commitment. Head to the Pilot Partnership page to apply.",
     quickReplies: ["Pricing", "Apply for pilot", "Contact us"]
   },
   {
     keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "status", "progress"],
     topic: "timeline",
-    text: "Core coordination architecture is built and tested. We're focused on getting coordination right with our first pilot partners in real water utility environments before expanding to other verticals. No public launch date yet — we're prioritizing getting it right over launching quickly.",
+    text: "Core coordination architecture is built and tested. Working Bosch Climatic BMS adapter ready for healthcare facilities. We're seeking founding pilot partners — water utilities and healthcare facilities — to validate in real incident environments. No public launch date yet — we're prioritizing getting it right over launching quickly.",
     quickReplies: ["Apply for pilot", "Development status", "Contact us"]
   },
   {
