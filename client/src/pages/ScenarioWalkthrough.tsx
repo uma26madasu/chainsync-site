@@ -140,7 +140,7 @@ const HEALTHCARE_SCENARIO = {
   title: "Hospital Facilities Incident",
   subtitle: "HVAC Failure in Surgical Wing",
   facility: "St. Mary's Regional Medical Center — 320 beds",
-  system: "Bosch Climatic BMS — Air Handling Unit #3",
+  system: "Building Management System — Air Handling Unit #3",
   phases: [
     {
       phase: 1,
@@ -156,7 +156,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Equipment", value: "AHU-3 — Primary air handling unit" },
         { label: "Trend", value: "Rising (72.1 → 75.3 → 78.4 in 22 min)" },
       ],
-      log: "Bosch Climatic BMS webhook received → Alert parsed → Incident ID #FC-2026-0312 created",
+      log: "BMS webhook received → Alert parsed → Incident ID #FC-2026-0312 created",
     },
     {
       phase: 2,
