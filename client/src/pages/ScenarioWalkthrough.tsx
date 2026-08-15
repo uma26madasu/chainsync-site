@@ -139,7 +139,7 @@ const WATER_SCENARIO = {
 const HEALTHCARE_SCENARIO = {
   title: "Hospital Facilities Incident",
   subtitle: "HVAC Failure in Surgical Wing",
-  facility: "St. Mary's Regional Medical Center — 320 beds",
+  facility: "Westbridge Medical Center — 320 beds",
   system: "Building Management System — Air Handling Unit #3",
   phases: [
     {
