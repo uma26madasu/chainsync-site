@@ -18,7 +18,7 @@ export default function CoordinationTimeComparison() {
       >
         <p className="text-sm text-slate-500 max-w-2xl mx-auto">
           Each vertical has fundamentally different incident timelines, agency overlaps, and compliance burdens.
-          These graphs reflect actual coordination complexity — not a generic template.
+          These graphs model coordination complexity based on our design architecture. The ChainSync column shows projected design targets, not measured production performance.
         </p>
       </motion.div>
 

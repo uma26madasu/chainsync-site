@@ -224,7 +224,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            Key operational metrics from the live system.
+            Design targets for the coordination pipeline.
           </motion.p>
           <PerformanceMetrics />
         </div>
@@ -361,22 +361,22 @@ export default function Technology() {
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Supported Integrations</h4>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Built Integrations</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ AWS IoT Core</li>
-                          <li>✓ Azure IoT Hub</li>
-                          <li>✓ MuleSoft</li>
+                          <li>✓ MuleSoft (current implementation)</li>
                           <li>✓ Universal Webhook (HTTP POST from any system)</li>
-                          <li>✓ Bosch Climatic BMS</li>
+                          <li>→ AWS IoT Core (planned)</li>
+                          <li>→ Azure IoT Hub (planned)</li>
+                          <li>→ Building Management Systems (planned)</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Data Sources</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ 22+ flow implementations</li>
-                          <li>✓ NASA satellite data</li>
-                          <li>✓ Weather APIs</li>
-                          <li>✓ Custom sensors</li>
+                          <li>✓ 22+ MuleSoft flow implementations</li>
+                          <li>✓ SCADA systems via HTTP webhooks</li>
+                          <li>→ Weather APIs (planned)</li>
+                          <li>→ Satellite data (planned)</li>
                         </ul>
                       </div>
                     </div>

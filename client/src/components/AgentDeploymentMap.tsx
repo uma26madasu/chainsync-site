@@ -28,7 +28,7 @@ const CATEGORIES: Category[] = [
     border: "border-purple-200",
     textColor: "text-purple-700",
     agents: [
-      { name: "HVAC Monitor", desc: "Tracks air handling unit anomalies (Bosch Climatic BMS)" },
+      { name: "HVAC Monitor", desc: "Tracks air handling unit anomalies via BMS webhooks" },
       { name: "Patient Safety Agent", desc: "Assesses risk to vulnerable populations from environmental events" },
       { name: "Air Quality Analyst", desc: "Measures indoor/outdoor air quality against clinical thresholds" },
       { name: "Equipment Coordinator", desc: "Alerts facility maintenance teams to critical equipment states" },
@@ -70,7 +70,7 @@ export default function AgentDeploymentMap() {
           <div className="text-5xl font-bold text-primary">
             {inView ? <CountUp end={17} /> : "0"}
           </div>
-          <p className="text-sm text-muted-foreground mt-1">Live Specialized Agents</p>
+          <p className="text-sm text-muted-foreground mt-1">Coordination Agents Built</p>
         </div>
         <div className="hidden sm:block w-px h-12 bg-border" />
         <div className="hidden sm:block text-sm text-muted-foreground max-w-xs">

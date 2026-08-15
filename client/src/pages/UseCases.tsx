@@ -468,7 +468,7 @@ export default function UseCases() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CHECK />
-                      Bosch Climatic BMS adapter routes HVAC threshold breaches directly to agents, no manual handoff
+                      BMS webhook routes HVAC threshold breaches directly to agents, no manual handoff
                     </li>
                   </ul>
                 </div>

@@ -198,7 +198,7 @@ export default function Insights() {
                 </div>
                 <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
                 <p className="text-foreground text-sm leading-relaxed">
-                  Percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
+                  Industry estimate: percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
                 </p>
               </Card>
             </motion.div>

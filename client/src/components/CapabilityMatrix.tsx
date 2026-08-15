@@ -27,7 +27,7 @@ const HOVER_DESCS: Record<string, string> = {
   "Water Utilities-Compliance Reporting": "Generates EPA Safe Drinking Water Act notification templates",
   "Water Utilities-Multi-agency Sync": "Coordinates between water authority, health department, and public works",
 
-  "Healthcare-Incident Detection": "HVAC anomalies, air quality events, equipment failures via Bosch Climatic BMS",
+  "Healthcare-Incident Detection": "HVAC anomalies, air quality events, equipment failures via BMS webhook",
   "Healthcare-Response Coordination": "Alerts facility management, clinical leadership, and patient safety officers",
   "Healthcare-Calendar Integration": "Books emergency operations meetings within clinical scheduling constraints",
   "Healthcare-Compliance Reporting": "OSHA and Joint Commission-formatted incident documentation",

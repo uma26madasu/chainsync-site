@@ -57,8 +57,8 @@ export default function Roadmaps() {
             <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-green-50 border-2 border-green-400 text-center h-full">
                 <div className="text-3xl font-bold text-green-600 mb-2">17</div>
-                <p className="text-sm font-semibold text-green-700">Live Now</p>
-                <p className="text-xs text-muted-foreground">Currently deployed</p>
+                <p className="text-sm font-semibold text-green-700">Built</p>
+                <p className="text-xs text-muted-foreground">In development for pilot</p>
               </Card>
             </motion.div>
 
@@ -106,9 +106,9 @@ export default function Roadmaps() {
               <div>
                 <div className="flex items-center gap-3">
                   <h2 className="text-3xl font-bold text-foreground">Infrastructure Foundation</h2>
-                  <span className="bg-green-100 text-green-700 border border-green-300 text-sm font-semibold px-3 py-1 rounded-full">✓ Completed</span>
+                  <span className="bg-blue-100 text-blue-700 border border-blue-300 text-sm font-semibold px-3 py-1 rounded-full">Foundation Built</span>
                 </div>
-                <p className="text-muted-foreground">17 agents currently live. Infrastructure complete.</p>
+                <p className="text-muted-foreground">17 agents built. Coordination pipeline in development for founding pilot.</p>
               </div>
             </motion.div>
 
@@ -137,15 +137,11 @@ export default function Roadmaps() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span>Real-time event streaming pipeline (&lt;200ms latency)</span>
+                    <span>FastAPI HTTP webhook integration layer</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span>Multi-region deployment capabilities</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>SOC 2 Type II Compliance</strong> - Full audit completion</span>
+                    <span>MongoDB audit trail persistence</span>
                   </li>
                 </ul>
               </Card>
@@ -160,8 +156,8 @@ export default function Roadmaps() {
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Security Foundation:</strong> GDPR/HIPAA compliance framework</span>
+                    <ArrowRight className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>Security Foundation:</strong> GDPR/HIPAA compliance framework (in development)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />
@@ -239,8 +235,8 @@ export default function Roadmaps() {
                     <span>Daily PM scan: overdue maintenance flagged, EC.02.06.01 compliance docs, survey readiness score</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>HIPAA Compliance Certification</strong></span>
+                    <ArrowRight className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>HIPAA compliance certification</strong> (target)</span>
                   </li>
                 </ul>
               </Card>
@@ -334,8 +330,8 @@ export default function Roadmaps() {
                     <span>Supply chain disruption detection & alternative sourcing</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>ISO 27001 Certification</strong></span>
+                    <ArrowRight className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>ISO 27001 certification</strong> (target)</span>
                   </li>
                 </ul>
               </Card>
@@ -429,8 +425,8 @@ export default function Roadmaps() {
                     <span>Systemic risk identification & mitigation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>GDPR Compliance Validation</strong></span>
+                    <ArrowRight className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span><strong>GDPR compliance validation</strong> (target)</span>
                   </li>
                 </ul>
               </Card>
@@ -500,20 +496,20 @@ export default function Roadmaps() {
               </h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <span><strong>Q1:</strong> SOC 2 Type II audit completion</span>
+                  <ArrowRight className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q1:</strong> SOC 2 Type II audit (target)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span><strong>Q2:</strong> HIPAA compliance certification</span>
+                  <ArrowRight className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q2:</strong> HIPAA compliance certification (target)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                  <span><strong>Q3:</strong> ISO 27001 certification</span>
+                  <ArrowRight className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q3:</strong> ISO 27001 certification (target)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span><strong>Q4:</strong> GDPR compliance validation</span>
+                  <ArrowRight className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <span><strong>Q4:</strong> GDPR compliance validation (target)</span>
                 </li>
               </ul>
             </Card>
@@ -532,7 +528,7 @@ export default function Roadmaps() {
                 </li>
                 <li className="flex items-start gap-2">
                   <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Uptime:</strong> 99.99% SLA by Q4</span>
+                  <span><strong>Uptime:</strong> 99.99% uptime target by Q4</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />

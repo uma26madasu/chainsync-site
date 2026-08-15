@@ -352,7 +352,7 @@ export default function Home() {
                     {[
                       { label: "BMS integration", desc: "Designed to connect to building management systems via standard HTTP." },
                       { label: "Facilities + Clinical + Admin", desc: "Cross-department coordination without manual handoffs." },
-                      { label: "HIPAA-ready audit trails", desc: "Every action logged for compliance documentation." },
+                      { label: "Audit trails designed for HIPAA environments", desc: "Every action logged for compliance documentation." },
                     ].map((item) => (
                       <div key={item.label} className="bg-green-50 rounded-lg p-4">
                         <p className="font-semibold text-foreground text-sm mb-1">{item.label}</p>

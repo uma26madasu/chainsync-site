@@ -244,10 +244,10 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Hospital & Healthcare Facilities</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Facilities teams managing HVAC failures, hazmat incidents, and power events across complex, multi-department environments. ChainSync is designed to connect to Bosch Climatic BMS and similar building management systems.
+                  Facilities teams managing HVAC failures, hazmat incidents, and power events across complex, multi-department environments. ChainSync is designed to connect to building management systems via standard HTTP webhooks.
                 </p>
                 <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>✓ Bosch Climatic BMS integration (planned)</li>
+                  <li>✓ BMS integration via standard HTTP webhooks</li>
                   <li>✓ Facilities + Clinical + Admin coordination</li>
                   <li>✓ HIPAA-ready audit trails</li>
                 </ul>
