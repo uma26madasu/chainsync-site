@@ -91,7 +91,7 @@ export default function Contact() {
             initial="hidden"
             animate="visible"
           >
-            We're accepting founding pilot partners from water utilities and healthcare facilities. No upfront costs. No long-term commitment. Ask us anything — or apply below.
+            We're accepting founding pilot partners from water utilities and healthcare facilities. No upfront costs. No long-term commitment. Ask us anything, or apply below.
           </motion.p>
         </div>
       </section>
@@ -311,7 +311,7 @@ export default function Contact() {
               <Card className="p-6 bg-white border border-border">
                 <h3 className="font-semibold text-foreground mb-3">How is this different from what we already have?</h3>
                 <p className="text-muted-foreground">
-                  Tools like Everbridge push notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure. ChainSync does the alignment work — assigning ownership, mapping stakeholders, maintaining incident state — so your team executes instead of coordinates.
+                  Tools like Everbridge push notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure. ChainSync does the alignment work: assigning ownership, mapping stakeholders, maintaining incident state. Your team executes instead of coordinates.
                 </p>
               </Card>
             </motion.div>

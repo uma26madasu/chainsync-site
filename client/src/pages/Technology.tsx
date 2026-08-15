@@ -449,7 +449,7 @@ export default function Technology() {
                         <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>✓ Multi-calendar conflict detection</li>
                           <li>✓ Emergency override protocols</li>
-                          <li>✓ Intelligent authority selection</li>
+                          <li>✓ Automatic authority selection</li>
                         </ul>
                       </div>
                     </div>

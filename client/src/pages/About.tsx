@@ -28,7 +28,7 @@ export default function About() {
             initial="hidden"
             animate="visible"
           >
-            Incident coordination infrastructure for regulated environments — built by someone who watched coordination break down too many times.
+            Incident coordination infrastructure for regulated environments. Built by someone who watched coordination break down too many times.
           </motion.p>
         </div>
       </section>
@@ -48,10 +48,10 @@ export default function About() {
                 The problem worth solving
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Water utilities and hospitals have built serious monitoring infrastructure. Sensors, SCADA systems, BMS platforms, dashboards — they know when something goes wrong almost immediately.
+                Water utilities and hospitals have built serious monitoring infrastructure. Sensors, SCADA systems, BMS platforms, dashboards. They know when something goes wrong almost immediately.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                The breakdown happens after detection. Getting the right people in the same room, with shared context, clear ownership, and a documented record — that still happens manually. Phone calls. Emails. Spreadsheet updates. Group chats with missing context.
+                The breakdown happens after detection. Getting the right people in the same room, with shared context, clear ownership, and a documented record: that still happens manually. Phone calls. Emails. Spreadsheet updates. Group chats with missing context.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 For a water quality incident or a hospital facility emergency, that coordination gap can take 4–6 hours. In environments where the response window is measured in minutes, those hours have consequences: regulatory penalties, remediation costs, and community health outcomes.
@@ -62,7 +62,7 @@ export default function About() {
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                 <p className="text-foreground font-semibold mb-2">The gap ChainSync fills</p>
                 <p className="text-muted-foreground">
-                  Everbridge pushes notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure — assigning ownership, notifying the right stakeholders simultaneously, maintaining incident state, and generating the compliance documentation. That's the gap ChainSync fills.
+                  Everbridge pushes notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure: assigning ownership, notifying the right stakeholders simultaneously, maintaining incident state, and generating the compliance documentation. That's the gap ChainSync fills.
                 </p>
               </div>
             </motion.div>
@@ -112,7 +112,7 @@ export default function About() {
               <Card className="p-6 bg-white border border-border h-full">
                 <h3 className="text-lg font-semibold text-foreground mb-3">Coordination Agents</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Detection, analysis, coordination, and documentation — each handled by a specialized agent. Modular by design: improve one without touching the others.
+                  Detection, analysis, coordination, and documentation, each handled by a separate agent. Modular by design: improve one without touching the others.
                 </p>
               </Card>
             </motion.div>
@@ -130,7 +130,7 @@ export default function About() {
               <Card className="p-6 bg-white border border-border h-full">
                 <h3 className="text-lg font-semibold text-foreground mb-3">Compliance Documentation</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Every action is logged. Incident reports, regulatory notifications, and audit trails are generated automatically — so your team focuses on response, not paperwork.
+                  Every action is logged. Incident reports, regulatory notifications, and audit trails are generated automatically, so your team focuses on response, not paperwork.
                 </p>
               </Card>
             </motion.div>
@@ -159,7 +159,7 @@ export default function About() {
               className="text-lg text-muted-foreground leading-relaxed"
               variants={fadeUp}
             >
-              <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years as a MuleSoft Integration Engineer connecting enterprise systems across healthcare, insurance, and energy — at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+              <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years as a MuleSoft Integration Engineer connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
             </motion.p>
 
             <motion.p

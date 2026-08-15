@@ -184,7 +184,7 @@ export default function HowItWorks() {
                   </p>
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Coordination Agents:</span> 17 agents — Detection, Analysis, Coordination, and Documentation — each an independent FastAPI service.
+                      <span className="font-semibold">Coordination Agents:</span> 17 agents (Detection, Analysis, Coordination, and Documentation), each an independent FastAPI service.
                     </p>
                   </div>
                 </div>
