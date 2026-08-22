@@ -12,13 +12,13 @@ const STACKS = [
     border: "border-blue-200",
     textColor: "text-blue-700",
     dotColor: "bg-blue-500",
-    tech: ["MuleSoft", "DataWeave", "Universal Webhook", "22+ Flows"],
-    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. MuleSoft is the current implementation, but the architecture is swappable by design.",
+    tech: ["FastAPI", "Universal Webhook", "22+ Flows", "MuleSoft (supported)"],
+    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. FastAPI is the current implementation, but the architecture is swappable by design — MuleSoft, Workato, and Boomi are all supported.",
     items: [
-      { name: "MuleSoft", desc: "Enterprise integration platform" },
-      { name: "DataWeave", desc: "Data transformation language" },
+      { name: "FastAPI", desc: "Current integration implementation" },
       { name: "Universal Webhook", desc: "HTTP POST from any system" },
       { name: "22+ Flow Implementations", desc: "Pre-built connectors" },
+      { name: "MuleSoft (supported)", desc: "Enterprise integration alternative" },
     ],
   },
   {

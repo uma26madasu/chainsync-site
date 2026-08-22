@@ -31,7 +31,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["mulesoft", "workato", "boomi", "integration", "api", "webhook", "connector", "universal", "bms", "building management", "scada"],
     topic: "integrationHub",
-    text: "The Integration Layer is built on MuleSoft but is fully swappable with Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks. Nothing changes in your current stack — ChainSync connects to what you already have.",
+    text: "The Integration Layer is built on FastAPI and is fully swappable with MuleSoft, Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks. Nothing changes in your current stack — ChainSync connects to what you already have.",
     quickReplies: ["How does it work?", "What about security?", "Apply for pilot"]
   },
   {

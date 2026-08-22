@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
 
 const CURRENT = {
-  id: "mulesoft",
-  name: "MuleSoft + DataWeave",
+  id: "fastapi",
+  name: "FastAPI",
   badge: "Current Implementation",
-  desc: "Enterprise integration platform with DataWeave transformations. Handles 22+ flow implementations across cloud and on-premise systems.",
+  desc: "Python-native HTTP webhook routing. Each integration is an independent FastAPI service receiving events from sensors, SCADA systems, and external platforms via standard HTTP POST.",
   color: "#3b82f6",
   bg: "bg-blue-50",
   border: "border-blue-400",
@@ -14,25 +14,25 @@ const CURRENT = {
 
 const ALTERNATIVES = [
   {
-    id: "workato",
-    name: "Workato",
-    desc: "Low-code integration platform for cloud-native teams",
+    id: "mulesoft",
+    name: "MuleSoft",
+    desc: "Enterprise integration platform with DataWeave transformations",
     color: "#8b5cf6",
     bg: "bg-purple-50",
     border: "border-purple-300",
   },
   {
-    id: "boomi",
-    name: "Dell Boomi",
-    desc: "iPaaS platform with strong enterprise data governance",
+    id: "workato",
+    name: "Workato",
+    desc: "Low-code integration platform for cloud-native teams",
     color: "#10b981",
     bg: "bg-emerald-50",
     border: "border-emerald-300",
   },
   {
-    id: "azure",
-    name: "Azure Logic Apps",
-    desc: "Microsoft-native workflow automation and integration",
+    id: "boomi",
+    name: "Dell Boomi",
+    desc: "iPaaS platform with strong enterprise data governance",
     color: "#06b6d4",
     bg: "bg-cyan-50",
     border: "border-cyan-300",
@@ -48,11 +48,11 @@ const ALTERNATIVES = [
 ];
 
 export default function SwappableIntegration() {
-  const [selected, setSelected] = useState<string>("mulesoft");
+  const [selected, setSelected] = useState<string>("fastapi");
 
   const activeAlt = ALTERNATIVES.find((a) => a.id === selected);
-  const isMuleSoft = selected === "mulesoft";
-  const display = isMuleSoft ? CURRENT : activeAlt!;
+  const isCurrent = selected === "fastapi";
+  const display = isCurrent ? CURRENT : activeAlt!;
 
   return (
     <div className="w-full">
@@ -80,12 +80,12 @@ export default function SwappableIntegration() {
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
         >
-          {/* Current (MuleSoft) */}
+          {/* Current (FastAPI) */}
           <motion.div variants={fadeUp} className="lg:col-span-1" transition={{ delay: 0 }}>
             <button
-              onClick={() => setSelected("mulesoft")}
+              onClick={() => setSelected("fastapi")}
               className={`w-full rounded-xl border-2 p-4 text-left transition-all duration-200 cursor-pointer ${
-                selected === "mulesoft"
+                selected === "fastapi"
                   ? `${CURRENT.bg} ${CURRENT.border} shadow-md`
                   : "bg-white border-border hover:shadow-sm"
               }`}
@@ -134,7 +134,7 @@ export default function SwappableIntegration() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
             className={`w-full rounded-xl border p-5 ${
-              isMuleSoft ? "bg-blue-50 border-blue-200" : `${display.bg} ${display.border}`
+              isCurrent ? "bg-blue-50 border-blue-200" : `${display.bg} ${display.border}`
             }`}
           >
             <div className="flex items-start gap-3">
@@ -145,15 +145,15 @@ export default function SwappableIntegration() {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <p className="text-sm font-bold text-foreground">{display.name}</p>
-                  {isMuleSoft && (
+                  {isCurrent && (
                     <span className="text-xs px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 font-medium">Active</span>
                   )}
-                  {!isMuleSoft && (
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">Plug-in alternative</span>
+                  {!isCurrent && (
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">Supported</span>
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground">{display.desc}</p>
-                {!isMuleSoft && (
+                {!isCurrent && (
                   <p className="text-xs text-muted-foreground mt-2 italic">
                     Switching to {display.name} requires zero changes to the AI agent layer or scheduling layer. Only the integration adapter changes.
                   </p>

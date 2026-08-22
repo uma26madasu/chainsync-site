@@ -234,7 +234,7 @@ export default function Home() {
                 <Layers className="text-primary mb-4" size={32} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">Integration Layer</h3>
                 <p className="text-muted-foreground text-sm">
-                  Built on MuleSoft, swappable with Workato, Boomi, or any iPaaS. Connects to your existing SCADA and monitoring systems via standard HTTP. No rip-and-replace.
+                  Built on FastAPI, swappable with MuleSoft, Workato, Boomi, or any iPaaS. Connects to your existing SCADA and monitoring systems via standard HTTP. No rip-and-replace.
                 </p>
               </Card>
             </motion.div>
@@ -410,7 +410,7 @@ export default function Home() {
             >
               <h4 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform that supports HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack) can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
+                ChainSync's integration layer is decoupled from any single platform. FastAPI is the current implementation, but any platform that supports HTTP POST (MuleSoft, Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack) can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
               </p>
             </motion.div>
 

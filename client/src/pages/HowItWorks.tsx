@@ -160,7 +160,7 @@ export default function HowItWorks() {
                   </p>
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Integration Hub:</span> Supports 22+ flow implementations across AWS, Azure, MuleSoft, and custom APIs with zero vendor lock-in.
+                      <span className="font-semibold">Integration Hub:</span> Supports 22+ flow implementations across AWS, Azure, MuleSoft, and custom integrations, via FastAPI and a Universal Webhook Endpoint with zero vendor lock-in.
                     </p>
                   </div>
                 </div>
