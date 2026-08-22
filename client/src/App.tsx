@@ -5,6 +5,7 @@ import { Route, Switch, useLocation } from "wouter";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { PortalProvider } from "./contexts/PortalContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import ScenarioWalkthrough from "./pages/ScenarioWalkthrough";
@@ -14,8 +15,25 @@ import Technology from "./pages/Technology";
 import Roadmaps from "./pages/Roadmaps";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
+import PortalEntry from "./pages/portal/PortalEntry";
+import PortalIncidentList from "./pages/portal/PortalIncidentList";
+import PortalIncidentDetail from "./pages/portal/PortalIncidentDetail";
 
-function Router() {
+// Portal routes are wrapped in PortalProvider but NOT in the main AnimatePresence/motion
+// to keep them independent from the marketing site transitions.
+function PortalRouter() {
+  return (
+    <PortalProvider>
+      <Switch>
+        <Route path={"/portal"} component={PortalEntry} />
+        <Route path={"/portal/incidents"} component={PortalIncidentList} />
+        <Route path={"/portal/incidents/:id"} component={PortalIncidentDetail} />
+      </Switch>
+    </PortalProvider>
+  );
+}
+
+function MarketingRouter() {
   const [location] = useLocation();
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -41,6 +59,14 @@ function Router() {
       </motion.div>
     </AnimatePresence>
   );
+}
+
+function Router() {
+  const [location] = useLocation();
+  if (location.startsWith("/portal")) {
+    return <PortalRouter />;
+  }
+  return <MarketingRouter />;
 }
 
 function App() {
