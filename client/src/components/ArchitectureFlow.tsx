@@ -7,7 +7,7 @@ const PILLARS = [
     id: "ingestion",
     step: "01",
     label: "Ingestion Layer",
-    sublabel: "MuleSoft / Universal Webhook",
+    sublabel: "FastAPI / Universal Webhook",
     headerBg: "#e0f2fe",      // sky-100
     border: "#bae6fd",         // sky-200
     dot: "#7dd3fc",            // sky-300  — bullet & pulse dot

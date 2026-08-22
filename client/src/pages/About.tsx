@@ -103,7 +103,7 @@ export default function About() {
               <Card className="p-6 bg-white border border-border h-full">
                 <h3 className="text-lg font-semibold text-foreground mb-3">Integration Layer</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Connects to any monitoring system, SCADA platform, or building management system via standard HTTP webhooks. Built on MuleSoft, fully swappable. No rip-and-replace.
+                  Connects to any monitoring system, SCADA platform, or building management system via standard HTTP webhooks. Built on FastAPI, swappable with MuleSoft, Workato, or Boomi. No rip-and-replace.
                 </p>
               </Card>
             </motion.div>

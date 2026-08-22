@@ -43,7 +43,7 @@ export default function Technology() {
             initial="hidden"
             animate="visible"
           >
-            {["17 Coordination Agents", "AI Reasoning Engine", "MuleSoft Integration", "MongoDB", "FastAPI HTTP Webhooks"].map((tag) => (
+            {["17 Coordination Agents", "AI Reasoning Engine", "FastAPI Integration", "MongoDB", "Universal Webhook Endpoint"].map((tag) => (
               <span key={tag} className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
                 {tag}
               </span>
@@ -288,7 +288,7 @@ export default function Technology() {
                 {[
                   ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
                   ["AI Reasoning", "GPT-4 + Domain-Specific Prompts", "Context-aware analysis, risk classification, decision support"],
-                  ["Integration Layer", "MuleSoft + DataWeave", "Enterprise integration and data transformation (swappable)"],
+                  ["Integration Layer", "FastAPI (HTTP Webhooks)", "Current integration implementation (MuleSoft, Workato, Boomi also supported)"],
                   ["Scheduler", "Scheduling Layer (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
                   ["Database", "MongoDB", "Event storage, audit trails, and document records"],
                   ["Event Transport", "FastAPI HTTP Webhooks", "Platform-agnostic event routing between agents"],
@@ -321,7 +321,7 @@ export default function Technology() {
           >
             <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
             <p className="text-sm text-muted-foreground">
-              ChainSync's integration layer is decoupled from any single platform. MuleSoft is the current implementation, but any platform supporting HTTP POST (Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent or scheduling layers.
+              ChainSync's integration layer is decoupled from any single platform. FastAPI is the current implementation, but any platform supporting HTTP POST (MuleSoft, Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent or scheduling layers.
             </p>
           </motion.div>
         </div>
@@ -363,7 +363,8 @@ export default function Technology() {
                       <div>
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Built Integrations</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ MuleSoft (current implementation)</li>
+                          <li>✓ FastAPI (current implementation)</li>
+                          <li>✓ MuleSoft (supported)</li>
                           <li>✓ Universal Webhook (HTTP POST from any system)</li>
                           <li>→ AWS IoT Core (planned)</li>
                           <li>→ Azure IoT Hub (planned)</li>
@@ -373,7 +374,7 @@ export default function Technology() {
                       <div>
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Data Sources</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ 22+ MuleSoft flow implementations</li>
+                          <li>✓ 22+ flow implementations</li>
                           <li>✓ SCADA systems via HTTP webhooks</li>
                           <li>→ Weather APIs (planned)</li>
                           <li>→ Satellite data (planned)</li>

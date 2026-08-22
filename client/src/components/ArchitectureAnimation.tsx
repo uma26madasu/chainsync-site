@@ -5,7 +5,7 @@ const LAYERS = [
   {
     label: "LAYER 1",
     title: "Integration Layer",
-    subtitle: "MuleSoft + DataWeave",
+    subtitle: "FastAPI + Universal Webhook",
     color: "#0284c7",
     bg: "#f0f9ff",
     border: "#bae6fd",
