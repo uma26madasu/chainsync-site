@@ -227,7 +227,7 @@ export default function Insights() {
             viewport={viewport}
           >
             Every vertical has different bottlenecks, agency overlaps, and compliance burdens.
-            Each graph reflects that reality — same platform, different response profiles.
+            Each graph reflects that reality: same platform, different response profiles.
           </motion.p>
           <CoordinationTimeComparison />
         </div>

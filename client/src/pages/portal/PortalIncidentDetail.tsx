@@ -36,8 +36,8 @@ function SeverityBadge({ severity }: { severity: IncidentDetail["severity"] }) {
 // ---- Summary card ----
 function SummaryCard({ incident }: { incident: IncidentDetail }) {
   const alertLabel = incident.equipment_name
-    ? `${incident.equipment_name} — ${incident.location}`
-    : `${incident.source_system} alert — ${incident.location}`;
+    ? `${incident.equipment_name}, ${incident.location}`
+    : `${incident.source_system} alert, ${incident.location}`;
 
   return (
     <Card className="p-5 bg-white border border-border mb-4">
@@ -190,7 +190,7 @@ function StakeholderRow({ s }: { s: Stakeholder }) {
     <div className="flex items-center justify-between gap-3 py-3 border-b border-border last:border-0">
       <div className="min-w-0">
         <p className="text-sm font-semibold text-foreground truncate">{s.name}</p>
-        <p className="text-xs text-muted-foreground">{s.role} — {s.department}</p>
+        <p className="text-xs text-muted-foreground">{s.role}, {s.department}</p>
       </div>
       <div className="flex-shrink-0">
         {s.acknowledged ? (

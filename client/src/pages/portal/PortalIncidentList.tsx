@@ -43,8 +43,8 @@ function PhaseBar({ currentPhase }: { currentPhase: number }) {
 function IncidentCard({ incident }: { incident: Incident }) {
   const [, navigate] = useLocation();
   const alertLabel = incident.equipment_name
-    ? `${incident.equipment_name} — ${incident.location}`
-    : `${incident.source_system} alert — ${incident.location}`;
+    ? `${incident.equipment_name}, ${incident.location}`
+    : `${incident.source_system} alert, ${incident.location}`;
 
   return (
     <motion.div variants={fadeUp} whileHover={{ y: -2, transition: { duration: 0.12 } }}>
