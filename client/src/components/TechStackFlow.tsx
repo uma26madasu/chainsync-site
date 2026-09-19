@@ -13,7 +13,7 @@ const STACKS = [
     textColor: "text-blue-700",
     dotColor: "bg-blue-500",
     tech: ["FastAPI", "Universal Webhook", "22+ Flows", "MuleSoft (supported)"],
-    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. FastAPI is the current implementation, but the architecture is swappable by design — MuleSoft, Workato, and Boomi are all supported.",
+    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. FastAPI is the current implementation, but the architecture is swappable by design. MuleSoft, Workato, and Boomi are all supported.",
     items: [
       { name: "FastAPI", desc: "Current integration implementation" },
       { name: "Universal Webhook", desc: "HTTP POST from any system" },

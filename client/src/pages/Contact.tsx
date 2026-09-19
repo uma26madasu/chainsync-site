@@ -284,7 +284,7 @@ export default function Contact() {
               <Card className="p-6 bg-white border border-border">
                 <h3 className="font-semibold text-foreground mb-3">Who is this for?</h3>
                 <p className="text-muted-foreground">
-                  Mid-size regional water utilities where the Emergency Operations Manager or equivalent is responsible for incident coordination. We're focused on water utilities first — organizations already dealing with SCADA-connected monitoring and EPA reporting requirements.
+                  Mid-size regional water utilities where the Emergency Operations Manager or equivalent is responsible for incident coordination. We're focused on water utilities first: organizations already dealing with SCADA-connected monitoring and EPA reporting requirements.
                 </p>
               </Card>
             </motion.div>

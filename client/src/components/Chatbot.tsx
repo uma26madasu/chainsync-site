@@ -19,7 +19,7 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["python", "agent", "agents", "17 agents", "specialized", "coordination agents"],
     topic: "coordinationAgents",
-    text: "ChainSync uses 17 coordination agents — each owns one job in the response pipeline: Detection monitors for anomalies, Analysis evaluates severity, Coordination routes notifications, and Documentation records actions. We're seeking founding pilot partners to validate these agents in real water utility incident environments.",
+    text: "ChainSync uses 17 coordination agents. Each owns one job in the response pipeline: Detection monitors for anomalies, Analysis evaluates severity, Coordination routes notifications, and Documentation records actions. We're seeking founding pilot partners to validate these agents in real water utility incident environments.",
     quickReplies: ["How does it work?", "Apply for pilot", "Contact us"]
   },
   {
@@ -31,13 +31,13 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["mulesoft", "workato", "boomi", "integration", "api", "webhook", "connector", "universal", "bms", "building management", "scada"],
     topic: "integrationHub",
-    text: "The Integration Layer is built on FastAPI and is fully swappable with MuleSoft, Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks. Nothing changes in your current stack — ChainSync connects to what you already have.",
+    text: "The Integration Layer is built on FastAPI and is fully swappable with MuleSoft, Workato, Boomi, or any iPaaS. It connects sensors, APIs, SCADA systems, and external platforms via standard webhooks. Nothing changes in your current stack. ChainSync connects to what you already have.",
     quickReplies: ["How does it work?", "What about security?", "Apply for pilot"]
   },
   {
     keywords: ["scheduling", "scheduler", "calendar", "outlook", "google calendar", "meeting", "coordination"],
     topic: "scheduling",
-    text: "ChainSync's scheduling layer handles autonomous meeting coordination during incidents — detecting the right authority, resolving multi-calendar conflicts, and triggering emergency overrides. Google Calendar and Microsoft 365 integrations are supported.",
+    text: "ChainSync's scheduling layer handles autonomous meeting coordination during incidents: detecting the right authority, resolving multi-calendar conflicts, and triggering emergency overrides. Google Calendar and Microsoft 365 integrations are supported.",
     quickReplies: ["How does it work?", "Development status", "Apply for pilot"]
   },
   {
@@ -61,19 +61,19 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["water", "treatment", "scada", "facility", "wastewater", "drinking water", "contamination", "utility", "utilities"],
     topic: "waterTreatment",
-    text: "Water utilities are our founding vertical. ChainSync connects directly to SCADA systems to receive incident events, then automatically builds the response structure: stakeholder assignment, regulatory notifications, and compliance documentation — in minutes rather than hours. We're accepting three founding pilot partners from mid-size regional water utilities now.",
+    text: "Water utilities are our founding vertical. ChainSync connects directly to SCADA systems to receive incident events, then automatically builds the response structure: stakeholder assignment, regulatory notifications, and compliance documentation, in minutes rather than hours. We're accepting three founding pilot partners from mid-size regional water utilities now.",
     quickReplies: ["Apply for pilot", "What about security?", "How does it work?"]
   },
   {
     keywords: ["pilot", "partner", "founding", "join", "beta", "testing", "sign up", "early access", "apply"],
     topic: "pilotProgram",
-    text: "We're accepting three founding pilot partnerships — water utilities and healthcare facilities. Benefits: direct access to the founding team, direct influence over product direction, no upfront costs during the pilot, and priority pricing at launch. No long-term commitment. Head to the Pilot Partnership page to apply.",
+    text: "We're accepting three founding pilot partnerships across water utilities and healthcare facilities. Benefits: direct access to the founding team, direct influence over product direction, no upfront costs during the pilot, and priority pricing at launch. No long-term commitment. Head to the Pilot Partnership page to apply.",
     quickReplies: ["Pricing", "Apply for pilot", "Contact us"]
   },
   {
     keywords: ["timeline", "launch", "when", "available", "release", "date", "roadmap", "status", "progress"],
     topic: "timeline",
-    text: "Core coordination architecture is built and tested. We're seeking founding pilot partners — water utilities and healthcare facilities — to validate in real incident environments. No public launch date yet — we're prioritizing getting it right over launching quickly.",
+    text: "Core coordination architecture is built and tested. We're seeking founding pilot partners (water utilities and healthcare facilities) to validate in real incident environments. No public launch date yet. We're prioritizing getting it right over launching quickly.",
     quickReplies: ["Apply for pilot", "Development status", "Contact us"]
   },
   {
@@ -85,25 +85,25 @@ const KNOWLEDGE_BASE = [
   {
     keywords: ["different", "notification", "everbridge", "pagerduty", "servicenow", "jira", "slack", "teams", "compare"],
     topic: "differentiation",
-    text: "Tools like Everbridge push notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure. ChainSync does the alignment work — assigning ownership, mapping stakeholders, maintaining incident state — so your team executes instead of coordinates.",
+    text: "Tools like Everbridge push notifications. ServiceNow tracks work after the fact. Slack enables conversation. None of them automatically build a coordinated response structure. ChainSync does the alignment work: assigning ownership, mapping stakeholders, maintaining incident state, so your team executes instead of coordinates.",
     quickReplies: ["How does it work?", "Apply for pilot", "Contact us"]
   },
   {
     keywords: ["replace", "human", "responder", "automation", "augment", "job", "people"],
     topic: "humanRole",
-    text: "ChainSync augments human expertise, not replace it. The system handles coordination overhead — chasing updates, aligning teams, rebuilding context — so your team can focus on what matters: making decisions and taking action to protect communities.",
+    text: "ChainSync augments human expertise, not replace it. The system handles coordination overhead (chasing updates, aligning teams, rebuilding context) so your team can focus on what matters: making decisions and taking action to protect communities.",
     quickReplies: ["How does it work?", "Development status", "Apply for pilot"]
   },
   {
     keywords: ["contact", "reach", "talk", "demo", "call", "email", "speak", "get in touch", "hello", "walkthrough"],
     topic: "contact",
-    text: "Best way to reach us is through the Pilot Partnership page. Whether you're interested in a founding partnership, want a scenario walkthrough, or have a technical question — fill out the form and we'll get back to you directly.",
+    text: "Best way to reach us is through the Pilot Partnership page. Whether you're interested in a founding partnership, want a scenario walkthrough, or have a technical question, fill out the form and we'll get back to you directly.",
     quickReplies: ["Apply for pilot", "Pricing", "Implementation"]
   },
   {
     keywords: ["uma", "founder", "who built", "who made", "team", "about", "background"],
     topic: "founder",
-    text: "ChainSync was built by Uma Madasu, with 6+ years as a MuleSoft Integration Engineer connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments — not because data was missing, but because teams lost shared context under pressure.",
+    text: "ChainSync was built by Uma Madasu, with 6+ years as a MuleSoft Integration Engineer connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments. Not because data was missing, but because teams lost shared context under pressure.",
     quickReplies: ["How does it work?", "Apply for pilot", "Contact us"]
   }
 ];

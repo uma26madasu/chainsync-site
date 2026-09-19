@@ -7,7 +7,7 @@ const WATER_SCENARIO = {
   title: "Water Quality Incident",
   subtitle: "Turbidity Spike at Regional Treatment Plant",
   facility: "Riverside Regional Water Treatment Plant",
-  system: "SCADA System — Hach Turbidity Monitor",
+  system: "SCADA System: Hach Turbidity Monitor",
   phases: [
     {
       phase: 1,
@@ -20,7 +20,7 @@ const WATER_SCENARIO = {
       data: [
         { label: "Reading", value: "5.2 NTU" },
         { label: "Threshold", value: "4.0 NTU" },
-        { label: "Location", value: "Intake Point A — Raw Water" },
+        { label: "Location", value: "Intake Point A, Raw Water" },
         { label: "Trend", value: "Rising (3.1 → 4.6 → 5.2 in 18 min)" },
       ],
       log: "SCADA webhook received → Alert parsed → Incident ID #WQ-2026-0847 created",
@@ -31,11 +31,11 @@ const WATER_SCENARIO = {
       time: "02:14:07 AM",
       elapsed: "4s",
       icon: "🔍",
-      headline: "Severity Assessed — Level 3 (High)",
+      headline: "Severity Assessed: Level 3 (High)",
       detail: "AI agent analyzed the alert pattern, regulatory context, and historical data to determine response requirements.",
       data: [
-        { label: "Severity", value: "Level 3 — High (exceeds EPA MCL)" },
-        { label: "Regulation", value: "EPA SDWA — 40 CFR 141.13" },
+        { label: "Severity", value: "Level 3: High (exceeds EPA MCL)" },
+        { label: "Regulation", value: "EPA SDWA: 40 CFR 141.13" },
         { label: "Notification window", value: "County Health: 2 hours" },
         { label: "Stakeholders identified", value: "6 people across 4 departments" },
       ],
@@ -50,12 +50,12 @@ const WATER_SCENARIO = {
       headline: "6 Stakeholders Notified Simultaneously",
       detail: "All relevant personnel received context-rich notifications through their preferred channel. No phone tree. No sequential calls.",
       data: [
-        { label: "Plant Operator (on-shift)", value: "SMS + Dashboard — Acknowledged ✓" },
-        { label: "Director of Operations", value: "SMS + Email — Acknowledged ✓" },
-        { label: "Environmental Compliance Officer", value: "Email + SMS — Acknowledged ✓" },
-        { label: "County Health Dept Liaison", value: "Email — Pending" },
-        { label: "Field Supervisor (Zone A)", value: "SMS — Acknowledged ✓" },
-        { label: "Lab Technician (on-call)", value: "SMS — Acknowledged ✓" },
+        { label: "Plant Operator (on-shift)", value: "SMS + Dashboard: Acknowledged ✓" },
+        { label: "Director of Operations", value: "SMS + Email: Acknowledged ✓" },
+        { label: "Environmental Compliance Officer", value: "Email + SMS: Acknowledged ✓" },
+        { label: "County Health Dept Liaison", value: "Email: Pending" },
+        { label: "Field Supervisor (Zone A)", value: "SMS: Acknowledged ✓" },
+        { label: "Lab Technician (on-call)", value: "SMS: Acknowledged ✓" },
       ],
       log: "Notification Agent dispatched 6 alerts across SMS + Email → 5/6 acknowledged within 90 seconds",
     },
@@ -65,14 +65,14 @@ const WATER_SCENARIO = {
       time: "02:14:18 AM",
       elapsed: "15s",
       icon: "📅",
-      headline: "Response Structure Built — Meeting Scheduled",
+      headline: "Response Structure Built, Meeting Scheduled",
       detail: "Ownership assigned. Emergency coordination meeting created across all calendars with pre-populated agenda.",
       data: [
         { label: "Incident Commander", value: "Director of Operations" },
-        { label: "Sample Collection", value: "Lab Technician — assigned" },
-        { label: "Field Investigation", value: "Field Supervisor Zone A — assigned" },
-        { label: "EPA Notification Draft", value: "Compliance Officer — assigned" },
-        { label: "Meeting", value: "5:00 AM — All 6 stakeholders — Google Calendar invites sent" },
+        { label: "Sample Collection", value: "Lab Technician: assigned" },
+        { label: "Field Investigation", value: "Field Supervisor Zone A: assigned" },
+        { label: "EPA Notification Draft", value: "Compliance Officer: assigned" },
+        { label: "Meeting", value: "5:00 AM, all 6 stakeholders, Google Calendar invites sent" },
         { label: "Agenda", value: "Auto-generated: Source ID → Remediation → Public notification decision" },
       ],
       log: "Scheduling Agent checked 6 calendars → Emergency meeting created → Ownership matrix built → Agenda populated",
@@ -80,18 +80,18 @@ const WATER_SCENARIO = {
     {
       phase: 5,
       name: "State Tracking",
-      time: "02:14:18 AM → Ongoing",
+      time: "02:14:18 AM onward",
       elapsed: "Live",
       icon: "📊",
       headline: "Live Coordination Timeline",
       detail: "Every action, acknowledgment, and update is tracked in real-time. Single source of truth for all stakeholders.",
       data: [
-        { label: "02:14:03", value: "SCADA alert received — Turbidity 5.2 NTU" },
-        { label: "02:14:07", value: "Severity assessed — Level 3 High" },
+        { label: "02:14:03", value: "SCADA alert received: Turbidity 5.2 NTU" },
+        { label: "02:14:07", value: "Severity assessed: Level 3 High" },
         { label: "02:14:12", value: "6 stakeholders notified" },
         { label: "02:14:18", value: "Response structure built, meeting at 5:00 AM" },
-        { label: "02:16:41", value: "Lab Tech confirmed — heading to intake for samples" },
-        { label: "02:22:08", value: "Field Supervisor on-site — visual inspection started" },
+        { label: "02:16:41", value: "Lab Tech confirmed: heading to intake for samples" },
+        { label: "02:22:08", value: "Field Supervisor on-site: visual inspection started" },
         { label: "02:34:15", value: "Turbidity reading update: 5.8 NTU (still rising)" },
         { label: "02:41:00", value: "Compliance Officer: EPA notification draft ready for review" },
       ],
@@ -107,11 +107,11 @@ const WATER_SCENARIO = {
       detail: "Compliance documentation started building the moment the incident was created. Pre-populated with facility data, readings, timeline, and regulatory references.",
       data: [
         { label: "Document", value: "EPA SDWA Tier 2 Public Notification" },
-        { label: "Regulation", value: "40 CFR 141.203 — Turbidity MCL Violation" },
+        { label: "Regulation", value: "40 CFR 141.203: Turbidity MCL Violation" },
         { label: "Facility info", value: "Auto-populated from facility profile" },
         { label: "Readings", value: "Auto-populated from SCADA data" },
         { label: "Timeline", value: "Auto-populated from coordination log" },
-        { label: "Status", value: "Draft ready — pending Compliance Officer review" },
+        { label: "Status", value: "Draft ready, pending Compliance Officer review" },
       ],
       log: "Compliance Documentation Agent generated EPA notification → Cross-referenced 40 CFR 141 → Draft ready for human review",
     },
@@ -121,15 +121,15 @@ const WATER_SCENARIO = {
       time: "07:42:00 AM",
       elapsed: "5h 28m",
       icon: "✅",
-      headline: "Incident Resolved — Audit-Ready Record Complete",
+      headline: "Incident Resolved, Audit-Ready Record Complete",
       detail: "Turbidity returned to normal after source was identified and remediated. Complete incident record with every action, decision, and notification timestamped.",
       data: [
-        { label: "Resolution", value: "Sediment runoff from upstream construction — contained" },
+        { label: "Resolution", value: "Sediment runoff from upstream construction, contained" },
         { label: "Final reading", value: "2.1 NTU (within normal range)" },
-        { label: "EPA notification", value: "Submitted on-time — confirmed received" },
-        { label: "County Health", value: "Notified within window — no public advisory needed" },
+        { label: "EPA notification", value: "Submitted on-time, confirmed received" },
+        { label: "County Health", value: "Notified within window, no public advisory needed" },
         { label: "Total coordination time", value: "15 seconds (vs 4-6 hours manual)" },
-        { label: "Documentation", value: "Complete — exportable PDF, audit-ready" },
+        { label: "Documentation", value: "Complete: exportable PDF, audit-ready" },
       ],
       log: "Incident #WQ-2026-0847 closed → Full audit trail generated → PDF exported → All stakeholders notified of resolution",
     },
@@ -139,8 +139,8 @@ const WATER_SCENARIO = {
 const HEALTHCARE_SCENARIO = {
   title: "Hospital Facilities Incident",
   subtitle: "HVAC Failure in Surgical Wing",
-  facility: "Westbridge Medical Center — 320 beds",
-  system: "Building Management System — Air Handling Unit #3",
+  facility: "Westbridge Medical Center (320 beds)",
+  system: "Building Management System: Air Handling Unit #3",
   phases: [
     {
       phase: 1,
@@ -152,8 +152,8 @@ const HEALTHCARE_SCENARIO = {
       detail: "Temperature in OR Suite 2 has exceeded the acceptable range for sterile surgical environments.",
       data: [
         { label: "Reading", value: "78.4°F (target: 68-72°F)" },
-        { label: "Location", value: "OR Suite 2 — Surgical Wing, 3rd Floor" },
-        { label: "Equipment", value: "AHU-3 — Primary air handling unit" },
+        { label: "Location", value: "OR Suite 2, Surgical Wing, 3rd Floor" },
+        { label: "Equipment", value: "AHU-3, primary air handling unit" },
         { label: "Trend", value: "Rising (72.1 → 75.3 → 78.4 in 22 min)" },
       ],
       log: "BMS webhook received → Alert parsed → Incident ID #FC-2026-0312 created",
@@ -164,12 +164,12 @@ const HEALTHCARE_SCENARIO = {
       time: "01:47:26 PM",
       elapsed: "4s",
       icon: "🔍",
-      headline: "Severity Assessed — Level 3 (High)",
+      headline: "Severity Assessed: Level 3 (High)",
       detail: "Agent identified this as a sterile environment breach requiring multi-department coordination. Joint Commission EC standards triggered.",
       data: [
-        { label: "Severity", value: "Level 3 — High (sterile environment compromise)" },
-        { label: "Compliance trigger", value: "Joint Commission EC.02.05 — Utility Systems" },
-        { label: "Secondary trigger", value: "Infection Control protocol — OR temperature breach" },
+        { label: "Severity", value: "Level 3: High (sterile environment compromise)" },
+        { label: "Compliance trigger", value: "Joint Commission EC.02.05: Utility Systems" },
+        { label: "Secondary trigger", value: "Infection Control protocol: OR temperature breach" },
         { label: "Stakeholders identified", value: "7 people across 5 departments" },
         { label: "Surgery impact", value: "2 procedures scheduled in OR Suite 2 within 90 min" },
       ],
@@ -184,13 +184,13 @@ const HEALTHCARE_SCENARIO = {
       headline: "7 Stakeholders Notified Simultaneously",
       detail: "Facilities, Infection Control, Clinical Leadership, and Biomedical Engineering all notified with full context in under 10 seconds.",
       data: [
-        { label: "Facilities Technician (on-shift)", value: "SMS + Teams — Acknowledged ✓" },
-        { label: "Director of Facilities", value: "SMS + Email — Acknowledged ✓" },
-        { label: "Infection Control Preventionist", value: "Email + Teams — Acknowledged ✓" },
-        { label: "Surgical Services Director", value: "SMS — Acknowledged ✓" },
-        { label: "Biomedical Engineering Lead", value: "SMS — Acknowledged ✓" },
-        { label: "Chief Nursing Officer (3rd Floor)", value: "Teams — Pending" },
-        { label: "Quality/Accreditation Manager", value: "Email — Acknowledged ✓" },
+        { label: "Facilities Technician (on-shift)", value: "SMS + Teams: Acknowledged ✓" },
+        { label: "Director of Facilities", value: "SMS + Email: Acknowledged ✓" },
+        { label: "Infection Control Preventionist", value: "Email + Teams: Acknowledged ✓" },
+        { label: "Surgical Services Director", value: "SMS: Acknowledged ✓" },
+        { label: "Biomedical Engineering Lead", value: "SMS: Acknowledged ✓" },
+        { label: "Chief Nursing Officer (3rd Floor)", value: "Teams: Pending" },
+        { label: "Quality/Accreditation Manager", value: "Email: Acknowledged ✓" },
       ],
       log: "Notification Agent dispatched 7 alerts across SMS + Email + Teams → 6/7 acknowledged within 2 minutes",
     },
@@ -200,15 +200,15 @@ const HEALTHCARE_SCENARIO = {
       time: "01:47:38 PM",
       elapsed: "16s",
       icon: "📅",
-      headline: "Response Structure Built — Surgery Schedule Flagged",
+      headline: "Response Structure Built, Surgery Schedule Flagged",
       detail: "Ownership assigned. Emergency meeting scheduled. Surgical Services alerted to evaluate the two upcoming procedures in OR Suite 2.",
       data: [
         { label: "Incident Commander", value: "Director of Facilities" },
-        { label: "HVAC Repair", value: "Facilities Technician — dispatched to AHU-3" },
-        { label: "Infection Risk Assessment", value: "Infection Control Preventionist — assigned" },
-        { label: "Surgery Decision", value: "Surgical Services Director — evaluating postponement" },
-        { label: "Equipment Check", value: "Biomedical Engineering — checking OR Suite 2 equipment" },
-        { label: "Meeting", value: "2:15 PM — All stakeholders — Outlook 365 invites sent" },
+        { label: "HVAC Repair", value: "Facilities Technician: dispatched to AHU-3" },
+        { label: "Infection Risk Assessment", value: "Infection Control Preventionist: assigned" },
+        { label: "Surgery Decision", value: "Surgical Services Director: evaluating postponement" },
+        { label: "Equipment Check", value: "Biomedical Engineering: checking OR Suite 2 equipment" },
+        { label: "Meeting", value: "2:15 PM, all stakeholders, Outlook 365 invites sent" },
         { label: "Backup plan", value: "OR Suite 4 identified as alternative (temp: 70.2°F ✓)" },
       ],
       log: "Scheduling Agent checked 7 calendars → Emergency meeting created → Ownership matrix built → OR schedule cross-referenced",
@@ -216,17 +216,17 @@ const HEALTHCARE_SCENARIO = {
     {
       phase: 5,
       name: "State Tracking",
-      time: "01:47:38 PM → Ongoing",
+      time: "01:47:38 PM onward",
       elapsed: "Live",
       icon: "📊",
       headline: "Live Coordination Timeline",
-      detail: "Every department's actions tracked in real-time. No one needs to ask 'what's the status?' — it's visible to everyone.",
+      detail: "Every department's actions tracked in real-time. No one needs to ask 'what's the status?' It's visible to everyone.",
       data: [
-        { label: "01:47:22", value: "BMS alert received — OR Suite 2 temp 78.4°F" },
-        { label: "01:47:26", value: "Severity assessed — Level 3, EC.02.05 triggered" },
+        { label: "01:47:22", value: "BMS alert received: OR Suite 2 temp 78.4°F" },
+        { label: "01:47:26", value: "Severity assessed: Level 3, EC.02.05 triggered" },
         { label: "01:47:31", value: "7 stakeholders notified" },
         { label: "01:47:38", value: "Response structure built, meeting at 2:15 PM" },
-        { label: "01:52:14", value: "Facilities Tech on-site — AHU-3 compressor failure identified" },
+        { label: "01:52:14", value: "Facilities Tech on-site: AHU-3 compressor failure identified" },
         { label: "01:54:30", value: "Surgical Services: Case 1 moved to OR Suite 4, Case 2 delayed 1hr" },
         { label: "01:58:00", value: "Infection Control: environmental sampling initiated in OR Suite 2" },
         { label: "02:12:00", value: "Facilities: replacement compressor installed, AHU-3 restarting" },
@@ -244,13 +244,13 @@ const HEALTHCARE_SCENARIO = {
       headline: "Joint Commission Documentation Auto-Generated",
       detail: "EC.02.05 utility systems management documentation building in real-time from incident data. No manual Word docs. No reconstruction after the fact.",
       data: [
-        { label: "Document 1", value: "EC.02.05 — Utility Systems Incident Report" },
-        { label: "Document 2", value: "EC.02.06 — Medical Equipment Impact Assessment" },
+        { label: "Document 1", value: "EC.02.05: Utility Systems Incident Report" },
+        { label: "Document 2", value: "EC.02.06: Medical Equipment Impact Assessment" },
         { label: "Document 3", value: "Infection Control Environmental Event Log" },
         { label: "Facility info", value: "Auto-populated from facility profile" },
         { label: "Timeline", value: "Auto-populated from coordination log" },
         { label: "Clinical impact", value: "Auto-populated: 2 cases rescheduled, 0 patient harm" },
-        { label: "Status", value: "Drafts ready — pending Quality Manager review" },
+        { label: "Status", value: "Drafts ready, pending Quality Manager review" },
       ],
       log: "Joint Commission Documentation Agent generated EC.02.05 + EC.02.06 reports → Infection Control log populated → All drafts ready for human review",
     },
@@ -260,15 +260,15 @@ const HEALTHCARE_SCENARIO = {
       time: "03:15:00 PM",
       elapsed: "1h 28m",
       icon: "✅",
-      headline: "Incident Resolved — Survey-Ready Record Complete",
+      headline: "Incident Resolved, Survey-Ready Record Complete",
       detail: "AHU-3 repaired. OR Suite 2 cleared for use (pending 24hr culture results). Complete incident record ready for Joint Commission survey.",
       data: [
-        { label: "Resolution", value: "AHU-3 compressor replaced — system operational" },
+        { label: "Resolution", value: "AHU-3 compressor replaced, system operational" },
         { label: "Final temp", value: "70.8°F (within target range)" },
         { label: "Patient impact", value: "2 cases rescheduled, 0 adverse events" },
-        { label: "Infection Control", value: "Environmental cultures pending — 24hr follow-up scheduled" },
+        { label: "Infection Control", value: "Environmental cultures pending, 24hr follow-up scheduled" },
         { label: "Total coordination time", value: "16 seconds (vs 2-4 hours manual)" },
-        { label: "Documentation", value: "EC.02.05, EC.02.06, IC log — complete, exportable, audit-ready" },
+        { label: "Documentation", value: "EC.02.05, EC.02.06, IC log: complete, exportable, audit-ready" },
       ],
       log: "Incident #FC-2026-0312 closed → Joint Commission docs finalized → All stakeholders notified → 24hr follow-up auto-scheduled",
     },
@@ -331,7 +331,7 @@ function ScenarioWalkthroughContent() {
           7 Phases. One Unbroken Chain.
         </h1>
         <p style={{ fontSize: 15, color: "#64748B", margin: 0, maxWidth: 560, marginLeft: "auto", marginRight: "auto" }}>
-          Watch a real incident flow through ChainSync — from the first sensor alert to a documented, audit-ready resolution.
+          Watch a real incident flow through ChainSync, from the first sensor alert to a documented, audit-ready resolution.
         </p>
       </div>
 
@@ -339,7 +339,7 @@ function ScenarioWalkthroughContent() {
       <div style={{ display: "flex", gap: 0, marginBottom: 24, borderRadius: 10, overflow: "hidden", border: "1px solid #E2E8F0" }}>
         {[
           { id: "water", label: "Water Utility", sub: "Turbidity Spike" },
-          { id: "healthcare", label: "Healthcare", sub: "HVAC Failure — Surgical Wing" },
+          { id: "healthcare", label: "Healthcare", sub: "HVAC Failure, Surgical Wing" },
         ].map((v) => (
           <button
             key={v.id}
@@ -440,7 +440,7 @@ function ScenarioWalkthroughContent() {
                 <span style={{ fontSize: 24 }}>{phase.icon}</span>
                 <div>
                   <div style={{ fontSize: 11, fontWeight: 700, color: colors.text, letterSpacing: 1, textTransform: "uppercase" }}>
-                    Phase {phase.phase} — {phase.name}
+                    Phase {phase.phase}: {phase.name}
                   </div>
                   <div style={{ fontSize: 20, fontWeight: 700, color: colors.text, marginTop: 2 }}>
                     {phase.headline}
