@@ -402,21 +402,21 @@ export default function Technology() {
                       <div>
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Core + Emergency (10)</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ ContinuousLearningAgent</li>
-                          <li>✓ MultiStepReasoningAgent</li>
-                          <li>✓ RootCauseAnalysisAgent</li>
-                          <li>✓ PredictiveAlertAgent</li>
-                          <li>✓ ImpactAssessmentAgent</li>
+                          <li>✓ Continuous Learning Agent</li>
+                          <li>✓ Multi Step Reasoning Agent</li>
+                          <li>✓ Root Cause Analysis Agent</li>
+                          <li>✓ Predictive Alert Agent</li>
+                          <li>✓ Impact Assessment Agent</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Compliance + Healthcare (7)</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ ComplianceAutopilotAgent</li>
-                          <li>✓ RegulatoryReportingAgent</li>
-                          <li>✓ HospitalOperationsAgent</li>
-                          <li>✓ JointCommissionDocumentationAgent</li>
-                          <li>✓ InfectionControlCoordinationAgent</li>
+                          <li>✓ Compliance Autopilot Agent</li>
+                          <li>✓ Regulatory Reporting Agent</li>
+                          <li>✓ Hospital Operations Agent</li>
+                          <li>✓ Joint Commission Documentation Agent</li>
+                          <li>✓ Infection Control Coordination Agent</li>
                         </ul>
                       </div>
                     </div>

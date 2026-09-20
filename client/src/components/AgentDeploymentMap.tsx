@@ -3,6 +3,10 @@ import { motion, useInView } from "framer-motion";
 import CountUp from "@/components/CountUp";
 import { stagger, fadeUp } from "@/lib/motion";
 
+function toDisplayName(className: string): string {
+  return className.replace(/([a-z])([A-Z])/g, "$1 $2");
+}
+
 type Agent = { name: string; desc: string };
 type Category = { label: string; color: string; bg: string; border: string; textColor: string; agents: Agent[] };
 
@@ -125,7 +129,7 @@ export default function AgentDeploymentMap() {
                         animate={isHovered ? { scale: 1.5 } : { scale: 1 }}
                         transition={{ duration: 0.15 }}
                       />
-                      <p className="text-xs font-semibold text-foreground font-mono">{agent.name}</p>
+                      <p className="text-xs font-semibold text-foreground">{toDisplayName(agent.name)}</p>
                     </div>
                   </motion.div>
                 );
@@ -145,7 +149,7 @@ export default function AgentDeploymentMap() {
             transition={{ duration: 0.15 }}
             className={`w-full rounded-xl border p-4 ${hoveredCat.bg} ${hoveredCat.border}`}
           >
-            <p className="text-sm font-semibold text-foreground mb-1 font-mono">{hoveredAgent.name}</p>
+            <p className="text-sm font-semibold text-foreground mb-1">{toDisplayName(hoveredAgent.name)}</p>
             <p className="text-sm text-muted-foreground">{hoveredAgent.desc}</p>
           </motion.div>
         ) : (
