@@ -1,4 +1,8 @@
 import Header from "@/components/Header";
+
+function toDisplayName(className: string): string {
+  return className.replace(/([a-z])([A-Z])/g, "$1 $2");
+}
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -111,7 +115,7 @@ export default function UseCases() {
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["PredictiveAlertAgent", "ImpactAssessmentAgent", "ComplianceAutopilotAgent", "RegulatoryReportingAgent", "HistoricalPatternMatchingAgent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-mono font-medium">{a}</span>
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{toDisplayName(a)}</span>
                     ))}
                   </div>
                 </div>
@@ -276,7 +280,7 @@ export default function UseCases() {
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["PredictiveAlertAgent", "ImpactAssessmentAgent", "MeetingContextAgent", "RegulatoryReportingAgent", "PublicCommunicationAgent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-mono font-medium">{a}</span>
+                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-medium">{toDisplayName(a)}</span>
                     ))}
                   </div>
                 </div>
@@ -358,7 +362,7 @@ export default function UseCases() {
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["ImpactAssessmentAgent", "MeetingContextAgent", "ComplianceAutopilotAgent", "RegulatoryReportingAgent", "PublicCommunicationAgent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-mono font-medium">{a}</span>
+                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-medium">{toDisplayName(a)}</span>
                     ))}
                   </div>
                 </div>
@@ -477,7 +481,7 @@ export default function UseCases() {
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["HospitalOperationsAgent", "JointCommissionDocumentationAgent", "InfectionControlCoordinationAgent", "MedicalEquipmentFailureAgent", "ComplianceAutopilotAgent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-mono font-medium">{a}</span>
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{toDisplayName(a)}</span>
                     ))}
                   </div>
                 </div>
