@@ -8,47 +8,56 @@ type Category = { label: string; color: string; bg: string; border: string; text
 
 const CATEGORIES: Category[] = [
   {
-    label: "Water Emergency Suite",
-    color: "#3b82f6",
-    bg: "bg-blue-50",
-    border: "border-blue-200",
-    textColor: "text-blue-700",
-    agents: [
-      { name: "Water Quality Analyst", desc: "Monitors turbidity, pH, and contaminant thresholds in real time" },
-      { name: "Contamination Detector", desc: "Identifies chemical and biological threat signatures in sensor streams" },
-      { name: "Regulatory Reporter", desc: "Drafts EPA and state agency notifications to required formats" },
-      { name: "Emergency Coordinator", desc: "Determines which response teams to mobilize based on incident type" },
-      { name: "Sensor Monitor", desc: "Validates sensor data quality and flags outlier readings" },
-    ],
-  },
-  {
-    label: "Healthcare Suite",
-    color: "#8b5cf6",
-    bg: "bg-purple-50",
-    border: "border-purple-200",
-    textColor: "text-purple-700",
-    agents: [
-      { name: "HVAC Monitor", desc: "Tracks air handling unit anomalies via BMS webhooks" },
-      { name: "Patient Safety Agent", desc: "Assesses risk to vulnerable populations from environmental events" },
-      { name: "Air Quality Analyst", desc: "Measures indoor/outdoor air quality against clinical thresholds" },
-      { name: "Equipment Coordinator", desc: "Alerts facility maintenance teams to critical equipment states" },
-      { name: "Compliance Reporter", desc: "Generates OSHA and accreditation-required documentation" },
-    ],
-  },
-  {
-    label: "Core Agent Suite",
+    label: "Core Agents",
     color: "#10b981",
     bg: "bg-emerald-50",
     border: "border-emerald-200",
     textColor: "text-emerald-700",
     agents: [
-      { name: "Detection Agent", desc: "Classifies anomaly type across all verticals" },
-      { name: "Analysis Agent", desc: "Context enrichment with historical data and regulatory limits" },
-      { name: "Reasoning Agent", desc: "AI-powered decision support: risk classification and recommended actions" },
-      { name: "Coordination Agent", desc: "Routes notifications to the right stakeholder set" },
-      { name: "Documentation Agent", desc: "Generates audit-ready incident reports automatically" },
-      { name: "Notification Agent", desc: "Multi-channel delivery: email, SMS, and webhook" },
-      { name: "Scheduler Agent", desc: "Triggers scheduling layer to book the emergency response meeting" },
+      { name: "ContinuousLearningAgent", desc: "Adapts from past incidents to improve response accuracy over time" },
+      { name: "MemoryEnabledAgent", desc: "Retains incident context across multi-step coordination workflows" },
+      { name: "MultiStepReasoningAgent", desc: "Evaluates multi-factor scenarios to determine response priority" },
+      { name: "NaturalLanguageQueryAgent", desc: "Enables plain-language queries against incident and compliance data" },
+      { name: "RootCauseAnalysisAgent", desc: "Traces incident origin through sensor data and historical patterns" },
+    ],
+  },
+  {
+    label: "Emergency Coordination Agents",
+    color: "#3b82f6",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
+    textColor: "text-blue-700",
+    agents: [
+      { name: "PredictiveAlertAgent", desc: "Detects early-warning signals before threshold breaches occur" },
+      { name: "ImpactAssessmentAgent", desc: "Evaluates operational and regulatory impact of an active incident" },
+      { name: "MeetingContextAgent", desc: "Prepares and distributes incident context for emergency coordination meetings" },
+      { name: "HistoricalPatternMatchingAgent", desc: "Identifies similar past incidents to inform current response decisions" },
+      { name: "PublicCommunicationAgent", desc: "Drafts public-facing notifications based on incident type and regulatory requirements" },
+    ],
+  },
+  {
+    label: "Compliance Agents",
+    color: "#f59e0b",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
+    textColor: "text-amber-700",
+    agents: [
+      { name: "ComplianceAutopilotAgent", desc: "Detects applicable regulatory frameworks and initiates compliance workflows automatically" },
+      { name: "RegulatoryReportingAgent", desc: "Generates reports in required formats (EPA SDWA, Joint Commission, CMS CoP)" },
+    ],
+  },
+  {
+    label: "Healthcare Agents",
+    color: "#8b5cf6",
+    bg: "bg-purple-50",
+    border: "border-purple-200",
+    textColor: "text-purple-700",
+    agents: [
+      { name: "HospitalOperationsAgent", desc: "Coordinates multi-department response to facilities incidents" },
+      { name: "JointCommissionDocumentationAgent", desc: "Auto-generates EC.02.05 and EC.02.06 documentation from incident data" },
+      { name: "InfectionControlCoordinationAgent", desc: "Triggers infection control protocols on environmental breach events" },
+      { name: "MedicalEquipmentFailureAgent", desc: "Manages response coordination for critical medical equipment failures" },
+      { name: "PreventiveMaintenanceTrackerAgent", desc: "Schedules and tracks preventive maintenance workflows based on incident history" },
     ],
   },
 ];
@@ -80,7 +89,7 @@ export default function AgentDeploymentMap() {
 
       {/* Category grids */}
       <motion.div
-        className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6"
         variants={stagger}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -116,7 +125,7 @@ export default function AgentDeploymentMap() {
                         animate={isHovered ? { scale: 1.5 } : { scale: 1 }}
                         transition={{ duration: 0.15 }}
                       />
-                      <p className="text-xs font-semibold text-foreground">{agent.name}</p>
+                      <p className="text-xs font-semibold text-foreground font-mono">{agent.name}</p>
                     </div>
                   </motion.div>
                 );
@@ -136,7 +145,7 @@ export default function AgentDeploymentMap() {
             transition={{ duration: 0.15 }}
             className={`w-full rounded-xl border p-4 ${hoveredCat.bg} ${hoveredCat.border}`}
           >
-            <p className="text-sm font-semibold text-foreground mb-1">{hoveredAgent.name}</p>
+            <p className="text-sm font-semibold text-foreground mb-1 font-mono">{hoveredAgent.name}</p>
             <p className="text-sm text-muted-foreground">{hoveredAgent.desc}</p>
           </motion.div>
         ) : (

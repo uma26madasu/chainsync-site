@@ -110,8 +110,8 @@ export default function UseCases() {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Water Quality Analyst", "Contamination Detector", "Regulatory Reporter", "Emergency Coordinator", "Sensor Monitor"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                    {["PredictiveAlertAgent", "ImpactAssessmentAgent", "ComplianceAutopilotAgent", "RegulatoryReportingAgent", "HistoricalPatternMatchingAgent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-mono font-medium">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -275,8 +275,8 @@ export default function UseCases() {
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Detection Agent", "Analysis Agent", "Coordination Agent", "Documentation Agent", "Notification Agent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-medium">{a}</span>
+                    {["PredictiveAlertAgent", "ImpactAssessmentAgent", "MeetingContextAgent", "RegulatoryReportingAgent", "PublicCommunicationAgent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-mono font-medium">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -357,8 +357,8 @@ export default function UseCases() {
                 <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Detection Agent", "Coordination Agent", "Notification Agent", "Documentation Agent", "Scheduler Agent"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-medium">{a}</span>
+                    {["ImpactAssessmentAgent", "MeetingContextAgent", "ComplianceAutopilotAgent", "RegulatoryReportingAgent", "PublicCommunicationAgent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-mono font-medium">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -476,8 +476,8 @@ export default function UseCases() {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                   <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["HVAC Monitor", "Patient Safety Agent", "Air Quality Analyst", "Equipment Coordinator", "Compliance Reporter"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                    {["HospitalOperationsAgent", "JointCommissionDocumentationAgent", "InfectionControlCoordinationAgent", "MedicalEquipmentFailureAgent", "ComplianceAutopilotAgent"].map((a) => (
+                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-mono font-medium">{a}</span>
                     ))}
                   </div>
                 </div>

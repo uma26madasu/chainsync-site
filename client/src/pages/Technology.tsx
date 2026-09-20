@@ -400,22 +400,23 @@ export default function Technology() {
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Core Agents</h4>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Core + Emergency (10)</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Detection Agent</li>
-                          <li>✓ Analysis Agent</li>
-                          <li>✓ Reasoning Agent (AI-powered)</li>
-                          <li>✓ Coordination Agent</li>
-                          <li>✓ Documentation Agent</li>
+                          <li>✓ ContinuousLearningAgent</li>
+                          <li>✓ MultiStepReasoningAgent</li>
+                          <li>✓ RootCauseAnalysisAgent</li>
+                          <li>✓ PredictiveAlertAgent</li>
+                          <li>✓ ImpactAssessmentAgent</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Specialized Suites</h4>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Compliance + Healthcare (7)</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Water Emergency Suite (5 agents)</li>
-                          <li>✓ Healthcare Suite (5 agents)</li>
-                          <li>✓ Notification Agent</li>
-                          <li>✓ Scheduler Agent</li>
+                          <li>✓ ComplianceAutopilotAgent</li>
+                          <li>✓ RegulatoryReportingAgent</li>
+                          <li>✓ HospitalOperationsAgent</li>
+                          <li>✓ JointCommissionDocumentationAgent</li>
+                          <li>✓ InfectionControlCoordinationAgent</li>
                         </ul>
                       </div>
                     </div>
