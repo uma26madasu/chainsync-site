@@ -329,7 +329,7 @@ export default function Contact() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-primary text-white">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -337,10 +337,10 @@ export default function Contact() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Three spots. Water utilities and healthcare facilities.
           </h2>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg text-slate-500">
             We're not looking for logo customers. We're looking for founding partners who want to help build the right thing.
           </p>
         </motion.div>

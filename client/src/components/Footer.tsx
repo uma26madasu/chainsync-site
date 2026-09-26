@@ -3,43 +3,34 @@ import { Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white py-12 md:py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-slate-50 border-t border-slate-200">
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4 bg-white rounded-lg p-2 w-fit">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663256672386/xMegmORGETDJlabL.png" alt="ChainSync" className="h-10 w-auto" />
-            </div>
-            <p className="text-gray-400 text-sm">
+          <div className="md:col-span-2">
+            <img src="/logo.png" alt="ChainSync" className="h-8 w-auto mb-4" />
+            <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
               Incident coordination infrastructure for water utilities. Reduces response time from hours to minutes.
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Product</h4>
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <Link href="/how-it-works">
-                  <a className="hover:text-white transition-colors">How It Works</a>
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">How It Works</a>
                 </Link>
               </li>
               <li>
                 <Link href="/technology">
-                  <a className="hover:text-white transition-colors">Technology</a>
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Technology</a>
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Pilot Program */}
-          <div>
-            <h4 className="font-semibold mb-4">Pilot Program</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/contact">
-                  <a className="hover:text-white transition-colors">Apply for Partnership</a>
+                <Link href="/walkthrough">
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Walkthrough</a>
                 </Link>
               </li>
             </ul>
@@ -47,10 +38,25 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Company</h4>
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="https://www.linkedin.com/company/getchainsync/" className="hover:text-white transition-colors">
+                <Link href="/about">
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">About</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Apply for Partnership</a>
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/getchainsync/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-600 hover:text-slate-900 transition-colors"
+                >
                   LinkedIn
                 </a>
               </li>
@@ -58,25 +64,26 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Social Links & Copyright */}
-        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm">
-            © 2026 ChainSync. All rights reserved. Founding Pilot Program.
+        <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-slate-400 text-sm">
+            &copy; 2026 ChainSync. All rights reserved.
           </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
+          <div className="flex gap-4">
             <a
               href="https://www.linkedin.com/company/getchainsync/"
-              className="text-gray-400 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-slate-700 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a
               href="mailto:contact@chainsync.com"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-400 hover:text-slate-700 transition-colors"
               aria-label="Email"
             >
-              <Mail size={20} />
+              <Mail size={18} />
             </a>
           </div>
         </div>

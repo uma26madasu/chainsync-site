@@ -7,13 +7,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      <div className="container mx-auto px-6 py-5">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="ChainSync" className="h-20 w-auto" />
+              <img src="/logo.png" alt="ChainSync" className="h-9 w-auto" />
             </a>
           </Link>
 
