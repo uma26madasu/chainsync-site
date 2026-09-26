@@ -37,7 +37,7 @@ export default function AnimatedHeroFlow() {
   const meetingY = 255;
 
   return (
-    <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm" style={{ backgroundColor: "#ffffff" }}>
+    <div className="w-full">
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" aria-label="ChainSync incident response flow diagram">
         {/* Light grid background */}
         <defs>

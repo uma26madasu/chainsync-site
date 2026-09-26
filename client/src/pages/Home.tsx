@@ -349,6 +349,20 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
+
+            <motion.div
+              className="mt-6"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <Link href="/walkthrough">
+                <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2 h-auto text-sm rounded-lg gap-2">
+                  View full walkthrough <ArrowRight size={13} />
+                </Button>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -576,40 +590,6 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo / Scenario Walkthrough */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
-            >
-              <div>
-                <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
-                  Scenario walkthrough available
-                </h2>
-                <p className="text-lg text-slate-500 leading-relaxed mb-6">
-                  We walk through a water quality or facility emergency end-to-end: from the sensor alert to a coordinated response meeting with the right people assigned and an audit-ready record generated. No live system access needed.
-                </p>
-                <Link href="/walkthrough">
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 h-auto text-sm font-semibold rounded-lg gap-2">
-                    View Scenario Walkthrough <ArrowRight size={14} />
-                  </Button>
-                </Link>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
-                <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-4">Available to</p>
-                <p className="text-slate-700 font-medium leading-relaxed">Founding pilot partners</p>
-                <p className="text-slate-500 text-sm mt-2 leading-relaxed">A step-by-step walkthrough of a real incident scenario, from detection through documented resolution.</p>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
