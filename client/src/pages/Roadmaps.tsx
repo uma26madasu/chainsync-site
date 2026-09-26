@@ -546,7 +546,7 @@ export default function Roadmaps() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 md:py-12 bg-primary text-white">
+      <section className="py-8 md:py-12 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -554,16 +554,16 @@ export default function Roadmaps() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
             Join Us on This Journey
           </h2>
-          <p className="text-lg text-blue-100 mb-8">
+          <p className="text-lg text-slate-500 mb-8">
             We're building the future of AI-powered emergency response with integrated scheduling capabilities. Interested in partnering with us?
           </p>
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
             <Link href="/contact">
-              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 h-auto text-base font-semibold">
+              <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 h-auto text-base font-semibold">
                 Get in Touch
               </Button>
             </Link>

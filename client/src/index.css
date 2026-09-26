@@ -49,21 +49,21 @@
   --sidebar-primary-foreground: #F0F9FF;
   --chart-1: #2D7A4A;
   --chart-2: #0F5A8F;
-  --chart-3: #D97706;
-  --chart-4: #0F5A8F;
-  --chart-5: #1E293B;
+  --chart-3: #0EA5E9;
+  --chart-4: #059669;
+  --chart-5: #0F172A;
   --radius: 0.5rem;
   --background: #FFFFFF;
-  --foreground: #1E293B;
-  --card: #F8FAFC;
-  --card-foreground: #1E293B;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
   --popover: #FFFFFF;
-  --popover-foreground: #1E293B;
-  --secondary: #2D7A4A;
+  --popover-foreground: #0F172A;
+  --secondary: #059669;
   --secondary-foreground: #FFFFFF;
-  --muted: #E2E8F0;
+  --muted: #F1F5F9;
   --muted-foreground: #64748B;
-  --accent: #D97706;
+  --accent: #0EA5E9;
   --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
@@ -71,7 +71,7 @@
   --input: #FFFFFF;
   --ring: #0F5A8F;
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #1E293B;
+  --sidebar-foreground: #0F172A;
   --sidebar-accent: #0F5A8F;
   --sidebar-accent-foreground: #FFFFFF;
   --sidebar-border: #E2E8F0;
@@ -114,11 +114,16 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
