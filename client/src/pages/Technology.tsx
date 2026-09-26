@@ -19,10 +19,10 @@ export default function Technology() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -53,10 +53,10 @@ export default function Technology() {
       </section>
 
       {/* 1. Tech Stack Overview */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -78,10 +78,10 @@ export default function Technology() {
       </section>
 
       {/* 2. Architecture Deep Dive */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -110,7 +110,7 @@ export default function Technology() {
       </section>
 
       {/* 3. Swappable Integration Layer */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -123,7 +123,7 @@ export default function Technology() {
               <span className="text-xs font-bold tracking-widest text-primary uppercase">The Moat</span>
             </motion.div>
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+              className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
               variants={fadeUp}
             >
               Not Locked In. Ever.
@@ -142,10 +142,10 @@ export default function Technology() {
       </section>
 
       {/* 4. Agent Ecosystem */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -174,10 +174,10 @@ export default function Technology() {
       </section>
 
       {/* 5. Technology Comparison */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -206,10 +206,10 @@ export default function Technology() {
       </section>
 
       {/* 6. Performance Metrics */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -231,10 +231,10 @@ export default function Technology() {
       </section>
 
       {/* 7. Capability Matrix */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -263,10 +263,10 @@ export default function Technology() {
       </section>
 
       {/* 8. Tech Stack Details */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -328,10 +328,10 @@ export default function Technology() {
       </section>
 
       {/* 9. Core Components Detail */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -464,7 +464,7 @@ export default function Technology() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -472,7 +472,7 @@ export default function Technology() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Interested in the Technical Details?
           </h2>
           <p className="text-lg text-slate-500 mb-8">

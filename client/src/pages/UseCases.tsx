@@ -21,10 +21,10 @@ export default function UseCases() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -44,7 +44,7 @@ export default function UseCases() {
       </section>
 
       {/* Water Treatment */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -58,7 +58,7 @@ export default function UseCases() {
                   Water Quality Protection
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
                 Water Treatment Facilities
               </motion.h2>
 
@@ -167,7 +167,7 @@ export default function UseCases() {
       </section>
 
       {/* Industrial */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -223,7 +223,7 @@ export default function UseCases() {
                   Emissions and Compliance
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
                 Industrial Environmental Compliance
               </motion.h2>
 
@@ -291,7 +291,7 @@ export default function UseCases() {
       </section>
 
       {/* Municipal */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -305,7 +305,7 @@ export default function UseCases() {
                   Emergency Coordination
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
                 Municipal Emergency Response
               </motion.h2>
 
@@ -410,7 +410,7 @@ export default function UseCases() {
       </section>
 
       {/* Healthcare */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -424,7 +424,7 @@ export default function UseCases() {
                   Hospital Facilities Management
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
                 Hospital &amp; Healthcare Facilities
               </motion.h2>
 
@@ -530,7 +530,7 @@ export default function UseCases() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -538,7 +538,7 @@ export default function UseCases() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Is Your Organization a Good Fit?
           </h2>
           <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">

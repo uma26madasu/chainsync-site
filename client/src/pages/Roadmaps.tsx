@@ -16,7 +16,7 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -38,7 +38,7 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-8 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -472,7 +472,7 @@ export default function Roadmaps() {
       <section className="py-8 md:py-12 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-8 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -546,7 +546,7 @@ export default function Roadmaps() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 md:py-12 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-8 md:py-12 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -554,7 +554,7 @@ export default function Roadmaps() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Join Us on This Journey
           </h2>
           <p className="text-lg text-slate-500 mb-8">

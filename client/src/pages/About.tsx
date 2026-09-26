@@ -12,10 +12,10 @@ export default function About() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -34,7 +34,7 @@ export default function About() {
       </section>
 
       {/* The Problem */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
             variants={stagger}
@@ -44,7 +44,7 @@ export default function About() {
             className="space-y-8"
           >
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
                 The problem worth solving
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -71,10 +71,10 @@ export default function About() {
       </section>
 
       {/* How it works — brief */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -139,7 +139,7 @@ export default function About() {
       </section>
 
       {/* Founder */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
             variants={stagger}
@@ -149,7 +149,7 @@ export default function About() {
             className="space-y-6"
           >
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-foreground"
+              className="text-[32px] md:text-[40px] font-bold text-foreground"
               variants={fadeUp}
             >
               Who built it
@@ -159,7 +159,7 @@ export default function About() {
               className="text-lg text-muted-foreground leading-relaxed"
               variants={fadeUp}
             >
-              <span className="font-semibold text-foreground">Uma Madasu</span> spent 6+ years as a MuleSoft Integration Engineer connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+              <span className="font-semibold text-foreground">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
             </motion.p>
 
             <motion.p
@@ -192,10 +192,10 @@ export default function About() {
       </section>
 
       {/* Verticals */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -258,7 +258,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -266,7 +266,7 @@ export default function About() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Founding pilot partnerships open now
           </h2>
           <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">

@@ -13,7 +13,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="ChainSync" className="h-9 w-auto" />
+              <img src="/logo.png" alt="ChainSync" className="h-14 w-auto" />
             </a>
           </Link>
 
@@ -45,15 +45,6 @@ export default function Header() {
               </a>
             </Link>
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 text-base font-semibold">
-                Apply for Founding Partnership
-              </Button>
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -92,11 +83,6 @@ export default function Header() {
               <a className="text-foreground hover:text-primary transition-colors text-sm font-medium block py-2">
                 Pilot Partnership
               </a>
-            </Link>
-            <Link href="/contact">
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white mt-2">
-                Apply for Founding Partnership
-              </Button>
             </Link>
           </nav>
         )}
