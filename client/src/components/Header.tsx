@@ -13,7 +13,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="ChainSync" className="h-14 w-auto" />
+              <img src="/logo.png" alt="ChainSync" className="h-20 w-auto" />
             </a>
           </Link>
 
