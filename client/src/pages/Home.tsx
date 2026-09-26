@@ -53,10 +53,36 @@ export default function Home() {
             </motion.div>
 
             {/* Right — Animated Flow Diagram */}
-            <div className="hidden lg:block">
+            <div className="hidden md:block">
               <AnimatedHeroFlow />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Key Numbers Strip */}
+      <section className="py-12 bg-slate-900">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-800"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:pr-10">
+              <p className="font-mono text-5xl font-bold text-white tracking-tight leading-none">17</p>
+              <p className="text-slate-400 text-sm mt-3 leading-snug">Python coordination agents,<br/>each owning one job</p>
+            </motion.div>
+            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:px-10">
+              <p className="font-mono text-5xl font-bold text-white tracking-tight leading-none">4–6 hrs</p>
+              <p className="text-slate-400 text-sm mt-3 leading-snug">average coordination time,<br/>reduced to minutes</p>
+            </motion.div>
+            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:pl-10">
+              <p className="font-mono text-5xl font-bold text-sky-400 tracking-tight leading-none">3</p>
+              <p className="text-slate-400 text-sm mt-3 leading-snug">founding pilot slots<br/>currently open</p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -139,12 +165,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7-Stage Pipeline */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* 7-Stage Pipeline — dark */}
+      <section className="py-16 md:py-20 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <motion.h2
-              className="text-[32px] md:text-[40px] font-bold text-slate-900 tracking-tight max-w-lg"
+              className="text-[32px] md:text-[40px] font-bold text-slate-100 tracking-tight max-w-lg"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -154,7 +180,7 @@ export default function Home() {
             </motion.h2>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
               <Link href="/how-it-works">
-                <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2 h-auto text-sm rounded-lg gap-2 whitespace-nowrap">
+                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100 px-5 py-2 h-auto text-sm rounded-lg gap-2 whitespace-nowrap">
                   Full walkthrough <ArrowRight size={13} />
                 </Button>
               </Link>
@@ -208,14 +234,14 @@ export default function Home() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="flex gap-4 py-5 border-b border-slate-100 last:border-0"
+                className="flex gap-4 py-5 border-b border-slate-800 last:border-0"
               >
-                <div className="shrink-0 w-8 h-8 rounded-full bg-sky-50 border border-sky-200 flex items-center justify-center mt-0.5">
-                  <span className="text-sky-600 font-bold text-sm">{s.num}</span>
+                <div className="shrink-0 w-8 h-8 rounded-full bg-sky-900/40 border border-sky-600/50 flex items-center justify-center mt-0.5">
+                  <span className="text-sky-300 font-bold text-sm">{s.num}</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm mb-1">{s.label}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
+                  <p className="font-semibold text-slate-100 text-sm mb-1">{s.label}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{s.desc}</p>
                 </div>
               </motion.div>
             ))}
