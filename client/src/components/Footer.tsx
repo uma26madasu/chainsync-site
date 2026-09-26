@@ -24,13 +24,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/technology">
-                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Technology</a>
+                <Link href="/walkthrough">
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Walkthrough</a>
                 </Link>
               </li>
               <li>
-                <Link href="/walkthrough">
-                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Walkthrough</a>
+                <Link href="/technology">
+                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Technology</a>
                 </Link>
               </li>
             </ul>
