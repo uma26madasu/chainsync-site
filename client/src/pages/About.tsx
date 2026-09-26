@@ -12,10 +12,10 @@ export default function About() {
       <Header />
 
       {/* Hero */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-center"
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -34,7 +34,7 @@ export default function About() {
       </section>
 
       {/* The Problem */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
             variants={stagger}
@@ -71,7 +71,7 @@ export default function About() {
       </section>
 
       {/* How it works — brief */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center"
@@ -139,7 +139,7 @@ export default function About() {
       </section>
 
       {/* Founder */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
             variants={stagger}
@@ -192,7 +192,7 @@ export default function About() {
       </section>
 
       {/* Verticals */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center"
@@ -258,7 +258,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}

@@ -19,10 +19,10 @@ export default function Technology() {
       <Header />
 
       {/* Hero */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold text-foreground mb-4 text-center"
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -53,7 +53,7 @@ export default function Technology() {
       </section>
 
       {/* 1. Tech Stack Overview */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -78,7 +78,7 @@ export default function Technology() {
       </section>
 
       {/* 2. Architecture Deep Dive */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -110,7 +110,7 @@ export default function Technology() {
       </section>
 
       {/* 3. Swappable Integration Layer */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -142,7 +142,7 @@ export default function Technology() {
       </section>
 
       {/* 4. Agent Ecosystem */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -174,7 +174,7 @@ export default function Technology() {
       </section>
 
       {/* 5. Technology Comparison */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -206,7 +206,7 @@ export default function Technology() {
       </section>
 
       {/* 6. Performance Metrics */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -231,7 +231,7 @@ export default function Technology() {
       </section>
 
       {/* 7. Capability Matrix */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
@@ -263,7 +263,7 @@ export default function Technology() {
       </section>
 
       {/* 8. Tech Stack Details */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
@@ -328,7 +328,7 @@ export default function Technology() {
       </section>
 
       {/* 9. Core Components Detail */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
@@ -464,7 +464,7 @@ export default function Technology() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
