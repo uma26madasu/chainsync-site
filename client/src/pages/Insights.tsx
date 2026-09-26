@@ -74,10 +74,10 @@ export default function Insights() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -96,10 +96,10 @@ export default function Insights() {
       </section>
 
       {/* Featured Articles */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -150,10 +150,10 @@ export default function Insights() {
       </section>
 
       {/* Industry Data */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -208,10 +208,10 @@ export default function Insights() {
       </section>
 
       {/* Coordination Time Comparison */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -234,10 +234,10 @@ export default function Insights() {
       </section>
 
       {/* Key Topics */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -293,9 +293,9 @@ export default function Insights() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-12 md:py-20 bg-blue-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+          <h2 className="text-[32px] md:text-[40px] font-bold text-foreground mb-4 text-center">
             Stay Updated
           </h2>
           <p className="text-lg text-muted-foreground text-center mb-8">
@@ -336,7 +336,7 @@ export default function Insights() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -344,7 +344,7 @@ export default function Insights() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Ready to Transform Your Response?
           </h2>
           <p className="text-lg text-slate-500 mb-8">

@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-white">
+      <section className="relative py-20 md:py-32 overflow-hidden bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -30,23 +30,18 @@ export default function Home() {
               <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-sky-50 text-sky-700 border border-sky-100 px-3 py-1 rounded-full text-sm font-medium">
                 Founding Pilot Program
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
+              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-[64px] font-bold text-slate-900 leading-tight tracking-tight">
                 Your teams are ready. Your coordination isn't.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-xl">
                 When an incident is detected (water contamination or a facility emergency), your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* CTA Button */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Link href="/contact">
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-7 py-2.5 h-auto text-base font-semibold rounded-lg">
+                  <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
                     Apply for Founding Partnership
-                  </Button>
-                </Link>
-                <Link href="/technology">
-                  <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-7 py-2.5 h-auto text-base rounded-lg">
-                    View Architecture
                   </Button>
                 </Link>
               </motion.div>
@@ -92,10 +87,10 @@ export default function Home() {
       </section>
 
       {/* Problem Statement */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-5 tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-5 tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -130,10 +125,10 @@ export default function Home() {
       </section>
 
       {/* 4-Step Timeline */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -220,10 +215,10 @@ export default function Home() {
       </section>
 
       {/* Platform Components */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -280,10 +275,10 @@ export default function Home() {
       </section>
 
       {/* Verticals — Tabbed */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -393,10 +388,10 @@ export default function Home() {
       </section>
 
       {/* Architecture Showcase */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -450,7 +445,7 @@ export default function Home() {
       </section>
 
       {/* Demo / Scenario Walkthrough */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -461,7 +456,7 @@ export default function Home() {
               viewport={viewport}
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+                <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
                   Scenario walkthrough available
                 </h2>
                 <p className="text-lg text-slate-500 leading-relaxed mb-6">
@@ -484,7 +479,7 @@ export default function Home() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <motion.div
           className="container mx-auto px-4 max-w-3xl text-center"
           variants={fadeUp}
@@ -496,7 +491,7 @@ export default function Home() {
             Built by someone who's watched coordination fail
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed mb-4">
-            <span className="font-semibold text-slate-900">Uma Madasu</span> spent 6+ years connecting enterprise systems at organizations including Blue Cross Blue Shield, Alfa Insurance, and EnerSys. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+            <span className="font-semibold text-slate-900">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
           </p>
           <p className="text-slate-500 mb-6">
             Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
@@ -513,7 +508,7 @@ export default function Home() {
       </section>
 
       {/* Pilot Program CTA */}
-      <section id="pilot" className="py-16 md:py-24 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section id="pilot" className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-12"
@@ -522,7 +517,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
               Three founding pilot partnerships. Water utilities and healthcare facilities.
             </h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">

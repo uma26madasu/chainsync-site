@@ -16,10 +16,10 @@ export default function HowItWorks() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-center"
+            className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -38,7 +38,7 @@ export default function HowItWorks() {
       </section>
 
       {/* Process Overview */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.div
             variants={fadeUp}
@@ -125,10 +125,10 @@ export default function HowItWorks() {
       </section>
 
       {/* Detailed Steps */}
-      <section className="py-12 md:py-20 bg-slate-50">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -244,10 +244,10 @@ export default function HowItWorks() {
       </section>
 
       {/* System Architecture */}
-      <section className="py-12 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center"
+            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -304,7 +304,7 @@ export default function HowItWorks() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -312,7 +312,7 @@ export default function HowItWorks() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
             Ready to See It in Action?
           </h2>
           <p className="text-lg text-slate-500 mb-8">
