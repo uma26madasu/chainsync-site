@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { Clock, ShieldCheck, ClipboardList, Wifi, Cpu, GitBranch, Layers, Bot, Server, Wrench, ArrowRight } from "lucide-react";
+import { Clock, ShieldCheck, ClipboardList, Layers, Bot, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
@@ -17,12 +17,12 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden bg-white">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <motion.div
-              className="space-y-7"
+              className="space-y-6"
               variants={stagger}
               initial="hidden"
               animate="visible"
@@ -34,47 +34,16 @@ export default function Home() {
                 Your teams are ready. Your coordination isn't.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-xl">
-                When an incident is detected (water contamination or a facility emergency), your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
+                When an incident is detected, your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
               {/* CTA Button */}
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-2">
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link href="/contact">
                   <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
                     Apply for Founding Partnership
                   </Button>
                 </Link>
-              </motion.div>
-
-              {/* Value Props Strip */}
-              <motion.div variants={fadeUp} className="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-5">
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center">
-                    <Clock className="text-primary" size={16} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-sm">Minutes, Not Hours</p>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">From detection to a structured response with the right people assigned, automatically.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
-                    <ShieldCheck className="text-secondary" size={16} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-sm">No Rip-and-Replace</p>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">Connects to your existing SCADA, BMS, or monitoring systems via standard HTTP. Nothing changes in your stack.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center">
-                    <ClipboardList className="text-primary" size={16} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-sm">Compliance Built In</p>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">Every action is logged. Audit-ready documentation is generated automatically for regulatory review.</p>
-                  </div>
-                </div>
               </motion.div>
             </motion.div>
 
@@ -86,8 +55,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Value Props Strip — separate from hero */}
+      <section className="py-10 border-t border-slate-100 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-100"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:pr-10">
+              <div className="shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center mt-0.5">
+                <Clock className="text-primary" size={16} />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-sm mb-0.5">Minutes, Not Hours</p>
+                <p className="text-xs text-slate-500 leading-relaxed">From detection to a structured response with the right people assigned, automatically.</p>
+              </div>
+            </motion.div>
+            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:px-10">
+              <div className="shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mt-0.5">
+                <ShieldCheck className="text-secondary" size={16} />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-sm mb-0.5">No Rip-and-Replace</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Connects to your existing SCADA, BMS, or monitoring systems via standard HTTP.</p>
+              </div>
+            </motion.div>
+            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:pl-10">
+              <div className="shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center mt-0.5">
+                <ClipboardList className="text-primary" size={16} />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-sm mb-0.5">Compliance Built In</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Every action is logged. Audit-ready documentation generated automatically.</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Problem Statement */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-5 tracking-tight"
@@ -125,29 +135,29 @@ export default function Home() {
       </section>
 
       {/* 4-Step Timeline */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            From alert to coordinated response
-          </motion.h2>
-          <motion.p
-            className="text-lg text-slate-500 text-center mb-16 max-w-2xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            ChainSync handles the alignment work so your team can focus on what matters: making decisions and taking action.
-          </motion.p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <motion.h2
+              className="text-[32px] md:text-[40px] font-bold text-slate-900 tracking-tight max-w-lg"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              From alert to coordinated response
+            </motion.h2>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
+              <Link href="/how-it-works">
+                <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2 h-auto text-sm rounded-lg gap-2 whitespace-nowrap">
+                  Full walkthrough <ArrowRight size={13} />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-200"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -157,128 +167,98 @@ export default function Home() {
               {
                 step: "01",
                 label: "Ingest",
-                icon: <Wifi size={20} />,
-                bg: "bg-sky-50",
-                iconColor: "text-primary",
                 desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform.",
               },
               {
                 step: "02",
                 label: "Analyze",
-                icon: <Cpu size={20} />,
-                bg: "bg-emerald-50",
-                iconColor: "text-secondary",
                 desc: "Coordination agents evaluate the incident, classify severity, identify root cause, and determine who needs to be involved.",
               },
               {
                 step: "03",
                 label: "Orchestrate",
-                icon: <GitBranch size={20} />,
-                bg: "bg-sky-50",
-                iconColor: "text-primary",
                 desc: "The scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership, automatically.",
               },
               {
                 step: "04",
                 label: "Report",
-                icon: <ClipboardList size={20} />,
-                bg: "bg-emerald-50",
-                iconColor: "text-secondary",
                 desc: "A complete, audit-ready compliance record is generated and stored for regulatory review.",
               },
             ].map((s, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="relative bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-sm transition-all duration-200"
+                className="py-8 md:py-0 md:px-8 first:md:pl-0 last:md:pr-0"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-9 h-9 rounded-lg ${s.bg} flex items-center justify-center ${s.iconColor}`}>
-                    {s.icon}
-                  </div>
-                  <span className="text-xs font-bold text-slate-400 tracking-widest uppercase">{s.step}</span>
-                </div>
+                <p className="text-[40px] font-bold text-slate-100 leading-none mb-4 select-none">{s.step}</p>
                 <p className="font-semibold text-slate-900 text-base mb-2">{s.label}</p>
                 <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </motion.div>
-
-          <div className="text-center mt-10">
-            <Link href="/how-it-works">
-              <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-6 py-2.5 h-auto text-sm rounded-lg gap-2">
-                See How It Works in Detail <ArrowRight size={14} />
-              </Button>
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* Platform Components */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Two layers, one coordinated response
-          </motion.h2>
-          <motion.p
-            className="text-lg text-slate-500 text-center mb-12 max-w-2xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Each layer does one job. Together they take an incident from detection to a documented, owned response structure.
-          </motion.p>
-
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+            className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div
-              variants={fadeUp}
-              whileHover={{ y: -3, transition: { duration: 0.15 } }}
-              className="bg-white border border-sky-100 rounded-xl p-7 hover:border-sky-200 hover:shadow-sm transition-all duration-200"
-            >
-              <div className="w-10 h-10 rounded-lg bg-sky-50 flex items-center justify-center mb-5">
-                <Layers className="text-primary" size={22} />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Integration Layer</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Built on FastAPI, swappable with MuleSoft, Workato, Boomi, or any iPaaS. Connects to your existing SCADA and monitoring systems via standard HTTP. No rip-and-replace.
+            {/* Left — Integration Layer (wider) */}
+            <motion.div variants={fadeUp} className="lg:col-span-3 bg-white border border-slate-200 rounded-xl p-8">
+              <h2 className="text-[28px] md:text-[32px] font-bold text-slate-900 mb-2 tracking-tight">
+                Two layers, one coordinated response
+              </h2>
+              <p className="text-slate-500 text-sm mb-6 leading-relaxed">
+                Each layer does one job. Together they take an incident from detection to a documented, owned response structure.
               </p>
+              <div className="border-t border-slate-100 pt-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center shrink-0">
+                    <Layers className="text-primary" size={18} />
+                  </div>
+                  <h3 className="font-semibold text-slate-900">Integration Layer</h3>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Built on FastAPI, swappable with MuleSoft, Workato, Boomi, or any iPaaS. Connects to your existing SCADA and monitoring systems via standard HTTP. No rip-and-replace.
+                </p>
+              </div>
             </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              whileHover={{ y: -3, transition: { duration: 0.15 } }}
-              className="bg-white border border-emerald-100 rounded-xl p-7 hover:border-emerald-200 hover:shadow-sm transition-all duration-200"
-            >
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center mb-5">
-                <Bot className="text-secondary" size={22} />
+            {/* Right — Coordination Engine (narrower) */}
+            <motion.div variants={fadeUp} className="lg:col-span-2 bg-white border border-emerald-100 rounded-xl p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
+                  <Bot className="text-secondary" size={18} />
+                </div>
+                <h3 className="font-semibold text-slate-900">Coordination Engine</h3>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Coordination Engine</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                17 Python coordination agents, each owning one job: Detection, Analysis, Coordination, Documentation. Plus a scheduling layer that books the right people without manual intervention.
+              <p className="text-slate-500 text-sm leading-relaxed mb-5">
+                17 Python agents, each owning one job. Plus a scheduling layer that books the right people without manual intervention.
               </p>
+              <ul className="space-y-2 text-sm">
+                {["Detection", "Severity analysis", "Stakeholder notification", "Calendar coordination", "Compliance documentation"].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-slate-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Verticals — Tabbed */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
+            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-2 tracking-tight"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -287,7 +267,7 @@ export default function Home() {
             Built for regulated environments
           </motion.h2>
           <motion.p
-            className="text-lg text-slate-500 text-center mb-10 max-w-2xl mx-auto"
+            className="text-slate-500 mb-8 max-w-xl"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -298,7 +278,7 @@ export default function Home() {
 
           {/* Tab Buttons */}
           <motion.div
-            className="flex justify-center mb-8"
+            className="flex mb-8"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -329,7 +309,7 @@ export default function Home() {
           </motion.div>
 
           {/* Tab Content */}
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             {activeTab === "water" && (
               <motion.div
                 key="water"
@@ -388,28 +368,30 @@ export default function Home() {
       </section>
 
       {/* Architecture Showcase */}
-      <section className="py-20 md:py-28 bg-slate-50">
+      <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 text-center tracking-tight"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Technical Architecture
-          </motion.h2>
-          <motion.p
-            className="text-lg text-slate-500 text-center mb-12 max-w-2xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Three independently maintainable layers connected through standard HTTP. Built for reliability in regulated environments.
-          </motion.p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-8">
+            <motion.h2
+              className="text-[32px] md:text-[40px] font-bold text-slate-900 tracking-tight"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              Technical Architecture
+            </motion.h2>
+            <motion.p
+              className="text-slate-500 leading-relaxed"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              Three independently maintainable layers connected through standard HTTP. Built for reliability in regulated environments.
+            </motion.p>
+          </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -445,7 +427,7 @@ export default function Home() {
       </section>
 
       {/* Demo / Scenario Walkthrough */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -479,101 +461,112 @@ export default function Home() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 md:py-28 bg-slate-50">
-        <motion.div
-          className="container mx-auto px-4 max-w-3xl text-center"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-5 tracking-tight">
-            Built by someone who's watched coordination fail
-          </h2>
-          <p className="text-lg text-slate-500 leading-relaxed mb-4">
-            <span className="font-semibold text-slate-900">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
-          </p>
-          <p className="text-slate-500 mb-6">
-            Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
-          </p>
-          <a
-            href="https://www.linkedin.com/company/getchainsync/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary font-medium hover:underline text-sm"
-          >
-            Connect on LinkedIn <ArrowRight size={14} />
-          </a>
-        </motion.div>
-      </section>
-
-      {/* Pilot Program CTA */}
-      <section id="pilot" className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
         <div className="container mx-auto px-4">
           <motion.div
-            className="text-center mb-12"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
-              Three founding pilot partnerships. Water utilities and healthcare facilities.
-            </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              We're accepting three organizations to validate ChainSync in real incident environments: one water utility, one healthcare facility, one open slot. No upfront costs. No long-term commitment.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start max-w-4xl"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-sky-200 hover:shadow-sm transition-all duration-200">
-              <div className="w-9 h-9 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
-                <Server className="text-primary" size={20} />
-              </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Founding partner influence</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Your workflows shape what gets built. Founding partners define the product direction before public launch.
+            <motion.div variants={fadeUp}>
+              <h2 className="text-[28px] font-bold text-slate-900 mb-4 tracking-tight">
+                Built by someone who's watched coordination fail
+              </h2>
+              <p className="text-slate-500 leading-relaxed mb-4">
+                <span className="font-semibold text-slate-900">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
               </p>
+              <a
+                href="https://www.linkedin.com/company/getchainsync/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline text-sm"
+              >
+                Connect on LinkedIn <ArrowRight size={14} />
+              </a>
             </motion.div>
-            <motion.div variants={fadeUp} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-sky-200 hover:shadow-sm transition-all duration-200">
-              <div className="w-9 h-9 rounded-lg bg-emerald-50 flex items-center justify-center mb-4">
-                <Wrench className="text-secondary" size={20} />
+            <motion.div variants={fadeUp} className="space-y-4 pt-1">
+              <div className="border-l-2 border-slate-200 pl-4">
+                <p className="text-sm font-semibold text-slate-900">MuleSoft Integration Engineer</p>
+                <p className="text-xs text-slate-500 mt-0.5">Enterprise systems integration across regulated industries</p>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Hands-on integration support</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Direct help connecting ChainSync to your existing SCADA, BMS, or monitoring systems from the founding team.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeUp} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-sky-200 hover:shadow-sm transition-all duration-200">
-              <div className="w-9 h-9 rounded-lg bg-sky-50 flex items-center justify-center mb-4">
-                <ShieldCheck className="text-primary" size={20} />
+              <div className="border-l-2 border-slate-200 pl-4">
+                <p className="text-sm font-semibold text-slate-900">MuleSoft Developer Level 1 Certified</p>
+                <p className="text-xs text-slate-500 mt-0.5">Dual Master's in MIS and Cybersecurity</p>
               </div>
-              <h3 className="font-semibold text-slate-900 mb-2">Priority pricing at launch</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                No upfront costs during the pilot. Founding partners receive preferential rates when ChainSync launches publicly.
-              </p>
+              <div className="border-l-2 border-slate-200 pl-4">
+                <p className="text-sm font-semibold text-slate-900">Based in Atlanta, GA</p>
+                <p className="text-xs text-slate-500 mt-0.5">Working directly with founding pilot partners</p>
+              </div>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="text-center">
-            <Link href="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
-                Apply for Founding Partnership
-              </Button>
-            </Link>
-            <p className="text-slate-400 text-sm mt-4">
-              Not in water or healthcare?{" "}
-              <Link href="/contact">
-                <a className="text-primary hover:underline transition-colors">Join the waitlist</a>
-              </Link>
-            </p>
-          </div>
+      {/* Pilot Program CTA */}
+      <section id="pilot" className="py-16 md:py-20 border-t border-slate-200 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            {/* Left — text */}
+            <motion.div variants={fadeUp}>
+              <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
+                Three founding pilot partnerships open now.
+              </h2>
+              <p className="text-slate-500 mb-6 leading-relaxed">
+                We're accepting three organizations to validate ChainSync in real incident environments: one water utility, one healthcare facility, one open slot. No upfront costs. No long-term commitment.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Your workflows shape the product direction",
+                  "Direct integration support from the founding team",
+                  "Preferential rates at public launch",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row items-start gap-3">
+                <Link href="/contact">
+                  <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
+                    Apply for Founding Partnership
+                  </Button>
+                </Link>
+              </div>
+              <p className="text-slate-400 text-xs mt-3">
+                Not in water or healthcare?{" "}
+                <Link href="/contact">
+                  <a className="text-primary hover:underline transition-colors">Join the waitlist</a>
+                </Link>
+              </p>
+            </motion.div>
+
+            {/* Right — stats block */}
+            <motion.div variants={fadeUp} className="bg-slate-50 border border-slate-200 rounded-xl p-8">
+              <div className="space-y-6">
+                <div className="border-b border-slate-200 pb-6">
+                  <p className="text-4xl font-bold text-slate-900 mb-1">4-6 hrs</p>
+                  <p className="text-sm text-slate-500">Average coordination time without ChainSync</p>
+                </div>
+                <div className="border-b border-slate-200 pb-6">
+                  <p className="text-4xl font-bold text-slate-900 mb-1">17</p>
+                  <p className="text-sm text-slate-500">Python coordination agents, each owning one job</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">3</p>
+                  <p className="text-sm text-slate-500">Founding partnership slots available</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
