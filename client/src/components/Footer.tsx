@@ -46,11 +46,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-slate-600 hover:text-slate-900 transition-colors">Apply for Partnership</a>
-                </Link>
-              </li>
-              <li>
                 <a
                   href="https://www.linkedin.com/company/getchainsync/"
                   target="_blank"
