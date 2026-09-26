@@ -37,11 +37,16 @@ export default function Home() {
                 When an incident is detected, your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
-              {/* CTA Button */}
+              {/* CTA Buttons */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link href="/contact">
                   <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
                     Apply for Founding Partnership
+                  </Button>
+                </Link>
+                <Link href="/how-it-works">
+                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 h-auto text-base font-semibold rounded-lg">
+                    View How It Works
                   </Button>
                 </Link>
               </motion.div>
@@ -134,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4-Step Timeline */}
+      {/* 7-Stage Pipeline */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
@@ -157,7 +162,7 @@ export default function Home() {
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-200"
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 max-w-4xl"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -165,37 +170,160 @@ export default function Home() {
           >
             {[
               {
-                step: "01",
-                label: "Ingest",
-                desc: "Universal Webhook receives events from any monitoring system, SCADA, BMS, or integration platform.",
+                num: 1,
+                label: "Detection",
+                desc: "Universal Webhook receives events from any monitoring system, SCADA, or BMS.",
               },
               {
-                step: "02",
-                label: "Analyze",
-                desc: "Coordination agents evaluate the incident, classify severity, identify root cause, and determine who needs to be involved.",
+                num: 2,
+                label: "Analysis",
+                desc: "AI coordination agents classify severity, identify impact, and determine response scope.",
               },
               {
-                step: "03",
-                label: "Orchestrate",
-                desc: "The scheduling layer books the response meeting, resolves calendar conflicts, and assigns ownership, automatically.",
+                num: 3,
+                label: "Notification",
+                desc: "Right stakeholders identified and notified simultaneously. No manual phone trees.",
               },
               {
-                step: "04",
-                label: "Report",
-                desc: "A complete, audit-ready compliance record is generated and stored for regulatory review.",
+                num: 4,
+                label: "Coordination",
+                desc: "Scheduling layer books the response meeting with conflict detection and emergency override.",
+              },
+              {
+                num: 5,
+                label: "State Tracking",
+                desc: "Incident state maintained across all agents and participants throughout the response.",
+              },
+              {
+                num: 6,
+                label: "Documentation",
+                desc: "Audit-ready compliance record generated automatically as the incident progresses.",
+              },
+              {
+                num: 7,
+                label: "Closure",
+                desc: "Incident closed with complete documented record ready for regulatory review.",
               },
             ].map((s, i) => (
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="py-8 md:py-0 md:px-8 first:md:pl-0 last:md:pr-0"
+                className="flex gap-4 py-5 border-b border-slate-100 last:border-0"
               >
-                <p className="text-[40px] font-bold text-slate-100 leading-none mb-4 select-none">{s.step}</p>
-                <p className="font-semibold text-slate-900 text-base mb-2">{s.label}</p>
-                <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
+                <div className="shrink-0 w-8 h-8 rounded-full bg-sky-50 border border-sky-200 flex items-center justify-center mt-0.5">
+                  <span className="text-sky-600 font-bold text-sm">{s.num}</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm mb-1">{s.label}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Illustrative Incident Scenario */}
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <motion.div
+              className="flex items-center gap-3 mb-4"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
+                Example workflow
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-[32px] md:text-[40px] font-bold text-slate-900 tracking-tight mb-2"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              Illustrative scenario
+            </motion.h2>
+            <motion.p
+              className="text-slate-500 text-sm mb-10 max-w-prose"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              This is a representative example to show how ChainSync handles an incident end-to-end. Not a live deployment or real customer data.
+            </motion.p>
+
+            <motion.div
+              className="bg-white border border-slate-200 rounded-xl overflow-hidden"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              {/* Trigger event */}
+              <div className="bg-sky-50 border-b border-sky-100 px-6 py-4">
+                <p className="text-xs font-semibold text-sky-600 uppercase tracking-widest mb-1">Trigger event</p>
+                <p className="font-semibold text-slate-900">Water Quality Alert Detected</p>
+                <p className="text-sm text-slate-500 mt-1">Alert received from SCADA monitoring system via Universal Webhook</p>
+              </div>
+
+              {/* Steps */}
+              <div className="divide-y divide-slate-100">
+                {[
+                  {
+                    arrow: true,
+                    label: "Event ingested",
+                    desc: "ChainSync receives the webhook payload and begins processing",
+                  },
+                  {
+                    arrow: true,
+                    label: "Severity classified",
+                    desc: "Analysis agents evaluate the event and determine response scope",
+                  },
+                  {
+                    arrow: true,
+                    label: "Response teams identified",
+                    desc: "Required stakeholders determined: Operations, Regulatory, Executive",
+                  },
+                  {
+                    arrow: true,
+                    label: "Coordination initiated",
+                    desc: "Response meeting scheduled automatically with all required participants",
+                  },
+                  {
+                    arrow: true,
+                    label: "Incident state tracked",
+                    desc: "All agents and participants share a consistent view of the incident",
+                  },
+                  {
+                    arrow: true,
+                    label: "Documentation prepared in parallel",
+                    desc: "Compliance record built continuously as the incident progresses",
+                  },
+                  {
+                    arrow: false,
+                    label: "Incident closed",
+                    desc: "Complete audit record available for regulatory review",
+                  },
+                ].map((step, i) => (
+                  <div key={i} className="flex gap-4 px-6 py-4">
+                    <div className="shrink-0 w-5 flex flex-col items-center pt-1">
+                      <span className="text-slate-300 font-bold text-lg leading-none">{step.arrow ? "↓" : "✓"}</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-800 text-sm">{step.label}</p>
+                      <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

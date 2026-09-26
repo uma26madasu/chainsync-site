@@ -364,7 +364,7 @@ export default function Technology() {
                         <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Built Integrations</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>✓ FastAPI (current implementation)</li>
-                          <li>✓ Enterprise iPaaS (MuleSoft, Workato, Boomi — supported)</li>
+                          <li>✓ Enterprise iPaaS (MuleSoft, Workato, Boomi: supported)</li>
                           <li>✓ Universal Webhook (HTTP POST from any system)</li>
                           <li>→ AWS IoT Core (planned)</li>
                           <li>→ Azure IoT Hub (planned)</li>
