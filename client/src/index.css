@@ -113,6 +113,12 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
+@layer utilities {
+  .ease-flow {
+    transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
