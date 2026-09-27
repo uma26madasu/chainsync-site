@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
@@ -17,37 +16,43 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-white">
+      <section className="relative py-28 md:py-40 overflow-hidden bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
-              className="space-y-6"
+              className="space-y-7"
               variants={stagger}
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-sky-50 text-sky-700 border border-sky-100 px-3 py-1 rounded-full text-sm font-medium">
+              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-sky-50 text-sky-700 border border-sky-100 px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium">
                 Founding Pilot Program
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-[64px] font-bold text-slate-900 leading-tight tracking-tight">
+              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-tight">
                 Your teams are ready. Your coordination isn't.
               </motion.h1>
-              <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-xl">
+              <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-lg">
                 When an incident is detected, your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* Pill CTAs with button-in-button */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link href="/contact">
-                  <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
+                  <a className="group inline-flex items-center gap-2 rounded-full bg-sky-500 hover:bg-sky-600 px-6 py-3 text-white text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
                     Apply for Founding Partnership
-                  </Button>
+                    <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                      <ArrowRight size={12} />
+                    </span>
+                  </a>
                 </Link>
                 <Link href="/how-it-works">
-                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 h-auto text-base font-semibold rounded-lg">
+                  <a className="group inline-flex items-center gap-2 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50 px-6 py-3 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
                     View How It Works
-                  </Button>
+                    <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                      <ArrowRight size={12} />
+                    </span>
+                  </a>
                 </Link>
               </motion.div>
             </motion.div>
@@ -60,28 +65,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Numbers Strip */}
-      <section className="py-12 bg-slate-900">
+      {/* Key Numbers Strip — double-bezel glass cards */}
+      <section className="py-16 bg-slate-950">
         <div className="container mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-800"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:pr-10">
-              <p className="font-mono text-5xl font-bold text-white tracking-tight leading-none">17</p>
-              <p className="text-slate-400 text-sm mt-3 leading-snug">Python coordination agents,<br/>each owning one job</p>
-            </motion.div>
-            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:px-10">
-              <p className="font-mono text-5xl font-bold text-white tracking-tight leading-none">4–6 hrs</p>
-              <p className="text-slate-400 text-sm mt-3 leading-snug">average coordination time,<br/>reduced to minutes</p>
-            </motion.div>
-            <motion.div variants={fadeUp} className="flex flex-col items-start py-6 sm:py-0 sm:pl-10">
-              <p className="font-mono text-5xl font-bold text-sky-400 tracking-tight leading-none">3</p>
-              <p className="text-slate-400 text-sm mt-3 leading-snug">founding pilot slots<br/>currently open</p>
-            </motion.div>
+            {[
+              { value: "17", label: "Python coordination agents,\neach owning one job", accent: false },
+              { value: "4–6 hrs", label: "average coordination time,\nreduced to minutes", accent: false },
+              { value: "3", label: "founding pilot slots\ncurrently open", accent: true },
+            ].map((stat, i) => (
+              <motion.div key={i} variants={fadeUp}
+                className="bg-white/[0.04] border border-white/[0.08] rounded-[2rem] p-1.5"
+              >
+                <div className="bg-white/[0.025] rounded-[calc(2rem_-_0.375rem)] px-8 py-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
+                  <p className={`font-mono text-5xl font-bold tracking-tight leading-none ${stat.accent ? "text-sky-400" : "text-white"}`}>
+                    {stat.value}
+                  </p>
+                  <p className="text-slate-400 text-sm mt-4 leading-snug whitespace-pre-line">{stat.label}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -180,9 +189,12 @@ export default function Home() {
             </motion.h2>
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
               <Link href="/how-it-works">
-                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100 px-5 py-2 h-auto text-sm rounded-lg gap-2 whitespace-nowrap">
-                  Full walkthrough <ArrowRight size={13} />
-                </Button>
+                <a className="group inline-flex items-center gap-2 rounded-full border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100 px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+                  Full walkthrough
+                  <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <ArrowRight size={11} />
+                  </span>
+                </a>
               </Link>
             </motion.div>
           </div>
@@ -358,65 +370,87 @@ export default function Home() {
               viewport={viewport}
             >
               <Link href="/walkthrough">
-                <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2 h-auto text-sm rounded-lg gap-2">
-                  View full walkthrough <ArrowRight size={13} />
-                </Button>
+                <a className="group inline-flex items-center gap-2 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2.5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+                  View full walkthrough
+                  <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <ArrowRight size={11} />
+                  </span>
+                </a>
               </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Platform Components */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      {/* Platform Components — Bento Grid */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start"
+            className="mb-12"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            {/* Left — Integration Layer (wider) */}
-            <motion.div variants={fadeUp} className="lg:col-span-3 bg-white border border-slate-200 rounded-xl p-8">
-              <h2 className="text-[28px] md:text-[32px] font-bold text-slate-900 mb-2 tracking-tight">
-                Two layers, one coordinated response
-              </h2>
-              <p className="text-slate-500 text-sm mb-6 leading-relaxed">
-                Each layer does one job. Together they take an incident from detection to a documented, owned response structure.
-              </p>
-              <div className="border-t border-slate-100 pt-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center shrink-0">
+            <motion.p variants={fadeUp} className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-400 mb-3">Platform</motion.p>
+            <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-slate-900 tracking-tight max-w-lg">
+              Two layers, one coordinated response
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-12 gap-4"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            {/* Integration Layer — wide, double-bezel */}
+            <motion.div variants={fadeUp} className="md:col-span-7 bg-slate-50/80 border border-slate-100 rounded-[2rem] p-1.5">
+              <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-8 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-9 h-9 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0">
                     <Layers className="text-primary" size={18} />
                   </div>
-                  <h3 className="font-semibold text-slate-900">Integration Layer</h3>
+                  <h3 className="font-semibold text-slate-900 text-lg">Integration Layer</h3>
                 </div>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">
                   Built on FastAPI, swappable with MuleSoft, Workato, Boomi, or any iPaaS. Connects to your existing SCADA and monitoring systems via standard HTTP. No rip-and-replace.
                 </p>
+                <div className="grid grid-cols-2 gap-3 mt-auto">
+                  {["SCADA & BMS", "IoT sensors", "Weather APIs", "Custom webhooks"].map((item) => (
+                    <div key={item} className="flex items-center gap-2 bg-slate-50 rounded-xl px-3 py-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
+                      <span className="text-xs text-slate-600 font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* Right — Coordination Engine (narrower) */}
-            <motion.div variants={fadeUp} className="lg:col-span-2 bg-white border border-emerald-100 rounded-xl p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
-                  <Bot className="text-secondary" size={18} />
+            {/* Coordination Engine — narrower, emerald-tinted bezel */}
+            <motion.div variants={fadeUp} className="md:col-span-5 bg-emerald-50/40 border border-emerald-100/60 rounded-[2rem] p-1.5">
+              <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-8 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+                    <Bot className="text-secondary" size={18} />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 text-lg">Coordination Engine</h3>
                 </div>
-                <h3 className="font-semibold text-slate-900">Coordination Engine</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">
+                  17 Python agents, each owning one job. Plus a scheduling layer that books the right people without manual intervention.
+                </p>
+                <ul className="space-y-2.5">
+                  {["Detection", "Severity analysis", "Stakeholder notification", "Calendar coordination", "Compliance documentation"].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-slate-600">
+                      <span className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-slate-500 text-sm leading-relaxed mb-5">
-                17 Python agents, each owning one job. Plus a scheduling layer that books the right people without manual intervention.
-              </p>
-              <ul className="space-y-2 text-sm">
-                {["Detection", "Severity analysis", "Stakeholder notification", "Calendar coordination", "Compliance documentation"].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-slate-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           </motion.div>
         </div>
@@ -583,11 +617,14 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <div className="text-center mt-8">
+            <div className="mt-8">
               <Link href="/technology">
-                <Button variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 px-6 py-2.5 h-auto text-sm rounded-lg gap-2">
-                  View Full Technical Details <ArrowRight size={14} />
-                </Button>
+                <a className="group inline-flex items-center gap-2 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50 px-5 py-2.5 text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+                  View Full Technical Details
+                  <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <ArrowRight size={11} />
+                  </span>
+                </a>
               </Link>
             </div>
           </div>
@@ -639,10 +676,10 @@ export default function Home() {
       </section>
 
       {/* Pilot Program CTA */}
-      <section id="pilot" className="py-16 md:py-20 border-t border-slate-200 bg-white">
+      <section id="pilot" className="py-24 md:py-32 border-t border-slate-100 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -650,32 +687,36 @@ export default function Home() {
           >
             {/* Left — text */}
             <motion.div variants={fadeUp}>
-              <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-4 tracking-tight">
+              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-400 mb-4">Pilot Program</p>
+              <h2 className="text-[32px] md:text-[40px] font-bold text-slate-900 mb-5 tracking-tight">
                 Three founding pilot partnerships open now.
               </h2>
-              <p className="text-slate-500 mb-6 leading-relaxed">
+              <p className="text-slate-500 mb-8 leading-relaxed">
                 We're accepting three organizations to validate ChainSync in real incident environments: one water utility, one healthcare facility, one open slot. No upfront costs. No long-term commitment.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-10">
                 {[
                   "Your workflows shape the product direction",
                   "Direct integration support from the founding team",
                   "Preferential rates at public launch",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
+                    <span className="mt-1.5 w-5 h-5 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                    </span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col sm:flex-row items-start gap-3">
-                <Link href="/contact">
-                  <Button className="bg-sky-500 hover:bg-sky-600 text-white px-8 py-3 h-auto text-base font-semibold rounded-lg">
-                    Apply for Founding Partnership
-                  </Button>
-                </Link>
-              </div>
-              <p className="text-slate-400 text-xs mt-3">
+              <Link href="/contact">
+                <a className="group inline-flex items-center gap-2 rounded-full bg-sky-500 hover:bg-sky-600 px-6 py-3 text-white text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+                  Apply for Founding Partnership
+                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <ArrowRight size={12} />
+                  </span>
+                </a>
+              </Link>
+              <p className="text-slate-400 text-xs mt-4">
                 Not in water or healthcare?{" "}
                 <Link href="/contact">
                   <a className="text-primary hover:underline transition-colors">Join the waitlist</a>
@@ -683,20 +724,20 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Right — stats block */}
-            <motion.div variants={fadeUp} className="bg-slate-50 border border-slate-200 rounded-xl p-8">
-              <div className="space-y-6">
-                <div className="border-b border-slate-200 pb-6">
-                  <p className="text-4xl font-bold text-slate-900 mb-1">4-6 hrs</p>
-                  <p className="text-sm text-slate-500">Average coordination time without ChainSync</p>
+            {/* Right — double-bezel stats card */}
+            <motion.div variants={fadeUp} className="bg-slate-950 rounded-[2rem] p-1.5">
+              <div className="bg-slate-900 rounded-[calc(2rem_-_0.375rem)] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)] space-y-0 divide-y divide-slate-800">
+                <div className="pb-8">
+                  <p className="font-mono text-4xl font-bold text-white mb-2 tracking-tight">4–6 hrs</p>
+                  <p className="text-sm text-slate-400">Average coordination time without ChainSync</p>
                 </div>
-                <div className="border-b border-slate-200 pb-6">
-                  <p className="text-4xl font-bold text-slate-900 mb-1">17</p>
-                  <p className="text-sm text-slate-500">Python coordination agents, each owning one job</p>
+                <div className="py-8">
+                  <p className="font-mono text-4xl font-bold text-white mb-2 tracking-tight">17</p>
+                  <p className="text-sm text-slate-400">Python coordination agents, each owning one job</p>
                 </div>
-                <div>
-                  <p className="text-4xl font-bold text-slate-900 mb-1">3</p>
-                  <p className="text-sm text-slate-500">Founding partnership slots available</p>
+                <div className="pt-8">
+                  <p className="font-mono text-4xl font-bold text-sky-400 mb-2 tracking-tight">3</p>
+                  <p className="text-sm text-slate-400">Founding partnership slots available</p>
                 </div>
               </div>
             </motion.div>
