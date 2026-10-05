@@ -33,7 +33,7 @@ export default function Home() {
                 Response team assembled. Compliance record started. Before your first manual call is answered.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-lg">
-                ChainSync coordinates the people, the documentation, and the scheduling automatically the moment an incident is detected — so your team focuses on response, not the logistics of forming one.
+                ChainSync coordinates the people, the documentation, and the scheduling automatically the moment an incident is detected. Your team focuses on response, not the logistics of forming one.
               </motion.p>
 
               {/* Pill CTAs with button-in-button */}
@@ -112,7 +112,7 @@ export default function Home() {
               </div>
               <h3 className="text-base font-bold text-slate-900">4–6 hours of coordination time, gone</h3>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Every incident currently requires hours of phone calls, emails, and manual handoffs before the right people are in the same room. ChainSync eliminates that entirely. Detection triggers the full response structure — stakeholders identified, notifications sent simultaneously, response meeting scheduled — without anyone lifting a phone.
+                Every incident currently requires hours of phone calls, emails, and manual handoffs before the right people are in the same room. ChainSync eliminates that entirely. Detection triggers the full response structure: stakeholders identified, notifications sent simultaneously, response meeting scheduled. No one lifts a phone.
               </p>
               <ul className="space-y-2 pt-1">
                 {[
@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <h3 className="text-base font-bold text-slate-900">Five vendor contracts become one</h3>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Notification tools, scheduling platforms, documentation systems, escalation trackers, compliance logs — each one is a separate vendor, a separate contract, separate per-event billing, and a separate integration to maintain. ChainSync consolidates all of it. One platform handles everything from alert receipt to closed incident record.
+                Notification tools, scheduling platforms, documentation systems, escalation trackers, compliance logs: each one is a separate vendor, a separate contract, separate per-event billing, and a separate integration to maintain. ChainSync consolidates all of it. One platform handles everything from alert receipt to closed incident record.
               </p>
               <ul className="space-y-2 pt-1">
                 {[
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
               <h3 className="text-base font-bold text-slate-900">Incident data stays in your environment</h3>
               <p className="text-sm text-slate-500 leading-relaxed">
-                For healthcare facilities, every vendor in your incident workflow is a potential HIPAA liability. Notification platforms, scheduling tools, and documentation systems each receive and store incident records — including potential PHI. With ChainSync, that data never leaves your environment. No third-party middleware touches sensitive records. Your audit trail is yours.
+                For healthcare facilities, every vendor in your incident workflow is a potential HIPAA liability. Notification platforms, scheduling tools, and documentation systems each receive and store incident records, including potential PHI. With ChainSync, that data never leaves your environment. No third-party middleware touches sensitive records. Your audit trail stays in your infrastructure.
               </p>
               <ul className="space-y-2 pt-1">
                 {[
@@ -197,7 +197,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Water utilities and hospitals share the same gap: sensors and monitoring systems work well. The bottleneck is what comes after. When an incident is flagged, getting the right people in the same room with a shared understanding of what's happening takes 4–6 hours of phone calls, emails, and manual handoffs. By the time coordination finishes, the critical response window has often closed — and the compliance documentation is still unwritten.
+            Water utilities and hospitals share the same gap: sensors and monitoring systems work well. The bottleneck is what comes after. When an incident is flagged, getting the right people in the same room with a shared understanding of what's happening takes 4 to 6 hours of phone calls, emails, and manual handoffs. By the time coordination finishes, the critical response window has often closed. The compliance documentation is still unwritten.
           </motion.p>
 
           <motion.div
@@ -563,7 +563,7 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">Water &amp; Wastewater Utilities</h3>
                 <p className="text-slate-500 mb-6 leading-relaxed">
-                  A contamination alert or infrastructure failure at 2am doesn't wait for business hours. ChainSync assembles the response structure — Operations, Regulatory, Executive — before your first manual call would even be answered. EPA notification workflows trigger automatically. No deadline missed because someone wasn't reached in time.
+                  A contamination alert or infrastructure failure at 2am doesn't wait for business hours. ChainSync assembles the response structure across Operations, Regulatory, and Executive before your first manual call would even be answered. EPA notification workflows trigger automatically. No deadline missed because someone wasn't reached in time.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
@@ -590,7 +590,7 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">Hospital &amp; Healthcare Facilities</h3>
                 <p className="text-slate-500 mb-6 leading-relaxed">
-                  An HVAC failure, sterile environment breach, or equipment failure requires Facilities, Clinical, and Administration in the same room fast — with a Joint Commission-ready documentation trail already started. ChainSync coordinates all of it automatically, and incident data never leaves your environment. No third-party vendor touches PHI.
+                  An HVAC failure, sterile environment breach, or equipment failure requires Facilities, Clinical, and Administration in the same room fast, with a Joint Commission-ready documentation trail already started. ChainSync coordinates all of it automatically. Incident data never leaves your environment. No third-party vendor touches PHI.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
@@ -733,7 +733,7 @@ export default function Home() {
                 Three founding pilot partnerships open now.
               </h2>
               <p className="text-slate-500 mb-8 leading-relaxed">
-                Three organizations — one water utility, one healthcare facility, one open slot — will validate ChainSync in their real incident environments. No upfront cost. No long-term commitment. You keep the audit trail, the workflow data, and the coordination time you recover.
+                Three organizations will validate ChainSync in their real incident environments: one water utility, one healthcare facility, one open slot. No upfront cost. No long-term commitment. You keep the audit trail, the workflow data, and the coordination time you recover.
               </p>
               <ul className="space-y-3 mb-10">
                 {[

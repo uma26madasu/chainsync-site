@@ -288,7 +288,7 @@ export default function Technology() {
                 {[
                   ["Agent Framework", "Python microservices", "Specialized agent execution and HTTP webhook routing"],
                   ["AI Reasoning", "Large language model (domain-specific)", "Context-aware analysis, risk classification, decision support"],
-                  ["Integration Layer", "HTTP Webhooks (Universal Webhook Endpoint)", "Platform-agnostic event ingestion — MuleSoft, Workato, Boomi, FastAPI, or any HTTP POST"],
+                  ["Integration Layer", "HTTP Webhooks (Universal Webhook Endpoint)", "Platform-agnostic event ingestion. MuleSoft, Workato, Boomi, FastAPI, or any HTTP POST."],
                   ["Scheduler", "Scheduling Layer", "Autonomous emergency meeting coordination with conflict detection"],
                   ["Data Persistence", "Structured event store", "Incident storage, audit trails, and compliance records"],
                   ["Event Transport", "Standard HTTP", "Platform-agnostic event routing between agents"],
