@@ -159,14 +159,14 @@ export default function About() {
               className="text-lg text-muted-foreground leading-relaxed"
               variants={fadeUp}
             >
-              <span className="font-semibold text-foreground">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+              <span className="font-semibold text-foreground">Uma Madasu</span> built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
             </motion.p>
 
             <motion.p
               className="text-muted-foreground leading-relaxed"
               variants={fadeUp}
             >
-              Dual Master's in MIS and Cybersecurity. MuleSoft Developer Level 1 certified. Based in Atlanta, GA.
+              Dual Master's in MIS and Cybersecurity. Based in Atlanta, GA.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2">

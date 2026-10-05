@@ -687,7 +687,7 @@ export default function Home() {
                 Built by someone who's watched coordination fail
               </h2>
               <p className="text-slate-500 leading-relaxed mb-4">
-                <span className="font-semibold text-slate-900">Uma Madasu</span> spent years as a MuleSoft Integration Engineer connecting enterprise systems across regulated industries. He built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
+                <span className="font-semibold text-slate-900">Uma Madasu</span> built ChainSync after repeatedly watching coordination break down in high-pressure environments: not because the data wasn't there, but because the structure to act on it wasn't.
               </p>
               <a
                 href="https://www.linkedin.com/company/getchainsync/"
@@ -697,20 +697,6 @@ export default function Home() {
               >
                 Connect on LinkedIn <ArrowRight size={14} />
               </a>
-            </motion.div>
-            <motion.div variants={fadeUp} className="space-y-4 pt-1">
-              <div className="border-l-2 border-slate-200 pl-4">
-                <p className="text-sm font-semibold text-slate-900">MuleSoft Integration Engineer</p>
-                <p className="text-xs text-slate-500 mt-0.5">Enterprise systems integration across regulated industries</p>
-              </div>
-              <div className="border-l-2 border-slate-200 pl-4">
-                <p className="text-sm font-semibold text-slate-900">MuleSoft Developer Level 1 Certified</p>
-                <p className="text-xs text-slate-500 mt-0.5">Dual Master's in MIS and Cybersecurity</p>
-              </div>
-              <div className="border-l-2 border-slate-200 pl-4">
-                <p className="text-sm font-semibold text-slate-900">Based in Atlanta, GA</p>
-                <p className="text-xs text-slate-500 mt-0.5">Working directly with founding pilot partners</p>
-              </div>
             </motion.div>
           </motion.div>
         </div>
