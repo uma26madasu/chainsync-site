@@ -89,7 +89,7 @@ export default function About() {
             whileInView="visible"
             viewport={viewport}
           >
-            17 coordination agents, each an independent Python service, handle the response pipeline automatically.
+            17 coordination agents, each owning one job in the response pipeline, run automatically from detection to closed record.
           </motion.p>
 
           <motion.div

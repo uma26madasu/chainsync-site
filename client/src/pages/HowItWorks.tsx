@@ -32,7 +32,7 @@ export default function HowItWorks() {
             initial="hidden"
             animate="visible"
           >
-            ChainSync handles the coordination overhead so your team can focus on protecting communities. See how our four-step process works.
+            When an incident is detected, ChainSync builds the response structure automatically. Here is how it works.
           </motion.p>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 1: Detect</h3>
                   <p className="text-muted-foreground mb-4">
-                    ChainSync ingests data from multiple sources: IoT sensors, SCADA systems, weather APIs, satellite data, and external alert systems. When anomalies are detected. Whether it's a turbidity spike in water systems, an emissions threshold breach, or an unusual weather pattern, the system immediately flags the event and begins analysis.
+                    ChainSync receives events from IoT sensors, SCADA systems, weather APIs, and external alert systems. When a turbidity spike, emissions breach, or unusual pattern is detected, it is flagged immediately and processing begins.
                   </p>
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <p className="text-sm text-muted-foreground">
@@ -228,7 +228,7 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 4: Protect</h3>
                   <p className="text-muted-foreground mb-4">
-                    Throughout the entire process, ChainSync maintains complete audit trails and generates compliance documentation automatically: incident reports, regulatory notifications, and compliance records. Your team can focus on the actual response, making decisions and taking action, while the system handles all the administrative overhead.
+                    ChainSync maintains a full audit trail throughout the incident and generates compliance documentation automatically: incident reports, regulatory notifications, and compliance records. Your team makes decisions. The documentation is already being written.
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
                     <p className="text-sm text-muted-foreground">
