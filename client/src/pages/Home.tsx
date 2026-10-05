@@ -29,7 +29,7 @@ export default function Home() {
               <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-sky-50 text-sky-700 border border-sky-100 px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium">
                 Founding Pilot Program
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-tight">
+              <motion.h1 variants={fadeUp} className="text-3xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.08] tracking-tight">
                 Response team assembled. Compliance record started. Before your first manual call is answered.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-lg">
