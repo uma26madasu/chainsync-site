@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { Clock, ShieldCheck, Layers, Bot, ArrowRight, Lock } from "lucide-react";
+import { Clock, ShieldCheck, Layers, Bot, ArrowRight, Lock, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
@@ -15,14 +15,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[85dvh] flex items-center py-24 md:py-36 overflow-hidden bg-white">
-        {/* Mesh background */}
-        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_75%_-10%,rgba(14,165,233,0.09)_0%,transparent_70%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_10%_90%,rgba(16,185,129,0.06)_0%,transparent_70%)]" />
-          <div className="absolute inset-0 opacity-[0.28] bg-[radial-gradient(circle,#cbd5e1_1px,transparent_1px)] [background-size:28px_28px]" />
-        </div>
+      {/* Hero Section — clean white, no blobs */}
+      <section className="relative min-h-[88dvh] flex items-center py-24 md:py-36 overflow-hidden bg-white">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
@@ -32,22 +26,25 @@ export default function Home() {
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-sky-50 text-sky-700 border border-sky-100 px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium">
+              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium">
                 Founding Pilot Program
               </motion.div>
-              <motion.h1 variants={fadeUp} className="text-3xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.08] tracking-tight">
+              <motion.h1
+                variants={fadeUp}
+                className="text-[clamp(2.2rem,5.5vw,4.5rem)] font-bold text-slate-900 leading-[1.05] tracking-tight"
+              >
                 Response team assembled. Compliance record started. Before your first manual call is answered.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-lg">
                 ChainSync coordinates the people, the documentation, and the scheduling automatically the moment an incident is detected. Your team focuses on response, not the logistics of forming one.
               </motion.p>
 
-              {/* Pill CTAs with button-in-button */}
+              {/* Pill CTAs */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 pt-1">
                 <Link href="/contact">
-                  <a className="group inline-flex items-center gap-2 rounded-full bg-sky-500 hover:bg-sky-600 px-6 py-3 text-white text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
+                  <a className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-700 px-6 py-3 text-white text-sm font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.98]">
                     Apply for Founding Partnership
-                    <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
                       <ArrowRight size={12} />
                     </span>
                   </a>
@@ -69,130 +66,125 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-300"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <motion.div animate={{ y: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}>
+            <ArrowDown size={16} />
+          </motion.div>
+        </motion.div>
       </section>
 
-
-      {/* Key Numbers Strip — double-bezel glass cards */}
-      <section className="py-16 bg-slate-950">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4"
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
+      {/* Key Numbers Strip — editorial, clean */}
+      <section className="border-y border-slate-100 bg-white">
+        <motion.div
+          className="container mx-auto"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
             {[
-              { value: "17", label: "coordination agents,\neach owning one job", accent: false },
-              { value: "4–6 hrs", label: "average coordination time,\nreduced to minutes", accent: false },
+              { value: "17", label: "coordination agents,\neach owning one job" },
+              { value: "4–6 hrs", label: "average coordination time,\nreduced to minutes" },
               { value: "3", label: "founding pilot slots\ncurrently open", accent: true },
             ].map((stat, i) => (
-              <motion.div key={i} variants={fadeUp}
-                className="bg-white/[0.04] border border-white/[0.08] rounded-[2rem] p-1.5"
-              >
-                <div className="bg-white/[0.025] rounded-[calc(2rem_-_0.375rem)] px-8 py-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
-                  <p className={`font-mono text-5xl font-bold tracking-tight leading-none ${stat.accent ? "text-sky-400" : "text-white"}`}>
-                    {stat.value}
-                  </p>
-                  <p className="text-slate-400 text-sm mt-4 leading-snug whitespace-pre-line">{stat.label}</p>
-                </div>
+              <motion.div key={i} variants={fadeUp} className="px-8 py-12 md:px-12">
+                <p className={`font-mono text-5xl md:text-6xl font-bold tracking-tight leading-none mb-4 ${stat.accent ? "text-sky-500" : "text-slate-900"}`}>
+                  {stat.value}
+                </p>
+                <p className="text-slate-400 text-sm leading-snug whitespace-pre-line">{stat.label}</p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
-      {/* Three buyer-outcome blocks — dark asymmetric bento */}
-      <section className="py-20 bg-slate-950">
+      {/* Three buyer-outcome blocks — editorial numbered layout */}
+      <section className="py-20 md:py-28 bg-slate-950">
         <div className="container mx-auto px-4">
+          <motion.p
+            className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mb-12"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Why ChainSync
+          </motion.p>
+
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-5 gap-4"
+            className="space-y-0 divide-y divide-slate-800"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            {/* Block 1: Gain — 2 cols */}
-            <motion.div variants={fadeUp} className="md:col-span-2 bg-white/[0.04] border border-white/[0.07] rounded-[2rem] p-1.5">
-              <div className="bg-white/[0.02] rounded-[calc(2rem_-_0.375rem)] p-7 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)] flex flex-col gap-5">
-                <div className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0">
-                  <Clock className="text-sky-400" size={17} />
+            {/* Block 1: Gain */}
+            <motion.div variants={fadeUp} className="grid grid-cols-[3rem_1fr] md:grid-cols-[6rem_1fr_auto] gap-6 md:gap-12 py-12">
+              <div className="font-mono text-slate-700 text-sm font-bold pt-1 select-none">01</div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0">
+                    <Clock className="text-sky-400" size={15} />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">4–6 hours of coordination time, gone</h3>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-white mb-3">4–6 hours of coordination time, gone</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    Detection triggers the full response structure automatically: stakeholders identified, notifications sent simultaneously, response meeting scheduled. No one lifts a phone.
-                  </p>
-                </div>
-                <ul className="space-y-2 mt-auto">
-                  {[
-                    "No missed escalations or dropped handoffs",
-                    "Compliance record starts at detection",
-                    "Parallel notification, not one call at a time",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0" />
-                      {item}
-                    </li>
+                <p className="text-slate-400 leading-relaxed max-w-2xl">
+                  Detection triggers the full response structure automatically: stakeholders identified, notifications sent simultaneously, response meeting scheduled. No one lifts a phone.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {["No missed escalations", "Compliance record starts at detection", "Parallel notification"].map((tag) => (
+                    <span key={tag} className="text-xs text-slate-500 bg-slate-900 border border-slate-800 rounded-full px-3 py-1">{tag}</span>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
 
-            {/* Block 2: Save — 3 cols */}
-            <motion.div variants={fadeUp} className="md:col-span-3 bg-white/[0.04] border border-white/[0.07] rounded-[2rem] p-1.5">
-              <div className="bg-white/[0.02] rounded-[calc(2rem_-_0.375rem)] p-7 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)] flex flex-col gap-5">
-                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                  <Layers className="text-emerald-400" size={17} />
+            {/* Block 2: Save */}
+            <motion.div variants={fadeUp} className="grid grid-cols-[3rem_1fr] md:grid-cols-[6rem_1fr_auto] gap-6 md:gap-12 py-12">
+              <div className="font-mono text-slate-700 text-sm font-bold pt-1 select-none">02</div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                    <Layers className="text-emerald-400" size={15} />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">Five vendor contracts become one</h3>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-white mb-3">Five vendor contracts become one</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    Notification tools, scheduling platforms, documentation systems, escalation trackers, compliance logs: each is a separate vendor, a separate contract, separate per-event billing. ChainSync consolidates all of it. One platform from alert receipt to closed incident record.
-                  </p>
-                </div>
-                <ul className="space-y-2 mt-auto">
-                  {[
-                    "No per-event notification fees",
-                    "No separate documentation or scheduling tool",
-                    "No manual calendar coordination across systems",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                      {item}
-                    </li>
+                <p className="text-slate-400 leading-relaxed max-w-2xl">
+                  Notification tools, scheduling platforms, documentation systems, escalation trackers, compliance logs: each is a separate vendor, a separate contract, separate per-event billing. ChainSync consolidates all of it. One platform from alert receipt to closed incident record.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {["No per-event notification fees", "No separate documentation tool", "No manual calendar coordination"].map((tag) => (
+                    <span key={tag} className="text-xs text-slate-500 bg-slate-900 border border-slate-800 rounded-full px-3 py-1">{tag}</span>
                   ))}
-                </ul>
+                </div>
               </div>
             </motion.div>
 
-            {/* Block 3: Risk — full width horizontal */}
-            <motion.div variants={fadeUp} className="md:col-span-5 bg-sky-500/[0.06] border border-sky-500/[0.18] rounded-[2rem] p-1.5">
-              <div className="bg-sky-500/[0.03] rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
-                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-                  <div className="shrink-0">
-                    <div className="w-9 h-9 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center">
-                      <Lock className="text-sky-300" size={17} />
-                    </div>
+            {/* Block 3: Risk */}
+            <motion.div variants={fadeUp} className="grid grid-cols-[3rem_1fr] md:grid-cols-[6rem_1fr_auto] gap-6 md:gap-12 py-12">
+              <div className="font-mono text-slate-700 text-sm font-bold pt-1 select-none">03</div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-400/25 flex items-center justify-center shrink-0">
+                    <Lock className="text-sky-300" size={15} />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-base font-bold text-white mb-2">Incident data stays in your environment</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed max-w-3xl">
-                      For healthcare facilities, every vendor in your incident workflow is a potential HIPAA liability. Notification platforms, scheduling tools, and documentation systems each receive and store incident records, including potential PHI. With ChainSync, that data never leaves your infrastructure. No third-party middleware touches sensitive records. Your audit trail is yours.
-                    </p>
-                  </div>
-                  <div className="shrink-0 flex flex-wrap md:flex-col gap-2">
-                    {[
-                      "No vendor custody of your records",
-                      "PHI and PII stay in your infrastructure",
-                      "Joint Commission / CMS / HIPAA built in",
-                    ].map((item) => (
-                      <span key={item} className="inline-flex items-center gap-1.5 text-xs text-sky-300 bg-sky-500/10 border border-sky-500/20 rounded-full px-3 py-1">
-                        <span className="w-1 h-1 rounded-full bg-sky-400 shrink-0" />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">Incident data stays in your environment</h3>
+                </div>
+                <p className="text-slate-400 leading-relaxed max-w-2xl">
+                  For healthcare facilities, every vendor in your incident workflow is a potential HIPAA liability. Notification platforms, scheduling tools, and documentation systems each receive and store incident records, including potential PHI. With ChainSync, that data never leaves your infrastructure. No third-party middleware touches sensitive records. Your audit trail is yours.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {["No vendor custody of your records", "PHI and PII stay in your infrastructure", "Joint Commission / CMS / HIPAA built in"].map((tag) => (
+                    <span key={tag} className="text-xs text-sky-300/70 bg-sky-500/[0.07] border border-sky-500/20 rounded-full px-3 py-1">{tag}</span>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -446,7 +438,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Platform Components — Bento Grid */}
+      {/* Platform Components */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -469,7 +461,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            {/* Integration Layer — wide, double-bezel */}
+            {/* Integration Layer */}
             <motion.div variants={fadeUp} className="md:col-span-7 bg-slate-50/80 border border-slate-100 rounded-[2rem] p-1.5">
               <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-8 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
                 <div className="flex items-center gap-3 mb-6">
@@ -492,7 +484,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Coordination Engine — narrower, emerald-tinted bezel */}
+            {/* Coordination Engine */}
             <motion.div variants={fadeUp} className="md:col-span-5 bg-emerald-50/40 border border-emerald-100/60 rounded-[2rem] p-1.5">
               <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-8 h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]">
                 <div className="flex items-center gap-3 mb-6">
@@ -502,7 +494,7 @@ export default function Home() {
                   <h3 className="font-semibold text-slate-900 text-lg">Coordination Engine</h3>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                  17 Python agents, each owning one job. Plus a scheduling layer that books the right people without manual intervention.
+                  17 coordination agents, each owning one job. Plus a scheduling layer that books the right people without manual intervention.
                 </p>
                 <ul className="space-y-2.5">
                   {["Detection", "Severity analysis", "Stakeholder notification", "Calendar coordination", "Compliance documentation"].map((item) => (
@@ -780,21 +772,19 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Right — double-bezel stats card */}
-            <motion.div variants={fadeUp} className="bg-slate-950 rounded-[2rem] p-1.5">
-              <div className="bg-slate-900 rounded-[calc(2rem_-_0.375rem)] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)] space-y-0 divide-y divide-slate-800">
-                <div className="pb-8">
-                  <p className="font-mono text-4xl font-bold text-white mb-2 tracking-tight">4–6 hrs</p>
-                  <p className="text-sm text-slate-400">Average coordination time without ChainSync</p>
-                </div>
-                <div className="py-8">
-                  <p className="font-mono text-4xl font-bold text-white mb-2 tracking-tight">17</p>
-                  <p className="text-sm text-slate-400">Coordination agents, each owning one job</p>
-                </div>
-                <div className="pt-8">
-                  <p className="font-mono text-4xl font-bold text-sky-400 mb-2 tracking-tight">3</p>
-                  <p className="text-sm text-slate-400">Founding partnership slots available</p>
-                </div>
+            {/* Right — editorial stats */}
+            <motion.div variants={fadeUp} className="divide-y divide-slate-800">
+              <div className="pb-8">
+                <p className="font-mono text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">4–6 hrs</p>
+                <p className="text-sm text-slate-400">Average coordination time without ChainSync</p>
+              </div>
+              <div className="py-8">
+                <p className="font-mono text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">17</p>
+                <p className="text-sm text-slate-400">Coordination agents, each owning one job</p>
+              </div>
+              <div className="pt-8">
+                <p className="font-mono text-5xl md:text-6xl font-bold text-sky-400 mb-3 tracking-tight">3</p>
+                <p className="text-sm text-slate-400">Founding partnership slots available</p>
               </div>
             </motion.div>
           </motion.div>
