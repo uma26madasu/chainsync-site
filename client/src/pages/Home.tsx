@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { Clock, ShieldCheck, ClipboardList, Layers, Bot, ArrowRight } from "lucide-react";
+import { Clock, ShieldCheck, Layers, Bot, ArrowRight, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
@@ -30,10 +30,10 @@ export default function Home() {
                 Founding Pilot Program
               </motion.div>
               <motion.h1 variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-tight">
-                Your teams are ready. Your coordination isn't.
+                Response team assembled. Compliance record started. Before your first manual call is answered.
               </motion.h1>
               <motion.p variants={fadeUp} className="text-lg text-slate-500 leading-relaxed max-w-lg">
-                When an incident is detected, your response structure has to form in minutes. ChainSync builds it automatically: right people, clear ownership, documented record.
+                ChainSync coordinates the people, the documentation, and the scheduling automatically the moment an incident is detected — so your team focuses on response, not the logistics of forming one.
               </motion.p>
 
               {/* Pill CTAs with button-in-button */}
@@ -95,42 +95,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Props Strip — separate from hero */}
-      <section className="py-10 border-t border-slate-100 bg-white">
+      {/* Three buyer-outcome blocks */}
+      <section className="py-20 border-t border-slate-100 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-100"
+            className="grid grid-cols-1 md:grid-cols-3 gap-10"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:pr-10">
-              <div className="shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center mt-0.5">
-                <Clock className="text-primary" size={16} />
+            {/* Block 1: What you gain */}
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="w-9 h-9 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center">
+                <Clock className="text-sky-600" size={17} />
               </div>
-              <div>
-                <p className="font-semibold text-slate-900 text-sm mb-0.5">Minutes, Not Hours</p>
-                <p className="text-xs text-slate-500 leading-relaxed">From detection to a structured response with the right people assigned, automatically.</p>
-              </div>
+              <h3 className="text-base font-bold text-slate-900">4–6 hours of coordination time, gone</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Every incident currently requires hours of phone calls, emails, and manual handoffs before the right people are in the same room. ChainSync eliminates that entirely. Detection triggers the full response structure — stakeholders identified, notifications sent simultaneously, response meeting scheduled — without anyone lifting a phone.
+              </p>
+              <ul className="space-y-2 pt-1">
+                {[
+                  "No missed escalations or dropped handoffs",
+                  "Compliance record starts at the moment of detection",
+                  "Right people notified in parallel, not one call at a time",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:px-10">
-              <div className="shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mt-0.5">
-                <ShieldCheck className="text-secondary" size={16} />
+
+            {/* Block 2: What you save */}
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center">
+                <Layers className="text-emerald-600" size={17} />
               </div>
-              <div>
-                <p className="font-semibold text-slate-900 text-sm mb-0.5">No Rip-and-Replace</p>
-                <p className="text-xs text-slate-500 leading-relaxed">Connects to your existing SCADA, BMS, or monitoring systems via standard HTTP.</p>
-              </div>
+              <h3 className="text-base font-bold text-slate-900">Five vendor contracts become one</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Notification tools, scheduling platforms, documentation systems, escalation trackers, compliance logs — each one is a separate vendor, a separate contract, separate per-event billing, and a separate integration to maintain. ChainSync consolidates all of it. One platform handles everything from alert receipt to closed incident record.
+              </p>
+              <ul className="space-y-2 pt-1">
+                {[
+                  "No per-event notification fees",
+                  "No separate documentation or scheduling tool",
+                  "No manual calendar coordination across systems",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-            <motion.div variants={fadeUp} className="flex items-start gap-4 py-6 sm:py-0 sm:pl-10">
-              <div className="shrink-0 w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center mt-0.5">
-                <ClipboardList className="text-primary" size={16} />
+
+            {/* Block 3: What risk you eliminate */}
+            <motion.div variants={fadeUp} className="space-y-4">
+              <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center">
+                <Lock className="text-amber-600" size={17} />
               </div>
-              <div>
-                <p className="font-semibold text-slate-900 text-sm mb-0.5">Compliance Built In</p>
-                <p className="text-xs text-slate-500 leading-relaxed">Every action is logged. Audit-ready documentation generated automatically.</p>
-              </div>
+              <h3 className="text-base font-bold text-slate-900">Incident data stays in your environment</h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                For healthcare facilities, every vendor in your incident workflow is a potential HIPAA liability. Notification platforms, scheduling tools, and documentation systems each receive and store incident records — including potential PHI. With ChainSync, that data never leaves your environment. No third-party middleware touches sensitive records. Your audit trail is yours.
+              </p>
+              <ul className="space-y-2 pt-1">
+                {[
+                  "No vendor custody of your compliance records",
+                  "PHI and PII stay in your infrastructure",
+                  "Joint Commission / CMS / HIPAA documentation built into the response",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </motion.div>
         </div>
@@ -156,7 +197,7 @@ export default function Home() {
             whileInView="visible"
             viewport={viewport}
           >
-            Water utilities and hospitals share a coordination problem: detection works, response doesn't. When an incident is flagged, the actual bottleneck isn't the sensor data. It's the 4-6 hours of phone calls, emails, and manual handoffs required to get the right people in the same room with a shared understanding of what's happening. By the time coordination finishes, the critical response window has often closed.
+            Water utilities and hospitals share the same gap: sensors and monitoring systems work well. The bottleneck is what comes after. When an incident is flagged, getting the right people in the same room with a shared understanding of what's happening takes 4–6 hours of phone calls, emails, and manual handoffs. By the time coordination finishes, the critical response window has often closed — and the compliance documentation is still unwritten.
           </motion.p>
 
           <motion.div
@@ -522,13 +563,13 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">Water &amp; Wastewater Utilities</h3>
                 <p className="text-slate-500 mb-6 leading-relaxed">
-                  Environmental incidents don't wait for phone tag. ChainSync connects directly to your SCADA systems, triggers the response structure, and gets the right team assembled before your first manual call would even be answered.
+                  A contamination alert or infrastructure failure at 2am doesn't wait for business hours. ChainSync assembles the response structure — Operations, Regulatory, Executive — before your first manual call would even be answered. EPA notification workflows trigger automatically. No deadline missed because someone wasn't reached in time.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { label: "SCADA + BMS integration", desc: "Standard HTTP webhooks. No proprietary protocols." },
-                    { label: "EPA notification workflows", desc: "Regulatory notifications triggered automatically." },
-                    { label: "Multi-agency coordination", desc: "Right stakeholders assigned and notified simultaneously." },
+                    { label: "SCADA + BMS integration", desc: "Connects via standard HTTP. No proprietary protocols or rip-and-replace." },
+                    { label: "EPA notification workflows", desc: "Regulatory notifications triggered automatically at the moment of detection." },
+                    { label: "Multi-agency coordination", desc: "All required stakeholders notified simultaneously, not one call at a time." },
                   ].map((item) => (
                     <div key={item.label} className="bg-sky-50 border border-sky-100 rounded-lg p-4">
                       <p className="font-semibold text-slate-900 text-sm mb-1">{item.label}</p>
@@ -549,13 +590,13 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">Hospital &amp; Healthcare Facilities</h3>
                 <p className="text-slate-500 mb-6 leading-relaxed">
-                  Facility emergencies (HVAC failures, hazmat incidents, power events) require cross-departmental response on short notice. ChainSync is designed to connect to building management systems and trigger coordinated response automatically.
+                  An HVAC failure, sterile environment breach, or equipment failure requires Facilities, Clinical, and Administration in the same room fast — with a Joint Commission-ready documentation trail already started. ChainSync coordinates all of it automatically, and incident data never leaves your environment. No third-party vendor touches PHI.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { label: "BMS integration", desc: "Designed to connect to building management systems via standard HTTP." },
-                    { label: "Facilities + Clinical + Admin", desc: "Cross-department coordination without manual handoffs." },
-                    { label: "Audit trails designed for HIPAA environments", desc: "Every action logged for compliance documentation." },
+                    { label: "BMS integration", desc: "Connects to building management systems via standard HTTP. No proprietary protocols." },
+                    { label: "Cross-department coordination", desc: "Facilities, Clinical, and Admin notified and assembled without manual handoffs." },
+                    { label: "In-environment audit trail", desc: "Joint Commission, CMS, and HIPAA documentation built into the response. Incident data stays in your infrastructure." },
                   ].map((item) => (
                     <div key={item.label} className="bg-emerald-50 border border-emerald-100 rounded-lg p-4">
                       <p className="font-semibold text-slate-900 text-sm mb-1">{item.label}</p>
@@ -692,13 +733,13 @@ export default function Home() {
                 Three founding pilot partnerships open now.
               </h2>
               <p className="text-slate-500 mb-8 leading-relaxed">
-                We're accepting three organizations to validate ChainSync in real incident environments: one water utility, one healthcare facility, one open slot. No upfront costs. No long-term commitment.
+                Three organizations — one water utility, one healthcare facility, one open slot — will validate ChainSync in their real incident environments. No upfront cost. No long-term commitment. You keep the audit trail, the workflow data, and the coordination time you recover.
               </p>
               <ul className="space-y-3 mb-10">
                 {[
-                  "Your workflows shape the product direction",
-                  "Direct integration support from the founding team",
-                  "Preferential rates at public launch",
+                  "See the 4–6 hour coordination cycle drop to minutes in your environment",
+                  "Direct integration support from the founding team throughout",
+                  "Founding pricing locked in at public launch",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
                     <span className="mt-1.5 w-5 h-5 rounded-full bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0">
