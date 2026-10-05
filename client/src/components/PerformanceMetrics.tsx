@@ -31,7 +31,7 @@ const METRICS = [
     value: 17,
     suffix: "",
     prefix: "",
-    desc: "Specialized Python FastAPI agents built",
+    desc: "Specialized coordination agents built",
     color: "#8b5cf6",
     bg: "bg-purple-50",
     border: "border-purple-200",

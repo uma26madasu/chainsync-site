@@ -6,7 +6,7 @@ const CURRENT = {
   id: "fastapi",
   name: "FastAPI",
   badge: "Current Implementation",
-  desc: "Python-native HTTP webhook routing. Each integration is an independent FastAPI service receiving events from sensors, SCADA systems, and external platforms via standard HTTP POST.",
+  desc: "HTTP webhook routing layer receiving events from sensors, SCADA systems, and external platforms via standard HTTP POST.",
   color: "#3b82f6",
   bg: "bg-blue-50",
   border: "border-blue-400",
@@ -16,7 +16,7 @@ const ALTERNATIVES = [
   {
     id: "mulesoft",
     name: "MuleSoft",
-    desc: "Enterprise integration platform with DataWeave transformations",
+    desc: "Enterprise integration platform with advanced transformation capabilities",
     color: "#8b5cf6",
     bg: "bg-purple-50",
     border: "border-purple-300",

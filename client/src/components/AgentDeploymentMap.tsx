@@ -3,65 +3,61 @@ import { motion, useInView } from "framer-motion";
 import CountUp from "@/components/CountUp";
 import { stagger, fadeUp } from "@/lib/motion";
 
-function toDisplayName(className: string): string {
-  return className.replace(/([a-z])([A-Z])/g, "$1 $2");
-}
-
-type Agent = { name: string; desc: string };
+type Agent = { label: string; desc: string };
 type Category = { label: string; color: string; bg: string; border: string; textColor: string; agents: Agent[] };
 
 const CATEGORIES: Category[] = [
   {
-    label: "Core Agents",
+    label: "Core Intelligence",
     color: "#10b981",
     bg: "bg-emerald-50",
     border: "border-emerald-200",
     textColor: "text-emerald-700",
     agents: [
-      { name: "ContinuousLearningAgent", desc: "Adapts from past incidents to improve response accuracy over time" },
-      { name: "MemoryEnabledAgent", desc: "Retains incident context across multi-step coordination workflows" },
-      { name: "MultiStepReasoningAgent", desc: "Evaluates multi-factor scenarios to determine response priority" },
-      { name: "NaturalLanguageQueryAgent", desc: "Enables plain-language queries against incident and compliance data" },
-      { name: "RootCauseAnalysisAgent", desc: "Traces incident origin through sensor data and historical patterns" },
+      { label: "Adaptive Learning", desc: "Improves response accuracy from historical incident patterns" },
+      { label: "Context Retention", desc: "Maintains incident context across multi-step coordination workflows" },
+      { label: "Multi-Factor Analysis", desc: "Evaluates complex scenarios to determine response priority" },
+      { label: "Natural Language Interface", desc: "Enables plain-language queries against incident and compliance data" },
+      { label: "Root Cause Analysis", desc: "Traces incident origin through sensor data and historical patterns" },
     ],
   },
   {
-    label: "Emergency Coordination Agents",
+    label: "Emergency Coordination",
     color: "#3b82f6",
     bg: "bg-blue-50",
     border: "border-blue-200",
     textColor: "text-blue-700",
     agents: [
-      { name: "PredictiveAlertAgent", desc: "Detects early-warning signals before threshold breaches occur" },
-      { name: "ImpactAssessmentAgent", desc: "Evaluates operational and regulatory impact of an active incident" },
-      { name: "MeetingContextAgent", desc: "Prepares and distributes incident context for emergency coordination meetings" },
-      { name: "HistoricalPatternMatchingAgent", desc: "Identifies similar past incidents to inform current response decisions" },
-      { name: "PublicCommunicationAgent", desc: "Drafts public-facing notifications based on incident type and regulatory requirements" },
+      { label: "Early Warning Detection", desc: "Identifies pre-threshold signals before a breach occurs" },
+      { label: "Impact Assessment", desc: "Evaluates operational and regulatory impact of an active incident" },
+      { label: "Meeting Context", desc: "Prepares and distributes incident context for coordination meetings" },
+      { label: "Historical Pattern Recognition", desc: "Identifies similar past incidents to inform current response" },
+      { label: "Public Communication", desc: "Drafts notifications based on incident type and regulatory requirements" },
     ],
   },
   {
-    label: "Compliance Agents",
+    label: "Compliance",
     color: "#f59e0b",
     bg: "bg-amber-50",
     border: "border-amber-200",
     textColor: "text-amber-700",
     agents: [
-      { name: "ComplianceAutopilotAgent", desc: "Detects applicable regulatory frameworks and initiates compliance workflows automatically" },
-      { name: "RegulatoryReportingAgent", desc: "Generates reports in required formats (EPA SDWA, Joint Commission, CMS CoP)" },
+      { label: "Compliance Automation", desc: "Detects applicable regulatory frameworks and initiates workflows automatically" },
+      { label: "Regulatory Reporting", desc: "Generates reports in required formats for water, environmental, and facility regulations" },
     ],
   },
   {
-    label: "Healthcare Agents",
+    label: "Healthcare",
     color: "#8b5cf6",
     bg: "bg-purple-50",
     border: "border-purple-200",
     textColor: "text-purple-700",
     agents: [
-      { name: "HospitalOperationsAgent", desc: "Coordinates multi-department response to facilities incidents" },
-      { name: "JointCommissionDocumentationAgent", desc: "Auto-generates EC.02.05 and EC.02.06 documentation from incident data" },
-      { name: "InfectionControlCoordinationAgent", desc: "Triggers infection control protocols on environmental breach events" },
-      { name: "MedicalEquipmentFailureAgent", desc: "Manages response coordination for critical medical equipment failures" },
-      { name: "PreventiveMaintenanceTrackerAgent", desc: "Schedules and tracks preventive maintenance workflows based on incident history" },
+      { label: "Hospital Operations Coordination", desc: "Coordinates multi-department response to facilities incidents" },
+      { label: "Accreditation Documentation", desc: "Auto-generates required documentation from incident data" },
+      { label: "Infection Control Response", desc: "Triggers infection control protocols on environmental breach events" },
+      { label: "Equipment Failure Response", desc: "Manages coordination for critical medical equipment failures" },
+      { label: "Preventive Maintenance Tracking", desc: "Schedules and tracks maintenance workflows based on incident history" },
     ],
   },
 ];
@@ -87,7 +83,7 @@ export default function AgentDeploymentMap() {
         </div>
         <div className="hidden sm:block w-px h-12 bg-border" />
         <div className="hidden sm:block text-sm text-muted-foreground max-w-xs">
-          Each agent is an independent Python FastAPI service. Modular architecture: update one without affecting the rest.
+          Each agent owns one job in the coordination pipeline. Modular design means any agent can be updated independently.
         </div>
       </div>
 
@@ -112,7 +108,7 @@ export default function AgentDeploymentMap() {
                 const isHovered = hovered?.cat === ci && hovered?.agent === ai;
                 return (
                   <motion.div
-                    key={agent.name}
+                    key={agent.label}
                     className={`rounded-lg px-3 py-2 cursor-pointer transition-all duration-150 ${
                       isHovered ? "bg-white shadow-sm" : "bg-white/50 hover:bg-white/80"
                     }`}
@@ -129,7 +125,7 @@ export default function AgentDeploymentMap() {
                         animate={isHovered ? { scale: 1.5 } : { scale: 1 }}
                         transition={{ duration: 0.15 }}
                       />
-                      <p className="text-xs font-semibold text-foreground">{toDisplayName(agent.name)}</p>
+                      <p className="text-xs font-semibold text-foreground">{agent.label}</p>
                     </div>
                   </motion.div>
                 );
@@ -143,13 +139,13 @@ export default function AgentDeploymentMap() {
       <div className="mt-4 min-h-[48px] flex items-center">
         {hoveredAgent && hoveredCat ? (
           <motion.div
-            key={hoveredAgent.name}
+            key={hoveredAgent.label}
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.15 }}
             className={`w-full rounded-xl border p-4 ${hoveredCat.bg} ${hoveredCat.border}`}
           >
-            <p className="text-sm font-semibold text-foreground mb-1">{toDisplayName(hoveredAgent.name)}</p>
+            <p className="text-sm font-semibold text-foreground mb-1">{hoveredAgent.label}</p>
             <p className="text-sm text-muted-foreground">{hoveredAgent.desc}</p>
           </motion.div>
         ) : (

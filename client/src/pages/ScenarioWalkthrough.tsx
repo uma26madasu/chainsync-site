@@ -39,7 +39,7 @@ const WATER_SCENARIO = {
         { label: "Notification window", value: "County Health: 2 hours" },
         { label: "Stakeholders identified", value: "6 people across 4 departments" },
       ],
-      log: "Water Quality Agent activated → Compliance Agent cross-referenced EPA SDWA → Escalation path determined",
+      log: "Alert processed → EPA SDWA context resolved → Escalation path determined",
     },
     {
       phase: 3,
@@ -57,7 +57,7 @@ const WATER_SCENARIO = {
         { label: "Field Supervisor (Zone A)", value: "SMS: Acknowledged ✓" },
         { label: "Lab Technician (on-call)", value: "SMS: Acknowledged ✓" },
       ],
-      log: "Notification Agent dispatched 6 alerts across SMS + Email → 5/6 acknowledged within 90 seconds",
+      log: "6 alerts dispatched across SMS + Email → 5/6 acknowledged within 90 seconds",
     },
     {
       phase: 4,
@@ -75,7 +75,7 @@ const WATER_SCENARIO = {
         { label: "Meeting", value: "5:00 AM, all 6 stakeholders, Google Calendar invites sent" },
         { label: "Agenda", value: "Auto-generated: Source ID → Remediation → Public notification decision" },
       ],
-      log: "Scheduling Agent checked 6 calendars → Emergency meeting created → Ownership matrix built → Agenda populated",
+      log: "6 calendars checked → Emergency meeting created → Ownership matrix built → Agenda populated",
     },
     {
       phase: 5,
@@ -95,7 +95,7 @@ const WATER_SCENARIO = {
         { label: "02:34:15", value: "Turbidity reading update: 5.8 NTU (still rising)" },
         { label: "02:41:00", value: "Compliance Officer: EPA notification draft ready for review" },
       ],
-      log: "State Tracking Agent maintaining live timeline → All updates logged with timestamps → Accessible to all stakeholders",
+      log: "Live timeline maintained → All updates logged with timestamps → Accessible to all stakeholders",
     },
     {
       phase: 6,
@@ -113,7 +113,7 @@ const WATER_SCENARIO = {
         { label: "Timeline", value: "Auto-populated from coordination log" },
         { label: "Status", value: "Draft ready, pending Compliance Officer review" },
       ],
-      log: "Compliance Documentation Agent generated EPA notification → Cross-referenced 40 CFR 141 → Draft ready for human review",
+      log: "EPA notification generated → Cross-referenced 40 CFR 141 → Draft ready for human review",
     },
     {
       phase: 7,
@@ -131,7 +131,7 @@ const WATER_SCENARIO = {
         { label: "Total coordination time", value: "15 seconds (vs 4-6 hours manual)" },
         { label: "Documentation", value: "Complete: exportable PDF, audit-ready" },
       ],
-      log: "Incident #WQ-2026-0847 closed → Full audit trail generated → PDF exported → All stakeholders notified of resolution",
+      log: "Incident closed → Full audit trail generated → PDF exported → All stakeholders notified of resolution",
     },
   ],
 };
@@ -156,7 +156,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Equipment", value: "AHU-3, primary air handling unit" },
         { label: "Trend", value: "Rising (72.1 → 75.3 → 78.4 in 22 min)" },
       ],
-      log: "BMS webhook received → Alert parsed → Incident ID #FC-2026-0312 created",
+      log: "BMS webhook received → Alert parsed → Incident record created",
     },
     {
       phase: 2,
@@ -173,7 +173,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Stakeholders identified", value: "7 people across 5 departments" },
         { label: "Surgery impact", value: "2 procedures scheduled in OR Suite 2 within 90 min" },
       ],
-      log: "Hospital Operations Agent activated → Joint Commission Agent cross-referenced EC.02.05 → Infection Control Agent flagged sterile environment risk",
+      log: "Sterile environment breach identified → EC.02.05 standards applied → Infection control protocols triggered",
     },
     {
       phase: 3,
@@ -192,7 +192,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Chief Nursing Officer (3rd Floor)", value: "Teams: Pending" },
         { label: "Quality/Accreditation Manager", value: "Email: Acknowledged ✓" },
       ],
-      log: "Notification Agent dispatched 7 alerts across SMS + Email + Teams → 6/7 acknowledged within 2 minutes",
+      log: "7 alerts dispatched across SMS + Email + Teams → 6/7 acknowledged within 2 minutes",
     },
     {
       phase: 4,
@@ -211,7 +211,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Meeting", value: "2:15 PM, all stakeholders, Outlook 365 invites sent" },
         { label: "Backup plan", value: "OR Suite 4 identified as alternative (temp: 70.2°F ✓)" },
       ],
-      log: "Scheduling Agent checked 7 calendars → Emergency meeting created → Ownership matrix built → OR schedule cross-referenced",
+      log: "7 calendars checked → Emergency meeting created → Ownership matrix built → OR schedule cross-referenced",
     },
     {
       phase: 5,
@@ -233,7 +233,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "02:31:00", value: "OR Suite 2 temp returning to range: 73.1°F" },
         { label: "02:48:00", value: "Infection Control: clearance pending culture results (24hr)" },
       ],
-      log: "State Tracking Agent maintaining live timeline → Cross-department visibility → No status calls needed",
+      log: "Live timeline maintained → Cross-department visibility → No status calls needed",
     },
     {
       phase: 6,
@@ -252,7 +252,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Clinical impact", value: "Auto-populated: 2 cases rescheduled, 0 patient harm" },
         { label: "Status", value: "Drafts ready, pending Quality Manager review" },
       ],
-      log: "Joint Commission Documentation Agent generated EC.02.05 + EC.02.06 reports → Infection Control log populated → All drafts ready for human review",
+      log: "EC.02.05 + EC.02.06 reports generated → Infection Control log populated → All drafts ready for human review",
     },
     {
       phase: 7,
@@ -270,7 +270,7 @@ const HEALTHCARE_SCENARIO = {
         { label: "Total coordination time", value: "16 seconds (vs 2-4 hours manual)" },
         { label: "Documentation", value: "EC.02.05, EC.02.06, IC log: complete, exportable, audit-ready" },
       ],
-      log: "Incident #FC-2026-0312 closed → Joint Commission docs finalized → All stakeholders notified → 24hr follow-up auto-scheduled",
+      log: "Incident closed → Joint Commission docs finalized → All stakeholders notified → 24hr follow-up auto-scheduled",
     },
   ],
 };

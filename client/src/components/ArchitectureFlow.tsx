@@ -16,7 +16,7 @@ const PILLARS = [
     stepText: "#0369a1",       // sky-700
     bullets: [
       "Universal Webhook Endpoint receives events",
-      "DataWeave normalizes heterogeneous formats",
+      "Format normalization across all sources",
       "SCADA, IoT sensors, and APIs supported",
       "22+ integration flows deployed",
     ],
@@ -30,7 +30,7 @@ const PILLARS = [
     id: "orchestration",
     step: "02",
     label: "AI Orchestration Layer",
-    sublabel: "17 Python Agents",
+    sublabel: "17 Specialized Agents",
     headerBg: "#f1f5f9",      // slate-100
     border: "#e2e8f0",         // slate-200
     dot: "#cbd5e1",            // slate-300
@@ -41,7 +41,7 @@ const PILLARS = [
       "Detection agents identify anomalies",
       "Analysis agents assess severity and scope",
       "Agents cross-check EPA / CMS / HIPAA rules",
-      "Each agent: independent FastAPI service",
+      "Each agent owns one discrete job",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth={1.5}>
@@ -84,7 +84,7 @@ const PILLARS = [
     iconStroke: "#0284c7",     // sky-600
     stepText: "#0369a1",       // sky-700
     bullets: [
-      "Full audit trail persisted to MongoDB",
+      "Full audit trail maintained throughout",
       "Compliance documentation auto-generated",
       "Joint Commission / CMS / HIPAA records",
       "Incident closed with timestamped log",

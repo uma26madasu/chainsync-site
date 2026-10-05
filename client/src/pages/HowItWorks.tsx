@@ -180,11 +180,11 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 2: Analyze</h3>
                   <p className="text-muted-foreground mb-4">
-                    Our AI Agent Layer performs intelligent analysis. The detection agent identifies the anomaly type, the analysis agent enriches context with historical data and regulatory thresholds, and the reasoning agent (AI-powered) determines risk level and recommended actions.
+                    Our AI Agent Layer performs intelligent analysis. Specialized agents identify the anomaly type, enrich context with historical data and regulatory thresholds, and determine risk level and recommended actions.
                   </p>
                   <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Coordination Agents:</span> 17 agents across four groups (Core, Emergency Coordination, Compliance, and Healthcare), each an independent Python FastAPI service.
+                      <span className="font-semibold">Coordination Agents:</span> 17 specialized agents organized by function, each owning one discrete job in the coordination pipeline.
                     </p>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 3: Coordinate</h3>
                   <p className="text-muted-foreground mb-4">
-                    Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. The coordination agent sends notifications to relevant teams via email, SMS, or webhook. ChainSync's scheduling layer automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems, with emergency override protocols for critical incidents.
+                    Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. Notifications go to relevant teams via email, SMS, or webhook. ChainSync's scheduling layer automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems, with emergency override protocols for critical incidents.
                   </p>
                   <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
                     <p className="text-sm text-muted-foreground">
@@ -228,11 +228,11 @@ export default function HowItWorks() {
                 <div className="flex-grow">
                   <h3 className="text-2xl font-semibold text-foreground mb-3">Step 4: Protect</h3>
                   <p className="text-muted-foreground mb-4">
-                    Throughout the entire process, ChainSync maintains complete audit trails and generates compliance documentation automatically. The documentation agent creates incident reports, regulatory notifications, and compliance records. Your team can focus on the actual response, making decisions and taking action, while the system handles all the administrative overhead.
+                    Throughout the entire process, ChainSync maintains complete audit trails and generates compliance documentation automatically: incident reports, regulatory notifications, and compliance records. Your team can focus on the actual response, making decisions and taking action, while the system handles all the administrative overhead.
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
                     <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Compliance records:</span> Full audit trail persisted to MongoDB. Compliance documentation auto-generated and exportable.
+                      <span className="font-semibold">Compliance records:</span> Full audit trail maintained throughout the incident lifecycle. Compliance documentation auto-generated and exportable.
                     </p>
                   </div>
                 </div>

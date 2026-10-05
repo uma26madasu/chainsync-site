@@ -129,7 +129,7 @@ export default function Roadmaps() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>3 Infrastructure Agents:</strong> System Health Monitor, Data Integration, Event Orchestration</span>
+                    <span><strong>3 Infrastructure Agents:</strong> System health monitoring, data integration, and event orchestration</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
@@ -137,11 +137,11 @@ export default function Roadmaps() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span>FastAPI HTTP webhook integration layer</span>
+                    <span>HTTP webhook integration layer</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <span>MongoDB audit trail persistence</span>
+                    <span>Persistent audit trail storage</span>
                   </li>
                 </ul>
               </Card>
@@ -220,7 +220,7 @@ export default function Roadmaps() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>5 Healthcare Agents:</strong> Hospital Operations, Joint Commission Documentation, Infection Control Coordination, Medical Equipment Failure, Preventive Maintenance Tracker</span>
+                    <span><strong>5 Healthcare Agents:</strong> Hospital operations, accreditation documentation, infection control, medical equipment failure, and preventive maintenance</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
@@ -315,7 +315,7 @@ export default function Roadmaps() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>6 Manufacturing Agents:</strong> Facility Safety Monitor, Equipment Health, Supply Chain Disruption, Production Quality, Environmental Compliance, Operational Resilience</span>
+                    <span><strong>6 Manufacturing Agents:</strong> Facility safety, equipment health, supply chain disruption, production quality, environmental compliance, and operational resilience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
@@ -410,7 +410,7 @@ export default function Roadmaps() {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>6 Energy & Finance Agents:</strong> Grid Stability Monitor, Energy Demand Forecasting, Fraud Detection, Systemic Risk Monitor, Regulatory Compliance, Crisis Response</span>
+                    <span><strong>6 Energy & Finance Agents:</strong> Grid stability, demand forecasting, fraud detection, systemic risk monitoring, regulatory compliance, and crisis response</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />

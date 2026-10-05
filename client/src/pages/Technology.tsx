@@ -286,13 +286,13 @@ export default function Technology() {
               </thead>
               <tbody>
                 {[
-                  ["Agent Framework", "Python 3.11 + FastAPI", "Specialized agent execution and HTTP webhook routing"],
-                  ["AI Reasoning", "GPT-4 + Domain-Specific Prompts", "Context-aware analysis, risk classification, decision support"],
-                  ["Integration Layer", "FastAPI (HTTP Webhooks)", "Current integration implementation (MuleSoft, Workato, Boomi also supported)"],
-                  ["Scheduler", "Scheduling Layer (React + Express + MongoDB)", "Autonomous emergency meeting coordination"],
-                  ["Database", "MongoDB", "Event storage, audit trails, and document records"],
-                  ["Event Transport", "FastAPI HTTP Webhooks", "Platform-agnostic event routing between agents"],
-                  ["Monitoring", "Prometheus + Grafana", "System health metrics and operational dashboards"],
+                  ["Agent Framework", "Python microservices", "Specialized agent execution and HTTP webhook routing"],
+                  ["AI Reasoning", "Large language model (domain-specific)", "Context-aware analysis, risk classification, decision support"],
+                  ["Integration Layer", "HTTP Webhooks (Universal Webhook Endpoint)", "Platform-agnostic event ingestion — MuleSoft, Workato, Boomi, FastAPI, or any HTTP POST"],
+                  ["Scheduler", "Scheduling Layer", "Autonomous emergency meeting coordination with conflict detection"],
+                  ["Data Persistence", "Structured event store", "Incident storage, audit trails, and compliance records"],
+                  ["Event Transport", "Standard HTTP", "Platform-agnostic event routing between agents"],
+                  ["Observability", "Metrics + health dashboards", "System health monitoring and operational dashboards"],
                 ].map(([comp, tech, purpose], i) => (
                   <motion.tr
                     key={comp}
@@ -396,27 +396,27 @@ export default function Technology() {
                   <div className="flex-grow">
                     <h3 className="text-xl font-semibold text-foreground mb-2">AI Agent Layer</h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      17 specialized Python agents, each an independent FastAPI service. Modular architecture means we can improve individual agents without disrupting the system.
+                      17 specialized agents, each owning one job. Modular architecture means individual agents can be updated without affecting the rest of the system.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Core + Emergency (10)</h4>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Intelligence & Coordination</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Continuous Learning Agent</li>
-                          <li>✓ Multi Step Reasoning Agent</li>
-                          <li>✓ Root Cause Analysis Agent</li>
-                          <li>✓ Predictive Alert Agent</li>
-                          <li>✓ Impact Assessment Agent</li>
+                          <li>✓ Adaptive learning & pattern recognition</li>
+                          <li>✓ Multi-factor reasoning & root cause analysis</li>
+                          <li>✓ Early warning detection</li>
+                          <li>✓ Impact assessment</li>
+                          <li>✓ Emergency meeting coordination</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Compliance + Healthcare (7)</h4>
+                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Compliance & Healthcare</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Compliance Autopilot Agent</li>
-                          <li>✓ Regulatory Reporting Agent</li>
-                          <li>✓ Hospital Operations Agent</li>
-                          <li>✓ Joint Commission Documentation Agent</li>
-                          <li>✓ Infection Control Coordination Agent</li>
+                          <li>✓ Compliance automation & regulatory reporting</li>
+                          <li>✓ Hospital operations coordination</li>
+                          <li>✓ Accreditation documentation</li>
+                          <li>✓ Infection control response</li>
+                          <li>✓ Public communication drafting</li>
                         </ul>
                       </div>
                     </div>
