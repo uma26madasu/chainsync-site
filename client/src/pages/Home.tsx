@@ -592,6 +592,114 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════════════════════ FUTURE VERTICALS */}
+      <section className="py-16 md:py-24 bg-slate-950">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <FadeUp className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-amber-400">
+                Roadmap
+              </span>
+            </div>
+            <h2 className="text-[1.75rem] md:text-[2.1rem] font-bold text-white leading-tight mb-3 max-w-2xl">
+              Where We're Heading
+            </h2>
+            <p className="text-slate-400 text-base max-w-xl leading-relaxed">
+              ChainSync currently serves Water Utilities and Healthcare Facilities. These six verticals are next, shaped by the organizations we work with now.
+            </p>
+          </FadeUp>
+
+          {/* 6-card grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            {[
+              {
+                num: "01",
+                name: "Manufacturing",
+                need: "Equipment downtime, quality failures, and supply chain disruptions cost millions per hour.",
+                does: "Detect equipment anomalies, coordinate maintenance response, trace root causes, and generate compliance reports across the full production floor.",
+              },
+              {
+                num: "02",
+                name: "Energy",
+                need: "Grid failures and renewable integration errors have cascading regional impact. NERC and FERC compliance is non-negotiable.",
+                does: "Real-time grid incident coordination, demand forecasting alerts, and automated regulatory filing.",
+              },
+              {
+                num: "03",
+                name: "Financial Services",
+                need: "Regulatory breaches, fraud patterns, and risk events require immediate coordinated response with a complete audit trail.",
+                does: "Detect anomalies, coordinate response across risk, compliance, and operations teams, and generate immutable audit records.",
+              },
+              {
+                num: "04",
+                name: "Transportation",
+                need: "Fleet incidents, route disruptions, and safety compliance across distributed operations require fast, coordinated response.",
+                does: "Incident detection and coordination across fleet and infrastructure, impact assessment, and regulatory mapping.",
+                wip: true,
+              },
+              {
+                num: "05",
+                name: "Food & Agriculture",
+                need: "Supply chain disruptions and food safety incidents require rapid response and USDA/FDA compliance documentation.",
+                does: "Coordinate response to contamination or supply events, regulatory mapping, and automated closure documentation.",
+                wip: true,
+              },
+              {
+                num: "06",
+                name: "Healthcare Administration",
+                sub: "Payer-side",
+                need: "Claims routing errors, network gaps, and multi-carrier coordination delays create revenue leakage and compliance risk.",
+                does: "Coordinate claims workflows, map payer network requirements, track status across major carriers, and maintain a complete audit trail for CMS and HIPAA compliance.",
+              },
+            ].map(({ num, name, sub, need, does, wip }, i) => (
+              <FadeUp key={num} delay={i * 0.06}>
+                <motion.div
+                  className="relative rounded-2xl p-5 h-full"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                  }}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  variants={{
+                    rest: { y: 0, borderColor: "rgba(255,255,255,0.08)" },
+                    hover: { y: -3, borderColor: "rgba(255,255,255,0.16)" },
+                  }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-[11px] font-semibold text-slate-600 tabular-nums" style={{ fontFamily: "'Geist Mono', monospace" }}>{num}</span>
+                    {wip && (
+                      <span className="text-[10px] font-medium text-slate-500 border border-slate-700 rounded-full px-2 py-0.5">In Definition</span>
+                    )}
+                  </div>
+                  <h3 className="text-[15px] font-bold text-white mb-0.5">{name}</h3>
+                  {sub && <p className="text-[11px] text-slate-500 mb-2">{sub}</p>}
+                  <p className="text-[12.5px] text-slate-500 leading-relaxed mb-3">{need}</p>
+                  <p className="text-[12.5px] text-slate-300 leading-relaxed">{does}</p>
+                </motion.div>
+              </FadeUp>
+            ))}
+          </div>
+
+          {/* Callout bar */}
+          <FadeUp delay={0.4}>
+            <div className="rounded-2xl px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-3"
+              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.10)" }}>
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/15 border border-emerald-500/25 flex items-center justify-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7l3.5 3.5L12 3.5" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="text-[13.5px] text-slate-300 leading-relaxed">
+                All six verticals are powered by ChainSync's existing 17-agent framework — no new infrastructure required.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* ══════════════════════════ ARCHITECTURE */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
