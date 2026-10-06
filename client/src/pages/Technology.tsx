@@ -1,8 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import TechStackFlow from "@/components/TechStackFlow";
@@ -20,7 +19,7 @@ export default function Technology() {
 
       {/* Hero */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.h1
             className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
             variants={fadeUp}
@@ -43,8 +42,8 @@ export default function Technology() {
             initial="hidden"
             animate="visible"
           >
-            {["17 Coordination Agents", "AI Reasoning Engine", "FastAPI Integration", "MongoDB", "Universal Webhook Endpoint"].map((tag) => (
-              <span key={tag} className="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+            {["17 Coordination Agents", "AI Reasoning Engine", "Universal Webhook Endpoint", "Scheduling Layer", "Compliance Audit Trail"].map((tag) => (
+              <span key={tag} className="text-[11px] font-semibold px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full border border-slate-200">
                 {tag}
               </span>
             ))}
@@ -313,7 +312,7 @@ export default function Technology() {
           </div>
 
           <motion.div
-            className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-5"
+            className="mt-6 bg-sky-50 border border-sky-100 rounded-xl p-5"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -329,19 +328,21 @@ export default function Technology() {
 
       {/* 9. Core Components Detail */}
       <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Core Components
-          </motion.h2>
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport} className="mb-10">
+            <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-3">
+              Components
+            </motion.p>
+            <motion.h2
+              className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1]"
+              variants={fadeUp}
+            >
+              Core Components
+            </motion.h2>
+          </motion.div>
 
           <motion.div
-            className="space-y-6"
+            className="space-y-4"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
@@ -349,142 +350,167 @@ export default function Technology() {
           >
             {/* Integration Hub */}
             <motion.div variants={fadeUp}>
-              <Card className="p-8 bg-white border border-border">
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <span className="text-blue-600 font-bold text-lg">↔</span>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Universal Integration Hub</h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Platform-agnostic orchestration connecting any sensor, API, or external system via standard webhooks. No vendor lock-in, no proprietary protocols.
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Built Integrations</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ FastAPI (current implementation)</li>
-                          <li>✓ Enterprise iPaaS (MuleSoft, Workato, Boomi: supported)</li>
-                          <li>✓ Universal Webhook (HTTP POST from any system)</li>
-                          <li>→ AWS IoT Core (planned)</li>
-                          <li>→ Azure IoT Hub (planned)</li>
-                          <li>→ Building Management Systems (planned)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Data Sources</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ 22+ flow implementations</li>
-                          <li>✓ SCADA systems via HTTP webhooks</li>
-                          <li>→ Weather APIs (planned)</li>
-                          <li>→ Satellite data (planned)</li>
-                        </ul>
+              <div className="bg-[#F4F6F9] border border-slate-200/60 rounded-[2rem] p-1.5">
+                <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+                  <div className="flex items-start gap-5">
+                    <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center shrink-0">
+                      <svg className="text-sky-600" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-[16px] font-bold text-slate-900 mb-2">Universal Integration Hub</h3>
+                      <p className="text-[14px] text-slate-600 leading-relaxed mb-5">
+                        Platform-agnostic orchestration connecting any sensor, API, or external system via standard webhooks. No vendor lock-in, no proprietary protocols.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Built Integrations</p>
+                          <ul className="space-y-1.5">
+                            {["FastAPI (current implementation)", "Enterprise iPaaS (MuleSoft, Workato, Boomi: supported)", "Universal Webhook (HTTP POST from any system)", "22+ flow implementations", "SCADA systems via HTTP webhooks"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-600">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Planned Additions</p>
+                          <ul className="space-y-1.5">
+                            {["AWS IoT Core", "Azure IoT Hub", "Building Management Systems", "Weather APIs", "Satellite data"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-500">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-300 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
 
             {/* AI Agent Layer */}
             <motion.div variants={fadeUp}>
-              <Card className="p-8 bg-white border border-border">
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-lg">⚡</span>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">AI Agent Layer</h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      17 specialized agents, each owning one job. Modular architecture means individual agents can be updated without affecting the rest of the system.
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Intelligence & Coordination</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Adaptive learning & pattern recognition</li>
-                          <li>✓ Multi-factor reasoning & root cause analysis</li>
-                          <li>✓ Early warning detection</li>
-                          <li>✓ Impact assessment</li>
-                          <li>✓ Emergency meeting coordination</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Compliance & Healthcare</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Compliance automation & regulatory reporting</li>
-                          <li>✓ Hospital operations coordination</li>
-                          <li>✓ Accreditation documentation</li>
-                          <li>✓ Infection control response</li>
-                          <li>✓ Public communication drafting</li>
-                        </ul>
+              <div className="bg-slate-950 rounded-[2rem] p-1.5">
+                <div className="bg-slate-900 rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
+                  <div className="flex items-start gap-5">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                      <svg className="text-emerald-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-[16px] font-bold text-white mb-2">Coordination Agent Layer</h3>
+                      <p className="text-[14px] text-slate-400 leading-relaxed mb-5">
+                        17 coordination agents, each owning one discrete job. Modular architecture means individual agents can be updated without affecting the rest of the system.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2">Intelligence & Coordination</p>
+                          <ul className="space-y-1.5">
+                            {["Pattern recognition & early warning", "Multi-factor reasoning & root cause analysis", "Impact assessment", "Stakeholder identification", "Emergency meeting coordination"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-400">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400/60 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mb-2">Compliance & Documentation</p>
+                          <ul className="space-y-1.5">
+                            {["Compliance automation & regulatory reporting", "Accreditation documentation", "Hospital operations coordination", "Infection control response", "Public communication drafting"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-400">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400/60 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
 
             {/* Scheduling Layer */}
             <motion.div variants={fadeUp}>
-              <Card className="p-8 bg-white border border-border">
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <span className="text-emerald-600 font-bold text-lg">📅</span>
-                  </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Scheduling Layer</h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Autonomous meeting coordination that selects the right stakeholders and books emergency meetings across multiple calendar systems with conflict detection and override protocols.
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Calendar Integration</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Google Calendar</li>
-                          <li>✓ Microsoft 365</li>
-                          <li>✓ Custom calendar systems</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground text-xs mb-2 uppercase tracking-wide">Features</h4>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>✓ Multi-calendar conflict detection</li>
-                          <li>✓ Emergency override protocols</li>
-                          <li>✓ Automatic authority selection</li>
-                        </ul>
+              <div className="bg-[#F4F6F9] border border-slate-200/60 rounded-[2rem] p-1.5">
+                <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+                  <div className="flex items-start gap-5">
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center shrink-0">
+                      <svg className="text-amber-600" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-[16px] font-bold text-slate-900 mb-2">Scheduling Layer</h3>
+                      <p className="text-[14px] text-slate-600 leading-relaxed mb-5">
+                        Autonomous meeting coordination. Selects the right stakeholders and books emergency meetings across multiple calendar systems with conflict detection and override protocols.
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Calendar Integration</p>
+                          <ul className="space-y-1.5">
+                            {["Google Calendar", "Microsoft 365", "Custom calendar systems"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-600">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Capabilities</p>
+                          <ul className="space-y-1.5">
+                            {["Multi-calendar conflict detection", "Emergency override protocols", "Automatic authority selection"].map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-[13px] text-slate-600">
+                                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 md:py-20 bg-slate-950 border-t border-white/[0.04]">
         <motion.div
-          className="container mx-auto px-4 text-center"
+          className="container mx-auto px-4 md:px-6 text-center"
+          style={{ maxWidth: "1200px" }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-4">Pilot Program</p>
+          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-white tracking-[-0.025em] leading-[1.1] mb-4">
             Interested in the Technical Details?
           </h2>
-          <p className="text-lg text-slate-500 mb-8">
-            Get access to our full API documentation and technical specifications as a pilot partner.
+          <p className="text-[15px] text-slate-400 mb-8 max-w-lg mx-auto leading-relaxed">
+            Get access to our full technical specifications and integration documentation as a founding pilot partner.
           </p>
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-            <Link href="/contact">
-              <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 h-auto text-base font-semibold">
-                Apply for Founding Partnership
-              </Button>
-            </Link>
-          </motion.div>
+          <Link href="/contact">
+            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+              Apply for Founding Partnership
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                <ArrowRight size={11} />
+              </span>
+            </a>
+          </Link>
         </motion.div>
       </section>
 

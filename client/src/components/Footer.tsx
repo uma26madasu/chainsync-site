@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <img src="/logo.png" alt="ChainSync" className="h-20 w-auto mb-4" />
+            <img src="/logo.png" alt="ChainSync" className="w-[140px] sm:w-[160px] h-auto mb-4" />
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-              Incident coordination infrastructure for water utilities. Reduces response time from hours to minutes.
+              Incident coordination infrastructure for water utilities and healthcare facilities. Structured response in minutes, not hours.
             </p>
           </div>
 
@@ -72,13 +72,6 @@ export default function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
-            </a>
-            <a
-              href="mailto:contact@chainsync.com"
-              className="text-slate-400 hover:text-slate-700 transition-colors"
-              aria-label="Email"
-            >
-              <Mail size={18} />
             </a>
           </div>
         </div>

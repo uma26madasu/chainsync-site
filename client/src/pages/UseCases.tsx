@@ -1,7 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { AlertCircle, Gauge, Building2, Heart, Droplets, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -50,7 +48,7 @@ export default function UseCases() {
               viewport={viewport}
             >
               <motion.div variants={fadeUp}>
-                <span className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <span className="inline-block bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4">
                   Water Quality Protection
                 </span>
               </motion.div>
@@ -107,11 +105,11 @@ export default function UseCases() {
                   </ul>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Early Warning Detection", "Impact Assessment", "Compliance Automation", "Regulatory Reporting", "Historical Pattern Recognition"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                      <span key={a} className="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-full border border-slate-200">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -215,7 +213,7 @@ export default function UseCases() {
               viewport={viewport}
             >
               <motion.div variants={fadeUp}>
-                <span className="inline-block bg-green-100 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <span className="inline-block bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4">
                   Emissions and Compliance
                 </span>
               </motion.div>
@@ -272,11 +270,11 @@ export default function UseCases() {
                   </ul>
                 </div>
 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Early Warning Detection", "Impact Assessment", "Meeting Context", "Regulatory Reporting", "Public Communication"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded font-medium">{a}</span>
+                      <span key={a} className="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-full border border-slate-200">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -297,7 +295,7 @@ export default function UseCases() {
               viewport={viewport}
             >
               <motion.div variants={fadeUp}>
-                <span className="inline-block bg-amber-100 text-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <span className="inline-block bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4">
                   Emergency Coordination
                 </span>
               </motion.div>
@@ -354,11 +352,11 @@ export default function UseCases() {
                   </ul>
                 </div>
 
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Impact Assessment", "Meeting Context", "Compliance Automation", "Regulatory Reporting", "Public Communication"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded font-medium">{a}</span>
+                      <span key={a} className="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-full border border-slate-200">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -416,7 +414,7 @@ export default function UseCases() {
               viewport={viewport}
             >
               <motion.div variants={fadeUp}>
-                <span className="inline-block bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <span className="inline-block bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4">
                   Hospital Facilities Management
                 </span>
               </motion.div>
@@ -473,11 +471,11 @@ export default function UseCases() {
                   </ul>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-foreground mb-2 text-sm">Agents Deployed</h4>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Agents Deployed</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Hospital Operations Coordination", "Accreditation Documentation", "Infection Control Response", "Equipment Failure Response", "Compliance Automation"].map((a) => (
-                      <span key={a} className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded font-medium">{a}</span>
+                      <span key={a} className="text-[11px] font-semibold px-2.5 py-1 bg-white text-slate-600 rounded-full border border-slate-200">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -526,7 +524,7 @@ export default function UseCases() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-sky-50 via-white to-emerald-50 border-t border-slate-100">
+      <section className="py-16 md:py-20 bg-slate-950 border-t border-white/[0.04]">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
@@ -534,10 +532,11 @@ export default function UseCases() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-4">Founding Partnership</p>
+          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-white tracking-[-0.025em] leading-[1.1] mb-4">
             Is Your Organization a Good Fit?
           </h2>
-          <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">
+          <p className="text-[15px] text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             If you're responsible for detecting and responding to environmental emergencies, ChainSync is built for your workflow.
           </p>
           <Link href="/contact">
