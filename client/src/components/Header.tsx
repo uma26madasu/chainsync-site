@@ -33,7 +33,7 @@ export default function Header() {
           >
             <Link href="/">
               <a className="flex items-center hover:opacity-75 transition-opacity duration-[600ms] ease-[cubic-bezier(0.32,0.72,0,1)]">
-                <img src="/logo.png" alt="ChainSync" className="h-8 md:h-9 w-auto" />
+                <img src="/logo.png" alt="ChainSync" className="h-10 md:h-12 w-auto" />
               </a>
             </Link>
 
