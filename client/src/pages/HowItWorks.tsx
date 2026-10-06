@@ -1,332 +1,309 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Radio, Brain, Users, Shield } from "lucide-react";
+import { Radio, Brain, Users, Shield, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 import ProcessFlowAnimation from "@/components/ProcessFlowAnimation";
 import ArchitectureAnimation from "@/components/ArchitectureAnimation";
 
+const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
+
+const STEPS = [
+  {
+    icon: Radio,
+    label: "Detect",
+    num: "1",
+    summary: "Sensor data and external alerts ingested via API gateway. Anomaly detection triggers immediate analysis.",
+    badge: "~2s (target)",
+    badgeColor: "sky",
+    detail: "ChainSync receives events from IoT sensors, SCADA systems, weather APIs, and external alert systems. When a turbidity spike, emissions breach, or unusual pattern is detected, it is flagged immediately and processing begins.",
+    callout: { label: "Integration Hub", text: "Supports flow implementations across MuleSoft, Workato, Boomi, and custom integrations via FastAPI and a Universal Webhook Endpoint with zero vendor lock-in." },
+    dark: false,
+  },
+  {
+    icon: Brain,
+    label: "Analyze",
+    num: "2",
+    summary: "Context enrichment, risk scoring, and root cause analysis. Historical data combined with regulatory thresholds.",
+    badge: "~30s (target)",
+    badgeColor: "emerald",
+    detail: "Coordination agents perform intelligent analysis. Specialized agents identify the anomaly type, enrich context with historical data and regulatory thresholds, and determine risk level and recommended actions.",
+    callout: { label: "Coordination Agents", text: "17 specialized agents organized by function, each owning one discrete job in the coordination pipeline." },
+    dark: true,
+  },
+  {
+    icon: Users,
+    label: "Coordinate",
+    num: "3",
+    summary: "Right teams notified, stakeholders alerted, regulators informed. Emergency meetings scheduled automatically.",
+    badge: "~50s (target)",
+    badgeColor: "amber",
+    detail: "Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. Notifications go to relevant teams via email, SMS, or webhook. The scheduling layer automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems.",
+    callout: { label: "Scheduling Layer", text: "Intelligent meeting coordination with multi-calendar conflict detection and automatic authority selection." },
+    dark: false,
+  },
+  {
+    icon: Shield,
+    label: "Protect",
+    num: "4",
+    summary: "Complete audit trails, automated reports, compliance tracking. Your team focuses on resolution, not paperwork.",
+    badge: "Continuous",
+    badgeColor: "slate",
+    detail: "ChainSync maintains a full audit trail throughout the incident and generates compliance documentation automatically: incident reports, regulatory notifications, and compliance records. Your team makes decisions. The documentation is already being written.",
+    callout: { label: "Compliance records", text: "Full audit trail maintained throughout the incident lifecycle. Compliance documentation auto-generated and exportable." },
+    dark: true,
+  },
+];
+
+const ARCH_CARDS = [
+  {
+    title: "Sensor Integration Hub",
+    body: "Platform-agnostic orchestration connecting sensors, APIs, and external systems via standard webhooks. Supports weather sensors, gas and chemical sensors, satellite data, and custom APIs.",
+  },
+  {
+    title: "AI Agent Layer",
+    body: "17 coordination agents for detection, analysis, coordination, and documentation. AI-powered reasoning engine organizes each job as a discrete, independently maintainable unit.",
+  },
+  {
+    title: "Response Coordination",
+    body: "Team notifications, emergency scheduling, compliance reporting. Integrates with Google Calendar, Microsoft 365, and custom notification systems.",
+  },
+];
+
+function IconBadge({ icon: Icon, color }: { icon: React.ElementType; color: string }) {
+  const styles: Record<string, string> = {
+    sky: "bg-sky-50 border-sky-100 text-sky-600",
+    emerald: "bg-emerald-50 border-emerald-100 text-emerald-600",
+    amber: "bg-amber-50 border-amber-100 text-amber-600",
+    slate: "bg-slate-50 border-slate-200 text-slate-600",
+  };
+  return (
+    <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 ${styles[color]}`}>
+      <Icon size={18} strokeWidth={1.5} />
+    </div>
+  );
+}
 
 export default function HowItWorks() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
       <Header />
 
-      {/* Hero */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-          >
-            From Threat Detection to Coordinated Response
-          </motion.h1>
-          <motion.p
-            className="text-lg text-muted-foreground text-center max-w-3xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-          >
-            When an incident is detected, ChainSync builds the response structure automatically. Here is how it works.
-          </motion.p>
+      {/* ── Hero */}
+      <section className="py-16 md:py-24 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
+            <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-4">
+              How It Works
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-5"
+            >
+              From detection to coordinated response
+            </motion.h1>
+            <motion.p variants={fadeUp} className="text-[17px] text-slate-500 leading-[1.7] max-w-2xl">
+              When an incident is detected, ChainSync builds the response structure automatically. Here is how it works.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Process Overview */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            className="mb-12"
-          >
+      {/* ── Process Flow Animation */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} className="mb-14">
             <ProcessFlowAnimation />
           </motion.div>
 
+          {/* 4-step overview cards */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            {/* Step 1 */}
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-                  <Radio className="text-primary" size={24} />
+            {STEPS.map((s) => (
+              <motion.div
+                key={s.num}
+                variants={fadeUp}
+                whileHover={{ y: -3, transition: { duration: 0.2, ease: EASE } }}
+                className="h-full"
+              >
+                <div className="h-full bg-[#F4F6F9] border border-slate-200/60 rounded-[1.75rem] p-1.5">
+                  <div className="h-full bg-white rounded-[calc(1.75rem_-_0.375rem)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] flex flex-col gap-3">
+                    <IconBadge icon={s.icon} color={s.badgeColor} />
+                    <div>
+                      <p className="font-mono text-[11px] font-semibold text-slate-400 mb-1">0{s.num}</p>
+                      <h3 className="text-[15px] font-bold text-slate-900 mb-1">{s.label}</h3>
+                      <p className="text-[13px] text-slate-500 leading-relaxed">{s.summary}</p>
+                    </div>
+                    <span className="mt-auto text-[12px] font-semibold text-slate-400 font-mono">{s.badge}</span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">1. Detect</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Sensor data and external alerts ingested via API gateway. Anomaly detection triggers immediate analysis.
-                </p>
-                <div className="bg-blue-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-primary">~2s (target)</p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg mb-4">
-                  <Brain className="text-secondary" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">2. Analyze</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Context enrichment, risk scoring, and root cause analysis. Historical data + weather patterns + regulatory thresholds.
-                </p>
-                <div className="bg-green-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-secondary">~30s (target)</p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="flex items-center justify-center w-12 h-12 bg-amber-100 rounded-lg mb-4">
-                  <Users className="text-accent" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">3. Coordinate</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Right teams notified, stakeholders alerted, regulators informed. Emergency meetings scheduled automatically.
-                </p>
-                <div className="bg-amber-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-accent">~50s (target)</p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Step 4 */}
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <div className="flex items-center justify-center w-12 h-12 bg-slate-100 rounded-lg mb-4">
-                  <Shield className="text-slate-700" size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">4. Protect</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Complete audit trails, automated reports, compliance tracking. Your team focuses on resolution, not paperwork.
-                </p>
-                <div className="bg-slate-50 rounded px-3 py-1 inline-block">
-                  <p className="text-sm font-semibold text-slate-700">Continuous</p>
-                </div>
-              </Card>
-            </motion.div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Detailed Steps */}
-      <section className="py-16 md:py-20 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
-            variants={fadeUp}
+      {/* ── Detailed Breakdown */}
+      <section className="py-16 md:py-24 bg-[#F8F9FB]">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <motion.div
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
+            className="mb-10"
           >
-            Detailed Process Breakdown
-          </motion.h2>
+            <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-3">
+              Process
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1]"
+            >
+              Detailed process breakdown
+            </motion.h2>
+          </motion.div>
 
           <motion.div
-            className="space-y-8"
+            className="space-y-4"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            {/* Detect */}
-            <motion.div variants={fadeUp}>
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-lg">
-                    <Radio className="text-primary" size={32} />
+            {STEPS.map((s) =>
+              s.dark ? (
+                <motion.div key={s.num} variants={fadeUp}>
+                  <div className="bg-slate-950 rounded-[2rem] p-1.5">
+                    <div className="bg-slate-900 rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
+                      <div className="flex items-start gap-5">
+                        <IconBadge icon={s.icon} color={s.badgeColor} />
+                        <div className="flex-1">
+                          <h3 className="text-[16px] font-bold text-white mb-3">Step {s.num}: {s.label}</h3>
+                          <p className="text-[14px] text-slate-400 leading-relaxed mb-4">{s.detail}</p>
+                          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+                            <p className="text-[13px] text-slate-400 leading-relaxed">
+                              <span className="font-semibold text-slate-200">{s.callout.label}:</span>{" "}
+                              {s.callout.text}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Step 1: Detect</h3>
-                  <p className="text-muted-foreground mb-4">
-                    ChainSync receives events from IoT sensors, SCADA systems, weather APIs, and external alert systems. When a turbidity spike, emissions breach, or unusual pattern is detected, it is flagged immediately and processing begins.
-                  </p>
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Integration Hub:</span> Supports 22+ flow implementations across AWS, Azure, MuleSoft, and custom integrations, via FastAPI and a Universal Webhook Endpoint with zero vendor lock-in.
-                    </p>
+                </motion.div>
+              ) : (
+                <motion.div key={s.num} variants={fadeUp}>
+                  <div className="bg-[#F4F6F9] border border-slate-200/60 rounded-[2rem] p-1.5">
+                    <div className="bg-white rounded-[calc(2rem_-_0.375rem)] p-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+                      <div className="flex items-start gap-5">
+                        <IconBadge icon={s.icon} color={s.badgeColor} />
+                        <div className="flex-1">
+                          <h3 className="text-[16px] font-bold text-slate-900 mb-3">Step {s.num}: {s.label}</h3>
+                          <p className="text-[14px] text-slate-600 leading-relaxed mb-4">{s.detail}</p>
+                          <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-4">
+                            <p className="text-[13px] text-slate-600 leading-relaxed">
+                              <span className="font-semibold text-slate-800">{s.callout.label}:</span>{" "}
+                              {s.callout.text}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Card>
-            </motion.div>
-
-            {/* Analyze */}
-            <motion.div variants={fadeUp}>
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-lg">
-                    <Brain className="text-secondary" size={32} />
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Step 2: Analyze</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Our AI Agent Layer performs intelligent analysis. Specialized agents identify the anomaly type, enrich context with historical data and regulatory thresholds, and determine risk level and recommended actions.
-                  </p>
-                  <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Coordination Agents:</span> 17 specialized agents organized by function, each owning one discrete job in the coordination pipeline.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-            </motion.div>
-
-            {/* Coordinate */}
-            <motion.div variants={fadeUp}>
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center w-16 h-16 bg-amber-100 rounded-lg">
-                    <Users className="text-accent" size={32} />
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Step 3: Coordinate</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Based on the analysis, ChainSync automatically determines who needs to be notified and what actions are required. Notifications go to relevant teams via email, SMS, or webhook. ChainSync's scheduling layer automatically books emergency meetings with the right stakeholders, checking calendars across Google Calendar, Microsoft 365, and other systems, with emergency override protocols for critical incidents.
-                  </p>
-                  <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Scheduling Layer:</span> Intelligent meeting coordination with multi-calendar conflict detection and automatic authority selection.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-            </motion.div>
-
-            {/* Protect */}
-            <motion.div variants={fadeUp}>
-            <Card className="p-8 bg-white border border-border">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center w-16 h-16 bg-slate-100 rounded-lg">
-                    <Shield className="text-slate-700" size={32} />
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold text-foreground mb-3">Step 4: Protect</h3>
-                  <p className="text-muted-foreground mb-4">
-                    ChainSync maintains a full audit trail throughout the incident and generates compliance documentation automatically: incident reports, regulatory notifications, and compliance records. Your team makes decisions. The documentation is already being written.
-                  </p>
-                  <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">Compliance records:</span> Full audit trail maintained throughout the incident lifecycle. Compliance documentation auto-generated and exportable.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-            </motion.div>
+                </motion.div>
+              )
+            )}
           </motion.div>
         </div>
       </section>
 
-      {/* System Architecture */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            System Architecture
-          </motion.h2>
-
+      {/* ── Architecture */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
-            variants={fadeUp}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className="mb-12"
+            className="mb-10"
           >
+            <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-3">
+              Architecture
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1]"
+            >
+              System architecture
+            </motion.h2>
+          </motion.div>
+
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} className="mb-12 max-w-3xl">
             <ArchitectureAnimation />
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp}>
-            <Card className="p-6 bg-white border border-border h-full">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Sensor Integration Hub</h3>
-              <p className="text-muted-foreground text-sm">
-                Platform-agnostic orchestration connecting sensors, APIs, and external systems via standard webhooks. Supports weather sensors, gas/chemical sensors, satellite data, and custom APIs.
-              </p>
-            </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-            <Card className="p-6 bg-white border border-border h-full">
-              <h3 className="text-lg font-semibold text-foreground mb-3">AI Agent Layer</h3>
-              <p className="text-muted-foreground text-sm">
-                17 specialized Python agents for detection, analysis, coordination, and documentation. AI-powered reasoning engine.
-              </p>
-            </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-            <Card className="p-6 bg-white border border-border h-full">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Response Coordination</h3>
-              <p className="text-muted-foreground text-sm">
-                Team notifications, emergency scheduling, compliance reporting. Integrates with Google Calendar, Microsoft 365, and custom notification systems.
-              </p>
-            </Card>
-            </motion.div>
+            {ARCH_CARDS.map((card) => (
+              <motion.div key={card.title} variants={fadeUp}>
+                <div className="h-full bg-[#F4F6F9] border border-slate-200/60 rounded-[2rem] p-1.5">
+                  <div className="h-full bg-white rounded-[calc(2rem_-_0.375rem)] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]">
+                    <h3 className="text-[15px] font-bold text-slate-900 mb-2">{card.title}</h3>
+                    <p className="text-[13.5px] text-slate-600 leading-relaxed">{card.body}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
-        <motion.div
-          className="container mx-auto px-4 text-center"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-        >
-          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
-            Ready to See It in Action?
-          </h2>
-          <p className="text-lg text-slate-500 mb-8">
-            Apply for our founding pilot program and help validate ChainSync in a real water utility environment.
-          </p>
-
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-            <Link href="/contact">
-              <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 h-auto text-base font-semibold">
-                Apply for Founding Partnership
-              </Button>
-            </Link>
+      {/* ── CTA */}
+      <section className="py-16 md:py-24 bg-slate-950 border-t border-white/[0.04]">
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="max-w-2xl"
+          >
+            <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-4">
+              Pilot Program
+            </motion.p>
+            <motion.h2
+              variants={fadeUp}
+              className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-white tracking-[-0.025em] leading-[1.08] mb-4"
+            >
+              Ready to see it in action?
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-[15px] text-slate-400 leading-relaxed mb-8 max-w-xl">
+              Apply for our founding pilot program and help validate ChainSync in a real water utility or healthcare environment.
+            </motion.p>
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
+              <Link href="/contact">
+                <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+                  Apply for Founding Partnership
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                    <ArrowRight size={11} />
+                  </span>
+                </a>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       <Footer />

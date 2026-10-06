@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { AlertCircle, Gauge, Building2, Heart, Droplets } from "lucide-react";
+import { AlertCircle, Gauge, Building2, Heart, Droplets, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 
@@ -20,7 +20,7 @@ export default function UseCases() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -54,7 +54,7 @@ export default function UseCases() {
                   Water Quality Protection
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-6">
                 Water Treatment Facilities
               </motion.h2>
 
@@ -219,7 +219,7 @@ export default function UseCases() {
                   Emissions and Compliance
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-6">
                 Industrial Environmental Compliance
               </motion.h2>
 
@@ -301,7 +301,7 @@ export default function UseCases() {
                   Emergency Coordination
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-6">
                 Municipal Emergency Response
               </motion.h2>
 
@@ -420,7 +420,7 @@ export default function UseCases() {
                   Hospital Facilities Management
                 </span>
               </motion.div>
-              <motion.h2 variants={fadeUp} className="text-[32px] md:text-[40px] font-bold text-foreground mb-6">
+              <motion.h2 variants={fadeUp} className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-6">
                 Hospital &amp; Healthcare Facilities
               </motion.h2>
 
@@ -534,19 +534,20 @@ export default function UseCases() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
+          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
             Is Your Organization a Good Fit?
           </h2>
           <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">
             If you're responsible for detecting and responding to environmental emergencies, ChainSync is built for your workflow.
           </p>
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
-            <Link href="/contact">
-              <Button className="bg-primary text-white hover:bg-primary/90 px-8 py-3 h-auto text-base font-semibold">
-                Apply for Founding Partnership
-              </Button>
-            </Link>
-          </motion.div>
+          <Link href="/contact">
+            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+              Apply for Founding Partnership
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">
+                <ArrowRight size={11} />
+              </span>
+            </a>
+          </Link>
         </motion.div>
       </section>
 

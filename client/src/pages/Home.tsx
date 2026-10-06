@@ -98,10 +98,10 @@ export default function Home() {
                 ].map(({ text, muted }, i) => (
                   <div key={i} className="overflow-hidden">
                     <motion.h1
-                      className={`font-bold leading-[1.12] tracking-[-0.025em] ${
+                      className={`font-bold leading-[1.1] tracking-[-0.03em] ${
                         muted
-                          ? "text-[clamp(1.4rem,2.8vw,2.4rem)] text-slate-400 font-semibold"
-                          : "text-[clamp(1.6rem,3.4vw,2.8rem)] text-slate-900"
+                          ? "text-[clamp(1.8rem,3.6vw,3.2rem)] text-slate-400 font-semibold"
+                          : "text-[clamp(2.2rem,4.4vw,3.8rem)] text-slate-900"
                       }`}
                       initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: "105%" }}
                       animate={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ export default function Home() {
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600">The problem</p>
               </FadeUp>
               <FadeUp delay={0.06}>
-                <h2 className="text-[clamp(1.8rem,3.5vw,2.9rem)] font-bold tracking-[-0.025em] leading-[1.1] text-slate-900">
+                <h2 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-bold tracking-[-0.03em] leading-[1.08] text-slate-900">
                   Detection works.<br />Coordination doesn't.
                 </h2>
               </FadeUp>
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-3">Why ChainSync</p>
-            <h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-white tracking-[-0.02em] leading-tight">
+            <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-white tracking-[-0.02em] leading-tight">
               Three gaps, one platform.
             </h2>
           </FadeUp>
@@ -317,7 +317,7 @@ export default function Home() {
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400">How it works</p>
               </FadeUp>
               <FadeUp delay={0.06}>
-                <h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-slate-100 tracking-[-0.02em] leading-tight">
+                <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-100 tracking-[-0.02em] leading-tight">
                   From alert to coordinated response
                 </h2>
               </FadeUp>
@@ -369,7 +369,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="max-w-3xl">
             <FadeUp><span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 border border-slate-200 bg-white rounded-full px-3 py-1.5 inline-block mb-6">Example workflow</span></FadeUp>
-            <FadeUp delay={0.05}><h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-slate-900 tracking-[-0.02em] mb-3">Illustrative scenario</h2></FadeUp>
+            <FadeUp delay={0.05}><h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em] mb-3">Illustrative scenario</h2></FadeUp>
             <FadeUp delay={0.1}><p className="text-[14px] text-slate-500 max-w-prose leading-relaxed mb-8">This is a representative example to show how ChainSync handles an incident end-to-end. Not a live deployment or real customer data.</p></FadeUp>
 
             <FadeUp delay={0.12}>
@@ -426,7 +426,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10 space-y-3">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600">Platform</p>
-            <h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-slate-900 tracking-[-0.02em] leading-tight max-w-lg">
+            <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em] leading-tight max-w-lg">
               Two layers, one coordinated response
             </h2>
           </FadeUp>
@@ -499,7 +499,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-[#F8F9FB]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-8 space-y-3">
-            <h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-slate-900 tracking-[-0.02em]">
+            <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em]">
               Built for regulated environments
             </h2>
             <p className="text-[16px] text-slate-600 max-w-xl leading-relaxed">
@@ -601,7 +601,7 @@ export default function Home() {
                 Roadmap
               </span>
             </div>
-            <h2 className="text-[1.75rem] md:text-[2.1rem] font-bold text-white leading-tight mb-3 max-w-2xl">
+            <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-white tracking-[-0.025em] leading-[1.1] mb-3 max-w-2xl">
               Where We're Heading
             </h2>
             <p className="text-slate-400 text-base max-w-xl leading-relaxed">
@@ -705,7 +705,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 lg:gap-16 items-start mb-10">
             <FadeUp>
-              <h2 className="text-[clamp(1.7rem,3.2vw,2.6rem)] font-bold text-slate-900 tracking-[-0.02em]">
+              <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em]">
                 Technical Architecture
               </h2>
             </FadeUp>
@@ -782,7 +782,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <FadeUp className="space-y-6">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400/80">Pilot Program</p>
-              <h2 className="text-[clamp(1.8rem,3.5vw,2.9rem)] font-bold text-white tracking-[-0.025em] leading-[1.08]">
+              <h2 className="text-[clamp(2.2rem,4.2vw,3.6rem)] font-bold text-white tracking-[-0.03em] leading-[1.08]">
                 Three founding pilot partnerships open now.
               </h2>
               <p className="text-[15px] text-slate-400 leading-relaxed max-w-lg">
