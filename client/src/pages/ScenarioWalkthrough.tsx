@@ -320,7 +320,7 @@ function ScenarioWalkthroughContent() {
   const colors = phase ? phaseColors[phase.phase] : null;
 
   return (
-    <div style={{ maxWidth: 900, margin: "0 auto", fontFamily: "'Inter', system-ui, sans-serif", color: "#1E293B", padding: "0 16px" }}>
+    <div style={{ maxWidth: 900, margin: "0 auto", fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", color: "#1E293B", padding: "0 16px" }}>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -406,15 +406,17 @@ function ScenarioWalkthroughContent() {
           <button
             onClick={startDemo}
             style={{
-              padding: "12px 32px",
-              background: "#0F5A8F",
+              padding: "12px 28px",
+              background: "#0F172A",
               color: "#fff",
               border: "none",
-              borderRadius: 8,
-              fontSize: 15,
+              borderRadius: 9999,
+              fontSize: 13,
               fontWeight: 600,
               cursor: "pointer",
               fontFamily: "inherit",
+              letterSpacing: 0,
+              minHeight: 44,
             }}
           >
             Start Simulation →
@@ -535,13 +537,14 @@ function ScenarioWalkthroughContent() {
               style={{
                 padding: "10px 20px",
                 background: currentPhase === 0 ? "#F1F5F9" : "#fff",
-                color: currentPhase === 0 ? "#CBD5E1" : "#0F5A8F",
+                color: currentPhase === 0 ? "#CBD5E1" : "#0F172A",
                 border: "1px solid #E2E8F0",
-                borderRadius: 8,
-                fontSize: 14,
-                fontWeight: 500,
+                borderRadius: 9999,
+                fontSize: 13,
+                fontWeight: 600,
                 cursor: currentPhase === 0 ? "default" : "pointer",
                 fontFamily: "inherit",
+                minHeight: 44,
               }}
             >
               ← Previous
@@ -555,15 +558,16 @@ function ScenarioWalkthroughContent() {
               <button
                 onClick={nextPhase}
                 style={{
-                  padding: "10px 20px",
-                  background: "#0F5A8F",
+                  padding: "10px 24px",
+                  background: "#0F172A",
                   color: "#fff",
                   border: "none",
-                  borderRadius: 8,
-                  fontSize: 14,
-                  fontWeight: 500,
+                  borderRadius: 9999,
+                  fontSize: 13,
+                  fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "inherit",
+                  minHeight: 44,
                 }}
               >
                 Next Phase →
@@ -572,15 +576,16 @@ function ScenarioWalkthroughContent() {
               <button
                 onClick={resetDemo}
                 style={{
-                  padding: "10px 20px",
-                  background: "#2D7A4A",
+                  padding: "10px 24px",
+                  background: "#0F172A",
                   color: "#fff",
                   border: "none",
-                  borderRadius: 8,
-                  fontSize: 14,
-                  fontWeight: 500,
+                  borderRadius: 9999,
+                  fontSize: 13,
+                  fontWeight: 600,
                   cursor: "pointer",
                   fontFamily: "inherit",
+                  minHeight: 44,
                 }}
               >
                 Restart ↺
@@ -602,13 +607,14 @@ function ScenarioWalkthroughContent() {
                   style={{
                     display: "inline-block",
                     padding: "12px 28px",
-                    background: "#0F5A8F",
+                    background: "#0F172A",
                     color: "#fff",
-                    borderRadius: 8,
-                    fontSize: 14,
+                    borderRadius: 9999,
+                    fontSize: 13,
                     fontWeight: 600,
                     textDecoration: "none",
                     fontFamily: "inherit",
+                    minHeight: 44,
                   }}
                 >
                   Apply for Founding Partnership
