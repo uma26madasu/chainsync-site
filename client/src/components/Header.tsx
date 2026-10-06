@@ -25,7 +25,7 @@ export default function Header() {
       <header className="sticky top-0 z-50 pt-3 pb-2">
         <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
           <div
-            className={`flex items-center justify-between rounded-full px-4 py-1.5 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
               scrolled
                 ? "bg-white/95 backdrop-blur-xl border border-slate-200/80 shadow-[0_4px_24px_rgba(15,90,143,0.10),0_1px_0_rgba(255,255,255,0.7)_inset]"
                 : "bg-white/85 backdrop-blur-xl border border-slate-200/60 shadow-[0_2px_16px_rgba(15,90,143,0.06),0_1px_0_rgba(255,255,255,0.6)_inset]"
@@ -33,7 +33,11 @@ export default function Header() {
           >
             <Link href="/">
               <a className="flex items-center hover:opacity-75 transition-opacity duration-[600ms] ease-[cubic-bezier(0.32,0.72,0,1)]">
-                <img src="/logo.png" alt="ChainSync" className="h-10 md:h-12 w-auto" />
+                <img
+                  src="/logo.png"
+                  alt="ChainSync"
+                  className="w-[130px] sm:w-[150px] md:w-[170px] lg:w-[185px] h-auto"
+                />
               </a>
             </Link>
 
@@ -58,7 +62,7 @@ export default function Header() {
 
             {/* Morphing hamburger */}
             <button
-              className="md:hidden relative flex flex-col items-end justify-center gap-[5px] w-8 h-8 p-1"
+              className="md:hidden relative flex flex-col items-end justify-center gap-[5px] w-9 h-9 p-1"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
