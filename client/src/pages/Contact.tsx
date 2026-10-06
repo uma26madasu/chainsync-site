@@ -78,7 +78,7 @@ export default function Contact() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -255,7 +255,7 @@ export default function Contact() {
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -291,9 +291,9 @@ export default function Contact() {
 
             <motion.div variants={fadeUp}>
               <Card className="p-6 bg-white border border-border">
-                <h3 className="font-semibold text-foreground mb-3">What makes the Python agent approach different?</h3>
+                <h3 className="font-semibold text-foreground mb-3">What makes the specialized agent approach different?</h3>
                 <p className="text-muted-foreground">
-                  Instead of a single monolithic system trying to do everything, we're building specialized Python agents that each excel at one task (detection, analysis, coordination, documentation). This modular approach makes the system more reliable, easier to update, and more adaptable to different scenarios. If one agent needs improvement, we can update it without disrupting the entire system.
+                  Instead of a single monolithic system trying to do everything, ChainSync uses specialized coordination agents that each excel at one task: detection, analysis, coordination, and documentation. This modular approach makes the system more reliable, easier to update, and more adaptable to different scenarios. If one agent needs improvement, it can be updated without disrupting the entire system.
                 </p>
               </Card>
             </motion.div>
@@ -337,7 +337,7 @@ export default function Contact() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
+          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
             Three spots. Water utilities and healthcare facilities.
           </h2>
           <p className="text-lg text-slate-500">

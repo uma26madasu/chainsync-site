@@ -22,7 +22,7 @@ export default function Technology() {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-center"
+            className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
@@ -56,7 +56,7 @@ export default function Technology() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -81,7 +81,7 @@ export default function Technology() {
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -123,7 +123,7 @@ export default function Technology() {
               <span className="text-xs font-bold tracking-widest text-primary uppercase">The Moat</span>
             </motion.div>
             <motion.h2
-              className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+              className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
               variants={fadeUp}
             >
               Not Locked In. Ever.
@@ -145,7 +145,7 @@ export default function Technology() {
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -160,7 +160,7 @@ export default function Technology() {
             whileInView="visible"
             viewport={viewport}
           >
-            Modular by design: each agent is an independent Python FastAPI service. Improve one without disrupting the rest. Seeking founding pilot partners for first production deployment.
+            Modular by design: each agent is an independent service. Improve one without disrupting the rest. Seeking founding pilot partners for first production deployment.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -177,7 +177,7 @@ export default function Technology() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -209,7 +209,7 @@ export default function Technology() {
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -234,7 +234,7 @@ export default function Technology() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-3 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -266,7 +266,7 @@ export default function Technology() {
       <section className="py-16 md:py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -286,7 +286,7 @@ export default function Technology() {
               </thead>
               <tbody>
                 {[
-                  ["Agent Framework", "Python microservices", "Specialized agent execution and HTTP webhook routing"],
+                  ["Agent Framework", "Coordination agents", "Specialized agent execution and HTTP webhook routing"],
                   ["AI Reasoning", "Large language model (domain-specific)", "Context-aware analysis, risk classification, decision support"],
                   ["Integration Layer", "HTTP Webhooks (Universal Webhook Endpoint)", "Platform-agnostic event ingestion. MuleSoft, Workato, Boomi, FastAPI, or any HTTP POST."],
                   ["Scheduler", "Scheduling Layer", "Autonomous emergency meeting coordination with conflict detection"],
@@ -331,7 +331,7 @@ export default function Technology() {
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-[32px] md:text-[40px] font-bold text-foreground mb-12 text-center"
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -472,7 +472,7 @@ export default function Technology() {
           whileInView="visible"
           viewport={viewport}
         >
-          <h2 className="text-[32px] md:text-[40px] font-bold mb-4 text-slate-900">
+          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
             Interested in the Technical Details?
           </h2>
           <p className="text-lg text-slate-500 mb-8">
