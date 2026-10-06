@@ -85,7 +85,7 @@ export default function Home() {
               >
                 <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
                   <span className={`w-1.5 h-1.5 rounded-full bg-emerald-400 ${prefersReduced ? "" : "animate-pulse"}`} />
-                  Founding Pilot Program — 3 slots open
+                  Founding Pilot Program · 3 slots open
                 </span>
               </motion.div>
 
@@ -693,7 +693,7 @@ export default function Home() {
                 </svg>
               </div>
               <p className="text-[13.5px] text-slate-300 leading-relaxed">
-                All six verticals are powered by ChainSync's existing 17-agent framework — no new infrastructure required.
+                All six verticals are powered by ChainSync's existing 17-agent framework. No new infrastructure required.
               </p>
             </div>
           </FadeUp>
@@ -723,7 +723,7 @@ export default function Home() {
               <div className="bg-sky-50 border border-sky-100/80 rounded-2xl p-5">
                 <h4 className="text-[14px] font-bold text-slate-900 mb-2">Platform-Agnostic by Design</h4>
                 <p className="text-[14px] text-slate-600 leading-relaxed">
-                  ChainSync's integration layer is decoupled from any single platform. FastAPI is the current implementation, but any platform that supports HTTP POST — MuleSoft, Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack — can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
+                  ChainSync's integration layer is decoupled from any single platform. FastAPI is the current implementation, but any platform that supports HTTP POST (MuleSoft, Workato, Boomi, Azure Logic Apps, or a customer's existing integration stack) can connect through the Universal Webhook Endpoint without changes to the agent or scheduling layers.
                 </p>
               </div>
             </FadeUp>
