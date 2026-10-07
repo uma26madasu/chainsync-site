@@ -52,11 +52,10 @@
   --accent-foreground: #FFFFFF;
 
   /* ── ChainSync tinted surface system ── */
-  /* Page background: near-white with a barely-perceptible cyan tint pulled
-     from the ChainSync logo's cool blue-green accent.
-     Users won't consciously notice the tint – they'll just feel the site
-     is more cohesive and branded. */
-  --background: #F6FBFC;
+  /* Page background: pale cyan tint pulled from ChainSync logo's blue-green.
+     bg-white sections (cards, elevated panels) read as clean white against it.
+     Tint is perceptible but not distracting — creates depth without going dark. */
+  --background: #E8F4F8;
   --surface: #FFFFFF;
   --surface-soft: #EEF6F8;
   --cs-border: #DCECEF;
