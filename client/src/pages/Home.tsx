@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════ PROBLEM */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 lg:gap-20 items-start">
             <div className="space-y-6">
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════ PLATFORM */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10 space-y-3">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600">Platform</p>
@@ -496,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════ VERTICALS */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-8 space-y-3">
             <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em]">
@@ -701,7 +701,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ ARCHITECTURE */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 lg:gap-16 items-start mb-10">
             <FadeUp>
@@ -743,7 +743,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ FOUNDER */}
-      <section className="py-10 md:py-14 border-t border-[#DCECEF] bg-white">
+      <section className="py-10 md:py-14 border-t border-[#DCECEF]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp>
             <div className="flex flex-col md:flex-row md:items-center gap-7 max-w-3xl">

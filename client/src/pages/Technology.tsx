@@ -18,7 +18,7 @@ export default function Technology() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.h1
             className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
@@ -77,7 +77,7 @@ export default function Technology() {
       </section>
 
       {/* 2. Architecture Deep Dive */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -141,7 +141,7 @@ export default function Technology() {
       </section>
 
       {/* 4. Agent Ecosystem */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -205,7 +205,7 @@ export default function Technology() {
       </section>
 
       {/* 6. Performance Metrics */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -262,7 +262,7 @@ export default function Technology() {
       </section>
 
       {/* 8. Tech Stack Details */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"

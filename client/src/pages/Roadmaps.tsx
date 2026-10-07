@@ -90,7 +90,7 @@ export default function Roadmaps() {
       </section>
 
       {/* Q1 2026 */}
-      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
+      <section className="py-8 md:py-12 border-t border-[#DCECEF]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -279,7 +279,7 @@ export default function Roadmaps() {
       </section>
 
       {/* Q3 2026 */}
-      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
+      <section className="py-8 md:py-12 border-t border-[#DCECEF]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -469,7 +469,7 @@ export default function Roadmaps() {
       </section>
 
       {/* Compliance & Performance Summary */}
-      <section className="py-8 md:py-12 bg-white border-t border-gray-200">
+      <section className="py-8 md:py-12 border-t border-[#DCECEF]">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[32px] md:text-[40px] font-bold text-foreground mb-8 text-center"

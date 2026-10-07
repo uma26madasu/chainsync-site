@@ -11,7 +11,7 @@ export default function About() {
       <Header />
 
       {/* ── Hero */}
-      <section className="py-12 md:py-18 bg-white border-b border-[#DCECEF]">
+      <section className="py-12 md:py-18 border-b border-[#DCECEF]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-4">
@@ -31,7 +31,7 @@ export default function About() {
       </section>
 
       {/* ── The Problem */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-10 lg:gap-16 items-start">
             <motion.div
@@ -88,7 +88,7 @@ export default function About() {
       </section>
 
       {/* ── What ChainSync Does */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}
@@ -163,7 +163,7 @@ export default function About() {
       </section>
 
       {/* ── Founder */}
-      <section className="py-10 md:py-14 bg-white border-t border-[#DCECEF]">
+      <section className="py-10 md:py-14 border-t border-[#DCECEF]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}
@@ -216,7 +216,7 @@ export default function About() {
       </section>
 
       {/* ── Who it's for */}
-      <section className="py-12 md:py-18 bg-white">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}
