@@ -9,7 +9,8 @@
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "verify": "node scripts/reticle-verify.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -78,6 +79,9 @@
     "add": "^2.0.6",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.25.0",
+    "eslint": "^10.12.0",
+    "eslint-plugin-anti-slop": "^0.5.0",
+    "oxlint": "^1.87.0",
     "pnpm": "^10.15.1",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
