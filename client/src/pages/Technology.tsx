@@ -52,7 +52,7 @@ export default function Technology() {
       </section>
 
       {/* 1. Tech Stack Overview */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -77,7 +77,7 @@ export default function Technology() {
       </section>
 
       {/* 2. Architecture Deep Dive */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -109,7 +109,7 @@ export default function Technology() {
       </section>
 
       {/* 3. Swappable Integration Layer */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -141,7 +141,7 @@ export default function Technology() {
       </section>
 
       {/* 4. Agent Ecosystem */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -173,7 +173,7 @@ export default function Technology() {
       </section>
 
       {/* 5. Technology Comparison */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -205,7 +205,7 @@ export default function Technology() {
       </section>
 
       {/* 6. Performance Metrics */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -230,7 +230,7 @@ export default function Technology() {
       </section>
 
       {/* 7. Capability Matrix */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-3 text-center"
@@ -262,7 +262,7 @@ export default function Technology() {
       </section>
 
       {/* 8. Tech Stack Details */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
@@ -327,7 +327,7 @@ export default function Technology() {
       </section>
 
       {/* 9. Core Components Detail */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport} className="mb-10">
             <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-3">
@@ -487,7 +487,7 @@ export default function Technology() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-slate-950 border-t border-white/[0.04]">
+      <section className="py-12 md:py-16 bg-slate-950 border-t border-white/[0.04]">
         <motion.div
           className="container mx-auto px-4 md:px-6 text-center"
           style={{ maxWidth: "1200px" }}

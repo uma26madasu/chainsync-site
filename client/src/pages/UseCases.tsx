@@ -38,7 +38,7 @@ export default function UseCases() {
       </section>
 
       {/* Water Treatment */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -161,7 +161,7 @@ export default function UseCases() {
       </section>
 
       {/* Industrial */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -285,7 +285,7 @@ export default function UseCases() {
       </section>
 
       {/* Municipal */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -404,7 +404,7 @@ export default function UseCases() {
       </section>
 
       {/* Healthcare */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -524,7 +524,7 @@ export default function UseCases() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-slate-950 border-t border-white/[0.04]">
+      <section className="py-12 md:py-16 bg-slate-950 border-t border-white/[0.04]">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}

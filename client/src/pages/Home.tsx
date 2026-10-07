@@ -58,7 +58,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════ HERO */}
       <section
         ref={heroRef}
-        className="relative flex flex-col justify-center overflow-hidden bg-white py-12 md:py-16 min-h-[78dvh]"
+        className="relative flex flex-col justify-center overflow-hidden py-14 md:py-20"
       >
         {/* Grain — fixed, pointer-events-none */}
         <div
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════ PROBLEM */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 lg:gap-20 items-start">
             <div className="space-y-6">
@@ -239,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* ═════════════════════════════ THREE GAPS — CARD GRID */}
-      <section className="py-16 md:py-24 bg-slate-950">
+      <section className="py-12 md:py-18 bg-slate-950">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-400 mb-3">Why ChainSync</p>
@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════ 7-STAGE PIPELINE */}
-      <section className="py-16 md:py-24 bg-slate-900">
+      <section className="py-12 md:py-18 bg-slate-900">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
             <div className="space-y-2">
@@ -365,7 +365,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════ SCENARIO */}
-      <section className="py-16 md:py-24 bg-[#F8F9FB]">
+      <section className="py-12 md:py-18">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="max-w-3xl">
             <FadeUp><span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 border border-slate-200 bg-white rounded-full px-3 py-1.5 inline-block mb-6">Example workflow</span></FadeUp>
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════ PLATFORM */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10 space-y-3">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600">Platform</p>
@@ -496,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════ VERTICALS */}
-      <section className="py-16 md:py-24 bg-[#F8F9FB]">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-8 space-y-3">
             <h2 className="text-[clamp(2rem,3.8vw,3.2rem)] font-bold text-slate-900 tracking-[-0.02em]">
@@ -593,7 +593,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════ FUTURE VERTICALS */}
-      <section className="py-16 md:py-24 bg-slate-950">
+      <section className="py-12 md:py-18 bg-slate-950">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp className="mb-10">
             <div className="flex items-center gap-3 mb-4">
@@ -701,7 +701,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ ARCHITECTURE */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 lg:gap-16 items-start mb-10">
             <FadeUp>
@@ -743,7 +743,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════ FOUNDER */}
-      <section className="py-14 md:py-20 border-t border-slate-100 bg-white">
+      <section className="py-10 md:py-14 border-t border-[#DCECEF] bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <FadeUp>
             <div className="flex flex-col md:flex-row md:items-center gap-7 max-w-3xl">
@@ -773,7 +773,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════ PILOT CTA */}
-      <section id="pilot" className="relative py-24 md:py-36 bg-slate-950 overflow-hidden">
+      <section id="pilot" className="relative py-16 md:py-24 bg-slate-950 overflow-hidden">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[1px] bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
         </div>

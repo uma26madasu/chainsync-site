@@ -91,7 +91,7 @@ export default function HowItWorks() {
       <Header />
 
       {/* ── Hero */}
-      <section className="py-16 md:py-24 bg-white border-b border-slate-100">
+      <section className="py-12 md:py-18 bg-white border-b border-[#DCECEF]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div variants={stagger} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.p variants={fadeUp} className="text-[11px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-4">
@@ -111,7 +111,7 @@ export default function HowItWorks() {
       </section>
 
       {/* ── Process Flow Animation */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} className="mb-14">
             <ProcessFlowAnimation />
@@ -150,7 +150,7 @@ export default function HowItWorks() {
       </section>
 
       {/* ── Detailed Breakdown */}
-      <section className="py-16 md:py-24 bg-[#F8F9FB]">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}
@@ -225,7 +225,7 @@ export default function HowItWorks() {
       </section>
 
       {/* ── Architecture */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-18 bg-white">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}
@@ -271,7 +271,7 @@ export default function HowItWorks() {
       </section>
 
       {/* ── CTA */}
-      <section className="py-16 md:py-24 bg-slate-950 border-t border-white/[0.04]">
+      <section className="py-12 md:py-18 bg-slate-950 border-t border-white/[0.04]">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div
             variants={stagger}

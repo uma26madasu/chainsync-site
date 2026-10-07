@@ -15,45 +15,50 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-50 pt-3 pb-2">
-        <div className="container mx-auto px-4" style={{ maxWidth: "1200px" }}>
-          <div
-            className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
-              scrolled
-                ? "bg-white/95 backdrop-blur-xl border border-slate-200/80 shadow-[0_4px_24px_rgba(15,90,143,0.10),0_1px_0_rgba(255,255,255,0.7)_inset]"
-                : "bg-white/85 backdrop-blur-xl border border-slate-200/60 shadow-[0_2px_16px_rgba(15,90,143,0.06),0_1px_0_rgba(255,255,255,0.6)_inset]"
-            }`}
-          >
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          scrolled
+            ? "bg-[#F6FBFC]/97 backdrop-blur-xl border-b border-[#DCECEF] shadow-[0_1px_10px_rgba(15,90,143,0.07)]"
+            : "bg-[#F6FBFC]/90 backdrop-blur-md border-b border-[#DCECEF]/50"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
+          <div className="flex items-center justify-between h-[76px]">
+
+            {/* Logo */}
             <Link href="/">
-              <a className="flex items-center hover:opacity-75 transition-opacity duration-[600ms] ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <a className="flex items-center shrink-0 hover:opacity-80 transition-opacity duration-300">
                 <img
                   src="/logo.png"
                   alt="ChainSync"
-                  className="w-[130px] sm:w-[150px] md:w-[170px] lg:w-[185px] h-auto"
+                  className="w-[145px] sm:w-[158px] md:w-[172px] h-auto"
                 />
               </a>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-6">
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-0.5">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <a className="text-slate-600 hover:text-slate-900 text-[13px] font-medium transition-colors duration-200">
+                  <a className="px-3.5 py-2 rounded-lg text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-[#DCECEF]/50 transition-all duration-200">
                     {link.label}
                   </a>
                 </Link>
               ))}
-              {/* Pilot Partnership as primary CTA */}
+
+              <div className="w-px h-4 bg-[#DCECEF] mx-2.5 shrink-0" />
+
               <Link href="/contact">
-                <a className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-700 px-4 py-2 text-[12px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97]">
+                <a className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 px-4.5 py-[9px] text-[12.5px] font-semibold text-white transition-all duration-200 active:scale-[0.97] min-h-[38px]">
                   Pilot Partnership
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
                     <ArrowRight size={9} />
                   </span>
                 </a>
@@ -81,30 +86,30 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
-            className="fixed inset-0 z-40 bg-white/96 backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
+            transition={{ duration: 0.28, ease: [0.32, 0.72, 0, 1] }}
+            className="fixed inset-0 z-40 bg-[#F6FBFC]/97 backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors duration-300"
+              className="absolute top-6 right-6 w-10 h-10 rounded-full bg-[#DCECEF]/60 hover:bg-[#DCECEF] flex items-center justify-center transition-colors duration-200"
               aria-label="Close menu"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </button>
 
             {[...NAV_LINKS, { href: "/contact", label: "Pilot Partnership" }].map((link, i) => (
               <motion.div
                 key={link.href}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 14 }}
-                transition={{ delay: 0.04 + i * 0.07, duration: 0.55, ease: [0.32, 0.72, 0, 1] }}
+                exit={{ opacity: 0, y: 12 }}
+                transition={{ delay: 0.04 + i * 0.06, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
               >
                 <Link href={link.href}>
                   <a
-                    className="text-3xl font-bold text-slate-900 hover:text-primary transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] block min-h-[44px] flex items-center"
+                    className="text-3xl font-bold text-slate-900 hover:text-primary transition-colors duration-200 block min-h-[44px] flex items-center"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
