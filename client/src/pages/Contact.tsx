@@ -75,7 +75,7 @@ export default function Contact() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h1
             className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
@@ -252,7 +252,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
@@ -329,7 +329,7 @@ export default function Contact() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-white border-t border-[#DCECEF]">
+      <section className="py-12 md:py-16 border-t border-[#DCECEF]">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}

@@ -637,7 +637,7 @@ function ScenarioWalkthroughContent() {
 
 export default function ScenarioWalkthrough() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow py-12 md:py-20">
         <ScenarioWalkthroughContent />

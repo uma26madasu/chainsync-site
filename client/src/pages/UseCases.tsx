@@ -15,7 +15,7 @@ export default function UseCases() {
       <Header />
 
       {/* Hero */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.h1
             className="text-[clamp(2.2rem,4.4vw,3.8rem)] font-bold text-slate-900 tracking-[-0.03em] leading-[1.08] mb-4 text-center"
@@ -161,7 +161,7 @@ export default function UseCases() {
       </section>
 
       {/* Industrial */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
@@ -404,7 +404,7 @@ export default function UseCases() {
       </section>
 
       {/* Healthcare */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <motion.div
