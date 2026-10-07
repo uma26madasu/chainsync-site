@@ -43,38 +43,56 @@
 }
 
 :root {
+  /* ── Brand palette ── */
   --primary: #0F5A8F;
   --primary-foreground: #F0F9FF;
-  --sidebar-primary: #0F5A8F;
-  --sidebar-primary-foreground: #F0F9FF;
+  --secondary: #059669;
+  --secondary-foreground: #FFFFFF;
+  --accent: #0EA5E9;
+  --accent-foreground: #FFFFFF;
+
+  /* ── ChainSync tinted surface system ── */
+  /* Page background: near-white with a barely-perceptible cyan tint pulled
+     from the ChainSync logo's cool blue-green accent.
+     Users won't consciously notice the tint – they'll just feel the site
+     is more cohesive and branded. */
+  --background: #F6FBFC;
+  --surface: #FFFFFF;
+  --surface-soft: #EEF6F8;
+  --cs-border: #DCECEF;
+
+  /* ── Typography ── */
+  --foreground: #0F172A;
+  --muted: #EEF6F8;
+  --muted-foreground: #3D5A6B;   /* slightly darker than slate-500 for contrast on tinted bg */
+
+  /* ── Component tokens ── */
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #DCECEF;
+  --input: #FFFFFF;
+  --ring: #0F5A8F;
+  --radius: 0.5rem;
+
+  /* ── Chart ── */
   --chart-1: #2D7A4A;
   --chart-2: #0F5A8F;
   --chart-3: #0EA5E9;
   --chart-4: #059669;
   --chart-5: #0F172A;
-  --radius: 0.5rem;
-  --background: #FFFFFF;
-  --foreground: #0F172A;
-  --card: #FFFFFF;
-  --card-foreground: #0F172A;
-  --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
-  --secondary: #059669;
-  --secondary-foreground: #FFFFFF;
-  --muted: #F1F5F9;
-  --muted-foreground: #475569;
-  --accent: #0EA5E9;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --input: #FFFFFF;
-  --ring: #0F5A8F;
+
+  /* ── Sidebar ── */
   --sidebar: #FFFFFF;
   --sidebar-foreground: #0F172A;
+  --sidebar-primary: #0F5A8F;
+  --sidebar-primary-foreground: #F0F9FF;
   --sidebar-accent: #0F5A8F;
   --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E2E8F0;
+  --sidebar-border: #DCECEF;
   --sidebar-ring: #0F5A8F;
 }
 
