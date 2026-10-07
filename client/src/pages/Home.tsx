@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
-import { stagger, viewport } from "@/lib/motion";
+import { stagger } from "@/lib/motion";
 import AnimatedHeroFlow from "@/components/AnimatedHeroFlow";
 import ArchitectureAnimation from "@/components/ArchitectureAnimation";
 import CountUp from "@/components/CountUp";

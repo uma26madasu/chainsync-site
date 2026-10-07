@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckCircle2, ArrowRight, Zap, Droplet, Heart, Factory, Bolt, Target, Layers, Users, Shield, MessageSquare, Brain, BarChart3 } from "lucide-react";
+import { CheckCircle2, ArrowRight, Zap, Heart, Factory, Bolt, Target, Layers, Shield, MessageSquare, Brain, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 

@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
-import { fadeUp } from "@/lib/motion";
 
 const VERTICALS = [
   "Water Utilities",

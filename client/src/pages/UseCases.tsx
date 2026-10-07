@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
-import { AlertCircle, Gauge, Building2, Heart, Droplets, ArrowRight } from "lucide-react";
+import { Gauge, Building2, Heart, Droplets, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 

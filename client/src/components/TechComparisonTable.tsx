@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeUp, stagger } from "@/lib/motion";
 import { X, Check } from "lucide-react";
 
