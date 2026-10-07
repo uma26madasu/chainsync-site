@@ -97,7 +97,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Chatbot */}
-      <section className="py-16 md:py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-12"
@@ -252,7 +252,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
@@ -329,7 +329,7 @@ export default function Contact() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+      <section className="py-12 md:py-16 bg-white border-t border-[#DCECEF]">
         <motion.div
           className="container mx-auto px-4 text-center"
           variants={fadeUp}
