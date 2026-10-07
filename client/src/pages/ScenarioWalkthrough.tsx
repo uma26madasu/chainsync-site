@@ -288,7 +288,7 @@ const phaseColors: Record<number, { bg: string; border: string; text: string }> 
 function ScenarioWalkthroughContent() {
   const [vertical, setVertical] = useState("water");
   const [currentPhase, setCurrentPhase] = useState(-1);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [, setIsPlaying] = useState(false);
   const [showLog, setShowLog] = useState(false);
 
   const scenario = vertical === "water" ? WATER_SCENARIO : HEALTHCARE_SCENARIO;
