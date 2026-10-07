@@ -32,14 +32,17 @@ export default function Header() {
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <div className="flex items-center justify-between h-[76px]">
 
-            {/* Logo */}
+            {/* Logo — icon mark + wordmark (Toyota-style) */}
             <Link href="/">
-              <a className="flex items-center shrink-0 hover:opacity-80 transition-opacity duration-300">
+              <a className="flex items-center gap-2.5 shrink-0 hover:opacity-80 transition-opacity duration-300">
                 <img
-                  src="/logo.png"
-                  alt="ChainSync"
-                  className="h-[34px] md:h-[38px] w-auto"
+                  src="/logo-icon.png"
+                  alt=""
+                  className="h-[40px] md:h-[44px] w-auto"
                 />
+                <span className="text-[19px] md:text-[21px] font-bold tracking-tight text-slate-900 leading-none select-none">
+                  ChainSync
+                </span>
               </a>
             </Link>
 
