@@ -38,7 +38,7 @@ export default function Header() {
                 <img
                   src="/logo.png"
                   alt="ChainSync"
-                  className="w-[145px] sm:w-[158px] md:w-[172px] h-auto"
+                  className="h-[34px] md:h-[38px] w-auto"
                 />
               </a>
             </Link>
