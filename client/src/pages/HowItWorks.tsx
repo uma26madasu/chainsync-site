@@ -87,7 +87,7 @@ function IconBadge({ icon: Icon, color }: { icon: React.ElementType; color: stri
 
 export default function HowItWorks() {
   return (
-    <div className="min-h-screen flex flex-col bg-white" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* ── Hero */}

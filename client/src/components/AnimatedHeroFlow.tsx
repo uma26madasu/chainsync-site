@@ -210,7 +210,7 @@ export default function AnimatedHeroFlow() {
           <>
             <motion.circle cx={meetingX + 44} cy={meetingY - 20} r={10}
               fill="#bbf7d0" stroke="#86efac" strokeWidth={1.2}
-              initial={{ scale: 0 }} animate={{ scale: 1 }}
+              initial={{ scale: 0.95 }} animate={{ scale: 1 }}
               transition={{ delay: 3, type: "spring", stiffness: 280, damping: 22 }}
             />
             <motion.path d={`M ${meetingX + 39} ${meetingY - 20} l 4 4 7 -7`}

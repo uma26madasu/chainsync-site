@@ -52,7 +52,7 @@ export default function Home() {
   const heroY = useTransform(scrollYProgress, [0, 0.7], [0, 32]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* ══════════════════════════════════════════════════════ HERO */}
@@ -164,7 +164,7 @@ export default function Home() {
         </motion.div>
 
         {/* Bottom edge */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#E8F4F8] to-transparent z-10" />
       </section>
 
       {/* ════════════════════════════════════ EDITORIAL STATS */}

@@ -14,7 +14,7 @@ import CapabilityMatrix from "@/components/CapabilityMatrix";
 
 export default function Technology() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* Hero */}

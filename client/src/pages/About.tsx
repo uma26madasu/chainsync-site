@@ -7,7 +7,7 @@ import { Droplets, Building2, ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col bg-white" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* ── Hero */}
