@@ -99,7 +99,7 @@ export default function ArchitectureAnimation() {
               key={layer.label}
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.35, delay: 0.1 + i * 0.22, ease: "easeOut" }}
+              transition={{ duration: 0.28, delay: 0.1 + i * 0.08, ease: "easeOut" }}
             >
               <rect x={16} y={y} width={W - 32} height={layerH} rx={10}
                 fill={layer.bg} stroke={layer.border} strokeWidth={1.5} />
