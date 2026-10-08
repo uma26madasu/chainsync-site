@@ -10,6 +10,7 @@ import CountUp from "@/components/CountUp";
 import CoordinationTimeComparison from "@/components/insights/CoordinationTimeComparison";
 
 export default function Insights() {
+  const isTouch = window.matchMedia('(hover: none)').matches;
   const articles = [
     {
       title: "I Got Tired of Living Across 4 Calendar Apps, So I Built Slotify",
@@ -70,7 +71,7 @@ export default function Insights() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* Hero */}
@@ -125,7 +126,7 @@ export default function Insights() {
                   rel="noopener noreferrer"
                   className="group"
                   variants={fadeUp}
-                  whileHover={{ y: -4, transition: { duration: 0.15 } }}
+                  whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}
                 >
                   <Card className="p-6 bg-white border border-border hover:shadow-lg hover:border-primary transition-shadow h-full flex flex-col">
                     <div className="mb-4">
@@ -137,7 +138,7 @@ export default function Insights() {
                     <p className="text-muted-foreground text-sm mb-6 flex-grow">
                       {article.description}
                     </p>
-                    <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-[gap]">
                       <span>Read on Medium</span>
                       <ExternalLink size={16} />
                     </div>
@@ -169,7 +170,7 @@ export default function Insights() {
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary h-full">
                 <div className="text-5xl font-bold text-primary mb-3">
                   <CountUp end={50} suffix="K+" />
@@ -181,7 +182,7 @@ export default function Insights() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600 h-full">
                 <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
                 <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
@@ -191,7 +192,7 @@ export default function Insights() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600 h-full">
                 <div className="text-5xl font-bold text-red-600 mb-3">
                   <CountUp end={73} suffix="%" />
@@ -352,9 +353,9 @@ export default function Insights() {
           </p>
 
           <Link href="/contact">
-            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
               Apply for Founding Partnership
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5">
                 <ArrowRight size={11} />
               </span>
             </a>

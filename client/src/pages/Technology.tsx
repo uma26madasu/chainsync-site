@@ -14,7 +14,7 @@ import CapabilityMatrix from "@/components/CapabilityMatrix";
 
 export default function Technology() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* Hero */}
@@ -504,9 +504,9 @@ export default function Technology() {
             Get access to our full technical specifications and integration documentation as a founding pilot partner.
           </p>
           <Link href="/contact">
-            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+            <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
               Apply for Founding Partnership
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-px">
                 <ArrowRight size={11} />
               </span>
             </a>

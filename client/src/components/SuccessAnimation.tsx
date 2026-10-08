@@ -10,7 +10,7 @@ export default function SuccessAnimation({ message = "We've received your messag
           fill="#f0fdf4"
           stroke="#16a34a"
           strokeWidth={3}
-          initial={{ scale: 0, opacity: 0 }}
+          initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 220, damping: 18, duration: 0.5 }}
         />

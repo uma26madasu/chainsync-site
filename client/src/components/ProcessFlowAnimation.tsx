@@ -73,7 +73,7 @@ export default function ProcessFlowAnimation() {
                 fill={step.bg}
                 stroke={step.border}
                 strokeWidth={1.8}
-                initial={{ scale: 0, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={inView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ type: "spring", stiffness: 200, damping: 18, delay: 0.1 + i * 0.2 }}
                 style={{ originX: `${cx}px`, originY: `${Y}px` }}

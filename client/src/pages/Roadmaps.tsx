@@ -8,8 +8,9 @@ import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
 
 export default function Roadmaps() {
+  const isTouch = window.matchMedia('(hover: none)').matches;
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
       {/* Hero */}
@@ -54,7 +55,7 @@ export default function Roadmaps() {
             whileInView="visible"
             viewport={viewport}
           >
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-green-50 border-2 border-green-400 text-center h-full">
                 <div className="text-3xl font-bold text-green-600 mb-2">17</div>
                 <p className="text-sm font-semibold text-green-700">Built</p>
@@ -62,7 +63,7 @@ export default function Roadmaps() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-white border-2 border-green-300 h-full">
                 <div className="text-3xl font-bold text-green-600 mb-2">18</div>
                 <p className="text-sm font-semibold text-green-700">Q2 Target</p>
@@ -70,7 +71,7 @@ export default function Roadmaps() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-white border-2 border-amber-300 h-full">
                 <div className="text-3xl font-bold text-amber-600 mb-2">24</div>
                 <p className="text-sm font-semibold text-amber-700">Q3 Target</p>
@@ -78,7 +79,7 @@ export default function Roadmaps() {
               </Card>
             </motion.div>
 
-            <motion.div variants={fadeUp} whileHover={{ y: -4, transition: { duration: 0.15 } }}>
+            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
               <Card className="p-6 bg-white border-2 border-red-300 h-full">
                 <div className="text-3xl font-bold text-red-600 mb-2">30</div>
                 <p className="text-sm font-semibold text-red-700">Q4 Target</p>

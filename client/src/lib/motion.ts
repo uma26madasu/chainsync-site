@@ -4,11 +4,10 @@ import type { Variants } from "framer-motion";
 const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.7, ease: EASE },
   },
 };
@@ -20,7 +19,7 @@ export const fadeIn: Variants = {
 
 export const stagger: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
 
 // Shared viewport config — triggers once, 60px before fold
