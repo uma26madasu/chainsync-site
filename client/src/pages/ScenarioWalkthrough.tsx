@@ -320,7 +320,7 @@ function ScenarioWalkthroughContent() {
   const colors = phase ? phaseColors[phase.phase] : null;
 
   return (
-    <div style={{ maxWidth: 900, margin: "0 auto", fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", color: "#1E293B", padding: "0 16px" }}>
+    <div style={{ maxWidth: 900, margin: "0 auto", color: "#1E293B", padding: "0 16px" }}>
 
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -352,7 +352,7 @@ function ScenarioWalkthroughContent() {
               background: vertical === v.id ? "#0F5A8F" : "#F8FAFC",
               color: vertical === v.id ? "#fff" : "#64748B",
               fontFamily: "inherit",
-              transition: "all 0.2s",
+              transition: "background-color 0.2s, color 0.2s",
             }}
           >
             <div style={{ fontSize: 14, fontWeight: 600 }}>{v.label}</div>
@@ -386,7 +386,7 @@ function ScenarioWalkthroughContent() {
                 flex: 1,
                 height: 6,
                 borderRadius: 3,
-                background: i <= currentPhase ? phaseColors[p.phase].border : "#E2E8F0",
+                background: i <= currentPhase ? phaseColors[p.phase].border : "#DCECEF",
                 cursor: "pointer",
                 transition: "background 0.3s",
               }}
@@ -405,6 +405,7 @@ function ScenarioWalkthroughContent() {
           <p style={{ fontSize: 15, color: "#64748B", margin: "0 0 24px" }}>{scenario.subtitle}</p>
           <button
             onClick={startDemo}
+            className="sim-btn"
             style={{
               padding: "12px 28px",
               background: "#0F172A",
@@ -426,7 +427,7 @@ function ScenarioWalkthroughContent() {
 
       {/* Active Phase */}
       {phase && colors && (
-        <div style={{ animation: "fadeIn 0.3s ease" }}>
+        <div style={{ animation: "fadeIn 0.25s ease-out" }}>
           {/* Phase Header */}
           <div
             style={{
@@ -496,6 +497,7 @@ function ScenarioWalkthroughContent() {
           {/* System Log Toggle */}
           <button
             onClick={() => setShowLog(!showLog)}
+            className="sim-btn"
             style={{
               background: "none",
               border: "1px solid #E2E8F0",
@@ -534,6 +536,7 @@ function ScenarioWalkthroughContent() {
             <button
               onClick={prevPhase}
               disabled={currentPhase === 0}
+              className="sim-btn"
               style={{
                 padding: "10px 20px",
                 background: currentPhase === 0 ? "#F1F5F9" : "#fff",
@@ -557,6 +560,7 @@ function ScenarioWalkthroughContent() {
             {currentPhase < 6 ? (
               <button
                 onClick={nextPhase}
+                className="sim-btn"
                 style={{
                   padding: "10px 24px",
                   background: "#0F172A",
@@ -575,6 +579,7 @@ function ScenarioWalkthroughContent() {
             ) : (
               <button
                 onClick={resetDemo}
+                className="sim-btn"
                 style={{
                   padding: "10px 24px",
                   background: "#0F172A",
@@ -630,6 +635,8 @@ function ScenarioWalkthroughContent() {
           from { opacity: 0; transform: translateY(8px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        .sim-btn:active { transform: scale(0.97); }
+        .sim-btn { transition: background-color 0.15s, color 0.15s, transform 0.1s; }
       `}</style>
     </div>
   );

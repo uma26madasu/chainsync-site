@@ -40,7 +40,7 @@ export default function ProcessFlowAnimation() {
                 strokeDasharray="6 4"
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={inView ? { pathLength: 1, opacity: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.4 }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.15 }}
               />
               {inView && (
                 <motion.circle
@@ -75,7 +75,7 @@ export default function ProcessFlowAnimation() {
                 strokeWidth={1.8}
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={inView ? { scale: 1, opacity: 1 } : {}}
-                transition={{ type: "spring", stiffness: 200, damping: 18, delay: 0.1 + i * 0.2 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18, delay: 0.1 + i * 0.08 }}
                 style={{ originX: `${cx}px`, originY: `${Y}px` }}
               />
 
@@ -88,7 +88,7 @@ export default function ProcessFlowAnimation() {
                 fontWeight="800"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: 0.3 + i * 0.2 }}
+                transition={{ delay: 0.18 + i * 0.08 }}
               >
                 {i + 1}
               </motion.text>
@@ -102,7 +102,7 @@ export default function ProcessFlowAnimation() {
                 fontWeight="700"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: 0.35 + i * 0.2 }}
+                transition={{ delay: 0.22 + i * 0.08 }}
               >
                 {step.label}
               </motion.text>
@@ -115,7 +115,7 @@ export default function ProcessFlowAnimation() {
                 fill="#94a3b8"
                 initial={{ opacity: 0, y: 4 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.5 + i * 0.2 }}
+                transition={{ delay: 0.3 + i * 0.08 }}
               >
                 {step.sublabel}
               </motion.text>
