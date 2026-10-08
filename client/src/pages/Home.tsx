@@ -129,7 +129,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.52, ease: EASE }}
               >
                 <Link href="/contact">
-                  <a className="group inline-flex items-center gap-2.5 rounded-full bg-slate-900 hover:bg-slate-700 px-6 py-3 text-[13px] font-semibold text-white transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] min-h-[44px]">
+                  <a className="group inline-flex items-center gap-2.5 rounded-full bg-slate-900 hover:bg-slate-700 px-6 py-3 text-[13px] font-semibold text-white transition-[background-color] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] min-h-[44px]">
                     Apply for Founding Partnership
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/[0.12] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px">
                       <ArrowRight size={11} />
@@ -137,7 +137,7 @@ export default function Home() {
                   </a>
                 </Link>
                 <Link href="/how-it-works">
-                  <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white hover:border-slate-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] px-6 py-3 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] min-h-[44px]">
+                  <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white hover:border-slate-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] px-6 py-3 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] min-h-[44px]">
                     How It Works
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-px">
                       <ArrowRight size={11} />
@@ -324,9 +324,9 @@ export default function Home() {
             </div>
             <FadeUp delay={0.1}>
               <Link href="/how-it-works">
-                <a className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] font-semibold text-slate-300 transition-all duration-200 hover:border-white/20 hover:bg-white/[0.07] whitespace-nowrap active:scale-[0.97] min-h-[44px]">
+                <a className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] font-semibold text-slate-300 transition-[border-color,background-color] duration-200 hover:border-white/20 hover:bg-white/[0.07] whitespace-nowrap active:scale-[0.97] min-h-[44px]">
                   Full walkthrough
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={10} />
                   </span>
                 </a>
@@ -409,9 +409,9 @@ export default function Home() {
 
             <FadeUp delay={0.16} className="mt-6">
               <Link href="/walkthrough">
-                <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_4px_rgba(0,0,0,0.05)] transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]">
+                <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_4px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]">
                   View full walkthrough
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={10} />
                   </span>
                 </a>
@@ -513,7 +513,7 @@ export default function Home() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-5 py-2 rounded-full text-[13px] font-semibold transition-all duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] min-h-[44px] ${
+                  className={`px-5 py-2 rounded-full text-[13px] font-semibold transition-[background-color,color] duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] min-h-[44px] ${
                     activeTab === tab
                       ? "bg-slate-900 text-white shadow-sm"
                       : "text-slate-500 hover:text-slate-700"
@@ -730,9 +730,9 @@ export default function Home() {
 
             <FadeUp delay={0.14} className="mt-5">
               <Link href="/technology">
-                <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_4px_rgba(0,0,0,0.05)] transition-all duration-200 hover:shadow-[0_2px_10px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]">
+                <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_4px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_10px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]">
                   View Full Technical Details
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={10} />
                   </span>
                 </a>
@@ -760,10 +760,10 @@ export default function Home() {
                 href="https://www.linkedin.com/company/getchainsync/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] whitespace-nowrap active:scale-[0.97] shrink-0 min-h-[44px]"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] whitespace-nowrap active:scale-[0.97] shrink-0 min-h-[44px]"
               >
                 Connect on LinkedIn
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-px">
                   <ArrowUpRight size={10} />
                 </span>
               </a>
@@ -804,9 +804,9 @@ export default function Home() {
               </ul>
               <div className="flex flex-wrap gap-3 pt-1">
                 <Link href="/contact">
-                  <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+                  <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
                     Apply for Founding Partnership
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-px">
                       <ArrowRight size={11} />
                     </span>
                   </a>

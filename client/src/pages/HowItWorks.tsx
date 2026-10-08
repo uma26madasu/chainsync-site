@@ -86,6 +86,7 @@ function IconBadge({ icon: Icon, color }: { icon: React.ElementType; color: stri
 }
 
 export default function HowItWorks() {
+  const isTouch = window.matchMedia('(hover: none)').matches;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -129,7 +130,7 @@ export default function HowItWorks() {
               <motion.div
                 key={s.num}
                 variants={fadeUp}
-                whileHover={{ y: -3, transition: { duration: 0.2, ease: EASE } }}
+                whileHover={isTouch ? undefined : { y: -3, transition: { duration: 0.2, ease: EASE } }}
                 className="h-full"
               >
                 <div className="h-full bg-[#F4F6F9] border border-slate-200/60 rounded-[1.75rem] p-1.5">
@@ -294,9 +295,9 @@ export default function HowItWorks() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
               <Link href="/contact">
-                <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+                <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
                   Apply for Founding Partnership
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-px">
                     <ArrowRight size={11} />
                   </span>
                 </a>

@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        className={`sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
           scrolled
             ? "bg-[#E8F4F8]/97 backdrop-blur-xl border-b border-[#DCECEF] shadow-[0_1px_10px_rgba(15,90,143,0.07)]"
             : "bg-[#E8F4F8]/90 backdrop-blur-md border-b border-[#DCECEF]/50"
@@ -50,7 +50,7 @@ export default function Header() {
             <nav className="hidden md:flex items-center gap-0.5">
               {NAV_LINKS.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <a className="px-3.5 py-2 rounded-lg text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-[#DCECEF]/50 transition-all duration-200">
+                  <a className="px-3.5 py-2 rounded-lg text-[13.5px] font-medium text-slate-600 hover:text-slate-900 hover:bg-[#DCECEF]/50 transition-[color,background-color] duration-200">
                     {link.label}
                   </a>
                 </Link>
@@ -59,9 +59,9 @@ export default function Header() {
               <div className="w-px h-4 bg-[#DCECEF] mx-2.5 shrink-0" />
 
               <Link href="/contact">
-                <a className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 px-4.5 py-[9px] text-[12.5px] font-semibold text-white transition-all duration-200 active:scale-[0.97] min-h-[38px]">
+                <a className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 px-4.5 py-[9px] text-[12.5px] font-semibold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[38px]">
                   Pilot Partnership
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white/15 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={9} />
                   </span>
                 </a>
@@ -74,9 +74,9 @@ export default function Header() {
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              <span className={`block h-[1.5px] w-5 bg-slate-900 origin-center transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-              <span className={`block h-[1.5px] bg-slate-900 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "w-0 opacity-0" : "w-4"}`} />
-              <span className={`block h-[1.5px] w-5 bg-slate-900 origin-center transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+              <span className={`block h-[1.5px] w-5 bg-slate-900 origin-center transition-[transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+              <span className={`block h-[1.5px] bg-slate-900 transition-[width,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "w-0 opacity-0" : "w-4"}`} />
+              <span className={`block h-[1.5px] w-5 bg-slate-900 origin-center transition-[transform] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
             </button>
           </div>
         </div>

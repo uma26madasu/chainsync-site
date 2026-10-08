@@ -192,10 +192,10 @@ export default function About() {
                 href="https://www.linkedin.com/company/getchainsync/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]"
               >
                 Connect on LinkedIn
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5">
                   <ArrowUpRight size={10} />
                 </span>
               </a>
@@ -203,10 +203,10 @@ export default function About() {
                 href="https://medium.com/@umamadasu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]"
+                className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]"
               >
                 Read the Insights articles
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5">
                   <ArrowUpRight size={10} />
                 </span>
               </a>
@@ -317,9 +317,9 @@ export default function About() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
               <Link href="/contact">
-                <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-all duration-200 active:scale-[0.97] min-h-[44px]">
+                <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
                   Apply for Founding Partnership
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-px">
                     <ArrowRight size={11} />
                   </span>
                 </a>
