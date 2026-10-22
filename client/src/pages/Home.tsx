@@ -27,8 +27,8 @@ function FadeUp({
   return (
     <motion.div
       className={className}
-      initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 20, filter: "blur(4px)" }}
-      whileInView={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 20 }}
+      whileInView={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once, margin: "-48px" }}
       transition={{ duration: prefersReduced ? 0.2 : 0.6, delay, ease: EASE }}
     >
@@ -90,17 +90,17 @@ export default function Home() {
               </motion.div>
 
               {/* Headline — masked line-by-line reveal */}
-              <div className="space-y-1">
+              <h1 className="space-y-1">
                 {[
                   { text: "Response team assembled.", muted: false },
                   { text: "Compliance record started.", muted: false },
                   { text: "Before your first manual call.", muted: true },
                 ].map(({ text, muted }, i) => (
                   <div key={i} className="overflow-hidden">
-                    <motion.h1
-                      className={`font-bold leading-[1.1] tracking-[-0.03em] ${
+                    <motion.span
+                      className={`block font-bold leading-[1.1] tracking-[-0.03em] ${
                         muted
-                          ? "text-[clamp(1.8rem,3.6vw,3.2rem)] text-slate-400 font-semibold"
+                          ? "text-[clamp(1.8rem,3.6vw,3.2rem)] text-slate-500 font-semibold"
                           : "text-[clamp(2.2rem,4.4vw,3.8rem)] text-slate-900"
                       }`}
                       initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: "105%" }}
@@ -108,10 +108,10 @@ export default function Home() {
                       transition={{ duration: 0.7, delay: 0.08 + i * 0.11, ease: EASE }}
                     >
                       {text}
-                    </motion.h1>
+                    </motion.span>
                   </div>
                 ))}
-              </div>
+              </h1>
 
               <motion.p
                 className="text-base md:text-[17px] text-slate-500 leading-[1.7] max-w-[500px]"
@@ -144,6 +144,39 @@ export default function Home() {
                     </span>
                   </a>
                 </Link>
+              </motion.div>
+              {/* Mobile / tablet hero flow — hidden on lg+ where the sidebar diagram shows */}
+              <motion.div
+                className="lg:hidden"
+                initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.62, ease: EASE }}
+              >
+                <div className="bg-[#F4F6F9] border border-slate-200/70 rounded-2xl p-1.5">
+                  <div className="bg-white rounded-xl p-4 flex flex-col items-center gap-1.5">
+                    <div className="flex gap-2 flex-wrap justify-center">
+                      {["SCADA", "BMS", "IoT / API"].map((src) => (
+                        <span key={src} className="px-3 py-1.5 rounded-lg bg-sky-50 border border-sky-200 text-[11px] font-bold text-sky-700">{src}</span>
+                      ))}
+                    </div>
+                    <span className="text-sky-300 text-base leading-none">↓</span>
+                    <span className="px-4 py-1.5 rounded-lg bg-sky-50 border border-sky-200 text-[11px] font-bold text-sky-700">Universal Webhook Endpoint</span>
+                    <span className="text-emerald-300 text-base leading-none">↓</span>
+                    <span className="px-4 py-1.5 rounded-lg bg-green-50 border border-green-200 text-[11px] font-bold text-green-700">17 AI Agents</span>
+                    <span className="text-amber-300 text-base leading-none">↓</span>
+                    <span className="px-4 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-[11px] font-bold text-amber-700">Scheduler / Coordination</span>
+                    <span className="text-purple-300 text-base leading-none">↓</span>
+                    <span className="px-4 py-1.5 rounded-lg bg-purple-50 border border-purple-200 text-[11px] font-bold text-purple-700">Response Meeting</span>
+                  </div>
+                  <div className="flex items-center justify-center flex-wrap gap-3 px-2 pt-2 pb-1">
+                    {[{ color: "#38bdf8", label: "Ingest" }, { color: "#4ade80", label: "Analyze" }, { color: "#fbbf24", label: "Orchestrate" }, { color: "#c4b5fd", label: "Schedule" }].map(({ color, label }) => (
+                      <div key={label} className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                        <span className="text-[11px] text-slate-500 font-medium">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
 
@@ -224,7 +257,7 @@ export default function Home() {
               <div className="bg-slate-950 rounded-[2rem] p-1.5">
                 <div className="bg-slate-900 rounded-[calc(2rem_-_0.375rem)] p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.04)]">
                   <p className="font-mono text-[3.2rem] font-bold text-white leading-none tracking-tight mb-1">
-                    <CountUp end={6} prefix="4–" duration={1600} />
+                    4–6
                   </p>
                   <p className="font-mono text-base font-semibold text-slate-500 mb-5 tracking-tight">hours</p>
                   <div className="h-[1px] bg-white/[0.07] mb-5" />
@@ -325,7 +358,7 @@ export default function Home() {
             <FadeUp delay={0.1}>
               <Link href="/how-it-works">
                 <a className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] font-semibold text-slate-300 transition-[border-color,background-color] duration-200 hover:border-white/20 hover:bg-white/[0.07] whitespace-nowrap active:scale-[0.97] min-h-[44px]">
-                  Full walkthrough
+                  See how it works
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={10} />
                   </span>
@@ -334,7 +367,9 @@ export default function Home() {
             </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0 max-w-4xl">
+          <div className="relative max-w-4xl">
+          <div className="absolute left-4 top-5 bottom-5 w-px bg-white/[0.07] md:hidden" aria-hidden="true" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-0">
             {[
               { num: 1, label: "Detection", desc: "Universal Webhook receives events from any monitoring system, SCADA, or BMS." },
               { num: 2, label: "Analysis", desc: "AI coordination agents classify severity, identify impact, and determine response scope." },
@@ -346,7 +381,7 @@ export default function Home() {
             ].map((s, i) => (
               <FadeUp key={i} delay={i * 0.08}>
                 <motion.div
-                  className="group flex gap-4 py-5 border-b border-white/[0.05] last:border-0"
+                  className="group flex gap-4 py-5 border-b border-white/[0.05] last:border-0 relative"
                   whileHover={prefersReduced ? {} : { x: 2 }}
                   transition={{ duration: 0.15 }}
                 >
@@ -360,6 +395,7 @@ export default function Home() {
                 </motion.div>
               </FadeUp>
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -410,7 +446,7 @@ export default function Home() {
             <FadeUp delay={0.16} className="mt-6">
               <Link href="/walkthrough">
                 <a className="group inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-[13px] font-semibold text-slate-700 shadow-[0_1px_4px_rgba(0,0,0,0.05)] transition-[box-shadow] duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.09)] active:scale-[0.97] min-h-[44px]">
-                  View full walkthrough
+                  View scenario walkthrough
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 transition-transform duration-150 group-hover:translate-x-0.5">
                     <ArrowRight size={10} />
                   </span>
@@ -670,9 +706,9 @@ export default function Home() {
                 >
                   <div className="flex items-start justify-between mb-3">
                     <span className="text-[11px] font-semibold text-slate-600 tabular-nums" style={{ fontFamily: "'Geist Mono', monospace" }}>{num}</span>
-                    {wip && (
-                      <span className="text-[10px] font-medium text-slate-500 border border-slate-700 rounded-full px-2 py-0.5">In Definition</span>
-                    )}
+                    <span className={`text-[10px] font-medium rounded-full px-2 py-0.5 border ${wip ? "text-slate-500 border-slate-700" : "invisible border-transparent"}`}>
+                      In Definition
+                    </span>
                   </div>
                   <h3 className="text-[15px] font-bold text-white mb-0.5">{name}</h3>
                   {sub && <p className="text-[11px] text-slate-500 mb-2">{sub}</p>}
@@ -812,10 +848,10 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
-              <p className="text-slate-700 text-[12px]">
+              <p className="text-slate-400 text-[14px]">
                 Not in water or healthcare?{" "}
                 <Link href="/contact">
-                  <a className="text-sky-400 hover:text-sky-300 transition-colors duration-200">Join the waitlist →</a>
+                  <a className="text-sky-400 hover:text-sky-300 transition-[color] duration-200">Join the waitlist →</a>
                 </Link>
               </p>
             </FadeUp>
