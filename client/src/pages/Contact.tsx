@@ -24,8 +24,13 @@ export default function Contact() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Initialize EmailJS
     emailjs.init("mvRcXt-RUQv_C4hzo");
+  }, []);
+
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "Founding Pilot Partnership | ChainSync";
+    return () => { document.title = prev; };
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
