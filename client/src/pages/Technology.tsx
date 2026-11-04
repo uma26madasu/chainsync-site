@@ -42,7 +42,7 @@ export default function Technology() {
             initial="hidden"
             animate="visible"
           >
-            {["17 Coordination Agents", "AI Reasoning Engine", "Universal Webhook Endpoint", "Scheduling Layer", "Compliance Audit Trail"].map((tag) => (
+            {["17 AI Agents", "Multi-Model AI Routing", "Event Sourcing", "13 API Endpoints", "Timeline API", "OmniRoute Gateway"].map((tag) => (
               <span key={tag} className="text-[11px] font-semibold px-3 py-1.5 bg-slate-100 text-slate-600 rounded-full border border-slate-200">
                 {tag}
               </span>
@@ -285,13 +285,20 @@ export default function Technology() {
               </thead>
               <tbody>
                 {[
-                  ["Agent Framework", "Coordination agents", "Specialized agent execution and HTTP webhook routing"],
-                  ["AI Reasoning", "Large language model (domain-specific)", "Context-aware analysis, risk classification, decision support"],
-                  ["Integration Layer", "HTTP Webhooks (Universal Webhook Endpoint)", "Platform-agnostic event ingestion. MuleSoft, Workato, Boomi, FastAPI, or any HTTP POST."],
-                  ["Scheduler", "Scheduling Layer", "Autonomous emergency meeting coordination with conflict detection"],
-                  ["Data Persistence", "Structured event store", "Incident storage, audit trails, and compliance records"],
-                  ["Event Transport", "Standard HTTP", "Platform-agnostic event routing between agents"],
-                  ["Observability", "Metrics + health dashboards", "System health monitoring and operational dashboards"],
+                  ["Server", "Python 3.11+ / FastAPI 0.115+ / Uvicorn", "HTTP server with async request handling"],
+                  ["Database", "SQLAlchemy ORM with Alembic migrations", "SQLite (dev) / PostgreSQL (prod) for data persistence"],
+                  ["AI Models", "OpenAI GPT-4, Anthropic Claude 3.5, Google Gemini", "Multi-model AI support via OmniRoute gateway"],
+                  ["LLM Gateway", "OmniRoute (optional)", "Unified routing layer for multi-model AI requests"],
+                  ["Vector Store", "Pinecone", "Context retrieval and pattern matching for incidents"],
+                  ["SMS Notifications", "Twilio", "Multi-stakeholder SMS alerting"],
+                  ["Email", "SendGrid", "Email notifications and compliance document delivery"],
+                  ["Chat Integrations", "Slack SDK, Microsoft Teams (pymsteams)", "Real-time team notifications"],
+                  ["Incident Management", "PagerDuty (pdpyras)", "Critical incident escalation and on-call routing"],
+                  ["PDF Generation", "ReportLab", "Compliance documents and incident closure reports"],
+                  ["Calendar APIs", "Google Calendar API, Microsoft Graph API", "Emergency meeting scheduling with conflict detection"],
+                  ["Monitoring", "Prometheus + Grafana", "System health metrics and operational dashboards"],
+                  ["Security", "Rate limiting, OWASP validation, Bandit", "Multi-layer security with pre-commit hooks"],
+                  ["Infrastructure", "Docker, Terraform (AWS)", "Container orchestration and cloud infrastructure as code"],
                 ].map(([comp, tech, purpose], i) => (
                   <motion.tr
                     key={comp}
@@ -320,13 +327,148 @@ export default function Technology() {
           >
             <h3 className="text-sm font-semibold text-foreground mb-2">Platform-Agnostic by Design</h3>
             <p className="text-sm text-muted-foreground">
-              ChainSync's integration layer is decoupled from any single platform. FastAPI is the current implementation, but any platform supporting HTTP POST (MuleSoft, Workato, Boomi, Azure Logic Apps, or a customer's existing enterprise integration stack) can connect through ChainSync's Universal Webhook Endpoint without changes to the agent or scheduling layers.
+              ChainSync uses FastAPI 0.115+ with Uvicorn as the production server. The architecture supports OmniRoute LLM gateway for unified multi-model AI routing (OpenAI, Anthropic, Google). All integrations connect via standard HTTP webhooks — MuleSoft, Workato, Boomi, or any HTTP POST-capable system can integrate without changes to agent or coordination layers.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 9. Core Components Detail */}
+      {/* 9. API Endpoints */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            API Endpoints (13 Total)
+          </motion.h2>
+
+          <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-slate-100">
+                  <th className="text-left py-3 px-4 font-semibold text-foreground w-20">Method</th>
+                  <th className="text-left py-3 px-4 font-semibold text-foreground">Path</th>
+                  <th className="text-left py-3 px-4 font-semibold text-foreground">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["GET",  "/",                                          "API info and version"],
+                  ["GET",  "/health",                                    "Health check with database status"],
+                  ["GET",  "/status",                                    "System status and agent count"],
+                  ["POST", "/webhooks/chainsync/alert",                  "Receive and process a ChainSync alert"],
+                  ["POST", "/webhooks/slotify/meeting",                  "Receive meeting scheduling webhook"],
+                  ["POST", "/webhooks/alerts",                           "Universal alert ingestion endpoint"],
+                  ["POST", "/webhook/scada",                             "Receive SCADA alert (water utilities)"],
+                  ["POST", "/webhook/bms",                               "Receive BMS alert (healthcare facilities)"],
+                  ["GET",  "/agents/list",                               "List all registered agents"],
+                  ["GET",  "/meetings/recent",                           "List recent scheduled meetings"],
+                  ["GET",  "/alerts/recent",                             "List recent alerts processed"],
+                  ["GET",  "/api/v1/incidents/{incident_id}/timeline",   "Get chronological event timeline for incident audit"],
+                  ["POST", "/incidents/{incident_id}/close",             "Close incident with resolution and PDF export"],
+                ].map(([method, path, desc], i) => (
+                  <motion.tr
+                    key={path}
+                    className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewport}
+                    transition={{ delay: i * 0.04 }}
+                  >
+                    <td className="py-3 px-4">
+                      <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded font-mono ${
+                        method === "GET"
+                          ? "bg-sky-100 text-sky-700"
+                          : "bg-emerald-100 text-emerald-700"
+                      }`}>
+                        {method}
+                      </span>
+                    </td>
+                    <td className="py-3 px-4 font-mono text-[13px] text-slate-700">{path}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{desc}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Compliance Coverage */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+          >
+            Compliance Coverage
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <motion.div
+              className="bg-sky-50 border border-sky-200 rounded-xl p-6"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <h3 className="text-[14px] font-bold text-slate-900 mb-4">Water Utilities</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "EPA SDWA (40 CFR 141)", desc: "Auto-generated Tier 2 public notification PDF" },
+                  { label: "State Drinking Water Program", desc: "State drinking water program notifications" },
+                  { label: "County Health Department", desc: "County Health Department notification tracking" },
+                ].map(({ label, desc }) => (
+                  <li key={label} className="flex items-start gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0" />
+                    <div>
+                      <p className="text-[13px] font-semibold text-slate-800">{label}</p>
+                      <p className="text-[12px] text-slate-500 leading-snug">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              className="bg-purple-50 border border-purple-200 rounded-xl p-6"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              transition={{ delay: 0.08 }}
+            >
+              <h3 className="text-[14px] font-bold text-slate-900 mb-4">Healthcare</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "Joint Commission EC.02.05", desc: "Utility Systems Management" },
+                  { label: "Joint Commission EC.02.06", desc: "Medical Equipment Management" },
+                  { label: "CMS Conditions of Participation (QSO-17-30)", desc: "CMS Conditions of Participation" },
+                  { label: "Infection Control Protocols", desc: "Infection Control environmental event protocols" },
+                ].map(({ label, desc }) => (
+                  <li key={label} className="flex items-start gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0" />
+                    <div>
+                      <p className="text-[13px] font-semibold text-slate-800">{label}</p>
+                      <p className="text-[12px] text-slate-500 leading-snug">{desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Core Components Detail */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6" style={{ maxWidth: "1200px" }}>
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={viewport} className="mb-10">
@@ -367,7 +509,7 @@ export default function Technology() {
                         <div>
                           <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-2">Built Integrations</p>
                           <ul className="space-y-1.5">
-                            {["FastAPI (current implementation)", "Enterprise iPaaS (MuleSoft, Workato, Boomi: supported)", "Universal Webhook (HTTP POST from any system)", "22+ flow implementations", "SCADA systems via HTTP webhooks"].map((item) => (
+                            {["FastAPI 0.115+ / Uvicorn", "SQLAlchemy ORM with Alembic migrations", "Pinecone vector store", "Twilio SMS / SendGrid Email", "Slack SDK / Microsoft Teams", "PagerDuty incident management", "Google Calendar / Microsoft Graph API", "ReportLab PDF generation", "Prometheus + Grafana monitoring", "Docker + Terraform (AWS)", "SCADA systems via HTTP webhooks"].map((item) => (
                               <li key={item} className="flex items-start gap-2 text-[13px] text-slate-600">
                                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0" />
                                 {item}
