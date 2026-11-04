@@ -14,11 +14,11 @@ const CATEGORIES: Category[] = [
     border: "border-emerald-200",
     textColor: "text-emerald-700",
     agents: [
-      { label: "Adaptive Learning", desc: "Improves response accuracy from historical incident patterns" },
-      { label: "Context Retention", desc: "Maintains incident context across multi-step coordination workflows" },
-      { label: "Multi-Factor Analysis", desc: "Evaluates complex scenarios to determine response priority" },
-      { label: "Natural Language Interface", desc: "Enables plain-language queries against incident and compliance data" },
-      { label: "Root Cause Analysis", desc: "Traces incident origin through sensor data and historical patterns" },
+      { label: "Continuous Learning Agent", desc: "Improves response accuracy over time by learning from historical incident outcomes and pattern feedback" },
+      { label: "Root Cause Analysis Agent", desc: "Traces incident origin through sensor data, event logs, and historical patterns to identify the underlying cause" },
+      { label: "Natural Language Query Agent", desc: "Enables plain-language queries against incident records, compliance data, and system status" },
+      { label: "Memory Enabled Agent", desc: "Maintains persistent context across multi-step coordination workflows and multi-session incidents" },
+      { label: "Multi-Step Reasoning Agent", desc: "Evaluates complex, multi-variable scenarios to determine response priority and escalation path" },
     ],
   },
   {
@@ -28,11 +28,11 @@ const CATEGORIES: Category[] = [
     border: "border-blue-200",
     textColor: "text-blue-700",
     agents: [
-      { label: "Early Warning Detection", desc: "Identifies pre-threshold signals before a breach occurs" },
-      { label: "Impact Assessment", desc: "Evaluates operational and regulatory impact of an active incident" },
-      { label: "Meeting Context", desc: "Prepares and distributes incident context for coordination meetings" },
-      { label: "Historical Pattern Recognition", desc: "Identifies similar past incidents to inform current response" },
-      { label: "Public Communication", desc: "Drafts notifications based on incident type and regulatory requirements" },
+      { label: "Meeting Context Agent", desc: "Prepares and distributes a structured incident brief to all participants before the emergency response meeting" },
+      { label: "Public Communication Agent", desc: "Drafts regulatory notifications and public-facing communications based on incident type and jurisdiction" },
+      { label: "Impact Assessment Agent", desc: "Evaluates operational, regulatory, and community impact of an active incident to inform response scope" },
+      { label: "Predictive Alert Agent", desc: "Identifies pre-threshold signals and trend deviations before a breach or failure occurs" },
+      { label: "Historical Pattern Matching Agent", desc: "Identifies similar past incidents to surface proven response patterns and avoid repeated failures" },
     ],
   },
   {
@@ -42,8 +42,8 @@ const CATEGORIES: Category[] = [
     border: "border-amber-200",
     textColor: "text-amber-700",
     agents: [
-      { label: "Compliance Automation", desc: "Detects applicable regulatory frameworks and initiates workflows automatically" },
-      { label: "Regulatory Reporting", desc: "Generates reports in required formats for water, environmental, and facility regulations" },
+      { label: "Compliance Autopilot Agent", desc: "Automatically detects applicable regulatory frameworks at incident detection and initiates the required documentation workflows" },
+      { label: "Regulatory Reporting Agent", desc: "Generates audit-ready reports in required formats for water, environmental, and healthcare facility regulations" },
     ],
   },
   {
@@ -53,11 +53,11 @@ const CATEGORIES: Category[] = [
     border: "border-purple-200",
     textColor: "text-purple-700",
     agents: [
-      { label: "Hospital Operations Coordination", desc: "Coordinates multi-department response to facilities incidents" },
-      { label: "Accreditation Documentation", desc: "Auto-generates required documentation from incident data" },
-      { label: "Infection Control Response", desc: "Triggers infection control protocols on environmental breach events" },
-      { label: "Equipment Failure Response", desc: "Manages coordination for critical medical equipment failures" },
-      { label: "Preventive Maintenance Tracking", desc: "Schedules and tracks maintenance workflows based on incident history" },
+      { label: "Hospital Operations Agent", desc: "Coordinates multi-department response — Facilities, Clinical, and Administration — for facility incidents" },
+      { label: "Joint Commission Documentation Agent", desc: "Auto-generates Joint Commission, CMS, and HIPAA-required documentation from incident data in real time" },
+      { label: "Infection Control Coordination Agent", desc: "Triggers infection control protocols and stakeholder notification on environmental breach events" },
+      { label: "Medical Equipment Failure Agent", desc: "Manages coordination and documentation for critical medical equipment failures requiring immediate response" },
+      { label: "Preventive Maintenance Tracker Agent", desc: "Schedules and tracks maintenance workflows based on incident history and equipment risk profiles" },
     ],
   },
 ];
