@@ -5,12 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
-    "start": "NODE_ENV=production node dist/index.js",
+    "build": "vite build && tsx scripts/build-seo.ts && esbuild server/index.ts --bundle --platform=node --format=esm --packages=external --outfile=dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
-    "verify": "node scripts/reticle-verify.js"
+    "verify": "node scripts/reticle-verify.js",
+    "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

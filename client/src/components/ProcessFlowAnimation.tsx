@@ -119,7 +119,7 @@ export default function ProcessFlowAnimation() {
                     repeatDelay: 1.8,
                     ease: "easeInOut",
                   }}
-                  style={{ cy: Y }}
+                  cy={Y}
                 />
               )}
             </g>

@@ -15,6 +15,7 @@ export default function CountUp({ end, suffix = "", prefix = "", duration = 1500
 
   useEffect(() => {
     if (!isInView) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setCount(end); return; }
     let frame: number;
     const start = performance.now();
     const tick = (now: number) => {
