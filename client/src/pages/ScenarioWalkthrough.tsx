@@ -646,7 +646,7 @@ export default function ScenarioWalkthrough() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow py-12 md:py-20">
+      <main id="main-content" tabIndex={-1} className="flex-grow py-12 md:py-20"><div className="container cs-card mb-6"><h2 className="font-bold text-xl mb-2">Illustrative workflow simulation</h2><p>All events, readings, timings, personnel acknowledgments, and documentation below are fictional examples. This is not a product screenshot, live system, customer incident, or measured performance. Operational actions require agreed procedures and human oversight.</p></div>
         <ScenarioWalkthroughContent />
       </main>
       <Footer />

@@ -6,8 +6,8 @@ import { Link } from "wouter";
 import { BookOpen, TrendingUp, AlertCircle, ExternalLink, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/motion";
-import CountUp from "@/components/CountUp";
-import CoordinationTimeComparison from "@/components/insights/CoordinationTimeComparison";
+
+
 
 export default function Insights() {
   const isTouch = window.matchMedia('(hover: none)').matches;
@@ -72,7 +72,7 @@ export default function Insights() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header /><main id="main-content" tabIndex={-1}>
 
       {/* Hero */}
       <section className="py-12 md:py-16">
@@ -91,7 +91,7 @@ export default function Insights() {
             initial="hidden"
             animate="visible"
           >
-            Deep dives into environmental emergency response, AI-powered automation, and the technical challenges of building specialized intelligence systems.
+            Founder perspectives on environmental incident coordination and integration architecture. Articles reflect their publication dates and may discuss proposed capabilities.
           </motion.p>
         </div>
       </section>
@@ -150,192 +150,6 @@ export default function Insights() {
         </div>
       </section>
 
-      {/* Industry Data */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Environmental Emergency Response Facts
-          </motion.h2>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-8 bg-gradient-to-br from-blue-50 to-white border-2 border-primary h-full">
-                <div className="text-5xl font-bold text-primary mb-3">
-                  <CountUp end={50} suffix="K+" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-3 text-lg">Annual U.S. Environmental Incidents</h3>
-                <p className="text-foreground text-sm leading-relaxed">
-                  Water quality violations, chemical spills, and waste emergencies reported each year to EPA and state agencies.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-8 bg-gradient-to-br from-green-50 to-white border-2 border-green-600 h-full">
-                <div className="text-5xl font-bold text-green-600 mb-3">4-6 hrs</div>
-                <h3 className="font-semibold text-foreground mb-3 text-lg">Average Manual Coordination Time</h3>
-                <p className="text-foreground text-sm leading-relaxed">
-                  Time required for phone calls, emails, and spreadsheet updates to mobilize multi-agency environmental response.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp} whileHover={isTouch ? undefined : { y: -4, transition: { duration: 0.15 } }}>
-              <Card className="p-8 bg-gradient-to-br from-red-50 to-white border-2 border-red-600 h-full">
-                <div className="text-5xl font-bold text-red-600 mb-3">
-                  <CountUp end={73} suffix="%" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-3 text-lg">Delayed Response Rate</h3>
-                <p className="text-foreground text-sm leading-relaxed">
-                  Industry estimate: percentage of environmental incidents where response was delayed due to coordination failures, missing the critical response window.
-                </p>
-              </Card>
-            </motion.div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Coordination Time Comparison */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Coordination Time: Manual vs. ChainSync
-          </motion.h2>
-          <motion.p
-            className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Every vertical has different bottlenecks, agency overlaps, and compliance burdens.
-            Each graph reflects that reality: same platform, different response profiles.
-          </motion.p>
-          <CoordinationTimeComparison />
-        </div>
-      </section>
-
-      {/* Key Topics */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-12 text-center"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            Key Topics Covered
-          </motion.h2>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-          >
-            <motion.div variants={fadeUp}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <h3 className="text-lg font-semibold text-foreground mb-3">Infrastructure & Architecture</h3>
-                <p className="text-muted-foreground text-sm">
-                  Specialized intelligence infrastructure, integration patterns, and technical decisions for building scalable environmental response systems.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <h3 className="text-lg font-semibold text-foreground mb-3">AI & Automation</h3>
-                <p className="text-muted-foreground text-sm">
-                  How specialized AI agents outperform generic automation, domain-specific intelligence, and the future of autonomous response systems.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <h3 className="text-lg font-semibold text-foreground mb-3">Integration Challenges</h3>
-                <p className="text-muted-foreground text-sm">
-                  Real-world integration gaps, breaking free from legacy constraints, and building systems that work across disparate platforms.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div variants={fadeUp}>
-              <Card className="p-6 bg-white border border-border h-full">
-                <h3 className="text-lg font-semibold text-foreground mb-3">Operational Impact</h3>
-                <p className="text-muted-foreground text-sm">
-                  Cost of coordination delays, response time improvements, and the business case for modernizing environmental emergency systems.
-                </p>
-              </Card>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Newsletter */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4 text-center">
-            Stay Updated
-          </h2>
-          <p className="text-lg text-muted-foreground text-center mb-8">
-            Subscribe to receive updates on new articles, industry research, and ChainSync product announcements.
-          </p>
-
-          <Card className="p-8 bg-white border border-border">
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="you@organization.com"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                  Organization
-                </label>
-                <input
-                  type="text"
-                  id="organization"
-                  placeholder="Your organization name"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white py-3 h-auto text-base">
-                Subscribe to Updates
-              </Button>
-            </form>
-          </Card>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-12 md:py-16 border-t border-[#DCECEF]">
         <motion.div
@@ -346,13 +160,13 @@ export default function Insights() {
           viewport={viewport}
         >
           <h2 className="text-[clamp(1.9rem,3.6vw,3rem)] font-bold text-slate-900 tracking-[-0.025em] leading-[1.1] mb-4">
-            Ready to Transform Your Response?
+            Discuss your incident workflow.
           </h2>
           <p className="text-lg text-slate-500 mb-8">
-            Learn how ChainSync helps organizations respond to environmental emergencies faster.
+            Explore whether a bounded pilot fits your operational needs.
           </p>
 
-          <Link href="/contact">
+          <Link href="/contact?intent=pilot">
             <a className="group inline-flex items-center gap-2.5 rounded-full bg-sky-500 hover:bg-sky-400 px-7 py-3.5 text-[13px] font-bold text-white transition-[background-color] duration-200 active:scale-[0.97] min-h-[44px]">
               Apply for Founding Partnership
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-transform duration-150 group-hover:translate-x-0.5">
@@ -363,7 +177,7 @@ export default function Insights() {
         </motion.div>
       </section>
 
-      <Footer />
+      </main><Footer />
     </div>
   );
 }
