@@ -4,16 +4,24 @@ import { trackConversion } from "@/lib/analytics";
 const links = [
   ["/how-it-works", "Platform"],
   ["/use-cases", "Industries"],
-  ["/technology", "Integrations"],
+  ["/technology", "Technology"],
   ["/security", "Security"],
   ["/pilot-program", "Pilot Program"],
 ];
-export default function Header() {
+export default function Header({ dark = false }: { dark?: boolean }) {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
   const button = useRef<HTMLButtonElement>(null);
   const menu = useRef<HTMLElement>(null);
   useEffect(() => setOpen(false), [location]);
+  useEffect(() => {
+    const viewport = window.matchMedia("(min-width:901px)");
+    const close = () => {
+      if (viewport.matches) setOpen(false);
+    };
+    viewport.addEventListener("change", close);
+    return () => viewport.removeEventListener("change", close);
+  }, []);
   useEffect(() => {
     if (!open) return;
     const key = (e: KeyboardEvent) => {
@@ -47,7 +55,7 @@ export default function Header() {
       <a href="#main-content" className="cs-skip">
         Skip to content
       </a>
-      <header className="cs-header">
+      <header className={dark ? "cs-header cs-header-dark" : "cs-header"}>
         <div className="container cs-header-inner">
           <Link href="/" className="cs-brand">
             <img src="/logo-icon.png" alt="" width="40" height="44" />
