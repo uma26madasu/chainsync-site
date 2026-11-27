@@ -14,10 +14,9 @@ export default function Privacy() {
           respond and assess a potential demo, pilot, or partnership.
         </p>
         <p>
-          EmailJS handles inquiry delivery. When enabled, Cloudflare Turnstile
-          verifies spam protection and processes technical information required
-          for that check. Do not submit credentials, patient information, or
-          confidential incident records.
+          The form sends your inquiry directly to EmailJS for email delivery. Do
+          not submit credentials, patient information, or confidential incident
+          records.
         </p>
       </Section>
       <Section title="Website measurement">
