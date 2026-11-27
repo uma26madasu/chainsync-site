@@ -1,3 +1,40 @@
-import Layout,{Section} from "@/components/MarketingLayout";
+import Chatbot from "@/components/Chatbot";
+import Layout, { Section } from "@/components/MarketingLayout";
 import LeadForm from "@/components/LeadForm";
-export default function Contact(){return <Layout eyebrow="Talk with ChainSync" title="Start with your operational challenge." intro="Request a demonstration, explore a founding pilot, or discuss an integration partnership. We will use your inquiry to understand the fit and agree a useful next step."><Section title="Tell us what you need"><div className="cs-grid cs-contact-grid"><LeadForm/><aside><h3>What happens next?</h3><p>We review your inquiry and arrange a conversation about your workflow, infrastructure, and evaluation goals.</p><h3>For pilot applicants</h3><p>Scope, duration, commercial terms, and technical requirements are agreed together. Submitting this form creates no deployment commitment.</p><h3>Keep the first conversation simple</h3><p>You do not need to share system access, patient data, or confidential incident details to begin.</p></aside></div></Section></Layout>}
+export default function Contact() {
+  return (
+    <Layout
+      eyebrow="Talk with ChainSync"
+      title="Start with your operational challenge."
+      intro="Request a demonstration, explore a founding pilot, or discuss an integration partnership. We will use your inquiry to understand the fit and agree a useful next step."
+    >
+      <Section title="Tell us what you need">
+        <div className="cs-grid cs-contact-grid">
+          <LeadForm />
+          <aside>
+            <section className="cs-card mb-6" aria-labelledby="chat-title">
+              <h2 id="chat-title">Chat with ChainSync</h2>
+              <Chatbot />
+            </section>
+            <h3>What happens next?</h3>
+            <p>
+              We review your inquiry and arrange a conversation about your
+              workflow, infrastructure, and evaluation goals.
+            </p>
+            <h3>For pilot applicants</h3>
+            <p>
+              Scope, duration, commercial terms, and technical requirements are
+              agreed together. Submitting this form creates no deployment
+              commitment.
+            </p>
+            <h3>Keep the first conversation simple</h3>
+            <p>
+              You do not need to share system access, patient data, or
+              confidential incident details to begin.
+            </p>
+          </aside>
+        </div>
+      </Section>
+    </Layout>
+  );
+}

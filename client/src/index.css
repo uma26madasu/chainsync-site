@@ -700,3 +700,56 @@ textarea:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+.cs-agent {
+  border-top: 1px solid #d4e3e9;
+  padding: 0.8rem 0;
+}
+.cs-agent summary {
+  font-size: 1rem;
+  font-weight: 650;
+  cursor: pointer;
+  min-height: 44px;
+  align-content: center;
+}
+.cs-agent p {
+  margin-top: 0.5rem;
+}
+.cs-agent summary:focus-visible {
+  outline: 3px solid #126b95;
+  outline-offset: 3px;
+}
+.cs-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid #bdd4df;
+  border-radius: 0.6rem;
+  background: #fff;
+}
+.cs-reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+}
+.cs-reference-table caption {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 650;
+}
+.cs-reference-table th,
+.cs-reference-table td {
+  padding: 0.9rem;
+  border-top: 1px solid #d4e3e9;
+  vertical-align: top;
+  min-width: 150px;
+}
+.cs-reference-table thead {
+  background: #eef6f9;
+}
+.cs-reference-table code {
+  overflow-wrap: anywhere;
+}
+.cs-anchor {
+  scroll-margin-top: 6rem;
+}

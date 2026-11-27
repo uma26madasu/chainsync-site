@@ -112,6 +112,21 @@ export default function Home() {
             </article>
           </div>
         </Section>
+        <Section title="Explore the architecture behind the workflow">
+          <p>
+            Integration, intelligence, and coordination layers connect existing
+            monitoring with response teams. Explore the 17 specialized agents,
+            their responsibilities, and the platform technology stack.
+          </p>
+          <div className="cta-row">
+            <Link className="cs-button secondary" href="/how-it-works#agents">
+              Explore Architecture and AI Agents
+            </Link>
+            <Link className="cs-button secondary" href="/technology#stack">
+              View the Technology Stack
+            </Link>
+          </div>
+        </Section>
         <Section title="One incident, through to closure">
           <Lifecycle />
         </Section>

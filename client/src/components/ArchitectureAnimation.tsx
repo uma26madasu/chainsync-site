@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 const LAYERS = [
@@ -10,7 +10,11 @@ const LAYERS = [
     bg: "#f0f9ff",
     border: "#bae6fd",
     textColor: "#0369a1",
-    items: ["Universal Webhook Endpoint", "Format Normalization", "Event Routing"],
+    items: [
+      "Universal Webhook Endpoint",
+      "Format Normalization",
+      "Event Routing",
+    ],
   },
   {
     label: "LAYER 2",
@@ -20,7 +24,11 @@ const LAYERS = [
     bg: "#f0fdf4",
     border: "#bbf7d0",
     textColor: "#15803d",
-    items: ["AI Reasoning Engine", "Risk Classification", "HTTP Webhook Routing"],
+    items: [
+      "AI Reasoning Engine",
+      "Risk Classification",
+      "HTTP Webhook Routing",
+    ],
   },
   {
     label: "LAYER 3",
@@ -30,14 +38,30 @@ const LAYERS = [
     bg: "#fafaf9",
     border: "#e7e5e4",
     textColor: "#57534e",
-    items: ["Calendar Conflict Resolution", "Stakeholder Selection", "Closed-Loop Tracking"],
+    items: [
+      "Calendar Conflict Resolution",
+      "Stakeholder Selection",
+      "Closed-Loop Tracking",
+    ],
   },
 ];
 
-function FlowingDots({ x, y1, y2, color }: { x: number; y1: number; y2: number; color: string }) {
+function FlowingDots({
+  x,
+  y1,
+  y2,
+  color,
+}: {
+  x: number;
+  y1: number;
+  y2: number;
+  color: string;
+}) {
+  const reduced = useReducedMotion();
+  if (reduced) return null;
   return (
     <>
-      {[0, 1, 2].map((i) => (
+      {[0, 1, 2].map(i => (
         <motion.circle
           key={i}
           cx={x}
@@ -59,6 +83,7 @@ function FlowingDots({ x, y1, y2, color }: { x: number; y1: number; y2: number; 
 }
 
 export default function ArchitectureAnimation() {
+  const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -71,15 +96,34 @@ export default function ArchitectureAnimation() {
   const cx = W / 2;
 
   return (
-    <div ref={ref} className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
-      <svg viewBox={`0 0 ${W} ${totalH}`} className="w-full h-auto" aria-label="ChainSync 3-layer architecture">
+    <div
+      ref={ref}
+      className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white"
+    >
+      <svg
+        viewBox={`0 0 ${W} ${totalH}`}
+        className="w-full h-auto"
+        aria-label="ChainSync 3-layer architecture"
+      >
         <rect width={W} height={totalH} fill="#ffffff" />
 
         {/* Connector columns */}
         {connY.map((cy, i) => (
           <g key={i}>
-            <rect x={cx - 1} y={cy} width={2} height={connH} fill={LAYERS[i].color} opacity={0.2} />
-            <FlowingDots x={cx} y1={cy + 4} y2={cy + connH - 4} color={LAYERS[i + 1].color} />
+            <rect
+              x={cx - 1}
+              y={cy}
+              width={2}
+              height={connH}
+              fill={LAYERS[i].color}
+              opacity={0.2}
+            />
+            <FlowingDots
+              x={cx}
+              y1={cy + 4}
+              y2={cy + connH - 4}
+              color={LAYERS[i + 1].color}
+            />
             <motion.polygon
               points={`${cx - 5},${cy + connH - 7} ${cx + 5},${cy + connH - 7} ${cx},${cy + connH}`}
               fill={LAYERS[i + 1].color}
@@ -99,21 +143,66 @@ export default function ArchitectureAnimation() {
               key={layer.label}
               initial={{ opacity: 0, y: 14 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.28, delay: 0.1 + i * 0.08, ease: "easeOut" }}
+              transition={{
+                duration: 0.28,
+                delay: 0.1 + i * 0.08,
+                ease: "easeOut",
+              }}
             >
-              <rect x={16} y={y} width={W - 32} height={layerH} rx={10}
-                fill={layer.bg} stroke={layer.border} strokeWidth={1.5} />
-              <rect x={16} y={y} width={5} height={layerH} rx={2.5} fill={layer.color} opacity={0.6} />
+              <rect
+                x={16}
+                y={y}
+                width={W - 32}
+                height={layerH}
+                rx={10}
+                fill={layer.bg}
+                stroke={layer.border}
+                strokeWidth={1.5}
+              />
+              <rect
+                x={16}
+                y={y}
+                width={5}
+                height={layerH}
+                rx={2.5}
+                fill={layer.color}
+                opacity={0.6}
+              />
 
               {/* Layer badge */}
-              <rect x={28} y={y + 10} width={44} height={14} rx={4} fill={layer.color} opacity={0.12} />
-              <text x={50} y={y + 20.5} textAnchor="middle" fontSize={7} fill={layer.textColor} fontWeight="700">
+              <rect
+                x={28}
+                y={y + 10}
+                width={44}
+                height={14}
+                rx={4}
+                fill={layer.color}
+                opacity={0.12}
+              />
+              <text
+                x={50}
+                y={y + 20.5}
+                textAnchor="middle"
+                fontSize={7}
+                fill={layer.textColor}
+                fontWeight="700"
+              >
                 {layer.label}
               </text>
 
               {/* Title */}
-              <text x={80} y={y + 22} fontSize={11} fill="#1e293b" fontWeight="700">{layer.title}</text>
-              <text x={80} y={y + 35} fontSize={8} fill="#64748b">{layer.subtitle}</text>
+              <text
+                x={80}
+                y={y + 22}
+                fontSize={11}
+                fill="#1e293b"
+                fontWeight="700"
+              >
+                {layer.title}
+              </text>
+              <text x={80} y={y + 35} fontSize={8} fill="#64748b">
+                {layer.subtitle}
+              </text>
 
               {/* Feature pills */}
               {layer.items.map((item, j) => (
@@ -149,9 +238,20 @@ export default function ArchitectureAnimation() {
                 cy={y + layerH / 2}
                 r={4}
                 fill={layer.color}
-                animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.25, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: i * 0.6 }}
-                style={{ originX: `${W - 32}px`, originY: `${y + layerH / 2}px` }}
+                animate={
+                  reduced
+                    ? { opacity: 0.8, scale: 1 }
+                    : { opacity: [0.3, 0.8, 0.3], scale: [1, 1.25, 1] }
+                }
+                transition={{
+                  duration: reduced ? 0 : 2,
+                  repeat: reduced ? 0 : Infinity,
+                  delay: i * 0.6,
+                }}
+                style={{
+                  originX: `${W - 32}px`,
+                  originY: `${y + layerH / 2}px`,
+                }}
               />
             </motion.g>
           );
@@ -159,7 +259,9 @@ export default function ArchitectureAnimation() {
       </svg>
 
       <div className="flex items-center justify-center gap-2 px-4 py-2 bg-slate-50 border-t border-slate-100">
-        <span className="text-xs text-slate-400">Standard HTTP between all layers. No proprietary protocols.</span>
+        <span className="text-xs text-slate-400">
+          Standard HTTP between all layers. No proprietary protocols.
+        </span>
       </div>
     </div>
   );

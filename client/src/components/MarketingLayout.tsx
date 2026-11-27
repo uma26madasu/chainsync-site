@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "wouter";
@@ -37,6 +38,14 @@ export default function MarketingLayout({
   intro: string;
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      requestAnimationFrame(() =>
+        document.getElementById(id)?.scrollIntoView()
+      );
+    }
+  }, []);
   return (
     <>
       <Header />
