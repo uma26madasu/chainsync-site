@@ -1,3 +1,5 @@
+import TechStackFlow from "@/components/TechStackFlow";
+import StackReference from "@/components/StackReference";
 import Layout, { Section, CTA } from "@/components/MarketingLayout";
 import { Link } from "wouter";
 export default function Integrations() {
@@ -7,6 +9,20 @@ export default function Integrations() {
       title="Connect the systems your teams already use."
       intro="ChainSync is designed to complement monitoring and detection infrastructure through an HTTP webhook integration approach."
     >
+      <Section title="What powers ChainSync">
+        <p>
+          The architecture reference covers three operational layers,
+          integration, intelligence, and coordination, with observability shown
+          separately below. The platform combines specialized agents,
+          scheduling, and observability. Expand each layer to explore its role.
+        </p>
+        <TechStackFlow />
+      </Section>
+      <div id="stack" className="cs-anchor">
+        <Section title="Technology stack and API reference">
+          <StackReference />
+        </Section>
+      </div>
       <Section title="Monitoring event to response workflow">
         <div className="cs-grid three">
           {[

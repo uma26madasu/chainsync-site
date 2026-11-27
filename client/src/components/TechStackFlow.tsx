@@ -12,13 +12,25 @@ const STACKS = [
     border: "border-blue-200",
     textColor: "text-blue-700",
     dotColor: "bg-blue-500",
-    tech: ["FastAPI", "Universal Webhook", "22+ Flows", "Enterprise iPaaS (supported)"],
-    detail: "Platform-agnostic orchestration layer. Any sensor, API, or system that can send HTTP POST connects here. FastAPI is the current implementation, but the architecture is swappable by design. MuleSoft, Workato, and Boomi are all supported.",
+    tech: [
+      "FastAPI",
+      "Universal Webhook",
+      "Integration Flows",
+      "Enterprise iPaaS",
+    ],
+    detail:
+      "Platform-agnostic orchestration layer. HTTP POST is the integration boundary; source-specific adapters and permissions need assessment. FastAPI is the current implementation, but the architecture is swappable by design. MuleSoft, Workato, and Boomi are integration options to assess for each source system.",
     items: [
       { name: "FastAPI", desc: "Current integration implementation" },
       { name: "Universal Webhook", desc: "HTTP POST from any system" },
-      { name: "22+ Flow Implementations", desc: "Pre-built connectors" },
-      { name: "Enterprise iPaaS (supported)", desc: "MuleSoft, Workato, Dell Boomi, or your existing stack" },
+      {
+        name: "Integration Flow Implementations",
+        desc: "Source-specific event handling; coverage confirmed during assessment",
+      },
+      {
+        name: "Enterprise iPaaS",
+        desc: "MuleSoft, Workato, Dell Boomi, or your existing stack",
+      },
     ],
   },
   {
@@ -30,13 +42,28 @@ const STACKS = [
     border: "border-purple-200",
     textColor: "text-purple-700",
     dotColor: "bg-purple-500",
-    tech: ["17 Specialized Agents", "AI Reasoning Engine", "HTTP Webhooks", "Modular Architecture"],
-    detail: "Specialized intelligence layer. 17 agents, each owning one discrete job in the coordination pipeline and communicating via standard HTTP. The AI Reasoning Engine provides context-aware analysis and decision support.",
+    tech: [
+      "17 Specialized Agents",
+      "AI Reasoning Engine",
+      "HTTP Webhooks",
+      "Modular Architecture",
+    ],
+    detail:
+      "Specialized intelligence layer. 17 agents, each owning one discrete job in the coordination pipeline and communicating via standard HTTP. The AI Reasoning Engine provides context-aware analysis and decision support.",
     items: [
-      { name: "17 Specialized Agents", desc: "Modular, independently updatable coordination units" },
-      { name: "AI Reasoning Engine", desc: "Context-aware analysis and decision support" },
+      {
+        name: "17 Specialized Agents",
+        desc: "Modular, independently updatable coordination units",
+      },
+      {
+        name: "AI Reasoning Engine",
+        desc: "Context-aware analysis and decision support",
+      },
       { name: "HTTP Webhooks", desc: "Standard event routing between agents" },
-      { name: "Persistent Event Store", desc: "Incident and audit trail storage" },
+      {
+        name: "Persistent Event Store",
+        desc: "Incident and audit trail storage",
+      },
     ],
   },
   {
@@ -48,13 +75,25 @@ const STACKS = [
     border: "border-emerald-200",
     textColor: "text-emerald-700",
     dotColor: "bg-emerald-500",
-    tech: ["Scheduling Layer", "Google Calendar", "MS 365", "Emergency Override"],
-    detail: "Autonomous emergency meeting coordination. ChainSync's scheduling layer checks calendars across platforms, resolves conflicts, applies emergency override protocols, and books multi-stakeholder meetings without human input.",
+    tech: [
+      "Scheduling Layer",
+      "Google Calendar",
+      "MS 365",
+      "Priority Scheduling",
+    ],
+    detail:
+      "The scheduling layer is designed to assess calendar availability, identify conflicts, and coordinate meetings using agreed priority rules and approval requirements.",
     items: [
-      { name: "Scheduling Layer", desc: "Autonomous emergency meeting coordination" },
+      {
+        name: "Scheduling Layer",
+        desc: "Meeting coordination using agreed approval rules",
+      },
       { name: "Google Calendar API", desc: "Calendar conflict detection" },
       { name: "Microsoft 365", desc: "Enterprise calendar integration" },
-      { name: "Emergency Override", desc: "Priority scheduling for critical incidents" },
+      {
+        name: "Priority Scheduling",
+        desc: "Priority scheduling for critical incidents",
+      },
     ],
   },
   {
@@ -66,13 +105,31 @@ const STACKS = [
     border: "border-amber-200",
     textColor: "text-amber-700",
     dotColor: "bg-amber-500",
-    tech: ["Health Metrics", "Operational Dashboards", "Structured Logging", "Audit Trail"],
-    detail: "Full observability layer. Metrics are collected across all agents and surfaced in operational health dashboards. Every action is logged for tamper-evident compliance audit trails.",
+    tech: [
+      "Health Metrics",
+      "Operational Dashboards",
+      "Structured Logging",
+      "Audit Trail",
+    ],
+    detail:
+      "The observability layer covers system health metrics, structured logging, and incident history. Available dashboards, retention, and audit protections depend on the implementation and deployment.",
     items: [
-      { name: "Health Metrics", desc: "System performance monitoring across all agents" },
-      { name: "Operational Dashboards", desc: "Real-time system health visibility" },
-      { name: "Structured Logging", desc: "Request/response logging per agent" },
-      { name: "Audit Trail", desc: "Tamper-evident compliance records" },
+      {
+        name: "Health Metrics",
+        desc: "System performance monitoring across all agents",
+      },
+      {
+        name: "Operational Dashboards",
+        desc: "System health visibility where configured",
+      },
+      {
+        name: "Structured Logging",
+        desc: "Request/response logging per agent",
+      },
+      {
+        name: "Audit Trail",
+        desc: "Incident history for documentation review",
+      },
     ],
   },
 ];
@@ -100,7 +157,11 @@ export default function TechStackFlow() {
               aria-expanded={active === stack.id}
             >
               <div className="flex items-center justify-between mb-3">
-                <span className={`text-xs font-bold tracking-widest ${stack.textColor}`}>{stack.label}</span>
+                <span
+                  className={`text-sm font-bold tracking-widest ${stack.textColor}`}
+                >
+                  {stack.label}
+                </span>
                 <motion.span
                   animate={{ rotate: active === stack.id ? 45 : 0 }}
                   transition={{ duration: 0.2 }}
@@ -110,12 +171,14 @@ export default function TechStackFlow() {
                   +
                 </motion.span>
               </div>
-              <h3 className="text-base font-bold text-foreground mb-3">{stack.title}</h3>
+              <h3 className="text-base font-bold text-foreground mb-3">
+                {stack.title}
+              </h3>
               <div className="flex flex-wrap gap-1">
-                {stack.tech.map((t) => (
+                {stack.tech.map(t => (
                   <span
                     key={t}
-                    className="text-xs px-2 py-0.5 rounded-full bg-white/80 text-muted-foreground"
+                    className="text-sm px-2 py-0.5 rounded-full bg-white/80 text-muted-foreground"
                   >
                     {t}
                   </span>
@@ -127,8 +190,11 @@ export default function TechStackFlow() {
       </div>
 
       {/* Flow arrows — desktop only */}
-      <div className="hidden lg:flex justify-around px-[13%] mt-1 mb-1 pointer-events-none" aria-hidden="true">
-        {[0, 1, 2].map((i) => (
+      <div
+        className="hidden lg:flex justify-around px-[13%] mt-1 mb-1 pointer-events-none"
+        aria-hidden="true"
+      >
+        {[0, 1, 2].map(i => (
           <motion.div
             key={i}
             className="flex items-center"
@@ -139,7 +205,10 @@ export default function TechStackFlow() {
           >
             <svg width="40" height="14" viewBox="0 0 40 14">
               <motion.line
-                x1="0" y1="7" x2="32" y2="7"
+                x1="0"
+                y1="7"
+                x2="32"
+                y2="7"
                 stroke={STACKS[i + 1].color}
                 strokeWidth="1.5"
                 strokeDasharray="4 3"
@@ -148,7 +217,11 @@ export default function TechStackFlow() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.6 + i * 0.15 }}
               />
-              <polygon points="32,3 40,7 32,11" fill={STACKS[i + 1].color} opacity="0.8" />
+              <polygon
+                points="32,3 40,7 32,11"
+                fill={STACKS[i + 1].color}
+                opacity="0.8"
+              />
             </svg>
           </motion.div>
         ))}
@@ -156,37 +229,53 @@ export default function TechStackFlow() {
 
       {/* Expanded detail */}
       <AnimatePresence>
-        {active && (() => {
-          const stack = STACKS.find((s) => s.id === active)!;
-          return (
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              className="overflow-hidden mt-3"
-            >
-              <div className={`rounded-xl border-2 p-5 ${stack.bg} ${stack.border}`}>
-                <p className="text-sm text-muted-foreground mb-4">{stack.detail}</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {stack.items.map((item) => (
-                    <div key={item.name} className="flex items-start gap-2 bg-white/70 rounded-lg p-3">
-                      <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${stack.dotColor}`} />
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">{item.name}</p>
-                        <p className="text-xs text-muted-foreground">{item.desc}</p>
+        {active &&
+          (() => {
+            const stack = STACKS.find(s => s.id === active)!;
+            return (
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="overflow-hidden mt-3"
+              >
+                <div
+                  className={`rounded-xl border-2 p-5 ${stack.bg} ${stack.border}`}
+                >
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {stack.detail}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {stack.items.map(item => (
+                      <div
+                        key={item.name}
+                        className="flex items-start gap-2 bg-white/70 rounded-lg p-3"
+                      >
+                        <div
+                          className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${stack.dotColor}`}
+                        />
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">
+                            {item.name}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {item.desc}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          );
-        })()}
+              </motion.div>
+            );
+          })()}
       </AnimatePresence>
 
-      <p className="text-center text-xs text-muted-foreground mt-3">Click any layer to expand details</p>
+      <p className="text-center text-sm text-muted-foreground mt-3">
+        Click any layer to expand details
+      </p>
     </div>
   );
 }

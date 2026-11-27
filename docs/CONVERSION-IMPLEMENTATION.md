@@ -1,5 +1,14 @@
 # ChainSync conversion improvements
 
+## Restored technical content and interactive assistant
+
+The Platform page now restores the three-layer architecture diagram and all 17 original agent names, grouped by responsibility. Each role has a keyboard- and touch-accessible expandable description. The Technology/Integrations page restores expandable layer explanations, all 14 original stack rows, and all 13 platform API reference paths. Homepage links expose both sections. Stack details and API paths describe the earlier documented platform architecture and require confirmation against the deployed backend; they are not advertised as marketing-site endpoints or certified connectors.
+
+The original interactive FAQ chatbot is restored beside the inquiry form, with typed questions, quick replies, conversation context, and typing feedback. Answers are locally matched predefined content, not a live operator or the product’s coordination agents. Security, pricing, pilot, healthcare, and performance answers are qualified individually. It includes architecture/stack answers and links to the full agent and technology references. The restored original EmailJS inquiry flow is unchanged. This section supersedes the historical note below about removing the chatbot.
+
+Validation for restoration: TypeScript, production build, and regression tests are run before the PR. Browser QA remains unverified because the managed preview relay again timed out. No deployment is authorized by this restoration.
+
+
 ## Current inquiry delivery: restored original EmailJS flow
 
 At the owner’s request, the contact form now uses the original browser-side EmailJS service (`service_6mitzhj`), template (`template_4579caf`), and public key. This supersedes the server-side inquiry setup instructions below. No Vercel email secrets or Turnstile configuration is needed for the contact form. The existing EmailJS account, service, recipient, allowed origins, and quota must remain active. Private keys are never shipped to the browser.
