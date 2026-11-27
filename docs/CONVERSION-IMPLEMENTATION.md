@@ -1,5 +1,12 @@
 # ChainSync conversion improvements
 
+## Current inquiry delivery: restored original EmailJS flow
+
+At the owner’s request, the contact form now uses the original browser-side EmailJS service (`service_6mitzhj`), template (`template_4579caf`), and public key. This supersedes the server-side inquiry setup instructions below. No Vercel email secrets or Turnstile configuration is needed for the contact form. The existing EmailJS account, service, recipient, allowed origins, and quota must remain active. Private keys are never shipped to the browser.
+
+The shorter form, four inquiry types, validation, honeypot, loading state, accessible feedback, and success-only conversion events remain. Optional fields and inquiry intent are included in both `message` and `formatted_message` so the original template can display them without a template migration. The phone parameter says “Not requested”. The form no longer calls `/api/leads`; that unused server endpoint remains fail-closed and its tests still apply only to that endpoint. Server-side validation and Turnstile are not part of the restored browser flow. Real mailbox receipt still needs verification; automated tests mock provider delivery and send no email.
+
+
 ## Scope and review status
 
 The approved audit plan is implemented on `improve-conversion`. No merge or production deployment is authorized. The existing React/Vite stack, logo, palette, article links, interactive illustrative walkthrough, and incident portal remain. The former use-case dashboards were replaced with workflow content because their presentation could imply an implemented product interface. Unsupported statistics and performance projections were removed from Insights; its original article links remain.
